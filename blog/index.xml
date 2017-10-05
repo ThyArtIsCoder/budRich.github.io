@@ -5,7 +5,6 @@
     <link>https://budrich.github.io/blog/</link>
     <description>Recent content in blog on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
     <lastBuildDate>Wed, 20 Sep 2017 15:44:11 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +16,7 @@
       <pubDate>Sun, 01 Oct 2017 19:13:40 +0200</pubDate>
       
       <guid>https://budrich.github.io/blog/fresh_start/</guid>
-      <description>First thins to do on a fresh install These are the steps I take to setup my work environment on a fresh install of Peppermint OS 8. Most of the steps are valid on other GNU/Linux distributions, but I don&amp;rsquo;t recommend anyone to blindly follow and install everything.
+      <description>These are the steps I take to setup my work environment on a fresh install of Peppermint OS 8. Most of the steps are valid on other GNU/Linux distributions, but I don&amp;rsquo;t recommend anyone to blindly follow and install everything.
 Before doing anything else i start syncing Dropbox. I start with this step because it can take up to 45 minutes, so while Dropbox is syncing there is time to install and setup other programs.</description>
     </item>
     

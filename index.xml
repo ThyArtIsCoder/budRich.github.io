@@ -5,11 +5,41 @@
     <link>https://budrich.github.io/</link>
     <description>Recent content on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 01 Oct 2017 19:13:40 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 04 Oct 2017 19:50:58 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cv_en</title>
+      <link>https://budrich.github.io/abouts/cv_en/</link>
+      <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/abouts/cv_en/</guid>
+      <description>Born: 1982-10-06 Address: Per Lagerhjelmsgatan 11, 691 33 Karlskoga, Sweden Phone: +46 722 990 358 Mail: robstenklippa@gmail.com EMPLOYMENTS    CNC-operator - mill/lathe G-Drill     Programming, planning, operating Athens, Greece 2017/04–2017/07       Support Agent Lenovo/TelePerformance     Technical support agent, SAP, CRM, Office, Oracle Athens, Greece 2016/07–2016/10       CNC-operator - mill Valmet/Uniflex     Heidenhain, heavy details Karlstad, Sweden 2015/12–2016/07       CNC-operator - lathe B.</description>
+    </item>
+    
+    <item>
+      <title>the_site</title>
+      <link>https://budrich.github.io/abouts/the_site/</link>
+      <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/abouts/the_site/</guid>
+      <description>This site is made using the static site generator Hugo and the text editor Sublime Text, using GNU/Linux as an IDE.
+I wanted a static site because cutting edge web development techniques and bloated IDE&amp;rsquo;s is not an environment I like. I have promised myself that the rendered site should only be HTML/CSS (except for google analytics and disqus). There is a lot of crazy stuff and bash scripting involved in creating the site, but that doesn&amp;rsquo;t affect the finished site or your RAM and bandwidth usage.</description>
+    </item>
+    
+    <item>
+      <title>whoami</title>
+      <link>https://budrich.github.io/abouts/whoami/</link>
+      <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/abouts/whoami/</guid>
+      <description>My name is Nils. I live in Sweden and I play the blues. I have worked the majority of my adult life as a CNC-operator/programmer in the steel industry. As all jobs it has it&amp;rsquo;s pros and cons.
+I also made an attempt in the telecom industry, as a technical support agent for Lenovo.
+But now I am looking for some other way to earn a living.
+I have been very interested in computers ever since I got a C64 back in the 80&amp;rsquo;s.</description>
+    </item>
     
     <item>
       <title>fresh_start</title>
@@ -17,7 +47,7 @@
       <pubDate>Sun, 01 Oct 2017 19:13:40 +0200</pubDate>
       
       <guid>https://budrich.github.io/blog/fresh_start/</guid>
-      <description>First thins to do on a fresh install These are the steps I take to setup my work environment on a fresh install of Peppermint OS 8. Most of the steps are valid on other GNU/Linux distributions, but I don&amp;rsquo;t recommend anyone to blindly follow and install everything.
+      <description>These are the steps I take to setup my work environment on a fresh install of Peppermint OS 8. Most of the steps are valid on other GNU/Linux distributions, but I don&amp;rsquo;t recommend anyone to blindly follow and install everything.
 Before doing anything else i start syncing Dropbox. I start with this step because it can take up to 45 minutes, so while Dropbox is syncing there is time to install and setup other programs.</description>
     </item>
     
