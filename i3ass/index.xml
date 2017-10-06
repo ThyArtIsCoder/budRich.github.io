@@ -10,5 +10,67 @@
 	<atom:link href="https://budrich.github.io/i3ass/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>i3zen</title>
+      <link>https://budrich.github.io/i3ass/i3zen/</link>
+      <pubDate>Wed, 20 Sep 2017 22:38:48 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3zen/</guid>
+      <description>put your windows in a zen mode for a zen mood When run, this script puts the active window between two ghosts (centered). if the window already is &amp;ldquo;zen&amp;rdquo;, move it back to its original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.
+I made a post on /r/unixporn where you can view an animated gif of i3zen in action.</description>
+    </item>
+    
+    <item>
+      <title>i3run</title>
+      <link>https://budrich.github.io/i3ass/i3run/</link>
+      <pubDate>Wed, 20 Sep 2017 22:36:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3run/</guid>
+      <description>run, raise or minimize a program depending on its state. if target window doesn&amp;rsquo;t exist, a given command is launched. if target window is on another workspace, it is moved to current workspace. If target window doesn&amp;rsquo;t have focus it will be given focus. If target window has focus it will be sent to the scratchpad.
+usage run i3run with ONE of the following options to define target window:</description>
+    </item>
+    
+    <item>
+      <title>i3mtm</title>
+      <link>https://budrich.github.io/i3ass/i3mtm/</link>
+      <pubDate>Wed, 20 Sep 2017 22:32:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3mtm/</guid>
+      <description>mtm = Move To Mark When launched without flags, i3mtm checks floating status of current window. If it is tiled, the window becomes floating. if it is floating, a search for marks is done if no marks are found, window becomes tiled. otherwise a dmenu asks for a mark to move window to. if no selection is made, window is tiled but not moved. otherwise window is tiled and moved to selected mark.</description>
+    </item>
+    
+    <item>
+      <title>i3gw</title>
+      <link>https://budrich.github.io/i3ass/i3gw/</link>
+      <pubDate>Wed, 20 Sep 2017 22:24:23 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3gw/</guid>
+      <description>wrapper for the ghost window function in i3wm
+i3-msg has an undocumented function (open) that creates empty containers, or as I call them: ghosts. Since these empty containers doesn&amp;rsquo;t contain any windows there is no instance/class/title to identify them, making it difficult to control them. They do however have a con_id and I found the easiest way to keep track of the ghosts is to mark them. That is what this script does, it creates a ghost get its con_id and mark it.</description>
+    </item>
+    
+    <item>
+      <title>i3get</title>
+      <link>https://budrich.github.io/i3ass/i3get/</link>
+      <pubDate>Wed, 20 Sep 2017 22:22:45 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3get/</guid>
+      <description>search for windows in i3 tree, return desired information if no arguments are passed. con_id of acitve window is returned.
+examples: search for window with instance name sublime_text. Request workspace, title and floating state. i3get -i sublime_text -r wtf</description>
+    </item>
+    
+    <item>
+      <title>i3cast</title>
+      <link>https://budrich.github.io/i3ass/i3cast/</link>
+      <pubDate>Wed, 20 Sep 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3cast/</guid>
+      <description> usage just run the script to start the recording run it again to stop and preview the recording and perform action, (save,upload or play again). if no action is selected the recording is deleted. uploaded recordings is also saved.
+a notification is shown when upload is complete and a link is put in your clipboard.
+protip
+bindsym --release Mod3+Pint exec --no-startup-id i3cast
+requirements    i3get to identify and the terminal (urxvt) window     i3run to run and hide the terminal (urxvt) window   urxvt terminal emulator   ffmpeg  commandline tool to record media   curl commandline tool to download and upload stuff   mpv minimal mediaplayer, used to preview recording   dmenu tool that displays a menu   xclip tool that handles clipboard events   xdotool needed to send q to urxvt, to quit the recording in a proper way   gif-is-jif  to save and upload gif format (optional)    </description>
+    </item>
+    
   </channel>
 </rss>

@@ -10,5 +10,27 @@
 	<atom:link href="https://budrich.github.io/scripts/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>igi</title>
+      <link>https://budrich.github.io/scripts/igi/</link>
+      <pubDate>Wed, 20 Sep 2017 22:40:49 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/igi/</guid>
+      <description>This script generates an issue file that is shown when you log in to your computer without a DM. It applies the current color scheme that you have set in .Xresources
+
+dependencies    toilet display ASCII artish fonts     lolcat rainbow color effect on terminal output   fortune prints a random fortune    The script has a sudo mv command, which requires you to enter a password.</description>
+    </item>
+    
+    <item>
+      <title>subact</title>
+      <link>https://budrich.github.io/scripts/subact/</link>
+      <pubDate>Wed, 20 Sep 2017 15:44:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/subact/</guid>
+      <description>This is a script I wrote to automate the process of uploading scripts and dotfiles to this web site.
+It analyzes the title of Sublime Text to get the filename of the currently open file.
+If the file is in ~/bin (my local scripfolder), it is a scriptfile, else it is a dotfile. Depending on the type it is sent to different directories within my hugo project folder. Which is on my Dropbox.</description>
+    </item>
+    
   </channel>
 </rss>

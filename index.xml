@@ -5,10 +5,19 @@
     <link>https://budrich.github.io/</link>
     <description>Recent content on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 04 Oct 2017 19:50:58 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 06 Oct 2017 17:34:09 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>user-dirs</title>
+      <link>https://budrich.github.io/dots/config/user-dirs/</link>
+      <pubDate>Fri, 06 Oct 2017 17:34:09 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/user-dirs/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cv_en</title>
@@ -101,27 +110,28 @@ i3-gaps i3-gaps is a fork of i3 developed by Airblader who happens to be one of 
     </item>
     
     <item>
+      <title>i3_setup</title>
+      <link>https://budrich.github.io/blog/i3_setup/</link>
+      <pubDate>Mon, 25 Sep 2017 17:17:10 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/blog/i3_setup/</guid>
+      <description>These are some of my personal preferences and thoughts on how to configure i3. Read the official userguide often to see what options you got. I have left out a lot of functionality in my config that i don&amp;rsquo;t use.
+Your config file can be located at different places depending on how you installed i3.
+variables the first line of the default config file looks like this:
+set $mod Mod4</description>
+    </item>
+    
+    <item>
       <title>font_rendering</title>
       <link>https://budrich.github.io/blog/font_rendering/</link>
       <pubDate>Mon, 25 Sep 2017 17:15:34 +0200</pubDate>
       
       <guid>https://budrich.github.io/blog/font_rendering/</guid>
-      <description>It is easy to get used to bad font rendering. But there are some simple steps one can take to get great looking fonts on *GNU/*Linux.
+      <description>It is easy to get used to bad font rendering. But there are some simple steps one can take to get great looking fonts on GNU/Linux.
 Below is a summary of an article on binarytides, with some spice.
 download the following fonts from
 http://www.google.com/fonts/
- Droid Sans Droid Sans Mono Droid Serif Noto Sans Noto Serif Open Sans  Unzip &amp;lsquo;em and place them in ~/.fonts Download and place this .</description>
-    </item>
-    
-    <item>
-      <title>dmenu</title>
-      <link>https://budrich.github.io/blog/dmenu/</link>
-      <pubDate>Mon, 25 Sep 2017 17:14:40 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/blog/dmenu/</guid>
-      <description>dmenu is one of my favorite tools. It is a very simple program that displays a menu. It is often used as a lightweight launcher. But I&amp;rsquo;ve found that it is also the most efficient way to send user input to shell scripts, without having the user using a clumsy terminal command.
-It is maintained by suckless, a group that have many interesting tools, programs and ideas.
-I often use dmenu with my own scripts, and will describe how, in future articles.</description>
+ Droid Sans Droid Sans Mono Droid Serif Noto Sans Noto Serif Open Sans  Unzip &amp;lsquo;em and place them in ~/.fonts. Download and place this: .</description>
     </item>
     
     <item>
@@ -151,19 +161,6 @@ I don&amp;rsquo;t care so much about distros and I have not had any problems wit
       
       <guid>https://budrich.github.io/dots/xresources/</guid>
       <description>One of the most classic dotfiles, .Xresources. I have gotten most ideas on from the r/unixporn wiki. I can&amp;rsquo;t seem to get &amp;ldquo;short name&amp;rdquo; for the includes to work, which annoys me a bit..</description>
-    </item>
-    
-    <item>
-      <title>xinitrc</title>
-      <link>https://budrich.github.io/dots/xinitrc/</link>
-      <pubDate>Fri, 22 Sep 2017 17:17:15 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/dots/xinitrc/</guid>
-      <description>This is part of my anti-DM suite. The stuff I want to happen just before i3 loads up, goes here.
-Starting urxvt in daemon mode is really nice and makes it consume less resources and start much faster.
-I use hsetroot to set the desktop background to a minimal tiled pattern and a fetch color from Xresources.
-The Seba keyboard layout keeps me sane!
-I use sxhkd to remap the back button of the mouse to backspace.</description>
     </item>
     
   </channel>

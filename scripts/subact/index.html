@@ -8,7 +8,7 @@
 
 <meta name="description" content="">
 
-<title>i3wm</title>
+<title>subact</title>
 <meta name="generator" content="Hugo 0.29" />
 <link  href="https://budrich.github.io/stylesheets/styles.css" rel="stylesheet" type="text/css">
 
@@ -273,6 +273,8 @@
           ZgotmplZ
           ZgotmplZ
           
+            checked
+          
 
           />
           
@@ -292,6 +294,8 @@
                 <li>
                   <a href="https://budrich.github.io/scripts/subact/">
                   <span class="glyphicon glyphicon-file"></span><span
+                    
+                      class="active-page"
                     
                   >subact</span>
                   </a>
@@ -400,8 +404,6 @@
           ZgotmplZ
           ZgotmplZ
           ZgotmplZ
-          
-            checked
           
 
           />
@@ -527,8 +529,6 @@
           ZgotmplZ
           ZgotmplZ
           
-            checked
-          
 
           />
           
@@ -563,8 +563,6 @@
                 <li>
                   <a href="https://budrich.github.io/dots/xres/i3wm/">
                   <span class="glyphicon glyphicon-file"></span><span
-                    
-                      class="active-page"
                     
                   >i3wm</span>
                   </a>
@@ -798,11 +796,11 @@
 
           
           <div class="postquote">
-Coffee is a way of 
-stealing time that 
-should by rights belong 
-to your older self.
-— Terry Pratchett</div>
+When the power of love 
+overcomes the love of 
+power the world will see 
+peace.
+— Jimi Hendrix</div>
 
 
           <hr>
@@ -824,27 +822,181 @@ to your older self.
 <article>
 <div class="topblock">
 <pre class="lolban">
-<span class="ef118"> ██ </span><span class="ef154"> ████                        </span>
-<span class="ef154">░░  █░░░ █              </span><span class="ef148">    </span><span class="ef184">     </span>
-<span class="ef154"> ██░    ░█ ███</span><span class="ef148">    </span><span class="ef184"> ██ ██████████ </span>
-<span class="ef154">░██ </span><span class="ef148">  ██</span><span class="ef184">█ ░░██  █ ░██░░██░░██░░██</span>
-<span class="ef184">░██  ░░░ █ ░██ ███░██ ░██ ░██ ░██</span>
-<span class="ef184">░██ █   ░█ ░████░████ ░█</span><span class="ef178">█ ░█</span><span class="ef214">█ ░██</span>
-<span class="ef184">░██░ ████  ███</span><span class="ef178">░ ░░</span><span class="ef214">░██ ███ ░██ ░██</span>
-<span class="ef184">░░  </span><span class="ef178">░░░░</span><span class="ef214">  ░░░    ░░░ ░░░  ░░  ░░ </span>
+<span class="ef199">                 ██</span><span class="ef163">    </span><span class="ef164">                      ██  </span>
+<span class="ef199">         </span><span class="ef163">    </span><span class="ef164">   ░██                         ░██ </span><span class="ef128"> </span>
+<span class="ef163">  █</span><span class="ef164">█████ ██   ██░██       ██████    ██</span><span class="ef128">███  </span><span class="ef129">██████</span>
+<span class="ef164"> ██░░░░ ░██  ░██░██████  ░░░</span><span class="ef128">░░░██</span><span class="ef129">  ██░░░██░░░██░ </span>
+<span class="ef164">░░█████ ░██  ░██░█</span><span class="ef128">█░░░█</span><span class="ef129">█  ███████ ░██  ░░   ░██  </span>
+<span class="ef164"> ░░░░░██</span><span class="ef128">░██  </span><span class="ef129">░██░██  ░██ ██░░░░██ ░██   ██ </span><span class="ef93"> ░██  </span>
+<span class="ef128"> ██</span><span class="ef129">████ ░░██████░██████ ░░███████</span><span class="ef93">█░░█████   ░░██ </span>
+<span class="ef129">░░░░░░   ░░░░░░ ░░░░░  </span><span class="ef93">  ░░░░░░░░  ░░░░░     ░░  </span>
 
 </pre>
 
-<h6>Published 09-22-2017 16:37:40</h6></div>
+<h6>Published 09-20-2017 15:44:11</h6></div>
 
     
+
+<p>This is a script I wrote to automate the
+process of uploading scripts and dotfiles to this web site.</p>
+
+<p>It analyzes the title of Sublime Text to get the filename of the currently open file.</p>
+
+<p>If the file is in <code>~/bin</code> (my local scripfolder), it is a scriptfile, else it is a <em>dotfile</em>. Depending on the type it is sent to different directories within my <a href="https://gohugo.io">hugo</a> project folder. Which is on my <a href="https://db.tt/eFkf49MZ">Dropbox</a>.</p>
+
+<p>With the help of Hugo and <a href="http://pygments.org">Pygments</a> I can render a syntax highlighted HTML version of the script. Which is embedded on the page.</p>
+
+<p>It also creates hardlinks to the script/dotfile and the markdown
+in separate folders on my Dropbox, for more convenient editing, backing up and searching and gitting. Since i then have both the file and the markdown at the same place.</p>
+
+<p>A thorough explanation of the file organization is described in the post: <a href="https://budrich.github.io/blog/perfect_folders">perfect folders</a>.</p>
+
+<h2 id="example">example:</h2>
+
+<p>if I run subact while these two files are active in sublime:<br />
+<code>~/.xres/urxvt</code> and <code>~/src/subact</code><br />
+(<em>i have to run the script twice, once for each file ofc</em>)
+It will result in the following files folders and links:</p>
+<div class="highlight"><pre>* ~
+  * .xres
+      urxvt
+  * src
+      subact
+  * Dropbox
+    * website
+      * content
+        * dots
+          * xres
+              urxvt.md
+        * scripts
+            subact.md
+      * static
+        * dots
+          * xres
+            * dotfile
+              banner.html
+            * files
+              hardlink to ~/.xres/urxvt
+        * scripts
+          * scriptfile
+              banner.html
+          * files
+              hardlink to ~/src/subact
+    * scripts
+        hardlink to subact.md
+        hardlink to ~/src/subact
+    * scripts
+        * xres
+            hardlink to urxvt.md
+            hardlink to ~/.xres/urxvt
+</pre></div>
+
+<p><a href="https://gohugo.io">Hugo</a> uses the html template engine to perform some magic
+and I have two websites created in a fragrance of a second:<br />
+<code>http://mysite.com/scripts/subact</code></p>
+
 <hr>
 
 
-<div class="highlight"><pre>i3wm.act:       blu
-i3wm.ina:       blk
-i3wm.red:       red2
-i3wm.fnt:       fnt1
+<div class="highlight"><pre><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># subact - perform action on currently open file in sublime</span>
+<span class="c1"># if file is argument dont catch title from sublime</span>
+<span class="c1"># </span>
+<span class="c1"># dependencies:</span>
+<span class="c1"># -------------</span>
+<span class="c1"># i3get</span>
+<span class="c1"># toilet</span>
+<span class="c1"># lolcat</span>
+<span class="c1"># ansi2html</span>
+
+
+<span class="nv">REM_ROOT</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/www&quot;</span>
+<span class="nv">FLD_SCRIPTS</span><span class="o">=</span><span class="s2">&quot;scripts&quot;</span>
+<span class="nv">FLD_DOTS</span><span class="o">=</span><span class="s2">&quot;dots&quot;</span>
+<span class="nv">LOC_SCIRPT_SRC</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/bin&quot;</span>
+
+<span class="nv">FORTUNE_OPTIONS</span><span class="o">=</span><span class="s1">&#39;$HOME/etc/fortunes/budcol&#39;</span>
+<span class="nv">TOILET_OPTIONS</span><span class="o">=</span><span class="s1">&#39;-f 3d.flf&#39;</span>
+<span class="nv">LOLCAT_OPTIONS</span><span class="o">=</span><span class="s1">&#39;-p 10&#39;</span>
+
+newpost<span class="o">(){</span>
+  <span class="nb">cd</span> <span class="si">${</span><span class="nv">REM_ROOT</span><span class="si">}</span> 
+  <span class="c1"># create _index.md in all subfolders to define</span>
+  <span class="c1"># sections properly.</span>
+  <span class="nv">trgtmp</span><span class="o">=</span><span class="si">${</span><span class="nv">trg_url</span><span class="p">%</span><span class="s1">&#39;/&#39;</span><span class="p">*</span><span class="si">}</span>
+  <span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_url</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">while</span> <span class="o">[[</span> -n <span class="si">${</span><span class="nv">trgtmp</span><span class="si">}</span> <span class="o">]]</span><span class="p">;</span> <span class="k">do</span>
+    hugo new <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trgtmp</span><span class="si">}</span><span class="s2">/_index.md&quot;</span>
+    sed -i <span class="s2">&quot;/title/c\title: \&quot;</span><span class="si">${</span><span class="nv">trgtmp</span><span class="p">##*</span><span class="s1">&#39;/&#39;</span><span class="si">}</span><span class="s2">\&quot;&quot;</span> <span class="s2">&quot;content/</span><span class="si">${</span><span class="nv">trgtmp</span><span class="si">}</span><span class="s2">/_index.md&quot;</span>
+    sed -i <span class="s2">&quot;/draft/c\draft: false&quot;</span> <span class="s2">&quot;content/</span><span class="si">${</span><span class="nv">trgtmp</span><span class="si">}</span><span class="s2">/_index.md&quot;</span>
+    <span class="nv">trgtmp</span><span class="o">=</span><span class="si">${</span><span class="nv">trgtmp</span><span class="p">%</span><span class="s1">&#39;/&#39;</span><span class="p">*</span><span class="si">}</span>
+  <span class="k">done</span>
+
+  hugo new <span class="si">${</span><span class="nv">trg_url</span><span class="si">}</span>.md
+  <span class="c1"># https://stackoverflow.com/a/11245501</span>
+  sed -i <span class="s2">&quot;/fspath/c\fspath: \&quot;</span><span class="si">${</span><span class="nv">st</span><span class="si">}</span><span class="s2">\&quot;&quot;</span> content/<span class="si">${</span><span class="nv">trg_url</span><span class="si">}</span>.md
+  mkdir -p <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_lbd</span><span class="si">}</span><span class="s2">&quot;</span>
+  postbanner -t <span class="s2">&quot;</span><span class="si">${</span><span class="nv">TOILET_OPTIONS</span><span class="si">}</span><span class="s2">&quot;</span> -l <span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOLCAT_OPTIONS</span><span class="si">}</span><span class="s2">&quot;</span> -o <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_lbd</span><span class="si">}</span><span class="s2">/banner.html&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">&quot;</span>
+  postquote -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">FORTUNE_OPTIONS</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_lbd</span><span class="si">}</span><span class="s2">/quote.html&quot;</span>
+<span class="o">}</span>
+
+<span class="k">if</span> <span class="o">[[</span> ! -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="p">/</span><span class="s1">&#39;~&#39;</span><span class="p">/</span>$<span class="nv">HOME</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nv">st</span><span class="o">=</span><span class="k">$(</span>i3get -i sublime_text -r t<span class="k">)</span>
+  <span class="nv">st</span><span class="o">=</span><span class="si">${</span><span class="nv">st</span><span class="p">%</span><span class="s1">&#39; -&#39;</span><span class="p">*</span><span class="si">}</span>
+  <span class="o">[[</span> $<span class="nv">st</span> <span class="o">=</span>~ <span class="s1">&#39;(&#39;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">st</span><span class="o">=</span><span class="si">${</span><span class="nv">st</span><span class="p">%</span><span class="s1">&#39; (&#39;</span><span class="p">*</span><span class="si">}</span>
+  <span class="nv">st</span><span class="o">=</span><span class="si">${</span><span class="nv">st</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>         <span class="c1"># fullpath short</span>
+<span class="k">else</span>
+  <span class="nv">st</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="nv">fp</span><span class="o">=</span><span class="si">${</span><span class="nv">st</span><span class="p">/</span><span class="s1">&#39;~&#39;</span><span class="p">/</span>$<span class="nv">HOME</span><span class="si">}</span> <span class="c1"># fullpath extended</span>
+<span class="nv">fl</span><span class="o">=</span><span class="si">${</span><span class="nv">fp</span><span class="p">##*</span><span class="s1">&#39;/&#39;</span><span class="si">}</span>     <span class="c1"># filename</span>
+<span class="nv">fc</span><span class="o">=</span><span class="si">${</span><span class="nv">fp</span><span class="p">//</span><span class="s1">&#39;.&#39;</span><span class="p">/</span><span class="si">}</span>     <span class="c1"># path without dots</span>
+<span class="c1"># remove extension or leading dot</span>
+<span class="o">[[</span> <span class="si">${</span><span class="nv">fl</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">fo</span><span class="o">=</span><span class="si">${</span><span class="nv">fl</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span> <span class="o">||</span> <span class="nv">fo</span><span class="o">=</span><span class="si">${</span><span class="nv">fl</span><span class="p">%.*</span><span class="si">}</span>
+<span class="nv">fd</span><span class="o">=</span><span class="si">${</span><span class="nv">fc</span><span class="p">%</span><span class="s1">&#39;/&#39;</span><span class="p">*</span><span class="si">}</span>      <span class="c1"># dir</span>
+
+<span class="o">[[</span> <span class="nv">$fd</span> <span class="o">=</span> $HOME <span class="o">]]</span> <span class="o">&amp;&amp;</span> fd+<span class="o">=</span><span class="s1">&#39;/&#39;</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$fd</span> <span class="o">=</span> $LOC_SCIRPT_SRC <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> 
+  <span class="nv">trg</span><span class="o">=</span><span class="si">${</span><span class="nv">FLD_SCRIPTS</span><span class="si">}</span>
+  <span class="nv">trg_mdd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REM_ROOT</span><span class="si">}</span><span class="s2">/content/</span><span class="si">${</span><span class="nv">trg</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nv">trg_mdf</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_mdd</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">.md&quot;</span>
+  <span class="nv">trg_lbd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REM_ROOT</span><span class="si">}</span><span class="s2">/static/</span><span class="si">${</span><span class="nv">trg</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nv">trg_fld</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_lbd</span><span class="si">}</span><span class="s2">/files&quot;</span>
+  <span class="nv">trg_flf</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_fld</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">else</span>
+  <span class="nv">trg</span><span class="o">=</span><span class="si">${</span><span class="nv">FLD_DOTS</span><span class="si">}</span>
+  <span class="nv">trg_mdd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REM_ROOT</span><span class="si">}</span><span class="s2">/content/</span><span class="si">${</span><span class="nv">trg</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fd</span><span class="p">/</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="se">\/</span><span class="p">/</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nv">trg_mdf</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_mdd</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">.md&quot;</span>
+  <span class="nv">trg_lbd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REM_ROOT</span><span class="si">}</span><span class="s2">/static/</span><span class="si">${</span><span class="nv">trg</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fd</span><span class="p">/</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="se">\/</span><span class="p">/</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nv">trg_lbf</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_lbd</span><span class="si">}</span><span class="s2">/banner.html&quot;</span>
+  <span class="nv">trg_fld</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_lbd</span><span class="si">}</span><span class="s2">/files&quot;</span>
+  <span class="nv">trg_flf</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_fld</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="nv">trg_url</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_mdd</span><span class="p">/</span><span class="si">${</span><span class="nv">REM_ROOT</span><span class="si">}</span><span class="se">\/</span><span class="nv">content</span><span class="p">/</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">fo</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="c1"># backup link folder</span>
+<span class="nv">trg_dbd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}${</span><span class="nv">trg_mdd</span><span class="p">/</span><span class="si">${</span><span class="nv">REM_ROOT</span><span class="si">}</span><span class="se">\/</span><span class="nv">content</span><span class="p">/</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">trg_dbd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_dbd</span><span class="p">/scripts/src</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">trg_dbd</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_dbd</span><span class="p">/dots/dot</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># create files and links if they don&#39;t exist</span>
+<span class="o">[[</span> ! -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_mdf</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> newpost
+<span class="k">if</span> <span class="o">[[</span> ! -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_flf</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+  mkdir -p <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_fld</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="c1"># move file from FS to DB</span>
+  mv <span class="nv">$f</span>p <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_flf</span><span class="si">}</span><span class="s2">&quot;</span>  
+  <span class="c1"># if dot, link back to FS</span>
+  <span class="o">[[</span> ! <span class="nv">$fd</span> <span class="o">=</span> $LOC_SCIRPT_SRC <span class="o">]]</span> <span class="o">&amp;&amp;</span> ln <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_flf</span><span class="si">}</span><span class="s2">&quot;</span> <span class="nv">$f</span>p
+  <span class="c1"># create links to convenient folders</span>
+  mkdir -p <span class="si">${</span><span class="nv">trg_dbd</span><span class="si">}</span>
+  ln <span class="si">${</span><span class="nv">trg_flf</span><span class="si">}</span> <span class="si">${</span><span class="nv">trg_dbd</span><span class="si">}</span>/<span class="si">${</span><span class="nv">fl</span><span class="si">}</span>
+<span class="k">fi</span>
+
+subl <span class="s2">&quot;</span><span class="si">${</span><span class="nv">trg_mdf</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="c1"># vivaldi &quot;127.0.0.1:1313/${trg_url}/&quot;</span>
 </pre></div>
 <hr>
 

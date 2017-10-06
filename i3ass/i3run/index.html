@@ -8,7 +8,7 @@
 
 <meta name="description" content="">
 
-<title>i3wm</title>
+<title>i3run</title>
 <meta name="generator" content="Hugo 0.29" />
 <link  href="https://budrich.github.io/stylesheets/styles.css" rel="stylesheet" type="text/css">
 
@@ -319,6 +319,8 @@
           ZgotmplZ
           ZgotmplZ
           
+            checked
+          
 
           />
           
@@ -338,6 +340,8 @@
                 <li>
                   <a href="https://budrich.github.io/i3ass/i3run/">
                   <span class="glyphicon glyphicon-file"></span><span
+                    
+                      class="active-page"
                     
                   >i3run</span>
                   </a>
@@ -400,8 +404,6 @@
           ZgotmplZ
           ZgotmplZ
           ZgotmplZ
-          
-            checked
           
 
           />
@@ -527,8 +529,6 @@
           ZgotmplZ
           ZgotmplZ
           
-            checked
-          
 
           />
           
@@ -563,8 +563,6 @@
                 <li>
                   <a href="https://budrich.github.io/dots/xres/i3wm/">
                   <span class="glyphicon glyphicon-file"></span><span
-                    
-                      class="active-page"
                     
                   >i3wm</span>
                   </a>
@@ -798,11 +796,11 @@
 
           
           <div class="postquote">
-Coffee is a way of 
-stealing time that 
-should by rights belong 
-to your older self.
-— Terry Pratchett</div>
+Who controls the past 
+controls the future. Who 
+controls the present 
+controls the past.
+— George Orwell</div>
 
 
           <hr>
@@ -824,27 +822,162 @@ to your older self.
 <article>
 <div class="topblock">
 <pre class="lolban">
-<span class="ef118"> ██ </span><span class="ef154"> ████                        </span>
-<span class="ef154">░░  █░░░ █              </span><span class="ef148">    </span><span class="ef184">     </span>
-<span class="ef154"> ██░    ░█ ███</span><span class="ef148">    </span><span class="ef184"> ██ ██████████ </span>
-<span class="ef154">░██ </span><span class="ef148">  ██</span><span class="ef184">█ ░░██  █ ░██░░██░░██░░██</span>
-<span class="ef184">░██  ░░░ █ ░██ ███░██ ░██ ░██ ░██</span>
-<span class="ef184">░██ █   ░█ ░████░████ ░█</span><span class="ef178">█ ░█</span><span class="ef214">█ ░██</span>
-<span class="ef184">░██░ ████  ███</span><span class="ef178">░ ░░</span><span class="ef214">░██ ███ ░██ ░██</span>
-<span class="ef184">░░  </span><span class="ef178">░░░░</span><span class="ef214">  ░░░    ░░░ ░░░  ░░  ░░ </span>
+<span class="ef49"> ██  ████             </span><span class="ef48">            </span>
+<span class="ef49">░░  █░░░ █  </span><span class="ef48">                      </span>
+<span class="ef49"> █</span><span class="ef48">█░    ░█ ██████ ██   ██ ███████ </span>
+<span class="ef48">░██   ███ ░░██░░█░██  ░█</span><span class="ef84">█░</span><span class="ef83">░██░░░██</span>
+<span class="ef48">░██  ░░░ █ ░██</span><span class="ef84"> ░</span><span class="ef83"> ░██  ░██ ░██  ░██</span>
+<span class="ef48">░██ </span><span class="ef84">█ </span><span class="ef83">  ░█ ░██   ░██  ░██ ░██  ░██</span>
+<span class="ef83">░██░ ████ ░███   ░░██████ ███  ░█</span><span class="ef119">█</span>
+<span class="ef83">░░  ░░░░  ░░░     ░░░░░</span><span class="ef119">░ ░</span><span class="ef118">░░   ░░ </span>
 
 </pre>
 
-<h6>Published 09-22-2017 16:37:40</h6></div>
+<h6>Published 09-20-2017 22:36:11</h6></div>
 
     
+
+<h2 id="run-raise-or-minimize-a-program-depending-on-its-state">run, raise or minimize a program depending on its state.</h2>
+
+<p>if target window doesn&rsquo;t exist, a given command is launched. if target window is on another workspace, it is moved to current workspace. If target window doesn&rsquo;t have focus it will be given focus. If target window has focus it will be sent to the scratchpad.</p>
+
+<h2 id="usage">usage</h2>
+
+<p>run i3run with <strong>ONE</strong> of the following options to define target window:<br />
+<code>-c CLASS, -i INSTANCE, -t TITLE</code><br />
+the last option you should include is:<br />
+<code>-e COMMAND</code><br />
+It is important that <code>-e COMMAND</code> is last of the options.</p>
+
+<h2 id="example">example</h2>
+<div class="highlight"><pre>i3run -i sublime_text -e subl
+bindsym Mod4+s exec --no-startup-id exec i3run -i sublime_text -e subl
+</pre></div>
+
+<p>this example will look for a window with the instance <code>sublime_text</code> and focus it if it exist, <em>minimize</em> it if it already is focused and run the command: <code>subl</code> if it doesn&rsquo;t exist.</p>
+
+<h2 id="dependencies">dependencies</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left"><a href="https://budrich.github.io/i3ass/i3get">i3get</a></th>
+<th align="left">to identify and the terminal the floating state of current window</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<h2 id="links">links</h2>
+
+<p><a href="https://www.reddit.com/r/i3wm/comments/6x0p0q/oc_i3run/">/r/i3wm</a></p>
+
 <hr>
 
 
-<div class="highlight"><pre>i3wm.act:       blu
-i3wm.ina:       blk
-i3wm.red:       red2
-i3wm.fnt:       fnt1
+<div class="highlight"><pre><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># i3run </span>
+<span class="c1"># run, raise or minimize a program depending on its state.</span>
+<span class="c1"># </span>
+<span class="c1"># https://www.reddit.com/r/i3wm/comments/6x0p0q/oc_i3run/</span>
+<span class="c1"># https://gist.github.com/budRich/8810a88a5a24080f4c499c65da76853b</span>
+<span class="c1"># </span>
+<span class="c1"># if target window doesn&#39;t exist, a given command is launched.</span>
+<span class="c1"># if target window is on another workspace, it is moved to current</span>
+<span class="c1"># workspace. If target window doesn&#39;t have focus it will be given focus.</span>
+<span class="c1"># If target window has focus it will be sent to the scratchpad.</span>
+<span class="c1"># </span>
+<span class="c1"># This script is a demo to show some usage of another script i made,</span>
+<span class="c1"># i3get. But it is a usable demo. I hope you like it! </span>
+<span class="c1"># May the tiles be with you // budRich 2017</span>
+<span class="c1"># </span>
+<span class="c1"># usage:</span>
+<span class="c1"># run i3run with ONE of the following options to define target window:</span>
+<span class="c1"># -c CLASS, -i INSTANCE, -t TITLE</span>
+<span class="c1"># the last option you should include is: -e COMMAND</span>
+<span class="c1"># It is important that -e COMMAND is last of the options.</span>
+<span class="c1"># </span>
+<span class="c1"># example:</span>
+<span class="c1"># i3run -i sublime_text -e subl</span>
+<span class="c1"># bindsym Mod4+s exec --no-startup-id exec i3run -i sublime_text -e subl</span>
+<span class="c1"># </span>
+<span class="c1"># this example will look for a window with the instance sublime_text and</span>
+<span class="c1"># focus it if it exist, minimize it if it already is focused and run the </span>
+<span class="c1"># command: subl if it doesn&#39;t exist.</span>
+
+<span class="c1"># i3get is required for this script to work.</span>
+<span class="c1"># https://www.reddit.com/r/i3wm/comments/6wyarw/oc_i3get/</span>
+<span class="nv">I3GETPATH</span><span class="o">=</span>$HOME/src/i3get
+
+<span class="c1"># the options and its arguments is identical to what we are passing</span>
+<span class="c1"># to i3get later. So we store them in a array: acri for convenience.</span>
+
+<span class="k">while</span> <span class="nb">getopts</span> :c:i:t: option
+<span class="k">do</span>
+  <span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">option</span><span class="si">}</span><span class="s2">&quot;</span> in
+    i<span class="o">)</span> <span class="nv">acri</span><span class="o">=(</span><span class="s2">&quot;-i&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span> <span class="p">;;</span>
+    c<span class="o">)</span> <span class="nv">acri</span><span class="o">=(</span><span class="s2">&quot;-c&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span> <span class="p">;;</span>
+    t<span class="o">)</span> <span class="nv">acri</span><span class="o">=(</span><span class="s2">&quot;-t&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span> <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">done</span>
+
+<span class="c1"># the -e option is handled in a special way, since it might contain</span>
+<span class="c1"># more than one word. This is also the reason we want it as the last option.</span>
+<span class="c1"># with these line the whole command after -e is stored in command.</span>
+<span class="nb">shift</span> <span class="k">$((</span><span class="o">--</span>OPTIND<span class="k">))</span>
+<span class="nv">command</span><span class="o">=</span><span class="si">${</span><span class="p">@</span><span class="si">}</span>
+
+<span class="c1"># lets get the con_id of the currently active window and the current workspace.</span>
+<span class="c1"># we store the results in an array. active window is current[0] and active </span>
+<span class="c1"># workspace is current[1]</span>
+<span class="nv">current</span><span class="o">=(</span><span class="k">$(</span><span class="si">${</span><span class="nv">I3GETPATH</span><span class="si">}</span> -r nw<span class="k">)</span><span class="o">)</span>
+
+<span class="c1"># check what target window is up to:</span>
+<span class="nv">target</span><span class="o">=(</span><span class="k">$(</span><span class="si">${</span><span class="nv">I3GETPATH</span><span class="si">}</span> <span class="si">${</span><span class="nv">acri</span><span class="p">[@]</span><span class="si">}</span> -r nwf<span class="k">)</span><span class="o">)</span>
+
+<span class="c1"># perform action depending on results</span>
+
+<span class="c1"># if window doesn&#39;t exist, launch the command.</span>
+<span class="c1"># use i3get with -y (synch) option, to catch the con_id of the new window.</span>
+<span class="k">if</span> <span class="o">[[</span> -z <span class="si">${</span><span class="nv">target</span><span class="p">[0]</span><span class="si">}</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="si">${</span><span class="nv">command</span><span class="si">}</span> &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span> 
+  <span class="nv">target</span><span class="o">=(</span><span class="k">$(</span><span class="si">${</span><span class="nv">I3GETPATH</span><span class="si">}</span> <span class="si">${</span><span class="nv">acri</span><span class="p">[@]</span><span class="si">}</span> -y -r nw<span class="k">)</span><span class="o">)</span>
+<span class="k">fi</span>
+
+<span class="c1"># if workspace of target is not equal to current workspace.</span>
+<span class="c1"># send target to current workspace.</span>
+<span class="c1"># by adding &gt; /dev/null 2&gt;&amp;1 &amp; ,we make sure we don&#39;t get annyoing</span>
+<span class="c1"># output from i3-msg in our buffer, we direct output to /dev/null instead.</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="si">${</span><span class="nv">current</span><span class="p">[1]</span><span class="si">}</span> !<span class="o">=</span> <span class="si">${</span><span class="nv">target</span><span class="p">[1]</span><span class="si">}</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nv">mrk</span><span class="o">=</span><span class="k">$(</span><span class="si">${</span><span class="nv">I3GETPATH</span><span class="si">}</span> <span class="si">${</span><span class="nv">acri</span><span class="p">[@]</span><span class="si">}</span> -r m<span class="k">)</span>
+  <span class="k">if</span> <span class="o">[[</span> -n $mrk <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">mrk</span><span class="o">=</span><span class="si">${</span><span class="nv">mrk</span><span class="p">:</span><span class="nv">2</span><span class="k">:-</span><span class="nv">2</span><span class="si">}</span>
+    <span class="nv">ofs</span><span class="o">=</span><span class="si">${</span><span class="nv">mrk</span><span class="p">%%</span><span class="s1">&#39;-&#39;</span><span class="p">*</span><span class="si">}</span>
+    <span class="o">[[</span> $<span class="nv">ofs</span> <span class="o">=</span> <span class="s1">&#39;f&#39;</span> <span class="o">]]</span> <span class="se">\</span>
+      <span class="o">&amp;&amp;</span> <span class="nv">fs</span><span class="o">=</span><span class="nb">enable</span> <span class="o">||</span> <span class="nv">fs</span><span class="o">=</span>disable
+  <span class="k">else</span>
+    <span class="o">[[</span> <span class="si">${</span><span class="nv">target</span><span class="p">[2]#*_</span><span class="si">}</span> <span class="o">=</span> <span class="s1">&#39;on&quot;&#39;</span> <span class="o">]]</span> <span class="se">\</span>
+      <span class="o">&amp;&amp;</span> <span class="nv">fs</span><span class="o">=</span><span class="nb">enable</span> <span class="o">||</span> <span class="nv">fs</span><span class="o">=</span>disable
+  <span class="k">fi</span>
+  
+  i3-msg <span class="s2">&quot;[con_id=</span><span class="si">${</span><span class="nv">target</span><span class="p">[0]</span><span class="si">}</span><span class="s2">]&quot;</span> <span class="se">\</span>
+    move to workspace <span class="si">${</span><span class="nv">current</span><span class="p">[1]</span><span class="si">}</span>, <span class="se">\</span>
+    floating <span class="nv">$f</span>s &gt; /dev/null 2&gt;<span class="p">&amp;</span>1
+<span class="k">fi</span>
+
+<span class="c1"># if target window is active (current), send it to the scratchpad.</span>
+<span class="c1"># else focus target window.</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="si">${</span><span class="nv">current</span><span class="p">[0]</span><span class="si">}</span> <span class="o">=</span> <span class="si">${</span><span class="nv">target</span><span class="p">[0]</span><span class="si">}</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="o">[[</span> <span class="si">${</span><span class="nv">target</span><span class="p">[2]#*_</span><span class="si">}</span> !<span class="o">=</span> <span class="s1">&#39;on&quot;&#39;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">fs</span><span class="o">=</span>t <span class="o">||</span> <span class="nv">fs</span><span class="o">=</span>f
+  i3-msg <span class="s2">&quot;[con_id=</span><span class="si">${</span><span class="nv">target</span><span class="p">[0]</span><span class="si">}</span><span class="s2">]&quot;</span> <span class="se">\</span>
+  mark <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">s-</span><span class="si">${</span><span class="nv">target</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span>, <span class="se">\</span>
+  move scratchpad &gt; /dev/null 2&gt;<span class="p">&amp;</span>1
+<span class="k">else</span>
+  i3-msg <span class="s2">&quot;[con_id=</span><span class="si">${</span><span class="nv">target</span><span class="p">[0]</span><span class="si">}</span><span class="s2">]&quot;</span> focus &gt; /dev/null 2&gt;<span class="p">&amp;</span>1
+<span class="k">fi</span>
 </pre></div>
 <hr>
 

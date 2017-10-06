@@ -70,27 +70,28 @@ i3-gaps i3-gaps is a fork of i3 developed by Airblader who happens to be one of 
     </item>
     
     <item>
+      <title>i3_setup</title>
+      <link>https://budrich.github.io/blog/i3_setup/</link>
+      <pubDate>Mon, 25 Sep 2017 17:17:10 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/blog/i3_setup/</guid>
+      <description>These are some of my personal preferences and thoughts on how to configure i3. Read the official userguide often to see what options you got. I have left out a lot of functionality in my config that i don&amp;rsquo;t use.
+Your config file can be located at different places depending on how you installed i3.
+variables the first line of the default config file looks like this:
+set $mod Mod4</description>
+    </item>
+    
+    <item>
       <title>font_rendering</title>
       <link>https://budrich.github.io/blog/font_rendering/</link>
       <pubDate>Mon, 25 Sep 2017 17:15:34 +0200</pubDate>
       
       <guid>https://budrich.github.io/blog/font_rendering/</guid>
-      <description>It is easy to get used to bad font rendering. But there are some simple steps one can take to get great looking fonts on *GNU/*Linux.
+      <description>It is easy to get used to bad font rendering. But there are some simple steps one can take to get great looking fonts on GNU/Linux.
 Below is a summary of an article on binarytides, with some spice.
 download the following fonts from
 http://www.google.com/fonts/
- Droid Sans Droid Sans Mono Droid Serif Noto Sans Noto Serif Open Sans  Unzip &amp;lsquo;em and place them in ~/.fonts Download and place this .</description>
-    </item>
-    
-    <item>
-      <title>dmenu</title>
-      <link>https://budrich.github.io/blog/dmenu/</link>
-      <pubDate>Mon, 25 Sep 2017 17:14:40 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/blog/dmenu/</guid>
-      <description>dmenu is one of my favorite tools. It is a very simple program that displays a menu. It is often used as a lightweight launcher. But I&amp;rsquo;ve found that it is also the most efficient way to send user input to shell scripts, without having the user using a clumsy terminal command.
-It is maintained by suckless, a group that have many interesting tools, programs and ideas.
-I often use dmenu with my own scripts, and will describe how, in future articles.</description>
+ Droid Sans Droid Sans Mono Droid Serif Noto Sans Noto Serif Open Sans  Unzip &amp;lsquo;em and place them in ~/.fonts. Download and place this: .</description>
     </item>
     
   </channel>

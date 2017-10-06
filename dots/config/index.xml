@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>user-dirs</title>
+      <link>https://budrich.github.io/dots/config/user-dirs/</link>
+      <pubDate>Fri, 06 Oct 2017 17:34:09 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/user-dirs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>compton</title>
       <link>https://budrich.github.io/dots/config/compton/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:47 +0200</pubDate>

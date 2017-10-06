@@ -8,7 +8,7 @@
 
 <meta name="description" content="">
 
-<title>i3wm</title>
+<title>i3gw</title>
 <meta name="generator" content="Hugo 0.29" />
 <link  href="https://budrich.github.io/stylesheets/styles.css" rel="stylesheet" type="text/css">
 
@@ -319,6 +319,8 @@
           ZgotmplZ
           ZgotmplZ
           
+            checked
+          
 
           />
           
@@ -354,6 +356,8 @@
                 <li>
                   <a href="https://budrich.github.io/i3ass/i3gw/">
                   <span class="glyphicon glyphicon-file"></span><span
+                    
+                      class="active-page"
                     
                   >i3gw</span>
                   </a>
@@ -400,8 +404,6 @@
           ZgotmplZ
           ZgotmplZ
           ZgotmplZ
-          
-            checked
           
 
           />
@@ -527,8 +529,6 @@
           ZgotmplZ
           ZgotmplZ
           
-            checked
-          
 
           />
           
@@ -563,8 +563,6 @@
                 <li>
                   <a href="https://budrich.github.io/dots/xres/i3wm/">
                   <span class="glyphicon glyphicon-file"></span><span
-                    
-                      class="active-page"
                     
                   >i3wm</span>
                   </a>
@@ -798,11 +796,10 @@
 
           
           <div class="postquote">
-Coffee is a way of 
-stealing time that 
-should by rights belong 
-to your older self.
-— Terry Pratchett</div>
+If you can't beat them, 
+arrange to have them 
+beaten.
+— George Carlin</div>
 
 
           <hr>
@@ -824,27 +821,91 @@ to your older self.
 <article>
 <div class="topblock">
 <pre class="lolban">
-<span class="ef118"> ██ </span><span class="ef154"> ████                        </span>
-<span class="ef154">░░  █░░░ █              </span><span class="ef148">    </span><span class="ef184">     </span>
-<span class="ef154"> ██░    ░█ ███</span><span class="ef148">    </span><span class="ef184"> ██ ██████████ </span>
-<span class="ef154">░██ </span><span class="ef148">  ██</span><span class="ef184">█ ░░██  █ ░██░░██░░██░░██</span>
-<span class="ef184">░██  ░░░ █ ░██ ███░██ ░██ ░██ ░██</span>
-<span class="ef184">░██ █   ░█ ░████░████ ░█</span><span class="ef178">█ ░█</span><span class="ef214">█ ░██</span>
-<span class="ef184">░██░ ████  ███</span><span class="ef178">░ ░░</span><span class="ef214">░██ ███ ░██ ░██</span>
-<span class="ef184">░░  </span><span class="ef178">░░░░</span><span class="ef214">  ░░░    ░░░ ░░░  ░░  ░░ </span>
+<span class="ef214"> ██  ████ </span><span class="ef208">                   </span>
+<span class="ef208">░░  █░░░ █  █████            </span>
+<span class="ef208"> ██░    ░█ ██░░░██ ███</span><span class="ef209">  </span><span class="ef203">   ██</span>
+<span class="ef208">░██   ███ ░█</span><span class="ef209">█ </span><span class="ef203"> ░██░░██  █ ░██</span>
+<span class="ef208">░█</span><span class="ef209">█ </span><span class="ef203"> ░░░ █░░██████ ░██ ███░██</span>
+<span class="ef203">░██ █   ░█ ░░░░░██ ░████░████</span>
+<span class="ef203">░██░ ████   █████  ██</span><span class="ef204">█░ </span><span class="ef198">░░░██</span>
+<span class="ef203">░░  ░░░░   </span><span class="ef204">░░░</span><span class="ef198">░░  ░░░    ░░░ </span>
 
 </pre>
 
-<h6>Published 09-22-2017 16:37:40</h6></div>
+<h6>Published 09-20-2017 22:24:23</h6></div>
 
     
+
+<p>wrapper for the ghost window function in <em>i3wm</em></p>
+
+<p><code>i3-msg</code> has an undocumented function (open) that creates empty containers, or as I call them: ghosts. Since these empty containers doesn&rsquo;t contain any windows
+there is no instance/class/title to identify them, making it difficult to control them. They do however have a <code>con_id</code> and I found the easiest way to keep track of the ghosts is to mark them. That is what this script does, it creates a ghost get its con_id and mark it.</p>
+
+<h2 id="usage">usage</h2>
+
+<p><code>i3gw MARK</code></p>
+
+<h2 id="example">example</h2>
+
+<p><code>i3gw casper</code></p>
+
+<p>this will create a ghost marked casper, you can perform any action
+you can perform on a regular container.</p>
+<div class="highlight"><pre>i3-msg [con_mark=casper] move to workspace 2 
+i3-msg [con_mark=casper] split v  
+i3-msg [con_mark=casper] layout tabbed  
+i3-msg [con_mark=casper] kill  
+</pre></div>
+
+<p>the last example (<em>kill</em>), destroys the container.</p>
+
+<hr />
+
+<p>In the screenshot below, the windows to the right are tiled, and a ghostwindow is tiled on the right half of the screen. The other windows are floating.</p>
+
+<p><a href="(/img/org/ss-i3gw1.png)"><img src="https://budrich.github.io/img/awd/ss-i3gw1.png" alt="i3gw in action" /></a></p>
+
 <hr>
 
 
-<div class="highlight"><pre>i3wm.act:       blu
-i3wm.ina:       blk
-i3wm.red:       red2
-i3wm.fnt:       fnt1
+<div class="highlight"><pre><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># i3gw - &quot;ghost window&quot; wrapper for i3</span>
+<span class="c1"># ctrl+c, ctrl+v by budRich 2017</span>
+
+<span class="c1"># https://www.reddit.com/r/i3wm/comments/6x5vgp/oc_i3gw/</span>
+<span class="c1"># https://gist.github.com/budRich/d09cbfd07ffdc57680fbc51ffff3687b</span>
+
+<span class="c1"># i3-msg has an undocumented function (open) that creates</span>
+<span class="c1"># empty containers, or as I call them: ghosts.</span>
+<span class="c1"># Since these empty containers doesn&#39;t contain any windows</span>
+<span class="c1"># there is no instance/class/title to identify them, making</span>
+<span class="c1"># it difficult to control them. They do however have a con_id and</span>
+<span class="c1"># I found the easiest way to keep track of the ghosts is to</span>
+<span class="c1"># mark them. That is what this script does, it creates a ghost</span>
+<span class="c1"># get its con_id and mark it.</span>
+
+<span class="c1"># usage:</span>
+<span class="c1"># i3gw MARK</span>
+
+<span class="c1"># example:</span>
+<span class="c1"># i3gw casper</span>
+
+<span class="c1"># this will create a ghost marked casper, you can perform any action</span>
+<span class="c1"># you can perform on a regular container.</span>
+
+<span class="c1"># example:</span>
+<span class="c1"># i3-msg [con_mark=casper] move to workspace 2</span>
+<span class="c1"># i3-msg [con_mark=casper] split v</span>
+<span class="c1"># i3-msg [con_mark=casper] layout tabbed</span>
+<span class="c1"># i3-msg [con_mark=casper] kill</span>
+
+<span class="c1"># the last example (kill), destroys the container.</span>
+
+<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="p">:?</span><span class="s2">&quot;usage: i3gw MARK, you didn&#39;t request a mark.&quot;</span><span class="si">}</span>
+
+<span class="nv">w</span><span class="o">=</span><span class="k">$(</span>i3-msg open<span class="k">)</span>
+i3-msg <span class="o">[</span><span class="nv">con_id</span><span class="o">=</span><span class="si">${</span><span class="nv">w</span><span class="p">:</span><span class="nv">22</span><span class="k">:-</span><span class="nv">2</span><span class="si">}</span><span class="o">]</span> floating disable, mark $name
 </pre></div>
 <hr>
 

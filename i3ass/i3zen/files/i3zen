@@ -16,7 +16,8 @@ I3GW_PATH=$HOME/bin/i3gw   # this script requires i3gw
 # leave it empty if you want the script to use the next empty ws.
 ZEN_WORKSPACE=3
 
-ZEN_SIZE=60 # how many percent of the screenwidth the zen window is
+
+ZEN_SIZE=60 # how may percent of the screenwidth the zen window is
 
 current=($(${I3GET_PATH} -r nwf)) # id,ws and floating state of current window.
 zws=$(${I3GET_PATH} -m centerzen -r w) # check if zen already exist

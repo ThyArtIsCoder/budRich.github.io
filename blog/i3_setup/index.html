@@ -8,7 +8,7 @@
 
 <meta name="description" content="">
 
-<title>i3wm</title>
+<title>i3_setup</title>
 <meta name="generator" content="Hugo 0.29" />
 <link  href="https://budrich.github.io/stylesheets/styles.css" rel="stylesheet" type="text/css">
 
@@ -17,6 +17,9 @@
 
 
 
+
+  
+  
 
 <input type="checkbox" id="sidebar" name="sidebar" class="sidebar-checkbox"/>
 <div class="sidebar">
@@ -92,6 +95,8 @@
                         
                         <li><li>
                         <input type="checkbox" id="September" 
+                        
+                          checked
                          />
                         <label for="September">September</label><ul>
                         
@@ -153,7 +158,9 @@
                       
                       
                       
-                        <li class="post-in-tree"><a href="https://budrich.github.io/blog/i3_setup/"><span class="tree-date">25</span>|<span>i3_setup</span></a></li>
+                        <li class="post-in-tree"><a href="https://budrich.github.io/blog/i3_setup/"><span class="tree-date">25</span>|<span
+                          class="active-page"
+                        >i3_setup</span></a></li>
                       
                     
                   
@@ -401,8 +408,6 @@
           ZgotmplZ
           ZgotmplZ
           
-            checked
-          
 
           />
           
@@ -527,8 +532,6 @@
           ZgotmplZ
           ZgotmplZ
           
-            checked
-          
 
           />
           
@@ -563,8 +566,6 @@
                 <li>
                   <a href="https://budrich.github.io/dots/xres/i3wm/">
                   <span class="glyphicon glyphicon-file"></span><span
-                    
-                      class="active-page"
                     
                   >i3wm</span>
                   </a>
@@ -798,11 +799,12 @@
 
           
           <div class="postquote">
-Coffee is a way of 
-stealing time that 
-should by rights belong 
-to your older self.
-— Terry Pratchett</div>
+A reader lives a 
+thousand lives before he 
+dies, said Jojen. The 
+man who never reads 
+lives only one.
+— George R.R. Martin</div>
 
 
           <hr>
@@ -822,33 +824,220 @@ to your older self.
 
 
 <article>
-<div class="topblock">
-<pre class="lolban">
-<span class="ef118"> ██ </span><span class="ef154"> ████                        </span>
-<span class="ef154">░░  █░░░ █              </span><span class="ef148">    </span><span class="ef184">     </span>
-<span class="ef154"> ██░    ░█ ███</span><span class="ef148">    </span><span class="ef184"> ██ ██████████ </span>
-<span class="ef154">░██ </span><span class="ef148">  ██</span><span class="ef184">█ ░░██  █ ░██░░██░░██░░██</span>
-<span class="ef184">░██  ░░░ █ ░██ ███░██ ░██ ░██ ░██</span>
-<span class="ef184">░██ █   ░█ ░████░████ ░█</span><span class="ef178">█ ░█</span><span class="ef214">█ ░██</span>
-<span class="ef184">░██░ ████  ███</span><span class="ef178">░ ░░</span><span class="ef214">░██ ███ ░██ ░██</span>
-<span class="ef184">░░  </span><span class="ef178">░░░░</span><span class="ef214">  ░░░    ░░░ ░░░  ░░  ░░ </span>
+  <div class="topblock">
+    <pre class="lolban">
+<span class="ef208"> ██  ████ </span>
+<span class="ef208">░░  █░░░ █</span>
+<span class="ef208"> ██░    ░█</span>
+<span class="ef208">░█</span><span class="ef209">█ </span><span class="ef203">  ███ </span>
+<span class="ef203">░██  ░░░ █</span>
+<span class="ef203">░██ █   ░█</span>
+<span class="ef203">░██░ ████ </span>
+<span class="ef203">░</span><span class="ef204">░  </span><span class="ef198">░░░░  </span>
+
+<span class="ef198">               </span><span class="ef199">    ██                  </span>
+<span class="ef198">     </span><span class="ef199">             ░██           ███</span><span class="ef163">███ </span>
+<span class="ef199">  ██████  █████  ██████ █</span><span class="ef163">█   </span><span class="ef164">██░██░░░██</span>
+<span class="ef199"> ██░░░░  ██░░░█</span><span class="ef163">█░░░</span><span class="ef164">██░ ░██  ░██░██  ░██</span>
+<span class="ef199">░░███</span><span class="ef163">██ ░</span><span class="ef164">███████  ░██  ░██  ░██░██████ </span>
+<span class="ef164"> ░░░░░██░██░░░░   ░██  ░██  ░██░██░</span><span class="ef128">░░  </span>
+<span class="ef164"> ██████ ░░██████  ░░██ ░░</span><span class="ef128">████</span><span class="ef129">██░██     </span>
+<span class="ef164">░░░░░░   ░░░░░░</span><span class="ef128">    </span><span class="ef129">░░   ░░░░░░ ░░      </span>
 
 </pre>
 
-<h6>Published 09-22-2017 16:37:40</h6></div>
+    <h6>
+      25 Sep 2017 17:17 | budRich 
+      | 
+          i3
+        
+          rice
+        
+          guide
+        
+          dotfiles
+        
+    </h6>
+  </div>
+  
 
-    
-<hr>
+<p>These are some of my personal preferences and thoughts on how to configure i3. Read the official <a href="https://i3wm.org/docs/userguide.html">userguide</a> often to see what options you got. I have left out a lot of functionality in my config that i don&rsquo;t use.</p>
 
+<p>Your config file can be located at <a href="https://i3wm.org/docs/userguide.html#configuring">different places</a> depending on how you installed i3.</p>
 
-<div class="highlight"><pre>i3wm.act:       blu
-i3wm.ina:       blk
-i3wm.red:       red2
-i3wm.fnt:       fnt1
+<h2 id="variables">variables</h2>
+
+<p>the first line of the default config file looks like this:</p>
+
+<p><code>set $mod Mod4</code></p>
+
+<p>It creates a variable called $mod, that contains the value Mod4. Variables are your friends. Now you don&rsquo;t have to remember which Mod you have set and can create key bindings/hotkeys/shortcuts like this:</p>
+
+<p><code>bindsym $mod+Return exec --no-startup-id exec urxvtc</code></p>
+
+<p>But variables can be even more powerful. I have this at the beginning of my configfile:</p>
+
+<p><code>set $win bindsym Mod4</code><br />
+<code>set $exe exec --no-startup-id exec</code></p>
+
+<p>With these variables, the same binding can be written like this:</p>
+
+<p><code>$win+Return $exe urxvtc</code></p>
+
+<p>You will most likely make a lot of similar program-launching-key-bindings. With this method i think the config becomes easier to both read and write.</p>
+
+<p>Below are all my set variables. (Some of them are dependent on external applications, but you get the idea.)</p>
+<div class="highlight"><pre><span class="x">set </span><span class="p">$</span><span class="nv">exe</span><span class="x"> exec --no-startup-id exec</span>
+
+<span class="x">set </span><span class="p">$</span><span class="nv">left1</span><span class="x">   y</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">down1</span><span class="x">   u</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">up1</span><span class="x">     i</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">right1</span><span class="x">  o</span>
+
+<span class="x">set </span><span class="p">$</span><span class="nv">left2</span><span class="x">   h</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">down2</span><span class="x">   j</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">up2</span><span class="x">     k</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">right2</span><span class="x">  l</span>
+
+<span class="x">set </span><span class="p">$</span><span class="nv">left3</span><span class="x">   n</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">down3</span><span class="x">   m</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">up3</span><span class="x">     comma</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">right3</span><span class="x">  period</span>
+
+<span class="x">set </span><span class="p">$</span><span class="nv">fntsz</span><span class="x"> 8</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">browser</span><span class="x"> -c Vivaldi-stable -e vivaldi</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">editor</span><span class="x"> -i sublime_text -e subl</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">filemanager</span><span class="x"> -i spacefm -e spacefm </span>
+<span class="x">set </span><span class="p">$</span><span class="nv">bigsize</span><span class="x">   10 px or 10 ppt</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">smallsize</span><span class="x"> 3 px or 3 ppt</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">bigmove</span><span class="x">   30 px</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">smallmove</span><span class="x"> 1 px</span>
+
+<span class="x">set </span><span class="p">$</span><span class="nv">alt</span><span class="x"> Mod1</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">win</span><span class="x"> bindsym Mod4</span>
+<span class="x">set </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> floating disable, move to mark</span>
+
+<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">act</span><span class="x"> i3wm.act </span><span class="err">#</span><span class="x">111313</span>
+<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">ina</span><span class="x"> i3wm.ina </span><span class="err">#</span><span class="x">111313</span>
+<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">red</span><span class="x"> i3wm.red </span><span class="cp">#</span><span class="nf">FF0000</span><span class="x"></span>
+<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">fnt</span><span class="x"> i3wm.fnt Terminus</span>
 </pre></div>
-<hr>
+
+<p>The last three variable declarations look different. That&rsquo;s because they are read from <a href="https://budrich.github.io/dots/xresources">.Xresources</a>, it is perfect for colors since you can set colors for all terminals and many (i3, polybar, rofi e.t.c.) other programs in one file.</p>
+
+<p>The rest of your config file will be hotkeys, settings, window rules, mode definitions, bar configuration and programs you want to autostart with i3.</p>
+
+<p>Nothing is mandatory and you can include or exclude whatever you want. Personally i don&rsquo;t use modes or the bar so they are not included in <a href="https://budrich.github.io/dots/config/i3/config">my configfile</a>.</p>
+
+<h2 id="hotkeys">hotkeys</h2>
+
+<p>The number of hotkeys can become quite large over time. Try to have some sort of system to organize them. I have divided my bindings in to different categories:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c1"># panicbuttons</span>
+<span class="c1"># ============</span>
+this is where i put reload, exit, lock, shutdown e.t.c
+Most of these bindings are complex on purpose, so i dont
+use them by mistake.
+
+<span class="c1"># terminals</span>
+<span class="c1"># =========</span>
+i have some different hotkeys to open different kinds of terminals.
+All of these bindings are modifier<span class="o">(</span>s<span class="o">)</span>+Return
+
+<span class="c1"># i3run - sane applaunching for the modern tiler</span>
+<span class="c1"># ==============================================</span>
+i3run<span class="o">(</span>link<span class="o">)</span> is a script i wrote to <span class="nb">help</span> launching programs with i3. All hotkeys in this category uses i3run and opens a new program in a new window. Most of them are $win+<span class="o">[</span>NUMBER<span class="o">]</span>.
+
+Switching apps is, in my <span class="k">case</span>, the most used hotkeys, and i find it easiest to remember the programs when they are bound to a number. First i used $win+f firefox , $win+s sublime, and so on. But i found this being confusing and inconvenient. Its hard to remeber which letters that are free when adding new hotkeys, and it becomes ugly <span class="k">if</span> you switch browser from firefox to chrome <span class="k">for</span> example. So having the browser on $win+2 and a variable, <span class="nv">$b</span>rowser, <span class="nb">set</span> to my choise at the top of the script makes more sense to me. 
+
+<span class="c1"># barmenu</span>
+<span class="c1"># =======</span>
+here i put bindings that launches menus or manipulates the bar <span class="o">(</span>toggling the bar or the tray.<span class="o">)</span> It made sense to combine these two since most of my menus are dmenus that appears over the bar when launched.
+
+<span class="c1"># media</span>
+<span class="c1"># =====</span>
+bindings to control music, volume e.t.c
+
+<span class="c1"># upload content</span>
+<span class="c1"># ==============</span>
+here is hotkeys to make screenshots/casts or create <span class="s1">&#39;pastes&#39;</span> of selected text.
+
+<span class="c1"># wallpapermanagement</span>
+<span class="c1"># ===================</span>
+keys to manipulate the wallpaper
+
+<span class="c1"># mousekeys</span>
+<span class="c1"># =========</span>
+keys related to the mouse
+
+<span class="c1"># debugging</span>
+<span class="c1"># =========</span>
+dumping the layout, and getting other debuginfo
+
+<span class="c1"># moving the size of the focus</span>
+<span class="c1"># ============================</span>
+keys to move, resize or focus windows. I have this logic:
+H,Y,N <span class="o">=</span> Left <span class="p">;</span> shrink width 
+J,U,M <span class="o">=</span> Down <span class="p">;</span> shrink height
+K,I,<span class="o">(</span>comma<span class="o">)</span> <span class="o">=</span> Right <span class="p">;</span> grow width
+L,O,<span class="o">(</span>period<span class="o">)</span> <span class="o">=</span> Up <span class="p">;</span> grow height
+
+It<span class="s1">&#39;s inspired by the layout of the arrowkeys and the fact that &#39;</span>Up<span class="err">&#39;</span> is the least used direction. I put resize action on the home row, because it is the most used action. Focusing is 9/10 <span class="nb">times</span> made by appspecific hotkey bound to i3run.
+
+<span class="c1"># workspace stuff</span>
+<span class="c1"># ===============</span>
+I only have <span class="m">3</span> workspace hotkeys set, because i seldom use more <span class="k">then</span> one workspace. This is also the reason why I have given the default workspace hotkeys to appswitching, and use $win+F1/F2/F3/F12 <span class="k">for</span> the workspaces.
+
+<span class="c1"># misc</span>
+<span class="c1"># ====</span>
+Other hotkeys.
+</code></pre></div>
+
+<p>You can write comments in your config by prefixing the comment with a hash <code>#</code>.</p>
+
+<h2 id="appearance">appearance</h2>
+
+<p>Here are some thoughts on configuring the appearance. I have a script that displays the window title in my polybar, so I doesn&rsquo;t really need the titlebar. But it can be nice to have a titlebar on floating windows, so you can drag them without holding down <code>Mod1</code>.</p>
+
+<p>To keep things as minimal as possible, I have set the text color to the same as the border color. This method might however affect the looks of your bar in a negative way. And I recommend that you use <a href="https://i3wm.org/docs/userguide.html#pango_markup">Window title format</a> instead.</p>
+
+<p>By default I have all my windows appear floating, and then I define windows that i want to be tiled (and moved to a mark, <code>$fdmtm</code> (I may or may not explain this further in the future)).</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c1"># appearance</span>
+<span class="c1"># ==========</span>
+for_window <span class="o">[</span>floating<span class="o">]</span> border normal 1
+for_window <span class="o">[</span>tiling<span class="o">]</span> border pixel 1
+
+<span class="c1"># widow Colors           border  bg     text    indic</span>
+client.focused           <span class="nv">$ac</span>t    <span class="nv">$ac</span>t   <span class="nv">$ac</span>t    <span class="nv">$ac</span>t
+client.focused_inactive  $ina    $ina   $ina    $ina
+client.unfocused         $ina    $ina   $ina    $ina
+client.urgent            $red    $red   $red    $red
+
+<span class="c1"># window rules</span>
+<span class="c1"># ============</span>
+for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;^.*&quot;</span><span class="o">]</span> floating <span class="nb">enable</span>
+
+for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;Vivaldi-stable&quot;</span><span class="o">]</span>  <span class="nv">$fd</span>mtm master
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;irssi&quot;</span><span class="o">]</span>        <span class="nv">$fd</span>mtm sidemain
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;ncmpcpp&quot;</span><span class="o">]</span>      <span class="nv">$fd</span>mtm sidetop
+
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;floatterm&quot;</span><span class="o">]</span> resize <span class="nb">set</span> <span class="m">300</span> px <span class="m">150</span> px
+
+no_focus   <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;keydisplay&quot;</span><span class="o">]</span>
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;keydisplay&quot;</span><span class="o">]</span> sticky enable, border none
+
+for_window <span class="o">[</span><span class="nv">window_type</span><span class="o">=</span><span class="s2">&quot;dialog&quot;</span><span class="o">]</span>  floating <span class="nb">enable</span>
+for_window <span class="o">[</span><span class="nv">window_type</span><span class="o">=</span><span class="s2">&quot;splash&quot;</span><span class="o">]</span>  floating <span class="nb">enable</span>
+for_window <span class="o">[</span><span class="nv">window_type</span><span class="o">=</span><span class="s2">&quot;utility&quot;</span><span class="o">]</span> floating <span class="nb">enable</span>
+</code></pre></div>
+
+<p>At the bottom of <a href="https://budrich.github.io/dots/config/i3/config">my config</a> I have defined programs I want to autoexecute with i3. Which at the moment is none, I have put that stuff in <a href="https://budrich.github.io/dots/xinitrc">.xinitrc</a> instead.</p>
+
+<p>You read all this? If so it&rsquo;s time you shave that neckbeard and make some descent <a href="https://www.reddit.com/r/unixporn/">rice</a>!</p>
 
 
+  <hr>
+
+  
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://budrich.github.io/dots/config/user-dirs/</loc>
+    <lastmod>2017-10-06T17:34:09+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/abouts/cv_en/</loc>
     <lastmod>2017-10-04T19:50:58+02:00</lastmod>
   </url>
@@ -48,13 +53,13 @@
   </url>
   
   <url>
-    <loc>https://budrich.github.io/blog/font_rendering/</loc>
-    <lastmod>2017-09-25T17:15:34+02:00</lastmod>
+    <loc>https://budrich.github.io/blog/i3_setup/</loc>
+    <lastmod>2017-09-25T17:17:10+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://budrich.github.io/blog/dmenu/</loc>
-    <lastmod>2017-09-25T17:14:40+02:00</lastmod>
+    <loc>https://budrich.github.io/blog/font_rendering/</loc>
+    <lastmod>2017-09-25T17:15:34+02:00</lastmod>
   </url>
   
   <url>
@@ -193,6 +198,41 @@
   </url>
   
   <url>
+    <loc>https://budrich.github.io/scripts/igi/</loc>
+    <lastmod>2017-09-20T22:40:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3zen/</loc>
+    <lastmod>2017-09-20T22:38:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3run/</loc>
+    <lastmod>2017-09-20T22:36:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3mtm/</loc>
+    <lastmod>2017-09-20T22:32:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3gw/</loc>
+    <lastmod>2017-09-20T22:24:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3get/</loc>
+    <lastmod>2017-09-20T22:22:45+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3cast/</loc>
+    <lastmod>2017-09-20T22:20:17+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/abouts/</loc>
     <lastmod>2017-09-20T15:44:11+02:00</lastmod>
   </url>
@@ -213,8 +253,13 @@
   </url>
   
   <url>
+    <loc>https://budrich.github.io/scripts/subact/</loc>
+    <lastmod>2017-09-20T15:44:11+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/</loc>
-    <lastmod>2017-10-04T19:50:58+02:00</lastmod>
+    <lastmod>2017-10-06T17:34:09+02:00</lastmod>
     <priority>0</priority>
   </url>
   

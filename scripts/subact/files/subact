@@ -11,25 +11,14 @@
 # ansi2html
 
 
-REM_ROOT="${HOME}/Dropbox/nixlog"
+REM_ROOT="${HOME}/www"
 FLD_SCRIPTS="scripts"
 FLD_DOTS="dots"
-LOC_SCIRPT_SRC="${HOME}/src"
+LOC_SCIRPT_SRC="${HOME}/bin"
 
-newbanner(){
-  FONT="3d.flf" # figlet font to use
-  # FONT=rustofat.tlf
-  LOLCAT_OPTIONS='-p 10'
-  TOILET_OPTIONS=(-w 170 -f "${FONT}")
-
-  echo '<pre class="lolban">' > ${2}
-
-  echo -e "${1}" | toilet ${TOILET_OPTIONS[@]} \
-                 | lolcat -f ${LOLCAT_OPTIONS} \
-                 | ansi2html.sh --body-only >> ${2}
-
-  echo '</pre>' >> ${2}                 
-}
+FORTUNE_OPTIONS='$HOME/etc/fortunes/budcol'
+TOILET_OPTIONS='-f 3d.flf'
+LOLCAT_OPTIONS='-p 10'
 
 newpost(){
   cd ${REM_ROOT} 
@@ -48,7 +37,8 @@ newpost(){
   # https://stackoverflow.com/a/11245501
   sed -i "/fspath/c\fspath: \"${st}\"" content/${trg_url}.md
   mkdir -p "${trg_lbd}"
-  newbanner "${fo}" "${trg_lbf}"
+  postbanner -t "${TOILET_OPTIONS}" -l "${LOLCAT_OPTIONS}" -o "${trg_lbd}/banner.html" "${fo}"
+  postquote -f "${FORTUNE_OPTIONS}" "${trg_lbd}/quote.html"
 }
 
 if [[ ! -f "${1/'~'/$HOME}" ]]; then
@@ -74,7 +64,6 @@ if [[ $fd = $LOC_SCIRPT_SRC ]]; then
   trg_mdd="${REM_ROOT}/content/${trg}"
   trg_mdf="${trg_mdd}/${fo}.md"
   trg_lbd="${REM_ROOT}/static/${trg}/${fo}"
-  trg_lbf="${trg_lbd}/banner.html"
   trg_fld="${trg_lbd}/files"
   trg_flf="${trg_fld}/${fo}"
 else
@@ -87,24 +76,25 @@ else
   trg_flf="${trg_fld}/${fo}"
 fi
 
-trg_url="${trg_mdd/${REM_ROOT}\/content/}${fo}"
+trg_url="${trg_mdd/${REM_ROOT}\/content/}/${fo}"
 # backup link folder
-trg_dbd="${HOME}/Dropbox${trg_mdd/${REM_ROOT}\/content/}"
-
-
+trg_dbd="${HOME}${trg_mdd/${REM_ROOT}\/content/}"
+trg_dbd="${trg_dbd/scripts/src}"
+trg_dbd="${trg_dbd/dots/dot}"
 
 # create files and links if they don't exist
 [[ ! -f "${trg_mdf}" ]] && newpost
-[[ ! -f "${trg_flf}" ]] && \
+if [[ ! -f "${trg_flf}" ]];then
   mkdir -p "${trg_fld}"
-  ln $fp "${trg_flf}"  
+  # move file from FS to DB
+  mv $fp "${trg_flf}"  
+  # if dot, link back to FS
+  [[ ! $fd = $LOC_SCIRPT_SRC ]] && ln "${trg_flf}" $fp
+  # create links to convenient folders
+  mkdir -p ${trg_dbd}
+  ln ${trg_flf} ${trg_dbd}/${fl}
+fi
 
-# create links for file and md on Dropbox
-mkdir -p ${trg_dbd}
-ln $fp ${trg_dbd}/${fo}
-ln ${trg_mdf} ${trg_dbd}/${fo}.md
-ln ${trg_mdd}/_index.md ${trg_dbd}README.md
-
-# subl "${trg_mdf}"
+subl "${trg_mdf}"
 # vivaldi "127.0.0.1:1313/${trg_url}/"
 
