@@ -10,5 +10,14 @@
 	<atom:link href="https://budrich.github.io/dots/irssi/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>bud</title>
+      <link>https://budrich.github.io/dots/irssi/bud/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:44 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/irssi/bud/</guid>
+      <description>I have used irssi for a long time and I don&amp;rsquo;t think I&amp;rsquo;ll ever switch or finish this theme. I have tried to make it as narrow as possible, kind of how the twitch chats look. With the user name on it&amp;rsquo;s own line above the message.</description>
+    </item>
+    
   </channel>
 </rss>

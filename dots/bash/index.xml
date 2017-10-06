@@ -10,5 +10,60 @@
 	<atom:link href="https://budrich.github.io/dots/bash/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>prompt</title>
+      <link>https://budrich.github.io/dots/bash/prompt/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:39 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/prompt/</guid>
+      <description>My prompt shows the runtime of the last command and a compact CWD (current work directory). The last line of the file:
+printf &#39;\e]710;%s\007&#39; &amp;quot;xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular&amp;quot;
+is a little dirthack™ to make it possible to use Fixedsys in urxvt, read more about how to setup fonts here.</description>
+    </item>
+    
+    <item>
+      <title>func</title>
+      <link>https://budrich.github.io/dots/bash/func/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:37 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/func/</guid>
+      <description>This is the power of the bash shell, you can write small functions to make using the shell easier.
+lb
+I found this one on the LinuxBBQ forums it adds the last command to a logfile. Very handy.
+adda
+Adds a new permanent alias. Example:
+adda dwn cd ~/Downloads
+this will add, alias dwn=&#39;~/Downloads&#39; to ~/.bash/alias and reloads ~/.bashrc so you can use the alias immediately.
+apti/gemi/pipi
+install packages and log package name.</description>
+    </item>
+    
+    <item>
+      <title>misc</title>
+      <link>https://budrich.github.io/dots/bash/misc/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:37 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/misc/</guid>
+      <description>Random options, most from the default .bashrc file.</description>
+    </item>
+    
+    <item>
+      <title>export</title>
+      <link>https://budrich.github.io/dots/bash/export/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/export/</guid>
+      <description>Environment values and shell options</description>
+    </item>
+    
+    <item>
+      <title>alias</title>
+      <link>https://budrich.github.io/dots/bash/alias/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:35 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/alias/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

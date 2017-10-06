@@ -93,15 +93,5 @@ It is maintained by suckless, a group that have many interesting tools, programs
 I often use dmenu with my own scripts, and will describe how, in future articles.</description>
     </item>
     
-    <item>
-      <title>compton_setup</title>
-      <link>https://budrich.github.io/blog/compton_setup/</link>
-      <pubDate>Mon, 25 Sep 2017 17:14:06 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/blog/compton_setup/</guid>
-      <description>compton is a lightweight compositor for X that works really well with i3. A compositor adds some eye-candy like transparency and drop-shadows to the windows. But it also do some anti screen tearing magic and such. The compton setup can however be a bit tricky and it all depends on your own preferences and hardware.
-Below are some snippets from my .compton.conf that is more i3 then hardware related that you might find useful:</description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,10 +1,4 @@
-
-  
-
-  
-
-  
-    <!doctype html>
+<!doctype html>
 <html>
 <head>
     <base href="https://budrich.github.io/">
@@ -14,7 +8,7 @@
 
 <meta name="description" content="">
 
-<title>whoami</title>
+<title>func</title>
 <meta name="generator" content="Hugo 0.29" />
 <link  href="https://budrich.github.io/stylesheets/styles.css" rel="stylesheet" type="text/css">
 
@@ -23,9 +17,6 @@
 
 
 
-
-  
-  
 
 <input type="checkbox" id="sidebar" name="sidebar" class="sidebar-checkbox"/>
 <div class="sidebar">
@@ -328,6 +319,8 @@
           ZgotmplZ
           ZgotmplZ
           
+            checked
+          
 
           />
           
@@ -383,6 +376,8 @@
           ZgotmplZ
           ZgotmplZ
           
+            checked
+          
 
           />
           
@@ -401,6 +396,8 @@
                 <li>
                   <a href="https://budrich.github.io/dots/bash/func/">
                   <span class="glyphicon glyphicon-file"></span><span
+                    
+                      class="active-page"
                     
                   >func</span>
                   </a>
@@ -713,12 +710,11 @@
 
           
           <div class="postquote">
-Steal five dollars and 
-you're a common thief. 
-Steal thousands and 
-you're either the 
-government or a hero.
-— Terry Pratchett</div>
+There is no such thing 
+as a lousy job - only 
+lousy men who don't care 
+to do it.
+— Ayn Rand</div>
 
 
           <hr>
@@ -736,196 +732,123 @@ government or a hero.
 
 
 
-    
-    <article>
-    <div class="topblock">
-    <pre class="lolban">
-<span class="ef199">            ██     </span><span class="ef163">    </span><span class="ef164">                            ██</span>
-<span class="ef199">         </span><span class="ef163">  ░█</span><span class="ef164">█                                  </span><span class="ef128">  ░░ </span>
-<span class="ef163"> ██</span><span class="ef164">█     ██░██       ██████   ██████  </span><span class="ef128"> ████</span><span class="ef129">██████  ██</span>
-<span class="ef164">░░██  █ ░██░██████  ██░░░░██</span><span class="ef128"> ░░░░</span><span class="ef129">░░██ ░░██░░██░░██░██</span>
-<span class="ef164"> ░██ ███░██░██░░░█</span><span class="ef128">█░██ </span><span class="ef129">  ░██  ███████  ░██ ░██ ░██░██</span>
-<span class="ef164"> ░████░█</span><span class="ef128">███░█</span><span class="ef129">█  ░██░██   ░██ ██░░░░██  ░██ </span><span class="ef93">░██ ░██░██</span>
-<span class="ef128"> ██</span><span class="ef129">█░ ░░░██░██  ░██░░██████ ░░███</span><span class="ef93">█████ ███ ░██ ░██░██</span>
-<span class="ef129">░░░    ░░░ ░░   ░░  ░░░</span><span class="ef93">░░░   ░░░░░░░░ ░░░  ░░  ░░ ░░ </span>
+
+<article>
+<div class="topblock">
+<pre class="lolban">
+<span class="ef154">   ████         </span><span class="ef148">    </span><span class="ef184">            </span>
+<span class="ef154">  ░██░</span><span class="ef148">    </span><span class="ef184">                      </span>
+<span class="ef184"> ██████ ██   ██ ███████   █████ </span>
+<span class="ef184">░░░██░ ░██  ░██░░██░░░██ █</span><span class="ef178">█░░░</span><span class="ef214">██</span>
+<span class="ef184">  ░██  ░██  ░██ </span><span class="ef178">░██ </span><span class="ef214"> ░██░██  ░░ </span>
+<span class="ef184">  ░██ </span><span class="ef178"> ░██</span><span class="ef214">  ░██ ░██  ░██░██   ██</span>
+<span class="ef214">  ░██  ░░██████ ███  ░██░░████</span><span class="ef208">█ </span>
+<span class="ef214">  ░░    ░░░░░░ ░░░  </span><span class="ef208"> ░░  ░░░░░  </span>
 
 </pre>
 
-    <h6>Published 10-04-2017 19:50:58</h6></div>
-        <p>My name is Nils. I live in Sweden and I play the blues. I have <a href="https://budrich.github.io/abouts/cv_en">worked the majority of my adult life</a> as a <a href="https://en.wikipedia.org/wiki/Numerical_control">CNC</a>-operator/programmer in the steel industry. As all jobs it has it&rsquo;s pros and cons.</p>
+<h6>Published 09-22-2017 16:37:37</h6></div>
 
-<p>I also made an attempt in the telecom industry, as a technical support agent for <a href="https://www3.lenovo.com">Lenovo</a>.</p>
+    <p>This is the power of the bash shell, you can write small functions to make using the shell easier.</p>
 
-<p>But now I am looking for some other way to earn a living.</p>
+<p><strong>lb</strong><br />
+I found this one on the <a href="https://linuxbbq.org/bbs/viewtopic.php?f=4&amp;t=2076">LinuxBBQ forums</a> it adds the last command to a logfile. Very handy.</p>
 
-<p>I have been very interested in computers ever since I got a C64 back in the 80&rsquo;s. I have no formal computer related education, (except a year studying &ldquo;multimedia design&rdquo; at the millennium turn). I am also interested in information and communication.</p>
+<p><strong>adda</strong><br />
+Adds a new permanent alias. Example:<br />
+<code>adda dwn cd ~/Downloads</code><br />
+this will add, <code>alias dwn='~/Downloads'</code> to <a href="https://budrich.github.io/dots/bash/alias">~/.bash/alias</a> and reloads <a href="https://budrich.github.io/dots/bashrc">~/.bashrc</a> so you can use the alias immediately.</p>
 
-<p>I am going to create and publish content on these topics on this site, <a href="https://github.com/budRich">github</a> and various writing hubs and communities. Maybe it can land me a job or at least some donations to keep me alive.</p>
+<p><strong>apti/gemi/pipi</strong><br />
+install packages and log package name.</p>
 
-<p>If you have some interesting mission for me, don&rsquo;t hesitate to contact me, you can either post a comment directly on this page, make a shout in the <a href="https://gitter.im/budRich-github-io/Lobby#">gitter chatroom</a> or send me a <a href="robstenklippa@gmail.com">e-mail</a>. If the mission is something like a smaller script and I am allowed to publish it, I do it for free or a beer if it is an interesting task.</p>
+<p><strong>mcd</strong><br />
+Classic function that creates a folder and cd into it.</p>
 
-<p>You can view my <a href="https://budrich.github.io/abouts/cv_en">CV here</a>.<br />
-Below are some more random lists:</p>
-
-<p><strong>personality</strong></p>
-
-<ul>
-<li>thinking</li>
-<li>judging</li>
-<li>curious</li>
-<li>creative</li>
-<li>conservative</li>
-<li>calm</li>
-<li>organized</li>
-<li>efficient</li>
-<li>independent</li>
-<li>magic</li>
-</ul>
-
-<p><strong>knowledge</strong></p>
-
-<ul>
-<li>automation</li>
-<li>programming</li>
-<li>machining</li>
-<li>Mc. Guivering</li>
-<li>magic</li>
-</ul>
-
-<p><strong>good stuff</strong></p>
-
-<ul>
-<li>ZZ top</li>
-<li>freedom</li>
-<li>open source</li>
-<li>information</li>
-<li>curb your enthusiasm</li>
-<li>regular Swedish food</li>
-<li>magic</li>
-</ul>
-
-<p><strong>plans</strong></p>
-
-<ul>
-<li>upload everything</li>
-<li>play more guitar</li>
-<li>learn C</li>
-<li>OTG</li>
-</ul>
-
-<p><strong>dreams</strong></p>
-
-<ul>
-<li>wife</li>
-<li>kids</li>
-<li>gold</li>
-</ul>
+<hr>
 
 
-        <div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
+<div class="highlight"><pre><span class="cp"># add last command to logbook . find link linux bbq</span>
+<span class="n">function</span> <span class="nf">lb</span><span class="p">()</span> <span class="p">{</span> <span class="n">fc</span> <span class="o">-</span><span class="n">lnr</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&gt;&gt;</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">bash</span><span class="o">/</span><span class="n">logbook</span> <span class="p">;}</span>
+
+<span class="cp"># prints newest file in dir</span>
+<span class="n">function</span> <span class="nf">lat</span><span class="p">()</span> <span class="p">{</span> <span class="n">ls</span> <span class="o">-</span><span class="n">t</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="mi">1</span> <span class="p">;}</span>
+
+<span class="n">adda</span><span class="p">(){</span>
+  <span class="n">al</span><span class="o">=</span><span class="err">$</span><span class="mi">1</span>
+  <span class="n">shift</span> <span class="mi">1</span>
+  <span class="n">echo</span> <span class="s">&quot;alias $al=&#39;${@}&#39;&quot;</span> <span class="o">&gt;&gt;</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">bash</span><span class="o">/</span><span class="n">alias</span>
+  <span class="p">.</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">bashrc</span>
+<span class="p">}</span>
+
+<span class="cp"># install apt package and add entry to packagelist</span>
+<span class="cp"># find link reddit, unixporn</span>
+<span class="n">apti</span><span class="p">(){</span>
+  <span class="n">local</span> <span class="n">file</span>
+  <span class="k">for</span> <span class="n">file</span> <span class="k">in</span> <span class="s">&quot;$@&quot;</span> <span class="p">;</span><span class="k">do</span>
+    <span class="k">if</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="s">&quot;$file&quot;</span> <span class="o">-</span><span class="n">y</span> <span class="p">;</span><span class="n">then</span>
+      <span class="n">echo</span> <span class="s">&quot;$file $(date +%F)&quot;</span> <span class="o">&gt;&gt;</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">packages</span><span class="o">/</span><span class="n">apt</span>
+    <span class="n">fi</span>
+  <span class="n">done</span>
+<span class="p">}</span>
+
+<span class="n">gemi</span><span class="p">(){</span>
+  <span class="n">local</span> <span class="n">file</span>
+  <span class="k">for</span> <span class="n">file</span> <span class="k">in</span> <span class="s">&quot;$@&quot;</span> <span class="p">;</span><span class="k">do</span>
+    <span class="k">if</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="s">&quot;$file&quot;</span> <span class="o">-</span><span class="n">y</span> <span class="p">;</span><span class="n">then</span>
+      <span class="n">echo</span> <span class="s">&quot;$file $(date +%F)&quot;</span> <span class="o">&gt;&gt;</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">packages</span><span class="o">/</span><span class="n">gem</span>
+    <span class="n">fi</span>
+  <span class="n">done</span>
+<span class="p">}</span>
+
+<span class="n">pipi</span><span class="p">(){</span>
+  <span class="n">local</span> <span class="n">file</span>
+  <span class="k">for</span> <span class="n">file</span> <span class="k">in</span> <span class="s">&quot;$@&quot;</span> <span class="p">;</span><span class="k">do</span>
+    <span class="k">if</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="s">&quot;$file&quot;</span> <span class="o">-</span><span class="n">y</span> <span class="p">;</span><span class="n">then</span>
+      <span class="n">echo</span> <span class="s">&quot;$file $(date +%F)&quot;</span> <span class="o">&gt;&gt;</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span>
+    <span class="n">fi</span>
+  <span class="n">done</span>
+<span class="p">}</span>
+
+<span class="n">mcd</span><span class="p">(){</span>
+  <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="err">$</span><span class="p">{@}</span>
+  <span class="n">cd</span> <span class="err">$</span><span class="p">{@}</span>
+<span class="p">}</span>
+
+<span class="cp"># colorize less.. find link, random dotfile...</span>
+<span class="cp"># fix cyan bottom bar and colors in general.</span>
+<span class="n">man</span><span class="p">(){</span>
+    <span class="n">LESS_TERMCAP_md</span><span class="o">=</span><span class="err">$&#39;\</span><span class="n">e</span><span class="p">[</span><span class="mo">01</span><span class="p">;</span><span class="mi">31</span><span class="n">m</span><span class="err">&#39;</span> \
+    <span class="n">LESS_TERMCAP_me</span><span class="o">=</span><span class="err">$&#39;\</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="n">m</span><span class="err">&#39;</span> \
+    <span class="n">LESS_TERMCAP_se</span><span class="o">=</span><span class="err">$&#39;\</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="n">m</span><span class="err">&#39;</span> \
+    <span class="n">LESS_TERMCAP_so</span><span class="o">=</span><span class="err">$&#39;\</span><span class="n">e</span><span class="p">[</span><span class="mo">01</span><span class="p">;</span><span class="mi">44</span><span class="p">;</span><span class="mi">33</span><span class="n">m</span><span class="err">&#39;</span> \
+    <span class="n">LESS_TERMCAP_ue</span><span class="o">=</span><span class="err">$&#39;\</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="n">m</span><span class="err">&#39;</span> \
+    <span class="n">LESS_TERMCAP_us</span><span class="o">=</span><span class="err">$&#39;\</span><span class="n">e</span><span class="p">[</span><span class="mo">01</span><span class="p">;</span><span class="mi">32</span><span class="n">m</span><span class="err">&#39;</span> \
+    <span class="n">command</span> <span class="n">man</span> <span class="s">&quot;$@&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<hr>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
     
     
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "budRich" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'budRich';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
-  
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
+</article>
 
 
 

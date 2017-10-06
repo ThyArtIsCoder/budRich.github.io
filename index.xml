@@ -125,13 +125,13 @@ I often use dmenu with my own scripts, and will describe how, in future articles
     </item>
     
     <item>
-      <title>compton_setup</title>
-      <link>https://budrich.github.io/blog/compton_setup/</link>
-      <pubDate>Mon, 25 Sep 2017 17:14:06 +0200</pubDate>
+      <title>profile</title>
+      <link>https://budrich.github.io/dots/profile/</link>
+      <pubDate>Fri, 22 Sep 2017 20:15:47 +0200</pubDate>
       
-      <guid>https://budrich.github.io/blog/compton_setup/</guid>
-      <description>compton is a lightweight compositor for X that works really well with i3. A compositor adds some eye-candy like transparency and drop-shadows to the windows. But it also do some anti screen tearing magic and such. The compton setup can however be a bit tricky and it all depends on your own preferences and hardware.
-Below are some snippets from my .compton.conf that is more i3 then hardware related that you might find useful:</description>
+      <guid>https://budrich.github.io/dots/profile/</guid>
+      <description>This is another keyplayer in the anti-DM suit.
+The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 3 lightDM is launched and I enter my normal Peppermint OS desktop. If I press 2 or wait 2 seconds, i3 starts. Before this happens I have to login, in text mode and look at my issue.</description>
     </item>
     
     <item>
@@ -145,22 +145,25 @@ I don&amp;rsquo;t care so much about distros and I have not had any problems wit
     </item>
     
     <item>
+      <title>Xresources</title>
+      <link>https://budrich.github.io/dots/xresources/</link>
+      <pubDate>Fri, 22 Sep 2017 17:21:28 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xresources/</guid>
+      <description>One of the most classic dotfiles, .Xresources. I have gotten most ideas on from the r/unixporn wiki. I can&amp;rsquo;t seem to get &amp;ldquo;short name&amp;rdquo; for the includes to work, which annoys me a bit..</description>
+    </item>
+    
+    <item>
       <title>xinitrc</title>
       <link>https://budrich.github.io/dots/xinitrc/</link>
       <pubDate>Fri, 22 Sep 2017 17:17:15 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/xinitrc/</guid>
-      <description>This is part of my anti-DM suite. The stuff I want to happen just before i3 loads up, goes here. Having urxvt in daemon mode is really nice. And I use xsetroot and a solid &amp;ldquo;greyed&amp;rdquo; color from Xresources instead of a wallpaper. I have written a little piece about the strange keyboard layout Seba. There is also a short text on why i use sxhkd.</description>
-    </item>
-    
-    <item>
-      <title>urxvt</title>
-      <link>https://budrich.github.io/dots/xres/urxvt/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:41 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/dots/xres/urxvt/</guid>
-      <description>Nothing special. I really like to be able to change font (and font-size) on the fly, there are times when you want to read the output and theres times you just want to monitor.
-I am planning to add something similar to be able to switch between a dark and light color-scheme.</description>
+      <description>This is part of my anti-DM suite. The stuff I want to happen just before i3 loads up, goes here.
+Starting urxvt in daemon mode is really nice and makes it consume less resources and start much faster.
+I use hsetroot to set the desktop background to a minimal tiled pattern and a fetch color from Xresources.
+The Seba keyboard layout keeps me sane!
+I use sxhkd to remap the back button of the mouse to backspace.</description>
     </item>
     
   </channel>

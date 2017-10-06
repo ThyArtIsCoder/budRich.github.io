@@ -10,5 +10,16 @@
 	<atom:link href="https://budrich.github.io/dots/config/klavaro/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>preferences</title>
+      <link>https://budrich.github.io/dots/config/klavaro/preferences/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:47 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/klavaro/preferences/</guid>
+      <description>Klavaro is a GTK touch typing trainer. It is really nice to just sit and listen to a pod while the fingers flow. My average WPM is around 55 at the moment. But I slowly improve.
+I believe touch typing is very important to master if you want to become a good programmer.
+If you never have given touch typing a thought, i really recommend you read Programming&amp;rsquo;s Dirtiest Little Secret by Steve Yegge.</description>
+    </item>
+    
   </channel>
 </rss>
