@@ -906,7 +906,7 @@ inside your head.
 <hr>
 
 
-<div class="highlight"><pre><span class="ch">#!/bin/bash</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># i3cast - create and upload screen recordings</span>
 <span class="c1"># ============================================</span>
@@ -950,7 +950,7 @@ inside your head.
 <span class="nv">PLAYER</span><span class="o">=</span>mpv
 
 <span class="c1"># Folder to store saved and uploaded videos localy.</span>
-<span class="nv">FOLDER</span><span class="o">=</span>$HOME/Videos/c/
+<span class="nv">FOLDER</span><span class="o">=</span>$HOME/vid/bud/
 
 <span class="c1"># Customize the DMENU to your liking</span>
 <span class="c1"># DMENU_OPTIONS=</span>
@@ -970,9 +970,13 @@ inside your head.
 <span class="c1"># Command used for recording, it works well for my screen,</span>
 <span class="c1"># but you might want to change at least -s 1366x768 to match</span>
 <span class="c1"># your resolution.</span>
-<span class="nv">COMMAND</span><span class="o">=</span><span class="s2">&quot;ffmpeg -thread_queue_size 128 -f x11grab -r 30 \</span>
-<span class="s2">-s 1366x768 -i :0.0 -vcodec libx264 -preset ultrafast \</span>
-<span class="s2">-threads 0 -y </span>$<span class="s2">TMP_FILE&quot;</span>
+<span class="nv">COMMAND</span><span class="o">=</span><span class="s2">&quot;ffmpeg -y \</span>
+<span class="s2">-f x11grab \</span>
+<span class="s2">-s </span><span class="k">$(</span>xdpyinfo <span class="p">|</span> grep dimensions <span class="p">|</span> awk <span class="s1">&#39;{print $2;}&#39;</span><span class="k">)</span><span class="s2"> \</span>
+<span class="s2">-i :0.0 \</span>
+<span class="s2">-f alsa -i default \</span>
+<span class="s2">-c:v libx264 -c 30 -c:a flac </span>$<span class="s2">TMP_FILE&quot;</span>
+
 
 <span class="o">[[</span> -n $GIF_IS_JIF <span class="o">]]</span> <span class="o">&amp;&amp;</span> HOSTS+<span class="o">=</span><span class="s2">&quot;\ngfycat&quot;</span>
 
@@ -1025,6 +1029,7 @@ save<span class="o">(){</span>
 <span class="o">}</span>
 
 <span class="nv">cid</span><span class="o">=</span><span class="k">$(</span>i3get -i castterm<span class="k">)</span>
+
 <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$c</span>id <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
   rm -f $TMP_FILE
   <span class="c1"># start recording</span>
@@ -1038,7 +1043,7 @@ save<span class="o">(){</span>
   xdotool key q
   play
 <span class="k">fi</span>
-</pre></div>
+</code></pre></div>
 <hr>
 
 

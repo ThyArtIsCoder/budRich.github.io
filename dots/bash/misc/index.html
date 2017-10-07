@@ -845,39 +845,39 @@ see.
 <hr>
 
 
-<div class="highlight"><pre><span class="x">shopt -s histappend</span>
-<span class="x">shopt -s checkwinsize</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">shopt</span> -s histappend
+<span class="nb">shopt</span> -s checkwinsize
 
-<span class="x">[ -x /usr/bin/lesspipe ] &amp;&amp; eval &quot;</span><span class="p">$(</span><span class="err">SHELL=/bin/sh</span> <span class="err">lesspipe</span><span class="p">)</span><span class="x">&quot;</span>
+<span class="o">[</span> -x /usr/bin/lesspipe <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">SHELL</span><span class="o">=</span>/bin/sh lesspipe<span class="k">)</span><span class="s2">&quot;</span>
 
-<span class="x">if [ -x /usr/bin/dircolors ]; then</span>
-<span class="x">    test -r ~/.dircolors &amp;&amp; eval &quot;</span><span class="p">$(</span><span class="err">dircolors</span> <span class="err">-b</span> <span class="err">~/.dircolors</span><span class="p">)</span><span class="x">&quot; \</span>
-<span class="x">    || eval &quot;</span><span class="p">$(</span><span class="err">dircolors</span> <span class="err">-b</span><span class="p">)</span><span class="x">&quot;</span>
-<span class="x">fi</span>
+<span class="k">if</span> <span class="o">[</span> -x /usr/bin/dircolors <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">test</span> -r ~/.dircolors <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>dircolors -b ~/.dircolors<span class="k">)</span><span class="s2">&quot;</span> <span class="se">\</span>
+    <span class="o">||</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>dircolors -b<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
 
-<span class="err">#</span><span class="x"> enable bash completion in interactive shells</span>
-<span class="x">if [ -f /etc/bash_completion ]; then</span>
-<span class="x">    . /etc/bash_completion</span>
-<span class="x">fi</span>
+<span class="c1"># enable bash completion in interactive shells</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/bash_completion <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    . /etc/bash_completion
+<span class="k">fi</span>
 
-<span class="err">#</span><span class="x"> set variable identifying the chroot you work in </span>
-<span class="x">if [ -z &quot;</span><span class="p">$</span><span class="nv">debian_chroot</span><span class="x">&quot; ] &amp;&amp; [ -r /etc/debian_chroot ]; then</span>
-<span class="x">    debian_chroot=</span><span class="p">$(</span><span class="err">cat</span> <span class="err">/etc/debian_chroot</span><span class="p">)</span><span class="x"></span>
-<span class="x">fi</span>
+<span class="c1"># set variable identifying the chroot you work in </span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$deb</span><span class="s2">ian_chroot&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r /etc/debian_chroot <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">debian_chroot</span><span class="o">=</span><span class="k">$(</span>cat /etc/debian_chroot<span class="k">)</span>
+<span class="k">fi</span>
 
-<span class="err">#</span><span class="x"> if the command-not-found package is installed, use it</span>
-<span class="x">if [ -x /usr/lib/command-not-found ]; then</span>
-<span class="x">  function command_not_found_handle </span><span class="err">{</span><span class="x"></span>
-<span class="x">          </span><span class="err">#</span><span class="x"> check because c-n-f could&#39;ve been removed in the meantime</span>
-<span class="x">                if [ -x /usr/lib/command-not-found ]; then</span>
-<span class="x">       /usr/bin/python /usr/lib/command-not-found -- </span><span class="p">$</span><span class="x">1</span>
-<span class="x">                   return </span><span class="p">$</span><span class="x">?</span>
-<span class="x">    else</span>
-<span class="x">       return 127</span>
-<span class="x">    fi</span>
-<span class="x">  }</span>
-<span class="x">fi</span>
-</pre></div>
+<span class="c1"># if the command-not-found package is installed, use it</span>
+<span class="k">if</span> <span class="o">[</span> -x /usr/lib/command-not-found <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="k">function</span> command_not_found_handle <span class="o">{</span>
+          <span class="c1"># check because c-n-f could&#39;ve been removed in the meantime</span>
+                <span class="k">if</span> <span class="o">[</span> -x /usr/lib/command-not-found <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+       /usr/bin/python /usr/lib/command-not-found -- <span class="nv">$1</span>
+                   <span class="k">return</span> <span class="nv">$?</span>
+    <span class="k">else</span>
+       <span class="k">return</span> 127
+    <span class="k">fi</span>
+  <span class="o">}</span>
+<span class="k">fi</span>
+</code></pre></div>
 <hr>
 
 

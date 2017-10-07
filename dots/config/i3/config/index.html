@@ -849,248 +849,248 @@ drop everything.
 <hr>
 
 
-<div class="highlight"><pre><span class="err">#</span><span class="x"> i3config - curated by budRich since 2016</span>
-<span class="err">#</span><span class="x"> ========================================</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c1"># i3config - curated by budRich since 2016</span>
+<span class="c1"># ========================================</span>
 
-<span class="cp">##</span><span class="c"> todo</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ====</span>
-<span class="err">#</span><span class="x"> media keys, az </span>
-<span class="err">#</span><span class="x">   doesn&#39;t work, c made player float..</span>
-<span class="err">#</span><span class="x"></span>
-<span class="err">#</span><span class="x"> sublime sections for i3. add space when commenting.</span>
-<span class="err">#</span><span class="x"></span>
-<span class="err">#</span><span class="x"> add window rules.</span>
-<span class="err">#</span><span class="x"> get to work with the ass...</span>
+<span class="c1">## todo</span>
+<span class="c1">#  ====</span>
+<span class="c1"># media keys, az </span>
+<span class="c1">#   doesn&#39;t work, c made player float..</span>
+<span class="c1">#</span>
+<span class="c1"># sublime sections for i3. add space when commenting.</span>
+<span class="c1">#</span>
+<span class="c1"># add window rules.</span>
+<span class="c1"># get to work with the ass...</span>
 
-<span class="cp">##</span><span class="c"> initializatione</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ===============</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">exe</span><span class="x"> exec --no-startup-id exec</span>
+<span class="c1">## initializatione</span>
+<span class="c1">#  ===============</span>
+<span class="nb">set</span> <span class="nv">$e</span>xe <span class="nb">exec</span> --no-startup-id <span class="nb">exec</span>
 
-<span class="x">set </span><span class="p">$</span><span class="nv">left1</span><span class="x">   y</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">down1</span><span class="x">   u</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">up1</span><span class="x">     i</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">right1</span><span class="x">  o</span>
+<span class="nb">set</span> $left1   y
+<span class="nb">set</span> <span class="nv">$d</span>own1   u
+<span class="nb">set</span> $up1     i
+<span class="nb">set</span> $right1  o
 
-<span class="x">set </span><span class="p">$</span><span class="nv">left2</span><span class="x">   h</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">down2</span><span class="x">   j</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">up2</span><span class="x">     k</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">right2</span><span class="x">  l</span>
+<span class="nb">set</span> $left2   h
+<span class="nb">set</span> <span class="nv">$d</span>own2   j
+<span class="nb">set</span> $up2     k
+<span class="nb">set</span> $right2  l
 
-<span class="x">set </span><span class="p">$</span><span class="nv">left3</span><span class="x">   n</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">down3</span><span class="x">   m</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">up3</span><span class="x">     comma</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">right3</span><span class="x">  period</span>
+<span class="nb">set</span> $left3   n
+<span class="nb">set</span> <span class="nv">$d</span>own3   m
+<span class="nb">set</span> $up3     comma
+<span class="nb">set</span> $right3  period
 
-<span class="x">set </span><span class="p">$</span><span class="nv">fntsz</span><span class="x"> 8</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">browser</span><span class="x"> -c Vivaldi-stable -e vivaldi</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">editor</span><span class="x"> -i sublime_text -e subl</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">filemanager</span><span class="x"> -i spacefm -e spacefm </span>
-<span class="x">set </span><span class="p">$</span><span class="nv">bigsize</span><span class="x">   10 px or 10 ppt</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">smallsize</span><span class="x"> 3 px or 3 ppt</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">bigmove</span><span class="x">   30 px</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">smallmove</span><span class="x"> 1 px</span>
+<span class="nb">set</span> <span class="nv">$f</span>ntsz 8
+<span class="nb">set</span> <span class="nv">$b</span>rowser -c Vivaldi-stable -e vivaldi
+<span class="nb">set</span> <span class="nv">$ed</span>itor -i sublime_text -e subl
+<span class="nb">set</span> <span class="nv">$f</span>ilemanager -i spacefm -e spacefm 
+<span class="nb">set</span> <span class="nv">$b</span>igsize   <span class="m">10</span> px or <span class="m">10</span> ppt
+<span class="nb">set</span> $smallsize <span class="m">3</span> px or <span class="m">3</span> ppt
+<span class="nb">set</span> <span class="nv">$b</span>igmove   <span class="m">30</span> px
+<span class="nb">set</span> $smallmove <span class="m">1</span> px
 
-<span class="x">set </span><span class="p">$</span><span class="nv">alt</span><span class="x"> Mod1</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">win</span><span class="x"> bindsym Mod4</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> floating disable, move to mark</span>
+<span class="nb">set</span> <span class="nv">$a</span>lt Mod1
+<span class="nb">set</span> $win bindsym Mod4
+<span class="nb">set</span> <span class="nv">$fd</span>mtm floating disable, move to mark
 
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">act</span><span class="x"> i3wm.act </span><span class="err">#</span><span class="x">111313</span>
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">ina</span><span class="x"> i3wm.ina </span><span class="err">#</span><span class="x">111313</span>
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">red</span><span class="x"> i3wm.red </span><span class="cp">#</span><span class="nf">FF0000</span><span class="x"></span>
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">fnt</span><span class="x"> i3wm.fnt Terminus</span>
+set_from_resource <span class="nv">$ac</span>t i3wm.act <span class="c1">#111313</span>
+set_from_resource $ina i3wm.ina <span class="c1">#111313</span>
+set_from_resource $red i3wm.red <span class="c1">#FF0000</span>
+set_from_resource <span class="nv">$f</span>nt i3wm.fnt Terminus
 
-<span class="cp">##</span><span class="c"> panicbuttons</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ============</span>
-<span class="x">bindsym F4         kill</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+q       exit</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Control+r     reload</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">alt</span><span class="x">+r   </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3-msg restart</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+x  </span><span class="p">$</span><span class="nv">exe</span><span class="x"> lock.sh</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Escape   </span><span class="p">$</span><span class="nv">exe</span><span class="x"> buddown</span>
+<span class="c1">## panicbuttons</span>
+<span class="c1">#  ============</span>
+bindsym F4         <span class="nb">kill</span>
+$win+Shift+q       <span class="nb">exit</span>
+$win+Control+r     reload
+$win+<span class="nv">$a</span>lt+r   <span class="nv">$e</span>xe i3-msg restart
+$win+Shift+x  <span class="nv">$e</span>xe lock.sh
+$win+Escape   <span class="nv">$e</span>xe buddown
 
-<span class="cp">##</span><span class="c"> terminals</span><span class="x"></span>
-<span class="err">#</span><span class="x">  =========</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Return           </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i floatterm -e urxvtc -name floatterm</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+Return     </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i termsmall -e urxvtc -name termsmall</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Control+Return   </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i termside  -e urxvtc -name termside</span>
+<span class="c1">## terminals</span>
+<span class="c1">#  =========</span>
+$win+Return           <span class="nv">$e</span>xe i3run -i floatterm -e urxvtc -name floatterm
+$win+Shift+Return     <span class="nv">$e</span>xe i3run -i termsmall -e urxvtc -name termsmall
+$win+Control+Return   <span class="nv">$e</span>xe i3run -i termside  -e urxvtc -name termside
 
-<span class="cp">##</span><span class="c"> i3run - sane applaunching for the modern tiler</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ==============================================</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+e </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run </span><span class="p">$</span><span class="nv">filemanager</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+1 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run </span><span class="p">$</span><span class="nv">editor</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+2 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run </span><span class="p">$</span><span class="nv">browser</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+3 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i irssi -e urxvtc -name irssi -e irssi</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+4 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i ncmpcpp -e urxvtc -name ncmpcpp -e ncmpcpp</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+5 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i qbittorrent -e qbittorrent</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+6 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i newsbeuter -e urxvtc -name newsbeuter -e newsbeuter</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+9 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i htop -e urxvtc -name htop -e htop</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+grave </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i gcolor2 -e gcolor2</span>
+<span class="c1">## i3run - sane applaunching for the modern tiler</span>
+<span class="c1">#  ==============================================</span>
+$win+e <span class="nv">$e</span>xe i3run <span class="nv">$f</span>ilemanager
+$win+1 <span class="nv">$e</span>xe i3run <span class="nv">$ed</span>itor
+$win+2 <span class="nv">$e</span>xe i3run <span class="nv">$b</span>rowser
+$win+3 <span class="nv">$e</span>xe i3run -i irssi -e urxvtc -name irssi -e irssi
+$win+4 <span class="nv">$e</span>xe i3run -i ncmpcpp -e urxvtc -name ncmpcpp -e ncmpcpp
+$win+5 <span class="nv">$e</span>xe i3run -i qbittorrent -e qbittorrent
+$win+6 <span class="nv">$e</span>xe i3run -i newsbeuter -e urxvtc -name newsbeuter -e newsbeuter
+$win+9 <span class="nv">$e</span>xe i3run -i htop -e urxvtc -name htop -e htop
+$win+grave <span class="nv">$e</span>xe i3run -i gcolor2 -e gcolor2
 
-<span class="cp">##</span><span class="c"> barmenu</span><span class="x"></span>
-<span class="err">#</span><span class="x">  =======</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+BackSpace </span><span class="p">$</span><span class="nv">exe</span><span class="x"> /home/bud/.config/polybar/scripts/togglebar</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+r </span><span class="p">$</span><span class="nv">exe</span><span class="x"> rofi -show run -config ~/.config/rofi/fullscreen</span>
-<span class="x">bindsym F6 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> homenu</span>
-<span class="x">bindsym F8 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> newmenu</span>
-<span class="err">#</span><span class="x"> bindsym F8 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> hugomuno.sh</span>
-<span class="err">#</span><span class="x"> bindsym Shift+F6 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> bash &quot;/home/bud/.config/rofi/fettan/fettan.sh&quot; &quot;addedit&quot;</span>
-<span class="err">#</span><span class="x"> bindsym F6 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> /home/bud/.config/rofi/fettan/fettan.sh edit</span>
-<span class="err">#</span><span class="x"> bindsym F7 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> /home/bud/.config/rofi/fettan/fettan.sh help</span>
+<span class="c1">## barmenu</span>
+<span class="c1">#  =======</span>
+$win+BackSpace <span class="nv">$e</span>xe /home/bud/.config/polybar/scripts/togglebar
+$win+r <span class="nv">$e</span>xe rofi -show run -config ~/.config/rofi/fullscreen
+bindsym F6 <span class="nv">$e</span>xe homenu
+bindsym F8 <span class="nv">$e</span>xe newmenu
+<span class="c1"># bindsym F8 $exe hugomuno.sh</span>
+<span class="c1"># bindsym Shift+F6 $exe bash &quot;/home/bud/.config/rofi/fettan/fettan.sh&quot; &quot;addedit&quot;</span>
+<span class="c1"># bindsym F6 $exe /home/bud/.config/rofi/fettan/fettan.sh edit</span>
+<span class="c1"># bindsym F7 $exe /home/bud/.config/rofi/fettan/fettan.sh help</span>
 
-<span class="cp">##</span><span class="c"> media</span><span class="x"></span>
-<span class="err">#</span><span class="x">  =====</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+a </span><span class="p">$</span><span class="nv">exe</span><span class="x"> amixer -q -c 0 set Master playback 1dB+</span>
-<span class="err">#</span><span class="x"> 94 = &lt;, less</span>
-<span class="x">bindcode Mod3+94 </span><span class="p">$</span><span class="nv">exe</span><span class="x"> amixer -q -c 0 set Master playback 1dB-</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+z </span><span class="p">$</span><span class="nv">exe</span><span class="x"> mpc -q next</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+Control+x </span><span class="p">$</span><span class="nv">exe</span><span class="x"> mpc -q toggle</span>
+<span class="c1">## media</span>
+<span class="c1">#  =====</span>
+$win+a <span class="nv">$e</span>xe amixer -q -c <span class="m">0</span> <span class="nb">set</span> Master playback 1dB+
+<span class="c1"># 94 = &lt;, less</span>
+bindcode Mod3+94 <span class="nv">$e</span>xe amixer -q -c <span class="m">0</span> <span class="nb">set</span> Master playback 1dB-
+$win+z <span class="nv">$e</span>xe mpc -q next
+$win+Shift+Control+x <span class="nv">$e</span>xe mpc -q toggle
 
-<span class="cp">##</span><span class="c"> misc</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ====</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+f       </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3mtm</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+f </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3mtm -m</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+slash   </span><span class="p">$</span><span class="nv">exe</span><span class="x"> ass sb</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+d       </span><span class="p">$</span><span class="nv">exe</span><span class="x"> ass dt</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+s       </span><span class="p">$</span><span class="nv">exe</span><span class="x"> subact</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+q       </span><span class="p">$</span><span class="nv">exe</span><span class="x"> add-quote</span>
+<span class="c1">## misc</span>
+<span class="c1">#  ====</span>
+$win+f       <span class="nv">$e</span>xe i3mtm
+$win+Shift+f <span class="nv">$e</span>xe i3mtm -m
+$win+slash   <span class="nv">$e</span>xe ass sb
+$win+d       <span class="nv">$e</span>xe ass dt
+$win+s       <span class="nv">$e</span>xe subact
+$win+q       <span class="nv">$e</span>xe add-quote
 
-<span class="cp">##</span><span class="c"> upload content</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ==============</span>
-<span class="x">bindsym --release Mod4+Print </span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3cast</span>
+<span class="c1">## upload content</span>
+<span class="c1">#  ==============</span>
+bindsym --release Mod4+Print <span class="nv">$e</span>xe i3cast
 
-<span class="x">bindsym --release Print </span><span class="p">$</span><span class="nv">exe</span><span class="x"> imgur-screenshot.sh -f</span>
-<span class="x">bindsym --release Shift+Print </span><span class="p">$</span><span class="nv">exe</span><span class="x"> imgur-screenshot.sh -s</span>
+bindsym --release Print <span class="nv">$e</span>xe imgur-screenshot.sh -f
+bindsym --release Shift+Print <span class="nv">$e</span>xe imgur-screenshot.sh -s
 
-<span class="p">$</span><span class="nv">win</span><span class="x">+c </span><span class="p">$</span><span class="nv">exe</span><span class="x"> \</span>
-<span class="x">  xclip -o | curl -F c=@- https://ptpb.pw/?u=1 | \</span>
-<span class="x">  xclip -selection &#39;clipboard&#39; &amp;&amp; \</span>
-<span class="x">  notify-send &quot;Paste uploaded&quot;</span>
+$win+c <span class="nv">$e</span>xe <span class="se">\</span>
+  xclip -o <span class="p">|</span> curl -F <span class="nv">c</span><span class="o">=</span>@- https://ptpb.pw/?u<span class="o">=</span><span class="m">1</span> <span class="p">|</span> <span class="se">\</span>
+  xclip -selection <span class="s1">&#39;clipboard&#39;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  notify-send <span class="s2">&quot;Paste uploaded&quot;</span>
 
-<span class="cp">##</span><span class="c"> wallpapermanagement</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ===================</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+w        </span><span class="p">$</span><span class="nv">exe</span><span class="x"> wps -b    </span><span class="err">#</span><span class="x"> next wallpaper</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+w  </span><span class="p">$</span><span class="nv">exe</span><span class="x"> wps -s t  </span><span class="err">#</span><span class="x"> toggle blur</span>
+<span class="c1">## wallpapermanagement</span>
+<span class="c1">#  ===================</span>
+$win+w        <span class="nv">$e</span>xe wps -b    <span class="c1"># next wallpaper</span>
+$win+Shift+w  <span class="nv">$e</span>xe wps -s t  <span class="c1"># toggle blur</span>
 
-<span class="cp">##</span><span class="c"> mousekeys</span><span class="x"></span>
-<span class="err">#</span><span class="x">  =========</span>
-<span class="x">bindsym --release button2 kill </span><span class="err">#</span><span class="x"> mbutton on titlebar kills</span>
+<span class="c1">## mousekeys</span>
+<span class="c1">#  =========</span>
+bindsym --release button2 <span class="nb">kill</span> <span class="c1"># mbutton on titlebar kills</span>
 
-<span class="cp">##</span><span class="c"> debugging</span><span class="x"></span>
-<span class="err">#</span><span class="x">  =========</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+shift+t </span><span class="p">$</span><span class="nv">exe</span><span class="x"> ass st t </span><span class="err">#</span><span class="x"> dump tree</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+shift+d \</span>
-<span class="x">  i3-save-tree --output eDP-1 &gt; /tmp/i3layout-dump.json \</span>
-<span class="x">  &amp;&amp; subl /tmp/i3layout-dump.json</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+b </span><span class="p">$</span><span class="nv">exe</span><span class="x"> runscript </span><span class="err">#</span><span class="x"> run currently open file in sublime</span>
-
-
-<span class="cp">##</span><span class="c"> moving the size of the focus</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ============================</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">left3</span><span class="x">              move left  </span><span class="p">$</span><span class="nv">bigmove</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+</span><span class="p">$</span><span class="nv">left3</span><span class="x">        move left  </span><span class="p">$</span><span class="nv">smallmove</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">right3</span><span class="x">             move right </span><span class="p">$</span><span class="nv">bigmove</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+</span><span class="p">$</span><span class="nv">right3</span><span class="x">       move right </span><span class="p">$</span><span class="nv">smallmove</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">down3</span><span class="x">              move down  </span><span class="p">$</span><span class="nv">bigmove</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+</span><span class="p">$</span><span class="nv">down3</span><span class="x">        move down  </span><span class="p">$</span><span class="nv">smallmove</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">up3</span><span class="x">                move up    </span><span class="p">$</span><span class="nv">bigmove</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+</span><span class="p">$</span><span class="nv">up3</span><span class="x">          move up    </span><span class="p">$</span><span class="nv">smallmove</span><span class="x"></span>
-<span class="x"> </span>
-<span class="p">$</span><span class="nv">win</span><span class="p">$</span><span class="nv">left2</span><span class="x">               resize shrink width  </span><span class="p">$</span><span class="nv">bigsize</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift</span><span class="p">$</span><span class="nv">left2</span><span class="x">         resize shrink width  </span><span class="p">$</span><span class="nv">smallsize</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">right2</span><span class="x">             resize grow width    </span><span class="p">$</span><span class="nv">bigsize</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+</span><span class="p">$</span><span class="nv">right2</span><span class="x">       resize grow width    </span><span class="p">$</span><span class="nv">smallsize</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">down2</span><span class="x">              resize shrink height </span><span class="p">$</span><span class="nv">bigsize</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+</span><span class="p">$</span><span class="nv">down2</span><span class="x">        resize shrink height </span><span class="p">$</span><span class="nv">smallsize</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">up2</span><span class="x">                resize grow height   </span><span class="p">$</span><span class="nv">bigsize</span><span class="x"></span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+</span><span class="p">$</span><span class="nv">up2</span><span class="x">          resize grow height   </span><span class="p">$</span><span class="nv">smallsize</span><span class="x"></span>
-
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">left1</span><span class="x">              focus left</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">right1</span><span class="x">             focus right</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">down1</span><span class="x">              focus down</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+</span><span class="p">$</span><span class="nv">up1</span><span class="x">                focus up</span>
-
-<span class="p">$</span><span class="nv">win</span><span class="x">+Tab                 focus right</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+Tab           focus left</span>
-
-<span class="cp">##</span><span class="c"> workspace stuff</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ===============</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+F1  workspace 1</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+F2  workspace 2</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+F3  workspace 3</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+F12 workspace back_and_forth</span>
-
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+F1 move container to workspace 1</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+F2 move container to workspace 2</span>
-<span class="p">$</span><span class="nv">win</span><span class="x">+Shift+F3 move container to workspace 3</span>
-
-<span class="cp">##</span><span class="c"> settings</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ========</span>
-<span class="x">show_marks no</span>
-<span class="x">floating_modifier </span><span class="p">$</span><span class="nv">alt</span><span class="x"></span>
-<span class="x">hide_edge_borders both</span>
-<span class="x">focus_follows_mouse yes</span>
-<span class="x">font pango:</span><span class="p">$</span><span class="nv">fnt</span><span class="x"> </span><span class="p">$</span><span class="nv">fntsz</span><span class="x"></span>
-<span class="x">workspace_auto_back_and_forth no</span>
-
-<span class="cp">##</span><span class="c"> appearance</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ==========</span>
-<span class="x">for_window [tiling] border pixel 1</span>
-<span class="x">for_window [floating] border normal 1</span>
-
-<span class="err">#</span><span class="x"> widow Colors           border  bg     text    indic</span>
-<span class="x">client.focused           </span><span class="p">$</span><span class="nv">act</span><span class="x">    </span><span class="p">$</span><span class="nv">act</span><span class="x">   </span><span class="p">$</span><span class="nv">act</span><span class="x">    </span><span class="p">$</span><span class="nv">act</span><span class="x"></span>
-<span class="x">client.focused_inactive  </span><span class="p">$</span><span class="nv">ina</span><span class="x">    </span><span class="p">$</span><span class="nv">ina</span><span class="x">   </span><span class="p">$</span><span class="nv">ina</span><span class="x">    </span><span class="p">$</span><span class="nv">ina</span><span class="x"></span>
-<span class="x">client.unfocused         </span><span class="p">$</span><span class="nv">ina</span><span class="x">    </span><span class="p">$</span><span class="nv">ina</span><span class="x">   </span><span class="p">$</span><span class="nv">ina</span><span class="x">    </span><span class="p">$</span><span class="nv">ina</span><span class="x"></span>
-<span class="x">client.urgent            </span><span class="p">$</span><span class="nv">red</span><span class="x">    </span><span class="p">$</span><span class="nv">red</span><span class="x">   </span><span class="p">$</span><span class="nv">red</span><span class="x">    </span><span class="p">$</span><span class="nv">red</span><span class="x"></span>
-
-<span class="cp">##</span><span class="c"> window rules</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ============</span>
-<span class="x">for_window [class=&quot;^.*&quot;] floating enable</span>
-
-<span class="x">for_window [class=&quot;Vivaldi-stable&quot;]  </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> master</span>
-<span class="x">for_window [class=&quot;conky-desktop&quot;]   </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> master</span>
-<span class="x">for_window [instance=&quot;sublime_text&quot;] </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> master</span>
-<span class="x">for_window [instance=&quot;spacefm&quot;]      </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> sidemain</span>
-<span class="x">for_window [instance=&quot;irssi&quot;]        </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> sidemain</span>
-<span class="x">for_window [instance=&quot;ncmpcpp&quot;]      </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> sidetop</span>
-<span class="x">for_window [instance=&quot;qbittorrent&quot;]  </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> master</span>
-<span class="x">for_window [instance=&quot;newsbeuter&quot;]   </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> sidemain</span>
-<span class="x">for_window [instance=&quot;htop&quot;]         </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> master</span>
-<span class="x">for_window [instance=&quot;ttyclock&quot;]     </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> sidebottom</span>
-<span class="err">#</span><span class="x"> for_window [instance=&quot;termside&quot;]     </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> sidebottom</span>
-<span class="err">#</span><span class="x"> for_window [instance=&quot;termsmall&quot;]    </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> master</span>
-<span class="err">#</span><span class="x"> for_window [instance=&quot;termsub&quot;]      </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> subterm</span>
-
-<span class="x">for_window [instance=&quot;termside&quot;]     resize set 300 px 150 px</span>
-<span class="x">for_window [instance=&quot;termsmall&quot;]    resize set 300 px 150 px</span>
-<span class="x">for_window [instance=&quot;termsub&quot;]      resize set 300 px 150 px</span>
-<span class="x">for_window [window_type=&quot;dialog&quot;] floating enable</span>
-<span class="x">for_window [window_type=&quot;splash&quot;] floating enable</span>
-<span class="x">for_window [window_type=&quot;utility&quot;] floating enable</span>
+<span class="c1">## debugging</span>
+<span class="c1">#  =========</span>
+$win+shift+t <span class="nv">$e</span>xe ass st t <span class="c1"># dump tree</span>
+$win+shift+d <span class="se">\</span>
+  i3-save-tree --output eDP-1 &gt; /tmp/i3layout-dump.json <span class="se">\</span>
+  <span class="o">&amp;&amp;</span> subl /tmp/i3layout-dump.json
+$win+b <span class="nv">$e</span>xe runscript <span class="c1"># run currently open file in sublime</span>
 
 
+<span class="c1">## moving the size of the focus</span>
+<span class="c1">#  ============================</span>
+$win+$left3              move left  <span class="nv">$b</span>igmove
+$win+Shift+$left3        move left  $smallmove
+$win+$right3             move right <span class="nv">$b</span>igmove
+$win+Shift+$right3       move right $smallmove
+$win+<span class="nv">$d</span>own3              move down  <span class="nv">$b</span>igmove
+$win+Shift+<span class="nv">$d</span>own3        move down  $smallmove
+$win+$up3                move up    <span class="nv">$b</span>igmove
+$win+Shift+$up3          move up    $smallmove
+ 
+$win$left2               resize shrink width  <span class="nv">$b</span>igsize
+$win+Shift$left2         resize shrink width  $smallsize
+$win+$right2             resize grow width    <span class="nv">$b</span>igsize
+$win+Shift+$right2       resize grow width    $smallsize
+$win+<span class="nv">$d</span>own2              resize shrink height <span class="nv">$b</span>igsize
+$win+Shift+<span class="nv">$d</span>own2        resize shrink height $smallsize
+$win+$up2                resize grow height   <span class="nv">$b</span>igsize
+$win+Shift+$up2          resize grow height   $smallsize
 
-<span class="x">for_window [instance=&quot;floatterm&quot;] resize set 300 px 150 px</span>
+$win+$left1              focus left
+$win+$right1             focus right
+$win+<span class="nv">$d</span>own1              focus down
+$win+$up1                focus up
 
-<span class="x">no_focus   [instance=&quot;keydisplay&quot;]</span>
-<span class="x">for_window [instance=&quot;keydisplay&quot;] sticky enable, border none</span>
+$win+Tab                 focus right
+$win+Shift+Tab           focus left
 
-<span class="cp">##</span><span class="c"> automatic execution</span><span class="x"></span>
-<span class="err">#</span><span class="x">  ===================</span>
-<span class="err">#</span><span class="x"> </span><span class="p">$</span><span class="nv">exe</span><span class="x"> urxvtd -q -o -f</span>
-<span class="err">#</span><span class="x"> </span><span class="p">$</span><span class="nv">exe</span><span class="x"> wps -b</span>
-<span class="err">#</span><span class="x"> </span><span class="p">$</span><span class="nv">exe</span><span class="x"> autoexec.sh</span>
-<span class="err">#</span><span class="x"> </span><span class="p">$</span><span class="nv">exe</span><span class="x"> parcellite &gt; /dev/null 2&gt;&amp;1 &amp;</span>
-<span class="err">#</span><span class="x"> </span><span class="p">$</span><span class="nv">exe</span><span class="x"> polybar top -c &quot;</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.config/polybar/budbar&quot; -r &gt; /dev/null 2&gt;&amp;1 &amp;</span>
-<span class="err">#</span><span class="x"> </span><span class="p">$</span><span class="nv">exe</span><span class="x"> igi &amp;</span>
-<span class="err">#</span><span class="p">$</span><span class="nv">exe</span><span class="x"> i3run -i loader -e urxvt -name loader -e i3init</span>
+<span class="c1">## workspace stuff</span>
+<span class="c1">#  ===============</span>
+$win+F1  workspace 1
+$win+F2  workspace 2
+$win+F3  workspace 3
+$win+F12 workspace back_and_forth
+
+$win+Shift+F1 move container to workspace 1
+$win+Shift+F2 move container to workspace 2
+$win+Shift+F3 move container to workspace 3
+
+<span class="c1">## settings</span>
+<span class="c1">#  ========</span>
+show_marks no
+floating_modifier <span class="nv">$a</span>lt
+hide_edge_borders both
+focus_follows_mouse yes
+font pango:<span class="nv">$f</span>nt <span class="nv">$f</span>ntsz
+workspace_auto_back_and_forth no
+
+<span class="c1">## appearance</span>
+<span class="c1">#  ==========</span>
+for_window <span class="o">[</span>tiling<span class="o">]</span> border pixel 1
+for_window <span class="o">[</span>floating<span class="o">]</span> border normal 1
+
+<span class="c1"># widow Colors           border  bg     text    indic</span>
+client.focused           <span class="nv">$ac</span>t    <span class="nv">$ac</span>t   <span class="nv">$ac</span>t    <span class="nv">$ac</span>t
+client.focused_inactive  $ina    $ina   $ina    $ina
+client.unfocused         $ina    $ina   $ina    $ina
+client.urgent            $red    $red   $red    $red
+
+<span class="c1">## window rules</span>
+<span class="c1">#  ============</span>
+for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;^.*&quot;</span><span class="o">]</span> floating <span class="nb">enable</span>
+
+for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;Vivaldi-stable&quot;</span><span class="o">]</span>  <span class="nv">$fd</span>mtm master
+for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;conky-desktop&quot;</span><span class="o">]</span>   <span class="nv">$fd</span>mtm master
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;sublime_text&quot;</span><span class="o">]</span> <span class="nv">$fd</span>mtm master
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;spacefm&quot;</span><span class="o">]</span>      <span class="nv">$fd</span>mtm sidemain
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;irssi&quot;</span><span class="o">]</span>        <span class="nv">$fd</span>mtm sidemain
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;ncmpcpp&quot;</span><span class="o">]</span>      <span class="nv">$fd</span>mtm sidetop
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;qbittorrent&quot;</span><span class="o">]</span>  <span class="nv">$fd</span>mtm master
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;newsbeuter&quot;</span><span class="o">]</span>   <span class="nv">$fd</span>mtm sidemain
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;htop&quot;</span><span class="o">]</span>         <span class="nv">$fd</span>mtm master
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;ttyclock&quot;</span><span class="o">]</span>     <span class="nv">$fd</span>mtm sidebottom
+<span class="c1"># for_window [instance=&quot;termside&quot;]     $fdmtm sidebottom</span>
+<span class="c1"># for_window [instance=&quot;termsmall&quot;]    $fdmtm master</span>
+<span class="c1"># for_window [instance=&quot;termsub&quot;]      $fdmtm subterm</span>
+
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;termside&quot;</span><span class="o">]</span>     resize <span class="nb">set</span> <span class="m">300</span> px <span class="m">150</span> px
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;termsmall&quot;</span><span class="o">]</span>    resize <span class="nb">set</span> <span class="m">300</span> px <span class="m">150</span> px
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;termsub&quot;</span><span class="o">]</span>      resize <span class="nb">set</span> <span class="m">300</span> px <span class="m">150</span> px
+for_window <span class="o">[</span><span class="nv">window_type</span><span class="o">=</span><span class="s2">&quot;dialog&quot;</span><span class="o">]</span> floating <span class="nb">enable</span>
+for_window <span class="o">[</span><span class="nv">window_type</span><span class="o">=</span><span class="s2">&quot;splash&quot;</span><span class="o">]</span> floating <span class="nb">enable</span>
+for_window <span class="o">[</span><span class="nv">window_type</span><span class="o">=</span><span class="s2">&quot;utility&quot;</span><span class="o">]</span> floating <span class="nb">enable</span>
 
 
-<span class="cp">##</span><span class="c"> notes</span><span class="x"></span>
-<span class="err">#</span><span class="x">  =====</span>
-<span class="err">#</span><span class="x"> workspace_auto_back_and_forth can cause trouble when tiling is extreme</span>
-<span class="err">#</span><span class="x"> without bindsym to workspaceswitch config doesn&#39;t work...</span>
-</pre></div>
+
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;floatterm&quot;</span><span class="o">]</span> resize <span class="nb">set</span> <span class="m">300</span> px <span class="m">150</span> px
+
+no_focus   <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;keydisplay&quot;</span><span class="o">]</span>
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;keydisplay&quot;</span><span class="o">]</span> sticky enable, border none
+
+<span class="c1">## automatic execution</span>
+<span class="c1">#  ===================</span>
+<span class="c1"># $exe urxvtd -q -o -f</span>
+<span class="c1"># $exe wps -b</span>
+<span class="c1"># $exe autoexec.sh</span>
+<span class="c1"># $exe parcellite &gt; /dev/null 2&gt;&amp;1 &amp;</span>
+<span class="c1"># $exe polybar top -c &quot;$HOME/.config/polybar/budbar&quot; -r &gt; /dev/null 2&gt;&amp;1 &amp;</span>
+<span class="c1"># $exe igi &amp;</span>
+<span class="c1">#$exe i3run -i loader -e urxvt -name loader -e i3init</span>
+
+
+<span class="c1">## notes</span>
+<span class="c1">#  =====</span>
+<span class="c1"># workspace_auto_back_and_forth can cause trouble when tiling is extreme</span>
+<span class="c1"># without bindsym to workspaceswitch config doesn&#39;t work...</span>
+</code></pre></div>
 <hr>
 
 

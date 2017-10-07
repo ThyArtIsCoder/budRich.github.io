@@ -846,7 +846,7 @@ is a little dirthack™ to make it possible to use <a href="http://www.fixedsyse
 <hr>
 
 
-<div class="highlight"><pre><span class="c1"># PS1 = time compact_pwd &gt;</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c1"># PS1 = time compact_pwd &gt;</span>
 <span class="c1"># curated by budRich since 2017</span>
 <span class="c1"># =============================</span>
 <span class="c1"># </span>
@@ -877,78 +877,78 @@ is a little dirthack™ to make it possible to use <a href="http://www.fixedsyse
 <span class="c1"># [Ville Laurikari](https://stackoverflow.com/a/1862762)</span>
 <span class="c1"># [Henrik Nyh](https://github.com/henrik/dotfiles/blob/master/bash/prompt.sh)</span>
 
-<span class="nf">timer_start</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s s-Atom">timer=</span><span class="err">$</span><span class="p">{</span><span class="nn">timer</span><span class="p">:</span><span class="s s-Atom">-</span><span class="err">$</span><span class="p">(</span><span class="s s-Atom">date</span> <span class="s s-Atom">+</span><span class="c1">%s%N | cut -b1-13)}</span>
-<span class="p">}</span>
+timer_start<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">timer</span><span class="o">=</span><span class="si">${</span><span class="nv">timer</span><span class="k">:-$(</span>date +%s%N <span class="p">|</span> cut -b1-13<span class="k">)</span><span class="si">}</span>
+<span class="o">}</span>
 
-<span class="nf">prompt_generator</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s s-Atom">#</span> <span class="s s-Atom">regular</span> <span class="s s-Atom">colors</span>
-  <span class="s s-Atom">local</span> <span class="nv">K</span><span class="s s-Atom">=</span><span class="err">&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">30</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # black</span>
-<span class="s2">  local R=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">31</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # red</span>
-<span class="s2">  local G=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">32</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # green</span>
-<span class="s2">  local Y=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">33</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # yellow</span>
-<span class="s2">  local B=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">34</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # blue</span>
-<span class="s2">  local M=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">35</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # magenta</span>
-<span class="s2">  local C=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">36</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # cyan</span>
-<span class="s2">  local W=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">37</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;    # white</span>
+prompt_generator<span class="o">()</span> <span class="o">{</span>
+  <span class="c1"># regular colors</span>
+  <span class="nb">local</span> <span class="nv">K</span><span class="o">=</span><span class="s2">&quot;\[\033[0;30m\]&quot;</span>    <span class="c1"># black</span>
+  <span class="nb">local</span> <span class="nv">R</span><span class="o">=</span><span class="s2">&quot;\[\033[0;31m\]&quot;</span>    <span class="c1"># red</span>
+  <span class="nb">local</span> <span class="nv">G</span><span class="o">=</span><span class="s2">&quot;\[\033[0;32m\]&quot;</span>    <span class="c1"># green</span>
+  <span class="nb">local</span> <span class="nv">Y</span><span class="o">=</span><span class="s2">&quot;\[\033[0;33m\]&quot;</span>    <span class="c1"># yellow</span>
+  <span class="nb">local</span> <span class="nv">B</span><span class="o">=</span><span class="s2">&quot;\[\033[0;34m\]&quot;</span>    <span class="c1"># blue</span>
+  <span class="nb">local</span> <span class="nv">M</span><span class="o">=</span><span class="s2">&quot;\[\033[0;35m\]&quot;</span>    <span class="c1"># magenta</span>
+  <span class="nb">local</span> <span class="nv">C</span><span class="o">=</span><span class="s2">&quot;\[\033[0;36m\]&quot;</span>    <span class="c1"># cyan</span>
+  <span class="nb">local</span> <span class="nv">W</span><span class="o">=</span><span class="s2">&quot;\[\033[0;37m\]&quot;</span>    <span class="c1"># white</span>
 
-<span class="s2">  # emphasized (bolded) colors</span>
-<span class="s2">  local BK=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">30</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
-<span class="s2">  local BR=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">31</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
-<span class="s2">  local BG=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">32</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
-<span class="s2">  local BY=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">33</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
-<span class="s2">  local BB=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">34</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
-<span class="s2">  local BM=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">35</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
-<span class="s2">  local BC=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">36</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
-<span class="s2">  local BW=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">37</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
+  <span class="c1"># emphasized (bolded) colors</span>
+  <span class="nb">local</span> <span class="nv">BK</span><span class="o">=</span><span class="s2">&quot;\[\033[1;30m\]&quot;</span>
+  <span class="nb">local</span> <span class="nv">BR</span><span class="o">=</span><span class="s2">&quot;\[\033[1;31m\]&quot;</span>
+  <span class="nb">local</span> <span class="nv">BG</span><span class="o">=</span><span class="s2">&quot;\[\033[1;32m\]&quot;</span>
+  <span class="nb">local</span> <span class="nv">BY</span><span class="o">=</span><span class="s2">&quot;\[\033[1;33m\]&quot;</span>
+  <span class="nb">local</span> <span class="nv">BB</span><span class="o">=</span><span class="s2">&quot;\[\033[1;34m\]&quot;</span>
+  <span class="nb">local</span> <span class="nv">BM</span><span class="o">=</span><span class="s2">&quot;\[\033[1;35m\]&quot;</span>
+  <span class="nb">local</span> <span class="nv">BC</span><span class="o">=</span><span class="s2">&quot;\[\033[1;36m\]&quot;</span>
+  <span class="nb">local</span> <span class="nv">BW</span><span class="o">=</span><span class="s2">&quot;\[\033[1;37m\]&quot;</span>
 
-<span class="s2">  # reset</span>
-<span class="s2">  local RESET=&quot;</span><span class="s s-Atom">\</span><span class="p">[</span><span class="s s-Atom">\</span><span class="mi">033</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">37</span><span class="s s-Atom">m\</span><span class="p">]</span><span class="s2">&quot;</span>
+  <span class="c1"># reset</span>
+  <span class="nb">local</span> <span class="nv">RESET</span><span class="o">=</span><span class="s2">&quot;\[\033[0;37m\]&quot;</span>
 
-<span class="s2">  # get time</span>
-<span class="s2">  local milli=$(($(date +%s%N | cut -b1-13) - $timer))</span>
-<span class="s2">  case $((</span>
-<span class="s2">    milli &gt;= 0 &amp;&amp; milli &lt;= 20   ? 1 :</span>
-<span class="s2">    milli &gt; 20 &amp;&amp; milli &lt;= 100  ? 2 :</span>
-<span class="s2">    milli &gt; 100 &amp;&amp; milli &lt;= 250 ? 3 :</span>
-<span class="s2">    milli &gt; 250 &amp;&amp; milli &lt;= 500 ? 4 :</span>
-<span class="s2">    milli &gt; 500 &amp;&amp; milli &lt;= 999 ? 5 :</span>
-<span class="s2">    milli &gt; 999 &amp;&amp; milli &lt;= 2000 ? 6 : 7)) in</span>
-<span class="s2">      (1) psc=&quot;</span><span class="err">$</span><span class="p">{</span><span class="nv">G</span><span class="p">}</span><span class="s2">&quot; ;;</span>
-<span class="s2">      (2) psc=&quot;</span><span class="err">$</span><span class="p">{</span><span class="nv">Y</span><span class="p">}</span><span class="s2">&quot; ;;</span>
-<span class="s2">      (3) psc=&quot;</span><span class="err">$</span><span class="p">{</span><span class="nv">C</span><span class="p">}</span><span class="s2">&quot; ;;</span>
-<span class="s2">      (4) psc=&quot;</span><span class="err">$</span><span class="p">{</span><span class="nv">B</span><span class="p">}</span><span class="s2">&quot; ;;</span>
-<span class="s2">      (5) psc=&quot;</span><span class="err">$</span><span class="p">{</span><span class="nv">M</span><span class="p">}</span><span class="s2">&quot; ;;</span>
-<span class="s2">      (6) psc=&quot;</span><span class="err">$</span><span class="p">{</span><span class="nv">R</span><span class="p">}</span><span class="s2">&quot; milli=$((milli/1000));;</span>
-<span class="s2">      (7) psc=&quot;</span><span class="err">$</span><span class="p">{</span><span class="nv">R</span><span class="p">}</span><span class="s2">&quot; milli=$((milli/1000));;</span>
-<span class="s2">  esac</span>
+  <span class="c1"># get time</span>
+  <span class="nb">local</span> <span class="nv">milli</span><span class="o">=</span><span class="k">$(($(</span>date +%s%N <span class="p">|</span> cut -b1-13<span class="k">)</span> <span class="o">-</span> $timer<span class="k">))</span>
+  <span class="k">case</span> <span class="k">$((</span>
+    milli &gt;<span class="o">=</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> milli &lt;<span class="o">=</span> <span class="m">20</span>   ? <span class="m">1</span> :
+    milli &gt; <span class="m">20</span> <span class="o">&amp;&amp;</span> milli &lt;<span class="o">=</span> <span class="m">100</span>  ? <span class="m">2</span> :
+    milli &gt; <span class="m">100</span> <span class="o">&amp;&amp;</span> milli &lt;<span class="o">=</span> <span class="m">250</span> ? <span class="m">3</span> :
+    milli &gt; <span class="m">250</span> <span class="o">&amp;&amp;</span> milli &lt;<span class="o">=</span> <span class="m">500</span> ? <span class="m">4</span> :
+    milli &gt; <span class="m">500</span> <span class="o">&amp;&amp;</span> milli &lt;<span class="o">=</span> <span class="m">999</span> ? <span class="m">5</span> :
+    milli &gt; <span class="m">999</span> <span class="o">&amp;&amp;</span> milli &lt;<span class="o">=</span> <span class="m">2000</span> ? <span class="m">6</span> : <span class="m">7</span><span class="k">))</span> in
+      <span class="o">(</span>1<span class="o">)</span> <span class="nv">psc</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">G</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
+      <span class="o">(</span>2<span class="o">)</span> <span class="nv">psc</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">Y</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
+      <span class="o">(</span>3<span class="o">)</span> <span class="nv">psc</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">C</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
+      <span class="o">(</span>4<span class="o">)</span> <span class="nv">psc</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">B</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
+      <span class="o">(</span>5<span class="o">)</span> <span class="nv">psc</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">M</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
+      <span class="o">(</span>6<span class="o">)</span> <span class="nv">psc</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">R</span><span class="si">}</span><span class="s2">&quot;</span> <span class="nv">milli</span><span class="o">=</span><span class="k">$((</span>milli/1000<span class="k">))</span><span class="p">;;</span>
+      <span class="o">(</span>7<span class="o">)</span> <span class="nv">psc</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">R</span><span class="si">}</span><span class="s2">&quot;</span> <span class="nv">milli</span><span class="o">=</span><span class="k">$((</span>milli/1000<span class="k">))</span><span class="p">;;</span>
+  <span class="k">esac</span>
 
-<span class="s2">  # pad ms or seconds with zeroes, so string length always is 3.</span>
-<span class="s2">  local timmy=$(printf &quot;</span><span class="c1">%03d&quot; $milli)</span>
+  <span class="c1"># pad ms or seconds with zeroes, so string length always is 3.</span>
+  <span class="nb">local</span> <span class="nv">timmy</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%03d&quot;</span> $milli<span class="k">)</span>
 
-  <span class="s s-Atom">#</span> <span class="s s-Atom">create</span> <span class="s s-Atom">a</span> <span class="s s-Atom">string</span> <span class="s s-Atom">with</span> <span class="s s-Atom">the</span> <span class="s s-Atom">first</span> <span class="s s-Atom">charcter</span> <span class="s s-Atom">of</span> <span class="s s-Atom">each</span> <span class="s s-Atom">folder</span> <span class="s s-Atom">in</span> <span class="s s-Atom">path</span>
-  <span class="s s-Atom">local</span> <span class="s s-Atom">pth=</span><span class="s2">&quot;$(pwd)&quot;</span>
-  <span class="s s-Atom">pth=</span><span class="err">$</span><span class="p">{</span><span class="s s-Atom">pth/</span><span class="err">$</span><span class="p">{</span><span class="nv">HOME</span><span class="p">}</span><span class="s s-Atom">/&#39;~&#39;</span><span class="p">}</span>
-  <span class="s s-Atom">local</span> <span class="s s-Atom">newpth=</span><span class="s2">&quot;&quot;</span>
-  <span class="s s-Atom">apa=</span><span class="p">(</span> <span class="err">$</span><span class="p">{</span><span class="s s-Atom">pth//\//&#39; &#39;</span><span class="p">}</span> <span class="p">)</span>
+  <span class="c1"># create a string with the first charcter of each folder in path</span>
+  <span class="nb">local</span> <span class="nv">pth</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+  <span class="nv">pth</span><span class="o">=</span><span class="si">${</span><span class="nv">pth</span><span class="p">/</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="p">/</span><span class="s1">&#39;~&#39;</span><span class="si">}</span>
+  <span class="nb">local</span> <span class="nv">newpth</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+  <span class="nv">apa</span><span class="o">=(</span> <span class="si">${</span><span class="nv">pth</span><span class="p">//</span><span class="se">\/</span><span class="p">/</span><span class="s1">&#39; &#39;</span><span class="si">}</span> <span class="o">)</span>
 
-  <span class="s s-Atom">for</span> <span class="s s-Atom">d</span> <span class="s s-Atom">in</span> <span class="err">$</span><span class="p">{</span><span class="s s-Atom">apa</span><span class="p">[</span><span class="s s-Atom">@</span><span class="p">]};</span> <span class="s s-Atom">do</span>
-    <span class="p">[[</span> <span class="err">$</span><span class="s s-Atom">d</span> <span class="o">=</span> <span class="s s-Atom">&#39;~&#39;</span> <span class="p">]]</span> <span class="s s-Atom">&amp;&amp;</span> <span class="s s-Atom">newpth=&#39;~&#39;</span> <span class="s s-Atom">&amp;&amp;</span> <span class="s s-Atom">continue</span>
-    <span class="s s-Atom">#</span> <span class="s s-Atom">if</span> <span class="s s-Atom">first</span> <span class="s s-Atom">char</span> <span class="o">is</span> <span class="s s-Atom">&#39;.&#39;</span><span class="p">,</span> <span class="s s-Atom">grab</span> <span class="s s-Atom">the</span> <span class="s s-Atom">second</span>
-    <span class="p">[[</span> <span class="err">$</span><span class="p">{</span><span class="nn">d</span><span class="p">:</span><span class="mi">0</span><span class="s s-Atom">:</span><span class="mi">1</span><span class="p">}</span> <span class="o">=</span> <span class="s s-Atom">&#39;.&#39;</span> <span class="p">]]</span> <span class="s s-Atom">\</span>
-      <span class="s s-Atom">&amp;&amp;</span> <span class="s s-Atom">newpth+=</span><span class="s2">&quot;/${d:1:1}&quot;</span> <span class="p">||</span> <span class="s s-Atom">newpth+=</span><span class="s2">&quot;/${d:0:1}&quot;</span>
-  <span class="s s-Atom">done</span>
+  <span class="k">for</span> d in <span class="si">${</span><span class="nv">apa</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+    <span class="o">[[</span> <span class="nv">$d</span> <span class="o">=</span> <span class="s1">&#39;~&#39;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">newpth</span><span class="o">=</span><span class="s1">&#39;~&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">continue</span>
+    <span class="c1"># if first char is &#39;.&#39;, grab the second</span>
+    <span class="o">[[</span> <span class="si">${</span><span class="nv">d</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">]]</span> <span class="se">\</span>
+      <span class="o">&amp;&amp;</span> newpth+<span class="o">=</span><span class="s2">&quot;/</span><span class="si">${</span><span class="nv">d</span><span class="p">:</span><span class="nv">1</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">||</span> newpth+<span class="o">=</span><span class="s2">&quot;/</span><span class="si">${</span><span class="nv">d</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">done</span>
 
-  <span class="nv">PS1</span><span class="s s-Atom">=</span><span class="s2">&quot;${psc}${timmy} ${W}${newpth} ${B}&gt;${RESET} &quot;</span>
-  <span class="s s-Atom">unset</span> <span class="s s-Atom">timer</span>
-<span class="p">}</span>
+  <span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">psc</span><span class="si">}${</span><span class="nv">timmy</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">W</span><span class="si">}${</span><span class="nv">newpth</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">B</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">${</span><span class="nv">RESET</span><span class="si">}</span><span class="s2"> &quot;</span>
+  <span class="nb">unset</span> timer
+<span class="o">}</span>
 
 <span class="c1"># https://unix.stackexchange.com/a/65312</span>
-<span class="s s-Atom">trap</span> <span class="s s-Atom">&#39;timer_start&#39;</span> <span class="nv">DEBUG</span>
-<span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s s-Atom">prompt_generator</span>
+<span class="nb">trap</span> <span class="s1">&#39;timer_start&#39;</span> DEBUG
+<span class="nv">PROMPT_COMMAND</span><span class="o">=</span>prompt_generator
 
-<span class="s s-Atom">printf</span> <span class="s s-Atom">&#39;\e]710;%s\007&#39;</span> <span class="err">&quot;</span><span class="nn">xft</span><span class="p">:</span><span class="nv">Fixedsys</span> <span class="nv">Excelsior</span> <span class="mf">3.01</span><span class="s s-Atom">\-</span><span class="nv">L2</span> <span class="nv">Mono</span><span class="s s-Atom">:style</span><span class="o">=</span><span class="nv">Regular</span><span class="err">&quot;</span>
-</pre></div>
+<span class="nb">printf</span> <span class="s1">&#39;\e]710;%s\007&#39;</span> <span class="s2">&quot;xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular&quot;</span>
+</code></pre></div>
 <hr>
 
 

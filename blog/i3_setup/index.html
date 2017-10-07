@@ -887,41 +887,42 @@ lives only one.
 <p>You will most likely make a lot of similar program-launching-key-bindings. With this method i think the config becomes easier to both read and write.</p>
 
 <p>Below are all my set variables. (Some of them are dependent on external applications, but you get the idea.)</p>
-<div class="highlight"><pre><span class="x">set </span><span class="p">$</span><span class="nv">exe</span><span class="x"> exec --no-startup-id exec</span>
 
-<span class="x">set </span><span class="p">$</span><span class="nv">left1</span><span class="x">   y</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">down1</span><span class="x">   u</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">up1</span><span class="x">     i</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">right1</span><span class="x">  o</span>
+<pre><code>set $exe exec --no-startup-id exec
 
-<span class="x">set </span><span class="p">$</span><span class="nv">left2</span><span class="x">   h</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">down2</span><span class="x">   j</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">up2</span><span class="x">     k</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">right2</span><span class="x">  l</span>
+set $left1   y
+set $down1   u
+set $up1     i
+set $right1  o
 
-<span class="x">set </span><span class="p">$</span><span class="nv">left3</span><span class="x">   n</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">down3</span><span class="x">   m</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">up3</span><span class="x">     comma</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">right3</span><span class="x">  period</span>
+set $left2   h
+set $down2   j
+set $up2     k
+set $right2  l
 
-<span class="x">set </span><span class="p">$</span><span class="nv">fntsz</span><span class="x"> 8</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">browser</span><span class="x"> -c Vivaldi-stable -e vivaldi</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">editor</span><span class="x"> -i sublime_text -e subl</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">filemanager</span><span class="x"> -i spacefm -e spacefm </span>
-<span class="x">set </span><span class="p">$</span><span class="nv">bigsize</span><span class="x">   10 px or 10 ppt</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">smallsize</span><span class="x"> 3 px or 3 ppt</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">bigmove</span><span class="x">   30 px</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">smallmove</span><span class="x"> 1 px</span>
+set $left3   n
+set $down3   m
+set $up3     comma
+set $right3  period
 
-<span class="x">set </span><span class="p">$</span><span class="nv">alt</span><span class="x"> Mod1</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">win</span><span class="x"> bindsym Mod4</span>
-<span class="x">set </span><span class="p">$</span><span class="nv">fdmtm</span><span class="x"> floating disable, move to mark</span>
+set $fntsz 8
+set $browser -c Vivaldi-stable -e vivaldi
+set $editor -i sublime_text -e subl
+set $filemanager -i spacefm -e spacefm 
+set $bigsize   10 px or 10 ppt
+set $smallsize 3 px or 3 ppt
+set $bigmove   30 px
+set $smallmove 1 px
 
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">act</span><span class="x"> i3wm.act </span><span class="err">#</span><span class="x">111313</span>
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">ina</span><span class="x"> i3wm.ina </span><span class="err">#</span><span class="x">111313</span>
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">red</span><span class="x"> i3wm.red </span><span class="cp">#</span><span class="nf">FF0000</span><span class="x"></span>
-<span class="x">set_from_resource </span><span class="p">$</span><span class="nv">fnt</span><span class="x"> i3wm.fnt Terminus</span>
-</pre></div>
+set $alt Mod1
+set $win bindsym Mod4
+set $fdmtm floating disable, move to mark
+
+set_from_resource $act i3wm.act #111313
+set_from_resource $ina i3wm.ina #111313
+set_from_resource $red i3wm.red #FF0000
+set_from_resource $fnt i3wm.fnt Terminus
+</code></pre>
 
 <p>The last three variable declarations look different. That&rsquo;s because they are read from <a href="https://budrich.github.io/dots/xresources">.Xresources</a>, it is perfect for colors since you can set colors for all terminals and many (i3, polybar, rofi e.t.c.) other programs in one file.</p>
 

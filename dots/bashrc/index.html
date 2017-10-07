@@ -844,20 +844,20 @@ is a divine gift.
 <hr>
 
 
-<div class="highlight"><pre># ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c1"># ~/.bashrc: executed by bash(1) for non-login shells.</span>
+<span class="c1"># see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)</span>
+<span class="c1"># for examples</span>
 
-# If not running interactively, don&#39;t do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+<span class="c1"># If not running interactively, don&#39;t do anything</span>
+<span class="k">case</span> <span class="nv">$-</span> in
+    *i*<span class="o">)</span> <span class="p">;;</span>
+      *<span class="o">)</span> <span class="k">return</span><span class="p">;;</span>
+<span class="k">esac</span>
 
-for f in &quot;<span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/.bash/&quot;*; do
+<span class="k">for</span> f in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.bash/&quot;</span>*<span class="p">;</span> <span class="k">do</span>
     . <span class="nv">$f</span>
-done
-</pre></div>
+<span class="k">done</span>
+</code></pre></div>
 <hr>
 
 

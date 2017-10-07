@@ -27,7 +27,7 @@ Before doing anything else i start syncing Dropbox. I start with this step becau
       
       <guid>https://budrich.github.io/blog/perfect_folders/</guid>
       <description>I have tried many different ways to organize my files. I think the current setup I have is by far the best. It uses Dropbox to ensure cloud based backup and Hugo to create this site you are looking at where many of my actual dotfiles and scripts are viewable and auto-updated.
-folder structure This might look overcomplicated and hard to setup, but it actually makes a lot of sense and takes no time to setup.</description>
+  folder structure This might look overcomplicated and hard to setup, but it actually makes a lot of sense and takes no time to setup.</description>
     </item>
     
     <item>

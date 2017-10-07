@@ -850,9 +850,10 @@ the last option you should include is:<br />
 It is important that <code>-e COMMAND</code> is last of the options.</p>
 
 <h2 id="example">example</h2>
-<div class="highlight"><pre>i3run -i sublime_text -e subl
+
+<pre><code>i3run -i sublime_text -e subl
 bindsym Mod4+s exec --no-startup-id exec i3run -i sublime_text -e subl
-</pre></div>
+</code></pre>
 
 <p>this example will look for a window with the instance <code>sublime_text</code> and focus it if it exist, <em>minimize</em> it if it already is focused and run the command: <code>subl</code> if it doesn&rsquo;t exist.</p>
 
@@ -877,7 +878,7 @@ bindsym Mod4+s exec --no-startup-id exec i3run -i sublime_text -e subl
 <hr>
 
 
-<div class="highlight"><pre><span class="ch">#!/bin/bash</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># i3run </span>
 <span class="c1"># run, raise or minimize a program depending on its state.</span>
@@ -978,7 +979,7 @@ bindsym Mod4+s exec --no-startup-id exec i3run -i sublime_text -e subl
 <span class="k">else</span>
   i3-msg <span class="s2">&quot;[con_id=</span><span class="si">${</span><span class="nv">target</span><span class="p">[0]</span><span class="si">}</span><span class="s2">]&quot;</span> focus &gt; /dev/null 2&gt;<span class="p">&amp;</span>1
 <span class="k">fi</span>
-</pre></div>
+</code></pre></div>
 <hr>
 
 

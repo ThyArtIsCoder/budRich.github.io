@@ -846,9 +846,10 @@ floating status of current window. If it is tiled, the window becomes floating. 
 <h2 id="examples">examples</h2>
 
 <p>you could replace your <code>floating toggle</code> binding with this:</p>
-<div class="highlight"><pre>bindsym Mod3+f exec --no-startup-id exec i3mtm      
+
+<pre><code>bindsym Mod3+f exec --no-startup-id exec i3mtm      
 bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m     
-</pre></div>
+</code></pre>
 
 <h2 id="dependencies">dependencies</h2>
 
@@ -876,7 +877,7 @@ bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m
 <hr>
 
 
-<div class="highlight"><pre><span class="ch">#!/bin/bash</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># i3mtm - move to mark</span>
 <span class="c1"># ====================</span>
@@ -944,7 +945,7 @@ show_menu<span class="o">(){</span>
 <span class="k">else</span>
   i3-msg <span class="s2">&quot;[con_id=</span><span class="si">${</span><span class="nv">cur</span><span class="p">[0]</span><span class="si">}</span><span class="s2">]&quot;</span> floating enable, focus
 <span class="k">fi</span>
-</pre></div>
+</code></pre></div>
 <hr>
 
 

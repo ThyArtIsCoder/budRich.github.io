@@ -749,6 +749,8 @@
           ZgotmplZ
           ZgotmplZ
           
+            checked
+          
 
           />
           
@@ -838,133 +840,134 @@ is half an answer
     <p>compton is a lightweight compositor for X that works really well with i3. A compositor adds some eye-candy like transparency and drop-shadows to the windows. But it also do some anti screen tearing magic and such. The compton setup can however be a bit tricky and it all depends on your own preferences and hardware.</p>
 
 <p>The blocks below are more <strong>i3</strong> then hardware related that you might find useful:</p>
-<div class="highlight"><pre>opacity-rule = [ 
+
+<pre><code>opacity-rule = [ 
   # these transparency rules makes windows in tabs/stacks look good.
   # I only let 5 programs to ever be transparent, and only when they
   # are tiled. Notice the extra rule on qbittorrent, this is necessary 
   # for some Qt applications.
-  &quot;0:_NET_WM_STATE@[0]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[1]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[2]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[3]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[4]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;90:class_g = &#39;Sublime_text&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
-  &quot;90:class_g = &#39;URxvt&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
-  &quot;90:class_g = &#39;qBittorrent&#39; &amp;&amp; !I3_FLOATING_WINDOW@:c &amp;&amp; !_NET_WM_STATE@[2]:32a&quot;,
-  &quot;90:class_g = &#39;Klavaro&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
-  # its important that the last rule doesn&#39;t have a comma &#39;,&#39; at the
+  &quot;0:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_HIDDEN'&quot;,
+  &quot;0:_NET_WM_STATE@[1]:32a = '_NET_WM_STATE_HIDDEN'&quot;,
+  &quot;0:_NET_WM_STATE@[2]:32a = '_NET_WM_STATE_HIDDEN'&quot;,
+  &quot;0:_NET_WM_STATE@[3]:32a = '_NET_WM_STATE_HIDDEN'&quot;,
+  &quot;0:_NET_WM_STATE@[4]:32a = '_NET_WM_STATE_HIDDEN'&quot;,
+  &quot;90:class_g = 'Sublime_text' &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
+  &quot;90:class_g = 'URxvt' &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
+  &quot;90:class_g = 'qBittorrent' &amp;&amp; !I3_FLOATING_WINDOW@:c &amp;&amp; !_NET_WM_STATE@[2]:32a&quot;,
+  &quot;90:class_g = 'Klavaro' &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
+  # its important that the last rule doesn't have a comma ',' at the
   # EOL (end of line)
-  &quot;90:class_g = &#39;Spacefm&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;
+  &quot;90:class_g = 'Spacefm' &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;
 ];
 
 shadow-exclude = [
     # the first two rules is a dirt-hack to make my bar not have a shadow.
     &quot;x&lt;=3 &amp;&amp; x2&gt;= 1000 &amp;&amp; y &lt;= 30 &amp;&amp; y2 &gt;=750&quot;,
     &quot;x = 0 &amp;&amp; y = 0 &amp;&amp; override_redirect = true&quot;,
-    # make sure tiled windows doesn&#39;t have a shadow, might be desired when
+    # make sure tiled windows doesn't have a shadow, might be desired when
     # using gaps.
     &quot;!I3_FLOATING_WINDOW@:c&quot;,
-    # these rules makes sure the window title bar doesn&#39;t have a shadow.
-    &quot;class_g = &#39;i3-frame&#39;&quot;,
+    # these rules makes sure the window title bar doesn't have a shadow.
+    &quot;class_g = 'i3-frame'&quot;,
     &quot;_GTK_FRAME_EXTENTS@:c&quot;
-    &quot;name = &#39;Notification&#39;&quot;,
-    &quot;class_g = &#39;Conky&#39;&quot;
+    &quot;name = 'Notification'&quot;,
+    &quot;class_g = 'Conky'&quot;
 ];
-</pre></div>
+</code></pre>
 
 <p>And this is the full <code>compton.conf</code> file:</p>
 
 <hr>
 
 
-<div class="highlight"><pre># Shadow
-shadow = true;
-no-dnd-shadow = true;
-no-dock-shadow = true;
-clear-shadow = true;
-shadow-radius = 5;
-shadow-offset-x = 5;
-shadow-offset-y = 5;
-shadow-opacity = 0.8;
-shadow-red = 0.05;
-shadow-green = 0.05;
-shadow-blue = 0.05;
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c1"># Shadow</span>
+<span class="nv">shadow</span> <span class="o">=</span> true<span class="p">;</span>
+no-dnd-shadow <span class="o">=</span> true<span class="p">;</span>
+no-dock-shadow <span class="o">=</span> true<span class="p">;</span>
+clear-shadow <span class="o">=</span> true<span class="p">;</span>
+shadow-radius <span class="o">=</span> 5<span class="p">;</span>
+shadow-offset-x <span class="o">=</span> 5<span class="p">;</span>
+shadow-offset-y <span class="o">=</span> 5<span class="p">;</span>
+shadow-opacity <span class="o">=</span> 0.8<span class="p">;</span>
+shadow-red <span class="o">=</span> 0.05<span class="p">;</span>
+shadow-green <span class="o">=</span> 0.05<span class="p">;</span>
+shadow-blue <span class="o">=</span> 0.05<span class="p">;</span>
 
-blur-background = false;
+blur-background <span class="o">=</span> false<span class="p">;</span>
 
 
-opacity-rule = [ 
-  # these rules makes transperancy for windows in tabs/stacks works
-  # I only let 5 programs to ever be transperant, and only when they
-  # are tiled. Notice the extra rule on qbittorrent, this is necessary 
-  # for some Qt applications.
-  &quot;0:_NET_WM_STATE@[0]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[1]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[2]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[3]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;0:_NET_WM_STATE@[4]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;,
-  &quot;90:class_g = &#39;Sublime_text&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
-  &quot;90:class_g = &#39;URxvt&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
-  &quot;90:class_g = &#39;qBittorrent&#39; &amp;&amp; !I3_FLOATING_WINDOW@:c &amp;&amp; !_NET_WM_STATE@[2]:32a&quot;,
-  &quot;90:class_g = &#39;Klavaro&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;,
-  # its important that the last rule doesn&#39;t have a comma &#39;,&#39; at the
-  # EOL (end of line)
-  &quot;90:class_g = &#39;Spacefm&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;
-];
+opacity-rule <span class="o">=</span> <span class="o">[</span> 
+  <span class="c1"># these rules makes transperancy for windows in tabs/stacks works</span>
+  <span class="c1"># I only let 5 programs to ever be transperant, and only when they</span>
+  <span class="c1"># are tiled. Notice the extra rule on qbittorrent, this is necessary </span>
+  <span class="c1"># for some Qt applications.</span>
+  <span class="s2">&quot;0:_NET_WM_STATE@[0]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;</span>,
+  <span class="s2">&quot;0:_NET_WM_STATE@[1]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;</span>,
+  <span class="s2">&quot;0:_NET_WM_STATE@[2]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;</span>,
+  <span class="s2">&quot;0:_NET_WM_STATE@[3]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;</span>,
+  <span class="s2">&quot;0:_NET_WM_STATE@[4]:32a = &#39;_NET_WM_STATE_HIDDEN&#39;&quot;</span>,
+  <span class="s2">&quot;90:class_g = &#39;Sublime_text&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;</span>,
+  <span class="s2">&quot;90:class_g = &#39;URxvt&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;</span>,
+  <span class="s2">&quot;90:class_g = &#39;qBittorrent&#39; &amp;&amp; !I3_FLOATING_WINDOW@:c &amp;&amp; !_NET_WM_STATE@[2]:32a&quot;</span>,
+  <span class="s2">&quot;90:class_g = &#39;Klavaro&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;</span>,
+  <span class="c1"># its important that the last rule doesn&#39;t have a comma &#39;,&#39; at the</span>
+  <span class="c1"># EOL (end of line)</span>
+  <span class="s2">&quot;90:class_g = &#39;Spacefm&#39; &amp;&amp; !_NET_WM_STATE@:32a &amp;&amp; !I3_FLOATING_WINDOW@:c&quot;</span>
+<span class="o">]</span><span class="p">;</span>
 
-shadow-exclude = [
-    # the first two rules is a dirthack to make my bar not have a shadow.
-    &quot;x&lt;=3 &amp;&amp; x2&gt;= 1000 &amp;&amp; y &lt;= 30 &amp;&amp; y2 &gt;=750&quot;,
-    &quot;x = 0 &amp;&amp; y = 0 &amp;&amp; override_redirect = true&quot;,
-    # make sure tiled windows doesn&#39;t have a shadow, might be desired when
-    # using gaps.
-    &quot;!I3_FLOATING_WINDOW@:c&quot;,
-    # these rules makes sure the window title bar doesn&#39;t have a shadow.
-    &quot;class_g = &#39;i3-frame&#39;&quot;,
-    &quot;_GTK_FRAME_EXTENTS@:c&quot;,
-    &quot;name = &#39;Notification&#39;&quot;,
-    &quot;class_g = &#39;Conky&#39;&quot;,
-    &quot;class_g = &#39;Dunst&#39;&quot;,
-    &quot;class_g ?= &#39;Notify-osd&#39;&quot;,
-    &quot;class_g = &#39;Cairo-clock&#39;&quot;,
-    &quot;class_g = &#39;conky&#39;&quot;,
-    &quot;name = &#39;rofi&#39;&quot;
-];
+shadow-exclude <span class="o">=</span> <span class="o">[</span>
+    <span class="c1"># the first two rules is a dirthack to make my bar not have a shadow.</span>
+    <span class="s2">&quot;x&lt;=3 &amp;&amp; x2&gt;= 1000 &amp;&amp; y &lt;= 30 &amp;&amp; y2 &gt;=750&quot;</span>,
+    <span class="s2">&quot;x = 0 &amp;&amp; y = 0 &amp;&amp; override_redirect = true&quot;</span>,
+    <span class="c1"># make sure tiled windows doesn&#39;t have a shadow, might be desired when</span>
+    <span class="c1"># using gaps.</span>
+    <span class="s2">&quot;!I3_FLOATING_WINDOW@:c&quot;</span>,
+    <span class="c1"># these rules makes sure the window title bar doesn&#39;t have a shadow.</span>
+    <span class="s2">&quot;class_g = &#39;i3-frame&#39;&quot;</span>,
+    <span class="s2">&quot;_GTK_FRAME_EXTENTS@:c&quot;</span>,
+    <span class="s2">&quot;name = &#39;Notification&#39;&quot;</span>,
+    <span class="s2">&quot;class_g = &#39;Conky&#39;&quot;</span>,
+    <span class="s2">&quot;class_g = &#39;Dunst&#39;&quot;</span>,
+    <span class="s2">&quot;class_g ?= &#39;Notify-osd&#39;&quot;</span>,
+    <span class="s2">&quot;class_g = &#39;Cairo-clock&#39;&quot;</span>,
+    <span class="s2">&quot;class_g = &#39;conky&#39;&quot;</span>,
+    <span class="s2">&quot;name = &#39;rofi&#39;&quot;</span>
+<span class="o">]</span><span class="p">;</span>
 
-backend = &quot;xrender&quot;;
-vsync = &quot;opengl-swc&quot;;
+<span class="nv">backend</span> <span class="o">=</span> <span class="s2">&quot;xrender&quot;</span><span class="p">;</span>
+<span class="nv">vsync</span> <span class="o">=</span> <span class="s2">&quot;opengl-swc&quot;</span><span class="p">;</span>
 
-fading = true;
-fade-delta = 7;
-fade-in-step = 0.05;
-fade-out-step = 0.05;
-fade-exclude = [];
+<span class="nv">fading</span> <span class="o">=</span> true<span class="p">;</span>
+fade-delta <span class="o">=</span> 7<span class="p">;</span>
+fade-in-step <span class="o">=</span> 0.05<span class="p">;</span>
+fade-out-step <span class="o">=</span> 0.05<span class="p">;</span>
+fade-exclude <span class="o">=</span> <span class="o">[]</span><span class="p">;</span>
 
-shadow-ignore-shaped = true;
-alpha-step = 0.06;
+shadow-ignore-shaped <span class="o">=</span> true<span class="p">;</span>
+alpha-step <span class="o">=</span> 0.06<span class="p">;</span>
 
-mark-wmwin-focused = true;
-mark-ovredir-focused = true;
-use-ewmh-active-win = true;
-detect-rounded-corners = true;
-detect-client-opacity = true;
-refresh-rate = 60;
-dbe = false;
-paint-on-overlay = true;
-glx-no-stencil = true;
-glx-copy-from-font = true;
-glx-swap-method = 2;
-sw-opti = true;
-unredir-if-possible = false;
-focus-exclude = [];
-detect-transient = true;
-detect-client-leader = true;
-invert-color-include = [];
+mark-wmwin-focused <span class="o">=</span> true<span class="p">;</span>
+mark-ovredir-focused <span class="o">=</span> true<span class="p">;</span>
+use-ewmh-active-win <span class="o">=</span> true<span class="p">;</span>
+detect-rounded-corners <span class="o">=</span> true<span class="p">;</span>
+detect-client-opacity <span class="o">=</span> true<span class="p">;</span>
+refresh-rate <span class="o">=</span> 60<span class="p">;</span>
+<span class="nv">dbe</span> <span class="o">=</span> false<span class="p">;</span>
+paint-on-overlay <span class="o">=</span> true<span class="p">;</span>
+glx-no-stencil <span class="o">=</span> true<span class="p">;</span>
+glx-copy-from-font <span class="o">=</span> true<span class="p">;</span>
+glx-swap-method <span class="o">=</span> 2<span class="p">;</span>
+sw-opti <span class="o">=</span> true<span class="p">;</span>
+unredir-if-possible <span class="o">=</span> false<span class="p">;</span>
+focus-exclude <span class="o">=</span> <span class="o">[]</span><span class="p">;</span>
+detect-transient <span class="o">=</span> true<span class="p">;</span>
+detect-client-leader <span class="o">=</span> true<span class="p">;</span>
+invert-color-include <span class="o">=</span> <span class="o">[]</span><span class="p">;</span>
 wintypes:
-{
-  tooltip = { fade = true; shadow = true; opacity = 1.0; focus = true; };
-};
-</pre></div>
+<span class="o">{</span>
+  <span class="nv">tooltip</span> <span class="o">=</span> <span class="o">{</span> <span class="nv">fade</span> <span class="o">=</span> true<span class="p">;</span> <span class="nv">shadow</span> <span class="o">=</span> true<span class="p">;</span> <span class="nv">opacity</span> <span class="o">=</span> 1.0<span class="p">;</span> <span class="nv">focus</span> <span class="o">=</span> true<span class="p">;</span> <span class="o">}</span><span class="p">;</span>
+<span class="o">}</span><span class="p">;</span>
+</code></pre></div>
 <hr>
 
 

@@ -851,11 +851,12 @@ there is no instance/class/title to identify them, making it difficult to contro
 
 <p>this will create a ghost marked casper, you can perform any action
 you can perform on a regular container.</p>
-<div class="highlight"><pre>i3-msg [con_mark=casper] move to workspace 2 
+
+<pre><code>i3-msg [con_mark=casper] move to workspace 2 
 i3-msg [con_mark=casper] split v  
 i3-msg [con_mark=casper] layout tabbed  
 i3-msg [con_mark=casper] kill  
-</pre></div>
+</code></pre>
 
 <p>the last example (<em>kill</em>), destroys the container.</p>
 
@@ -868,7 +869,7 @@ i3-msg [con_mark=casper] kill
 <hr>
 
 
-<div class="highlight"><pre><span class="ch">#!/bin/bash</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># i3gw - &quot;ghost window&quot; wrapper for i3</span>
 <span class="c1"># ctrl+c, ctrl+v by budRich 2017</span>
@@ -906,7 +907,7 @@ i3-msg [con_mark=casper] kill
 
 <span class="nv">w</span><span class="o">=</span><span class="k">$(</span>i3-msg open<span class="k">)</span>
 i3-msg <span class="o">[</span><span class="nv">con_id</span><span class="o">=</span><span class="si">${</span><span class="nv">w</span><span class="p">:</span><span class="nv">22</span><span class="k">:-</span><span class="nv">2</span><span class="si">}</span><span class="o">]</span> floating disable, mark $name
-</pre></div>
+</code></pre></div>
 <hr>
 
 

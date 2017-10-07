@@ -842,33 +842,33 @@ The <code>read -rsn1 -t2 input</code> waits two seconds for a key-press before i
 <hr>
 
 
-<div class="highlight"><pre><span class="err">#</span><span class="x"> if running bash</span>
-<span class="x">if [ -n &quot;</span><span class="p">$</span><span class="nv">BASH_VERSION</span><span class="x">&quot; ]; then</span>
-<span class="x">    </span><span class="err">#</span><span class="x"> include .bashrc if it exists</span>
-<span class="x">    if [ -f &quot;</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.bashrc&quot; ]; then</span>
-<span class="x">	. &quot;</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.bashrc&quot;</span>
-<span class="x">    fi</span>
-<span class="x">fi</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c1"># if running bash</span>
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$BA</span><span class="s2">SH_VERSION&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c1"># include .bashrc if it exists</span>
+    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span>$<span class="s2">HOME/.bashrc&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	. <span class="s2">&quot;</span>$<span class="s2">HOME/.bashrc&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
 
 
-<span class="err">#</span><span class="x"> anti-DM</span>
+<span class="c1"># anti-DM</span>
 
-<span class="err">#</span><span class="x"> wait two seconds for input from user</span>
-<span class="err">#</span><span class="x"> start desired environment.</span>
-<span class="err">#</span><span class="x"> if none selected, defaults to startx (i3)</span>
-<span class="err">#</span><span class="x"> find way to kill x and return to login when mint is active.</span>
+<span class="c1"># wait two seconds for input from user</span>
+<span class="c1"># start desired environment.</span>
+<span class="c1"># if none selected, defaults to startx (i3)</span>
+<span class="c1"># find way to kill x and return to login when mint is active.</span>
+<span class="c1"># sdfsdfsdf slas</span>
+<span class="nb">read</span> -rsn1 -t2 input
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span>$<span class="s2">input&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="k">case</span> $input in
+    <span class="m">1</span> <span class="o">)</span> <span class="nv">start</span><span class="o">=</span>bash <span class="p">;;</span> <span class="c1"># bash</span>
+    <span class="m">2</span> <span class="o">)</span> startx $HOME/.xinitrc &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">;;</span>
+    <span class="m">3</span> <span class="o">)</span> sudo systemctl start lightdm.service &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">fi</span>
 
-<span class="x">read -rsn1 -t2 input</span>
-<span class="x">if [ -n &quot;</span><span class="p">$</span><span class="nv">input</span><span class="x">&quot; ]; then</span>
-<span class="x">  case </span><span class="p">$</span><span class="nv">input</span><span class="x"> in</span>
-<span class="x">    1 ) start=bash ;; </span><span class="err">#</span><span class="x"> bash</span>
-<span class="x">    2 ) startx </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.xinitrc &gt; /dev/null 2&gt;&amp;1 ;;</span>
-<span class="x">    3 ) sudo systemctl start lightdm.service &gt; /dev/null 2&gt;&amp;1 ;;</span>
-<span class="x">  esac</span>
-<span class="x">fi</span>
-
-<span class="x">[ -z &quot;</span><span class="p">$</span><span class="nv">input</span><span class="x">&quot; ] &amp;&amp; startx  </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.xinitrc &gt; /dev/null 2&gt;&amp;1</span>
-</pre></div>
+<span class="o">[</span> -z <span class="s2">&quot;</span>$<span class="s2">input&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> startx  $HOME/.xinitrc &gt; /dev/null 2&gt;<span class="p">&amp;</span>1
+</code></pre></div>
 <hr>
 
 

@@ -878,17 +878,19 @@ none percent of.
 <p><strong>install dependencies</strong></p>
 
 <p><code>sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev xutils-dev autoconf automake libtool checkinstall</code></p>
-<div class="highlight"><pre>cd /tmp
+
+<pre><code>cd /tmp
 wget https://github.com/Airblader/xcb-util-xrm/releases/download/v1.2/xcb-util-xrm-1.2.tar.gz
 tar xzf xcb-util-xrm-1.2.tar.gz
 cd xcb-util-xrm
 ./autogen.sh --prefix=/usr
 make
 sudo checkinstall
-</pre></div>
+</code></pre>
 
 <p><strong>download, build and install i3</strong></p>
-<div class="highlight"><pre>cd /tmp
+
+<pre><code>cd /tmp
 # get the official release tar of 4.14.1
 wget https://github.com/i3/i3/archive/4.14.1.tar.gz
 # extract it
@@ -900,7 +902,7 @@ mkdir build &amp;&amp; cd build
 ../configure --prefix=/usr --sysconfdir=/etc
 make
 sudo checkinstall
-</pre></div>
+</code></pre>
 
 <p>now you have a fresh install of vanilla i3 v:4.14.1 If you rather want gaps, follow <a href="https://benjames.io/2017/09/03/installing-i3-gaps-on-ubuntu-16-04/">this guide by benjames</a>, that I based my guide on.</p>
 

@@ -14,7 +14,7 @@ fi
 # start desired environment.
 # if none selected, defaults to startx (i3)
 # find way to kill x and return to login when mint is active.
-
+# sdfsdfsdf slas
 read -rsn1 -t2 input
 if [ -n "$input" ]; then
   case $input in
