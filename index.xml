@@ -163,5 +163,252 @@ I don&amp;rsquo;t care so much about distros and I have not had any problems wit
       <description>One of the most classic dotfiles, .Xresources. I have gotten most ideas on from the r/unixporn wiki. I can&amp;rsquo;t seem to get &amp;ldquo;short name&amp;rdquo; for the includes to work, which annoys me a bit..</description>
     </item>
     
+    <item>
+      <title>xinitrc</title>
+      <link>https://budrich.github.io/dots/xinitrc/</link>
+      <pubDate>Fri, 22 Sep 2017 17:17:15 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xinitrc/</guid>
+      <description>This is part of my anti-DM suite. The stuff I want to happen just before i3 loads up, goes here.
+Starting urxvt in daemon mode is really nice and makes it consume less resources and start much faster.
+I use hsetroot to set the desktop background to a minimal tiled pattern and a fetch color from Xresources.
+The Seba keyboard layout keeps me sane!
+I use sxhkd to remap the back button of the mouse to backspace.</description>
+    </item>
+    
+    <item>
+      <title>compton</title>
+      <link>https://budrich.github.io/dots/config/compton/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:47 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/compton/</guid>
+      <description>compton is a lightweight compositor for X that works really well with i3. A compositor adds some eye-candy like transparency and drop-shadows to the windows. But it also do some anti screen tearing magic and such. The compton setup can however be a bit tricky and it all depends on your own preferences and hardware.
+The blocks below are more i3 then hardware related that you might find useful:
+opacity-rule = [ # these transparency rules makes windows in tabs/stacks look good.</description>
+    </item>
+    
+    <item>
+      <title>preferences</title>
+      <link>https://budrich.github.io/dots/config/klavaro/preferences/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:47 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/klavaro/preferences/</guid>
+      <description>Klavaro is a GTK touch typing trainer. It is really nice to just sit and listen to a pod while the fingers flow. My average WPM is around 55 at the moment. But I slowly improve.
+I believe touch typing is very important to master if you want to become a good programmer.
+If you never have given touch typing a thought, i really recommend you read Programming&amp;rsquo;s Dirtiest Little Secret by Steve Yegge.</description>
+    </item>
+    
+    <item>
+      <title>config</title>
+      <link>https://budrich.github.io/dots/config/i3/config/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:45 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/i3/config/</guid>
+      <description>I have written a long article about my i3 config: i3_setup . I have made some assisting scripts, a suit I call i3ass to help me manage my window manager.</description>
+    </item>
+    
+    <item>
+      <title>bud</title>
+      <link>https://budrich.github.io/dots/irssi/bud/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:44 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/irssi/bud/</guid>
+      <description>I have used irssi for a long time and I don&amp;rsquo;t think I&amp;rsquo;ll ever switch or finish this theme. I have tried to make it as narrow as possible, kind of how the twitch chats look. With the user name on it&amp;rsquo;s own line above the message.</description>
+    </item>
+    
+    <item>
+      <title>HatOfGod</title>
+      <link>https://budrich.github.io/dots/xres/colors/hatofgod/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:43 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/colors/hatofgod/</guid>
+      <description>This is a color-scheme &amp;ldquo;I&amp;rdquo; made many years ago. It was originally for the AHK editor SciTE. But I also ported it to Sublime and now .Xresources</description>
+    </item>
+    
+    <item>
+      <title>solarized-dark</title>
+      <link>https://budrich.github.io/dots/xres/colors/solarized-dark/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:42 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/colors/solarized-dark/</guid>
+      <description>Solarized is perfect.</description>
+    </item>
+    
+    <item>
+      <title>urxvt</title>
+      <link>https://budrich.github.io/dots/xres/urxvt/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:41 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/urxvt/</guid>
+      <description>Nothing special. I really like to be able to change font (and font-size) on the fly, there are times when you want to read the output and theres times you just want to monitor the output.
+I am planning to add something similar to be able to switch between a dark and light color-scheme.</description>
+    </item>
+    
+    <item>
+      <title>xft</title>
+      <link>https://budrich.github.io/dots/xres/xft/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:41 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/xft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>color</title>
+      <link>https://budrich.github.io/dots/xres/color/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/color/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>i3wm</title>
+      <link>https://budrich.github.io/dots/xres/i3wm/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/i3wm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prompt</title>
+      <link>https://budrich.github.io/dots/bash/prompt/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:39 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/prompt/</guid>
+      <description>My prompt shows the runtime of the last command and a compact CWD (current work directory). The last line of the file:
+printf &#39;\e]710;%s\007&#39; &amp;quot;xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular&amp;quot;
+is a little dirthack™ to make it possible to use Fixedsys in urxvt, read more about how to setup fonts here.</description>
+    </item>
+    
+    <item>
+      <title>func</title>
+      <link>https://budrich.github.io/dots/bash/func/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:37 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/func/</guid>
+      <description>This is the power of the bash shell, you can write small functions to make using the shell easier.
+lb
+I found this one on the LinuxBBQ forums it adds the last command to a logfile. Very handy.
+adda
+Adds a new permanent alias. Example:
+adda dwn cd ~/Downloads
+this will add, alias dwn=&#39;~/Downloads&#39; to ~/.bash/alias and reloads ~/.bashrc so you can use the alias immediately.
+apti/gemi/pipi
+install packages and log package name.</description>
+    </item>
+    
+    <item>
+      <title>misc</title>
+      <link>https://budrich.github.io/dots/bash/misc/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:37 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/misc/</guid>
+      <description>Random options, most from the default .bashrc file.</description>
+    </item>
+    
+    <item>
+      <title>export</title>
+      <link>https://budrich.github.io/dots/bash/export/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/export/</guid>
+      <description>Environment values and shell options</description>
+    </item>
+    
+    <item>
+      <title>alias</title>
+      <link>https://budrich.github.io/dots/bash/alias/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:35 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/alias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>igi</title>
+      <link>https://budrich.github.io/scripts/igi/</link>
+      <pubDate>Wed, 20 Sep 2017 22:40:49 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/igi/</guid>
+      <description>This script generates an issue file that is shown when you log in to your computer without a DM. It applies the current color scheme that you have set in .Xresources
+
+dependencies    toilet display ASCII artish fonts     lolcat rainbow color effect on terminal output   fortune prints a random fortune    The script has a sudo mv command, which requires you to enter a password.</description>
+    </item>
+    
+    <item>
+      <title>i3zen</title>
+      <link>https://budrich.github.io/i3ass/i3zen/</link>
+      <pubDate>Wed, 20 Sep 2017 22:38:48 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3zen/</guid>
+      <description>put your windows in a zen mode for a zen mood When run, this script puts the active window between two ghosts (centered). if the window already is &amp;ldquo;zen&amp;rdquo;, move it back to its original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.
+I made a post on /r/unixporn where you can view an animated gif of i3zen in action.</description>
+    </item>
+    
+    <item>
+      <title>i3run</title>
+      <link>https://budrich.github.io/i3ass/i3run/</link>
+      <pubDate>Wed, 20 Sep 2017 22:36:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3run/</guid>
+      <description>run, raise or minimize a program depending on its state. if target window doesn&amp;rsquo;t exist, a given command is launched. if target window is on another workspace, it is moved to current workspace. If target window doesn&amp;rsquo;t have focus it will be given focus. If target window has focus it will be sent to the scratchpad.
+usage run i3run with ONE of the following options to define target window:</description>
+    </item>
+    
+    <item>
+      <title>i3mtm</title>
+      <link>https://budrich.github.io/i3ass/i3mtm/</link>
+      <pubDate>Wed, 20 Sep 2017 22:32:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3mtm/</guid>
+      <description>mtm = Move To Mark When launched without flags, i3mtm checks floating status of current window. If it is tiled, the window becomes floating. if it is floating, a search for marks is done if no marks are found, window becomes tiled. otherwise a dmenu asks for a mark to move window to. if no selection is made, window is tiled but not moved. otherwise window is tiled and moved to selected mark.</description>
+    </item>
+    
+    <item>
+      <title>i3gw</title>
+      <link>https://budrich.github.io/i3ass/i3gw/</link>
+      <pubDate>Wed, 20 Sep 2017 22:24:23 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3gw/</guid>
+      <description>wrapper for the ghost window function in i3wm
+i3-msg has an undocumented function (open) that creates empty containers, or as I call them: ghosts. Since these empty containers doesn&amp;rsquo;t contain any windows there is no instance/class/title to identify them, making it difficult to control them. They do however have a con_id and I found the easiest way to keep track of the ghosts is to mark them. That is what this script does, it creates a ghost get its con_id and mark it.</description>
+    </item>
+    
+    <item>
+      <title>i3get</title>
+      <link>https://budrich.github.io/i3ass/i3get/</link>
+      <pubDate>Wed, 20 Sep 2017 22:22:45 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3get/</guid>
+      <description>search for windows in i3 tree, return desired information if no arguments are passed. con_id of acitve window is returned.
+examples: search for window with instance name sublime_text. Request workspace, title and floating state. i3get -i sublime_text -r wtf</description>
+    </item>
+    
+    <item>
+      <title>i3cast</title>
+      <link>https://budrich.github.io/i3ass/i3cast/</link>
+      <pubDate>Wed, 20 Sep 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3cast/</guid>
+      <description> usage just run the script to start the recording run it again to stop and preview the recording and perform action, (save,upload or play again). if no action is selected the recording is deleted. uploaded recordings is also saved.
+a notification is shown when upload is complete and a link is put in your clipboard.
+protip
+bindsym --release Mod3+Pint exec --no-startup-id i3cast
+requirements    i3get to identify and the terminal (urxvt) window     i3run to run and hide the terminal (urxvt) window   urxvt terminal emulator   ffmpeg  commandline tool to record media   curl commandline tool to download and upload stuff   mpv minimal mediaplayer, used to preview recording   dmenu tool that displays a menu   xclip tool that handles clipboard events   xdotool needed to send q to urxvt, to quit the recording in a proper way   gif-is-jif  to save and upload gif format (optional)    </description>
+    </item>
+    
+    <item>
+      <title>subact</title>
+      <link>https://budrich.github.io/scripts/subact/</link>
+      <pubDate>Wed, 20 Sep 2017 15:44:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/subact/</guid>
+      <description>This is a script I wrote to automate the process of uploading scripts and dotfiles to this web site.
+It analyzes the title of Sublime Text to get the filename of the currently open file.
+If the file is in ~/bin (my local scripfolder), it is a scriptfile, else it is a dotfile. Depending on the type it is sent to different directories within my hugo project folder. Which is on my Dropbox.</description>
+    </item>
+    
   </channel>
 </rss>
