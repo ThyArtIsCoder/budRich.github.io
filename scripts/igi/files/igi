@@ -1,13 +1,8 @@
 #!/bin/bash
 
-# tty1 dimensions: 170x48
-# tty1 dimensions: 200x56
-TERMH=56   # number of lines
-TERMW=200  # number of collumns
-
-# TERMH=63 # number of lines
-# TERMW=226  # number of collumns
-
+# thank you alfunx for the stty commands
+TERMH=$(stty -a </dev/tty1 | grep -Po '(?<=rows )\d+')
+TERMW=$(stty -a </dev/tty1 | grep -Po '(?<=columns )\d+')
 
 MAX_LINES=6 # Maximum number of lines to display
 WRAP=17     # On which Collumn to wrap fortune

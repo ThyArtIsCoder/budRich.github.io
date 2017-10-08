@@ -884,14 +884,9 @@ Copy the output.</p>
 
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="ch">#!/bin/bash</span>
 
-<span class="c1"># tty1 dimensions: 170x48</span>
-<span class="c1"># tty1 dimensions: 200x56</span>
-<span class="nv">TERMH</span><span class="o">=</span><span class="m">56</span>   <span class="c1"># number of lines</span>
-<span class="nv">TERMW</span><span class="o">=</span><span class="m">200</span>  <span class="c1"># number of collumns</span>
-
-<span class="c1"># TERMH=63 # number of lines</span>
-<span class="c1"># TERMW=226  # number of collumns</span>
-
+<span class="c1"># thank you alfunx for the stty commands</span>
+<span class="nv">TERMH</span><span class="o">=</span><span class="k">$(</span>stty -a &lt;/dev/tty1 <span class="p">|</span> grep -Po <span class="s1">&#39;(?&lt;=rows )\d+&#39;</span><span class="k">)</span>
+<span class="nv">TERMW</span><span class="o">=</span><span class="k">$(</span>stty -a &lt;/dev/tty1 <span class="p">|</span> grep -Po <span class="s1">&#39;(?&lt;=columns )\d+&#39;</span><span class="k">)</span>
 
 <span class="nv">MAX_LINES</span><span class="o">=</span><span class="m">6</span> <span class="c1"># Maximum number of lines to display</span>
 <span class="nv">WRAP</span><span class="o">=</span><span class="m">17</span>     <span class="c1"># On which Collumn to wrap fortune</span>
