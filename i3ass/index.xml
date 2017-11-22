@@ -11,6 +11,50 @@
     
     
     <item>
+      <title>README</title>
+      <link>https://budrich.github.io/i3ass/readme/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/readme/</guid>
+      <description>i3ass - i3 assistance scripts    script function     i3fyra An advanced simple layout   i3run Run, Raise or hide a window   i3get Get information about i3   i3cast Create and upload screenrecordings   i3list Get lots of information about i3   i3gw Ghost window wrapper script   i3mtm Move window to a chosen mark   i3term Launch a program inside a terminal   i3zen Move a window to the zenter    license All i3ass scripts are licensed with the MIT license</description>
+    </item>
+    
+    <item>
+      <title>i3fyra</title>
+      <link>https://budrich.github.io/i3ass/i3fyra/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
+      <description>An advanced simple tiling layout for i3wm fyra is the Swedish name for &amp;ldquo;four&amp;rdquo;.
+  In the video above I show the functionality of i3fyra
+dependencies  i3list i3gw  The layout consists of four containers:
+A B C D  The internal layout of the containers doesn&amp;rsquo;t matter.
+This means that container A could be tabbed and the others split horizontally for example.
+A is always to the right of B and D.</description>
+    </item>
+    
+    <item>
+      <title>i3list</title>
+      <link>https://budrich.github.io/i3ass/i3list/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3list/</guid>
+      <description>This script is vital for i3fyra to work. But it can be used on it&amp;rsquo;s own or with other scripts. i3list is also used by i3run. i3list parses the output of the command:
+i3-msg -t get_tree
+and returns a long string with 43 values separated by spaces. This strange output format is made to make it possible to pipe the output to other scripts. A lot of the information is specific to i3fyra, but if i3list doesn&amp;rsquo;t find a value an X will be placed in it&amp;rsquo;s place in the output.</description>
+    </item>
+    
+    <item>
+      <title>i3term</title>
+      <link>https://budrich.github.io/i3ass/i3term/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3term/</guid>
+      <description>Launch a command in a new urxvt window Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.
+I just made this script to keep my i3config cleaner, and to be able to set fixedsys as the font.</description>
+    </item>
+    
+    <item>
       <title>i3zen</title>
       <link>https://budrich.github.io/i3ass/i3zen/</link>
       <pubDate>Wed, 20 Sep 2017 22:38:48 +0200</pubDate>
@@ -55,8 +99,8 @@ i3-msg has an undocumented function (open) that creates empty containers, or as 
       <pubDate>Wed, 20 Sep 2017 22:22:45 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3get/</guid>
-      <description>search for windows in i3 tree, return desired information if no arguments are passed. con_id of acitve window is returned.
-examples: search for window with instance name sublime_text. Request workspace, title and floating state. i3get -i sublime_text -r wtf</description>
+      <description>Get information about a window Search for windows in i3 tree and print requested information. If no arguments are passed. con_id of active window is returned.
+usage i3get [OPTION CRITERIA] Options: v show version and exit h show this help a currently active window (default) c CLASS search for windows with the given class i INSTANCE search for windows with the given instance t TITLE search for windows with title.</description>
     </item>
     
     <item>

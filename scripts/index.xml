@@ -17,8 +17,7 @@
       
       <guid>https://budrich.github.io/scripts/igi/</guid>
       <description>This script generates an issue file that is shown when you log in to your computer without a DM. It applies the current color scheme that you have set in .Xresources
-
-dependencies    toilet display ASCII artish fonts     lolcat rainbow color effect on terminal output   fortune prints a random fortune    The script has a sudo mv command, which requires you to enter a password.</description>
+ss_igi1.png   dependencies    toilet display ASCII artish fonts     lolcat rainbow color effect on terminal output   fortune prints a random fortune    The script has a sudo mv command, which requires you to enter a password.</description>
     </item>
     
     <item>

@@ -1,36 +1,69 @@
 #!/bin/bash
 
-# i3cast - create and upload screen recordings
-# ============================================
-# gluecifer: **budRich** 2017
-# 
-# ### usage ### 
-# just run the script to start the recording  
-# run it again to stop and preview the recording  
-# and perform action, (save,upload or play again).  
-# if no action is selected the recording is deleted.  
-# uploaded recordings is also saved.  
+NAME="i3cast"
+VERSION="0.2"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-09-19"
+UPDATED="2017-11-19"
 
-# a notification is shown when upload is complete and  
-# a link is put in your clipboard.  
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+===============================
+create and upload screen recordings
 
-# ### protip ###
-# `bindsym --release Mod3+Pint exec --no-startup-id i3cast`  
+usage
+-----
+$NAME
 
-# ### requirements ### 
-# * **i3get**    https://redd.it/6wyarw
-# * **i3run**    https://redd.it/6x0p0q
-# * **urxvt**    get it from your package manager
-# * **ffmpeg**   get it from your package manager
-# * **curl**     get it from your package manager
-# * **mpv**      get it from your package manager
-# * **dmenu**    get it from your package manager
-# * **xclip**    get it from your package manager  
-# * **xdotool**  get it from your package manager  
+Just run the script to start the recording  
+run it again to stop and preview the recording  
+and perform action, (save,upload or play again).  
+if no action is selected the recording is deleted.  
+uploaded recordings is also saved.  
 
-# ### optional ### 
-# * **gif-is-jif**  https://github.com/markasoftware/gif-is-jif
-# 
+A notification is shown when upload is complete and  
+a link is put in your clipboard.  
+
+protip:
+bindsym --release Mod3+Pint exec --no-startup-id i3cast
+
+dependencies
+------------
+
+* i3get
+* i3run
+* urxvt
+* ffmpeg
+* curl
+* mpv
+* dmenu
+* xclip
+* xdotool
+* DEPENDENCY
+
+optional 
+* gif-is-jif  https://github.com/markasoftware/gif-is-jif
+to upload as animated gif to gifycat.
+
+contact
+-------
+$CONTACT
+"
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf "$NAME - version: $VERSION\n"  && \
+       printf "updated: $UPDATED by $AUTHOR\n" \
+        && exit;;
+    h) printf "${about}\n" && exit;;
+  esac
+done
+
+
+
 # ### discussion ###
 # https://redd.it/6xlibu
 #
@@ -57,18 +90,13 @@ GIF_IS_JIF="$HOME/src/gif-is-jif.bash"
 HOSTS="ptpb.pw"
 
 # Filename and location of recording before saving
-TMP_FILE=/tmp/tmpcast.mkv
+TMP_FILE=/tmp/cast/tmpcast.mkv
 
 # Command used for recording, it works well for my screen,
 # but you might want to change at least -s 1366x768 to match
 # your resolution.
-COMMAND="ffmpeg -y \
--f x11grab \
--s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
--i :0.0 \
--f alsa -i default \
--c:v libx264 -c 30 -c:a flac $TMP_FILE"
-
+COMMAND="ffmpeg -y -f x11grab -s $(xdpyinfo | grep dimensions | awk '{print $2;}') -i :0.0 -f alsa -i default -c:v libx264 -c:a flac /tmp/cast/tmpcast.mkv"
+termcmd="urxvtc -name castterm -e bash -c '${COMMAND}'"
 
 [[ -n $GIF_IS_JIF ]] && HOSTS+="\ngfycat"
 
@@ -95,7 +123,7 @@ upload(){
   case $choice in
     'ptpb.pw' ) 
       pst=$(curl --form "c=@${SAVED}" https://ptpb.pw/)
-      pst=$(printf "${pst}" | awk -F':' '$1=="url"{$1="";print $0}')
+      pst=$(printf "${pst}" | awk -F':' '$1=="url"{$1="";print $2 ":" $3}')
     ;;
 
     gfycat    ) 
@@ -120,18 +148,22 @@ save(){
   mv $TMP_FILE $SAVED
 }
 
-cid=$(i3get -i castterm)
+cid=$(i3get -i castterm -r d)
 
 if [[ -z $cid ]]; then
+  mkdir -p ${TMP_FILE%/*}
   rm -f $TMP_FILE
   # start recording
-  i3run -i castterm -e urxvt -name castterm -e "${COMMAND}"
-  # send it to scratchpad by double launching i3run
-  i3run -i castterm -e urxvt -name castterm -e "${COMMAND}"
+  i3run -i castterm -e "$termcmd"
+  echo hhh
+  # send it to scratchpad
+  i3-msg "[instance=castterm]" move scratchpad
 else
   # stop recording, focus castterm
-  i3run -i castterm -e urxvt -name castterm -e "${COMMAND}"
+  i3run -i castterm
+  sleep .6
   # send key q to castterm to stop recording and kill the window
+  xdotool windowactivate "${cid}"
   xdotool key q
   play
 fi

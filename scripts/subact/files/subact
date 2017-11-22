@@ -16,7 +16,7 @@ FLD_SCRIPTS="scripts"
 FLD_DOTS="dots"
 LOC_SCIRPT_SRC="${HOME}/bin"
 
-FORTUNE_OPTIONS='$HOME/etc/fortunes/budcol'
+FORTUNE_OPTIONS="$HOME/etc/fortunes/budcol"
 TOILET_OPTIONS='-f 3d.flf'
 LOLCAT_OPTIONS='-p 10'
 

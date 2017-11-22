@@ -1,33 +1,21 @@
 [interface]
 language=C
-speech=true
+speech=false
 autostart=true
 exercise=3
 
 [tutor]
 keyboard=qwerty_us
 lesson_font=Noto Sans 35
-tutor_beep=true
-basic_lesson=19
+tutor_beep=false
+basic_lesson=26
 fluid_paragraphs=2
-
-[windows]
-main_X=0
-main_Y=0
-stat_X=363
-stat_Y=192
-tutor_X=0
-tutor_Y=0
-hints_X=606
-hints_Y=21
-top10_X=477
-top10_Y=151
 
 [colors]
 char_untouched_fg=#839496
 char_untouched_bg=#002B36
-char_wrong_fg=#DC322F
-char_wrong_bg=#073642
+char_wrong_bg=#DC322F
+char_wrong_fg=#073642
 char_correct_fg=#93A1A1
 char_correct_bg=#073642
 char_retouched_fg=#859900
@@ -41,13 +29,13 @@ text_intro_bg=#002B36
 
 [goals]
 basic_accuracy=95
-basic_speed=10
+basic_speed=40
 adapt_accuracy=98
-adapt_speed=10
+adapt_speed=40
 velo_accuracy=97
-velo_speed=60
+velo_speed=70
 fluid_accuracy=97
-fluid_speed=60
+fluid_speed=65
 fluid_fluidity=80
 
 [levels]
@@ -71,3 +59,9 @@ fluid_speed_running=65
 fluid_speed_professional=70
 fluid_speed_racer=80
 fluid_speed_flying=90
+
+[windows]
+main_X=0
+main_Y=20
+tutor_X=0
+tutor_Y=0

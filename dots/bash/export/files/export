@@ -4,7 +4,9 @@ HISTSIZE=1000000
 HISTTIMEFORMAT='%F %T  '
 HISTIGNORE=ls:cd:pwd
 
-export EDITOR="subl"
+export BROWSER=surf
+export VISUAL=vim
+export EDITOR=vim
 export PAGER='less -RS'
 export SYSTEMD_LESS=RSMK
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -18,7 +20,11 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 
 QT_QPA_PLATFORMTHEME=qt5ct
 
-PATH="$HOME/bin:$HOME/src:$HOME/.local/bin:$PATH"
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
+PATH="$HOME/.gem/ruby/2.4.0/bin:$HOME/bin:$HOME/src:$HOME/.local/bin:$PATH"
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="$PATH:$HOME/.rvm/bin"
+# PKG_CONFIG_PATH="/usr/share:$PKG_CONFIG_PATH"
 export PATH
 

@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# get an active tty
+AT=$(w | awk '$2~/tty/ {print $2;exit}')
+
 # thank you alfunx for the stty commands
-TERMH=$(stty -a </dev/tty1 | grep -Po '(?<=rows )\d+')
-TERMW=$(stty -a </dev/tty1 | grep -Po '(?<=columns )\d+')
+TERMH=$(stty -a </dev/$AT | grep -Po '(?<=rows )\d+')
+TERMW=$(stty -a </dev/$AT | grep -Po '(?<=columns )\d+')
 
 MAX_LINES=6 # Maximum number of lines to display
 WRAP=17     # On which Collumn to wrap fortune

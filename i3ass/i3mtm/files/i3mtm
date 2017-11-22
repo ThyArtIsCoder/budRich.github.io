@@ -1,48 +1,57 @@
 #!/bin/bash
 
-# i3mtm - move to mark
-# ====================
-# patchwork by: budRich 2017
-#
-# when launched without flags, i3mtm checks
-# floating status of current window. If it is
-# tiled, the window becomes floating.
-# if it is floating, a search for marks is done
-# if no marks are found, window becomes tiled.
-# otherwise a dmenu asks for a mark to move window to.
-# if no selection is made, window is tiled but not moved.
-# otherwise window is tiled and moved to selected mark.
-#
-# with -m flag window is treaded as if it was floating
-# even if it is tiled. (menu is forced)  
-#
-# examples
-# --------
-# you could replace your `floating toggle` binding with this:  
-# `bindsym Mod3+f exec --no-startup-id exec i3mtm`  
-# `bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m`  
-#
-# dependencies
-# ------------
-# * __i3get__ - https://redd.it/6wyarw
-# * __dmenu__
-#
-# source
-# ------
-# https://gist.github.com/budRich/378a28c2582787f32bac99727f5485d6
-#
-# discussion
-# ----------
-# https://www.reddit.com/r/i3wm/comments/6xor8l/oci3mtm/
-#
-# porn
-# ----
-# https://redd.it/6xp6ul
+NAME="i3mtm"
+VERSION="0.2"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-07-19"
+UPDATED="2017-11-19"
 
-# IGNORE_MARKS=
-IGNORE_MARKS="alfa,beta,sidebar"
-# DMENU_OPTIONS=
-DMENU_OPTIONS="-h 16"
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+===============================
+When launched without options, i3mtm checks
+floating status of current window. If it is
+tiled, the window becomes floating.
+If it is floating, a search for marks is done,
+if no marks are found, window becomes tiled.
+Otherwise a dmenu asks for a mark to move window to.
+If no selection is made, window is tiled but not moved.
+Otherwise window is tiled and moved to selected mark.
+
+With -m option window is treaded as if it was floating
+even if it is tiled. (menu is forced)  
+
+examples
+--------
+you could replace your floating toggle binding with this:  
+bindsym Mod3+f exec --no-startup-id exec i3mtm  
+bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m  
+
+dependencies
+------------
+* i3get
+* dmenu
+
+contact
+-------
+$CONTACT
+"
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf "$NAME - version: $VERSION\n"  && \
+       printf "updated: $UPDATED by $AUTHOR\n" \
+        && exit;;
+    h) printf "${about}\n" && exit;;
+  esac
+done
+
+IGNORE_MARKS=
+# IGNORE_MARKS="alfa,beta,sidebar"
+DMENU_OPTIONS=
 # DMENU_OPTIONS="-h 16 -fn Inconsolata-18:bold"
 
 

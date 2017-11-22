@@ -16,8 +16,7 @@
       <pubDate>Fri, 22 Sep 2017 20:15:47 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/profile/</guid>
-      <description>This is another keyplayer in the anti-DM suit.
-The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 3 lightDM is launched and I enter my normal Peppermint OS desktop. If I press 2 or wait 2 seconds, i3 starts. Before this happens I have to login, in text mode and look at my issue.</description>
+      <description>Nothing going on here, just sourcing my bashrc.</description>
     </item>
     
     <item>
@@ -26,8 +25,8 @@ The read -rsn1 -t2 input waits two seconds for a key-press before it starts X an
       <pubDate>Fri, 22 Sep 2017 17:21:29 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/bashrc/</guid>
-      <description>Only thing going on here is a loop that sources all files in ~/.bash/ . I just upgraded Mint and it was kind enough to overwrite my .bashrc, that made me decide to have it as minimal as possible so I can easily restore it if something similar happens.
-I don&amp;rsquo;t care so much about distros and I have not had any problems with Mint till this happened. But it is so poor design to overwrite .</description>
+      <description>The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 2 or wait 2 seconds, i3 starts.
+I have found this method much more convenient then a normal DM, where you have to change DE from some, very easily forgotten, menu. Often resulting in me logging in to the wrong DE&amp;hellip;</description>
     </item>
     
     <item>
@@ -46,10 +45,10 @@ I don&amp;rsquo;t care so much about distros and I have not had any problems wit
       
       <guid>https://budrich.github.io/dots/xinitrc/</guid>
       <description>This is part of my anti-DM suite. The stuff I want to happen just before i3 loads up, goes here.
-Starting urxvt in daemon mode is really nice and makes it consume less resources and start much faster.
-I use hsetroot to set the desktop background to a minimal tiled pattern and a fetch color from Xresources.
+Starting urxvt in daemon mode is really nice and makes it consume less resources and spawn new terminal windows much faster.
+I use hsetroot to set the desktop background to a minimal tiled pattern and use the background color from Xresources.
 The Seba keyboard layout keeps me sane!
-I use sxhkd to remap the back button of the mouse to backspace.</description>
+I also have some special options to setxkbmap.</description>
     </item>
     
   </channel>

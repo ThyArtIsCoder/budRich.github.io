@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>src on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/config/polybar/src/</link>
+    <description>Recent content in src on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 20 Nov 2017 21:52:15 +0100</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/config/polybar/src/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

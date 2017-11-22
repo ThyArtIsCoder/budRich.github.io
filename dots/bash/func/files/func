@@ -11,6 +11,18 @@ adda(){
   . $HOME/.bashrc
 }
 
+cd() {
+    builtin cd "$@" && ls
+}
+
+gmrk(){
+  local mrks=$(i3-msg -t get_marks | awk -F',' '{
+    gsub("[[]|\"|[]]","",$0)
+    for(i=1;i<NF+1;i++){print $i}
+  }' | sort)
+  echo -e "${mrks}"
+}
+
 # install apt package and add entry to packagelist
 # find link reddit, unixporn
 apti(){

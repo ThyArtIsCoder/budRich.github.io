@@ -5,10 +5,78 @@
     <link>https://budrich.github.io/</link>
     <description>Recent content on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 06 Oct 2017 17:34:09 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2017 23:09:22 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>extreme_i3</title>
+      <link>https://budrich.github.io/blog/extreme_i3/</link>
+      <pubDate>Tue, 21 Nov 2017 23:09:22 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/extreme_i3/</guid>
+      <description>I finally did it! I Uploaded my i3 layout script, i3fyra. I have been working on it for almost a year. I think it works good enough to publish now. I recorded a video on how it looks like and have made a repo on github for my i3 related scripts.
+  If you try it and find any bugs or have any other issues or questions, please report them on the github repo.</description>
+    </item>
+    
+    <item>
+      <title>README</title>
+      <link>https://budrich.github.io/i3ass/readme/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/readme/</guid>
+      <description>i3ass - i3 assistance scripts    script function     i3fyra An advanced simple layout   i3run Run, Raise or hide a window   i3get Get information about i3   i3cast Create and upload screenrecordings   i3list Get lots of information about i3   i3gw Ghost window wrapper script   i3mtm Move window to a chosen mark   i3term Launch a program inside a terminal   i3zen Move a window to the zenter    license All i3ass scripts are licensed with the MIT license</description>
+    </item>
+    
+    <item>
+      <title>i3fyra</title>
+      <link>https://budrich.github.io/i3ass/i3fyra/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
+      <description>An advanced simple tiling layout for i3wm fyra is the Swedish name for &amp;ldquo;four&amp;rdquo;.
+  In the video above I show the functionality of i3fyra
+dependencies  i3list i3gw  The layout consists of four containers:
+A B C D  The internal layout of the containers doesn&amp;rsquo;t matter.
+This means that container A could be tabbed and the others split horizontally for example.
+A is always to the right of B and D.</description>
+    </item>
+    
+    <item>
+      <title>i3list</title>
+      <link>https://budrich.github.io/i3ass/i3list/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3list/</guid>
+      <description>This script is vital for i3fyra to work. But it can be used on it&amp;rsquo;s own or with other scripts. i3list is also used by i3run. i3list parses the output of the command:
+i3-msg -t get_tree
+and returns a long string with 43 values separated by spaces. This strange output format is made to make it possible to pipe the output to other scripts. A lot of the information is specific to i3fyra, but if i3list doesn&amp;rsquo;t find a value an X will be placed in it&amp;rsquo;s place in the output.</description>
+    </item>
+    
+    <item>
+      <title>i3term</title>
+      <link>https://budrich.github.io/i3ass/i3term/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3term/</guid>
+      <description>Launch a command in a new urxvt window Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.
+I just made this script to keep my i3config cleaner, and to be able to set fixedsys as the font.</description>
+    </item>
+    
+    <item>
+      <title>sublime_setup</title>
+      <link>https://budrich.github.io/blog/sublime_setup/</link>
+      <pubDate>Tue, 17 Oct 2017 01:30:22 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/blog/sublime_setup/</guid>
+      <description>Below is a guide on how I like to set up Sublime Text. Keyboard friendly and minimal UI is my aim. For info on using Sublime i recommend my custom mashup of VIMtutor and Sublime tutor, budtutor.
+If you are using Atom or VS code, please read this article:
+https://medium.com/@caspervonb/why-i-still-use-vim-67afd76b4db6
+Or this&amp;hellip;
+https://github.com/Microsoft/vscode/issues/35783
+locate files I have a lot of custom settings and a personal package collection. It is a pain to achieve the same setup on a fresh install of Sublime.</description>
+    </item>
     
     <item>
       <title>user-dirs</title>
@@ -16,7 +84,8 @@
       <pubDate>Fri, 06 Oct 2017 17:34:09 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/config/user-dirs/</guid>
-      <description></description>
+      <description>I like to have the short lowercase names on my folders for easier navigation through from the terminal and it also looks cool.
+homefolderspacefm.png   I have also written a guide, and recorded a video on how to achieve the Perfect Folder structure.</description>
     </item>
     
     <item>
@@ -140,8 +209,7 @@ http://www.google.com/fonts/
       <pubDate>Fri, 22 Sep 2017 20:15:47 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/profile/</guid>
-      <description>This is another keyplayer in the anti-DM suit.
-The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 3 lightDM is launched and I enter my normal Peppermint OS desktop. If I press 2 or wait 2 seconds, i3 starts. Before this happens I have to login, in text mode and look at my issue.</description>
+      <description>Nothing going on here, just sourcing my bashrc.</description>
     </item>
     
     <item>
@@ -150,8 +218,8 @@ The read -rsn1 -t2 input waits two seconds for a key-press before it starts X an
       <pubDate>Fri, 22 Sep 2017 17:21:29 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/bashrc/</guid>
-      <description>Only thing going on here is a loop that sources all files in ~/.bash/ . I just upgraded Mint and it was kind enough to overwrite my .bashrc, that made me decide to have it as minimal as possible so I can easily restore it if something similar happens.
-I don&amp;rsquo;t care so much about distros and I have not had any problems with Mint till this happened. But it is so poor design to overwrite .</description>
+      <description>The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 2 or wait 2 seconds, i3 starts.
+I have found this method much more convenient then a normal DM, where you have to change DE from some, very easily forgotten, menu. Often resulting in me logging in to the wrong DE&amp;hellip;</description>
     </item>
     
     <item>
@@ -170,10 +238,10 @@ I don&amp;rsquo;t care so much about distros and I have not had any problems wit
       
       <guid>https://budrich.github.io/dots/xinitrc/</guid>
       <description>This is part of my anti-DM suite. The stuff I want to happen just before i3 loads up, goes here.
-Starting urxvt in daemon mode is really nice and makes it consume less resources and start much faster.
-I use hsetroot to set the desktop background to a minimal tiled pattern and a fetch color from Xresources.
+Starting urxvt in daemon mode is really nice and makes it consume less resources and spawn new terminal windows much faster.
+I use hsetroot to set the desktop background to a minimal tiled pattern and use the background color from Xresources.
 The Seba keyboard layout keeps me sane!
-I use sxhkd to remap the back button of the mouse to backspace.</description>
+I also have some special options to setxkbmap.</description>
     </item>
     
     <item>
@@ -213,7 +281,8 @@ If you never have given touch typing a thought, i really recommend you read Prog
       <pubDate>Fri, 22 Sep 2017 16:37:44 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/irssi/bud/</guid>
-      <description>I have used irssi for a long time and I don&amp;rsquo;t think I&amp;rsquo;ll ever switch or finish this theme. I have tried to make it as narrow as possible, kind of how the twitch chats look. With the user name on it&amp;rsquo;s own line above the message.</description>
+      <description>I have used irssi for a long time and I don&amp;rsquo;t think I&amp;rsquo;ll ever switch or finish this theme.
+irssibudtheme2.png   I have tried to make it as narrow as possible, kind of how the twitch chats look. With the user name on it&amp;rsquo;s own line above the message.</description>
     </item>
     
     <item>
@@ -223,6 +292,24 @@ If you never have given touch typing a thought, i really recommend you read Prog
       
       <guid>https://budrich.github.io/dots/xres/colors/hatofgod/</guid>
       <description>This is a color-scheme &amp;ldquo;I&amp;rdquo; made many years ago. It was originally for the AHK editor SciTE. But I also ported it to Sublime and now .Xresources</description>
+    </item>
+    
+    <item>
+      <title>solarized_dark</title>
+      <link>https://budrich.github.io/dots/sublime/schemes/solarized_dark/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:43 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/schemes/solarized_dark/</guid>
+      <description>Solarized is perfect.</description>
+    </item>
+    
+    <item>
+      <title>solarized_light</title>
+      <link>https://budrich.github.io/dots/sublime/schemes/solarized_light/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:43 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/schemes/solarized_light/</guid>
+      <description>Solarized is perfect.</description>
     </item>
     
     <item>
@@ -272,12 +359,31 @@ I am planning to add something similar to be able to switch between a dark and l
     </item>
     
     <item>
+      <title>keymap</title>
+      <link>https://budrich.github.io/dots/sublime/keymap/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/keymap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>settings</title>
+      <link>https://budrich.github.io/dots/sublime/settings/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>prompt</title>
       <link>https://budrich.github.io/dots/bash/prompt/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:39 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/bash/prompt/</guid>
-      <description>My prompt shows the runtime of the last command and a compact CWD (current work directory). The last line of the file:
+      <description>My prompt shows the runtime of the last command and a compact CWD (current work directory).
+ss_time4prompt.png   The last line of the file:
 printf &#39;\e]710;%s\007&#39; &amp;quot;xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular&amp;quot;
 is a little dirthack™ to make it possible to use Fixedsys in urxvt, read more about how to setup fonts here.</description>
     </item>
@@ -333,8 +439,7 @@ install packages and log package name.</description>
       
       <guid>https://budrich.github.io/scripts/igi/</guid>
       <description>This script generates an issue file that is shown when you log in to your computer without a DM. It applies the current color scheme that you have set in .Xresources
-
-dependencies    toilet display ASCII artish fonts     lolcat rainbow color effect on terminal output   fortune prints a random fortune    The script has a sudo mv command, which requires you to enter a password.</description>
+ss_igi1.png   dependencies    toilet display ASCII artish fonts     lolcat rainbow color effect on terminal output   fortune prints a random fortune    The script has a sudo mv command, which requires you to enter a password.</description>
     </item>
     
     <item>
@@ -382,8 +487,8 @@ i3-msg has an undocumented function (open) that creates empty containers, or as 
       <pubDate>Wed, 20 Sep 2017 22:22:45 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3get/</guid>
-      <description>search for windows in i3 tree, return desired information if no arguments are passed. con_id of acitve window is returned.
-examples: search for window with instance name sublime_text. Request workspace, title and floating state. i3get -i sublime_text -r wtf</description>
+      <description>Get information about a window Search for windows in i3 tree and print requested information. If no arguments are passed. con_id of active window is returned.
+usage i3get [OPTION CRITERIA] Options: v show version and exit h show this help a currently active window (default) c CLASS search for windows with the given class i INSTANCE search for windows with the given instance t TITLE search for windows with title.</description>
     </item>
     
     <item>

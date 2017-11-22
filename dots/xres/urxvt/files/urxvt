@@ -12,6 +12,7 @@ URxvt*highlightTextColor:  mag
 
 URxvt*perl-ext-common: default
 
+!URxvt*intensityStyles:     false
 URxvt*cursorBlink:         1
 URxvt*scrollBar:           false
 URxvt*internalBorder:      padd
@@ -21,7 +22,7 @@ URxvt*iso14755:            false
 URxvt*iso14755_52:         false
 
 URxvt*cutchars: "\"()*,<>[]{}|\'"
-URxvt*font:     xft:fnt3
+URxvt*font:     xft:fnt1
 URxvt*boldFont:       
 URxvt*italicFont:     
 URxvt*boldItalicFont: 
@@ -48,7 +49,6 @@ URxvt*color6:              cyn
 URxvt*color14:             cyn2
 URxvt*color7:              wht
 URxvt*color15:             wht2
-
-URxvt*colorBD:             blk2
-URxvt*colorIT:             red2
-URxvt*colorUL:             grn2
+URxvt*colorBD:             fg
+URxvt*colorIT:             fg
+URxvt*colorUL:             fg

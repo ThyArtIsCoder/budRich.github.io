@@ -19,18 +19,18 @@ opacity-rule = [
   # I only let 5 programs to ever be transperant, and only when they
   # are tiled. Notice the extra rule on qbittorrent, this is necessary 
   # for some Qt applications.
-  "0:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[1]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[2]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[3]:32a = '_NET_WM_STATE_HIDDEN'",
-  "0:_NET_WM_STATE@[4]:32a = '_NET_WM_STATE_HIDDEN'",
-  "90:class_g = 'Sublime_text' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
-  "90:class_g = 'URxvt' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
-  "90:class_g = 'qBittorrent' && !I3_FLOATING_WINDOW@:c && !_NET_WM_STATE@[2]:32a",
-  "90:class_g = 'Klavaro' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
+  # "0:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[1]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[2]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[3]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[4]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "90:class_g = 'Sublime_text' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
+  # "90:class_g = 'URxvt' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
+  # "90:class_g = 'qBittorrent' && !I3_FLOATING_WINDOW@:c && !_NET_WM_STATE@[2]:32a",
+  # "90:class_g = 'Klavaro' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
   # its important that the last rule doesn't have a comma ',' at the
   # EOL (end of line)
-  "90:class_g = 'Spacefm' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c"
+  # "90:class_g = 'Spacefm' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c"
 ];
 
 shadow-exclude = [
