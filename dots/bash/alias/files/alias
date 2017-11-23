@@ -10,6 +10,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+alias dmenu='dmenu -fn "Fixedsys Excelsior 3.01\-L2 Mono" \
+  -nb $(xrdb -query | awk "/\*foreground/ {print \$2}") \
+  -nf $(xrdb -query | awk "/\*background/ {print \$2}") \
+  -sf $(xrdb -query | awk "/\*foreground/ {print \$2}") \
+  -sb $(xrdb -query | awk "/\*background/ {print \$2}")'  
+
 alias gc='git clone'
 alias tgz='tar xzf'
 

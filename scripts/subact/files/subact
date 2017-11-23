@@ -95,6 +95,7 @@ if [[ ! -f "${trg_flf}" ]];then
   ln ${trg_flf} ${trg_dbd}/${fl}
 fi
 
+i3run -i 'sublime_text' -e subl
 subl "${trg_mdf}"
-# vivaldi "127.0.0.1:1313/${trg_url}/"
+
 

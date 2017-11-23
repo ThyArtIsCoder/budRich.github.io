@@ -47,6 +47,16 @@
                   
                   
                     
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
                       
                       
                       
@@ -1021,6 +1031,152 @@
       </li>
     
   
+    
+      <li>
+        <li>
+          <input type="checkbox" id="tmp" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="tmp">tmp</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="kortisar" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="kortisar">kortisar</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="dots" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="dots" class="section-item"><span class="glyphicon 
+            glyphicon-cog"></span>dots</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="config" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="config">config</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="dunst" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="dunst">dunst</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
 
             </ul>
           </ul>
@@ -1086,74 +1242,81 @@ just organized lightning.
 
 <a href=dots/bash/alias/files/alias>dots/bash/alias</a>
 
-alias dlw='cd ~/Downloads/w'
-alias dls='cd ~/Downloads/s'
-alias dlp='cd ~/Downloads/p'
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="nb">alias</span> <span class="nv">dlw</span><span class="o">=</span><span class="s1">&#39;cd ~/Downloads/w&#39;</span>
+<span class="nb">alias</span> <span class="nv">dls</span><span class="o">=</span><span class="s1">&#39;cd ~/Downloads/s&#39;</span>
+<span class="nb">alias</span> <span class="nv">dlp</span><span class="o">=</span><span class="s1">&#39;cd ~/Downloads/p&#39;</span>
 
-alias cnf='cd /home/bud/.config'
-alias tmp='cd /tmp'
+<span class="nb">alias</span> <span class="nv">cnf</span><span class="o">=</span><span class="s1">&#39;cd /home/bud/.config&#39;</span>
+<span class="nb">alias</span> <span class="nv">tmp</span><span class="o">=</span><span class="s1">&#39;cd /tmp&#39;</span>
 
-alias cdd='cd -'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+<span class="nb">alias</span> <span class="nv">cdd</span><span class="o">=</span><span class="s1">&#39;cd -&#39;</span>
+<span class="nb">alias</span> ..<span class="o">=</span><span class="s1">&#39;cd ..&#39;</span>
+<span class="nb">alias</span> ...<span class="o">=</span><span class="s1">&#39;cd ../..&#39;</span>
+<span class="nb">alias</span> ....<span class="o">=</span><span class="s1">&#39;cd ../../..&#39;</span>
 
-alias gc='git clone'
-alias tgz='tar xzf'
+<span class="nb">alias</span> <span class="nv">dmenu</span><span class="o">=</span><span class="s1">&#39;dmenu -fn &quot;Fixedsys Excelsior 3.01\-L2 Mono&quot; \</span>
+<span class="s1">  -nb $(xrdb -query | awk &quot;/\*foreground/ {print \$2}&quot;) \</span>
+<span class="s1">  -nf $(xrdb -query | awk &quot;/\*background/ {print \$2}&quot;) \</span>
+<span class="s1">  -sf $(xrdb -query | awk &quot;/\*foreground/ {print \$2}&quot;) \</span>
+<span class="s1">  -sb $(xrdb -query | awk &quot;/\*background/ {print \$2}&quot;)&#39;</span>  
 
-# alias upp='sudo apt update && sudo apt upgrade'
-alias upp='sudo pacman -Syu'
-alias rbo='sudo reboot now'
-alias down='sudo shutdown now'
+<span class="nb">alias</span> <span class="nv">gc</span><span class="o">=</span><span class="s1">&#39;git clone&#39;</span>
+<span class="nb">alias</span> <span class="nv">tgz</span><span class="o">=</span><span class="s1">&#39;tar xzf&#39;</span>
 
-alias lolban="postbanner -t '-f 3d.flf' -l '-p 10'"
+<span class="c1"># alias upp=&#39;sudo apt update &amp;&amp; sudo apt upgrade&#39;</span>
+<span class="nb">alias</span> <span class="nv">upp</span><span class="o">=</span><span class="s1">&#39;sudo pacman -Syu&#39;</span>
+<span class="nb">alias</span> <span class="nv">rbo</span><span class="o">=</span><span class="s1">&#39;sudo reboot now&#39;</span>
+<span class="nb">alias</span> <span class="nv">down</span><span class="o">=</span><span class="s1">&#39;sudo shutdown now&#39;</span>
 
-alias shr='. $HOME/.bashrc'
-alias q='exit'
-alias chx='chmod +x'
+<span class="nb">alias</span> <span class="nv">lolban</span><span class="o">=</span><span class="s2">&quot;postbanner -t &#39;-f 3d.flf&#39; -l &#39;-p 10&#39;&quot;</span>
 
-alias ll='ls -l'
-alias la='ls -alh'
-alias ls='ls --color=auto'
-alias lb='ls --color=none'
+<span class="nb">alias</span> <span class="nv">shr</span><span class="o">=</span><span class="s1">&#39;. $HOME/.bashrc&#39;</span>
+<span class="nb">alias</span> <span class="nv">q</span><span class="o">=</span><span class="s1">&#39;exit&#39;</span>
+<span class="nb">alias</span> <span class="nv">chx</span><span class="o">=</span><span class="s1">&#39;chmod +x&#39;</span>
 
-alias pg='ps aux | head -n1; ps aux | grep -i'
-alias tf='tail -F -n200'
-alias top='top -ocpu'
+<span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span>
+<span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s1">&#39;ls -alh&#39;</span>
+<span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>
+<span class="nb">alias</span> <span class="nv">lb</span><span class="o">=</span><span class="s1">&#39;ls --color=none&#39;</span>
 
-alias ip="ifconfig|grep broadcast"  # List IPs
+<span class="nb">alias</span> <span class="nv">pg</span><span class="o">=</span><span class="s1">&#39;ps aux | head -n1; ps aux | grep -i&#39;</span>
+<span class="nb">alias</span> <span class="nv">tf</span><span class="o">=</span><span class="s1">&#39;tail -F -n200&#39;</span>
+<span class="nb">alias</span> <span class="nv">top</span><span class="o">=</span><span class="s1">&#39;top -ocpu&#39;</span>
 
-alias vi='vim'
-alias vim='vim -p'
-alias feh='feh --scale-down --no-screen-clip'
+<span class="nb">alias</span> <span class="nv">ip</span><span class="o">=</span><span class="s2">&quot;ifconfig|grep broadcast&quot;</span>  <span class="c1"># List IPs</span>
+
+<span class="nb">alias</span> <span class="nv">vi</span><span class="o">=</span><span class="s1">&#39;vim&#39;</span>
+<span class="nb">alias</span> <span class="nv">vim</span><span class="o">=</span><span class="s1">&#39;vim -p&#39;</span>
+<span class="nb">alias</span> <span class="nv">feh</span><span class="o">=</span><span class="s1">&#39;feh --scale-down --no-screen-clip&#39;</span>
 
 
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+<span class="nb">alias</span> <span class="nv">dir</span><span class="o">=</span><span class="s1">&#39;dir --color=auto&#39;</span>
+<span class="nb">alias</span> <span class="nv">vdir</span><span class="o">=</span><span class="s1">&#39;vdir --color=auto&#39;</span>
+<span class="nb">alias</span> <span class="nv">grep</span><span class="o">=</span><span class="s1">&#39;grep --color=auto&#39;</span>
+<span class="nb">alias</span> <span class="nv">fgrep</span><span class="o">=</span><span class="s1">&#39;fgrep --color=auto&#39;</span>
+<span class="nb">alias</span> <span class="nv">egrep</span><span class="o">=</span><span class="s1">&#39;egrep --color=auto&#39;</span>
 
-alias hideme='history -d $((HISTCMD-1))'
-alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
+<span class="nb">alias</span> <span class="nv">hideme</span><span class="o">=</span><span class="s1">&#39;history -d $((HISTCMD-1))&#39;</span>
+<span class="nb">alias</span> <span class="nv">hideprev</span><span class="o">=</span><span class="s1">&#39;history -d $((HISTCMD-2)) &amp;&amp; history -d $((HISTCMD-1))&#39;</span>
 
-alias src='cd src && ls'
-alias comps='cd $HOME/www/static && compass watch'
-alias hugs='hugo server -s $HOME/www'
-alias ss='subl'
+<span class="nb">alias</span> <span class="nv">src</span><span class="o">=</span><span class="s1">&#39;cd src &amp;&amp; ls&#39;</span>
+<span class="nb">alias</span> <span class="nv">comps</span><span class="o">=</span><span class="s1">&#39;cd $HOME/www/static &amp;&amp; compass watch&#39;</span>
+<span class="nb">alias</span> <span class="nv">hugs</span><span class="o">=</span><span class="s1">&#39;hugo server -s $HOME/www&#39;</span>
+<span class="nb">alias</span> <span class="nv">ss</span><span class="o">=</span><span class="s1">&#39;subl&#39;</span>
 
-alias pms='pacaur -Ss'
-alias pmi='pacaur -S'
-alias pmr='sudo pacman -R'
+<span class="nb">alias</span> <span class="nv">pms</span><span class="o">=</span><span class="s1">&#39;pacaur -Ss&#39;</span>
+<span class="nb">alias</span> <span class="nv">pmi</span><span class="o">=</span><span class="s1">&#39;pacaur -S&#39;</span>
+<span class="nb">alias</span> <span class="nv">pmr</span><span class="o">=</span><span class="s1">&#39;sudo pacman -R&#39;</span>
 
-# alias apts='apt search'
-# alias smi='sudo checkinstall'
-# alias aptr='sudo apt remove'
-# alias debi='sudo gdebi'
-alias bibblan='sudo netctl restart wlo1-KgaBibliotek'
-alias umrk='i3-msg unmark'
-alias gtre='i3-msg -t get_tree | awk -v RS="," "{print \$0}" > /tmp/i3tree && subl /tmp/i3tree'
-alias yta='youtube-dl --geo-bypass --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/snd/y/%(title)s.%(ext)s" -i -x '
+<span class="c1"># alias apts=&#39;apt search&#39;</span>
+<span class="c1"># alias smi=&#39;sudo checkinstall&#39;</span>
+<span class="c1"># alias aptr=&#39;sudo apt remove&#39;</span>
+<span class="c1"># alias debi=&#39;sudo gdebi&#39;</span>
+<span class="nb">alias</span> <span class="nv">bibblan</span><span class="o">=</span><span class="s1">&#39;sudo netctl restart wlo1-KgaBibliotek&#39;</span>
+<span class="nb">alias</span> <span class="nv">umrk</span><span class="o">=</span><span class="s1">&#39;i3-msg unmark&#39;</span>
+<span class="nb">alias</span> <span class="nv">gtre</span><span class="o">=</span><span class="s1">&#39;i3-msg -t get_tree | awk -v RS=&quot;,&quot; &quot;{print \$0}&quot; &gt; /tmp/i3tree &amp;&amp; subl /tmp/i3tree&#39;</span>
+<span class="nb">alias</span> <span class="nv">yta</span><span class="o">=</span><span class="s1">&#39;youtube-dl --geo-bypass --download-archive /home/bud/tmp/.ytdlarch -o &quot;/home/bud/snd/y/%(title)s.%(ext)s&quot; -i -x &#39;</span>
+</code></pre></div>
 </div>
 <hr>
 

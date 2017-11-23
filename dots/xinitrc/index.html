@@ -47,6 +47,16 @@
                   
                   
                     
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
                       
                       
                       
@@ -854,8 +864,6 @@
           ZgotmplZ
           ZgotmplZ
           
-            checked
-          
 
           />
           
@@ -1021,6 +1029,152 @@
       </li>
     
   
+    
+      <li>
+        <li>
+          <input type="checkbox" id="tmp" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="tmp">tmp</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="kortisar" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="kortisar">kortisar</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="dots" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="dots" class="section-item"><span class="glyphicon 
+            glyphicon-cog"></span>dots</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="config" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="config">config</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+    
+      <li>
+        <li>
+          <input type="checkbox" id="dunst" 
+          
+            ZgotmplZ
+          
+
+          ZgotmplZ
+          ZgotmplZ
+          ZgotmplZ
+          
+
+          />
+          
+            <label for="dunst">dunst</label>
+          
+          <ul>
+              
+            <ul>
+            
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
+
+            </ul>
+          </ul>
+        </li>
+      </li>
+    
+  
 
             </ul>
           </ul>
@@ -1087,7 +1241,7 @@ it.
 
 <p>I also have some special options to <code>setxkbmap</code>. <code>lv3:ralt_switch</code> is needed to type swedish characters. <code>caps:ctrl_modifier</code> makes the <code>CapsLock</code> function like a extra <code>Ctrl</code>.</p>
 
-<p><code>xcape</code> is a really cool little program that can remap keys when they are tapped, but keep theire original function when they aren&rsquo;t. I use it to make my <code>Ctrl</code> keys (including the remapped <code>CapsLock</code>) to act as <code>Esc</code> when they are tapped, VIM-users will understand.</p>
+<p><code>xcape</code> is a really cool little program that can remap keys when they are tapped, but keep theire original function when they aren&rsquo;t. I use it to make my <code>CapsLock</code> key to act as <code>Esc</code> when it is tapped, VIM-users will understand.</p>
 
 <p>I use <code>numlockx</code> to be sure that <code>NumLock</code> is activated.</p>
 
@@ -1119,9 +1273,10 @@ xrandr --output eDP-1 --auto --left-of HDMI-1 --primary <span class="p">&amp;</s
 hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png <span class="se">\</span>
   -tint <span class="s2">&quot;</span><span class="k">$(</span>xrdb -query <span class="p">|</span> awk <span class="s1">&#39;/\*background/ {print $2}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
 setxkbmap -layout seba -option lv3:ralt_switch -option <span class="s1">&#39;caps:ctrl_modifier&#39;</span>
-xcape -e <span class="s1">&#39;Caps_Lock=Escape;Control_L=Escape;Control_R=Escape&#39;</span>
+xcape -e <span class="s1">&#39;Caps_Lock=Escape&#39;</span>
 numlockx on &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-xinput set-prop <span class="m">17</span> <span class="m">139</span> <span class="m">0</span>
+dunst &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+<span class="c1"># xinput set-prop 17 139 0</span>
 urxvtd -q -o -f
 dropbox start <span class="p">&amp;</span>
 

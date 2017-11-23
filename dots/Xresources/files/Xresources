@@ -4,7 +4,7 @@
 
 #define fnt1 Terminus
 #define fnt2 Inconsolata
-#define fnt3 Fixedsys Excelsior 3.01\-L2 Mono:style=Regular
+#define fnt3 "Fixedsys Excelsior 3.01-L2 Mono:style=Regular"
 #define brws vivaldi
 #define fsz1 12
 #define fsz2 18
@@ -18,6 +18,13 @@
 #include </home/bud/.xres/xft>
 #include </home/bud/.xres/urxvt>
 #include </home/bud/.xres/i3wm>
+
+dmenu.selforeground:      fg
+dmenu.background:         fg
+dmenu.selbackground:      bg
+dmenu.foreground:         bg
+dmenu.font:               fnt3
+
 ! #include </home/bud/.xres/rofi>
 
 
