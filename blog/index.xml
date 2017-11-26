@@ -21,20 +21,6 @@
     </item>
     
     <item>
-      <title>sublime_setup</title>
-      <link>https://budrich.github.io/blog/sublime_setup/</link>
-      <pubDate>Tue, 17 Oct 2017 01:30:22 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/blog/sublime_setup/</guid>
-      <description>Below is a guide on how I like to set up Sublime Text. Keyboard friendly and minimal UI is my aim. For info on using Sublime i recommend my custom mashup of VIMtutor and Sublime tutor, budtutor.
-If you are using Atom or VS code, please read this article:
-https://medium.com/@caspervonb/why-i-still-use-vim-67afd76b4db6
-Or this&amp;hellip;
-https://github.com/Microsoft/vscode/issues/35783
-locate files I have a lot of custom settings and a personal package collection. It is a pain to achieve the same setup on a fresh install of Sublime.</description>
-    </item>
-    
-    <item>
       <title>fresh_start</title>
       <link>https://budrich.github.io/blog/fresh_start/</link>
       <pubDate>Sun, 01 Oct 2017 19:13:40 +0200</pubDate>

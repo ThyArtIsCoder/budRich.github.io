@@ -35,6 +35,7 @@ timer_start() {
 
 prompt_generator() {
   # regular colors
+
   local K="\[\033[0;30m\]"    # black
   local R="\[\033[0;31m\]"    # red
   local G="\[\033[0;32m\]"    # green
@@ -82,8 +83,9 @@ prompt_generator() {
   local pth="$(pwd)"
   pth=${pth/${HOME}/'~'}
   local newpth=""
+  local d=
   apa=( ${pth//\//' '} )
-
+  
   for d in ${apa[@]}; do
     [[ $d = '~' ]] && newpth='~' && continue
     # if first char is '.', grab the second
@@ -98,6 +100,4 @@ prompt_generator() {
 # https://unix.stackexchange.com/a/65312
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=prompt_generator
-
-printf '\e]710;%s\007' "xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular"
 

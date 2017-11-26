@@ -51,6 +51,8 @@ else
 fi
 
 fp=${st/'~'/$HOME} # fullpath extended
+lnk=$(readline "$fp")
+[[ -n $lnk ]] && fp="$lnk"
 fl=${fp##*'/'}     # filename
 fc=${fp//'.'/}     # path without dots
 # remove extension or leading dot

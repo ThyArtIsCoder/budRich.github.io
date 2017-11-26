@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>README</title>
+      <link>https://budrich.github.io/scripts/readme/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/readme/</guid>
+      <description>scripts collection  &amp;ldquo;This is my scripts&amp;rdquo; - Kim Larsen
+ license All my scripts are licensed with the MIT license
+Copyright (c) 2017 Nils Kvist Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</description>
+    </item>
+    
+    <item>
       <title>igi</title>
       <link>https://budrich.github.io/scripts/igi/</link>
       <pubDate>Wed, 20 Sep 2017 22:40:49 +0200</pubDate>

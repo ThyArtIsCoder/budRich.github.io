@@ -110,9 +110,7 @@
 # >>> upload content <<<
 
   bindsym --release Mod4+Print $exe i3cast
-
-  bindsym --release Print $exe imgur-screenshot.sh -f
-  bindsym --release Shift+Print $exe imgur-screenshot.sh -s
+  bindsym --release Print $exe shoot
 
   $win+c $exe \
     xclip -o | curl -F c=@- https://ptpb.pw/?u=1 | \
@@ -198,6 +196,7 @@
   client.unfocused         $ina    $ina   $ina    $ina
   client.urgent            $red    $red   $red    $red
 
+  for_window [class="URxvt"] title_format "%instance"
 # >>> window rules <<<
 
   for_window [class="^.*"] floating enable

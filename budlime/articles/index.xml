@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>articles on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/budlime/articles/</link>
+    <description>Recent content in articles on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 22 Sep 2017 16:37:39 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/budlime/articles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sublime_setup</title>
+      <link>https://budrich.github.io/budlime/articles/sublime_setup/</link>
+      <pubDate>Tue, 17 Oct 2017 01:30:22 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/articles/sublime_setup/</guid>
+      <description>Below is a guide on how I like to set up Sublime Text. Keyboard friendly and minimal UI is my aim. For info on using Sublime i recommend my custom mashup of VIMtutor and Sublime tutor, budtutor.
+If you are using Atom or VS code, please read this article:
+https://medium.com/@caspervonb/why-i-still-use-vim-67afd76b4db6
+Or this&amp;hellip;
+https://github.com/Microsoft/vscode/issues/35783
+locate files I have a lot of custom settings and a personal package collection. It is a pain to achieve the same setup on a fresh install of Sublime.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,10 +5,19 @@
     <link>https://budrich.github.io/</link>
     <description>Recent content on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 21 Nov 2017 23:09:22 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 23 Nov 2017 23:50:31 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dmenu</title>
+      <link>https://budrich.github.io/dots/xres/dmenu/</link>
+      <pubDate>Thu, 23 Nov 2017 23:50:31 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/dmenu/</guid>
+      <description>I use dmenu2, which is a patched version of dmenu. The main reason i use this instead of vanilla dmenu is so that I can set its appearance in Xresources</description>
+    </item>
     
     <item>
       <title>extreme_i3</title>
@@ -21,12 +30,92 @@
     </item>
     
     <item>
+      <title>pbmic</title>
+      <link>https://budrich.github.io/dots/config/polybar/src/pbmic/</link>
+      <pubDate>Mon, 20 Nov 2017 22:01:17 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/polybar/src/pbmic/</guid>
+      <description>Displays the volume of the default input (microphone) sink (pulseaudio).</description>
+    </item>
+    
+    <item>
+      <title>pbweather</title>
+      <link>https://budrich.github.io/dots/config/polybar/src/pbweather/</link>
+      <pubDate>Mon, 20 Nov 2017 21:59:30 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/polybar/src/pbweather/</guid>
+      <description>Display info about the weather.</description>
+    </item>
+    
+    <item>
+      <title>pbvol</title>
+      <link>https://budrich.github.io/dots/config/polybar/src/pbvol/</link>
+      <pubDate>Mon, 20 Nov 2017 21:57:51 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/polybar/src/pbvol/</guid>
+      <description>Displays the volume of the default sink (pulse audio). Slightly modified version of the script found in polybar wiki on github.</description>
+    </item>
+    
+    <item>
+      <title>pbmail</title>
+      <link>https://budrich.github.io/dots/config/polybar/src/pbmail/</link>
+      <pubDate>Mon, 20 Nov 2017 21:52:16 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/polybar/src/pbmail/</guid>
+      <description>I&amp;rsquo;m not the original author of this script, It is an old modified i3blocks script.</description>
+    </item>
+    
+    <item>
+      <title>budbar</title>
+      <link>https://budrich.github.io/dots/config/polybar/budbar/</link>
+      <pubDate>Mon, 20 Nov 2017 21:43:24 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/config/polybar/budbar/</guid>
+      <description>Polybar is a great statusbar that works well with i3 and other window managers, this is my config file. It uses some custom scripts to display some information.
+ss-17-11-22-pbarro.png   In the screenshot above you can see polybar at the top of the screen. I use i3fyra to achieve the layout. Container A(vivaldi/wg) and B(irssi) are tabbed and container C is horizontally split with three urxvt instances.
+I use some custom scripts to display some of the information in my polybar.</description>
+    </item>
+    
+    <item>
+      <title>README</title>
+      <link>https://budrich.github.io/budlime/readme/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/readme/</guid>
+      <description>My personal Sublime Text settings, packages, guides and other sublime related stuff i collected in this folder.
+license All my custom sublime things are licensed with the MIT license
+Copyright (c) 2017 Nils Kvist Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</description>
+    </item>
+    
+    <item>
+      <title>README</title>
+      <link>https://budrich.github.io/dots/readme/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/readme/</guid>
+      <description>dotfiles dela budRich These are my dotfiles. The structure of the tree is the same as my home folder.
+license All my dotfiles are licensed with the WTFPL license
+ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE Version 2, December 2004 Copyright (C) 2017 Nils Kvist &amp;lt;robstenklippa@gmail.com&amp;gt; Everyone is permitted to copy and distribute verbatim or modified copies of this license document, and changing it is allowed as long as the name is changed.</description>
+    </item>
+    
+    <item>
       <title>README</title>
       <link>https://budrich.github.io/i3ass/readme/</link>
       <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/readme/</guid>
       <description>i3ass - i3 assistance scripts    script function     i3fyra An advanced simple layout   i3run Run, Raise or hide a window   i3get Get information about i3   i3cast Create and upload screenrecordings   i3list Get lots of information about i3   i3gw Ghost window wrapper script   i3mtm Move window to a chosen mark   i3term Launch a program inside a terminal   i3zen Move a window to the zenter    license All i3ass scripts are licensed with the MIT license</description>
+    </item>
+    
+    <item>
+      <title>README</title>
+      <link>https://budrich.github.io/scripts/readme/</link>
+      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/readme/</guid>
+      <description>scripts collection  &amp;ldquo;This is my scripts&amp;rdquo; - Kim Larsen
+ license All my scripts are licensed with the MIT license
+Copyright (c) 2017 Nils Kvist Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</description>
     </item>
     
     <item>
@@ -66,10 +155,10 @@ I just made this script to keep my i3config cleaner, and to be able to set fixed
     
     <item>
       <title>sublime_setup</title>
-      <link>https://budrich.github.io/blog/sublime_setup/</link>
+      <link>https://budrich.github.io/budlime/articles/sublime_setup/</link>
       <pubDate>Tue, 17 Oct 2017 01:30:22 +0200</pubDate>
       
-      <guid>https://budrich.github.io/blog/sublime_setup/</guid>
+      <guid>https://budrich.github.io/budlime/articles/sublime_setup/</guid>
       <description>Below is a guide on how I like to set up Sublime Text. Keyboard friendly and minimal UI is my aim. For info on using Sublime i recommend my custom mashup of VIMtutor and Sublime tutor, budtutor.
 If you are using Atom or VS code, please read this article:
 https://medium.com/@caspervonb/why-i-still-use-vim-67afd76b4db6
@@ -296,19 +385,19 @@ irssibudtheme2.png   I have tried to make it as narrow as possible, kind of how 
     
     <item>
       <title>solarized_dark</title>
-      <link>https://budrich.github.io/dots/sublime/schemes/solarized_dark/</link>
+      <link>https://budrich.github.io/budlime/config/schemes/solarized_dark/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:43 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/schemes/solarized_dark/</guid>
+      <guid>https://budrich.github.io/budlime/config/schemes/solarized_dark/</guid>
       <description>Solarized is perfect.</description>
     </item>
     
     <item>
       <title>solarized_light</title>
-      <link>https://budrich.github.io/dots/sublime/schemes/solarized_light/</link>
+      <link>https://budrich.github.io/budlime/config/schemes/solarized_light/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:43 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/schemes/solarized_light/</guid>
+      <guid>https://budrich.github.io/budlime/config/schemes/solarized_light/</guid>
       <description>Solarized is perfect.</description>
     </item>
     
@@ -341,6 +430,24 @@ I am planning to add something similar to be able to switch between a dark and l
     </item>
     
     <item>
+      <title>TwoFace</title>
+      <link>https://budrich.github.io/budlime/config/twoface/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/config/twoface/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TwoFont</title>
+      <link>https://budrich.github.io/budlime/config/twofont/</link>
+      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/config/twofont/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>color</title>
       <link>https://budrich.github.io/dots/xres/color/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
@@ -360,19 +467,19 @@ I am planning to add something similar to be able to switch between a dark and l
     
     <item>
       <title>keymap</title>
-      <link>https://budrich.github.io/dots/sublime/keymap/</link>
+      <link>https://budrich.github.io/budlime/config/keymap/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/keymap/</guid>
+      <guid>https://budrich.github.io/budlime/config/keymap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>settings</title>
-      <link>https://budrich.github.io/dots/sublime/settings/</link>
+      <link>https://budrich.github.io/budlime/config/settings/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/</guid>
+      <guid>https://budrich.github.io/budlime/config/settings/</guid>
       <description></description>
     </item>
     
@@ -430,6 +537,41 @@ install packages and log package name.</description>
       
       <guid>https://budrich.github.io/dots/bash/alias/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>TwoFace</title>
+      <link>https://budrich.github.io/budlime/packages/twoface/</link>
+      <pubDate>Wed, 20 Sep 2017 22:50:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/packages/twoface/</guid>
+      <description>This Sublime Text package makes it possible to toggle between two different UI-appearances with the same hotkey. It is also possible to set a absolute UI. It changes both the color scheme and the UI-theme. It changes all elements of the UI defined in the settings file.
+TwoFace.sublime-settings
+The keys face1 and face2 is mandatory.
+{ &amp;quot;face1&amp;quot;: { &amp;quot;color_scheme&amp;quot;: &amp;quot;Packages/Boxy Theme/schemes/Boxy Solarized Dark.tmTheme&amp;quot;, &amp;quot;theme&amp;quot;: &amp;quot;Boxy Solarized Dark.sublime-theme&amp;quot; }, &amp;quot;face2&amp;quot;: { &amp;quot;color_scheme&amp;quot;: &amp;quot;Packages/Boxy Theme/schemes/Boxy Solarized Light.</description>
+    </item>
+    
+    <item>
+      <title>TwoFont</title>
+      <link>https://budrich.github.io/budlime/packages/twofont/</link>
+      <pubDate>Wed, 20 Sep 2017 22:50:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/packages/twofont/</guid>
+      <description>This Sublime Text package makes it possible to toggle between two different fonts with the same hotkey. It is also possible to set a absolute font. It changes all elements of the fonts defined in the settings file.
+TwoFont.sublime-settings
+The keys font1 and font2 is mandatory.
+{ &amp;quot;font1&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Hack&amp;quot;, &amp;quot;font_size&amp;quot;: 18, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;subpixel_antialias&amp;quot;] }, &amp;quot;font2&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Fixedsys Excelsior 3.01-L2 Mono&amp;quot;, &amp;quot;font_size&amp;quot;: 12, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;no_antialias&amp;quot;] }, &amp;quot;monaco&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Monaco&amp;quot;, &amp;quot;font_size&amp;quot;: 14, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;subpixel_antialias&amp;quot;] }, &amp;quot;Inconsolata&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Inconsolata&amp;quot;, &amp;quot;font_size&amp;quot;: 20, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;subpixel_antialias&amp;quot;] } }  user.</description>
+    </item>
+    
+    <item>
+      <title>i3syntax</title>
+      <link>https://budrich.github.io/budlime/packages/i3syntax/</link>
+      <pubDate>Wed, 20 Sep 2017 22:50:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/packages/i3syntax/</guid>
+      <description>This Sublime Text package adds a simple syntax highlighting to the i3 config. It only adds highlighting to comments. Installing the package also adds the ability to toggle comments. You can also define &amp;ldquo;symbols&amp;rdquo; (default hotkey in sublime: ctrl+r) by making a comment in this fashion:
+# &amp;gt; this is a section.
+I host this package on github.</description>
     </item>
     
     <item>

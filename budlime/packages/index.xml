@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>packages on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/budlime/packages/</link>
+    <description>Recent content in packages on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 22 Sep 2017 16:37:39 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/budlime/packages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TwoFace</title>
+      <link>https://budrich.github.io/budlime/packages/twoface/</link>
+      <pubDate>Wed, 20 Sep 2017 22:50:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/packages/twoface/</guid>
+      <description>This Sublime Text package makes it possible to toggle between two different UI-appearances with the same hotkey. It is also possible to set a absolute UI. It changes both the color scheme and the UI-theme. It changes all elements of the UI defined in the settings file.
+TwoFace.sublime-settings
+The keys face1 and face2 is mandatory.
+{ &amp;quot;face1&amp;quot;: { &amp;quot;color_scheme&amp;quot;: &amp;quot;Packages/Boxy Theme/schemes/Boxy Solarized Dark.tmTheme&amp;quot;, &amp;quot;theme&amp;quot;: &amp;quot;Boxy Solarized Dark.sublime-theme&amp;quot; }, &amp;quot;face2&amp;quot;: { &amp;quot;color_scheme&amp;quot;: &amp;quot;Packages/Boxy Theme/schemes/Boxy Solarized Light.</description>
+    </item>
+    
+    <item>
+      <title>TwoFont</title>
+      <link>https://budrich.github.io/budlime/packages/twofont/</link>
+      <pubDate>Wed, 20 Sep 2017 22:50:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/packages/twofont/</guid>
+      <description>This Sublime Text package makes it possible to toggle between two different fonts with the same hotkey. It is also possible to set a absolute font. It changes all elements of the fonts defined in the settings file.
+TwoFont.sublime-settings
+The keys font1 and font2 is mandatory.
+{ &amp;quot;font1&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Hack&amp;quot;, &amp;quot;font_size&amp;quot;: 18, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;subpixel_antialias&amp;quot;] }, &amp;quot;font2&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Fixedsys Excelsior 3.01-L2 Mono&amp;quot;, &amp;quot;font_size&amp;quot;: 12, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;no_antialias&amp;quot;] }, &amp;quot;monaco&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Monaco&amp;quot;, &amp;quot;font_size&amp;quot;: 14, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;subpixel_antialias&amp;quot;] }, &amp;quot;Inconsolata&amp;quot;: { &amp;quot;font_face&amp;quot;: &amp;quot;Inconsolata&amp;quot;, &amp;quot;font_size&amp;quot;: 20, &amp;quot;font_options&amp;quot;: [&amp;quot;no_bold&amp;quot;, &amp;quot;no_italic&amp;quot;, &amp;quot;subpixel_antialias&amp;quot;] } }  user.</description>
+    </item>
+    
+    <item>
+      <title>i3syntax</title>
+      <link>https://budrich.github.io/budlime/packages/i3syntax/</link>
+      <pubDate>Wed, 20 Sep 2017 22:50:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/budlime/packages/i3syntax/</guid>
+      <description>This Sublime Text package adds a simple syntax highlighting to the i3 config. It only adds highlighting to comments. Installing the package also adds the ability to toggle comments. You can also define &amp;ldquo;symbols&amp;rdquo; (default hotkey in sublime: ctrl+r) by making a comment in this fashion:
+# &amp;gt; this is a section.
+I host this package on github.</description>
+    </item>
+    
+  </channel>
+</rss>

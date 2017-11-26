@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>dmenu</title>
+      <link>https://budrich.github.io/dots/xres/dmenu/</link>
+      <pubDate>Thu, 23 Nov 2017 23:50:31 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/dmenu/</guid>
+      <description>I use dmenu2, which is a patched version of dmenu. The main reason i use this instead of vanilla dmenu is so that I can set its appearance in Xresources</description>
+    </item>
+    
+    <item>
       <title>urxvt</title>
       <link>https://budrich.github.io/dots/xres/urxvt/</link>
       <pubDate>Fri, 22 Sep 2017 16:37:41 +0200</pubDate>

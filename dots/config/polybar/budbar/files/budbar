@@ -62,8 +62,10 @@ full-at = 98
 
 format-charging =  <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
+format-full =  <label-full>
 
 label-charging = %percentage%
+label-full = %percentage%
 label-discharging = ${self.label-charging}
 
 ramp-capacity-0 = 

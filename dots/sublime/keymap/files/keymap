@@ -152,8 +152,41 @@
   { "keys": ["ctrl+enter"], "command": "open_url_under_cursor" },
 
   // custom budRich stuff
-  { "keys": ["ctrl+9"], "command": "two_face" },
   { "keys": ["ctrl+0"], "command": "two_font" },
+  { "keys": ["ctrl+9"], "command": "two_face" },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // example hotkey binding for TwoFace:
+  { "keys": ["ctrl+1"], "command": "two_face" },
+
+  { "keys": ["ctrl+2"], "command": "two_face", 
+    "args": {"face": "monokai"}
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
   { "keys": ["shift+f6"], "command": "toggle_setting", 
     "args": {"setting": "spell_check"} },
   { "keys": ["ctrl+alt+m"], "command": "toggle_menu" },

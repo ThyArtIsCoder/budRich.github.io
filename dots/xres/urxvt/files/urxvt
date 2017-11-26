@@ -12,7 +12,7 @@ URxvt*highlightTextColor:  mag
 
 URxvt*perl-ext-common: default
 
-!URxvt*intensityStyles:     false
+!URxvt*intensityStyles:    false
 URxvt*cursorBlink:         1
 URxvt*scrollBar:           false
 URxvt*internalBorder:      padd
@@ -22,13 +22,14 @@ URxvt*iso14755:            false
 URxvt*iso14755_52:         false
 
 URxvt*cutchars: "\"()*,<>[]{}|\'"
-URxvt*font:     xft:fnt1
+
+URxvt*font:     xft:fnt3
 URxvt*boldFont:       
 URxvt*italicFont:     
 URxvt*boldItalicFont: 
 ! URxvt*boldItalicFont:      xft:fnt1:style=bolditalic:pixelsize=fsz1
 !FixedsysExcelsiorIIIb-L2_Mono.ttf
-URxvt.keysym.C-0: command: \033]710;xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular\007
+URxvt.keysym.C-0: command: \033]710;xft:fnt3\007
 URxvt.keysym.C-9: command: \033]710;xft:fnt2:size=fsz2\007
 
 URxvt*print-pipe: cat > $(echo /tmp/urxvt-dump.$(date +%Y-%m-%d_%H:%M:%S_%N))
