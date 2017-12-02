@@ -1,8 +1,8 @@
 [interface]
 language=C
 speech=false
-autostart=true
-exercise=3
+autostart=false
+exercise=2
 
 [tutor]
 keyboard=qwerty_us
@@ -61,7 +61,7 @@ fluid_speed_racer=80
 fluid_speed_flying=90
 
 [windows]
-main_X=0
-main_Y=20
-tutor_X=0
-tutor_Y=0
+main_X=89
+main_Y=170
+tutor_X=800
+tutor_Y=18

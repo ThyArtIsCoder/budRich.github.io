@@ -26,11 +26,10 @@
       
       <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
       <description>An advanced simple tiling layout for i3wm fyra is the Swedish name for &amp;ldquo;four&amp;rdquo;.
-  In the video above I show the functionality of i3fyra
+ www.youtube.com/watch?v=kU8gb6WLFk8    .
+www.youtube.com/watch?v=t4Tve-xpwus    In the first video above I show the functionality of i3fyra. The second video is a longer and more thorough walkthrough on how to use i3fyra
 dependencies  i3list i3gw  The layout consists of four containers:
-A B C D  The internal layout of the containers doesn&amp;rsquo;t matter.
-This means that container A could be tabbed and the others split horizontally for example.
-A is always to the right of B and D.</description>
+A B C D  The internal layout of the containers doesn&amp;rsquo;t matter.</description>
     </item>
     
     <item>
@@ -50,8 +49,8 @@ and returns a long string with 43 values separated by spaces. This strange outpu
       <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3term/</guid>
-      <description>Launch a command in a new urxvt window Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.
-I just made this script to keep my i3config cleaner, and to be able to set fixedsys as the font.</description>
+      <description>I just made this script to keep my i3config cleaner. It probably needs tweaking if someone other then budRich uses it ;)
+Launch a command in a new urxvt window Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.</description>
     </item>
     
     <item>
@@ -60,8 +59,10 @@ I just made this script to keep my i3config cleaner, and to be able to set fixed
       <pubDate>Wed, 20 Sep 2017 22:38:48 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3zen/</guid>
-      <description>put your windows in a zen mode for a zen mood When run, this script puts the active window between two ghosts (centered). if the window already is &amp;ldquo;zen&amp;rdquo;, move it back to its original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.
-I made a post on /r/unixporn where you can view an animated gif of i3zen in action.</description>
+      <description> I made a post on /r/unixporn where you can view an animated gif of i3zen in action.
+Put the window between two ghosts (centered). if the window already is &amp;ldquo;zen&amp;rdquo;, move it back to its original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.
+usage $ i3zen [OPTION] ARGUMENT
+   option argument function     -v  show version info and exit   -h  show this help and exit    dependencies  i3get i3gw  </description>
     </item>
     
     <item>

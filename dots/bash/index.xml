@@ -17,9 +17,7 @@
       
       <guid>https://budrich.github.io/dots/bash/prompt/</guid>
       <description>My prompt shows the runtime of the last command and a compact CWD (current work directory).
-ss_time4prompt.png   The last line of the file:
-printf &#39;\e]710;%s\007&#39; &amp;quot;xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular&amp;quot;
-is a little dirthack™ to make it possible to use Fixedsys in urxvt, read more about how to setup fonts here.</description>
+ss_time4prompt.png   </description>
     </item>
     
     <item>

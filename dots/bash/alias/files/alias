@@ -21,8 +21,8 @@ alias tgz='tar xzf'
 
 # alias upp='sudo apt update && sudo apt upgrade'
 alias upp='sudo pacman -Syu'
-alias rbo='sudo reboot now'
-alias down='sudo shutdown now'
+alias rbo='i3off && sudo reboot now'
+alias down='i3off && sudo shutdown now'
 
 alias lolban="postbanner -t '-f 3d.flf' -l '-p 10'"
 
@@ -74,3 +74,4 @@ alias gtre='i3-msg -t get_tree | awk -v RS="," "{print \$0}" > /tmp/i3tree && su
 alias yta='youtube-dl --geo-bypass --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/snd/y/%(title)s.%(ext)s" -i -x '
 alias ytd='youtube-dl --geo-bypass --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/vid/y/%(title)s.%(ext)s" -i '
 alias xrdbm='xrdb -merge /home/bud/.Xresources'
+alias pbr='polybar-msg cmd restart'

@@ -1,11 +1,59 @@
 #!/bin/bash
 
+NAME="igi"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-09-30"
+UPDATED="2017-09-30"
+
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+*******************************
+igi - I got issues
+------------------
+This script creates a issuefile and move it to \`/etc/issue\`.
+The file will use the colors defined in \`.Xresources\` and
+use \`toilet\`, \`fortune\` and \`lolcat\` to create a 
+centered fullscreen issue file.
+
+usage
+-----
+\`\$ $NAME [OPTION] ARGUMENT\`
+
+| option | argument | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version info and exit |
+| -h     |          | show this help and exit    |
+
+dependencies
+------------
+- DEPENDENCY
+
+contact
+-------
+$CONTACT
+"
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf '%s\n' \
+         "$NAME - version: $VERSION" \
+         "updated: $UPDATED by $AUTHOR"
+       exit ;;
+    h) printf '%s\n' "${about}" && exit ;;
+  esac
+done
+
+
 # get an active tty
 AT=$(w | awk '$2~/tty/ {print $2;exit}')
 
 # thank you alfunx for the stty commands
-TERMH=$(stty -a </dev/$AT | grep -Po '(?<=rows )\d+')
-TERMW=$(stty -a </dev/$AT | grep -Po '(?<=columns )\d+')
+TERMH=$(stty -a </dev/"$AT" | grep -Po '(?<=rows )\d+')
+TERMW=$(stty -a </dev/"$AT" | grep -Po '(?<=columns )\d+')
 
 MAX_LINES=6 # Maximum number of lines to display
 WRAP=17     # On which Collumn to wrap fortune
@@ -69,10 +117,10 @@ getfortune(){
     toi=$(echo "${l}" | toilet ${TOILET_OPTIONS[@]} )
     # dimensions of formated text
 
-    tlh=$(printf "${toi}" | wc -l)
+    tlh=$(printf '%s' "${toi}" | wc -l)
     [[ $tlh -gt $fh ]] && fh=$tlh
 
-    tlw=$(printf "${toi}" | wc -L)
+    tlw=$(printf '%s' "${toi}" | wc -L)
     [[ $tlw -gt $fw ]] && fw=$tlw
     # IFS=$OIFS
     text2+=("${toi}")
@@ -81,12 +129,12 @@ getfortune(){
   # centerfortune
   vpad=$(((TERMH-(fh*lchk))/2)) # vertical padding 
   hpad=$(((TERMW-fw)/2))        # horizontal padding
-  for (( i = 2; i < ${vpad}; i++ )); do
+  for (( i = 2; i < vpad; i++ )); do
     echo
   done
   for l in ${text2[@]}; do
     printf "%${hpad}s"
-    printf "${l}\n" 
+    printf '%s\n' "${l}" 
   done
   echo
 }

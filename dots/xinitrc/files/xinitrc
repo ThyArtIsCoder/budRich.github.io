@@ -26,7 +26,5 @@ sxhkd > /dev/null 2>&1 &
 xbanish &
 mpd > /dev/null 2>&1 &
 
-polybar -c ~/.config/polybar/budbar -r example 2>&1 &
-
 exec i3
 

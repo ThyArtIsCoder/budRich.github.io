@@ -1,0 +1,74 @@
+#!/bin/bash
+
+NAME="subswap"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-29"
+UPDATED="2017-11-29"
+
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+*******************************
+Move the currently open file in sublime to
+another sublime window. Sublime must be active
+for this to work.
+
+usage
+-----
+\`\$ $NAME [OPTION]\`
+
+| option | argument | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version info and exit |
+| -h     |          | show this help and exit    |
+
+dependencies
+------------
+- Sublime Text
+
+contact
+-------
+$CONTACT
+"
+
+filefromtitle(){
+  st=${1%' -'*}
+  [[ $st =~ \( ]] && st=${st%' ('*}
+  st=${st:1}         # fullpath short
+  echo "${st/'~'/$HOME}"
+}
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf '%s\n' \
+         "$NAME - version: $VERSION" \
+         "updated: $UPDATED by $AUTHOR"
+       exit ;;
+    h) printf '%s\n' "${about}" && exit ;;
+  esac
+done
+
+aw=($(i3get -r it)) ainst=${aw[0]//'"'/}
+[[ ! $ainst =~ sublime_text|sublime_notes ]] && exit
+
+notecmd='subl \
+    --project ~/tmp/kortisar/sublime/projects/notes.sublime-project \
+    && subl ~/dox/not/todo.note \
+    && sleep 1 \
+    && xdotool set_window --classname "sublime_notes" `i3get -t "(notes)" -r d`'
+
+found=$(filefromtitle "${aw[1]}")
+
+subl --command "close"
+[[ $ainst = 'sublime_notes' ]] \
+  && i3run -i sublime_text -e subl \
+  || i3run -i sublime_notes -e "${notecmd}"
+
+sleep .2
+subl "$found"
+
+
+

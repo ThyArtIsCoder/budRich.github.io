@@ -1,103 +1,249 @@
 #!/bin/bash
 
-# subact - perform action on currently open file in sublime
-# if file is argument dont catch title from sublime
-# 
-# dependencies:
-# -------------
-# i3get
-# toilet
-# lolcat
-# ansi2html
+NAME="subact2"
+VERSION="0.201"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-29"
+UPDATED="2017-11-29"
 
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+*******************************
+Perform action on the currently open file in sublime.
+The action is to move the file to '~/www', and create
+necessary files. And then link back the file. 
+A rofi menu will ask for the type of the file.
+If the file already exist in www and is a script, the 
+about part of the script or markdown is updated.
 
-REM_ROOT="${HOME}/www"
-FLD_SCRIPTS="scripts"
-FLD_DOTS="dots"
-LOC_SCIRPT_SRC="${HOME}/bin"
+If FILE is argument, FILE is used instead of 
+the currently open file in sublime.
 
-FORTUNE_OPTIONS="$HOME/etc/fortunes/budcol"
-TOILET_OPTIONS='-f 3d.flf'
-LOLCAT_OPTIONS='-p 10'
+usage
+-----
+\$ $NAME [FILE]
+
+| option | argument | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version info and exit |
+| -h     |          | show this help and exit    |
+
+dependencies
+------------
+- i3get
+- toilet
+- lolcat
+- ansi2html
+- sublime text
+
+contact
+-------
+$CONTACT
+"
 
 newpost(){
-  cd ${REM_ROOT} 
+  cd "$REM_ROOT" || exit
   # create _index.md in all subfolders to define
   # sections properly.
+  trg_url="${trgmd/${REM_ROOT}\/content/}"
   trgtmp=${trg_url%'/'*}
   echo "${trg_url}"
   while [[ -n ${trgtmp} ]]; do
     hugo new "${trgtmp}/_index.md"
     sed -i "/title/c\title: \"${trgtmp##*'/'}\"" "content/${trgtmp}/_index.md"
-    sed -i "/draft/c\draft: false" "content/${trgtmp}/_index.md"
+    sed -i "/draft/c\draft: true" "content/${trgtmp}/_index.md"
     trgtmp=${trgtmp%'/'*}
   done
 
-  hugo new ${trg_url}.md
+  hugo new "$trg_url"
   # https://stackoverflow.com/a/11245501
-  sed -i "/fspath/c\fspath: \"${st}\"" content/${trg_url}.md
-  mkdir -p "${trg_lbd}"
-  postbanner -t "${TOILET_OPTIONS}" -l "${LOLCAT_OPTIONS}" -o "${trg_lbd}/banner.html" "${fo}"
-  postquote -f "${FORTUNE_OPTIONS}" "${trg_lbd}/quote.html"
+  sed -i "/fspath/c\fspath: \"${st}\"" "content/${trg_url}"
+  postbanner -t "${TOILET_OPTIONS}" -l "${LOLCAT_OPTIONS}" -o "$trgban" "${fo}"
+  postquote -f "${FORTUNE_OPTIONS}" "$trgquo"
 }
+
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf '%s\n' "$NAME - version: $VERSION" \
+                     "updated: $UPDATED by $AUTHOR" 
+       exit;;
+    h) printf '%s\n' "${about}" && exit;;
+  esac
+done
+
+
+REM_ROOT="${HOME}/www"
+
+FORTUNE_OPTIONS="$HOME/etc/fortunes/budcol"
+TOILET_OPTIONS='-f 3d.flf'
+LOLCAT_OPTIONS='-p 10'
+
+starz='*******************************'
 
 if [[ ! -f "${1/'~'/$HOME}" ]]; then
   st=$(i3get -i sublime_text -r t)
   st=${st%' -'*}
-  [[ $st =~ '(' ]] && st=${st%' ('*}
+  [[ $st =~ \( ]] && st=${st%' ('*}
   st=${st:1}         # fullpath short
 else
   st="${1}"
 fi
 
 fp=${st/'~'/$HOME} # fullpath extended
-lnk=$(readline "$fp")
+[[ ! -f "$fp" ]] && exit
+fldchk="${fp/$HOME\//}" fldchk=${fldchk%/*}
+
+# if file is in src, 
+# update markdown and exit
+if [[ $fldchk = src ]]; then
+  org=$(readlink "$fp")
+  
+  # www/static/bla/files/namn
+  ormd=${org/static/content} ormd=${ormd%\/files*} ormd=${ormd}.md
+  awk -v strs="$starz" '{
+    print $0
+    if($0==strs) {exit}
+  }' "$ormd" > "${ormd}2"
+
+  # get info between stars and contact
+  chmod +x "$fp"
+  "$fp" -h | awk -v strs="$starz" '{
+    if($0=="contact") {exit}
+    if(hit==1) {print $0}
+    if($0==strs) {hit=1}
+  }' >> "${ormd}2"
+
+  mv -f "${ormd}2" "${ormd}"
+  notify-send "subact: updated $ormd"
+  exit
+fi
+
+# if file is in www, check if it exist in src and update
+if [[ "$fp" =~ ^$REM_ROOT ]]; then
+  this=${fp/content/static} this=${this%.md}
+  thisnmn=${this##*/} this=${this}/files/${thisnmn}
+  for s in $HOME/src/*; do
+    org=$(readlink "$s")
+    if [[ $org = "$this" ]]; then
+
+      awk -v strs="$starz" '{
+        print $0
+        if($0==strs){exit}
+      }' "$this" > /tmp/newsrc
+
+      awk -v strs="$starz" '{
+        gsub("`","\\`",$0)
+        if(hit==1) {print $0}
+        if($0==strs) {hit=1}
+      }' "$fp" >> /tmp/newsrc
+
+      awk '{
+        if($0=="contact"){hit=1}
+        if(hit==1) {print $0}
+      }' "$this" >> /tmp/newsrc
+
+      mv -f /tmp/newsrc "$this"
+      notify-send "subact: updated $this"
+      exit
+    fi
+  done
+  exit
+fi
+
+namn=$( printf '%s\n' "" | rofi -dmenu -p 'Name: ')
+[[ -z $namn ]] && exit
+
+dest=$( printf '%s\n' "dots" "scripts" "i3ass" "budlimeC" "budlimeT" \
+      | rofi -dmenu -p 'Destination: ')
+[[ -z $dest ]] && exit
+subl --command "close"
+
+lnk=$(readlink "$fp") # if link, use original
 [[ -n $lnk ]] && fp="$lnk"
 fl=${fp##*'/'}     # filename
 fc=${fp//'.'/}     # path without dots
 # remove extension or leading dot
 [[ ${fl:0:1} = '.' ]] && fo=${fl:1} || fo=${fl%.*}
 fd=${fc%'/'*}      # dir
+fd=${fd/$HOME/}
 
-[[ $fd = $HOME ]] && fd+='/'
 
-if [[ $fd = $LOC_SCIRPT_SRC ]]; then 
-  trg=${FLD_SCRIPTS}
-  trg_mdd="${REM_ROOT}/content/${trg}"
-  trg_mdf="${trg_mdd}/${fo}.md"
-  trg_lbd="${REM_ROOT}/static/${trg}/${fo}"
-  trg_fld="${trg_lbd}/files"
-  trg_flf="${trg_fld}/${fo}"
-else
-  trg=${FLD_DOTS}
-  trg_mdd="${REM_ROOT}/content/${trg}/${fd/${HOME}\//}"
-  trg_mdf="${trg_mdd}/${fo}.md"
-  trg_lbd="${REM_ROOT}/static/${trg}/${fd/${HOME}\//}/${fo}"
-  trg_lbf="${trg_lbd}/banner.html"
-  trg_fld="${trg_lbd}/files"
-  trg_flf="${trg_fld}/${fo}"
-fi
+[[ $fd = "$HOME" ]] && fd+='/'
 
-trg_url="${trg_mdd/${REM_ROOT}\/content/}/${fo}"
-# backup link folder
-trg_dbd="${HOME}${trg_mdd/${REM_ROOT}\/content/}"
-trg_dbd="${trg_dbd/scripts/src}"
-trg_dbd="${trg_dbd/dots/dot}"
+case "$dest" in
+  dots ) 
+    trgmd="$REM_ROOT/content/dots/$fd/${namn}.md"
+    parlic="$REM_ROOT/static/dots/README/files/LICENSE" 
+  ;;
+  scripts )
+    trgmd="$REM_ROOT/content/scripts/${namn}.md" 
+    parlic="$REM_ROOT/static/scripts/README/files/LICENSE" 
+  ;;
+  i3ass ) 
+    trgmd="$REM_ROOT/content/i3ass/${namn}.md"
+    parlic="$REM_ROOT/static/i3ass/README/files/LICENSE" 
+  ;;
+  budlimeC )
+    trgmd="$REM_ROOT/content/budlime/config/${namn}.md" 
+    parlic="$REM_ROOT/static/budlime/README/files/LICENSE" 
+  ;;
+  budlimeT ) 
+    trgmd="$REM_ROOT/content/budlime/tools/${namn}.md" 
+    parlic="$REM_ROOT/static/budlime/README/files/LICENSE" 
+  ;;
+esac
+
+fldsta=${trgmd%.*} fldsta=${fldsta/content/static}
+trgfil="${fldsta}/files/${namn}"
+trglic="${fldsta}/files/LICENSE"
+trgban="${fldsta}/banner.html"
+trgquo="${fldsta}/quote.html"
+
 
 # create files and links if they don't exist
-[[ ! -f "${trg_mdf}" ]] && newpost
-if [[ ! -f "${trg_flf}" ]];then
-  mkdir -p "${trg_fld}"
+mkdir -p "${trgfil%/*}"
+
+[[ ! -f "${trgmd}" ]] && newpost
+if [[ ! -f "${trgfil}" ]];then
   # move file from FS to DB
-  mv $fp "${trg_flf}"  
-  # if dot, link back to FS
-  [[ ! $fd = $LOC_SCIRPT_SRC ]] && ln "${trg_flf}" $fp
-  # create links to convenient folders
-  mkdir -p ${trg_dbd}
-  ln ${trg_flf} ${trg_dbd}/${fl}
+  mv "$fp" "$trgfil"  
+  cp "$parlic" "$trglic"
+  # link back
+  case "$dest" in
+    dots ) 
+      ln "$trgfil" "$fp"
+      mkdir -p "$HOME/dot/${fldsta}"
+      lnkfil="$HOME/dot/${fldsta}/${namn}"
+      ln -s "$fp" "$lnkfil"
+    ;;
+    scripts|i3ass|budlimeT )
+      lnkfil="$HOME/src/$namn"
+      ln -s "$trgfil" "$lnkfil"
+      echo "$starz" >> "${trgmd}"
+      chmod +x "$lnkfil"
+      # get info between stars and contact
+      "$trgfil" -h | awk -v strs="$starz" '{
+        if($0=="contact") {exit}
+        if(hit==1) {print $0}
+        if($0==strs) {hit=1}
+      }' >> "${trgmd}"
+    ;;
+    budlimeC ) lnkfil="$fp" && ln "$trgfil" "$fp" ;;
+  esac
 fi
 
+echo "trgmd: $trgmd"
+echo "parlic: $parlic"
+echo "fldsta: $fldsta"
+echo "trgfil: $trgfil"
+echo "trglic: $trglic"
+echo "trgban: $trgban"
+echo "trgquo: $trgquo"
+
 i3run -i 'sublime_text' -e subl
-subl "${trg_mdf}"
-
-
+subl "${lnkfil}"
+subl "${trgmd}"

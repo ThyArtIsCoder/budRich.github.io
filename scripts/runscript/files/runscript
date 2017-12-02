@@ -1,13 +1,53 @@
 #!/bin/bash
 
-# run the script currently open in sublime.
-# output is written to tempfile and opened in sublime.
+NAME="runscript"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-09-30"
+UPDATED="2017-09-30"
+
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+*******************************
+run the script currently open in sublime.
+output is written to tempfile and opened in sublime.
+
+usage
+-----
+\`\$ $NAME [OPTION] ARGUMENT\`
+
+| option | argument | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version info and exit |
+| -h     |          | show this help and exit    |
+
+dependencies
+------------
+- Sublime Text
+
+contact
+-------
+$CONTACT
+"
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf '%s\n' \
+         "$NAME - version: $VERSION" \
+         "updated: $UPDATED by $AUTHOR"
+       exit ;;
+    h) printf '%s\n' "${about}" && exit ;;
+  esac
+done
 
 a=$(xdotool search --onlyvisible --classname sublime_text getwindowname)
 b=${a%%' - '*}
 b=${b/'~'/$HOME}
 # notify-send $b
-chmod +x $b
+chmod +x "$b"
 c=$(${b})
-[[ -n $c ]] && printf "${c}" \
-  > /tmp/rs_${b##*/} && subl /tmp/rs_${b##*/}
+[[ -n $c ]] && printf '%s' "${c}" \
+  > "/tmp/rs_${b##*/}" && subl "/tmp/rs_${b##*/}"

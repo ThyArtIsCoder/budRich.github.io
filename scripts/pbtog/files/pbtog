@@ -1,0 +1,56 @@
+#!/bin/bash
+
+NAME="pbtog"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-29"
+UPDATED="2017-11-29"
+
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+*******************************
+toggle visiblity of polybar.
+
+Use \`xprop\` To get the name of your polybar.
+
+usage
+-----
+\`$ pbtog [OPTION]
+
+| option | argument | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version info and exit |
+| -h     |          | show this help and exit    |
+
+dependencies
+------------
+- POLYBAR
+
+contact
+-------
+$CONTACT
+"
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf '%s\n' \
+         "$NAME - version: $VERSION" \
+         "updated: $UPDATED by $AUTHOR"
+       exit ;;
+    h) printf '%s\n' "${about}" && exit ;;
+  esac
+done
+
+pbid=$(xdotool search --onlyvisible --name "polybar-example_LVDS1")
+
+# no id, bar is either hidden or doesn't exit
+if [[ -z $pbid ]]; then
+  pbid=$(xdotool search --name "polybar-example_LVDS1")
+  [[ -n $pbid ]] && xdotool windowmap "$pbid" \
+    || polybar -c "$HOME/.config/polybar/budbar" -r example 2>&1 &
+else
+  xdotool windowunmap "$pbid"
+fi

@@ -30,7 +30,7 @@
   set $up3     comma
   set $right3  period
 
-  set $fntsz 8
+  
   # set $browser i3run -c Surf -e 'surf'
   # set $browser i3run -c Vivaldi-stable -e 'vivaldi'
   set $browser i3run -c Vivaldi-stable -e 'vivaldi-snapshot'
@@ -43,7 +43,7 @@
   set $tocont focus; exec --no-startup-id exec i3fyra -m
   set $notes i3run -i sublime_notes -e 'subl \
     --project ~/tmp/kortisar/sublime/projects/notes.sublime-project \
-    && subl ~/dox/not/i3-four.md \
+    && subl ~/dox/not/todo.note \
     && sleep 1 \
     && xdotool set_window --classname "sublime_notes" `i3get -t "(notes)" -r d`'
 
@@ -54,42 +54,50 @@
   set_from_resource $act i3wm.act #111313
   set_from_resource $ina i3wm.ina #111313
   set_from_resource $red i3wm.red #FF0000
-  set_from_resource $fnt i3wm.fnt Terminus
+  # set_from_resource $fnt i3wm.fnt Terminus
+  set $fntsz 8
+  set $fnt Terminus
 
 # >>> panicbuttons <<<
 
   bindsym F4         kill
-  $win+Shift+q       exit
-  $win+Control+r     reload
-  $win+$alt+r   $exe i3-msg restart
+  $win+Control+r     $exe i3-msg reload ; $exe polybar-msg cmd restart
+  $win+$alt+r   $exe i3-msg restart ; $exe polybar-msg cmd restart
   $win+Shift+x  $exe lock.sh
-  $win+Escape   $exe buddown
+  $win+Escape   $exe i3off ; $exe i3-msg exit
 
 # >>> terminals <<<
 
   $win+Return           $exe i3run -i floatterm -e 'urxvtc -name floatterm'
   $win+Shift+Return     $exe i3run -i termsmall -e 'urxvtc -name termsmall'
-  $win+Control+Return   $exe i3run -i termside  -e 'urxvtc -name termside'
+  $win+Control+Return   $exe i3clone
   $win+$alt+Return      $exe urxvtc -name tempterm
+
+# >>> sublime stuff <<<
+
+  $win+s          $exe $editor
+  $win+Shift+s    $exe $notes
+  $win+Control+s  $exe subpromen
+  $win+$alt+s     $exe subswap
+  
 
 # >>> i3run - sane applaunching for the modern tiler <<<
   $win+e $exe $filemanager
-  $win+1 $exe $editor
-  $win+2 $exe $browser
-  $win+3 $exe i3term irssi
-  $win+4 $exe i3term ncmpcpp
-  $win+5 $exe i3run -i qbittorrent  -e 'qbittorrent'
+  
+  $win+f $exe $browser
+  $win+a $exe i3term irssi
+  $win+d $exe i3term ncmpcpp
+  $win+5 $exe i3run -i qbittorrent -e 'qbittorrent'
   $win+6 $exe i3term newsboat
   $win+9 $exe i3term htop
-  $win+grave $exe $notes
+  
   $win+Shift+grave $exe i3run -i gcolor2 -e 'gcolor2'
 
 # >>> barmenu <<<
-
-  $win+BackSpace $exe /home/bud/.config/polybar/scripts/togglebar
-  $win+r $exe rofi -show run -config ~/.config/rofi/fullscreen
-  bindsym F6 $exe homenu
-  bindsym F8 $exe newmenu
+  bindsym Shift+F8          $exe subact
+  bindsym F8                $exe newmenu
+  $win+r                    $exe rofi -show run
+  $win+space                $exe pbtog
 
 
 # >>> media <<<
@@ -102,25 +110,18 @@
 
 # >>> misc <<<
 
-  $win+f       $exe i3fyra -a
-  $win+Shift+f focus mode_toggle
-  $win+s       $exe subpromen
-  $win+a       $exe subact
-
+  $win+z       $exe i3fyra -a
+  $win+Shift+z focus mode_toggle
+  
 # >>> upload content <<<
 
   bindsym --release Mod4+Print $exe i3cast
-  bindsym --release Print $exe shoot
+  bindsym --release Print      $exe shoot
 
   $win+c $exe \
     xclip -o | curl -F c=@- https://ptpb.pw/?u=1 | \
     xclip -selection 'clipboard' && \
     notify-send "Paste uploaded"
-
-# >>> wallpapermanagement <<<
-
-  $win+w        $exe wps -b    # next wallpaper
-  $win+Shift+w  $exe wps -s t  # toggle blur
 
 # >>> mousekeys <<<
 
@@ -156,24 +157,33 @@
   $win+Shift+$down2        $exe i3fyra -m d 
   $win+Shift+$up2          $exe i3fyra -m u 
 
-  $win+$left1              layout tabbed
-  $win+$right1             layout splith
-  $win+$down1              layout stacked
-  $win+$up1                layout splitv
-
   $win+Tab                 $exe i3fyra -t r
   $win+Shift+Tab           $exe i3fyra -t l 
 
+# >>> layout toggling <<<
+  
+  $win+g                   $exe i3loto h
+  $win+Shift+g             $exe i3loto v
+
 # >>> workspace stuff <<<
 
-  $win+F1  workspace 1
-  $win+F2  workspace 2
-  $win+F3  workspace 3
-  $win+F12 workspace back_and_forth
+  $win+1  workspace 1; $exe \
+    hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png \
+      -tint "$(xrdb -query | awk '/\*background/ {print $2}')"
+  $win+2  workspace 2; $exe \
+    hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png \
+      -tint "$(xrdb -query | awk '/\*color6:/ {print $2}')"
+  $win+3  workspace 3; $exe \
+    hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png \
+      -tint "$(xrdb -query | awk '/\*color4:/ {print $2}')"
+  $win+4  workspace 4; $exe \
+    hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png \
+      -tint "$(xrdb -query | awk '/\*background/ {print $2}')"
+  # $win+F12 workspace back_and_forth
 
-  $win+Shift+F1 move container to workspace 1
-  $win+Shift+F2 move container to workspace 2
-  $win+Shift+F3 move container to workspace 3
+  $win+Shift+1 move container to workspace 1
+  $win+Shift+2 move container to workspace 2
+  $win+Shift+3 move container to workspace 3
 
 # >>> settings <<<
 
@@ -181,7 +191,7 @@
   floating_modifier $alt
   hide_edge_borders both
   focus_follows_mouse no
-  font pango:$fnt $fntsz
+  # font pango:$fnt $fntsz
   workspace_auto_back_and_forth no
 
 # >>> appearance <<<
@@ -196,7 +206,6 @@
   client.unfocused         $ina    $ina   $ina    $ina
   client.urgent            $red    $red   $red    $red
 
-  for_window [class="URxvt"] title_format "%instance"
 # >>> window rules <<<
 
   for_window [class="^.*"] floating enable
@@ -204,10 +213,10 @@
 
   for_window [class="Vivaldi-stable"]    $tocont A
   for_window [class="mpv"]               $tocont B
+  for_window [class="feh"]               $tocont B
   for_window [instance="sublime_text"]   $tocont A
-  for_window [instance="klavaro"]        $tocont A
   for_window [instance="sublime_notes"]  $tocont D
-  for_window [instance="spacefm"]        $tocont B
+  for_window [instance="spacefm"]        $tocont D
   for_window [instance="irssi"]          $tocont D
   for_window [instance="ncmpcpp"]        $tocont B
   for_window [instance="qbittorrent"]    $tocont C
@@ -217,6 +226,11 @@
   for_window [instance="termside"]       $tocont B
   for_window [instance="termsmall"]      $tocont C
   for_window [instance="termsub"]        $tocont C
+
+  for_window [title="^Klavaro - Main Menu$"] move absolute position center
+  
+  for_window [title="^Klavaro - Fluidness$"]  $tocont A
+  for_window [title="^Klavaro - Velocity$"]   $tocont A
 
   for_window [instance="floatterm"] resize set 350 px 250 px
 
@@ -229,11 +243,14 @@
 
 # >>> automatic execution <<<
 
-  $exe i3fyra -l 'AB=-290 BD=290 AC=-75'
-
+  $exe i3fyra -l 'AB=-370 BD=250 AC=-75'
+  $exe polybar -c ~/.config/polybar/budbar -r example 2>&1 &
 
 # >>> notes <<<
 
   # workspace_auto_back_and_forth can cause trouble when tiling is extreme
   # without bindsym to workspaceswitch config doesn't work...
+
+# syntax:ssHash
+
 

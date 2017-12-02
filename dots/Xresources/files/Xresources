@@ -5,7 +5,7 @@
 #define fnt1 Terminus
 #define fnt2 Inconsolata
 #define fnt3 FixedFixedsys:style=Regular
-#define brws vivaldi
+! #define brws vivaldi
 #define fsz1 12
 #define fsz2 18
 #define padd 5
@@ -22,4 +22,4 @@
 
 ! #include </home/bud/.xres/rofi>
 
-
+! syntax:ssExcla

@@ -27,7 +27,6 @@ toggle-on-foreground = ${colors.blk}
 label-song-maxlen = 35
 label-song-ellipsis = true
 
-
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
@@ -206,8 +205,12 @@ tray-padding = 2
 
 ; this combo is important to overlay tabs.
 override-redirect = true
-;wm-restack = i3
+; wm-restack = i3
+
+enable-ipc = true
 
 modules-left = date pbvol pbmic xbacklight battery memory cpu pbweather pbmail wlan
 modules-center = xwindow
 modules-right = mpd
+
+; syntax:ssSemi

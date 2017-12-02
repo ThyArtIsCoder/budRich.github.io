@@ -5,10 +5,21 @@
     <link>https://budrich.github.io/</link>
     <description>Recent content on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Nov 2017 23:50:31 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2017 19:27:11 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>video_fyra</title>
+      <link>https://budrich.github.io/blog/video_fyra/</link>
+      <pubDate>Sat, 02 Dec 2017 19:27:11 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/video_fyra/</guid>
+      <description>I have uploaded a long (~1 hour) video to youtube, where I show how to configure and use my layout script i3fyra.
+www.youtube.com/watch?v=t4Tve-xpwus    Below are the things I added to the default i3 config file (~/.config/i3/config).
+# focus replacements bindsym $mod+Left exec --no-startup-id exec i3fyra -f l bindsym $mod+Down exec --no-startup-id exec i3fyra -f d bindsym $mod+Up exec --no-startup-id exec i3fyra -f u bindsym $mod+Right exec --no-startup-id exec i3fyra -f r # tabswitching bindsym $mod+Tab exec --no-startup-id exec i3fyra -t r bindsym $mod+Shift+Tab exec --no-startup-id exec i3fyra -t l # move replacements bindsym $mod+Shift+Left exec --no-startup-id exec i3fyra -m l bindsym $mod+Shift+Down exec --no-startup-id exec i3fyra -m d bindsym $mod+Shift+Up exec --no-startup-id exec i3fyra -m u bindsym $mod+Shift+Right exec --no-startup-id exec i3fyra -m r # floating toggle replacement bindsym $mod+Shift+space exec --no-startup-id i3fyra -a # window rules for_window [class=&amp;quot;^.</description>
+    </item>
     
     <item>
       <title>dmenu</title>
@@ -17,6 +28,16 @@
       
       <guid>https://budrich.github.io/dots/xres/dmenu/</guid>
       <description>I use dmenu2, which is a patched version of dmenu. The main reason i use this instead of vanilla dmenu is so that I can set its appearance in Xresources</description>
+    </item>
+    
+    <item>
+      <title>fixed_fixedsys</title>
+      <link>https://budrich.github.io/blog/fixed_fixedsys/</link>
+      <pubDate>Thu, 23 Nov 2017 22:35:11 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/fixed_fixedsys/</guid>
+      <description>I&amp;rsquo;m not sure why, but Fixedsys is one of my all time favorite fonts. I particularly like it as a monospaced terminal and programming font (Fixedsys is the font used on this site to display code and ASCII art). But it hasn&amp;rsquo;t been painless to get the terminal to accept Fixedsys.
+The problem from the start is that the available version of Fixedsys is a .ttf font. After some digging around the Internet, I found this article on askubuntu.</description>
     </item>
     
     <item>
@@ -94,8 +115,7 @@ Copyright (c) 2017 Nils Kvist Permission is hereby granted, free of charge, to a
       
       <guid>https://budrich.github.io/dots/readme/</guid>
       <description>dotfiles dela budRich These are my dotfiles. The structure of the tree is the same as my home folder.
-license All my dotfiles are licensed with the WTFPL license
- DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE Version 2, December 2004 Copyright (C) 2017 Nils Kvist &amp;lt;robstenklippa@gmail.com&amp;gt; Everyone is permitted to copy and distribute verbatim or modified copies of this license document, and changing it is allowed as long as the name is changed.</description>
+license All my dotfiles are licensed with the WTFPL license</description>
     </item>
     
     <item>
@@ -125,11 +145,10 @@ Copyright (c) 2017 Nils Kvist Permission is hereby granted, free of charge, to a
       
       <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
       <description>An advanced simple tiling layout for i3wm fyra is the Swedish name for &amp;ldquo;four&amp;rdquo;.
-  In the video above I show the functionality of i3fyra
+ www.youtube.com/watch?v=kU8gb6WLFk8    .
+www.youtube.com/watch?v=t4Tve-xpwus    In the first video above I show the functionality of i3fyra. The second video is a longer and more thorough walkthrough on how to use i3fyra
 dependencies  i3list i3gw  The layout consists of four containers:
-A B C D  The internal layout of the containers doesn&amp;rsquo;t matter.
-This means that container A could be tabbed and the others split horizontally for example.
-A is always to the right of B and D.</description>
+A B C D  The internal layout of the containers doesn&amp;rsquo;t matter.</description>
     </item>
     
     <item>
@@ -149,22 +168,8 @@ and returns a long string with 43 values separated by spaces. This strange outpu
       <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3term/</guid>
-      <description>Launch a command in a new urxvt window Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.
-I just made this script to keep my i3config cleaner, and to be able to set fixedsys as the font.</description>
-    </item>
-    
-    <item>
-      <title>sublime_setup</title>
-      <link>https://budrich.github.io/budlime/articles/sublime_setup/</link>
-      <pubDate>Tue, 17 Oct 2017 01:30:22 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/budlime/articles/sublime_setup/</guid>
-      <description>Below is a guide on how I like to set up Sublime Text. Keyboard friendly and minimal UI is my aim. For info on using Sublime i recommend my custom mashup of VIMtutor and Sublime tutor, budtutor.
-If you are using Atom or VS code, please read this article:
-https://medium.com/@caspervonb/why-i-still-use-vim-67afd76b4db6
-Or this&amp;hellip;
-https://github.com/Microsoft/vscode/issues/35783
-locate files I have a lot of custom settings and a personal package collection. It is a pain to achieve the same setup on a fresh install of Sublime.</description>
+      <description>I just made this script to keep my i3config cleaner. It probably needs tweaking if someone other then budRich uses it ;)
+Launch a command in a new urxvt window Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.</description>
     </item>
     
     <item>
@@ -490,9 +495,7 @@ I am planning to add something similar to be able to switch between a dark and l
       
       <guid>https://budrich.github.io/dots/bash/prompt/</guid>
       <description>My prompt shows the runtime of the last command and a compact CWD (current work directory).
-ss_time4prompt.png   The last line of the file:
-printf &#39;\e]710;%s\007&#39; &amp;quot;xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular&amp;quot;
-is a little dirthack™ to make it possible to use Fixedsys in urxvt, read more about how to setup fonts here.</description>
+ss_time4prompt.png   </description>
     </item>
     
     <item>
@@ -590,8 +593,10 @@ ss_igi1.png   dependencies    toilet display ASCII artish fonts     lolcat rainb
       <pubDate>Wed, 20 Sep 2017 22:38:48 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3zen/</guid>
-      <description>put your windows in a zen mode for a zen mood When run, this script puts the active window between two ghosts (centered). if the window already is &amp;ldquo;zen&amp;rdquo;, move it back to its original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.
-I made a post on /r/unixporn where you can view an animated gif of i3zen in action.</description>
+      <description> I made a post on /r/unixporn where you can view an animated gif of i3zen in action.
+Put the window between two ghosts (centered). if the window already is &amp;ldquo;zen&amp;rdquo;, move it back to its original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.
+usage $ i3zen [OPTION] ARGUMENT
+   option argument function     -v  show version info and exit   -h  show this help and exit    dependencies  i3get i3gw  </description>
     </item>
     
     <item>

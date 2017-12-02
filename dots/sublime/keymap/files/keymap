@@ -122,11 +122,11 @@
   },
 
   { "keys": ["ctrl+k", "ctrl+y"],  "command": "note_todo_done", "context":
-    [{ "key": "selector", "operator": "equal", "operand": "markup.list.unnumbered.todo.markdown" }]
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
   },
 
   { "keys": ["ctrl+k", "ctrl+u"],  "command": "note_todo_cancel", "context":
-    [{ "key": "selector", "operator": "equal", "operand": "markup.list.unnumbered.todo.markdown" }]
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
   },
 
   { "keys": ["enter"], "command": "note_open_url", "context":
@@ -155,37 +155,12 @@
   { "keys": ["ctrl+0"], "command": "two_font" },
   { "keys": ["ctrl+9"], "command": "two_face" },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   // example hotkey binding for TwoFace:
   { "keys": ["ctrl+1"], "command": "two_face" },
 
   { "keys": ["ctrl+2"], "command": "two_face", 
     "args": {"face": "monokai"}
   },
-
-
-
-
-
-
-
-
-
-
-
-
 
   { "keys": ["shift+f6"], "command": "toggle_setting", 
     "args": {"setting": "spell_check"} },
@@ -200,6 +175,7 @@
   { "keys": ["ctrl+alt+s"], "command": "chain", 
     "args": {
       "commands": [
+        ["toggle_side_bar"],
         ["reveal_in_side_bar"],
         ["focus_side_bar"]
       ]

@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://budrich.github.io/blog/video_fyra/</loc>
+    <lastmod>2017-12-02T19:27:11+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/dots/xres/dmenu/</loc>
     <lastmod>2017-11-23T23:50:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/blog/fixed_fixedsys/</loc>
+    <lastmod>2017-11-23T22:35:11+01:00</lastmod>
   </url>
   
   <url>
@@ -80,11 +90,6 @@
   <url>
     <loc>https://budrich.github.io/i3ass/i3term/</loc>
     <lastmod>2017-11-19T22:20:17+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/budlime/articles/sublime_setup/</loc>
-    <lastmod>2017-10-17T01:30:22+02:00</lastmod>
   </url>
   
   <url>
@@ -414,7 +419,7 @@
   
   <url>
     <loc>https://budrich.github.io/</loc>
-    <lastmod>2017-11-23T23:50:31+01:00</lastmod>
+    <lastmod>2017-12-02T19:27:11+01:00</lastmod>
     <priority>0</priority>
   </url>
   

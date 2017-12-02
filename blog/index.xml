@@ -11,6 +11,27 @@
     
     
     <item>
+      <title>video_fyra</title>
+      <link>https://budrich.github.io/blog/video_fyra/</link>
+      <pubDate>Sat, 02 Dec 2017 19:27:11 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/video_fyra/</guid>
+      <description>I have uploaded a long (~1 hour) video to youtube, where I show how to configure and use my layout script i3fyra.
+www.youtube.com/watch?v=t4Tve-xpwus    Below are the things I added to the default i3 config file (~/.config/i3/config).
+# focus replacements bindsym $mod+Left exec --no-startup-id exec i3fyra -f l bindsym $mod+Down exec --no-startup-id exec i3fyra -f d bindsym $mod+Up exec --no-startup-id exec i3fyra -f u bindsym $mod+Right exec --no-startup-id exec i3fyra -f r # tabswitching bindsym $mod+Tab exec --no-startup-id exec i3fyra -t r bindsym $mod+Shift+Tab exec --no-startup-id exec i3fyra -t l # move replacements bindsym $mod+Shift+Left exec --no-startup-id exec i3fyra -m l bindsym $mod+Shift+Down exec --no-startup-id exec i3fyra -m d bindsym $mod+Shift+Up exec --no-startup-id exec i3fyra -m u bindsym $mod+Shift+Right exec --no-startup-id exec i3fyra -m r # floating toggle replacement bindsym $mod+Shift+space exec --no-startup-id i3fyra -a # window rules for_window [class=&amp;quot;^.</description>
+    </item>
+    
+    <item>
+      <title>fixed_fixedsys</title>
+      <link>https://budrich.github.io/blog/fixed_fixedsys/</link>
+      <pubDate>Thu, 23 Nov 2017 22:35:11 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/fixed_fixedsys/</guid>
+      <description>I&amp;rsquo;m not sure why, but Fixedsys is one of my all time favorite fonts. I particularly like it as a monospaced terminal and programming font (Fixedsys is the font used on this site to display code and ASCII art). But it hasn&amp;rsquo;t been painless to get the terminal to accept Fixedsys.
+The problem from the start is that the available version of Fixedsys is a .ttf font. After some digging around the Internet, I found this article on askubuntu.</description>
+    </item>
+    
+    <item>
       <title>extreme_i3</title>
       <link>https://budrich.github.io/blog/extreme_i3/</link>
       <pubDate>Tue, 21 Nov 2017 23:09:22 +0100</pubDate>

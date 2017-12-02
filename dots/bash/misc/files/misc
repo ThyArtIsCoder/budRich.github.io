@@ -1,6 +1,6 @@
 shopt -s histappend
 shopt -s checkwinsize
-set -o vi
+# set -o vi
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -34,3 +34,5 @@ fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 . /home/bud/.rvm/scripts/rvm
+
+# syntax:bash

@@ -1,5 +1,48 @@
 #!/bin/bash
 
+NAME="urlmdless"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-09-30"
+UPDATED="2017-09-30"
+
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+*******************************
+WIP, urlopener for termingal and newsboat
+
+usage
+-----
+\`\$ $NAME [OPTION] ARGUMENT\`
+
+| option | argument | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version info and exit |
+| -h     |          | show this help and exit    |
+
+dependencies
+------------
+- newsboat
+
+contact
+-------
+$CONTACT
+"
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf '%s\n' \
+         "$NAME - version: $VERSION" \
+         "updated: $UPDATED by $AUTHOR"
+       exit ;;
+    h) printf '%s\n' "${about}" && exit ;;
+  esac
+done
+
+
 # display splash
 
 tput reset

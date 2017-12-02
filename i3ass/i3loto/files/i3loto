@@ -1,0 +1,91 @@
+#!/bin/bash
+
+NAME="i3loto"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-29"
+UPDATED="2017-11-29"
+
+about="
+$NAME - $VERSION - $UPDATED
+created: $CREATED by $AUTHOR
+*******************************
+i3 layout toggler
+-----------------
+If layout of current container is not tabbed
+when i3loto is lauched, it will become tabbed.
+Otherwise LAYOUT will be enabled.
+
+I made this script to be able to toggle layout 
+with one keybinding.
+
+usage
+-----
+\`\$ $NAME [OPTION] [vht]\`
+
+v = vertically split layout
+h = horizontally split layout
+s = stacked layout
+
+| option | argument | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version info and exit |
+| -h     |          | show this help and exit    |
+
+examples
+--------
+Toggle between tabbed and vertical layout  
+\`bindsym Mod3+g exec --no-startup-id loto v\`  
+
+Toggle between tabbed and horizontal layout  
+\`bindsym Mod3+g exec --no-startup-id loto h\`  
+
+dependencies
+------------
+- [i3list](/i3ass/i3list)
+
+contact
+-------
+$CONTACT
+"
+
+while getopts :vh option
+do
+  case "${option}" in
+    v) printf '%s\n' \
+         "$NAME - version: $VERSION" \
+         "updated: $UPDATED by $AUTHOR"
+       exit ;;
+    h) printf '%s\n' "${about}" && exit ;;
+  esac
+done
+
+lst=($(i3list))
+
+AWC=${lst[7]}
+
+# if current window is not tiled and handled 
+# by i3fyra, Do nothing.
+
+[[ $AWC = X ]] && exit
+
+AWL=${lst[5]} # (t|v|h|s|u)
+
+# if layout isn't tabbed set it to tabbed
+[[ $AWL != t ]] && i3-msg layout tabbed \
+  && exit
+
+# if no layout is requsted: exit. otherwise 
+# set that layout.
+
+[[ -z $1 ]] && exit
+
+case $1 in
+  v ) jlo=splitv ;;
+  h ) jlo=splith ;;
+  s ) jlo=stacked ;;
+  * ) jlo=splith ;;
+esac
+
+i3-msg layout "$jlo"
