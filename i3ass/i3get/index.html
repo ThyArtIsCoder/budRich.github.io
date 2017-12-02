@@ -1339,20 +1339,22 @@ doing what is right.
 <h2 id="usage">usage</h2>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>i3get [OPTION CRITERIA]
 
-Options:
-v             show version and exit
-h             show this help
-a             currently active window (default)
-c CLASS       search for windows with the given class
-i INSTANCE    search for windows with the given instance
-t TITLE       search for windows with title.
-n CON_ID      search for windows with the given con_id
-d CON_ID      search for windows with the given window id
-m CON_MARK    search for windows with the given mark
-y             sync on. If this option is included, script will wait till
-              target window exist.
+| option | criteria | function                   |
+|:-------|:---------|:---------------------------|
+| -v     |          | show version and exit
+| -h     |          | show this help
+| -a     |          | currently active window (default)
+| -c     | CLASS    | search for windows with the given class
+| -i     | INSTANCE | search for windows with the given instance
+| -t     | TITLE    | search for windows with title.
+| -n     | CON_ID   | search for windows with the given con_id
+| -d     | CON_ID   | search for windows with the given window id
+| -m     | CON_MARK | search for windows with the given mark
+| -o     | TTL_FRMT | search for windows with the given titleformat
+| -y     |          | synch on. If this option is included, 
+|        |          | script will wait till target window exist.
 
-r [tcidnmw]   desired return.
+-r [tcidnmw]   desired return.
                 t: title
                 c: class
                 i: instance
@@ -1362,6 +1364,7 @@ r [tcidnmw]   desired return.
                 w: workspace
                 a: is active
                 f: floating state
+                o: title format
                 v: visible state
 </code></pre></div>
 
@@ -1391,7 +1394,7 @@ $ i3get -i sublime_text -r wtf
   <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="ch">#!/bin/sh</span>
 
 <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;i3get&quot;</span>
-<span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;0.001&quot;</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;0.291&quot;</span>
 <span class="nv">AUTHOR</span><span class="o">=</span><span class="s2">&quot;budRich&quot;</span>
 <span class="nv">CONTACT</span><span class="o">=</span><span class="s1">&#39;robstenklippa@gmail.com&#39;</span>
 <span class="nv">CREATED</span><span class="o">=</span><span class="s2">&quot;2017-03-08&quot;</span>
@@ -1419,6 +1422,7 @@ $ i3get -i sublime_text -r wtf
 <span class="s2">| -n     | CON_ID   | search for windows with the given con_id</span>
 <span class="s2">| -d     | CON_ID   | search for windows with the given window id</span>
 <span class="s2">| -m     | CON_MARK | search for windows with the given mark</span>
+<span class="s2">| -o     | TTL_FRMT | search for windows with the given titleformat</span>
 <span class="s2">| -y     |          | synch on. If this option is included, </span>
 <span class="s2">|        |          | script will wait till target window exist.</span>
 
@@ -1432,6 +1436,7 @@ $ i3get -i sublime_text -r wtf
 <span class="s2">                w: workspace</span>
 <span class="s2">                a: is active</span>
 <span class="s2">                f: floating state</span>
+<span class="s2">                o: title format</span>
 <span class="s2">                v: visible state</span>
 
 <span class="s2">Examples:</span>
@@ -1444,7 +1449,12 @@ $ i3get -i sublime_text -r wtf
 <span class="nv">$CONTACT</span><span class="s2"></span>
 <span class="s2">&quot;</span>
 
-<span class="k">while</span> <span class="nb">getopts</span> :c:i:t:n:d:r:m:ayvh option
+<span class="nv">synk</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">sret</span><span class="o">=</span>n
+<span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;\&quot;focused\&quot;&quot;</span>
+<span class="nv">srch</span><span class="o">=</span><span class="nb">true</span>
+
+<span class="k">while</span> <span class="nb">getopts</span> :c:i:t:n:d:r:m:o:ayvh option
 <span class="k">do</span>
   <span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">option</span><span class="si">}</span><span class="s2">&quot;</span> in
     v<span class="o">)</span> <span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="se">\</span>
@@ -1458,48 +1468,40 @@ $ i3get -i sublime_text -r wtf
     n<span class="o">)</span> <span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;\&quot;id\&quot;&quot;</span> <span class="nv">srch</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;;</span>
     d<span class="o">)</span> <span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;\&quot;window\&quot;&quot;</span> <span class="nv">srch</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;;</span>
     m<span class="o">)</span> <span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;\&quot;marks\&quot;&quot;</span> <span class="nv">srch</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;;</span>
+    o<span class="o">)</span> <span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;\&quot;title_format\&quot;&quot;</span> <span class="nv">srch</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;;</span>
     a<span class="o">)</span> <span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;\&quot;focused\&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">srch</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">;;</span>
     r<span class="o">)</span> <span class="nv">sret</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
     y<span class="o">)</span> <span class="nv">synk</span><span class="o">=</span><span class="m">1</span><span class="p">;;</span>
   <span class="k">esac</span>
 <span class="k">done</span>
 
-<span class="nv">synk</span><span class="o">=</span><span class="si">${</span><span class="nv">synk</span><span class="p">:=0</span><span class="si">}</span>
-<span class="nv">sret</span><span class="o">=</span><span class="si">${</span><span class="nv">sret</span><span class="p">:=n</span><span class="si">}</span>
-<span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$crit</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;\&quot;focused\&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">srch</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
 
 getwindow<span class="o">(){</span>
   i3-msg -t get_tree <span class="se">\</span>
   <span class="p">|</span> awk -v <span class="nv">RS</span><span class="o">=</span><span class="s1">&#39;,&#39;</span> -F<span class="s1">&#39;:&#39;</span> -v <span class="nv">crit</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">crit</span><span class="si">}</span><span class="s2">&quot;</span> -v <span class="nv">srch</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">srch</span><span class="si">}</span><span class="s2">&quot;</span> -v <span class="nv">sret</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">sret</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
     <span class="s1">&#39;BEGIN{hit=&quot;0&quot;}</span>
-<span class="s1">      stop!=1 &amp;&amp; $1~&quot;{\&quot;id\&quot;&quot; {if(sret ~ n)r[&quot;n&quot;]=$2;if(sret ~ v)cid=$2}</span>
-<span class="s1">      stop!=1 &amp;&amp; $2~&quot;\&quot;id\&quot;&quot; {if(sret ~ n)r[&quot;n&quot;]=$3;if(sret ~ v)cid=$3}</span>
-<span class="s1">      stop!=1 &amp;&amp; $1==crit &amp;&amp; $2 ~ srch  {hit=1;fid=cid}</span>
-<span class="s1">      stop!=1 &amp;&amp; $2 ~ crit &amp;&amp; $3 ~ srch {hit=1;fid=cid}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ t &amp;&amp; $1==&quot;\&quot;title\&quot;&quot; {r[&quot;t&quot;]=$2}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ c &amp;&amp; $2 ~ &quot;\&quot;class\&quot;&quot; {r[&quot;c&quot;]=$3}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ i &amp;&amp; $1==&quot;\&quot;instance\&quot;&quot; {r[&quot;i&quot;]=$2}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ d &amp;&amp; $1==&quot;\&quot;window\&quot;&quot; {r[&quot;d&quot;]=$2}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ m &amp;&amp; $1==&quot;\&quot;marks\&quot;&quot; {r[&quot;m&quot;]=$2}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ a &amp;&amp; $1==&quot;\&quot;focused\&quot;&quot; {r[&quot;a&quot;]=$2}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ f &amp;&amp; $1==&quot;\&quot;floating\&quot;&quot; {r[&quot;f&quot;]=$2;if(hit == &quot;1&quot;)stop=1}</span>
-<span class="s1">      stop!=1 &amp;&amp; sret ~ w &amp;&amp; $1==&quot;\&quot;num\&quot;&quot; {r[&quot;w&quot;]=$2}</span>
-<span class="s1">      sret ~ l &amp;&amp; $1==&quot;\&quot;focus\&quot;&quot; {r[&quot;v&quot;]=r[&quot;v&quot;] $2&quot; &quot;}</span>
+<span class="s1">      $1~&quot;{\&quot;id\&quot;&quot; {if(sret ~ n)r[&quot;n&quot;]=$2;if(sret ~ v)cid=$2}</span>
+<span class="s1">      $2~&quot;\&quot;id\&quot;&quot; {if(sret ~ n)r[&quot;n&quot;]=$3;if(sret ~ v)cid=$3}</span>
+<span class="s1">      $1==crit &amp;&amp; $2 ~ srch  {hit=1;fid=cid}</span>
+<span class="s1">      $2 ~ crit &amp;&amp; $3 ~ srch {hit=1;fid=cid}</span>
+<span class="s1">      sret ~ t &amp;&amp; $1==&quot;\&quot;title\&quot;&quot; {r[&quot;t&quot;]=$2}</span>
+<span class="s1">      sret ~ c &amp;&amp; $2 ~ &quot;\&quot;class\&quot;&quot; {r[&quot;c&quot;]=$3}</span>
+<span class="s1">      sret ~ i &amp;&amp; $1==&quot;\&quot;instance\&quot;&quot; {r[&quot;i&quot;]=$2}</span>
+<span class="s1">      sret ~ d &amp;&amp; $1==&quot;\&quot;window\&quot;&quot; {r[&quot;d&quot;]=$2}</span>
+<span class="s1">      sret ~ m &amp;&amp; $1==&quot;\&quot;marks\&quot;&quot; {r[&quot;m&quot;]=$2}</span>
+<span class="s1">      sret ~ a &amp;&amp; $1==&quot;\&quot;focused\&quot;&quot; {r[&quot;a&quot;]=$2}</span>
+<span class="s1">      sret ~ o &amp;&amp; $1==&quot;\&quot;title_format\&quot;&quot; {r[&quot;o&quot;]=$2}</span>
+<span class="s1">      sret ~ w &amp;&amp; $1==&quot;\&quot;num\&quot;&quot; {r[&quot;w&quot;]=$2}</span>
+<span class="s1">      sret ~ f &amp;&amp; $1==&quot;\&quot;floating\&quot;&quot; {r[&quot;f&quot;]=$2;if(hit == &quot;1&quot;)exit}</span>
+<span class="s1">      </span>
 <span class="s1">    END{</span>
 <span class="s1">      if(hit == &quot;0&quot;) exit</span>
 <span class="s1">      split(sret, aret, &quot;&quot;)</span>
 <span class="s1">      for (i=1; i &lt;= length(sret); i++) {</span>
-<span class="s1">        if(aret[i]==&quot;v&quot;) {</span>
-<span class="s1">          gsub(&quot;[[]|[]]&quot;,&quot;&quot;,r[aret[i]])</span>
-<span class="s1">          split(r[aret[i]],focar,&quot; &quot;,seps)</span>
-<span class="s1">          vis=&quot;hidden&quot;</span>
-<span class="s1">          for (f in focar) {</span>
-<span class="s1">            if(focar[f] == fid){vis=&quot;visible&quot;}</span>
-<span class="s1">          }</span>
-<span class="s1">          r[aret[i]]=vis</span>
-<span class="s1">        }</span>
-<span class="s1">        if(r[aret[i]]!=&quot;&quot;)</span>
-<span class="s1">          printf(&quot;%s\n&quot;, r[aret[i]])</span>
+<span class="s1">        op=r[aret[i]]</span>
+<span class="s1">        gsub(&quot;[\&quot;]&quot;,&quot;&quot;,op)</span>
+<span class="s1">        if(op!=&quot;&quot;)</span>
+<span class="s1">        printf(&quot;%s\n&quot;, op)</span>
 <span class="s1">      }</span>
 <span class="s1">    }</span>
 <span class="s1">    &#39;</span>

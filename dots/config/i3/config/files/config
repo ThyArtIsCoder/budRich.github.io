@@ -232,6 +232,8 @@
   for_window [title="^Klavaro - Fluidness$"]  $tocont A
   for_window [title="^Klavaro - Velocity$"]   $tocont A
 
+  for_window [class="URxvt"] exec notify-send "elll"
+
   for_window [instance="floatterm"] resize set 350 px 250 px
 
   for_window [window_type="dialog"]    floating enable

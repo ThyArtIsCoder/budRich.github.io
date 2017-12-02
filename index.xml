@@ -635,7 +635,7 @@ i3-msg has an undocumented function (open) that creates empty containers, or as 
       
       <guid>https://budrich.github.io/i3ass/i3get/</guid>
       <description>Get information about a window Search for windows in i3 tree and print requested information. If no arguments are passed. con_id of active window is returned.
-usage i3get [OPTION CRITERIA] Options: v show version and exit h show this help a currently active window (default) c CLASS search for windows with the given class i INSTANCE search for windows with the given instance t TITLE search for windows with title.</description>
+usage i3get [OPTION CRITERIA] | option | criteria | function | |:-------|:---------|:---------------------------| | -v | | show version and exit | -h | | show this help | -a | | currently active window (default) | -c | CLASS | search for windows with the given class | -i | INSTANCE | search for windows with the given instance | -t | TITLE | search for windows with title.</description>
     </item>
     
     <item>
