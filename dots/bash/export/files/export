@@ -22,7 +22,7 @@ QT_QPA_PLATFORMTHEME=qt5ct
 
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
-PATH="$HOME/.gem/ruby/2.4.0/bin:$HOME/bin:$HOME/src:$HOME/.local/bin:$PATH"
+PATH="$HOME/.gem/ruby/2.4.0/bin:$HOME/bin:$HOME/src:$HOME/rumpa:$HOME/.local/bin:$PATH"
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 PATH="$PATH:$HOME/.rvm/bin"
 # PKG_CONFIG_PATH="/usr/share:$PKG_CONFIG_PATH"
