@@ -125,7 +125,7 @@ license All my dotfiles are licensed with the WTFPL license</description>
       
       <guid>https://budrich.github.io/i3ass/readme/</guid>
       <description>i3ass - i3 assistance scripts This is a collection of scripts I have made to assist the usage of the windowmanager known as i3.
-installation clone the repository
+installation assinstafina.gif   clone the repository
 git clone https://github.com/budRich/i3ass.git
 run the installation script
 (for further instructions: ./install.sh -h)

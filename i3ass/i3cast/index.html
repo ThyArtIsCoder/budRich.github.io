@@ -1451,9 +1451,11 @@ a link is put in your clipboard.</p>
 <span class="s2">* ffmpeg</span>
 <span class="s2">* curl</span>
 <span class="s2">* mpv</span>
-<span class="s2">* dmenu</span>
-<span class="s2">* xclip</span>
+<span class="s2">* rofi</span>
+<span class="s2">* xsel</span>
 <span class="s2">* xdotool</span>
+<span class="s2">* dunst</span>
+<span class="s2">* dunstify</span>
 <span class="s2">* [gif-is-jif](https://github.com/markasoftware/gif-is-jif) to upload as animated gif to gifycat.</span>
 <span class="s2">*(optional)*</span>
 
@@ -1478,11 +1480,7 @@ a link is put in your clipboard.</p>
 <span class="nv">PLAYER</span><span class="o">=</span>mpv
 
 <span class="c1"># Folder to store saved and uploaded videos localy.</span>
-<span class="nv">FOLDER</span><span class="o">=</span><span class="nv">$HOME</span>/vid/bud/
-
-<span class="c1"># Customize the DMENU to your liking</span>
-<span class="c1"># DMENU_OPTIONS=</span>
-<span class="c1"># DMENU_OPTIONS=&quot;-h 16&quot;</span>
+<span class="nv">FOLDER</span><span class="o">=</span><span class="nv">$HOME</span>/vid/bud
 
 <span class="c1"># to add gfycat as an host, enter path to gif-is-jif</span>
 <span class="c1"># GIF_IS_JIF=</span>
@@ -1498,15 +1496,12 @@ a link is put in your clipboard.</p>
 <span class="c1"># Command used for recording, it works well for my screen,</span>
 <span class="c1"># but you might want to change at least -s 1366x768 to match</span>
 <span class="c1"># your resolution.</span>
-<span class="nv">COMMAND</span><span class="o">=</span><span class="s2">&quot;ffmpeg -y -f x11grab -s </span><span class="k">$(</span>xdpyinfo <span class="p">|</span> grep dimensions <span class="p">|</span> awk <span class="s1">&#39;{print $2;}&#39;</span><span class="k">)</span><span class="s2"> -i :0.0 -f alsa -i default -c:v libx264 -c:a flac /tmp/cast/tmpcast.mkv&quot;</span>
-<span class="nv">termcmd</span><span class="o">=</span><span class="s2">&quot;urxvtc -name castterm -e bash -c &#39;</span><span class="si">${</span><span class="nv">COMMAND</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
 
-<span class="o">[[</span> -n <span class="nv">$GIF_IS_JIF</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">HOSTS</span><span class="o">+=</span><span class="s2">&quot;\ngfycat&quot;</span>
+<span class="o">[[</span> ! -x <span class="nv">$GIF_IS_JIF</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">HOSTS</span><span class="o">+=</span><span class="s2">&quot;\ngfycat&quot;</span>
 
 play<span class="o">(){</span>
-  <span class="si">${</span><span class="nv">PLAYER</span><span class="si">}</span> <span class="nv">$TMP_FILE</span>
-  <span class="nv">sel1</span><span class="o">=</span><span class="s2">&quot;play\nupload\nsave&quot;</span>
-  <span class="nv">choice</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">sel1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> dmenu <span class="si">${</span><span class="nv">DMENU_OPTIONS</span><span class="si">}</span> -p <span class="s2">&quot;action:&quot;</span><span class="k">)</span>
+  <span class="si">${</span><span class="nv">PLAYER</span><span class="si">}</span> <span class="s2">&quot;</span><span class="nv">$TMP_FILE</span><span class="s2">&quot;</span>
+  <span class="nv">choice</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;play&quot;</span> <span class="s2">&quot;upload&quot;</span> <span class="s2">&quot;save&quot;</span> <span class="p">|</span> rofi -dmenu -p <span class="s2">&quot;action: &quot;</span><span class="k">)</span>
   <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$choice</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
     rm <span class="nv">$TMP_FILE</span> 
     <span class="nb">exit</span>
@@ -1521,44 +1516,79 @@ play<span class="o">(){</span>
 
 upload<span class="o">(){</span>
   save
-  <span class="nv">choice</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTS</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> dmenu <span class="si">${</span><span class="nv">DMENU_OPTIONS</span><span class="si">}</span> -p <span class="s2">&quot;select host:&quot;</span><span class="k">)</span>
+  <span class="nv">choice</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTS</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> rofi -dmenu -p <span class="s2">&quot;select host: &quot;</span><span class="k">)</span>
   <span class="o">[[</span> -z <span class="nv">$choice</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> 
   <span class="k">case</span> <span class="nv">$choice</span> in
     <span class="s1">&#39;ptpb.pw&#39;</span> <span class="o">)</span> 
       <span class="nv">pst</span><span class="o">=</span><span class="k">$(</span>curl --form <span class="s2">&quot;c=@</span><span class="si">${</span><span class="nv">SAVED</span><span class="si">}</span><span class="s2">&quot;</span> https://ptpb.pw/<span class="k">)</span>
-      <span class="nv">pst</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pst</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> awk -F<span class="s1">&#39;:&#39;</span> <span class="s1">&#39;$1==&quot;url&quot;{$1=&quot;&quot;;print $2 &quot;:&quot; $3}&#39;</span><span class="k">)</span>
+      <span class="nv">pst</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pst</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> awk -F<span class="s1">&#39;:&#39;</span> <span class="s1">&#39;$1==&quot;url&quot;{$1=&quot;&quot;;print $2 &quot;:&quot; $3}&#39;</span><span class="k">)</span>
     <span class="p">;;</span>
 
     gfycat    <span class="o">)</span> 
-      <span class="nv">pst</span><span class="o">=</span><span class="k">$(</span><span class="si">${</span><span class="nv">GIF_IS_JIF</span><span class="si">}</span> <span class="si">${</span><span class="nv">SAVED</span><span class="si">}</span><span class="k">)</span>
-      <span class="nb">printf</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pst</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;$NF ~ &quot;http&quot;{print $NF}&#39;</span>
-      <span class="nv">pst</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pst</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;$NF ~ &quot;http&quot;{print $NF}&#39;</span><span class="k">)</span>
+      <span class="nv">pst</span><span class="o">=</span><span class="k">$(</span><span class="si">${</span><span class="nv">GIF_IS_JIF</span><span class="si">}</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SAVED</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+      <span class="nv">pst</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pst</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;$NF ~ &quot;http&quot;{print $NF}&#39;</span><span class="k">)</span>
     <span class="p">;;</span>
   <span class="k">esac</span>
   
-  <span class="nb">echo</span> <span class="si">${</span><span class="nv">pst</span><span class="si">}</span> <span class="p">|</span> xclip -selection <span class="s1">&#39;clipboard&#39;</span>
+  <span class="nb">echo</span> -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pst</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> xsel -ib
+  <span class="nb">echo</span> -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pst</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> xsel -ip
   notify-send <span class="s2">&quot;Upload complete: </span><span class="nv">$pst</span><span class="s2">&quot;</span>
 <span class="o">}</span>
 
 save<span class="o">(){</span>
-  <span class="nv">choice</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="p">|</span> dmenu <span class="si">${</span><span class="nv">DMENU_OPTIONS</span><span class="si">}</span> -p <span class="s2">&quot;name:&quot;</span><span class="k">)</span>
+  <span class="nv">choice</span><span class="o">=</span><span class="k">$(</span>rofi -dmenu -p <span class="s2">&quot;name: &quot;</span><span class="k">)</span>
   <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$choice</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
     rm <span class="nv">$TMP_FILE</span>
     <span class="nb">exit</span>
   <span class="k">fi</span>
-  <span class="nv">SAVED</span><span class="o">=</span><span class="nv">$FOLDER$choice</span>.mkv
-  mkdir -p <span class="nv">$FOLDER</span>
-  mv <span class="nv">$TMP_FILE</span> <span class="nv">$SAVED</span>
+  <span class="nv">ext</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;mkv&quot;</span> <span class="s2">&quot;gif&quot;</span> <span class="p">|</span> rofi -dmenu -p <span class="s2">&quot;output as: &quot;</span><span class="k">)</span>
+  <span class="nv">SAVED</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FOLDER</span><span class="s2">/</span><span class="si">${</span><span class="nv">choice</span><span class="si">}</span><span class="s2">.</span><span class="si">${</span><span class="nv">ext</span><span class="si">}</span><span class="s2">&quot;</span>
+  mkdir -p <span class="s2">&quot;</span><span class="nv">$FOLDER</span><span class="s2">&quot;</span>
+
+  <span class="k">if</span> <span class="o">[[</span> <span class="nv">$ext</span> <span class="o">=</span> gif <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">prog</span><span class="o">=</span><span class="m">0</span>
+    <span class="nv">bar</span><span class="o">=</span><span class="k">$(</span>seq -s <span class="s2">&quot;─&quot;</span> <span class="k">$((</span>prog <span class="o">/</span> <span class="m">5</span><span class="k">))</span> <span class="p">|</span> sed <span class="s1">&#39;s/[0-9]//g&#39;</span><span class="k">)</span>
+    <span class="c1"># Send the notification</span>
+    rm -rf /tmp/frames
+    mkdir -p /tmp/frames
+    ffmpeg -i <span class="s2">&quot;</span><span class="nv">$TMP_FILE</span><span class="s2">&quot;</span> -r <span class="m">10</span> /tmp/frames/ffout%03d.png
+    rm -rf <span class="s2">&quot;</span><span class="nv">$TMP_FILE</span><span class="s2">&quot;</span>
+    gifski -o <span class="s2">&quot;</span><span class="nv">$SAVED</span><span class="s2">&quot;</span> --quality <span class="m">80</span> -W <span class="m">600</span> --fast /tmp/frames/*.png
+    rm -rf /tmp/frames
+    notify-send <span class="s2">&quot;</span><span class="nv">$SAVED</span><span class="s2"> saved&quot;</span>
+  <span class="k">else</span>
+    mv <span class="s2">&quot;</span><span class="nv">$TMP_FILE</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$SAVED</span><span class="s2">&quot;</span>
+  <span class="k">fi</span>
+  notify-send <span class="s2">&quot;file saved </span><span class="nv">$SAVED</span><span class="s2">&quot;</span>
+  <span class="k">if</span> <span class="o">[[</span> <span class="nv">$choice</span> <span class="o">=</span> play <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SAVED</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> xsel -ib
+    <span class="nb">echo</span> -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SAVED</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> xsel -ip
+  <span class="k">fi</span>
+
 <span class="o">}</span>
 
+newcast<span class="o">(){</span>
+  <span class="nv">size</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;full&quot;</span> <span class="s2">&quot;select&quot;</span> <span class="p">|</span> rofi -dmenu -p <span class="s1">&#39;new cast: &#39;</span><span class="k">)</span>
+  <span class="o">[[</span> <span class="nv">$size</span> <span class="o">=</span> full <span class="o">]]</span> <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>xdpyinfo <span class="p">|</span> grep dimensions <span class="p">|</span> awk <span class="s1">&#39;{print $2;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">pos</span><span class="o">=</span><span class="s2">&quot;0.0&quot;</span>
+  <span class="o">[[</span> <span class="nv">$size</span> <span class="o">=</span> <span class="k">select</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">asel</span><span class="o">=(</span><span class="k">$(</span>slop -f <span class="s1">&#39;%wx%h %x,%y&#39;</span><span class="k">)</span><span class="o">)</span> <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">asel</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">pos</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">asel</span><span class="p">[1]</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="o">[[</span> -z <span class="nv">$size</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span>
+  <span class="nv">COMMAND</span><span class="o">=</span><span class="s2">&quot;ffmpeg -y -f x11grab -s </span><span class="nv">$size</span><span class="s2"> -i :0.0+</span><span class="nv">$pos</span><span class="s2"> &quot;</span>
+  <span class="nv">COMMAND</span><span class="o">+=</span><span class="s2">&quot;-f alsa -i default -c:v libx264 -preset ultrafast &quot;</span>
+  <span class="nv">COMMAND</span><span class="o">+=</span><span class="s2">&quot;-crf 0 -c:a flac </span><span class="nv">$TMP_FILE</span><span class="s2">&quot;</span>
+  <span class="nv">termcmd</span><span class="o">=</span><span class="s2">&quot;urxvtc -name castterm -e bash -c &#39;</span><span class="si">${</span><span class="nv">COMMAND</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<span class="o">}</span>
+<span class="c1"># :0.0+100,200</span>
 <span class="nv">cid</span><span class="o">=</span><span class="k">$(</span>i3get -i castterm -r d<span class="k">)</span>
 
 <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$cid</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  newcast
+  <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$termcmd</span><span class="s2">&quot;</span>
   mkdir -p <span class="si">${</span><span class="nv">TMP_FILE</span><span class="p">%/*</span><span class="si">}</span>
-  rm -f <span class="nv">$TMP_FILE</span>
+  rm -f <span class="s2">&quot;</span><span class="nv">$TMP_FILE</span><span class="s2">&quot;</span>
   <span class="c1"># start recording</span>
   i3run -i castterm -e <span class="s2">&quot;</span><span class="nv">$termcmd</span><span class="s2">&quot;</span>
-  <span class="nb">echo</span> hhh
   <span class="c1"># send it to scratchpad</span>
   i3-msg <span class="s2">&quot;[instance=castterm]&quot;</span> move scratchpad
 <span class="k">else</span>
