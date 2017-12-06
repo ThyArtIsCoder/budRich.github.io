@@ -1334,72 +1334,65 @@ this.
 
     
 
+<hr />
+
+<p>Create and upload screen recordings</p>
+
 <h2 id="usage">usage</h2>
 
-<p>just run the script to start the recording run it again to stop and preview the recording and perform action, (save,upload or play again). if no action is selected the recording is deleted. uploaded recordings is also saved.</p>
-
-<p>a notification is shown when upload is complete and a link is put in your clipboard.</p>
-
-<p><strong>protip</strong><br />
-<code>bindsym --release Mod3+Pint exec --no-startup-id i3cast</code></p>
-
-<h2 id="requirements">requirements</h2>
+<p><code>$ i3cast [-v|-h]</code></p>
 
 <table>
 <thead>
 <tr>
-<th align="left"><a href="https://budrich.github.io/i3ass/i3get">i3get</a></th>
-<th align="left">to identify and the terminal (urxvt) window</th>
+<th align="left"><strong>option</strong></th>
+<th align="left"><strong>argument</strong></th>
+<th align="left"><strong>function</strong></th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><a href="https://budrich.github.io/i3ass/i3run">i3run</a></td>
-<td align="left">to run and hide the terminal (urxvt) window</td>
+<td align="left">-v</td>
+<td align="left"></td>
+<td align="left">show version info and exit</td>
 </tr>
 
 <tr>
-<td align="left"><strong>urxvt</strong></td>
-<td align="left">terminal emulator</td>
-</tr>
-
-<tr>
-<td align="left"><strong>ffmpeg</strong>  </td>
-<td align="left">commandline tool to record media</td>
-</tr>
-
-<tr>
-<td align="left"><strong>curl</strong></td>
-<td align="left">commandline tool to download and upload stuff</td>
-</tr>
-
-<tr>
-<td align="left"><strong>mpv</strong></td>
-<td align="left">minimal mediaplayer, used to preview recording</td>
-</tr>
-
-<tr>
-<td align="left"><a href="https://budrich.github.io/blog/dmenu">dmenu</a></td>
-<td align="left">tool that displays a menu</td>
-</tr>
-
-<tr>
-<td align="left"><strong>xclip</strong></td>
-<td align="left">tool that handles clipboard events</td>
-</tr>
-
-<tr>
-<td align="left"><strong>xdotool</strong></td>
-<td align="left">needed to send <code>q</code> to urxvt, to quit the recording in a proper way</td>
-</tr>
-
-<tr>
-<td align="left"><a href="https://github.com/markasoftware/gif-is-jif">gif-is-jif</a> </td>
-<td align="left">to save and upload gif format (<strong>optional</strong>)</td>
+<td align="left">-h</td>
+<td align="left"></td>
+<td align="left">show this help and exit</td>
 </tr>
 </tbody>
 </table>
+
+<p>Just run the script to start the recording
+run it again to stop and preview the recording
+and perform action, (save,upload or play again).
+if no action is selected the recording is deleted.
+uploaded recordings is also saved.</p>
+
+<p>A notification is shown when upload is complete and
+a link is put in your clipboard.</p>
+
+<p><strong>protip</strong><br />
+<code>bindsym --release Mod3+Print exec --no-startup-id i3cast</code></p>
+
+<h2 id="dependencies">dependencies</h2>
+
+<ul>
+<li>i3get</li>
+<li>i3run</li>
+<li>urxvt</li>
+<li>ffmpeg</li>
+<li>curl</li>
+<li>mpv</li>
+<li>dmenu</li>
+<li>xclip</li>
+<li>xdotool</li>
+<li><a href="https://github.com/markasoftware/gif-is-jif">gif-is-jif</a> to upload as animated gif to gifycat.
+<em>(optional)</em></li>
+</ul>
 
 <hr>
 
@@ -1431,24 +1424,24 @@ this.
 
 <span class="s2">usage</span>
 <span class="s2">-----</span>
-<span class="s2">\$ </span><span class="nv">$NAME</span><span class="s2"> [OPTION]</span>
+<span class="s2">\`\$ </span><span class="nv">$NAME</span><span class="s2"> [-v|-h]\`</span>
 
-<span class="s2">| option | argument | function                   |</span>
+<span class="s2">| **option** | **argument** | **function**                   |</span>
 <span class="s2">|:-------|:---------|:---------------------------|</span>
 <span class="s2">| -v     |          | show version info and exit |</span>
 <span class="s2">| -h     |          | show this help and exit    |</span>
 
-<span class="s2">Just run the script to start the recording  </span>
-<span class="s2">run it again to stop and preview the recording  </span>
-<span class="s2">and perform action, (save,upload or play again).  </span>
-<span class="s2">if no action is selected the recording is deleted.  </span>
+<span class="s2">Just run the script to start the recording </span>
+<span class="s2">run it again to stop and preview the recording </span>
+<span class="s2">and perform action, (save,upload or play again). </span>
+<span class="s2">if no action is selected the recording is deleted. </span>
 <span class="s2">uploaded recordings is also saved.  </span>
 
-<span class="s2">A notification is shown when upload is complete and  </span>
+<span class="s2">A notification is shown when upload is complete and </span>
 <span class="s2">a link is put in your clipboard.  </span>
 
-<span class="s2">protip:</span>
-<span class="s2">\`bindsym --release Mod3+Pint exec --no-startup-id i3cast\`</span>
+<span class="s2">**protip**  </span>
+<span class="s2">\`bindsym --release Mod3+Print exec --no-startup-id i3cast\`</span>
 
 <span class="s2">dependencies</span>
 <span class="s2">------------</span>
@@ -1461,10 +1454,8 @@ this.
 <span class="s2">* dmenu</span>
 <span class="s2">* xclip</span>
 <span class="s2">* xdotool</span>
-<span class="s2">* DEPENDENCY</span>
-
-<span class="s2">optional </span>
 <span class="s2">* [gif-is-jif](https://github.com/markasoftware/gif-is-jif) to upload as animated gif to gifycat.</span>
+<span class="s2">*(optional)*</span>
 
 <span class="s2">contact</span>
 <span class="s2">-------</span>

@@ -93,14 +93,16 @@ else
   st="${1}"
 fi
 
+
 fp=${st/'~'/$HOME} # fullpath extended
 [[ ! -f "$fp" ]] && exit
-fldchk="${fp/$HOME\//}" fldchk=${fldchk%/*}
+fldchk="${fp%/*}" fldchk=${fldchk##*/}
+
 
 # if file is in src, 
 # update markdown and exit
 if [[ $fldchk = src ]]; then
-  org=$(readlink "$fp")
+  org=$(readlink -f "$fp")
   
   # www/static/bla/files/namn
   ormd=${org/static/content} ormd=${ormd%\/files*} ormd=${ormd}.md

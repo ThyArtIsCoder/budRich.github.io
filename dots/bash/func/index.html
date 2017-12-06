@@ -1382,6 +1382,14 @@ cd<span class="o">()</span> <span class="o">{</span>
     <span class="nb">builtin</span> <span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> ls
 <span class="o">}</span>
 
+<span class="c1"># https://wiki.archlinux.org/index.php/Man_page</span>
+man<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">width</span><span class="o">=</span><span class="k">$(</span>tput cols<span class="k">)</span>
+    <span class="o">[</span> <span class="nv">$width</span> -gt <span class="nv">$MANWIDTH</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">width</span><span class="o">=</span><span class="nv">$MANWIDTH</span>
+    env <span class="nv">MANWIDTH</span><span class="o">=</span><span class="nv">$width</span> <span class="se">\</span>
+    man <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
 gmrk<span class="o">(){</span>
   <span class="nb">local</span> <span class="nv">mrks</span><span class="o">=</span><span class="k">$(</span>i3-msg -t get_marks <span class="p">|</span> awk -F<span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{</span>
 <span class="s1">    gsub(&quot;[[]|\&quot;|[]]&quot;,&quot;&quot;,$0)</span>

@@ -1334,43 +1334,59 @@ sure about the universe.
 
     
 
-<h2 id="mtm-move-to-mark">mtm = Move To Mark</h2>
+<hr />
 
-<p>When launched without flags, <code>i3mtm</code> checks
-floating status of current window. If it is tiled, the window becomes floating. if it is floating, a search for marks is done if no marks are found, window becomes tiled. otherwise a dmenu asks for a mark to move window to. if no selection is made, window is tiled but not moved. otherwise window is tiled and moved to selected mark.</p>
+<p>When launched without options, i3mtm checks
+floating status of current window. If it is
+tiled, the window becomes floating.
+If it is floating, a search for marks is done,
+if no marks are found, window becomes tiled.
+Otherwise a dmenu asks for a mark to move window to.
+If no selection is made, window is tiled but not moved.
+Otherwise window is tiled and moved to selected mark.</p>
 
-<p>with <code>-m</code> flag window is treaded as if it was floating even if it is tiled. (menu is forced)</p>
+<p>With -m option window is treaded as if it was floating
+even if it is tiled. (menu is forced)</p>
 
-<h2 id="examples">examples</h2>
-
-<p>you could replace your <code>floating toggle</code> binding with this:</p>
-
-<pre><code>bindsym Mod3+f exec --no-startup-id exec i3mtm      
-bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m     
-</code></pre>
-
-<h2 id="dependencies">dependencies</h2>
+<p><strong>usage</strong><br />
+<code>$ i3mtm [OPTION]</code></p>
 
 <table>
 <thead>
 <tr>
-<th align="left"><a href="https://budrich.github.io/i3ass/i3get">i3get</a></th>
-<th align="left">to identify and the terminal the floating state of current window</th>
+<th align="left"><strong>option</strong></th>
+<th align="left"><strong>argument</strong></th>
+<th align="left"><strong>function</strong></th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><a href="https://budrich.github.io/blog/dmenu">dmenu</a>   </td>
-<td align="left">tool that displays a menu</td>
+<td align="left">-v</td>
+<td align="left"></td>
+<td align="left">show version info and exit</td>
+</tr>
+
+<tr>
+<td align="left">-h</td>
+<td align="left"></td>
+<td align="left">show this help and exit</td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="links">links</h2>
+<p><strong>examples</strong><br />
+you could replace your floating toggle binding with this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>bindsym Mod3+f exec --no-startup-id exec i3mtm  
+bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m  
+</code></pre></div>
 
-<p><a href="https://www.reddit.com/r/i3wm/comments/6xor8l/oci3mtm/">/r/i3wm</a><br />
-<a href="https://redd.it/6xp6ul">/r/unixporn</a></p>
+<h2 id="dependencies">dependencies</h2>
+
+<ul>
+<li>i3get</li>
+<li>dmenu</li>
+</ul>
 
 <hr>
 
@@ -1410,19 +1426,17 @@ bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m
 <span class="s2">With -m option window is treaded as if it was floating</span>
 <span class="s2">even if it is tiled. (menu is forced)  </span>
 
-<span class="s2">usage</span>
-<span class="s2">-----</span>
+<span class="s2">**usage**  </span>
 <span class="s2">\`\$ </span><span class="nv">$NAME</span><span class="s2"> [OPTION]\`</span>
 
-<span class="s2">| option | argument | function                   |</span>
+<span class="s2">| **option** | **argument** | **function**                   |</span>
 <span class="s2">|:-------|:---------|:---------------------------|</span>
 <span class="s2">| -v     |          | show version info and exit |</span>
 <span class="s2">| -h     |          | show this help and exit    |</span>
 
-<span class="s2">examples</span>
-<span class="s2">--------</span>
+<span class="s2">**examples**  </span>
 <span class="s2">you could replace your floating toggle binding with this:  </span>
-<span class="s2">\`\`\`</span>
+<span class="s2">\`\`\` text</span>
 <span class="s2">bindsym Mod3+f exec --no-startup-id exec i3mtm  </span>
 <span class="s2">bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m  </span>
 <span class="s2">\`\`\`</span>

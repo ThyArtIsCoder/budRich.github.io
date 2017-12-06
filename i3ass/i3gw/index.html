@@ -1334,32 +1334,7 @@ back with herpes.
 
     
 
-<p>wrapper for the ghost window function in <em>i3wm</em></p>
-
-<p><code>i3-msg</code> has an undocumented function (open) that creates empty containers, or as I call them: ghosts. Since these empty containers doesn&rsquo;t contain any windows
-there is no instance/class/title to identify them, making it difficult to control them. They do however have a <code>con_id</code> and I found the easiest way to keep track of the ghosts is to mark them. That is what this script does, it creates a ghost get its con_id and mark it.</p>
-
-<h2 id="usage">usage</h2>
-
-<p><code>i3gw MARK</code></p>
-
-<h2 id="example">example</h2>
-
-<p><code>i3gw casper</code></p>
-
-<p>this will create a ghost marked casper, you can perform any action
-you can perform on a regular container.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>i3-msg [con_mark=casper] move to workspace 2 
-i3-msg [con_mark=casper] split v  
-i3-msg [con_mark=casper] layout tabbed  
-i3-msg [con_mark=casper] kill  
-</code></pre></div>
-
-<p>the last example (<em>kill</em>), destroys the container.</p>
-
-<hr />
-
-<p>In the screenshot below, the windows to the right are tiled, and a ghostwindow is tiled on the right half of the screen. The other windows are floating.</p>
+<p>In the screenshot below, the windows to the right are tiled, and a ghostwindow is tiled on the left half of the screen. The other windows are floating.</p>
 
 <div class="imagus">
   <a href="https://budrich.github.io/img/org/ss-i3gw1.png">ss-i3gw1.png</a>
@@ -1369,6 +1344,62 @@ i3-msg [con_mark=casper] kill
 </div>
 
 
+
+<hr />
+
+<p>A Ghost window wrapper for i3wm.</p>
+
+<p>i3-msg has an undocumented function (open) that creates
+empty containers, or as I call them: ghosts.
+Since these empty containers doesn&rsquo;t contain any windows
+there is no instance/class/title to identify them, making
+it difficult to control them. They do however have a con_id and
+I found the easiest way to keep track of the ghosts is to
+mark them. That is what this script does, it creates a ghost
+get its con_id and mark it.</p>
+
+<h2 id="usage">usage</h2>
+
+<p><code>$ i3gw [-h|-v] MARK</code></p>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>option</strong></th>
+<th align="left"><strong>argument</strong></th>
+<th align="left"><strong>function</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">-v</td>
+<td align="left"></td>
+<td align="left">show version info and exit</td>
+</tr>
+
+<tr>
+<td align="left">-h</td>
+<td align="left"></td>
+<td align="left">show this help and exit</td>
+</tr>
+</tbody>
+</table>
+
+<p>example:<br />
+<code>i3gw casper</code></p>
+
+<p>this will create a ghost marked casper, you can perform any action
+you can perform on a regular container.</p>
+
+<p>example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>i3-msg [con_mark=casper] move to workspace 2
+i3-msg [con_mark=casper] split v
+i3-msg [con_mark=casper] layout tabbed
+i3-msg [con_mark=casper] kill
+</code></pre></div>
+
+<p>the last example (kill), destroys the container.</p>
 
 <hr>
 
@@ -1411,25 +1442,25 @@ i3-msg [con_mark=casper] kill
 <span class="s2">-----</span>
 <span class="s2">\`\$ </span><span class="nv">$NAME</span><span class="s2"> [-h|-v] MARK\`</span>
 
-<span class="s2">example:</span>
+<span class="s2">| **option** | **argument** | **function**                   |</span>
+<span class="s2">|:-------|:---------|:---------------------------|</span>
+<span class="s2">| -v     |          | show version info and exit |</span>
+<span class="s2">| -h     |          | show this help and exit    |</span>
+
+<span class="s2">example:  </span>
 <span class="s2">\`i3gw casper\`</span>
 
 <span class="s2">this will create a ghost marked casper, you can perform any action</span>
 <span class="s2">you can perform on a regular container.</span>
 
 <span class="s2">example:</span>
-<span class="s2">\`\`\`</span>
+<span class="s2">\`\`\` text</span>
 <span class="s2">i3-msg [con_mark=casper] move to workspace 2</span>
 <span class="s2">i3-msg [con_mark=casper] split v</span>
 <span class="s2">i3-msg [con_mark=casper] layout tabbed</span>
 <span class="s2">i3-msg [con_mark=casper] kill</span>
 <span class="s2">\`\`\`</span>
 <span class="s2">the last example (kill), destroys the container.</span>
-
-<span class="s2">| option | argument | function                   |</span>
-<span class="s2">|:-------|:---------|:---------------------------|</span>
-<span class="s2">| -v     |          | show version info and exit |</span>
-<span class="s2">| -h     |          | show this help and exit    |</span>
 
 <span class="s2">contact</span>
 <span class="s2">-------</span>

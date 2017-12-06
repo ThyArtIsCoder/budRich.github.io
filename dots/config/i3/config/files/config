@@ -53,10 +53,14 @@
 
   set_from_resource $act i3wm.act #111313
   set_from_resource $ina i3wm.ina #111313
+  set_from_resource $ina2 i3wm.ina2 #111313
+  set_from_resource $whtl i3wm.whtl #111313
+  set_from_resource $whtd i3wm.whtd #111313
   set_from_resource $red i3wm.red #FF0000
-  # set_from_resource $fnt i3wm.fnt Terminus
-  set $fntsz 8
-  set $fnt Terminus
+  set_from_resource $fnt i3wm.fnt Terminus
+  set_from_resource $fsz i3wm.fsz 12 
+  set $fsz 12
+  #set $fnt Terminus
 
 # >>> panicbuttons <<<
 
@@ -94,8 +98,10 @@
   $win+Shift+grave $exe i3run -i gcolor2 -e 'gcolor2'
 
 # >>> barmenu <<<
-  bindsym Shift+F8          $exe subact
   bindsym F8                $exe newmenu
+  bindsym F6                $exe getlink
+  $win F6                   $exe addlink -f '3d.flf'
+  bindsym Shift+F8          $exe subact
   $win+r                    $exe rofi -show run
   $win+space                $exe pbtog
 
@@ -112,6 +118,7 @@
 
   $win+z       $exe i3fyra -a
   $win+Shift+z focus mode_toggle
+  $win+p       $exe i3fyra -l 'AB=-370 BD=250 AC=-75'
   
 # >>> upload content <<<
 
@@ -191,7 +198,7 @@
   floating_modifier $alt
   hide_edge_borders both
   focus_follows_mouse no
-  # font pango:$fnt $fntsz
+  font pango:$fnt $fsz
   workspace_auto_back_and_forth no
 
 # >>> appearance <<<
@@ -201,47 +208,47 @@
   # for_window [floating] border normal 1
 
   # widow Colors           border  bg     text    indic
-  client.focused           $act    $act   $act    $act
-  client.focused_inactive  $ina    $ina   $ina    $ina
-  client.unfocused         $ina    $ina   $ina    $ina
-  client.urgent            $red    $red   $red    $red
+  client.focused           $ina2   $ina2  $whtl    $ina2
+  client.focused_inactive  $ina    $ina   $whtd    $ina
+  client.unfocused         $ina    $ina   $whtd    $ina
+  client.urgent            $red    $red   $red     $red
 
 # >>> window rules <<<
 
-  for_window [class="^.*"] floating enable
+  for_window [class="^.*"] floating enable, title_format " "
   
 
-  for_window [class="Vivaldi-stable"]    $tocont A
-  for_window [class="mpv"]               $tocont B
-  for_window [class="feh"]               $tocont B
-  for_window [instance="sublime_text"]   $tocont A
-  for_window [instance="sublime_notes"]  $tocont D
-  for_window [instance="spacefm"]        $tocont D
-  for_window [instance="irssi"]          $tocont D
-  for_window [instance="ncmpcpp"]        $tocont B
-  for_window [instance="qbittorrent"]    $tocont C
-  for_window [instance="newsbeuter"]     $tocont D
-  for_window [instance="htop"]           $tocont A
+  for_window [class="Vivaldi-stable"]   title_format "vivaldi",     $tocont A
+  for_window [class="mpv"]              title_format "mpv",         $tocont B
+  for_window [class="feh"]              title_format "feh",         $tocont B
+  for_window [instance="sublime_text"]  title_format "sublime",     $tocont A
+  for_window [instance="sublime_notes"] title_format "todo",        $tocont D
+  for_window [instance="spacefm"]       title_format "spacefm",     $tocont D
+  for_window [instance="^surf$"]        title_format "surf",        $tocont D
+  for_window [instance="irssi"]         title_format "irssi",       $tocont D
+  for_window [instance="ncmpcpp"]       title_format "ncmpcpp",     $tocont B
+  for_window [instance="qbittorrent"]   title_format "qbittorrent", $tocont C
+  for_window [instance="htop"]          title_format "htop",        $tocont A
+  for_window [instance="termside"]      title_format "URxvt",       $tocont B
+  for_window [instance="termsmall"]     title_format "URxvt",       $tocont C
+  for_window [instance="termsub"]       title_format "URxvt",       $tocont C
+  for_window [instance="clonedterm"]    title_format "URxvt"
 
-  for_window [instance="termside"]       $tocont B
-  for_window [instance="termsmall"]      $tocont C
-  for_window [instance="termsub"]        $tocont C
-
-  for_window [title="^Klavaro - Main Menu$"] move absolute position center
+  for_window [title="^Klavaro - Main Menu$"] title_format "klavaro", move absolute position center
   
-  for_window [title="^Klavaro - Fluidness$"]  $tocont A
-  for_window [title="^Klavaro - Velocity$"]   $tocont A
+  for_window [title="^Klavaro - Fluidness$"] title_format "klavaro", $tocont A
+  for_window [title="^Klavaro - Velocity$"]  title_format "klavaro", $tocont A
 
- 
+  for_window [title="DevDocs API Documentation$"]  title_format "DevDocs"
+  for_window [title="ArchWiki$"]  title_format "ArchWiki"
 
-  for_window [instance="floatterm"] resize set 350 px 250 px
+  for_window [instance="floatterm"] title_format " ", resize set 350 px 250 px
 
   for_window [window_type="dialog"]    floating enable
   for_window [window_type="splash"]    floating enable
   for_window [window_type="utility"]   floating enable
 
-  no_focus   [instance="keydisplay"]
-  for_window [instance="keydisplay"] sticky enable, border none
+  for_window [title="^Deletion confirmation$"] floating enable
 
 # >>> automatic execution <<<
 

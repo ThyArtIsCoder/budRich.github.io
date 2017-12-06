@@ -1334,51 +1334,121 @@ peace.
 
     
 
-<h1 id="get-information-about-a-window">Get information about a window</h1>
+<hr />
 
-<p>Search for windows in i3 tree and print requested information. If no arguments are passed. <code>con_id</code> of active window is returned.</p>
+<p>Search for windows in i3 tree, return desired information
+if no arguments are passed. con_id of acitve window is returned.</p>
 
 <h2 id="usage">usage</h2>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>i3get [OPTION CRITERIA]
 
-| option | criteria | function                   |
-|:-------|:---------|:---------------------------|
-| -v     |          | show version and exit
-| -h     |          | show this help
-| -a     |          | currently active window (default)
-| -c     | CLASS    | search for windows with the given class
-| -i     | INSTANCE | search for windows with the given instance
-| -t     | TITLE    | search for windows with title.
-| -n     | CON_ID   | search for windows with the given con_id
-| -d     | CON_ID   | search for windows with the given window id
-| -m     | CON_MARK | search for windows with the given mark
-| -o     | TTL_FRMT | search for windows with the given titleformat
-| -y     |          | synch on. If this option is included, 
-|        |          | script will wait till target window exist.
+<p><code>$ i3get [OPTION [CRITERIA]]</code></p>
 
--r [tcidnmw]   desired return.
-                t: title
-                c: class
-                i: instance
-                d: Window ID
-                n: Con_Id (default)
-                m: mark
-                w: workspace
-                a: is active
-                f: floating state
-                o: title format
-                v: visible state
+<table>
+<thead>
+<tr>
+<th align="left"><strong>option</strong></th>
+<th align="left"><strong>criteria</strong></th>
+<th align="left"><strong>function</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">-v</td>
+<td align="left"></td>
+<td align="left">show version and exit</td>
+</tr>
+
+<tr>
+<td align="left">-h</td>
+<td align="left"></td>
+<td align="left">show this help</td>
+</tr>
+
+<tr>
+<td align="left">-a</td>
+<td align="left"></td>
+<td align="left">currently active window (default)</td>
+</tr>
+
+<tr>
+<td align="left">-c</td>
+<td align="left">CLASS</td>
+<td align="left">search for windows with the given class</td>
+</tr>
+
+<tr>
+<td align="left">-i</td>
+<td align="left">INSTANCE</td>
+<td align="left">search for windows with the given instance</td>
+</tr>
+
+<tr>
+<td align="left">-t</td>
+<td align="left">TITLE</td>
+<td align="left">search for windows with title.</td>
+</tr>
+
+<tr>
+<td align="left">-n</td>
+<td align="left">CON_ID</td>
+<td align="left">search for windows with the given con_id</td>
+</tr>
+
+<tr>
+<td align="left">-d</td>
+<td align="left">CON_ID</td>
+<td align="left">search for windows with the given window id</td>
+</tr>
+
+<tr>
+<td align="left">-m</td>
+<td align="left">CON_MARK</td>
+<td align="left">search for windows with the given mark</td>
+</tr>
+
+<tr>
+<td align="left">-o</td>
+<td align="left">TTL_FRMT</td>
+<td align="left">search for windows with the given titleformat</td>
+</tr>
+
+<tr>
+<td align="left">-y</td>
+<td align="left"></td>
+<td align="left">synch on. If this option is included,</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">script will wait till target window exist.</td>
+</tr>
+</tbody>
+</table>
+
+<p>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>-r [tcidnmw]   desired return.
+               t: title
+               c: class
+               i: instance
+               d: Window ID
+               n: Con_Id (default)
+               m: mark
+               w: workspace
+               a: is active
+               f: floating state
+               o: title format
+               v: visible state
 </code></pre></div>
 
-<h2 id="example">example</h2>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="c1"># Search for window with instance name sublime_text. </span>
-<span class="c1"># Request workspace, title and floating state.</span>
+<p>Examples:
+search for window with instance name sublime_text. Request
+workspace, title and floating state.
+<code>i3get -i sublime_text -r wtf</code></p>
 
-$ i3get -i sublime_text -r wtf
-  <span class="m">1</span>
-  <span class="s2">&quot;~/tmp/kortisar/i3ass/doc/i3gw.md (i3ass) - Sublime Text&quot;</span>
-  <span class="s2">&quot;user_off&quot;</span>
-</code></pre></div>
+<p>Title and tile_format output is always surrounded
+with doublequotes.</p>
 
 <hr>
 
@@ -1406,14 +1476,14 @@ $ i3get -i sublime_text -r wtf
 <span class="nv">$NAME</span><span class="s2"> - </span><span class="nv">$VERSION</span><span class="s2"> - </span><span class="nv">$UPDATED</span><span class="s2"></span>
 <span class="s2">created: </span><span class="nv">$CREATED</span><span class="s2"> by </span><span class="nv">$AUTHOR</span><span class="s2"></span>
 <span class="s2">*******************************</span>
-<span class="s2">search for windows in i3 tree, return desired information</span>
+<span class="s2">Search for windows in i3 tree, return desired information</span>
 <span class="s2">if no arguments are passed. con_id of acitve window is returned.</span>
 
 <span class="s2">usage</span>
 <span class="s2">-----</span>
 <span class="s2">\`\$ </span><span class="nv">$NAME</span><span class="s2"> [OPTION [CRITERIA]]\`</span>
 
-<span class="s2">| option | criteria | function                   |</span>
+<span class="s2">| **option** | **criteria** | **function**                   |</span>
 <span class="s2">|:-------|:---------|:---------------------------|</span>
 <span class="s2">| -v     |          | show version and exit</span>
 <span class="s2">| -h     |          | show this help</span>
@@ -1427,24 +1497,31 @@ $ i3get -i sublime_text -r wtf
 <span class="s2">| -o     | TTL_FRMT | search for windows with the given titleformat</span>
 <span class="s2">| -y     |          | synch on. If this option is included, </span>
 <span class="s2">|        |          | script will wait till target window exist.</span>
+<span class="s2">  </span>
+<span class="s2">.  </span>
 
+<span class="s2">\`\`\` text</span>
 <span class="s2">-r [tcidnmw]   desired return.</span>
-<span class="s2">                t: title</span>
-<span class="s2">                c: class</span>
-<span class="s2">                i: instance</span>
-<span class="s2">                d: Window ID</span>
-<span class="s2">                n: Con_Id (default)</span>
-<span class="s2">                m: mark</span>
-<span class="s2">                w: workspace</span>
-<span class="s2">                a: is active</span>
-<span class="s2">                f: floating state</span>
-<span class="s2">                o: title format</span>
-<span class="s2">                v: visible state</span>
+<span class="s2">               t: title</span>
+<span class="s2">               c: class</span>
+<span class="s2">               i: instance</span>
+<span class="s2">               d: Window ID</span>
+<span class="s2">               n: Con_Id (default)</span>
+<span class="s2">               m: mark</span>
+<span class="s2">               w: workspace</span>
+<span class="s2">               a: is active</span>
+<span class="s2">               f: floating state</span>
+<span class="s2">               o: title format</span>
+<span class="s2">               v: visible state</span>
+<span class="s2">\`\`\`               </span>
 
 <span class="s2">Examples:</span>
 <span class="s2">search for window with instance name sublime_text. Request</span>
 <span class="s2">workspace, title and floating state.</span>
 <span class="s2">\`i3get -i sublime_text -r wtf\`</span>
+
+<span class="s2">Title and tile_format output is always surrounded</span>
+<span class="s2">with doublequotes.</span>
 
 <span class="s2">contact</span>
 <span class="s2">-------</span>
@@ -1501,7 +1578,7 @@ getwindow<span class="o">(){</span>
 <span class="s1">      split(sret, aret, &quot;&quot;)</span>
 <span class="s1">      for (i=1; i &lt;= length(sret); i++) {</span>
 <span class="s1">        op=r[aret[i]]</span>
-<span class="s1">        gsub(&quot;[\&quot;]&quot;,&quot;&quot;,op)</span>
+<span class="s1">        if(aret[i]!~/t|o/){gsub(&quot;[\&quot;]&quot;,&quot;&quot;,op)}</span>
 <span class="s1">        if(op!=&quot;&quot;)</span>
 <span class="s1">        printf(&quot;%s\n&quot;, op)</span>
 <span class="s1">      }</span>

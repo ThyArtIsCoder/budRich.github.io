@@ -1333,42 +1333,103 @@ it should be said.
 
     
 
-<p>This script is vital for <a href="https://budrich.github.io/i3ass/i3fyra">i3fyra</a> to work. But it can be used on it&rsquo;s own or with other scripts. <code>i3list</code> is also used by <a href="https://budrich.github.io/i3ass/i3run">i3run</a>. <strong>i3list</strong> parses the output of the command:<br />
-<code>i3-msg -t get_tree</code><br />
-and returns a long string with 43 values separated by spaces. This strange output format is made to make it possible to pipe the output to other scripts. A lot of the information is specific to <a href="https://budrich.github.io/i3ass/i3fyra">i3fyra</a>, but if i3list doesn&rsquo;t find a value an X will be placed in it&rsquo;s place in the output.</p>
+<hr />
 
-<p>The idea, is to use this script once, and get all the info about i3&rsquo;s current state in one big chunk. So one doesn&rsquo;t have to make more requests for tree output. It have sped up my own scripts a lot. And it also makes many listener scripts unnecessary. The parsing is done with awk, and it is very fast, about 25ms on my average computer (i5, 4GB). Same operation with pure bash would take at least a whole second (x40).</p>
+<p>This script is vital for i3fyra to work. But it can be used on it&rsquo;s own
+or with other scripts. i3list is also used by i3run. i3list parses the
+output of the command:
+<code>i3-msg -t get_tree</code>
+and returns a long string with 43 values separated by spaces. This strange
+output format is made to make it possible to pipe the output to other scripts.
+A lot of the information is specific to i3fyra, but if i3list doesn&rsquo;t find a
+value an X will be placed in it&rsquo;s place in the output.</p>
 
-<p>I have made another script, <a href="https://budrich.github.io/i3ass/i3get">i3get</a>, that works in a similar way but where you choose which information you want in the output. It is slightly faster (-5ms).</p>
+<p>The idea, is to use this script once, and get all the info about i3&rsquo;s current
+state in one big chunk. So one doesn&rsquo;t have to make more requests for
+tree output. It have speeded up my own scripts a lot. And it also makes many
+listener scripts unnecessary. The parsing is done with awk, and it is very
+fast, about 25ms on my average computer (i5, 4GB). Same operation with pure
+bash would take at least a whole second (x40).</p>
+
+<p>I have made another script, i3get, that works in a similar way but where you
+choose which information you want in the output. It is slightly faster (5ms).</p>
 
 <h2 id="usage">usage</h2>
 
-<p><code>i3list [OPTION CRITERIA]</code></p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>option | argument | function
-----------------------------
+<p><code>$ i3list [OPTION [CRITERIA]]</code></p>
 
--v     |           | Show version and exit.
--h     |           | Show this info and exit. 
--c     | CLASS     | Search for windows with the given CLASS
--i     | INSTANCE  | Search for windows with the given INSTANCE
--t     | TITLE     | Search for windows with the given TITLE
--n     | CON_ID    | Search for windows with the given CON_ID
--d     | WINDOW_ID | Search for windows with the given WINDOW ID
--m     | CON_MARK  | Search for windows with the given MARK
-</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>option</strong></th>
+<th align="center"><strong>criteria</strong></th>
+<th align="left"><strong>function</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">-v</td>
+<td align="center"></td>
+<td align="left">show version info and exit</td>
+</tr>
+
+<tr>
+<td align="left">-h</td>
+<td align="center"></td>
+<td align="left">show this help and exit</td>
+</tr>
+
+<tr>
+<td align="left">-c</td>
+<td align="center">CLASS</td>
+<td align="left">Search for windows with the given CLASS</td>
+</tr>
+
+<tr>
+<td align="left">-i</td>
+<td align="center">INSTANCE</td>
+<td align="left">Search for windows with the given INSTANCE</td>
+</tr>
+
+<tr>
+<td align="left">-t</td>
+<td align="center">TITLE</td>
+<td align="left">Search for windows with the given TITLE</td>
+</tr>
+
+<tr>
+<td align="left">-n</td>
+<td align="center">CON_ID</td>
+<td align="left">Search for windows with the given CON_ID</td>
+</tr>
+
+<tr>
+<td align="left">-d</td>
+<td align="center">WINDOW_ID</td>
+<td align="left">Search for windows with the given WINDOW ID</td>
+</tr>
+
+<tr>
+<td align="left">-m</td>
+<td align="center">CON_MARK</td>
+<td align="left">Search for windows with the given MARK</td>
+</tr>
+</tbody>
+</table>
 
 <p>If no option is passed, active window will be target.</p>
 
-<p>example output:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ i3list
-  <span class="m">1</span> ABD C ABDC g u a X <span class="m">1</span> <span class="m">94834554562528</span> f-94834554562528 g u a X <span class="m">1</span> <span class="se">\</span>
-  <span class="m">94834554562528</span> f-94834554562528 t <span class="m">94834555596640</span> <span class="m">94834555347456</span> <span class="se">\</span>
-  <span class="m">94834555596640</span> t <span class="m">94834555517248</span> <span class="m">94834555517248</span> <span class="m">94834555517248</span> t <span class="se">\</span>
-  <span class="m">94834555385280</span> <span class="m">94834555385280</span> <span class="m">94834555385280</span> t <span class="m">94834555516528</span> <span class="se">\</span>
-  <span class="m">94834555556800</span> <span class="m">94834555556800</span> <span class="m">1069</span> <span class="m">585</span> <span class="m">234</span> <span class="m">1056</span> <span class="m">900</span> <span class="m">234</span> A BD <span class="m">1600</span> <span class="m">900</span>
+<p><strong>example output</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ i3list
+  1 ABD C ABDC g u a X 1 94834554562528 f-94834554562528 g u a X 1 \
+  94834554562528 f-94834554562528 t 94834555596640 94834555347456 \
+  94834555596640 t 94834555517248 94834555517248 94834555517248 t \
+  94834555385280 94834555385280 94834555385280 t 94834555516528 \
+  94834555556800 94834555556800 1069 585 234 1056 900 234 A BD 1600 900
 </code></pre></div>
 
-<p>Below is a cipher for the output:</p>
+<p><strong>Below is a cipher for the output</strong></p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>field: 0   - AWW -  current workspace
 field: 1   - VIS -  visible containers
 field: 2   - HID -  hidden containers
@@ -1436,11 +1497,12 @@ a - active window
 n = neither active or focused
 </code></pre></div>
 
-<p>The best way to handle the output is to put it in an array.
-Example (bash/terminal):</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="nv">list_array</span><span class="o">=(</span><span class="k">$(</span>i3list<span class="k">)</span><span class="o">)</span>
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">list_array</span><span class="p">[42]</span><span class="si">}</span>
-  <span class="m">1600</span> <span class="c1"># width of current workspace</span>
+<p>The best way to handle the output is to put it in an array.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ list_array=($(i3list))
+$ echo ${list_array[42]}
+  1600 # width of current workspace
 </code></pre></div>
 
 <hr>
@@ -1492,8 +1554,8 @@ $ <span class="nb">echo</span> <span class="si">${</span><span class="nv">list_a
 <span class="s2">-----</span>
 <span class="s2">\`\$ </span><span class="nv">$NAME</span><span class="s2"> [OPTION [CRITERIA]]\`</span>
 
-<span class="s2">| option | criteria  | function                   |</span>
-<span class="s2">|:-------|:----------|:---------------------------|</span>
+<span class="s2">| **option** | **criteria**  | **function**                   |</span>
+<span class="s2">|:-------|:---------:|:---------------------------|</span>
 <span class="s2">| -v     |           | show version info and exit |</span>
 <span class="s2">| -h     |           | show this help and exit    |</span>
 <span class="s2">| -c     | CLASS     | Search for windows with the given CLASS</span>
@@ -1505,17 +1567,17 @@ $ <span class="nb">echo</span> <span class="si">${</span><span class="nv">list_a
 
 <span class="s2">If no option is passed, active window will be target.</span>
 
-<span class="s2">example output:</span>
-<span class="s2">\`\`\`</span>
+<span class="s2">**example output**</span>
+<span class="s2">\`\`\` text</span>
 <span class="s2">\$ i3list</span>
-<span class="s2">  1 ABD C ABDC g u a X 1 94834554562528 f-94834554562528 g u a X 1 \</span>
-<span class="s2">  94834554562528 f-94834554562528 t 94834555596640 94834555347456 \</span>
-<span class="s2">  94834555596640 t 94834555517248 94834555517248 94834555517248 t \</span>
-<span class="s2">  94834555385280 94834555385280 94834555385280 t 94834555516528 \</span>
+<span class="s2">  1 ABD C ABDC g u a X 1 94834554562528 f-94834554562528 g u a X 1 \\</span>
+<span class="s2">  94834554562528 f-94834554562528 t 94834555596640 94834555347456 \\</span>
+<span class="s2">  94834555596640 t 94834555517248 94834555517248 94834555517248 t \\</span>
+<span class="s2">  94834555385280 94834555385280 94834555385280 t 94834555516528 \\</span>
 <span class="s2">  94834555556800 94834555556800 1069 585 234 1056 900 234 A BD 1600 900</span>
 <span class="s2">\`\`\`</span>
-<span class="s2">Below is a cipher for the output:</span>
-<span class="s2">\`\`\`</span>
+<span class="s2">**Below is a cipher for the output**</span>
+<span class="s2">\`\`\` text</span>
 <span class="s2">field: 0   - AWW -  current workspace</span>
 <span class="s2">field: 1   - VIS -  visible containers</span>
 <span class="s2">field: 2   - HID -  hidden containers</span>
@@ -1585,15 +1647,11 @@ $ <span class="nb">echo</span> <span class="si">${</span><span class="nv">list_a
 <span class="s2">The best way to handle the output is to put it in an array.</span>
 
 <span class="s2">Example:</span>
-<span class="s2">\`\`\`</span>
+<span class="s2">\`\`\` text</span>
 <span class="s2">\$ list_array=(\$(i3list))</span>
 <span class="s2">\$ echo \${list_array[42]}</span>
 <span class="s2">  1600 # width of current workspace</span>
 <span class="s2">\`\`\`</span>
-
-<span class="s2">dependencies</span>
-<span class="s2">------------</span>
-<span class="s2">* i3wm</span>
 
 <span class="s2">contact</span>
 <span class="s2">-------</span>

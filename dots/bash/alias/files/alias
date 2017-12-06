@@ -56,8 +56,8 @@ alias hideme='history -d $((HISTCMD-1))'
 alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 
 alias src='cd src && ls'
-alias comps='cd $HOME/www/static && compass watch'
-alias hugs='hugo server -s $HOME/www'
+alias comps='i3-msg title_format "budlabs - compass" && clear && cd $HOME/www/static && compass watch'
+alias hugs='i3-msg title_format "budlabs - server" && clear && hugo server -s $HOME/www'
 alias ss='subl'
 
 alias pms='pacaur -Ss'

@@ -1332,8 +1332,6 @@ was back to normal.
 
     
 
-<h1 id="an-advanced-simple-tiling-layout-for-i3wm">An advanced simple tiling layout for i3wm</h1>
-
 <p>fyra is the Swedish name for &ldquo;four&rdquo;.</p>
 
 <p>
@@ -1370,25 +1368,19 @@ was back to normal.
 
 <p>In the first video above I show the functionality of <code>i3fyra</code>. The second video is a longer and more thorough walkthrough on how to use <code>i3fyra</code></p>
 
-<h2 id="dependencies">dependencies</h2>
-
-<ul>
-<li><a href="https://budrich.github.io/i3ass/i3list">i3list</a></li>
-<li><a href="https://budrich.github.io/i3ass/i3gw">i3gw</a></li>
-</ul>
-
 <hr />
 
+<h2 id="an-advanced-simple-tiling-layout-for-i3wm">An advanced simple tiling layout for i3wm.</h2>
+
 <p>The layout consists of four containers:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>A B
-C D
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>  A B
+  C D
 </code></pre></div>
 
-<p>The internal layout of the containers doesn&rsquo;t matter.<br />
-This means that container A could be tabbed and the others split horizontally for example.</p>
+<p>The internal layout of the containers doesn&rsquo;t matter.</p>
 
-<p><code>A</code> is always to the left of <code>B</code> and <code>D</code>. And always above <code>C</code>.
-<code>B</code> is always to the right of <code>A</code> and <code>C</code>. And always above <code>D</code>.</p>
+<p>A is always to the left of B and D. And always above C.
+B is always to the right of A and C. And always above D.</p>
 
 <p>This means that the containers will change names if their position changes.</p>
 
@@ -1396,8 +1388,8 @@ This means that container A could be tabbed and the others split horizontally fo
 Container A and C are siblings and container B and D are siblings.</p>
 
 <p>If ABC are visible but D is hidden or none existent, layout becomes:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>A B
-C B
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>  A B
+  C B
 </code></pre></div>
 
 <p>If action: <em>move up</em> (-m u) would be called when B container is active
@@ -1405,24 +1397,20 @@ and D is hidden. Container D would be shown. If action would have been:
 <em>move down</em> (-m d), D would be shown and B and D would swap position and name.
 If action would have been <em>move left</em> (-m l) the active window in B would be
 moved to container A. If action was: <em>move right</em> (-m r) A and C would be hidden:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>B B
-B B
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>  B B
+  B B
 </code></pre></div>
 
 <p>If we now call action: <em>move left</em> (-m l) A and C would be shown again but
 to the right of B, the containers would also change names, so B becomes A,
 A becomes B and C becomes D:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>A B
-A D
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>  A B
+  A D
 </code></pre></div>
-
-<h2 id="workspace-lock">workspace lock</h2>
-
-<p>The layout is active on one workspace only. This means that all other workspaces will work as expected with <em>vanilla</em> <strong>i3</strong> . The workspace where the layout is first invoked will be the <code>i3fyra</code> workspace.</p>
 
 <h2 id="usage">usage</h2>
 
-<p><code>i3fyra [OPTTION] [ARGUMENT]</code></p>
+<p><code>$ i3fyra [OPTTION] [ARGUMENT]</code></p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>option | argument | action
 --------------------------
 -v     |          | Show version info and exit.
@@ -1472,6 +1460,13 @@ A D
                     fyra -l &#39;AB=-300 BD=420&#39;
 </code></pre></div>
 
+<h2 id="dependencies">dependencies</h2>
+
+<ul>
+<li>i3list</li>
+<li>i3gw</li>
+</ul>
+
 <hr>
 
 <div class="embedfile">
@@ -1493,111 +1488,6 @@ A D
 <span class="nv">CONTACT</span><span class="o">=</span><span class="s1">&#39;robstenklippa@gmail.com&#39;</span>
 <span class="nv">CREATED</span><span class="o">=</span><span class="s2">&quot;2017-01-14&quot;</span>
 <span class="nv">UPDATED</span><span class="o">=</span><span class="s2">&quot;2017-11-19&quot;</span>
-
-<span class="nv">about</span><span class="o">=</span><span class="s2">&quot;</span>
-<span class="nv">$NAME</span><span class="s2"> - </span><span class="nv">$VERSION</span><span class="s2"> - </span><span class="nv">$UPDATED</span><span class="s2"></span>
-<span class="s2">created: </span><span class="nv">$CREATED</span><span class="s2"> by </span><span class="nv">$AUTHOR</span><span class="s2"></span>
-<span class="s2">*******************************</span>
-<span class="s2">An advanced simple tiling layout for i3wm. </span>
-<span class="s2">The layout consists of four containers:</span>
-
-<span class="s2">  A B</span>
-<span class="s2">  C D</span>
-
-<span class="s2">The internal layout of the containers doesn&#39;t matter.</span>
-
-<span class="s2">A is always to the left of B and D. And always above C.</span>
-<span class="s2">B is always to the right of A and C. And always above D.</span>
-
-<span class="s2">This means that the containers will change names if their position changes.</span>
-
-<span class="s2">The size of the containers are defined by the three splits: AB, AC and BD.</span>
-<span class="s2">Container A and C are siblings and container B and D are siblings. </span>
-
-<span class="s2">If ABC are visible but D is hidden or none existent, layout becomes:</span>
-
-<span class="s2">  A B</span>
-<span class="s2">  C B</span>
-
-<span class="s2">If action: *move up* (-m u) would be called when B container is active </span>
-<span class="s2">and D is hidden. Container D would be shown. If action would have been:</span>
-<span class="s2">*move down* (-m d), D would be shown and B and D would swap position and name.</span>
-<span class="s2">If action would have been *move left* (-m l) the active window in B would be</span>
-<span class="s2">moved to container A. If action was: *move right* (-m r) A and C would be hidden:</span>
-
-<span class="s2">  B B</span>
-<span class="s2">  B B</span>
-
-<span class="s2">If we now call action: *move left* (-m l) A and C would be shown again but</span>
-<span class="s2">to the right of B, the containers would also change names, so B becomes A, </span>
-<span class="s2">A becomes B and C becomes D:</span>
-
-<span class="s2">  A B</span>
-<span class="s2">  A D</span>
-
-<span class="s2">usage</span>
-<span class="s2">-----</span>
-<span class="s2">\`\$ </span><span class="nv">$NAME</span><span class="s2"> [OPTTION] [ARGUMENT]\`</span>
-
-<span class="s2">\`\`\` text</span>
-<span class="s2">option | argument | action</span>
-<span class="s2">--------------------------</span>
-<span class="s2">-v     |          | Show version info and exit.</span>
-
-<span class="s2">-h     |          | Help, shows this info.</span>
-
-<span class="s2">-a     |          | Autolayout. If current window is tiled: floating enabled</span>
-<span class="s2">                    If window is floating, it will be put in a visible container.</span>
-<span class="s2">                    If there is no visible containers. The window will be placed</span>
-<span class="s2">                    in a hidden container. If no containers exist, container &#39;A&#39;</span>
-<span class="s2">                    will be created and the window will be put there.</span>
-
-<span class="s2">-s     | A|B|C|D  | Show target container. If it doesn&#39;t exist, it will be </span>
-<span class="s2">                    created and current window will be put in it.</span>
-<span class="s2">                    If it is visible, nothing happens.</span>
-
-<span class="s2">-w     | i3list   | Use target i3list instead of getting a new list.</span>
-
-<span class="s2">-m     | A|B|C|D  | Moves current window to target container, either defined by</span>
-<span class="s2">         u|d|l|r    it&#39;s name or it&#39;s position relative to the current container</span>
-<span class="s2">                    with a direction: [l|left][r|right][u|up][d|down]</span>
-<span class="s2">                    If the container doesnt exist it is created. If argument is</span>
-<span class="s2">                    a direction and there is no container in that direction, </span>
-<span class="s2">                    Connected container(s) visibility is toggled.</span>
-<span class="s2">                    If current window is floating or not inside ABCD, normal </span>
-<span class="s2">                    movement is performed. Distance for moving floating windows</span>
-<span class="s2">                    with this action can be defined with the -p option. Example:</span>
-<span class="s2">                    i3fyra -p 30 -m r</span>
-<span class="s2">                    Will move current window 30 pixels to the right, </span>
-<span class="s2">                    if it is floating.</span>
-<span class="s2">         </span>
-<span class="s2">-z     | A|B|C|D  | Hide target container if it is visible, otherwise do nothing.</span>
-
-<span class="s2">-f     | u|d|l|r  | move focus in target direction. </span>
-
-<span class="s2">-t     | u|d|l|r  | move focus inside current container (switch tabs). Autowarp.</span>
-
-<span class="s2">-p     | INT      | Distance in pixels to move a floating window. Defaults to 30.</span>
-
-<span class="s2">-l     | &#39;[AB=INT] [AC=INT] [BD=INT]&#39; | alter splits</span>
-<span class="s2">                    Changes the given splits. INT is a distance in pixels.</span>
-<span class="s2">                    AB is on X axis from the left side if INT is positive, from</span>
-<span class="s2">                       the right side if it is negative.</span>
-<span class="s2">                    AC and BD is on Y axis from the top if INT is positive, from</span>
-<span class="s2">                       the bottom if it is negative.</span>
-<span class="s2">                    The whole argument needs to be quoted. Example:</span>
-<span class="s2">                    fyra -l &#39;AB=-300 BD=420&#39;</span>
-<span class="s2">\`\`\` text</span>
-<span class="s2">dependencies</span>
-<span class="s2">------------</span>
-
-<span class="s2">* i3list</span>
-<span class="s2">* i3gw</span>
-
-<span class="s2">contact</span>
-<span class="s2">-------</span>
-<span class="nv">$CONTACT</span><span class="s2"></span>
-<span class="s2">&quot;</span>
 
 initglobals<span class="o">(){</span>
 
@@ -1661,6 +1551,113 @@ initglobals<span class="o">(){</span>
 
   gla<span class="o">[</span>ALL<span class="o">]=</span>ACBD <span class="c1"># all containers sorted by families</span>
 <span class="o">}</span>
+
+<span class="nv">about</span><span class="o">=</span><span class="s2">&quot;</span>
+<span class="nv">$NAME</span><span class="s2"> - </span><span class="nv">$VERSION</span><span class="s2"> - </span><span class="nv">$UPDATED</span><span class="s2"></span>
+<span class="s2">created: </span><span class="nv">$CREATED</span><span class="s2"> by </span><span class="nv">$AUTHOR</span><span class="s2"></span>
+<span class="s2">*******************************</span>
+<span class="s2">An advanced simple tiling layout for i3wm. </span>
+<span class="s2">------------------------------------------</span>
+
+<span class="s2">The layout consists of four containers:</span>
+<span class="s2">\`\`\` text</span>
+<span class="s2">  A B</span>
+<span class="s2">  C D</span>
+<span class="s2">\`\`\`</span>
+<span class="s2">The internal layout of the containers doesn&#39;t matter.</span>
+
+<span class="s2">A is always to the left of B and D. And always above C.</span>
+<span class="s2">B is always to the right of A and C. And always above D.</span>
+
+<span class="s2">This means that the containers will change names if their position changes.</span>
+
+<span class="s2">The size of the containers are defined by the three splits: AB, AC and BD.</span>
+<span class="s2">Container A and C are siblings and container B and D are siblings. </span>
+
+<span class="s2">If ABC are visible but D is hidden or none existent, layout becomes:</span>
+<span class="s2">\`\`\` text</span>
+<span class="s2">  A B</span>
+<span class="s2">  C B</span>
+<span class="s2">\`\`\`</span>
+<span class="s2">If action: *move up* (-m u) would be called when B container is active </span>
+<span class="s2">and D is hidden. Container D would be shown. If action would have been:</span>
+<span class="s2">*move down* (-m d), D would be shown and B and D would swap position and name.</span>
+<span class="s2">If action would have been *move left* (-m l) the active window in B would be</span>
+<span class="s2">moved to container A. If action was: *move right* (-m r) A and C would be hidden:</span>
+<span class="s2">\`\`\` text</span>
+<span class="s2">  B B</span>
+<span class="s2">  B B</span>
+<span class="s2">\`\`\`</span>
+<span class="s2">If we now call action: *move left* (-m l) A and C would be shown again but</span>
+<span class="s2">to the right of B, the containers would also change names, so B becomes A, </span>
+<span class="s2">A becomes B and C becomes D:</span>
+<span class="s2">\`\`\` text</span>
+<span class="s2">  A B</span>
+<span class="s2">  A D</span>
+<span class="s2">\`\`\`</span>
+<span class="s2">usage</span>
+<span class="s2">-----</span>
+<span class="s2">\`\$ </span><span class="nv">$NAME</span><span class="s2"> [OPTTION] [ARGUMENT]\`</span>
+
+<span class="s2">\`\`\` text</span>
+<span class="s2">option | argument | action</span>
+<span class="s2">--------------------------</span>
+<span class="s2">-v     |          | Show version info and exit.</span>
+
+<span class="s2">-h     |          | Help, shows this info.</span>
+
+<span class="s2">-a     |          | Autolayout. If current window is tiled: floating enabled</span>
+<span class="s2">                    If window is floating, it will be put in a visible container.</span>
+<span class="s2">                    If there is no visible containers. The window will be placed</span>
+<span class="s2">                    in a hidden container. If no containers exist, container &#39;A&#39;</span>
+<span class="s2">                    will be created and the window will be put there.</span>
+
+<span class="s2">-s     | A|B|C|D  | Show target container. If it doesn&#39;t exist, it will be </span>
+<span class="s2">                    created and current window will be put in it.</span>
+<span class="s2">                    If it is visible, nothing happens.</span>
+
+<span class="s2">-w     | i3list   | Use target i3list instead of getting a new list.</span>
+
+<span class="s2">-m     | A|B|C|D  | Moves current window to target container, either defined by</span>
+<span class="s2">         u|d|l|r    it&#39;s name or it&#39;s position relative to the current container</span>
+<span class="s2">                    with a direction: [l|left][r|right][u|up][d|down]</span>
+<span class="s2">                    If the container doesnt exist it is created. If argument is</span>
+<span class="s2">                    a direction and there is no container in that direction, </span>
+<span class="s2">                    Connected container(s) visibility is toggled.</span>
+<span class="s2">                    If current window is floating or not inside ABCD, normal </span>
+<span class="s2">                    movement is performed. Distance for moving floating windows</span>
+<span class="s2">                    with this action can be defined with the -p option. Example:</span>
+<span class="s2">                    i3fyra -p 30 -m r</span>
+<span class="s2">                    Will move current window 30 pixels to the right, </span>
+<span class="s2">                    if it is floating.</span>
+<span class="s2">         </span>
+<span class="s2">-z     | A|B|C|D  | Hide target container if it is visible, otherwise do nothing.</span>
+
+<span class="s2">-f     | u|d|l|r  | move focus in target direction. </span>
+
+<span class="s2">-t     | u|d|l|r  | move focus inside current container (switch tabs). Autowarp.</span>
+
+<span class="s2">-p     | INT      | Distance in pixels to move a floating window. Defaults to 30.</span>
+
+<span class="s2">-l     | &#39;[AB=INT] [AC=INT] [BD=INT]&#39; | alter splits</span>
+<span class="s2">                    Changes the given splits. INT is a distance in pixels.</span>
+<span class="s2">                    AB is on X axis from the left side if INT is positive, from</span>
+<span class="s2">                       the right side if it is negative.</span>
+<span class="s2">                    AC and BD is on Y axis from the top if INT is positive, from</span>
+<span class="s2">                       the bottom if it is negative.</span>
+<span class="s2">                    The whole argument needs to be quoted. Example:</span>
+<span class="s2">                    fyra -l &#39;AB=-300 BD=420&#39;</span>
+<span class="s2">\`\`\`</span>
+
+<span class="s2">dependencies</span>
+<span class="s2">------------</span>
+<span class="s2">* i3list</span>
+<span class="s2">* i3gw</span>
+
+<span class="s2">contact</span>
+<span class="s2">-------</span>
+<span class="nv">$CONTACT</span><span class="s2"></span>
+<span class="s2">&quot;</span>
 
 applysplits<span class="o">(){</span>
   <span class="nb">local</span> i tsn tsv osv par dir tsp osp dirv csp mrk ssv

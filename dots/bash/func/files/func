@@ -15,6 +15,14 @@ cd() {
     builtin cd "$@" && ls
 }
 
+# https://wiki.archlinux.org/index.php/Man_page
+man() {
+    local width=$(tput cols)
+    [ $width -gt $MANWIDTH ] && width=$MANWIDTH
+    env MANWIDTH=$width \
+    man "$@"
+}
+
 gmrk(){
   local mrks=$(i3-msg -t get_marks | awk -F',' '{
     gsub("[[]|\"|[]]","",$0)
