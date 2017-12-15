@@ -74,6 +74,17 @@
                         
                       
                       
+                        <li class="post-in-tree"><a href="https://budrich.github.io/blog/i3_size_matters/"><span class="tree-date">15</span>|<span>i3_size_matters</span></a></li>
+                      
+                    
+                  
+                    
+                      
+                      
+                      
+                      
+                      
+                      
                         <li class="post-in-tree"><a href="https://budrich.github.io/blog/video_fyra/"><span class="tree-date">02</span>|<span>video_fyra</span></a></li>
                       
                     
@@ -1349,13 +1360,24 @@ would be a mistake.
   
   <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="nb">shopt</span> -s histappend
 <span class="nb">shopt</span> -s checkwinsize
-<span class="c1"># set -o vi</span>
+<span class="nb">set</span> -o vi
 
+<span class="nb">bind</span> <span class="s1">&#39;set show-mode-in-prompt on&#39;</span>
+<span class="c1"># local G=&quot;\[\033[0;32m\]&quot;    # green</span>
+<span class="c1"># local Y=&quot;\[\033[0;33m\]&quot;    # yellow</span>
+<span class="c1"># local B=&quot;\[\033[0;34m\]&quot;</span>
+<span class="c1"># local RESET=&quot;\[\033[0;37m\]&quot;</span>
+<span class="nb">bind</span> <span class="s1">&#39;set vi-ins-mode-string &#39;</span>
+<span class="nb">bind</span> <span class="s1">&#39;set vi-cmd-mode-string !&#39;</span>
 <span class="o">[</span> -x /usr/bin/lesspipe <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">SHELL</span><span class="o">=</span>/bin/sh lesspipe<span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="k">if</span> <span class="o">[</span> -x /usr/bin/dircolors <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">test</span> -r ~/.dircolors <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>dircolors -b ~/.dircolors<span class="k">)</span><span class="s2">&quot;</span> <span class="se">\</span>
-    <span class="o">||</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>dircolors -b<span class="k">)</span><span class="s2">&quot;</span>
+  <span class="nb">test</span> -r ~/.dircolors <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>dircolors -b ~/.dircolors<span class="k">)</span><span class="s2">&quot;</span> <span class="se">\</span>
+  <span class="o">||</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>dircolors -b<span class="k">)</span><span class="s2">&quot;</span>
+  <span class="k">if</span> <span class="o">[</span> -f <span class="nv">$HOME</span>/.dir_colors/soldark <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>dircolors <span class="nv">$HOME</span>/.dir_colors/soldark<span class="k">)</span><span class="s2">&quot;</span>
+  <span class="c1"># https://github.com/seebi/dircolors-solarized</span>
+  <span class="k">fi</span>
 <span class="k">fi</span>
 
 <span class="c1"># enable bash completion in interactive shells</span>

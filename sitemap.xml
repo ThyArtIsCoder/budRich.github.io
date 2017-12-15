@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://budrich.github.io/blog/i3_size_matters/</loc>
+    <lastmod>2017-12-15T22:51:49+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/blog/video_fyra/</loc>
     <lastmod>2017-12-02T19:27:11+01:00</lastmod>
   </url>
@@ -419,7 +424,7 @@
   
   <url>
     <loc>https://budrich.github.io/</loc>
-    <lastmod>2017-12-02T19:27:11+01:00</lastmod>
+    <lastmod>2017-12-15T22:51:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   

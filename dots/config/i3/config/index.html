@@ -74,6 +74,17 @@
                         
                       
                       
+                        <li class="post-in-tree"><a href="https://budrich.github.io/blog/i3_size_matters/"><span class="tree-date">15</span>|<span>i3_size_matters</span></a></li>
+                      
+                    
+                  
+                    
+                      
+                      
+                      
+                      
+                      
+                      
                         <li class="post-in-tree"><a href="https://budrich.github.io/blog/video_fyra/"><span class="tree-date">02</span>|<span>video_fyra</span></a></li>
                       
                     
@@ -917,6 +928,8 @@
           ZgotmplZ
           ZgotmplZ
           
+            checked
+          
 
           />
           
@@ -1368,23 +1381,10 @@ had never let her down.
 
 <span class="c1"># &gt;&gt;&gt; initializatione &lt;&lt;&lt;</span>
 
-  <span class="nb">set</span> <span class="nv">$exe</span> <span class="nb">exec</span> --no-startup-id <span class="nb">exec</span>
-
-  <span class="nb">set</span> <span class="nv">$left1</span>   y
-  <span class="nb">set</span> <span class="nv">$down1</span>   u
-  <span class="nb">set</span> <span class="nv">$up1</span>     i
-  <span class="nb">set</span> <span class="nv">$right1</span>  o
-
-  <span class="nb">set</span> <span class="nv">$left2</span>   h
-  <span class="nb">set</span> <span class="nv">$down2</span>   j
-  <span class="nb">set</span> <span class="nv">$up2</span>     k
-  <span class="nb">set</span> <span class="nv">$right2</span>  l
-
-  <span class="nb">set</span> <span class="nv">$left3</span>   n
-  <span class="nb">set</span> <span class="nv">$down3</span>   m
-  <span class="nb">set</span> <span class="nv">$up3</span>     comma
-  <span class="nb">set</span> <span class="nv">$right3</span>  period
-
+  <span class="nb">set</span> <span class="nv">$left</span>   h
+  <span class="nb">set</span> <span class="nv">$down</span>   j
+  <span class="nb">set</span> <span class="nv">$up</span>     k
+  <span class="nb">set</span> <span class="nv">$right</span>  l
   
   <span class="c1"># set $browser i3run -c Surf -e &#39;surf&#39;</span>
   <span class="c1"># set $browser i3run -c Vivaldi-stable -e &#39;vivaldi&#39;</span>
@@ -1396,15 +1396,30 @@ had never let her down.
   <span class="nb">set</span> <span class="nv">$bigmove</span>   <span class="m">30</span> px
   <span class="nb">set</span> <span class="nv">$smallmove</span> <span class="m">1</span> px
   <span class="nb">set</span> <span class="nv">$tocont</span> focus<span class="p">;</span> <span class="nb">exec</span> --no-startup-id <span class="nb">exec</span> i3fyra -m
+  <span class="nb">set</span> <span class="nv">$fdmtm</span> floating disable, move to mark
+  <span class="nb">set</span> <span class="nv">$exe</span> <span class="nb">exec</span> --no-startup-id <span class="nb">exec</span>
+  <span class="nb">set</span> <span class="nv">$win</span> bindsym Mod4
+  <span class="nb">set</span> <span class="nv">$alt</span> Mod1
+
+  <span class="nb">set</span> <span class="nv">$exefmb</span> i3run -i fmB -e <span class="s1">&#39;\</span>
+<span class="s1">    xfconf-query --channel thunar --property /last-view --set ThunarDetailsView \</span>
+<span class="s1">    &amp;&amp; xfconf-query --channel thunar --property /last-view --set ThunarIconView \</span>
+<span class="s1">    &amp;&amp; xfconf-query --channel thunar --property /last-show-hidden --set false \</span>
+<span class="s1">    &amp;&amp; xfconf-query --channel thunar --property /last-icon-view-zoom-level --set THUNAR_ZOOM_LEVEL_SMALL \</span>
+<span class="s1">    &amp;&amp; thunar &amp; xdotool set_window --classname &quot;fmB&quot; `i3get -i thunar -r d -y`&#39;</span>
+
+  <span class="nb">set</span> <span class="nv">$exefmd</span> i3run -i fmD -e <span class="s1">&#39;\</span>
+<span class="s1">    xfconf-query --channel thunar --property /last-view --set ThunarDetailsView \</span>
+<span class="s1">    &amp;&amp; xfconf-query --channel thunar --property /last-view --set ThunarDetailsView \</span>
+<span class="s1">    &amp;&amp; xfconf-query --channel thunar --property /last-show-hidden --set true \</span>
+<span class="s1">    &amp;&amp; xfconf-query --channel thunar --property /last-details-view-zoom-level --set THUNAR_ZOOM_LEVEL_SMALLEST \</span>
+<span class="s1">    &amp;&amp; thunar &amp; xdotool set_window --classname &quot;fmD&quot; `i3get -i thunar -r d -y`&#39;</span>
+
   <span class="nb">set</span> <span class="nv">$notes</span> i3run -i sublime_notes -e <span class="s1">&#39;subl \</span>
 <span class="s1">    --project ~/tmp/kortisar/sublime/projects/notes.sublime-project \</span>
 <span class="s1">    &amp;&amp; subl ~/dox/not/todo.note \</span>
-<span class="s1">    &amp;&amp; sleep 1 \</span>
-<span class="s1">    &amp;&amp; xdotool set_window --classname &quot;sublime_notes&quot; `i3get -t &quot;(notes)&quot; -r d`&#39;</span>
+<span class="s1">    &amp;&amp; xdotool set_window --classname &quot;sublime_notes&quot; `i3get -t &quot;(notes)&quot; -r d -y`&#39;</span>
 
-  <span class="nb">set</span> <span class="nv">$alt</span> Mod1
-  <span class="nb">set</span> <span class="nv">$win</span> bindsym Mod4
-  <span class="nb">set</span> <span class="nv">$fdmtm</span> floating disable, move to mark
 
   set_from_resource <span class="nv">$act</span> i3wm.act <span class="c1">#111313</span>
   set_from_resource <span class="nv">$ina</span> i3wm.ina <span class="c1">#111313</span>
@@ -1441,7 +1456,9 @@ had never let her down.
   
 
 <span class="c1"># &gt;&gt;&gt; i3run - sane applaunching for the modern tiler &lt;&lt;&lt;</span>
-  <span class="nv">$win</span>+e <span class="nv">$exe</span> <span class="nv">$filemanager</span>
+
+  <span class="nv">$win</span>+e       <span class="nv">$exe</span> <span class="nv">$exefmd</span>
+  <span class="nv">$win</span>+Shift+e <span class="nv">$exe</span> <span class="nv">$exefmb</span>
   
   <span class="nv">$win</span>+f <span class="nv">$exe</span> <span class="nv">$browser</span>
   <span class="nv">$win</span>+a <span class="nv">$exe</span> i3term irssi
@@ -1500,24 +1517,32 @@ had never let her down.
 
 <span class="c1"># &gt;&gt;&gt; moving the size of the focus &lt;&lt;&lt;</span>
    
-  <span class="nv">$win</span>+control+<span class="nv">$left2</span>              resize shrink width  <span class="nv">$bigsize</span>
-  <span class="nv">$win</span>+control+Shift<span class="nv">$left2</span>         resize shrink width  <span class="nv">$smallsize</span>
-  <span class="nv">$win</span>+control+<span class="nv">$right2</span>             resize grow width    <span class="nv">$bigsize</span>
-  <span class="nv">$win</span>+control+Shift+<span class="nv">$right2</span>       resize grow width    <span class="nv">$smallsize</span>
-  <span class="nv">$win</span>+control+<span class="nv">$down2</span>              resize shrink height <span class="nv">$bigsize</span>
-  <span class="nv">$win</span>+control+Shift+<span class="nv">$down2</span>        resize shrink height <span class="nv">$smallsize</span>
-  <span class="nv">$win</span>+control+<span class="nv">$up2</span>                resize grow height   <span class="nv">$bigsize</span>
-  <span class="nv">$win</span>+control+Shift+<span class="nv">$up2</span>          resize grow height   <span class="nv">$smallsize</span>
+  <span class="c1"># $win+control+$left              resize shrink width  $bigsize</span>
+  <span class="c1"># $win+control+Shift$left         resize shrink width  $smallsize</span>
+  <span class="c1"># $win+control+$right             resize grow width    $bigsize</span>
+  <span class="c1"># $win+control+Shift+$right       resize grow width    $smallsize</span>
+  <span class="c1"># $win+control+$dow             resize shrink height $bigsize</span>
+  <span class="c1"># $win+control+Shift+$dow       resize shrink height $smallsize</span>
+  <span class="c1"># $win+control+$up                resize grow height   $bigsize</span>
+  <span class="c1"># $win+control+Shift+$up          resize grow height   $smallsize</span>
 
-  <span class="nv">$win$left2</span>               <span class="nv">$exe</span> i3fyra -f l 
-  <span class="nv">$win</span>+<span class="nv">$right2</span>             <span class="nv">$exe</span> i3fyra -f r 
-  <span class="nv">$win</span>+<span class="nv">$down2</span>              <span class="nv">$exe</span> i3fyra -f d 
-  <span class="nv">$win</span>+<span class="nv">$up2</span>                <span class="nv">$exe</span> i3fyra -f u 
+  <span class="c1"># tl= u</span>
+  <span class="c1"># &gt;&gt; Resizing</span>
 
-  <span class="nv">$win</span>+Shift<span class="nv">$left2</span>         <span class="nv">$exe</span> i3fyra -m l 
-  <span class="nv">$win</span>+Shift+<span class="nv">$right2</span>       <span class="nv">$exe</span> i3fyra -m r 
-  <span class="nv">$win</span>+Shift+<span class="nv">$down2</span>        <span class="nv">$exe</span> i3fyra -m d 
-  <span class="nv">$win</span>+Shift+<span class="nv">$up2</span>          <span class="nv">$exe</span> i3fyra -m u 
+  <span class="nv">$win</span>+Control+<span class="nv">$left</span> <span class="nv">$exe</span> i3sizemode left
+  <span class="nv">$win</span>+Control+<span class="nv">$down</span> <span class="nv">$exe</span> i3sizemode down
+  <span class="nv">$win</span>+Control+<span class="nv">$up</span> <span class="nv">$exe</span> i3sizemode up
+  <span class="nv">$win</span>+Control+<span class="nv">$right</span> <span class="nv">$exe</span> i3sizemode right
+
+  <span class="nv">$win</span>+<span class="nv">$left</span>               <span class="nv">$exe</span> i3fyra -f l 
+  <span class="nv">$win</span>+<span class="nv">$right</span>             <span class="nv">$exe</span> i3fyra -f r 
+  <span class="nv">$win</span>+<span class="nv">$down</span>              <span class="nv">$exe</span> i3fyra -f d 
+  <span class="nv">$win</span>+<span class="nv">$up</span>              <span class="nv">$exe</span> i3fyra -f u 
+
+  <span class="nv">$win</span>+Shift+<span class="nv">$left</span>         <span class="nv">$exe</span> i3fyra -m l 
+  <span class="nv">$win</span>+Shift+<span class="nv">$right</span>       <span class="nv">$exe</span> i3fyra -m r 
+  <span class="nv">$win</span>+Shift+<span class="nv">$down</span>        <span class="nv">$exe</span> i3fyra -m d 
+  <span class="nv">$win</span>+Shift+<span class="nv">$up</span>        <span class="nv">$exe</span> i3fyra -m u 
 
   <span class="nv">$win</span>+Tab                 <span class="nv">$exe</span> i3fyra -t r
   <span class="nv">$win</span>+Shift+Tab           <span class="nv">$exe</span> i3fyra -t l 
@@ -1579,6 +1604,8 @@ had never let her down.
   for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;sublime_text&quot;</span><span class="o">]</span>  title_format <span class="s2">&quot;sublime&quot;</span>,     <span class="nv">$tocont</span> A
   for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;sublime_notes&quot;</span><span class="o">]</span> title_format <span class="s2">&quot;todo&quot;</span>,        <span class="nv">$tocont</span> D
   for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;spacefm&quot;</span><span class="o">]</span>       title_format <span class="s2">&quot;spacefm&quot;</span>,     <span class="nv">$tocont</span> D
+  for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;^fmD</span>$<span class="s2">&quot;</span><span class="o">]</span>         title_format <span class="s2">&quot;fmD&quot;</span>,         <span class="nv">$tocont</span> D
+  for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;^fmB</span>$<span class="s2">&quot;</span><span class="o">]</span>         title_format <span class="s2">&quot;fmB&quot;</span>,         <span class="nv">$tocont</span> B
   for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;^surf</span>$<span class="s2">&quot;</span><span class="o">]</span>        title_format <span class="s2">&quot;surf&quot;</span>,        <span class="nv">$tocont</span> D
   for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;irssi&quot;</span><span class="o">]</span>         title_format <span class="s2">&quot;irssi&quot;</span>,       <span class="nv">$tocont</span> D
   for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">&quot;ncmpcpp&quot;</span><span class="o">]</span>       title_format <span class="s2">&quot;ncmpcpp&quot;</span>,     <span class="nv">$tocont</span> B
@@ -1609,6 +1636,54 @@ had never let her down.
 
   <span class="nv">$exe</span> i3fyra -l <span class="s1">&#39;AB=-370 BD=250 AC=-75&#39;</span>
   <span class="nv">$exe</span> polybar -c ~/.config/polybar/budbar -r example <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+
+<span class="c1"># &gt;&gt;&gt; modes &lt;&lt;&lt;</span>
+
+mode <span class="s2">&quot;topleft&quot;</span> <span class="o">{</span>
+  bindsym <span class="nv">$left</span> resize grow left <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$right</span> resize shrink left <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym <span class="nv">$down</span> resize shrink up <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$up</span> resize grow up <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym Return mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+  bindsym Escape mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+<span class="o">}</span>
+
+mode <span class="s2">&quot;topright&quot;</span> <span class="o">{</span>
+  bindsym <span class="nv">$left</span> resize shrink right <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$right</span> resize grow right <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym <span class="nv">$down</span> resize shrink up <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$up</span> resize grow up <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym Return mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+  bindsym Escape mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+<span class="o">}</span>
+
+mode <span class="s2">&quot;bottomleft&quot;</span> <span class="o">{</span>
+  bindsym <span class="nv">$left</span> resize grow left <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$right</span> resize shrink left <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym <span class="nv">$down</span> resize grow down <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$up</span> resize shrink down <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym Return mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+  bindsym Escape mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+<span class="o">}</span>
+
+mode <span class="s2">&quot;bottomright&quot;</span> <span class="o">{</span>
+  bindsym <span class="nv">$left</span> resize shrink right <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$right</span> resize grow right <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym <span class="nv">$down</span> resize grow down <span class="m">10</span> px or <span class="m">10</span> ppt
+  bindsym <span class="nv">$up</span> resize shrink down <span class="m">10</span> px or <span class="m">10</span> ppt
+
+  bindsym Return mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+  bindsym Escape mode <span class="s2">&quot;default&quot;</span>, title_format <span class="s2">&quot; &quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># bindsym $mod+r mode &quot;resize&quot;</span>
 
 <span class="c1"># &gt;&gt;&gt; notes &lt;&lt;&lt;</span>
 

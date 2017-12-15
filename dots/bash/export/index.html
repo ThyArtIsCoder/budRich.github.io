@@ -74,6 +74,17 @@
                         
                       
                       
+                        <li class="post-in-tree"><a href="https://budrich.github.io/blog/i3_size_matters/"><span class="tree-date">15</span>|<span>i3_size_matters</span></a></li>
+                      
+                    
+                  
+                    
+                      
+                      
+                      
+                      
+                      
+                      
                         <li class="post-in-tree"><a href="https://budrich.github.io/blog/video_fyra/"><span class="tree-date">02</span>|<span>video_fyra</span></a></li>
                       
                     
@@ -1360,6 +1371,7 @@ export EDITOR=vim
 export PAGER=&#39;less -RS&#39;
 export SYSTEMD_LESS=RSMK
 export XDG_CONFIG_HOME=&quot;${HOME}/.config&quot;
+
 export LESS_TERMCAP_mb=$&#39;\E[1;31m&#39;
 export LESS_TERMCAP_md=$&#39;\E[1;36m&#39;
 export LESS_TERMCAP_me=$&#39;\E[0m&#39;
@@ -1368,15 +1380,18 @@ export LESS_TERMCAP_so=$&#39;\E[01;44;33m&#39;
 export LESS_TERMCAP_ue=$&#39;\E[0m&#39;
 export LESS_TERMCAP_us=$&#39;\E[1;32m&#39;
 
-QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt5ct
 
-export GEM_HOME=$(ruby -e &#39;print Gem.user_dir&#39;)
+GEM_HOME=$(ruby -e &#39;print Gem.user_dir&#39;)
+export GEM_HOME
 
 PATH=&quot;$HOME/.gem/ruby/2.4.0/bin:$HOME/bin:$HOME/src:$HOME/rumpa:$HOME/.local/bin:$PATH&quot;
 PATH=&quot;$(ruby -e &#39;print Gem.user_dir&#39;)/bin:$PATH&quot;
 PATH=&quot;$PATH:$HOME/.rvm/bin&quot;
 # PKG_CONFIG_PATH=&quot;/usr/share:$PKG_CONFIG_PATH&quot;
 export PATH
+
+# syntax:bash
 </code></pre></div>
 </div>
 

@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>i3_size_matters</title>
+      <link>https://budrich.github.io/blog/i3_size_matters/</link>
+      <pubDate>Fri, 15 Dec 2017 22:51:49 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/i3_size_matters/</guid>
+      <description>I just recorded and uploaded a video to youtube, where i show a technique to resize floating window by moving the corners and still being able to resize tiling windows with the same keybindings.
+sizematters.gif   The config file and script shown in the video can be found on GitHub.</description>
+    </item>
+    
+    <item>
       <title>video_fyra</title>
       <link>https://budrich.github.io/blog/video_fyra/</link>
       <pubDate>Sat, 02 Dec 2017 19:27:11 +0100</pubDate>

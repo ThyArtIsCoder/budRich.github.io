@@ -2,7 +2,7 @@
 # .xinitrc - curated by budRich
 
 xset -b b off
-xrdb -merge $HOME/.Xresources
+xrdb -merge "$HOME/.Xresources"
 # xrandr --output eDP-1 --auto --left-of HDMI-1 --primary &
 hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png \
   -tint "$(xrdb -query | awk '/\*background/ {print $2}')"
@@ -13,7 +13,7 @@ dunst > /dev/null 2>&1 &
 # xinput set-prop 17 139 0
 urxvtd -q -o -f
 dropbox start &
-
+thunar --daemon &
 # igi &
 
 killall polybar

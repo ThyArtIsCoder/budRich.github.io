@@ -20,6 +20,8 @@
 #include </home/bud/.xres/i3wm>
 #include </home/bud/.xres/dmenu>
 
+Xcursor.theme: Win8
+
 ! #include </home/bud/.xres/rofi>
 
 ! syntax:ssExcla

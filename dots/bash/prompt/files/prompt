@@ -85,7 +85,7 @@ prompt_generator() {
   local newpth=""
   local d=
   apa=( ${pth//\//' '} )
-  
+
   for d in ${apa[@]}; do
     [[ $d = '~' ]] && newpth='~' && continue
     # if first char is '.', grab the second
@@ -93,7 +93,9 @@ prompt_generator() {
       && newpth+="/${d:1:1}" || newpth+="/${d:0:1}"
   done
 
-  PS1="${psc}${timmy} ${W}${newpth} ${B}>${RESET} "
+  PS1="${psc}${timmy} ${W}${newpth} ${B}>${RESET} " 
+  PS1+=""
+  # PS1='\m'
   unset timer
 }
 
@@ -101,3 +103,4 @@ prompt_generator() {
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=prompt_generator
 
+# syntax:bash

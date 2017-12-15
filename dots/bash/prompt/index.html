@@ -74,6 +74,17 @@
                         
                       
                       
+                        <li class="post-in-tree"><a href="https://budrich.github.io/blog/i3_size_matters/"><span class="tree-date">15</span>|<span>i3_size_matters</span></a></li>
+                      
+                    
+                  
+                    
+                      
+                      
+                      
+                      
+                      
+                      
                         <li class="post-in-tree"><a href="https://budrich.github.io/blog/video_fyra/"><span class="tree-date">02</span>|<span>video_fyra</span></a></li>
                       
                     
@@ -1443,7 +1454,7 @@ prompt_generator<span class="o">()</span> <span class="o">{</span>
   <span class="nb">local</span> <span class="nv">newpth</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
   <span class="nb">local</span> <span class="nv">d</span><span class="o">=</span>
   <span class="nv">apa</span><span class="o">=(</span> <span class="si">${</span><span class="nv">pth</span><span class="p">//</span><span class="se">\/</span><span class="p">/</span><span class="s1">&#39; &#39;</span><span class="si">}</span> <span class="o">)</span>
-  
+
   <span class="k">for</span> d in <span class="si">${</span><span class="nv">apa</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
     <span class="o">[[</span> <span class="nv">$d</span> <span class="o">=</span> <span class="s1">&#39;~&#39;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">newpth</span><span class="o">=</span><span class="s1">&#39;~&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">continue</span>
     <span class="c1"># if first char is &#39;.&#39;, grab the second</span>
@@ -1451,13 +1462,17 @@ prompt_generator<span class="o">()</span> <span class="o">{</span>
       <span class="o">&amp;&amp;</span> <span class="nv">newpth</span><span class="o">+=</span><span class="s2">&quot;/</span><span class="si">${</span><span class="nv">d</span><span class="p">:</span><span class="nv">1</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nv">newpth</span><span class="o">+=</span><span class="s2">&quot;/</span><span class="si">${</span><span class="nv">d</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span>
   <span class="k">done</span>
 
-  <span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">psc</span><span class="si">}${</span><span class="nv">timmy</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">W</span><span class="si">}${</span><span class="nv">newpth</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">B</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">${</span><span class="nv">RESET</span><span class="si">}</span><span class="s2"> &quot;</span>
+  <span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">psc</span><span class="si">}${</span><span class="nv">timmy</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">W</span><span class="si">}${</span><span class="nv">newpth</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">B</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">${</span><span class="nv">RESET</span><span class="si">}</span><span class="s2"> &quot;</span> 
+  <span class="nv">PS1</span><span class="o">+=</span><span class="s2">&quot;&quot;</span>
+  <span class="c1"># PS1=&#39;\m&#39;</span>
   <span class="nb">unset</span> timer
 <span class="o">}</span>
 
 <span class="c1"># https://unix.stackexchange.com/a/65312</span>
 <span class="nb">trap</span> <span class="s1">&#39;timer_start&#39;</span> DEBUG
 <span class="nv">PROMPT_COMMAND</span><span class="o">=</span>prompt_generator
+
+<span class="c1"># syntax:bash</span>
 </code></pre></div>
 </div>
 

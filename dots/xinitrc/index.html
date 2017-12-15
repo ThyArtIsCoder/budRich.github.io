@@ -74,6 +74,17 @@
                         
                       
                       
+                        <li class="post-in-tree"><a href="https://budrich.github.io/blog/i3_size_matters/"><span class="tree-date">15</span>|<span>i3_size_matters</span></a></li>
+                      
+                    
+                  
+                    
+                      
+                      
+                      
+                      
+                      
+                      
                         <li class="post-in-tree"><a href="https://budrich.github.io/blog/video_fyra/"><span class="tree-date">02</span>|<span>video_fyra</span></a></li>
                       
                     
@@ -1374,7 +1385,7 @@ life.
 <span class="c1"># .xinitrc - curated by budRich</span>
 
 xset -b b off
-xrdb -merge <span class="nv">$HOME</span>/.Xresources
+xrdb -merge <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.Xresources&quot;</span>
 <span class="c1"># xrandr --output eDP-1 --auto --left-of HDMI-1 --primary &amp;</span>
 hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png <span class="se">\</span>
   -tint <span class="s2">&quot;</span><span class="k">$(</span>xrdb -query <span class="p">|</span> awk <span class="s1">&#39;/\*background/ {print $2}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
@@ -1385,7 +1396,7 @@ dunst &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><sp
 <span class="c1"># xinput set-prop 17 139 0</span>
 urxvtd -q -o -f
 dropbox start <span class="p">&amp;</span>
-
+thunar --daemon <span class="p">&amp;</span>
 <span class="c1"># igi &amp;</span>
 
 killall polybar
