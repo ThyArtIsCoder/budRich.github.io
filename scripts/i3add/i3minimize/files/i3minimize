@@ -1,0 +1,137 @@
+#!/bin/bash
+
+NAME="i3minimize"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-21"
+UPDATED="2017-12-21"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  state=($(i3list))
+
+  pos=${state[4]}   #  Active window position (b|e|m|g|i)
+  cnt=${state[7]}   #  Active window container (A|B|C|D|X)
+  wid=${state[9]}   #  Active window id (con_id)
+
+
+  if [[ $cnt = X ]]; then
+    [[ $pos != 'g' ]] && fs=t || fs=f
+    # keep floating state in a var
+    i3var set "hidden${wid}" "$fs"
+    i3-msg -q "[con_id=${wid}]" move scratchpad
+  else
+    # if it is handled by i3fyra and active
+    # hide the container
+    i3fyra -z "$cnt"
+  fi
+ 
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3list
+"
+
+about='
+`i3minimize` - Minimize active window
+
+SYNOPSIS
+--------
+
+`i3minimize` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+Depending on the state of active window, `i3minimize` 
+does different things.  
+
+
+|       **window state**      |      **action**        
+|:----------------------------|:---------------------  
+|floating                     | send to scratchpad 
+|tiled, not handled by i3fyra | send to scratchpad
+|tiled, handled by i3fyra     | hide parent container  
+
+
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+DEPENDENCIES
+------------
+
+i3list
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

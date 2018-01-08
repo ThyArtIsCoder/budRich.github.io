@@ -1,0 +1,241 @@
+#!/bin/bash
+
+NAME="i3zen"
+VERSION="0.011"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-07-19"
+UPDATED="2017-12-17"
+
+I3ZEN_WORKSPACE=${I3ZEN_WORKSPACE}
+I3ZEN_SIZE=${I3ZEN_SIZE:-60} 
+
+alst=($(i3list -m centerzen))
+
+AWW=${alst[0]}   #  current workspace
+AWP=${alst[4]}   #  Active window position (b|e|m|g|i)
+AWC=${alst[7]}   #  Active window container (A|B|C|D|X)
+AWI=${alst[9]}   #  Active window id (con_id)
+TWW=${alst[15]}  #  Target window workspace
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  echo "\
+  $AWW
+  $AWP
+  $AWC
+  $AWI
+  $TWW"
+
+
+  # if zen ws doesnt exist, create zen layout.
+  if [[ $TWW = X ]]; then
+    [[ -n $I3ZEN_WORKSPACE ]] && TWW=$I3ZEN_WORKSPACE \
+    || TWW=$(($(i3-msg -t get_workspaces | awk -F':' -v RS=',' ' \
+                $1~"num"{fws=$2}
+                END{print fws}
+             ')+1))
+
+    i3-msg -q workspace $TWW
+    i3gw leftzen
+    i3gw centerzen
+    i3gw rightzen
+    i3-msg "[con_mark=leftzen]" \
+      move to workspace $TWW, layout splith
+    i3-msg "[con_mark=rightzen]" \
+      move to workspace $TWW, move to mark leftzen
+    i3-msg "[con_mark=centerzen]" \
+      move to workspace $TWW, move to mark leftzen
+    i3-msg "[con_mark=leftzen]" move left
+    i3-msg "[con_mark=rightzen]" move right
+    i3-msg "[con_mark=centerzen]" split h, layout tabbed
+    [[ $AWP != g ]] && fs=t || fs=f
+    i3-msg "[con_id=${AWI}]" \
+      move to workspace $TWW, floating disable, \
+      move to mark centerzen
+    i3var set "zenwin${AWI}" "${AWW}-${AWC}-$fs"
+    i3-msg "[con_mark=centerzen]" \
+      mark tmpzen, focus, focus parent
+    i3-msg mark centerzen
+    i3-msg "[con_mark=tmpzen]" kill
+    i3-msg "[con_id=${AWI}]" focus
+    
+
+    # size the container.
+    # 33% is the initial width of the container
+    # if I3ZEN_SIZE equals 33, don't resize
+    if [[ $I3ZEN_SIZE -ne 33 ]]; then
+      perca=$((I3ZEN_SIZE-33))
+      # if perca is less then 0, shrink the container, invert perca
+      dir=grow
+      [[ $perca -lt 0 ]] && perca=$((perca*-1)) && dir=shrink
+      i3-msg "[con_id=${AWI}]" \
+        resize $dir width $perca or $perca ppt
+    fi
+  # zen exist but current window isn't there. Send it to zen.
+  elif [[ $TWW != "${AWW}" ]]; then
+    i3-msg "[con_id=${AWI}]" \
+      move to workspace $TWW, \
+      floating disable, \
+      move to mark centerzen, focus
+    i3var set "zenwin${AWI}" "${AWW}-${AWC}-$fs"
+    i3-msg -q workspace $TWW
+  # window is already in zen, send it back to its original ws
+  elif [[ $AWP != g ]]; then
+    mrk=$(i3var get zenwin${AWI})
+    mrk=(${mrk//'-'/' '})
+
+    # "${AWW}-${AWC}-$fs"
+    i3-msg "[con_id=${AWI}]" floating enable, move to workspace "${mrk[0]}"
+    # if zen is empty, kill the zen, let it die
+    zct=$(i3-msg -t get_tree | awk -v RS=',' -F':' \
+      ' BEGIN{hit="0"}
+        hit=="2" && $1=="\"focus\"" {print $2;exit}
+        hit=="1" && $1=="\"swallows\"" && $2=="[]}]"{hit="2"}
+        $1=="\"marks\"" && $2 ~ "centerzen" {hit="1"}
+      ')
+    echo the rich "${zct}"
+    if [[ $zct = '[]' ]] || [[ -z $zct ]]; then
+      i3-msg "[con_mark=leftzen]" kill
+      i3-msg "[con_mark=rightzen]" kill
+      i3-msg "[con_mark=centerzen]" kill
+      # echo the poor
+    fi
+    i3-msg -q workspace "${mrk[0]}"
+    if [[ ${mrk[1]} != X ]]; then
+      i3-msg "[con_id=${AWI}]" focus
+      i3fyra -m ${mrk[1]}
+    elif [[ ${mrk[2]} != f ]]; then
+      i3-msg "[con_id=${AWI}]" floating disable
+    fi
+    
+    i3-msg "[con_id=${AWI}]" focus
+
+    # clear variable
+    i3var set "zenwin${AWI}"
+  # window is on zen ws, but not in zen container (floating)
+  else
+    [[ $AWP != g ]] && fs=t || fs=f
+    i3-msg "[con_id=${AWI}]" \
+      floating disable, move to mark centerzen, focus
+    i3var set "zenwin${AWI}" "${AWW}-${AWC}-$fs"
+  fi
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3(1) i3list(1) i3gw(1) i3var(1) i3fyra(1) i3-msg -q workspace(1)
+"
+
+about='
+`i3zen` - Send windows to the zenter
+
+SYNOPSIS
+--------
+
+`i3zen` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+Put the active window in a tabbed container between two ghostswindows (centered) on
+a *clean* workspace. If the window already is in *ZenMode*, 
+move it back to it'"'"'s original workspace. If the window is not in zen but
+another window is, both of them will be zen in a tabbed
+container.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+ENVIRONMENT
+-----------
+
+`I3ZEN_WORKSPACE`  
+  set this to the workspace number you want to use 
+  for zen leave it empty if you want the script to 
+  use the next empty ws.
+
+`I3ZEN_SIZE`  
+  Percent of the screenwidth the zen window is.
+  Defaults to 60
+
+
+DEPENDENCIES
+------------
+
+i3wm  
+i3list  
+i3var  
+i3fyra  
+i3gw  
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+

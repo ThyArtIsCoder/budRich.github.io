@@ -11,6 +11,36 @@
     
     
     <item>
+      <title>new_ass_features</title>
+      <link>https://budrich.github.io/blog/new_ass_features/</link>
+      <pubDate>Wed, 03 Jan 2018 13:37:07 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/new_ass_features/</guid>
+      <description>I have made lots of small updates and additions to i3ass the last couple of weeks. The changes might seem small and subtle, but they have improved the experience a lot.
+I can now hide an active a container by running i3run on the active window, this is a much better way then using the move commands all the time. And floating windows now appear centered to the mouse position, but adjusted to the screenedges.</description>
+    </item>
+    
+    <item>
+      <title>i3_flipping_tabs</title>
+      <link>https://budrich.github.io/blog/i3_flipping_tabs/</link>
+      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/i3_flipping_tabs/</guid>
+      <description>I have gotten some requests on an isolated version of i3fyra&amp;rsquo;s tabswitching function. And this morning I sat down to try a new way to do it, and it worked .. pretty, pretty, pretty good :)
+Vanilla i3 doesn&amp;rsquo;t have a separate function for switching tabs, instead we use the normal focus [left|right]. This is not so well suited for tabs since if one focus right when the last tab is active, the focus will pop out to the container to the right if there is one.</description>
+    </item>
+    
+    <item>
+      <title>ass_divided</title>
+      <link>https://budrich.github.io/blog/ass_divided/</link>
+      <pubDate>Sat, 23 Dec 2017 12:51:15 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/blog/ass_divided/</guid>
+      <description>I have divided i3ass in two repositories, i3ass and i3add (i3 additions). My thought is that i3ass will be a more serious set of tools. While i3add will be more experimental and can be seen as a showcase of uses for i3ass. I do use all i3add scripts in my personal, daily workflow.
+   i3ass function     i3var Set or get a i3 variable   i3fyra An advanced simple gridbased tiling layout   i3run Run, Raise or hide windows   i3list List attributes of i3wm   i3get Return information about i3wm   i3flip Tabswitching done right   i3add function   i3cast Create and upload screen recordings   i3Kornhe Resize windows by moving the corners   i3minimize Minimize active window   i3monocle Maximize active window   i3zen Send windows to the zenter   i3term Launch a command in a new urxvt window   i3wswp Switch workspace and wallpaper    Installation i3add will have a installation script similar to the old install.</description>
+    </item>
+    
+    <item>
       <title>i3_size_matters</title>
       <link>https://budrich.github.io/blog/i3_size_matters/</link>
       <pubDate>Fri, 15 Dec 2017 22:51:49 +0100</pubDate>

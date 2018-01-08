@@ -1,23 +1,21 @@
 shopt -s histappend
 shopt -s checkwinsize
-set -o vi
+shopt -s checkhash
+# shopt -s globstar
+# shopt -s hostcomplete
+shopt -s nocasematch
+shopt -s direxpand
 
-bind 'set show-mode-in-prompt on'
-# local G="\[\033[0;32m\]"    # green
-# local Y="\[\033[0;33m\]"    # yellow
-# local B="\[\033[0;34m\]"
-# local RESET="\[\033[0;37m\]"
-bind 'set vi-ins-mode-string '
-bind 'set vi-cmd-mode-string !'
+# turn off control flow ^Q ^S keys
+stty -ixon
+
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# https://github.com/seebi/dircolors-solarized
 if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" \
-  || eval "$(dircolors -b)"
-  if [ -f $HOME/.dir_colors/soldark ]; then
-    eval "$(dircolors $HOME/.dir_colors/soldark)"
-  # https://github.com/seebi/dircolors-solarized
-  fi
+  test -r ~/.dir_colors/soldark \
+    && eval "$(dircolors -b ~/.dir_colors/soldark)" \
+    || eval "$(dircolors -b)"
 fi
 
 # enable bash completion in interactive shells

@@ -5,24 +5,33 @@
     <link>https://budrich.github.io/dots/xres/</link>
     <description>Recent content in xres on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Sep 2017 16:37:39 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Dec 2017 23:07:59 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/dots/xres/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>dmenu</title>
-      <link>https://budrich.github.io/dots/xres/dmenu/</link>
-      <pubDate>Thu, 23 Nov 2017 23:50:31 +0100</pubDate>
+      <title>xresources</title>
+      <link>https://budrich.github.io/dots/xres/xresources/</link>
+      <pubDate>Mon, 18 Dec 2017 23:20:24 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/dmenu/</guid>
-      <description>I use dmenu2, which is a patched version of dmenu. The main reason i use this instead of vanilla dmenu is so that I can set its appearance in Xresources</description>
+      <guid>https://budrich.github.io/dots/xres/xresources/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xft</title>
+      <link>https://budrich.github.io/dots/xres/xft/</link>
+      <pubDate>Sat, 16 Dec 2017 23:16:46 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/xft/</guid>
+      <description> xft </description>
     </item>
     
     <item>
       <title>urxvt</title>
       <link>https://budrich.github.io/dots/xres/urxvt/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:41 +0200</pubDate>
+      <pubDate>Sat, 16 Dec 2017 23:16:26 +0100</pubDate>
       
       <guid>https://budrich.github.io/dots/xres/urxvt/</guid>
       <description>Nothing special. I really like to be able to change font (and font-size) on the fly, there are times when you want to read the output and theres times you just want to monitor the output.
@@ -30,30 +39,30 @@ I am planning to add something similar to be able to switch between a dark and l
     </item>
     
     <item>
-      <title>xft</title>
-      <link>https://budrich.github.io/dots/xres/xft/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:41 +0200</pubDate>
+      <title>i3wm</title>
+      <link>https://budrich.github.io/dots/xres/i3wm/</link>
+      <pubDate>Sat, 16 Dec 2017 23:11:16 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/xft/</guid>
-      <description></description>
+      <guid>https://budrich.github.io/dots/xres/i3wm/</guid>
+      <description> i3wm </description>
+    </item>
+    
+    <item>
+      <title>dmenu</title>
+      <link>https://budrich.github.io/dots/xres/dmenu/</link>
+      <pubDate>Sat, 16 Dec 2017 23:10:24 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xres/dmenu/</guid>
+      <description> dmenu </description>
     </item>
     
     <item>
       <title>color</title>
       <link>https://budrich.github.io/dots/xres/color/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
+      <pubDate>Sat, 16 Dec 2017 23:07:59 +0100</pubDate>
       
       <guid>https://budrich.github.io/dots/xres/color/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>i3wm</title>
-      <link>https://budrich.github.io/dots/xres/i3wm/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:40 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/dots/xres/i3wm/</guid>
-      <description></description>
+      <description> color </description>
     </item>
     
   </channel>

@@ -1,0 +1,342 @@
+#!/bin/bash
+
+NAME="budlock"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-24"
+UPDATED="2017-12-24"
+
+# Based on https://github.com/pavanjadhaw/betterlockscreen
+# Original script by Pavan Jadhaw
+
+BUDLOCK_FOLDER=${BUDLOCK_FOLDER:-"$HOME"}
+
+lock(){
+  local trg
+  local startdim
+
+  # startdim=$(xbacklight -get) startdim=${startdim%.*}
+
+  trg="$(checkfile)"
+  [[ $quite = 1 ]] && exit
+  pkill -u "$USER" -USR1 dunst
+
+  i3lock \
+  -i "$trg" \
+  --timepos="x-90:h-ch+30" \
+  --datepos="tx+24:ty+25" \
+  --clock --datestr "Type password to unlock..." \
+  --insidecolor=00000000 --ringcolor=ffffffff --line-uses-inside \
+  --keyhlcolor=d23c3dff --bshlcolor=d23c3dff --separatorcolor=00000000 \
+  --insidevercolor=fecf4dff --insidewrongcolor=d23c3dff \
+  --ringvercolor=ffffffff --ringwrongcolor=ffffffff --indpos="x+280:h-70" \
+  --radius=20 --ring-width=3 --veriftext="" --wrongtext="" \
+  --textcolor="ffffffff" --timecolor="ffffffff" --datecolor="ffffffff"
+
+  budlock -lrq
+  sleep 1 ; xset dpms force off
+  # enable notifications once unlocked
+  pkill -u "$USER" -USR2 dunst
+}
+
+wall(){
+  local trg
+
+  trg="$(checkfile)"
+  [[ $quite != "1" ]] \
+    && hsetroot -fill "$trg" \
+    && i3var set currentwp ${trg/${BUDLOCK_FOLDER}\//}
+}
+
+main(){
+
+  while getopts :vhlwqrc option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      q) quite=1           ;;
+      r) random=1          ;;
+      c) current=1         ;;
+      l) ACTION=lock       ;;
+      w) ACTION=wall       ;;
+      h) printinfo && exit ;;
+      *) printinfo && exit ;;
+    esac
+  done
+
+  shift
+
+  if [[ $ACTION =~ wall|lock ]]; then
+    [[ $1 =~ dim|blur|dimblur ]] \
+      && EFFECT="$1" && shift
+    FIL="$1"
+
+    [[ $random = 1 ]] \
+      && FIL=$(ls "${BUDLOCK_FOLDER}/"*.png | sort -R | head -1) \
+      && FIL=${FIL##*/}
+
+    if [[ $current = 1 ]]; then
+      FIL=$(i3var get currentwp)
+      if [[ -n $EFFECT ]]; then
+        curef=${FIL%/*} curef=${curef#*/}
+        [[ $curef = $EFFECT ]] && EFFECT=""
+      fi
+      FIL=${FIL##*/}
+    fi
+
+    if [[ -z "$FIL" ]]; then
+      latest=${BUDLOCK_FOLDER}
+      [[ $ACTION = lock ]] && latest+='/lock'
+      [[ -n $EFFECT ]] && latest+="/$EFFECT"
+      FIL=$(ls -t "${latest}/"*.png | head -1)
+      echo "found: $FIL"
+      if [[ -z $FIL ]]; then
+       [[ -n $EFFECT ]] \
+         && FIL=$(ls -t "${latest%/*}/"*.png | head -1) \
+         || FIL=$(ls -t "${BUDLOCK_FOLDER}/"*.png | head -1)
+      fi
+      FIL=${FIL##*/}
+    fi
+
+    [[ -z "$FIL" ]] \
+      && echo "no file, no lock" && exit
+    ${ACTION}
+  fi
+}
+
+generate(){
+  local type="$1"
+  local org="$2"
+  local eft="$3"
+  local trg
+
+  case "$type" in
+    wall   )
+      [[ -n $eft ]] \
+        && trg="${BUDLOCK_FOLDER}/wall/${eft}/${org##*/}" \
+        || trg="${BUDLOCK_FOLDER}/${org##*/}"
+
+      mkdir -p "${trg%/*}"
+      [[ $eft = dim ]] \
+        && convert "$org" -fill black -colorize 40% "$trg" \
+        || convert "$org" -blur 0x5 "$trg"
+    ;;
+
+    lock   )
+      [[ -n $eft ]] \
+        && trg="${BUDLOCK_FOLDER}/lock/${eft}/${org##*/}" \
+        || trg="${BUDLOCK_FOLDER}/lock/${org##*/}"
+
+      mkdir -p "${trg%/*}"
+
+      # ratio for rectangle to be drawn for time background on lockscreen
+      rectangles=" "
+      SR=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*')
+      for RES in $SR; do
+        SRA=(${RES//[x+]/ })
+        CX=$((${SRA[2]} + 25))
+        CY=$((${SRA[1]} - 30))
+        rectangles+="rectangle $CX,$CY $((CX+300)),$((CY-80)) "
+      done
+
+      convert "$org" -draw "fill black fill-opacity 0.4 $rectangles" "$trg"
+    ;;
+  esac
+}
+
+checkfile(){
+  local srcfil="${BUDLOCK_FOLDER}/$FIL"
+  srcfil="${srcfil%.*}.png"
+  local trg
+
+  # if srcfil doesnt exist generate it
+  if [[ ! -f "$srcfil" ]]; then
+    [[ ! -f "$FIL" ]] \
+      && echo "$FIL doesn't exist" && exit
+
+    trg="${BUDLOCK_FOLDER}/${FIL##*/}"
+    trg="${trg%.*}.png"
+    mkdir -p "${trg%/*}"
+
+    # generate resized img from FIL to trg
+    # resize image
+    y_res=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')
+    convert "$FIL" -resize "$y_res""^" -gravity center -extent "$y_res" "$trg"
+  fi
+
+  case "$ACTION" in
+    wall   )
+      if [[ -z $EFFECT ]]; then
+        trg="${BUDLOCK_FOLDER}/${srcfil##*/}"
+      elif [[ $EFFECT = "dimblur" ]]; then
+        trg="${BUDLOCK_FOLDER}/wall/${EFFECT}/${srcfil##*/}" \
+        src="${BUDLOCK_FOLDER}/wall/dim/${srcfil##*/}"
+        [[ ! -f "$src" ]] && generate wall "${srcfil}" "dim"
+      else
+        trg="${BUDLOCK_FOLDER}/wall/${EFFECT}/${srcfil##*/}" \
+        src="${BUDLOCK_FOLDER}/${srcfil##*/}"
+      fi
+      
+      [[ ! -f "$trg" ]] && generate wall "$src" "$EFFECT"
+    ;;
+
+    lock   )
+      if [[ -z $EFFECT ]]; then
+        trg="${BUDLOCK_FOLDER}/lock/${srcfil##*/}"
+        src="${BUDLOCK_FOLDER}/${srcfil##*/}"
+      elif [[ $EFFECT = "dimblur" ]]; then
+        trg="${BUDLOCK_FOLDER}/lock/${EFFECT}/${srcfil##*/}" \
+        src="${BUDLOCK_FOLDER}/wall/${EFFECT}/${srcfil##*/}"
+        if [[ ! -f "$src" ]]; then
+          [[ ! -f "${src/dimblur/dim}" ]] \
+            && generate wall "${BUDLOCK_FOLDER}/${srcfil##*/}" "dim"
+          generate wall "${BUDLOCK_FOLDER}/wall/dim/${srcfil##*/}" "dimblur"
+        fi
+      else
+        trg="${BUDLOCK_FOLDER}/lock/${EFFECT}/${srcfil##*/}" \
+        src="${BUDLOCK_FOLDER}/wall/${EFFECT}/${srcfil##*/}"
+        [[ ! -f "$src" ]] \
+          && generate wall "${BUDLOCK_FOLDER}/${srcfil##*/}" "${EFFECT}"
+      fi
+      
+      [[ ! -f "$trg" ]] && generate lock "$src" "$EFFECT"
+    ;;
+  esac
+
+  echo "$trg"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+imagemagick(1) i3lock(1) xbacklight(1)
+"
+
+about='
+`budlock` - Short description
+
+SYNOPSIS
+--------
+
+`budlock` [`-v`|`-h`] [`-g` *FILE*] [`-l`|`-w` [`dim`|`blur`|`dimblur`] *FILE*]
+
+DESCRIPTION
+-----------
+
+`budlock` generates an image to use for a lockscreen.
+It uses `imagemagick` to paint some graphical elements
+on the image and it also creates a dimmed and blurred
+version of each image. Before it locks the screen it
+uses `xbacklight` to dim the screen to a userset value,
+(defaults to 15%). If `budlock` is executed with
+`-w` flag the wallpaper will be set instead.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+`-q`
+  Don'"'"'t activate lock or change wallpaper.
+  But generate necessary images.
+
+`-l`
+  Locks the screen. 
+
+`-w`
+  Sets the desktop wallpaper
+
+`dim`
+  Uses a dimmed version of the image with `-l` and `-w`
+
+`blur`
+  Uses a blurred version of the image with `-l` and `-w`
+
+`dimblur`
+  Uses a blurred and dimmed version of the image with `-l` and `-w`
+
+FILES
+-----
+
+*FILE*
+  If option is generate(`-g`), *FILE* is any image
+  file to generate lockscreens from. If option is
+  lock(`-l`) or wallpaper(`-w`) *FILE* is the name
+  of a file without extension inside `BUDLOCK_FOLDER`.
+
+
+ENVIRONMENT
+-----------
+
+`BUDLOCK_FOLDER`
+  Path to the folder to store generated lock screens. 
+  Defaults to *~/Pictures/budlock*.
+
+
+DEPENDENCIES
+------------
+
+xbacklight
+imagemagick
+i3lock
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

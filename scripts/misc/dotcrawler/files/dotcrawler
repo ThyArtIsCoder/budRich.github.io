@@ -1,0 +1,131 @@
+#!/bin/bash
+
+NAME="dotcrawler"
+VERSION="0.011"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-17"
+UPDATED="2017-12-17"
+
+crawlfolder(){
+  for f in $1/*; do
+    [[ ${f##*/} =~ '_index.md'|'README.md' ]] && continue
+    [[ -d $f ]] && crawlfolder "$f" && continue
+    fsp="$(awk '$1=="fspath:"{{gsub("[\"]","",$2);print $2;exit}' "$f")"
+    fsp=${fsp/'~'/$HOME}
+    fil=${f/'content'/'static'}
+    fil=${fil%.md}
+    fn=${fil##*/}
+    fil+="/files/$fn"
+
+    echo
+    echo
+    echo "$f"
+    echo "$fsp"
+    echo "$fil"
+    echo "$fsd"
+
+    mkdir -p "${fsp%/*}"
+
+    [[ -f $fsp ]] && mv "$fsp" "$HOME/tmp/bu"
+    ln "$fil" "$fsp"
+  done
+}
+
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  crawlfolder "${1:-$HOME/box/Dropbox/www/content/dots}"
+  mkdir -p "$HOME/tmp/bu"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+"
+
+about='
+`dotcrawler` - Create links to dots from budlabs
+
+SYNOPSIS
+--------
+
+`SCRIPTNAME` [`-v`|`-h`] *DOT-FOLDER*
+
+DESCRIPTION
+-----------
+
+dot installer.
+crawl dots and scripts folder of www for each 
+md != _index.md
+if fspath: file exist
+   move to ~/tmp/bu/
+create link to fspath.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

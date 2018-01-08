@@ -1,0 +1,153 @@
+#!/bin/bash
+
+NAME="budrun"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2018-01-02"
+UPDATED="2018-01-02"
+
+launchers="
+ klavaro i3run -c Klavaro -e klavaro -g
+ sublime sublime
+ htop i3term htop
+ irssi i3term irssi
+ vivaldi i3run -c Vivaldi-stable -e vivaldi-snapshot
+ lxappearance i3run -i lxappearance -e lxappearance -g
+ ncmpcpp i3term ncmpcpp
+ qbittorrent i3run -i qbittorrent -e 'qbittorrent'
+ newsboat i3term newsboat
+"
+
+colors="
+#859900
+#DC322F
+#D33682
+#2AA198
+#B58900
+#CB4B16
+#6C71C4
+"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  OFS="${IFS}"
+  IFS=$'\n'
+
+  for f in ${launchers}; do
+    [[ -z $f ]] && continue
+    clr=""
+    while [[ -z $clr ]]; do 
+      clr=$(echo "$colors" | sort -R | head -1) ; done
+    af=($(echo "${f}" | awk '{i=$1;n=$2;$1="";$2="";$0=$0;print n"\n"i"\n"$0}'))
+    newlist+="<span lang='${af[2]}' foreground='${clr}' face='Font Awesome 5 Free'>"
+    newlist+="${af[1]}</span> ${af[0]}\n"
+  done
+
+  choice="$(echo -e "${newlist:0:-2}" | rofi -dmenu -i -markup-rows -p 'run: ' | cut -d\' -f2)"
+  [[ -n ${choice} ]] && eval "${choice}"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+rofi(1)
+"
+
+about='
+`budrun` - Simple launcher menu
+
+SYNOPSIS
+--------
+
+`budrun` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+When executed a `rofi` menu is displayed.
+The launchers to be displayed are defined and in the
+*launcher* variable. The first field of the line is
+supposed to be an icon, the second field is the name
+to display, the rest of the line is the command to be
+launched. A random color from the *colors* variable at the
+top of the script will be applied to the first field.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+DEPENDENCIES
+------------
+
+rofi
+fontawesome
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

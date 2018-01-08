@@ -1,0 +1,147 @@
+#!/bin/bash
+
+NAME="subpro"
+VERSION="0.011"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-19"
+UPDATED="2017-12-17"
+
+# folder containing .sublime-project files
+FLD_PRO="$HOME/tmp/kortisar/sublime/projects"
+trginstance=${SUBLIME_INSTANCE:-'sublime_main'}
+
+main(){
+  while getopts :vhi: option; do
+    case "${option}" in
+      i) trginstance="${OPTARG}" ;;
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  [[ $trginstance != "$SUBLIME_INSTANCE" ]] \
+    && shift $((OPTIND-1))
+
+  EXT='.sublime-project'
+  pfp="$FLD_PRO/$1$EXT"
+
+  [[ ! -f "$pfp" ]] && exit
+
+  # setup sublime, first make sure the right instance is running and activated
+  sid=$(i3run -g -i "$trginstance" -e subl)
+  [[ -z $sid ]] && exit
+
+  # if project is already open, exit
+  [[ $sid = $(i3get -t "[(]$1[)]") ]] && exit
+
+  sleep 0.2
+
+  # close the current project
+  subl --command "close_workspace"
+
+  # sleep to make sure we don't get an empty window
+  sleep 0.3
+
+  # load the right project
+  subl --project "$pfp"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+subpromen(1)
+"
+
+about='
+`subpro` - Switch sublime projects 
+
+SYNOPSIS
+--------
+
+`subpro` [`-v`|`-h`] *project-nane*
+
+DESCRIPTION
+-----------
+
+`subpro` closes the currently open project in
+`Sublime Text` and opens *project-name* in it'"'"'s
+place.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+FILES
+-----
+
+*FLD_PRO*
+  Folder containing .sublime-project files
+  defaults to: *~/tmp/kortisar/sublime/projects*
+
+DEPENDENCIES
+------------
+
+SublimeText
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

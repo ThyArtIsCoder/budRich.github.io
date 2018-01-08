@@ -1,0 +1,131 @@
+#!/bin/bash
+
+NAME="i3term"
+VERSION="0.021"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-15"
+UPDATED="2017-12-17"
+
+main(){
+  while getopts :vhc: option; do
+    case "${option}" in
+      c) cmd=${OPTARG} ;;
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  [[ -n $cmd ]] \
+    && shift $((OPTIND-1)) \
+    || cmd="$1"
+
+  name="$1"
+
+termcmd=$(cat <<- EOF
+urxvtc -name ${name} -e bash -c \
+'echo -ne "\e]0;'${name}'\007" && ${cmd} && bash' 
+EOF
+)
+
+  i3run -i "${name}" -e "${termcmd}"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3run(1), urxvt(1), i3(1)
+"
+
+about='
+`i3term` - Launch a command in a new urxvt window
+
+SYNOPSIS
+--------
+
+`i3term` [`-v`|`-h`] *COMMAND*
+
+DESCRIPTION
+-----------
+
+Uses i3run to run or raise a window with the instancename: 
+`COMMAND`. If no window is found, `COMMAND` is ran in a urxvt window 
+with the same instance name as `COMMAND`. When the command exits 
+window is cleared and returned to bash.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+DEPENDENCIES
+------------
+i3wm
+urxvt
+i3run
+
+
+EXAMPLES
+--------
+`bindsym Mod3+o exec --no-startup-id exec termrun htop`
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

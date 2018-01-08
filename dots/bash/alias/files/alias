@@ -1,33 +1,26 @@
-alias dlw='cd ~/Downloads/w'
-alias dls='cd ~/Downloads/s'
-alias dlp='cd ~/Downloads/p'
+#!/bin/bash
 
-alias cnf='cd /home/bud/.config'
-alias tmp='cd /tmp'
+alias o='xdg-open'
+alias x='startx'
+alias q='exit'
 
 alias cdd='cd -'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias dmenu='dmenu -fn "Fixedsys Excelsior 3.01\-L2 Mono" \
-  -nb $(xrdb -query | awk "/\*foreground/ {print \$2}") \
-  -nf $(xrdb -query | awk "/\*background/ {print \$2}") \
-  -sf $(xrdb -query | awk "/\*foreground/ {print \$2}") \
-  -sb $(xrdb -query | awk "/\*background/ {print \$2}")'  
-
 alias gc='git clone'
 alias tgz='tar xzf'
 
 # alias upp='sudo apt update && sudo apt upgrade'
 alias upp='sudo pacman -Syu'
-alias rbo='i3off && sudo reboot now'
-alias down='i3off && sudo shutdown now'
+alias rbo='i3off -r'
+alias down='i3off -d'
 
 alias lolban="postbanner -t '-f 3d.flf' -l '-p 10'"
 
 alias shr='. $HOME/.bashrc'
-alias q='exit'
+
 alias chx='chmod +x'
 
 alias ll='ls -lhoGg'
@@ -35,16 +28,10 @@ alias la='ls -alh'
 alias ls='ls --color=auto'
 alias lb='ls --color=none'
 
-alias pg='ps aux | head -n1; ps aux | grep -i'
 alias tf='tail -F -n200'
-alias top='top -ocpu'
-
-alias ip="ifconfig|grep broadcast"  # List IPs
 
 alias vi='vim'
 alias vim='vim -p'
-alias feh='feh --scale-down --no-screen-clip'
-
 
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
@@ -55,12 +42,12 @@ alias egrep='egrep --color=auto'
 alias hideme='history -d $((HISTCMD-1))'
 alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 
-alias src='cd src && ls'
 alias comps='i3-msg title_format "budlabs - compass" && clear && cd $HOME/www/static && compass watch'
 alias hugs='i3-msg title_format "budlabs - server" && clear && hugo server -s $HOME/www'
 alias ss='subl'
 
-alias pms='pacaur -Ss'
+alias pms='pacman -Ss'
+alias pas='pacaur -Ss'
 alias pmi='pacaur -S'
 alias pmr='sudo pacman -R'
 
@@ -68,11 +55,9 @@ alias pmr='sudo pacman -R'
 # alias smi='sudo checkinstall'
 # alias aptr='sudo apt remove'
 # alias debi='sudo gdebi'
-alias bibblan='sudo netctl restart wlo1-KgaBibliotek'
-alias donk='sudo netctl restart donk'
+
 alias umrk='i3-msg unmark'
 alias gtre='i3-msg -t get_tree | awk -v RS="," "{print \$0}" > /tmp/i3tree && subl /tmp/i3tree'
 alias yta='youtube-dl --geo-bypass --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/snd/y/%(title)s.%(ext)s" -i -x '
-alias ytd='youtube-dl --geo-bypass --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/vid/y/%(title)s.%(ext)s" -i '
+alias ytd='youtube-dl --geo-bypass -f '"'"'bestvideo[height<=480]+bestaudio/best[height<=480]'"'"' --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/vid/y/%(title)s.%(ext)s" -i '
 alias xrdbm='xrdb -merge /home/bud/.Xresources'
-alias pbr='polybar-msg cmd restart'

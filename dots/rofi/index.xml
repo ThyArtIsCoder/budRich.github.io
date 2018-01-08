@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rofi on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/rofi/</link>
+    <description>Recent content in rofi on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Dec 2017 23:13:17 +0100</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/rofi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>oneliner</title>
+      <link>https://budrich.github.io/dots/rofi/oneliner/</link>
+      <pubDate>Sat, 16 Dec 2017 23:13:17 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/rofi/oneliner/</guid>
+      <description>This rofi theme looks like dmenu with everything on one line. When it&amp;rsquo;s displayed it overlays my polybar.
+rofibudrunpoly.gif   In the image above i displays a launch menu invoked from the script known as budrun.</description>
+    </item>
+    
+  </channel>
+</rss>

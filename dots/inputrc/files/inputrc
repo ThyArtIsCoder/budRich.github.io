@@ -1,0 +1,70 @@
+$include /etc/inputrc
+
+set bell-style none
+
+set editing-mode vi
+
+set show-mode-in-prompt on
+set vi-ins-mode-string
+set vi-cmd-mode-string :
+
+# hmm
+set keyseq-timeout 0
+
+# Ignore case on tab completion
+set completion-ignore-case On
+
+# Never bug me for confirmation
+set completion-query-items 999999
+
+# Color completions as ls
+set colored-stats on
+
+# single tab to show sugestions
+# set show-all-if-unmodified on
+set show-all-if-ambiguous on
+
+# disable ^C after Ctrl+C
+set echo-control-characters off
+
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+
+# word jump with Ctrl+Right/Left
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
+# macros
+
+# Alt+Ctrl+L: 
+# end of line (\C-e)
+# appends "| less"
+# execute (\C-m) (equivalent to enter)
+"\e\C-l":"\C-e | less\C-m"
+
+# Alt+Ctrl+Y:
+# beginning of line (\C-a)
+# prepend 'yes |'
+# execute (\C-m)
+"\e\C-y":"\C-ayes | \C-m"
+
+# Alt+S
+# prepend with sudo
+# go to eol, without executing
+"\es":"\C-asudo \C-e"
+
+
+$if mode=vi
+set keymap vi-command
+# these are for vi-command mode
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+j:history-search-forward
+k:history-search-backward
+set keymap vi-insert
+# these are for vi-insert mode
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+$endif
+
+# syntax:ssHash

@@ -7,20 +7,17 @@ function lat() { ls -t | head -1 ;}
 adda(){
   al=$1
   shift 1
-  echo "alias $al='${@}'" >> $HOME/.bash/alias
+  echo -e "alias $al='${*//\'/\'\"\'\"\'}'" >> $HOME/.bash/alias
   . $HOME/.bashrc
 }
 
 cd() {
-    builtin cd "$@" && ls
+  builtin cd "$@" && pwd && ls
 }
 
-# https://wiki.archlinux.org/index.php/Man_page
-man() {
-    local width=$(tput cols)
-    [ $width -gt $MANWIDTH ] && width=$MANWIDTH
-    env MANWIDTH=$width \
-    man "$@"
+mcd(){
+  mkdir -p ${@}
+  cd ${@}
 }
 
 gmrk(){
@@ -60,14 +57,14 @@ pipi(){
   done
 }
 
-mcd(){
-  mkdir -p ${@}
-  cd ${@}
-}
-
 # colorize less.. find link, random dotfile...
 # fix cyan bottom bar and colors in general.
+# https://wiki.archlinux.org/index.php/Man_page
 man(){
+    local width=$(tput cols)
+    ((width>MANWIDTH)) && width=$MANWIDTH
+
+    MANWIDTH=$width \
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
     LESS_TERMCAP_se=$'\e[0m' \

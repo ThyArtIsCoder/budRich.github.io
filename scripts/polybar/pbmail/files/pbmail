@@ -1,0 +1,154 @@
+#!/bin/bash
+
+NAME="pbmail"
+VERSION="0.001"
+AUTHOR="unknown"
+CONTACT=''
+CREATED="2017-12-19"
+UPDATED="2017-12-19"
+
+# Requires https://www.google.com/settings/security/lesssecureapps for gmail.
+
+CONFIG_FILE="$HOME/tmp/copy.nfo"
+
+# Config file needs the following settings:
+#MAIL_SERVER="imap.domain.tld:993"
+#MAIL_USER="user@domain.tld"
+#MAIL_PASSWORD="secret"
+#MAIL_FOLDER="INBOX"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  if [[ ! -f "${CONFIG_FILE}" ]]; then
+    echo "${CONFIG_FILE}"
+    exit 33
+  fi
+
+  source "${CONFIG_FILE}"
+
+  MAIN_DOMAIN=$(expr match "${MAIL_SERVER}" '.*\.\(.*\..*\)' | awk -F ':' '{print $1}')
+
+  # Add https so xdg knows that it's a website
+  if [[ "${MAIN_DOMAIN}" != http* ]]; then
+    MAIN_DOMAIN="https://${MAIN_DOMAIN}"
+  fi
+
+  MAIL_FILE="/tmp/.mail"
+  URGENT_VALUE="100"
+
+GET_UNREAD=$(cat<<EOF
+? LOGIN "${MAIL_USER}" "${MAIL_PASSWORD}"
+? STATUS "${MAIL_FOLDER}" (unseen)
+? LOGOUT
+EOF
+)
+
+  echo "${GET_UNREAD}" | openssl s_client -connect "${MAIL_SERVER}" -crlf -ign_eof > "${MAIL_FILE}" 2>/dev/null 
+  UNREAD_COUNT=$(cat "${MAIL_FILE}" | grep -i "UNSEEN" | grep -oE "[0-9]*" | head -n 1)
+
+  # For security reasons
+  rm "${MAIL_FILE}"
+
+  if [[ "${UNREAD_COUNT}" = "" ]]; then
+    exit
+  fi
+
+  echo " ${UNREAD_COUNT}"
+
+  if [[ "${UNREAD_COUNT}" -ge URGENT_VALUE ]]; then
+    exit 33
+  fi
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+polybar(1)
+"
+
+about='
+`pbmail` - Outputs unread mail count
+
+SYNOPSIS
+--------
+
+`pbmail` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+`pbmail` is meant to be used with `polybar` to 
+display unread mail count.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+

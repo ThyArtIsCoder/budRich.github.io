@@ -1,0 +1,196 @@
+#!/bin/bash
+
+NAME="i3Kornhe"
+VERSION="0.011"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-12"
+UPDATED="2017-12-17"
+
+main(){
+  while getopts :vh option
+  do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  case "$1" in
+    left  ) varmode="topleft" tilesize="shrink width";;
+    right ) varmode="bottomright" tilesize="grow width";;
+    up    ) varmode="topright" tilesize="grow height" ;;
+    down  ) varmode="bottomleft" tilesize="shrink height" ;;
+    * ) exit ;;
+  esac
+
+  if [[ $(i3get -r f) =~ on$ ]]; then
+    # i3-msg title_format "Move $varmode corner"
+    i3-msg mode "$varmode"
+  else
+    i3-msg resize "$tilesize" 10 px or 10 ppt
+  fi
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3(1), i3get(1), https://i3wm.org/docs/userguide.html#binding_modes
+"
+
+about='
+`i3Kornhe` - Resize windows by moving the corners.
+
+SYNOPSIS
+--------
+
+`i3Kornhe` [`-v`|`-h`] *DIRECTION*
+
+DESCRIPTION
+-----------
+
+The script checks if the currently active window is
+floating. If it is floating the script will acrivate
+one of four modes depending on the direction. If the
+window is tiled, normal resize action is executed. 
+
+|**DIRECTION**|**MODE**|**TILED ACTION**|
+|:------------|:-------|:---------------|
+|left         |topleft     |shrink width|
+|right        |bottomright |grow width  |
+|up           |topright    |grow height |
+|down         |bottomleft  |shrink height
+
+The modes needs to be defined in the i3 config file.
+Below is an example on how the config file can look:  
+
+``` text
+bindsym Mod4+Control+left exec --no-startup-id i3Kornhe left
+bindsym Mod4+Control+down exec --no-startup-id i3Kornhe down
+bindsym Mod4+Control+up exec --no-startup-id i3Kornhe up
+bindsym Mod4+Control+right exec --no-startup-id i3Kornhe right
+
+mode "topleft" {
+        bindsym left resize grow left 10 px or 10 ppt
+        bindsym right resize shrink left 10 px or 10 ppt
+
+        bindsym down resize shrink up 10 px or 10 ppt
+        bindsym up resize grow up 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "topright" {
+        bindsym left resize shrink right 10 px or 10 ppt
+        bindsym right resize grow right 10 px or 10 ppt
+        
+        bindsym down resize shrink up 10 px or 10 ppt
+        bindsym up resize grow up 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "bottomleft" {
+        bindsym left resize grow left 10 px or 10 ppt
+        bindsym right resize shrink left 10 px or 10 ppt
+        
+        bindsym down resize grow down 10 px or 10 ppt
+        bindsym up resize shrink down 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "bottomright" {
+        bindsym left resize shrink right 10 px or 10 ppt
+        bindsym right resize grow right 10 px or 10 ppt
+        
+        bindsym down resize grow down 10 px or 10 ppt
+        bindsym up resize shrink down 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+```
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+FILES
+-----
+
+*~/.config/i3/config*
+  The i3 config file.
+
+DEPENDENCIES
+------------
+
+i3wm
+i3get
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+

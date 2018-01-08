@@ -1,0 +1,69 @@
+
+main_window_color = white
+state_flags_color = magenta
+state_line_color = cyan
+header_window_color = blue
+# hello
+color1 = blue
+color2 = blue
+
+playlist_display_mode = columns
+playlist_separate_albums = no
+playlist_show_remaining_time = yes
+
+song_columns_list_format = (80)$b[green]{t|f:Title} (7f)$b[blue]{lr}
+now_playing_prefix = $/b
+now_playing_suffix = $b
+
+#browser_display_mode = columns
+#browser_playlist_prefix = "$2playlist$9 "
+
+#song_library_format = {%t}|{%f}
+#current_item_prefix = $/b
+#current_item_suffix = $b
+#current_item_inactive_column_prefix = $/b
+#current_item_inactive_column_suffix = $b
+song_list_format = {%f}
+
+progressbar_look = "━━╸"
+progressbar_color = black
+progressbar_elapsed_color = blue
+
+#statusbar_color = black
+
+#song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+#alternative_header_first_line_format = $b$1▊▊▊▊▊$aqqu$/a$9 $8♬ {%t}|{%f} ♬ {$9}$1$atqq$/a▊▊▊▊▊$9$/b
+#alternative_header_second_line_format = {$5}▊{$9}{{$5$b %a$/b$9}{ {$5}▊{$9}{$8} ♪ {$9}{$6}▊{$9} $6%b$9}{ ($6%y$9)}}|{%D} {$6}{$9}{$6}▊{$9}
+
+#song_window_title_format = {%a - }{%t}{ (%b)}|{%f}
+
+follow_now_playing_lyrics = yes
+fetch_lyrics_for_current_song_in_background = yes
+store_lyrics_in_song_dir = yes
+
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.lyrics
+mpd_host = localhost
+mpd_port = 6601
+mpd_music_dir = ~/snd
+
+system_encoding = "UTF-8"
+#user_interface = alternative
+user_interface = classic
+
+allow_for_physical_item_deletion = yes
+ignore_leading_the = yes
+mouse_support = yes
+autocenter_mode = yes
+centered_cursor = yes
+
+header_visibility = no
+statusbar_visibility = no
+titles_visibility = no
+locked_screen_width_part = 60
+display_bitrate = yes
+external_editor = subl
+use_console_editor = no
+colors_enabled = yes
+
+# syntax:ssHash

@@ -1,0 +1,216 @@
+#!/bin/bash
+
+NAME="getlink"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-04"
+UPDATED="2017-12-17"
+
+crawl(){
+  for f in "$1"/* ; do
+    [[ -d "$f" ]] && crawl "$f" && continue
+    lst+="$f\n"
+  done
+}
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  ctg=${1:-$( \
+    printf '%s\n' budlabs github i3docs links pix |\
+    rofi -i -matching fuzzy -dmenu -p 'category: ')}
+
+  [[ ! $ctg =~ budlabs|github|i3docs|links|pix ]] \
+    && exit
+
+  FLD_REP="$HOME/rep"
+  FIL_I3D="$HOME/dox/doc/i3docs/docsource.html"
+  FIL_LNK="${ADD_LINK_FILE:-$HOME/dox/not/links.note}"
+
+  case "$ctg" in
+    budlabs )
+      lst=""
+      for l in blog budlime dots abouts i3ass scripts; do
+        crawl "$FLD_REP/budRich.github.io/$l"
+      done
+      sel=$(echo -e "${lst}" | \
+        awk -v ulla="$FLD_REP/budRich.github.io/" -F'/' '
+        $0 ~ /.html$/ \
+        && $0 !~ /quote.html$|banner.html$/ \
+        { 
+          gsub("/index.html","",$0)
+          gsub(ulla,"",$0)
+          if(NF!="1"){print $0}
+        }' \
+        | sort | rofi -i -matching fuzzy -dmenu -p 'budlabs: ')
+      echo -n "https://budrich.github.io/${sel}" | xsel -ib
+      echo -n "https://budrich.github.io/${sel}" | xsel -ip
+    ;;
+
+    github  ) 
+      lst=""
+      for l in budlime dots i3ass scripts; do
+        crawl "$FLD_REP/$l"
+      done
+      sel=$(echo -e "${lst}" | \
+        awk -v ulla="$FLD_REP/" '
+        $0 ~ /README.md$/ \
+        { 
+          gsub("/README.md","",$0)
+          gsub(ulla,"",$0)
+          print $0
+        }' \
+        | sort | rofi -i -matching fuzzy -dmenu -p 'github: ')
+      sel=$(echo "$sel" | awk -F'/' '{
+        if(NF=="1"){print $0}
+        if(NF!="1"){
+          for(i=1;i<NF+1;i++){
+            if(i==1){op=$i"/tree/master"}
+            if(i!=1){op=op"/"$i}
+          }
+          print op
+        }
+      }')
+    
+      echo -n "https://github.com/budRich/${sel}" | xsel -ib
+      echo -n "https://github.com/budRich/${sel}" | xsel -ip
+    ;;
+
+    i3docs  )
+      sel=$(awk '
+        $2~/^id=/{
+          gsub("id=\"","",$2)
+          gsub("\".*","",$2)
+          print $2
+        }
+      ' "$FIL_I3D" \
+      | sort | rofi -i -matching fuzzy -dmenu -p 'i3docs: ')
+      echo -n "https://i3wm.org/docs/userguide.html#${sel}" | xsel -ib
+      echo -n "https://i3wm.org/docs/userguide.html#${sel}" | xsel -ip
+    ;;
+
+    links   ) 
+      lst=($(awk '$1!="#" && $0!="" {
+        print $1 "/" $2 "|" $4
+      }' "$FIL_LNK"))
+      indx=$(printf '%s\n' "${lst[@]%|*}" \
+           | rofi -i -matching fuzzy -dmenu -format i -p 'link: ')
+      if [[ -n $indx ]]; then 
+        echo -n "${lst[$indx]#*|}" | xsel -ib
+        echo -n "${lst[$indx]#*|}" | xsel -ip
+      fi
+    ;;
+     
+    pix     ) ;;
+  esac
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+rofi(1), xclip(1)
+"
+
+about='
+`getlink` - Puts a link in the clipboard
+
+SYNOPSIS
+--------
+
+`getlink` [`-v`|`-h`] [*CATEGORY*]
+
+DESCRIPTION
+-----------
+
+When script is invoked without a CATEGORY
+a menu (rofi) is shown asking for category.
+A list of files from that category is shown
+in a menu. Selected file translates to a url 
+that is put both in primary selection and clipboard.
+
+**Available categories:**  
+
+  - budlabs (budrich.github.io links)
+  - github  (github.budrich.com links)
+  - i3docs  (i3 userguide links)
+  - links   (www bookmarks)
+  - pix     (uploads a image in ~/pix/r and return url)
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+DEPENDENCIES
+------------
+
+rofi
+xclip
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+

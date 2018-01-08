@@ -1,0 +1,12 @@
+[Default Applications]
+font/ttf=fontforge-usercreated-0.desktop;
+
+[Added Associations]
+font/ttf=fontforge-usercreated-0.desktop;
+video/x-matroska=mpv.desktop;
+video/x-msvideo=mpv.desktop;
+image/png=feh.desktop;
+image/jpeg=feh.desktop;
+video/mp4=mpv.desktop;
+text/plain=sublime_text.desktop;
+text/markdown=sublime_text.desktop;

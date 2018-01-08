@@ -1,0 +1,129 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+--[[
+Conky, a system monitor, based on torsmo
+
+Any original torsmo code is licensed under the BSD license
+
+All code written since the fork of torsmo is licensed under the GPL
+
+Please see COPYING for details
+
+Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+background = false,
+border_width = 1,
+]]
+
+conky.config = {
+  
+  out_to_console = false,
+  out_to_stderr = false,
+  extra_newline = false,
+
+  own_window_class = 'Conky',
+
+  stippled_borders = 0,
+  show_graph_scale = false,
+  show_graph_range = false,
+
+  update_interval = 3.0,
+  own_window = true,
+  own_window_type = 'normal',
+  use_spacer = 'right',
+  no_buffers = true,
+  cpu_avg_samples = 2,
+  net_avg_samples = 1,
+  gap_x = 35,
+  gap_y = 75,
+  uppercase = false,
+  minimum_height = 70,
+  minimum_width = 220,
+  alignment = 'bottom_left',
+  default_color = 'white',
+  default_outline_color = 'green',
+  default_shade_color = 'black',
+  draw_borders = false,
+  draw_graph_borders = false,
+  draw_outline = false,
+  draw_shades = false,
+  use_xft = true,
+  font = 'FixedFixedsys:size=12',
+
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  
+  xftalpha = 0.1,
+  total_run_times = 0,
+  double_buffer = true,
+  maximum_width = 1280,
+
+  override_utf8_locale = true
+}
+
+conky.text = [[
+${color grey}$color
+${color grey}$color
+]]
+
+--[[
+$hr
+${color #00ff87}            ██$color${color #5fff87}  $color${color #5fff5f}██                   $color
+${color #00ff87}    $color${color #5fff87}  $color${color #5fff5f}     ░██ ░██                   $color
+${color #5fff5f}  ██████   ░██ ░██  ██████   ████$color${color #87ff5f}███$color${color #87ff00} $color
+${color #5fff5f} ░░░░░░██  ░██ ░██ ░░░░$color${color #87ff5f}░░█$color${color #87ff00}█ ░░██░░░██$color
+${color #5fff5f}  ███████  ░█$color${color #87ff5f}█ ░$color${color #87ff00}██  ███████  ░██  ░██$color
+${color #5fff5f} ██$color${color #87ff5f}░░░$color${color #87ff00}░██  ░██ ░██ ██░░░░██  ░██  ░██$color
+${color #87ff00}░░████████ ███ ███░░███████$color${color #afff00}█ ███  ░██$color
+${color #87ff00} ░░░░░░░░ ░░░ ░░░$color${color #afff00}  ░░░░░░░░ ░░░   ░░ $color
+
+]]
+--[[
+old conf:
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 3
+total_run_times 0
+own_window yes
+own_window_type widget
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 220 70
+maximum_width 1280
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color e0e0e0
+default_shade_color black
+default_outline_color green
+alignment bottom_left
+gap_x 35
+gap_y 75
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer right
+
+
+TEXT
+${voffset 10}${color #ebdbb2}${font Ubuntu:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color #ebdbb2}${font Ubuntu:pixelsize=42}${time %d}${voffset -14}${color #ebdbb2}${font Ubuntu:pixelsize=22} ${time  %B} ${time %Y}${font}${voffset 24}${font Ubuntu:pixelsize=58}${offset -165}${time %A}${font}
+${voffset 8}${offset 12}${font Ubuntu:pixelsize=10}${color #ebdbb2}HD ${offset 5}$color${fs_free /home} / ${fs_size /home}${offset 15}${color #ebdbb2}RAM ${offset 5}$color$mem / $memmax${offset 15}${color #ebdbb2}CPU ${offset 5}$color${cpu cpu0}%${offset 15}${color #ebdbb2}DOWN$color${offset 5}${if_existing /proc/net/route eth1}${downspeed eth1}${else}${if_existing /proc/net/route wlan0}${downspeed wlan0}${else}${if_existing /proc/net/route enp0s29f7u1}${downspeed enp0s29f7u1}${endif}${endif}${endif}${offset 15}${color #ebdbb2}UP$color${offset 5}${if_existing /proc/net/route eth1}${upspeed eth1}${else}${if_existing /proc/net/route wlan0}${upspeed wlan0}${else}${if_existing /proc/net/route enp0s29f7u1}${upspeed enp0s29f7u1}${endif}${endif}${endif}
+]]

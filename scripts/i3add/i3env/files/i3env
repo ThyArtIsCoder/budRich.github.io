@@ -1,0 +1,28 @@
+#!/bin/bash
+
+export ZEN_WORKSPACE=3
+# Set this to the workspace number 
+# you want to use for zen
+
+export ZEN_SIZE=55
+# Percent of the screenwidth to zen
+# Defaults to 60
+
+export BUDLOCK_FOLDER="$HOME/.budlock"
+# Path to the folder to store generated lock screens. 
+
+export BUDLOCK_DIM=1
+# Amount in percent to dim the backlight before locking.
+
+export WORKSPACE_COMMAND_1="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
+         -tint $(xrdb -query | awk '/\*background/ {print $2}')"
+
+# export WORKSPACE_COMMAND_2="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
+#          -tint $(xrdb -query | awk '/\*color6:/ {print $2}')"
+         
+export WORKSPACE_COMMAND_3="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
+         -tint $(xrdb -query | awk '/\*color4:/ {print $2}')"
+
+export WORKSPACE_COMMAND_2="budlock -w"
+
+# Commands to execute when a workpace gets focus.

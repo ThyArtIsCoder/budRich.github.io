@@ -1,0 +1,107 @@
+shadow = true;
+no-dnd-shadow = true;
+no-dock-shadow = true;
+clear-shadow = true;
+shadow-radius = 5;
+shadow-offset-x = 5;
+shadow-offset-y = 5;
+shadow-opacity = 0.8;
+shadow-red = 0.05;
+shadow-green = 0.05;
+shadow-blue = 0.05;
+shadow-ignore-shaped = true;
+
+# >> shadow
+
+shadow-exclude = [
+    # the first two rules is a dirthack to make my bar not have a shadow.
+    "x<=3 && x2>= 1500 && y <= 30 && y2 >=750",
+    "x = 0 && y = 0 && override_redirect = true",
+    # make sure tiled windows doesn't have a shadow, might be desired when
+    # using gaps.
+    "!I3_FLOATING_WINDOW@:c",
+    # these rules makes sure the window title bar doesn't have a shadow.
+    "class_g = 'i3-frame'",
+    "_GTK_FRAME_EXTENTS@:c",
+    "name = 'Notification'",
+    "class_g = 'Conky'",
+    "class_g = 'Dunst'",
+    "class_g ?= 'Notify-osd'",
+    "class_g = 'Cairo-clock'",
+    "class_g = 'conky'",
+    "name = 'rofi'",
+    "name = 'cairo-dock-dialog'" 
+];
+
+blur-background = false;
+
+fading = false;
+fade-delta = 7;
+fade-in-step = 0.05;
+fade-out-step = 0.05;
+fade-exclude = [];
+alpha-step = 0.06;
+
+# >> opacity
+
+opacity-rule = [ 
+  # these rules makes transperancy for windows in tabs/stacks works
+  # I only let 5 programs to ever be transperant, and only when they
+  # are tiled. Notice the extra rule on qbittorrent, this is necessary 
+  # for some Qt applications.
+  # "0:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[1]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[2]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[3]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "0:_NET_WM_STATE@[4]:32a = '_NET_WM_STATE_HIDDEN'",
+  # "90:class_g = 'Sublime_text' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
+  # "90:class_g = 'URxvt' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
+  # "90:class_g = 'qBittorrent' && !I3_FLOATING_WINDOW@:c && !_NET_WM_STATE@[2]:32a",
+  # "90:class_g = 'Klavaro' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c",
+  # its important that the last rule doesn't have a comma ',' at the
+  # EOL (end of line)
+  # "90:class_g = 'Spacefm' && !_NET_WM_STATE@:32a && !I3_FLOATING_WINDOW@:c"
+];
+
+# >> settings
+
+backend = "xrender";                      # Backend to use: "xrender" or "glx". GLX backend is typically
+                                      # much faster but depends on a sane driver.
+mark-wmwin-focused   = false;         # Try to detect WM windows and mark them as active.
+mark-ovredir-focused = false;         # Mark all non-WM but override-redirect windows active (e.g. menus).
+use-ewmh-active-win  = true;          # Use EWMH _NET_WM_ACTIVE_WINDOW to determine which window is focused
+                                      # instead of using FocusIn/Out events. Usually more reliable but
+                                      # depends on a EWMH-compliant WM.
+detect-rounded-corners = false;       # Detect rounded corners and treat them as rectangular when --shadow-ignore- shaped is on.
+detect-client-opacity  = false;       # Detect _NET_WM_OPACITY on client windows, useful for window
+                                      # managers not passing _NET_WM_OPACITY of client windows to frame
+                                      # windows.
+refresh-rate = 0;                     # For --sw-opti: Specify refresh rate of the screen. 0 for auto.
+vsync = "opengl-swc";                 # "none", "drm", "opengl", "opengl-oml", "opengl-swc", "opengl-mswc"
+                                      # See man page for more details.
+dbe = false;                          # Enable DBE painting mode. Rarely needed.
+paint-on-overlay = true;              # Painting on X Composite overlay window. Recommended.
+sw-opti = true;                       # Limit compton to repaint at most once every 1 / refresh_rate.
+                                      # Incompatible with certain VSync methods.
+unredir-if-possible = true;           # Unredirect all windows if a full-screen opaque window is
+                                      # detected, to maximize performance for full-screen windows.
+focus-exclude = [ ];                  # A list of conditions of windows that should always be considered
+                                      # focused.
+detect-transient = false;             # Use WM_TRANSIENT_FOR to group windows, and consider windows in
+                                      # the same group focused at the same time.
+detect-client-leader = false;         # Use WM_CLIENT_LEADER to group windows.
+invert-color-include = [ ];           # Conditions for windows to be painted with inverted color.
+
+# GLX backend                         # GLX backend fine-tune options. See man page for more info.
+glx-no-stencil = true;                # Recommended.
+glx-swap-method = 3;                  # See man page.
+glx-copy-from-front = false;          # Useful with --glx-swap-method,
+glx-use-copysubbuffermesa = true;     # Recommended if it works. Breaks VSync.
+glx-no-rebind-pixmap = true;          # Recommended if it works.
+
+wintypes:
+{
+  tooltip = { fade = true; shadow = true; opacity = 1.0; focus = true; };
+};
+
+# syntax:ssHash

@@ -1,0 +1,149 @@
+#!/bin/bash
+
+NAME="getkeys"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-19"
+UPDATED="2017-12-19"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  # Sample xev output:
+  # KeyRelease event, serial 21, synthetic NO, window 0xa00057,
+  #     root 0x129, subw 0xa0005c, time 5299928, (337,283), root:(1242,472),
+  #     state 0x10, keycode 34 (keysym 0x5b, bracketleft), same_screen YES,
+  #     XLookupString gives 1 bytes: (5b) "["
+  #     XFilterEvent returns: False
+
+  # add check for mousebuttons
+
+  xev -id `i3get -r d` | awk '{
+    $0=$0
+    if($1=="state"){
+      gsub("[)][,]","",$0)
+      kc=$4
+      namn=$7
+    }
+    if($1=="XLookupString"){
+      gsub("[\"]","",$0)
+      if(kc!=okc){
+        trg=$NF; okc=kc; ff=""
+        if(trg!=namn){ff=" - "namn}
+        if(trg=="bytes:"){ff=namn}
+        # 22, 36. 119, 9 - silent keys like enter
+        if(kc~/22|36|119|9/){ff=namn}
+
+        print ff" - keycode: " kc
+      }
+    } 
+    if($1=="state" && $3!="is_hint" && om!=$3){
+      om=$3
+      print $3
+    }
+  }'
+  # while :; do read -PWD 'stuff' ; done
+  while :; do read -rsn1 ; done
+
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3get(1), xev(1)
+"
+
+about='
+`getkeys` - Clean `xev` output
+
+SYNOPSIS
+--------
+
+`getkeys` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+`getkeys` executes `xev` and uses `i3get` to get the
+window id of the current window, to make that the
+target window for `xev` to listen for keypresses. 
+It then cleans the output of `xev` with `awk`.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+DEPENDENCIES
+------------
+
+i3get
+xev
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

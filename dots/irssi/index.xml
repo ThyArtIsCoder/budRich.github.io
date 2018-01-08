@@ -5,17 +5,17 @@
     <link>https://budrich.github.io/dots/irssi/</link>
     <description>Recent content in irssi on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Sep 2017 16:37:44 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Dec 2017 23:07:31 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/dots/irssi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>bud</title>
-      <link>https://budrich.github.io/dots/irssi/bud/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:44 +0200</pubDate>
+      <title>bud-theme</title>
+      <link>https://budrich.github.io/dots/irssi/bud-theme/</link>
+      <pubDate>Sat, 16 Dec 2017 23:07:31 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/irssi/bud/</guid>
+      <guid>https://budrich.github.io/dots/irssi/bud-theme/</guid>
       <description>I have used irssi for a long time and I don&amp;rsquo;t think I&amp;rsquo;ll ever switch or finish this theme.
 irssibudtheme2.png   I have tried to make it as narrow as possible, kind of how the twitch chats look. With the user name on it&amp;rsquo;s own line above the message.</description>
     </item>

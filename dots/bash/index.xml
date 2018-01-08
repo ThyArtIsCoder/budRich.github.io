@@ -5,15 +5,34 @@
     <link>https://budrich.github.io/dots/bash/</link>
     <description>Recent content in bash on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Sep 2017 16:37:35 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Dec 2017 23:04:29 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/dots/bash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>profile</title>
+      <link>https://budrich.github.io/dots/bash/profile/</link>
+      <pubDate>Sat, 16 Dec 2017 23:23:02 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/profile/</guid>
+      <description>Nothing going on here, just sourcing my bashrc.</description>
+    </item>
+    
+    <item>
+      <title>bashrc</title>
+      <link>https://budrich.github.io/dots/bash/bashrc/</link>
+      <pubDate>Sat, 16 Dec 2017 23:22:12 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/bashrc/</guid>
+      <description>The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 2 or wait 2 seconds, i3 starts.
+I have found this method much more convenient then a normal DM, where you have to change DE from some, very easily forgotten, menu. Often resulting in me logging in to the wrong DE&amp;hellip;</description>
+    </item>
+    
+    <item>
       <title>prompt</title>
       <link>https://budrich.github.io/dots/bash/prompt/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:39 +0200</pubDate>
+      <pubDate>Sat, 16 Dec 2017 23:14:31 +0100</pubDate>
       
       <guid>https://budrich.github.io/dots/bash/prompt/</guid>
       <description>My prompt shows the runtime of the last command and a compact CWD (current work directory).
@@ -21,9 +40,18 @@ ss_time4prompt.png   </description>
     </item>
     
     <item>
+      <title>misc</title>
+      <link>https://budrich.github.io/dots/bash/misc/</link>
+      <pubDate>Sat, 16 Dec 2017 23:12:17 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/bash/misc/</guid>
+      <description> misc </description>
+    </item>
+    
+    <item>
       <title>func</title>
       <link>https://budrich.github.io/dots/bash/func/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:37 +0200</pubDate>
+      <pubDate>Sat, 16 Dec 2017 23:10:43 +0100</pubDate>
       
       <guid>https://budrich.github.io/dots/bash/func/</guid>
       <description>This is the power of the bash shell, you can write small functions to make using the shell easier.
@@ -38,30 +66,21 @@ install packages and log package name.</description>
     </item>
     
     <item>
-      <title>misc</title>
-      <link>https://budrich.github.io/dots/bash/misc/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:37 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/dots/bash/misc/</guid>
-      <description>Random options, most from the default .bashrc file.</description>
-    </item>
-    
-    <item>
       <title>export</title>
       <link>https://budrich.github.io/dots/bash/export/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:36 +0200</pubDate>
+      <pubDate>Sat, 16 Dec 2017 23:10:31 +0100</pubDate>
       
       <guid>https://budrich.github.io/dots/bash/export/</guid>
-      <description>Environment values and shell options</description>
+      <description>These environment variables are quite generic. I have more personal ones in i3env</description>
     </item>
     
     <item>
       <title>alias</title>
       <link>https://budrich.github.io/dots/bash/alias/</link>
-      <pubDate>Fri, 22 Sep 2017 16:37:35 +0200</pubDate>
+      <pubDate>Sat, 16 Dec 2017 23:04:29 +0100</pubDate>
       
       <guid>https://budrich.github.io/dots/bash/alias/</guid>
-      <description></description>
+      <description>My aliases. I add aliases with the function adda that is defined in bash/func. Here you can find the famous lolban alias ;)</description>
     </item>
     
   </channel>

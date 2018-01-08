@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>colors on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/sublime/colors/</link>
+    <description>Recent content in colors on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Dec 2017 23:06:32 +0100</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/sublime/colors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Solarized-Light</title>
+      <link>https://budrich.github.io/dots/sublime/colors/solarized-light/</link>
+      <pubDate>Sat, 16 Dec 2017 23:06:47 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/colors/solarized-light/</guid>
+      <description> Solarized-Light </description>
+    </item>
+    
+    <item>
+      <title>Solarized-Dark</title>
+      <link>https://budrich.github.io/dots/sublime/colors/solarized-dark/</link>
+      <pubDate>Sat, 16 Dec 2017 23:06:32 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/colors/solarized-dark/</guid>
+      <description> Solarized-Dark </description>
+    </item>
+    
+  </channel>
+</rss>

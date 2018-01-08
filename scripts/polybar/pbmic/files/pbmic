@@ -1,0 +1,151 @@
+#!/bin/bash
+
+NAME="pbmic"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-31"
+UPDATED="2017-12-31"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  # click-right = exec i3run -i pavucontrol -e pavucontrol
+  # click-left = pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  # scroll-up = pactl set-source-volume @DEFAULT_SOURCE@ "+2%"
+  # scroll-down = pactl set-source-volume @DEFAULT_SOURCE@ "-2%"
+
+  action="$1"
+  case "$action" in
+    mute ) pactl set-source-mute "@DEFAULT_SOURCE@" toggle  ;;
+    up   ) pactl set-source-volume @DEFAULT_SOURCE@ "+2%" ;;
+    down ) pactl set-source-volume @DEFAULT_SOURCE@ "-2%" ;;
+  esac
+
+  pas=($(ponymix list | awk '\
+      $3~/alsa_input.usb*/{found=1}
+      found==1 && $2=="Volume:" {
+        gsub("[%]","",$3)
+        gsub("[[]|[]]","",$4)
+        print $3 " " $4
+        exit
+      }
+    '))
+
+  prestr="%{A1:polybar-msg hook pbmic 2:}"
+  prestr+="%{A3:i3run -i pavucontrol -e pavucontrol:}"
+  prestr+="%{A4:polybar-msg hook pbmic 3:}"
+  prestr+="%{A5:polybar-msg hook pbmic 4:}"
+
+  sufstr="%{A}%{A}%{A}%{A}"
+
+  blk="$(xrdb -query | awk '/\*color0:/ {print $2}')"
+  wht="$(xrdb -query | awk '/\*color7:/ {print $2}')"
+
+  echo -n "${prestr}"
+
+  [[ ${pas[1]} != Muted ]] \
+    && echo -n "%{F${blk}} ${pas[0]}%{F-}" \
+    || echo -n "%{F${wht}} ${pas[0]}%{F-}"
+
+  echo -n "${sufstr}"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+ponymix(1), polybar(1)
+"
+
+about='
+`pbmic` - Prints the microphone volume
+
+SYNOPSIS
+--------
+
+`pbmic` [`-v`|`-h`] [`-c` *config-file*] *file* ...
+
+DESCRIPTION
+-----------
+
+`pbmic` Prints the microphone volume, meant to be
+used with a statusbar.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+DEPENDENCIES
+------------
+
+FontAwesome
+ponymix
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+

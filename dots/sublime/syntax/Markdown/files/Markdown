@@ -1,0 +1,12 @@
+// These settings override both User and Default settings for the Markdown syntax
+{
+	"wrap_width": 51,
+  "word_wrap": "true",
+	"draw_centered": true,
+	"spell_check": true,
+  "highlight_line": false,
+  "font_options": ["subpixel_antialias"],
+  "font_face": "Hack",
+  "font_size": 18,
+  "gutter": false,
+}

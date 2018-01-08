@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>polybar on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/scripts/polybar/</link>
+    <description>Recent content in polybar on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Dec 2017 12:32:23 +0100</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/scripts/polybar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pbws</title>
+      <link>https://budrich.github.io/scripts/polybar/pbws/</link>
+      <pubDate>Sun, 31 Dec 2017 23:14:01 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/polybar/pbws/</guid>
+      <description>pbws - Minimal workspace indication SYNOPSIS pbws [-v|-h]
+DESCRIPTION pbws outputs a symbol representing the current worskpace and the total number of workspaces. Inteded to be used with polybar.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+ENVIRONMENT PBWS_SYMBOL_WORKSPACE_NUMBER This symbol will be used to indicate the current workspace, if empty the workspace number will be used.
+DEPENDENCIES polybar</description>
+    </item>
+    
+    <item>
+      <title>pbmedia</title>
+      <link>https://budrich.github.io/scripts/polybar/pbmedia/</link>
+      <pubDate>Sun, 31 Dec 2017 23:05:38 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/polybar/pbmedia/</guid>
+      <description>pbmedia pbmedia - Short description
+SYNOPSIS pbmedia [-v|-h] [-c config-file] file &amp;hellip;
+DESCRIPTION pbmedia frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse order by time for the xyzzy(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All files are processed in the order specified.
+OPTIONS -v Show version and exit.</description>
+    </item>
+    
+    <item>
+      <title>pbtitle</title>
+      <link>https://budrich.github.io/scripts/polybar/pbtitle/</link>
+      <pubDate>Sun, 31 Dec 2017 19:26:58 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/polybar/pbtitle/</guid>
+      <description>pbtitle - Short description SYNOPSIS pbtitle [-v|-h] EVENT
+DESCRIPTION pbtitle is intended to be used as output in a statusbar. Different output is displayed depending on the EVENT.
+   EVENT OUTPUT     advanced Class and instance of active window   normal Title of active window   color 16 colors defined in .xresources   focus –   title –    When rightc licked objects will be put into the ClipBoard</description>
+    </item>
+    
+    <item>
+      <title>pbmic</title>
+      <link>https://budrich.github.io/scripts/polybar/pbmic/</link>
+      <pubDate>Tue, 19 Dec 2017 21:25:29 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/polybar/pbmic/</guid>
+      <description>pbmic - Prints the microphone volume SYNOPSIS pbmic [-v|-h] [-c config-file] file &amp;hellip;
+DESCRIPTION pbmic Prints the microphone volume, meant to be used with a statusbar.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES FontAwesome ponymix</description>
+    </item>
+    
+  </channel>
+</rss>

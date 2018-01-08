@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>i3add on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/scripts/i3add/</link>
+    <description>Recent content in i3add on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Dec 2017 00:41:17 +0100</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/scripts/i3add/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>i3monocle</title>
+      <link>https://budrich.github.io/scripts/i3add/i3monocle/</link>
+      <pubDate>Thu, 21 Dec 2017 13:59:50 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/i3add/i3monocle/</guid>
+      <description>i3monocle - Maximize active window SYNOPSIS i3monocle [-v|-h] [-g]
+DESCRIPTION i3monocle Will first check the floating state of the active window. If it is floating, i3fyra -a (autolayot/toggle tiling) will get invoked to ensure the window is tiled and in a i3fyra container. Then all other visible i3fyra containers will get hidden. Leaving the active window in monocle (maximized) mode.
+If the window is already monocled, it will be put in ZenMode with i3zen if not the -g flag is passed.</description>
+    </item>
+    
+    <item>
+      <title>i3minimize</title>
+      <link>https://budrich.github.io/scripts/i3add/i3minimize/</link>
+      <pubDate>Thu, 21 Dec 2017 13:59:26 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/i3add/i3minimize/</guid>
+      <description>i3minimize - Minimize active window SYNOPSIS i3minimize [-v|-h]
+DESCRIPTION Depending on the state of active window, i3minimize does different things.
+   window state action     floating send to scratchpad   tiled, not handled by i3fyra send to scratchpad   tiled, handled by i3fyra hide parent container    OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES i3list</description>
+    </item>
+    
+    <item>
+      <title>i3wswp</title>
+      <link>https://budrich.github.io/scripts/i3add/i3wswp/</link>
+      <pubDate>Tue, 19 Dec 2017 17:06:07 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/i3add/i3wswp/</guid>
+      <description>i3wswp - Switch workspace and wallpaper SYNOPSIS i3wswp [-v|-h] WORKSPACE
+DESCRIPTION i3wswp takes a WORKSPACE number as an argument. If there exist a non empty ENVIRONMENT varialbe with the name I3WSWP_COMMAND_WORKSPACE . The content of that variable will be executed. i3wswp is intended to be used with some kind of subscriber script and be executed on workspace change.
+OPTIONS -v
+Show version and exit.
+-h
+Show help and exit.</description>
+    </item>
+    
+    <item>
+      <title>i3zen</title>
+      <link>https://budrich.github.io/scripts/i3add/i3zen/</link>
+      <pubDate>Mon, 18 Dec 2017 01:40:46 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/i3add/i3zen/</guid>
+      <description>I made a post on /r/unixporn where you can view an animated gif of i3zen in action.
+i3zen - Send windows to the zenter SYNOPSIS i3zen [-v|-h]
+DESCRIPTION Put the active window in a tabbed container between two ghostswindows (centered) on a clean workspace. If the window already is in ZenMode, move it back to it&amp;rsquo;s original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.</description>
+    </item>
+    
+    <item>
+      <title>i3term</title>
+      <link>https://budrich.github.io/scripts/i3add/i3term/</link>
+      <pubDate>Mon, 18 Dec 2017 01:34:42 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/i3add/i3term/</guid>
+      <description>I just made this script to keep my i3config cleaner. It probably needs tweaking if someone other then budRich uses it ;)
+i3term - Launch a command in a new urxvt window SYNOPSIS i3term [-v|-h] COMMAND
+DESCRIPTION Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.</description>
+    </item>
+    
+    <item>
+      <title>i3Kornhe</title>
+      <link>https://budrich.github.io/scripts/i3add/i3kornhe/</link>
+      <pubDate>Mon, 18 Dec 2017 01:22:37 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/i3add/i3kornhe/</guid>
+      <description>This is the polished version of the i3resizemode script i made in one of the Lets Linux episodes. I named it after the moderator on up who banned me for a month after I told a guy to RTFM&amp;hellip;
+i3Kornhe - Resize windows by moving the corners. SYNOPSIS i3Kornhe [-v|-h] DIRECTION
+DESCRIPTION The script checks if the currently active window is floating. If it is floating the script will acrivate one of four modes depending on the direction.</description>
+    </item>
+    
+    <item>
+      <title>i3cast</title>
+      <link>https://budrich.github.io/scripts/i3add/i3cast/</link>
+      <pubDate>Mon, 18 Dec 2017 00:41:17 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/i3add/i3cast/</guid>
+      <description>I use this script to create the gifs and videos you see me posting here and on youtube. It has a bunch of dependencies, but they are all good programs and the recording process is very lightweight compared to the other alternatives I&amp;rsquo;ve tried.
+Just run the script to start the recording, run it again to preview the video and then chose what to do. (convert to gif, upload, save e.</description>
+    </item>
+    
+  </channel>
+</rss>

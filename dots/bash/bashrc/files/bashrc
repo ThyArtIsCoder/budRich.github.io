@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+for f in "${HOME}/.bash/"*; do
+    . $f
+done
+
+unset f
+
+PATH="$PATH:$HOME/.rvm/bin"
+export PATH
+
+if [[ -z $DISPLAY ]]; then
+
+  # wait two seconds for input from user
+  # start desired environment.
+  # if none selected, defaults to startx (i3)
+
+  read -rsn1 -t1 input
+  if [ -n "$input" ]; then
+    case $input in
+      1 ) start=bash ;; # bash
+      2 ) startx > /dev/null 2>&1 ;;
+      # 3 ) sudo systemctl start lightdm.service > /dev/null 2>&1 ;;
+    esac
+  fi
+
+  [ -z "$input" ] && startx > /dev/null 2>&1
+  
+fi
+
+PATH="$HOME/scripts:$PATH"
+export PATH
+
+

@@ -1,0 +1,133 @@
+#!/bin/bash
+
+NAME="brws"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-30"
+UPDATED="2017-12-17"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  notify-send "$1"
+
+  ext=${1##*.}
+  cid=$(i3get)
+
+  if [[ $ext =~ jpg|png|jpeg|gif ]]; then
+    newfile="$HOME/pix/d/$(date +%Y-%m-%d).$ext"
+    curl -s example.com example.net -o "$newfile"
+    sxiv "$newfile" &
+    i3get -i sxiv -y && i3-msg "[con_id=$cid]" focus
+  elif [[ $1 =~  ^https://www.youtube.com ]]; then 
+    youtube-dl -f 'bestvideo[height<=480]+bestaudio/best[height<=480]' -o - "$1" | mpv &
+    i3get -c mpv -y && i3-msg "[con_id=$cid]" focus
+  else
+    i3run -c Vivaldi-stable -e 'vivaldi-snapshot'
+    vivaldi-snapshot "$1"
+  fi
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+mpv(1), sxiv(1), i3get(1), youtube-dl(1)
+"
+
+about='
+`brws` - URL-launcher for terminals
+
+SYNOPSIS
+--------
+
+`brws` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+url-launcher, does different thing depending on
+the url. Opens images with sxiv, and videos in mpv.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+DEPENDENCIES
+------------
+
+i3get  
+sxiv  
+mpv  
+youtube-dl  
+vivaldi
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+
+
+

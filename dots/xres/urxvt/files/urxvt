@@ -1,6 +1,7 @@
+! syntax:ssExcla
+
 ! rxvt-unicode-256color settings . 
 ! curated by budRich since 2015
-! bulle
 
 URxvt*foreground:          fg
 URxvt*background:          bg
@@ -10,14 +11,12 @@ URxvt*underlineColor:      ylw
 URxvt*highlightColor:      blu
 URxvt*highlightTextColor:  mag
 
-URxvt*perl-ext-common: default,matcher
+URxvt*perl-ext-common: default,matcher,url-select,keyboard-select
 
-!URxvt*intensityStyles:    false
+URxvt*intensityStyles:     true
 URxvt*cursorBlink:         1
 URxvt*scrollBar:           false
 URxvt*internalBorder:      padd
-URxvt.url-launcher:        brws
-URxvt.matcher.button: 1
 URxvt*saveLines:           32767
 URxvt*iso14755:            false
 URxvt*iso14755_52:         false
@@ -30,10 +29,17 @@ URxvt*boldFont:
 URxvt*italicFont:     
 URxvt*boldItalicFont: 
 ! URxvt*boldItalicFont:      xft:fnt1:style=bolditalic:pixelsize=fsz1
-!FixedsysExcelsiorIIIb-L2_Mono.ttf
+
+URxvt.url-launcher:        brws
+URxvt.matcher.button: 1
+URxvt.url-select.underline: true
+
 URxvt.keysym.C-0: command: \033]710;xft:fnt3\007
 URxvt.keysym.C-9: command: \033]710;xft:fnt2:size=fsz2\007
-URxvt.keysym.C-g: perl:matcher:list
+URxvt.keysym.C-g: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.CM-s: searchable-scrollback:start
+URxvt.keysym.M-s: builtin:
 
 URxvt*print-pipe: cat > $(echo /tmp/urxvt-dump.$(date +%Y-%m-%d_%H:%M:%S_%N))
 
@@ -53,6 +59,6 @@ URxvt*color6:              cyn
 URxvt*color14:             cyn2
 URxvt*color7:              wht
 URxvt*color15:             wht2
-URxvt*colorBD:             red
-URxvt*colorIT:             grn
-URxvt*colorUL:             blu
+! URxvt*colorBD:             red
+! URxvt*colorIT:             grn
+! URxvt*colorUL:             blu

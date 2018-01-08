@@ -1,0 +1,120 @@
+#!/bin/bash
+
+NAME="i3wswp"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-19"
+UPDATED="2017-12-19"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  eval "COMMAND=\$I3WSWP_COMMAND_${1}"
+  [[ -n $COMMAND ]] && ${COMMAND} &
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+"
+
+about='
+`i3wswp` - Switch workspace and wallpaper
+
+SYNOPSIS
+--------
+
+`i3wswp` [`-v`|`-h`] *WORKSPACE*
+
+DESCRIPTION
+-----------
+
+`i3wswp` takes a *WORKSPACE* number as an argument.
+If there exist a non empty ENVIRONMENT varialbe with
+the name `I3WSWP_COMMAND_`*WORKSPACE* . The content
+of that variable will be executed. `i3wswp` is intended
+to be used with some kind of subscriber script and be executed
+on workspace change.
+
+OPTIONS
+-------
+
+`-v`  
+  Show version and exit.
+
+`-h`  
+  Show help and exit.
+
+
+ENVIRONMENT
+-----------
+
+`I3WSWP_COMMAND_`*WORKSPACE_NUMBER*
+  *WORKSPACE_NUMBER* can be any integer between 1-99.
+  The variable needs to contain a executable command.
+
+EXAMPLE
+-------
+If this environment variable is set in *~/.bashrc*:  
+`I3WSWP_COMMAND_2='"'"'hsetroot -fill $HOME/Pictures/wallpaper.jpg'"'"'`
+
+And `i3wswp` is executed with the argument `2`, the command is executed.
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

@@ -14,10 +14,10 @@
 # 
 # examples
 # --------
-# `cd /usr/share`  
+# `$ cd /usr/share`  
 # 009 /u/s >
 # 
-# `cd ~/.config`  
+# `$ cd ~/.config`  
 # 012 ~/c >
 #
 # screenshot

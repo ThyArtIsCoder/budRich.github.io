@@ -1,0 +1,170 @@
+#!/bin/bash
+
+NAME="gethelp"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-05"
+UPDATED="2017-12-17"
+
+crawl(){
+  for f in "$1"/* ; do
+    [[ -d "$f" ]] && crawl "$f" && continue
+    lst+="$f\n"
+  done
+}
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  ctg=${1:-$( \
+    printf '%s\n' man arch devdocs |\
+    rofi -i -matching fuzzy -dmenu -p 'category: ')}
+
+  [[ ! $ctg =~ man|arch|devdocs ]] \
+    && exit
+
+  case "$ctg" in
+    
+    man ) 
+      width=49
+      sel=$(man -k . -s 1,6 | awk '{print $1}' \
+      | sort | rofi -i -dmenu -matching regex -filter '^' -p 'mandoc: ')
+
+      [[ -z $sel ]] && exit
+
+      mkdir -p /tmp/manpages
+      fil_man="/tmp/manpages/${sel}.man"
+
+      env MANWIDTH=$width man "$sel" | awk '{gsub("       ","  ",$0);print $0}' > "$fil_man"
+      notes
+      sleep .2
+      subl "$fil_man"
+    ;;
+
+    arch ) 
+      fld_wiki="/usr/share/doc/arch-wiki/html/en"
+
+      for w in "${fld_wiki}/"*.html; do
+        fnd="${w##*/}"
+        [[ $fnd =~ ':' ]] && continue
+        lst+="${fnd%.*} "
+      done
+
+      sel=$(printf '%s\n' ${lst} \
+          | rofi -i -dmenu -p -matching regex -filter '^' 'archwiki: ')
+      url="${fld_wiki}/${sel}.html"
+
+      surf "$url" > /dev/null 2>&1 &
+    ;;
+
+    devdocs ) 
+      surf "devdocs.io" > /dev/null 2>&1 & 
+      ;;
+  esac
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+rofi(1), i3run(1), surf(1)
+"
+
+about='
+`gethelp` - Short description
+
+SYNOPSIS
+--------
+
+`gethelp` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+When launched without CATEGORY a list of 
+categories is displayed in a rofi menu.
+When CATEGORY is known, a menu with pages from
+that CATEGORY is shown. Depending on the 
+CATEGORY, the chosen page is opened in sublime
+or surf.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+DEPENDENCIES
+------------
+
+rofi  
+i3run  
+sublime  
+surf  
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+
+

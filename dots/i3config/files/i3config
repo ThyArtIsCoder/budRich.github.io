@@ -1,0 +1,297 @@
+# i3config - curated by budRich since 2016
+# ========================================
+
+# >>> initializatione <<<
+
+  set $left   h
+  set $down   j
+  set $up     k
+  set $right  l
+
+  set $exe exec --no-startup-id exec
+  set $win bindsym Mod4
+  set $alt Mod1
+  
+  # set $browser i3run -c Surf -e 'surf'
+  # set $browser i3run -c Vivaldi-stable -e 'vivaldi'
+  set $browser i3run -c Vivaldi-stable -e 'vivaldi-snapshot'
+  set $editor i3run -i sublime_text -e 'subl'
+  set $bigsize   10 px or 10 ppt
+  set $smallsize 3 px or 3 ppt
+  set $bigmove   30 px
+  set $smallmove 1 px
+  
+# >>> panicbuttons <<<
+
+  $win+Control+r        $exe i3-msg reload  ; $exe polybar-msg cmd restart
+  $win+$alt+r           $exe i3-msg restart ; $exe polybar-msg cmd restart
+  $win+Escape           $exe i3off -x
+  $win+x                $exe budlock -lr
+
+# >>> terminals <<<
+
+  $win+Return           $exe i3run -i floatterm -s -e 'urxvtc -name floatterm'
+  $win+Shift+Return     $exe i3run -i termsmall -e 'urxvtc -name termsmall'
+  $win+Control+Return   $exe urxvtc -name tiledterm
+  $win+$alt+Return      $exe urxvtc -name tempterm
+
+# >>> sublime stuff <<<
+
+  $win+s                $exe sublime
+  $win+Control+s        $exe subpromen
+  $win+Shift+s          $exe notes
+  $win+Shift+Control+s  $exe subswap
+  $win+$alt+s           $exe subrun
+
+# >>> i3run - sane applaunching for the modern tiler <<<
+
+  $win+e          $exe i3run -i "^.*gotofolder.*$" -e "gotofolder ~"
+  $win+Shift+e    $exe fmb
+  bindsym $alt+e  $exe foldermen
+  
+  $win+f          $exe $browser
+  $win+a          $exe i3term irssi
+  $win+d          $exe i3term ncmpcpp
+  $win+q          $exe i3run -i qbittorrent -e 'qbittorrent'
+  $win+v          $exe i3run -i klavaro -e 'klavaro'
+  $win+6          $exe i3term newsboat
+  $win+9          $exe i3term htop
+  
+  $win+grave      $exe i3run -i gcolor2 -e 'gcolor2'
+
+  # $win+i        $exe i3run -c Sxiv
+  $win+m          $exe i3run -c mpv
+
+# >>> barmenu <<<
+
+  bindsym --release F8           $exe templatetator
+  bindsym --release Shift+F8     $exe suba
+  bindsym --release F6           $exe getlink
+  bindsym --release F5           $exe gethelp
+  $win F6                        $exe addlink -f '3d.flf'
+  $win+r                         $exe budrun
+  $win+Shift+r                   $exe rofi -show run
+  $win+space                     $exe polybar-msg cmd toggle
+  $win+i                         $exe getawesome
+
+# >>> media <<<
+
+  $win+bracketleft       $exe mpc prev 
+  $win+bracketright      $exe mpc next
+  $win+Shift+braceleft   $exe mpc seek -10
+  $win+Shift+braceright  $exe mpc seek +10
+
+  $win+apostrophe        $exe pbvol --down
+  $win+backslash         $exe pbvol --up
+  $win+Shift+quotedbl    $exe pactl set-source-volume @DEFAULT_SOURCE@ "-2%"
+  $win+Shift+bar         $exe pactl set-source-volume @DEFAULT_SOURCE@ "+2%"
+
+  $win+period            $exe pbvol --togmute
+  $win+slash             $exe mpc toggle
+  $win+Shift+greater     $exe pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  $win+Shift+question    $exe i3run -i pavucontrol -e pavucontrol
+
+  $win+minus             $exe cwm-brightness down
+  $win+equal             $exe cwm-brightness up
+
+# >>> upload content <<<
+
+  bindsym --release Mod4+Print $exe i3cast
+  bindsym --release Print      $exe shoot
+
+  $win+c $exe \
+    xclip -o | curl -F c=@- https://ptpb.pw/?u=1 | \
+    xclip -selection 'clipboard' && \
+    notify-send "Paste uploaded"
+
+# >>> mousekeys <<<
+
+  bindsym --release button2 kill # mbutton on titlebar kills
+
+# >>> moving the size of the focus <<<
+
+  $win+Control+$left    $exe i3Kornhe left
+  $win+Control+$down    $exe i3Kornhe down
+  $win+Control+$up      $exe i3Kornhe up
+  $win+Control+$right   $exe i3Kornhe right
+
+  # reset split sizes
+  $win+p $exe i3fyra -l 'AB=-370 BD=250 AC=125'
+
+  $win+Shift+$left      $exe i3fyra -f l 
+  $win+Shift+$right     $exe i3fyra -f r 
+  $win+Shift+$down      $exe i3fyra -f d 
+  $win+Shift+$up        $exe i3fyra -f u 
+
+  $win+$left            $exe i3fyra -m l 
+  $win+$right           $exe i3fyra -m r 
+  $win+$down            $exe i3fyra -m d 
+  $win+$up              $exe i3fyra -m u 
+
+  $win+Tab              $exe i3flip n
+  $win+Shift+Tab        $exe i3flip p
+  # $win+Tab              $exe i3fyra -t r
+  # $win+Shift+Tab        $exe i3fyra -t l 
+
+# >>> window managing, general <<<
+  
+  $win+F2      $exe i3minimize
+  $win+F3      $exe i3monocle
+  bindsym F4   kill
+
+  $win+z           $exe i3fyra -a
+  $win+Shift+z     focus mode_toggle
+
+  $win+g           layout toggle tabbed splith splitv
+  $win+Control+z   $exe i3zen
+
+# >>> wallpaper control <<<
+  
+  $win+w        $exe budlock -wr 
+  $win+Shift+w  $exe budlock -wc blur 
+
+# >>> workspace stuff <<<
+  
+  bindsym $alt+Tab $exe polybar-msg hook pbws 2
+
+  $win+1 workspace 1
+  $win+2 workspace 2
+  $win+3 workspace 3
+
+  $win+Shift+1 move container to workspace 1
+  $win+Shift+2 move container to workspace 2
+  $win+Shift+3 move container to workspace 3
+
+# >>> settings <<<
+  
+  set_from_resource $act  i3wm.act  #111313
+  set_from_resource $ina  i3wm.ina  #111313
+  set_from_resource $ina2 i3wm.ina2 #111313
+  set_from_resource $whtl i3wm.whtl #111313
+  set_from_resource $whtd i3wm.whtd #111313
+  set_from_resource $red  i3wm.red  #FF0000
+  set_from_resource $fnt  i3wm.fnt  Terminus
+  set_from_resource $fsz  i3wm.fsz  12 
+
+  show_marks no
+  floating_modifier $alt
+  hide_edge_borders both
+  focus_follows_mouse no
+  font pango:$fnt $fsz
+  workspace_auto_back_and_forth no
+
+# >>> appearance <<<
+
+  for_window [class="^.*"] border normal 1
+
+  # widow Colors           border  bg     text    indic
+  client.focused           $act    $act   $whtl    $act
+  client.focused_inactive  $ina    $ina   $whtd    $ina
+  client.unfocused         $ina    $ina   $whtd    $ina
+  client.urgent            $red    $red   $red     $red
+
+# >>> window rules <<<
+  
+  set $tocont focus; exec --no-startup-id exec i3fyra -m
+  for_window [class="^.*"] floating enable, title_format " "  
+
+  for_window [instance="qbittorrent"]        title_format "qbittorrent", $tocont A
+  for_window [instance="termsmall"]          title_format "URxvt",       $tocont A
+  for_window [instance="htop"]               title_format "htop",        $tocont A
+
+  for_window [class="mpv"]                   title_format "mpv",         $tocont B
+  for_window [class="feh"]                   title_format "feh",         $tocont B
+  for_window [class="Sxiv"]                  title_format "sxiv",        $tocont B
+  for_window [instance="^filemanager_b$"]    title_format "%title",      $tocont B
+  for_window [instance="ncmpcpp"]            title_format "ncmpcpp",     $tocont B
+
+  for_window [class="Vivaldi-stable"]        title_format "vivaldi",     $tocont C
+  for_window [instance="sublime_main"]       title_format "sublime",     $tocont C
+  for_window [instance="termbig"]            title_format "URxvt",       $tocont C
+  
+  for_window [instance="sublime_notes"]      title_format "todo",        $tocont D
+  for_window [instance="^filemanager_d$"]    title_format "%title",      $tocont D
+  for_window [class="Thunar"]                title_format "%title",      $tocont D
+  for_window [instance="^surf$"]             title_format "surf",        $tocont D
+  for_window [instance="irssi"]              title_format "irssi",       $tocont D
+
+  for_window [class="Conky"]                 title_format "desktop",     $tocont C
+
+  
+  for_window [instance="floatterm"] resize set 350 px 250 px
+  for_window [instance="tiledterm"] title_format "URxvt", floating disabled
+
+  for_window [title="^Klavaro - Fluidness$"] title_format "klavaro", focus; \
+    $exe i3zen
+  for_window [title="^Klavaro - Velocity$"]  title_format "klavaro", focus; \
+    $exe i3zen
+
+  for_window [instance="pavucontrol"] resize set 360 px 400 px, border pixel 1
+  for_window [title="^cairo-dock-dialog$"] border pixel 0
+
+  for_window [title="^Klavaro - Main Menu$"] move absolute position center
+  for_window [title="DevDocs API Documentation$"] title_format "DevDocs"
+
+  for_window [window_TYPE="dialog"]    floating enable
+  for_window [window_TYPE="splash"]    floating enable
+  for_window [window_TYPE="utility"]   floating enable
+
+# >>> automatic execution <<<
+
+  exec_always --no-startup-id i3env
+  $exe i3fyra -l 'AB=-370 BD=250 AC=125'
+  # $exe dockstart  2>&1 & 
+  exec_always --no-startup-id pbr > /dev/null 2>&1 &
+  exec_always --no-startup-id i3listn.py > /dev/null 2>&1 &
+  # $exe conky > /dev/null 2>&1 &
+
+  
+# >>> modes <<<
+
+mode "topleft" {
+  bindsym $left resize grow left 10 px or 10 ppt
+  bindsym $right resize shrink left 10 px or 10 ppt
+
+  bindsym $down resize shrink up 10 px or 10 ppt
+  bindsym $up resize grow up 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+mode "topright" {
+  bindsym $left resize shrink right 10 px or 10 ppt
+  bindsym $right resize grow right 10 px or 10 ppt
+
+  bindsym $down resize shrink up 10 px or 10 ppt
+  bindsym $up resize grow up 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+mode "bottomleft" {
+  bindsym $left resize grow left 10 px or 10 ppt
+  bindsym $right resize shrink left 10 px or 10 ppt
+
+  bindsym $down resize grow down 10 px or 10 ppt
+  bindsym $up resize shrink down 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+mode "bottomright" {
+  bindsym $left resize shrink right 10 px or 10 ppt
+  bindsym $right resize grow right 10 px or 10 ppt
+
+  bindsym $down resize grow down 10 px or 10 ppt
+  bindsym $up resize shrink down 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+# syntax:ssHash
+
+

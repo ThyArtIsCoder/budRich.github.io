@@ -1,33 +1,29 @@
+# syntax:bash
+
+
 
 HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=1000000
 HISTTIMEFORMAT='%F %T  '
 HISTIGNORE=ls:cd:pwd
 
-export BROWSER=surf
+
+MPD_HOST="127.0.0.1"
+MPD_PORT="6601"
+
+export MPD_HOST
+export MPD_PORT
+
+export BROWSER=vivaldi-snapshot
 export VISUAL=vim
 export EDITOR=vim
 export PAGER='less -RS'
 export SYSTEMD_LESS=RSMK
 export XDG_CONFIG_HOME="${HOME}/.config"
 
-export LESS_TERMCAP_mb=$'\E[1;31m'
-export LESS_TERMCAP_md=$'\E[1;36m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[1;32m'
-
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export GEM_HOME
 
-PATH="$HOME/.gem/ruby/2.4.0/bin:$HOME/bin:$HOME/src:$HOME/rumpa:$HOME/.local/bin:$PATH"
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-PATH="$PATH:$HOME/.rvm/bin"
-# PKG_CONFIG_PATH="/usr/share:$PKG_CONFIG_PATH"
-export PATH
 
-# syntax:bash

@@ -1,0 +1,59 @@
+export I3FYRA_WS=1
+# Workspace to use for i3fyra.
+
+export I3FYRA_MAIN_CONTAINER=C
+# i3fyra maincontainer
+
+export I3RUN_BOTTOM_GAP=10
+export I3RUN_TOP_GAP=25
+export I3RUN_LEFT_GAP=10
+export I3RUN_RIGHT_GAP=10
+# distance from the screen to keep floating windows
+
+export I3CAST_PLAYER=mpv
+export I3CAST_FOLDER="$HOME/vid/bud"
+# I3CAST_FOLDER to store saved and uploaded videos localy.
+
+export I3ZEN_WORKSPACE=3
+# Set this to the workspace number 
+# you want to use for zen
+
+export I3ZEN_SIZE=55
+# Percent of the screenwidth to zen
+# Defaults to 60
+
+export BUDLOCK_FOLDER="$HOME/.budlock"
+# Path to the folder to store generated lock screens. 
+
+export BUDLOCK_DIM=1
+# Amount in percent to dim the backlight before locking.
+
+I3WSWP_COMMAND_1="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
+         -tint $(xrdb -query | awk '/\*background/ {print $2}')"
+
+I3WSWP_COMMAND_2="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
+         -tint $(xrdb -query | awk '/\*color6:/ {print $2}')"
+         
+I3WSWP_COMMAND_3="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
+         -tint $(xrdb -query | awk '/\*color4:/ {print $2}')"
+
+export I3WSWP_COMMAND_1
+export I3WSWP_COMMAND_2
+export I3WSWP_COMMAND_3
+
+export SUBLIME_INSTANCE='sublime_main'
+export NOTES_INSTANCE='sublime_notes'
+
+SUBLIME_PROJECTS_FOLDER="$HOME/tmp/kortisar/sublime/projects"
+export SUBLIME_PROJECTS_FOLDER
+
+export SUBLIME_PROJECT="$SUBLIME_PROJECTS_FOLDER/bash.sublime-project"
+export NOTES_PROJECT="$SUBLIME_PROJECTS_FOLDER/notes.sublime-project"
+
+export ADD_LINK_FILE="$HOME/dox/not/links.note"
+
+export BUDLABS_FOLDER="$HOME/box/Dropbox/www"
+export DROPBOX_FOLDER="$HOME/box/Dropbox"
+
+export PBWS_SYMBOL_3="Z"
+export PBWS_SYMBOL_1=""

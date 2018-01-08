@@ -1,0 +1,166 @@
+#!/bin/bash
+
+NAME="i3monocle"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-20"
+UPDATED="2017-12-20"
+
+main(){
+  while getopts :vhg option; do
+    case "${option}" in
+      g) dontzen=1 ;;
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  acont=($(i3list | awk '{
+
+    all="ABCD";sub($8,"",all)
+
+    print $1  # active ws
+    print $45 # i3fyra ws
+    print $5  # floating state
+    print $8  # active container
+    print all # not active containers
+    print $10 # con_id of active window
+    print $2  # visible containers
+  }'))
+
+  # if we are on zen zen again
+  [[ ${acont[0]} = "$I3ZEN_WORKSPACE" ]] \
+    && i3zen && exit
+  
+  # if this is not the i3fyra workspace, exit
+  [[ ${acont[0]} != ${acont[1]} ]] && exit
+
+  # if container is floating, 
+  # autolayout and try again:
+
+  [[ ${acont[2]} = g ]] \
+    && i3fyra -a \
+    && i3-msg "[con_id=${acont[5]}]" focus \
+    && main float && return
+ 
+  if [[ $1 != float ]]; then
+    for (( i = 0; i < ${#acont[6]}; i++ )); do
+      [[ ${acont[6]:$i:1} =~ [${acont[4]}] ]] \
+        && ((mtch++))
+    done
+    if [[ -z $mtch ]]; then
+      i3-msg -q "[con_id=${acont[5]}]" focus
+      [[ $dontzen != 1 ]] && i3zen
+    else
+      i3fyra -z "${acont[4]}"
+    fi
+  else
+    i3fyra -z "${acont[4]}"
+  fi
+  
+  i3-msg -q "[con_id=${acont[5]}]" focus
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3fyra(1), i3list(1)
+"
+
+about='
+`i3monocle` - Maximize active window
+
+SYNOPSIS
+--------
+
+`i3monocle` [`-v`|`-h`] [`-g`]
+
+DESCRIPTION
+-----------
+
+`i3monocle` Will first check the floating state of 
+the active window. If it is floating, `i3fyra -a` 
+(autolayot/toggle tiling) will get invoked to ensure
+the window is tiled and in a `i3fyra` container. Then
+all other visible `i3fyra` containers will get hidden.
+Leaving the active window in *monocle* (maximized) mode.
+
+If the window is already *monocled*, it will be put in
+*ZenMode* with `i3zen` if not the `-g` flag is passed.
+
+OPTIONS
+-------
+
+`-v`  
+  Show version and exit.
+
+`-h`  
+  Show help and exit.
+
+`-g`  
+  Don'"'"'t put already maximized windows in *ZenMode*.
+
+
+DEPENDENCIES
+------------
+
+i3fyra  
+i3list  
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

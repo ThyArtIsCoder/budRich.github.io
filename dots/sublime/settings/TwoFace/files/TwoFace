@@ -1,0 +1,19 @@
+{
+  "face1": {
+    "color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Dark.tmTheme",
+    "theme": "Boxy Solarized Dark.sublime-theme"
+  },
+
+  "face2": {
+    "color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+    "theme": "Boxy Solarized Light.sublime-theme"
+  },
+
+  "monokai": {
+    "color_scheme": "Packages/Boxy Theme/schemes/Boxy Monokai.tmTheme",
+    "theme": "Boxy Monokai.sublime-theme"
+  }
+}
+
+
+

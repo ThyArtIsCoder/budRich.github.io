@@ -5,60 +5,68 @@
     <link>https://budrich.github.io/dots/</link>
     <description>Recent content in dots on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Sep 2017 16:36:52 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Dec 2017 23:02:52 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/dots/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>README</title>
-      <link>https://budrich.github.io/dots/readme/</link>
-      <pubDate>Sun, 19 Nov 2017 22:20:17 +0200</pubDate>
+      <title>i3env</title>
+      <link>https://budrich.github.io/dots/i3env/</link>
+      <pubDate>Wed, 27 Dec 2017 18:57:41 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/readme/</guid>
-      <description>dotfiles dela budRich These are my dotfiles. The structure of the tree is the same as my home folder.
-license All my dotfiles are licensed with the WTFPL license</description>
+      <guid>https://budrich.github.io/dots/i3env/</guid>
+      <description>These are the environment variables that are specific to my i3 session. I have found that sourcing it in .xinitrc is the best, since some of the settings are dependent on xorg running, so it’s not perfect to export the variables in .bashrc.</description>
     </item>
     
     <item>
-      <title>profile</title>
-      <link>https://budrich.github.io/dots/profile/</link>
-      <pubDate>Fri, 22 Sep 2017 20:15:47 +0200</pubDate>
+      <title>sxhkdrc</title>
+      <link>https://budrich.github.io/dots/sxhkdrc/</link>
+      <pubDate>Wed, 20 Dec 2017 04:52:02 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/profile/</guid>
-      <description>Nothing going on here, just sourcing my bashrc.</description>
+      <guid>https://budrich.github.io/dots/sxhkdrc/</guid>
+      <description>The reason for this setting is described in the article: mouseback</description>
     </item>
     
     <item>
-      <title>bashrc</title>
-      <link>https://budrich.github.io/dots/bashrc/</link>
-      <pubDate>Fri, 22 Sep 2017 17:21:29 +0200</pubDate>
+      <title>inputrc</title>
+      <link>https://budrich.github.io/dots/inputrc/</link>
+      <pubDate>Wed, 20 Dec 2017 03:11:23 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/bashrc/</guid>
-      <description>The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 2 or wait 2 seconds, i3 starts.
-I have found this method much more convenient then a normal DM, where you have to change DE from some, very easily forgotten, menu. Often resulting in me logging in to the wrong DE&amp;hellip;</description>
+      <guid>https://budrich.github.io/dots/inputrc/</guid>
+      <description>These settings modify the behavior of manual input to the terminal. I use VI-mode and by setting:
+set show-mode-in-prompt on set vi-ins-mode-string set vi-cmd-mode-string :  : is displayed at the beginning of the prompt when i am in command mode.
+vimodesinprompt.gif   </description>
     </item>
     
     <item>
-      <title>Xresources</title>
-      <link>https://budrich.github.io/dots/xresources/</link>
-      <pubDate>Fri, 22 Sep 2017 17:21:28 +0200</pubDate>
+      <title>ncmpcpp</title>
+      <link>https://budrich.github.io/dots/ncmpcpp/</link>
+      <pubDate>Sat, 16 Dec 2017 23:09:22 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/xresources/</guid>
-      <description>One of the most classic dotfiles, .Xresources. I have gotten most ideas on from the r/unixporn wiki. I can&amp;rsquo;t seem to get &amp;ldquo;short name&amp;rdquo; for the includes to work, which annoys me a bit..</description>
+      <guid>https://budrich.github.io/dots/ncmpcpp/</guid>
+      <description>Keeping it simple and optimizing the layout for narrow windows (I like to have this program in my sidebar ~350px).
+ncmpcppplaylist.png   . ncmpcppbrows.png   </description>
     </item>
     
     <item>
-      <title>xinitrc</title>
-      <link>https://budrich.github.io/dots/xinitrc/</link>
-      <pubDate>Fri, 22 Sep 2017 17:17:15 +0200</pubDate>
+      <title>i3config</title>
+      <link>https://budrich.github.io/dots/i3config/</link>
+      <pubDate>Sat, 16 Dec 2017 23:08:50 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/xinitrc/</guid>
-      <description>This is part of my anti-DM suite. The stuff I want to happen just before i3 loads up, goes here.
-Starting urxvt in daemon mode is really nice and makes it consume less resources and spawn new terminal windows much faster.
-I use hsetroot to set the desktop background to a minimal tiled pattern and use the background color from Xresources.
-The Seba keyboard layout keeps me sane!
-I also have some special options to setxkbmap.</description>
+      <guid>https://budrich.github.io/dots/i3config/</guid>
+      <description>I have written articles, recorded videos and written a lot of custom scripts for i3. This is my actual config file.</description>
+    </item>
+    
+    <item>
+      <title>compton-conf</title>
+      <link>https://budrich.github.io/dots/compton-conf/</link>
+      <pubDate>Sat, 16 Dec 2017 23:08:39 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/dots/compton-conf/</guid>
+      <description>compton is a lightweight compositor for X that works really well with i3. A compositor adds some eye-candy like transparency and drop-shadows to the windows. But it also do some anti screen tearing magic and such. The compton setup can however be a bit tricky and it all depends on your own preferences and hardware.
+The blocks below are more i3 then hardware related that you might find useful:
+opacity-rule = [ # these transparency rules makes windows in tabs/stacks look good.</description>
     </item>
     
   </channel>

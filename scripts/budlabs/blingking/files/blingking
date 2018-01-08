@@ -1,0 +1,136 @@
+#!/bin/bash
+
+NAME="blingking"
+VERSION="1.006"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-09-30"
+UPDATED="2017-12-17"
+
+crawl(){
+  for f in $1/*; do
+    [[ -d $f ]] && crawl $f && continue
+    trgfil=${f##*/}
+    [[ ${trgfil} = '_index.md' ]] && continue
+    fndfld=${f%/*}
+    trgfld=${fndfld/content/static}/${trgfil%.md}
+    mkdir -p ${trgfld}
+    postbanner -t '-f 3d.flf' -l '-p 10' -o "${trgfld}/banner.html" "${trgfil%.md}"
+    postquote -f $HOME/etc/fortunes/budcol "${trgfld}/quote.html"
+  done
+}
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  fld=${1:-"$HOME/www/content"}
+  [[ -z "$fld" ]] && printf "${about}\n" && exit
+  crawl "$fld"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+bar(1), foo(5), xyzzy(1), [Linux Man Page Howto](
+http://www.schweikhardt.net/man_page_howto.html)
+"
+
+about='
+`blingking` - Creates bling for posts on budlabs
+
+SYNOPSIS
+--------
+
+`SCRIPTNAME` [`-v`|`-h`] [*CONTENT_FOLDER*]
+
+DESCRIPTION
+-----------
+
+This script creates a ASCII banner and a quote for
+each post on the budlabs website.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+FILES
+-----
+
+*CONTENT_FOLDER*
+  The path to a content folder in a `hugo` website.
+  Defaults to: *~/www/content*
+
+
+DEPENDENCIES
+------------
+
+postbanner
+postquote
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+

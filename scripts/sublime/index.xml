@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sublime on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/scripts/sublime/</link>
+    <description>Recent content in sublime on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Dec 2017 11:54:30 +0100</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/scripts/sublime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>subrun</title>
+      <link>https://budrich.github.io/scripts/sublime/subrun/</link>
+      <pubDate>Wed, 20 Dec 2017 01:23:30 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/sublime/subrun/</guid>
+      <description>subrun - Run the currently open file in Sublime. SYNOPSIS subrun [-v|-h]
+DESCRIPTION subrun makes the currently open file in sublime executable and runs it with eval.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES subtit
+sublime</description>
+    </item>
+    
+    <item>
+      <title>subtit</title>
+      <link>https://budrich.github.io/scripts/sublime/subtit/</link>
+      <pubDate>Tue, 19 Dec 2017 00:05:22 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/sublime/subtit/</guid>
+      <description>subtit subtit - Output the currently open file in sublime.
+SYNOPSIS subtit [-v|-h|-l]
+DESCRIPTION subtit uses i3get to get the window title of Sublime Text. It extracts the filename from the title and prints it to stdout. If -l flag is passed subtit will follow symbolic links if any and print the source file.
+OPTIONS -v
+Show version and exit.
+-h
+Show help and exit.
+-l
+Follow symbolic links.</description>
+    </item>
+    
+    <item>
+      <title>subpro</title>
+      <link>https://budrich.github.io/scripts/sublime/subpro/</link>
+      <pubDate>Mon, 18 Dec 2017 12:10:28 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/sublime/subpro/</guid>
+      <description>subpro subpro - Switch sublime projects
+SYNOPSIS subpro [-v|-h] project-nane
+DESCRIPTION subpro closes the currently open project in Sublime Text and opens project-name in it&amp;rsquo;s place.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+FILES FLD_PRO Folder containing .sublime-project files defaults to: ~/tmp/kortisar/sublime/projects
+DEPENDENCIES SublimeText</description>
+    </item>
+    
+    <item>
+      <title>budtutor</title>
+      <link>https://budrich.github.io/scripts/sublime/budtutor/</link>
+      <pubDate>Mon, 18 Dec 2017 12:01:56 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/sublime/budtutor/</guid>
+      <description>budtutor budtutor - Interactive tutorial for Sublime Text
+SYNOPSIS budtutor [OPTION]
+DESCRIPTION Interactive tutorial for sublime text. It is a mashup of vimtutor and sublime tutor.
+If executed without options, the whole budtutor will be opened in sublime text.
+OPTIONS -h Displays this info and exits
+-v Displays version and exits
+-s Shows &amp;lsquo;sublime&amp;rsquo; exercises
+-m Shows &amp;lsquo;vim&amp;rsquo; exercises
+-p Shows &amp;lsquo;packages&amp;rsquo; exercises
+-c Compact view, only exercise and command</description>
+    </item>
+    
+    <item>
+      <title>suba</title>
+      <link>https://budrich.github.io/scripts/sublime/suba/</link>
+      <pubDate>Mon, 18 Dec 2017 11:54:30 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/sublime/suba/</guid>
+      <description>This is a script I wrote to automate the process of uploading scripts and dotfiles to this web site.
+It analyzes the title of Sublime Text to get the filename of the currently open file.
+If the file is in ~/bin (my local scripfolder), it is a scriptfile, else it is a dotfile. Depending on the type it is sent to different directories within my hugo project folder. Which is on my Dropbox.</description>
+    </item>
+    
+  </channel>
+</rss>

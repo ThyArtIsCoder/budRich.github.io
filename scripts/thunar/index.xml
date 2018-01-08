@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>thunar on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/scripts/thunar/</link>
+    <description>Recent content in thunar on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 02 Jan 2018 15:52:49 +0100</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/scripts/thunar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>foldermen</title>
+      <link>https://budrich.github.io/scripts/thunar/foldermen/</link>
+      <pubDate>Tue, 02 Jan 2018 19:34:15 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/thunar/foldermen/</guid>
+      <description>foldermen - Browse folders SYNOPSIS foldermen [-v|-h]
+DESCRIPTION foldermen Launches a rofi instance with a list of folders. Selected forlder will be lauched with gotofolder (and opened in thunar)
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES fontawesome
+rofi
+gotofolder
+thunar</description>
+    </item>
+    
+    <item>
+      <title>linktonext</title>
+      <link>https://budrich.github.io/scripts/thunar/linktonext/</link>
+      <pubDate>Tue, 02 Jan 2018 15:54:35 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/thunar/linktonext/</guid>
+      <description>linktonext - Move/copy/link files between two open thunar instances.
+SYNOPSIS linktonext [-v|-h] FILE(s)
+DESCRIPTION If two thunar instances are open in the i3fyra layout this command will move/copy/link selected file(s) between them.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES thunar
+i3fyra
+i3list</description>
+    </item>
+    
+    <item>
+      <title>gotofolder</title>
+      <link>https://budrich.github.io/scripts/thunar/gotofolder/</link>
+      <pubDate>Tue, 02 Jan 2018 15:52:49 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/thunar/gotofolder/</guid>
+      <description>gotofolder - Open folder and adjust layout in thunar SYNOPSIS gotofolder [-v|-h] FOLDER
+DESCRIPTION gotofolder opens FOLDER in thunar and adjust the layout depending on the path of the folder.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES thunar
+i3get</description>
+    </item>
+    
+  </channel>
+</rss>

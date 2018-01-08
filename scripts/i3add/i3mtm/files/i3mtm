@@ -1,0 +1,157 @@
+#!/bin/bash
+
+NAME="i3mtm"
+VERSION="0.2"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-07-19"
+UPDATED="2017-12-17"
+
+IGNORE_MARKS=
+# IGNORE_MARKS="alfa,beta,sidebar"
+DMENU_OPTIONS=
+# DMENU_OPTIONS="-h 16 -fn Inconsolata-18:bold"
+
+show_menu(){
+  mrks=$(comm -3 <(printf '%s' "${IGNORE_MARKS}" | tr ',' "\n" | sort) \
+              <(i3-msg -t get_marks | tr -d '[]"' | tr ',' "\n" | sort) \
+              | awk '{$2=$2};1' )
+  [[ -z $mrks ]] && \
+    i3-msg "[con_id=${cur[0]}]" floating disable, focus && exit
+  trg=$(printf '%s' "${mrks}" | dmenu ${DMENU_OPTIONS} -p "move to mark:")
+  if [[ -z $trg ]];then 
+    i3-msg "[con_id=${cur[0]}]" floating disable, focus 
+  else
+    i3-msg "[con_id=${cur[0]}]" floating disable, move to mark "${trg}"
+    i3-msg "[con_id=${cur[0]}]" focus
+  fi
+}
+
+
+main(){
+  while getopts :vh option
+  do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  cur=($(i3get -r nf))
+  if [[ $1 = '-m' ]] || [[ ${cur[1]#*_} =~ on ]];then 
+    show_menu
+  else
+    i3-msg "[con_id=${cur[0]}]" floating enable, focus
+  fi
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3(1), i3get(1), dmenu(1)
+"
+
+about='
+`i3mtm` - Move (current window) To Mark
+
+SYNOPSIS
+--------
+
+`i3mtm` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+When launched without options, i3mtm checks
+floating status of current window. If it is
+tiled, the window becomes floating.
+If it is floating, a search for marks is done,
+if no marks are found, window becomes tiled.
+Otherwise a dmenu asks for a mark to move window to.
+If no selection is made, window is tiled but not moved.
+Otherwise window is tiled and moved to selected mark.
+
+With -m option window is treaded as if it was floating
+even if it is tiled. (menu is forced)  
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+EXAMPLES
+--------  
+you could replace your floating toggle binding with this:  
+``` text
+bindsym Mod3+f exec --no-startup-id exec i3mtm  
+bindsym Mod3+Shift+f exec --no-startup-id exec i3mtm -m  
+```
+
+DEPENDENCIES
+------------
+
+i3wm
+i3get
+dmenu
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

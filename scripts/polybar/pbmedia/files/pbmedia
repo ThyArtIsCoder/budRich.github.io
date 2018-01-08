@@ -1,0 +1,214 @@
+#!/bin/bash
+
+NAME="pbmedia"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-31"
+UPDATED="2017-12-31"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  action="$1"
+
+  mpvt=$(i3get -c mpv -r t)
+
+  if [[ -n $mpvt ]];then
+    op="${mpvt%.*}"
+    op=${op//\'/}
+    op=${op//\"/}
+    mpc -q pause
+  else
+    op=$(mpdstatus)
+  fi
+
+  case "$action" in
+    start ) 
+      echo "${op}"
+      [[ -z $(pidof -x mpclisten) ]] && mpclisten > /dev/null 2>&1 &
+    ;;
+    update )
+      echo "${op}"
+    ;;
+    resume )
+      mpc -q play
+      sleep .2
+      op=$(mpdstatus)
+      echo "${op}"
+    ;;
+  esac
+}
+
+mpdstatus(){
+  local op
+
+  OFS=${IFS}
+  IFS=$'\n'
+  minf=($(mpc current -f "%file%\n%title%\n%artist%\n%album%"))
+  IFS="${OFS}"
+
+  fp="${minf[0]}"
+  fld=${fp%%/*}
+  fnm=${fp##*/}
+  ttl=${minf[1]}
+  art=${minf[2]}
+  alb=${minf[3]}
+
+  op=""
+  if [[ $fld = pod ]]; then
+    op=${fnm%%.*}
+  elif [[ $fld = y ]]; then
+    op=${fnm%.*}
+    [[ $op =~ 'Lunduke Show' ]] && op=${op##*\' - }
+    op=${op//\'/}
+    op=${op/' (Audio)'/}
+    op=${op/' [Official Audio]'/}
+    op=${op/' (Official Audio)'/}
+    op=${op/' (Full Album'.*')'/}
+    op=${op/' (Full Album)'/}
+    op=${op/' (full album)'/}
+    op=${op/' (OFFICIAL VIDEO'?*')'/}
+    op=${op/' (OFFICIAL VIDEO)'/}
+    op=${op/' Official Video'/}
+    op=${op/' (Official '.*')'/}
+    op=${op/' [Audio'.*']'/}
+    op=${op/' ('????') Full Album'/}
+    op=${op/' ('?*' Full Album)'/}
+    op=${op/' ('????') (Full '?*')'/}
+    op=${op%' @ '*}
+  elif [[ -n $ttl ]]; then
+    [[ -n $art ]] && op="${art} - "
+    op+="${ttl}"
+  else
+    # op=${fld}
+    op=${fnm%.*}
+  fi
+
+  op=${op:-"turn on some music"}
+
+  echo "$op"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+bar(1), foo(5), xyzzy(1), [Linux Man Page Howto](
+http://www.schweikhardt.net/man_page_howto.html)
+"
+
+about='
+`pbmedia` - Short description
+
+SYNOPSIS
+--------
+
+`pbmedia` [`-v`|`-h`] [`-c` *config-file*] *file* ...
+
+DESCRIPTION
+-----------
+
+`pbmedia` frobnicates the bar library by tweaking internal symbol tables. By
+default it parses all baz segments and rearranges them in reverse order by
+time for the xyzzy(1) linker to find them. The symdef entry is then compressed
+using the WBG (Whiz-Bang-Gizmo) algorithm. All files are processed in the
+order specified.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+`-c` *config-file*
+  Use the alternate system wide *config-file* instead of */etc/foo.conf*. This
+  overrides any `FOOCONF` environment variable.
+
+
+FILES
+-----
+
+*/etc/foo.conf*
+  The system wide configuration file. See foo(5) for further details.
+
+*~/.foorc*
+  Per user configuration file. See foo(5) for further details.
+
+ENVIRONMENT
+-----------
+
+`FOOCONF`
+  If non-null the full pathname for an alternate system wide */etc/foo.conf*.
+  Overridden by the `-c` option.
+
+DEPENDENCIES
+------------
+
+go-md2man
+i3get
+Sublime Text
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

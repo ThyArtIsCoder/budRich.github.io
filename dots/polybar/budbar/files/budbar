@@ -1,0 +1,279 @@
+; polybar config, curated by budRich since 2016
+
+; >> pbtitle
+[module/pbtitle]
+type = custom/ipc
+hook-0 = pbtitle "focus"
+hook-1 = pbtitle title
+hook-2 = pbtitle "normal"
+hook-3 = pbtitle "advanced"
+hook-4 = pbtitle color
+hook-5 = pbtitle taskbar
+initial = 3
+
+; >> pbws
+[module/pbws]
+type = custom/ipc
+hook-0 = pbws
+hook-1 = pbws switch
+hook-2 = pbws next
+hook-3 = pbws prev
+initial = 1
+
+; >> pbrectime
+[module/pbrectime]
+type = custom/ipc
+hook-0 = pbrectime start
+hook-1 = pbrectime update
+hook-2 = echo ""
+
+; >> pbmedia
+[module/pbmedia]
+type = custom/ipc
+hook-0 = pbmedia start
+hook-1 = pbmedia "update"
+hook-2 = pbmedia "resume"
+hook-3 = echo ""
+initial = 1 
+
+; >> pbmic
+[module/pbmic]
+type = custom/ipc
+hook-0 = pbmic
+hook-1 = pbmic "mute"
+hook-2 = pbmic "up"
+hook-3 = pbmic "down"
+initial = 1
+
+; >> mpd
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6601
+
+format-online = <label-song> <icon-repeat> <icon-random>
+format-offline = <label-offline>
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+format-stopped = ${self.label-offline}
+
+format-paused-foreground = ${colors.blk}
+format-playing-foreground = ${colors.wht}
+
+label-offline = turn on some music, dude
+label-online = turn on some music, dude
+
+icon-repeat = 
+icon-random = 
+icon-random-margin-right = 0
+toggle-on-foreground = ${colors.blk}
+
+label-song-maxlen = 35
+label-song-ellipsis = true
+
+; >> xwindow
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50:...%
+
+; >> wlan
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 3.0
+
+format-connected = D <label-connected>
+; format-connected =  <label-connected>
+label-connected = %downspeed:2%
+
+format-disconnected =
+
+; >> cpu
+[module/cpu]
+type = internal/cpu
+interval = 2
+; format-prefix = " = %{A1:i3term htop:}C
+label = %{A1:i3term htop:} %percentage%%{A}
+
+; >> memory
+[module/memory]
+type = internal/memory
+interval = 2
+; format-prefix = " "
+; label = %{A1:i3term htop:}R %percentage_used%%{A}
+label = %{A1:i3term htop:} %percentage_used%%{A}
+
+; >> battery
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
+
+; label-charging = %{A1:exec budlock -l:}B %percentage%%{A}
+label-charging = %{A1:exec budlock -l:} %percentage%%{A}
+; label-full = %{A1:exec budlock -l:}B %percentage%%{A}
+label-full = %{A1:exec budlock -l:} %percentage%%{A}
+; label-discharging = %{A1:exec budlock -l:}B %percentage%%{A}
+label-discharging = %{A1:exec budlock -l:}%percentage%%{A}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.red}
+ramp-capacity-2-foreground = ${colors.foreground}
+ramp-capacity-3-foreground = ${colors.foreground}
+ramp-capacity-4-foreground = ${colors.foreground}
+
+click-left = exec budlock -l
+
+; >> xbacklight
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label>
+; label = S %percentage%
+label =  %percentage%
+label-foreground = ${colors.foreground}
+ 
+
+; >> pbvol
+[module/pbvol]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/src/polybar/pbvol --listen
+click-right = exec i3run -i pavucontrol -e pavucontrol
+click-left = ~/src/polybar/pbvol --togmute
+scroll-up = ~/src/polybar/pbvol --up
+scroll-down = ~/src/polybar/pbvol --down
+
+; >> pbweather
+[module/pbweather]
+type = custom/script
+tail = true
+label = %output%
+interval = 3000
+exec = ~/src/polybar/pbweather
+
+; >> pbmail
+[module/pbmail]
+type = custom/script
+tail = true
+label = %output%
+interval = 1000
+exec = ~/src/polybar/pbmail
+click-left = i3run -c Vivaldi-stable -e 'vivaldi-snapshot' && xdg-open http://mail.google.com
+
+; >> date
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = ""
+
+time = %H:%M
+time-alt = %m|%d
+
+format-prefix =
+;format-underline = #0a6cf5
+
+label = %time%
+
+label-margin-left = 1
+
+[settings]
+screenchange-reload = true
+
+; >> colors
+[colors]
+
+blk = ${xrdb:color0:#222}
+blk2 = ${xrdb:color8:#222}
+red = ${xrdb:color1:#222}
+red2 = ${xrdb:color9:#222}
+grn = ${xrdb:color2:#222}
+grn2 = ${xrdb:color10:#222}
+ylw = ${xrdb:color3:#222}
+ylw2 = ${xrdb:color11:#222}
+blu = ${xrdb:color4:#222}
+blu2 = ${xrdb:color12:#222}
+mag = ${xrdb:color5:#222}
+mag2 = ${xrdb:color13:#222}
+cyn = ${xrdb:color6:#222}
+cyn2 = ${xrdb:color14:#222}
+wht = ${xrdb:color7:#222}
+wht2 = ${xrdb:color15:#222}
+
+background = ${colors.blu}
+background-alt = ${colors.blk2}
+foreground = ${colors.wht}
+foreground-alt = ${colors.wht}
+primary = ${colors.blu}
+secondary = ${colors.mag}
+alert = ${colors.red}
+
+; >> settings
+[bar/example]
+monitor = ${env:MONITOR:LVDS1}
+width = 100%
+height = 12
+offset-x = 0
+offset-y = 0
+radius = 0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = ${colors.background}
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 1
+
+font-0 = FixedFixedsys:style=Regular:pixelsize=12:antialias=true;2
+font-1 = FontAwesome5Free:style=Solid:pixelsize=9;2
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=9;2
+;font-0 = xos4 Terminus:style=Bold:pixelsize=12:antialias=false;2
+;font-0 = Monaco:style=Regular:pixelsize=10;2
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+; font-1 = Font Awesome 5 Free Regular:size=9;2
+
+
+; tray-position = right
+tray-padding = 2
+
+; this combo is important to overlay tabs.
+override-redirect = true
+; wm-restack = i3
+
+enable-ipc = true
+
+; >> modules
+modules-left = date pbws pbvol pbmic xbacklight battery memory cpu 
+; modules-left = date pbvol pbmic xbacklight battery memory cpu pbweather pbmail wlan
+modules-center = pbtitle
+modules-right = pbrectime pbmedia
+; modules-right = pbrectime pbmedia
+
+
+;                      
+;        
+
+; syntax:ssSemi
