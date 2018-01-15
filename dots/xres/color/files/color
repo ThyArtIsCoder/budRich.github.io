@@ -1,6 +1,8 @@
 *.foreground:   fg
 *.background:   bg 
 *.cursorColor:  fg
+*cursorColor2:  bg
+
 *.color0:       blk
 *.color8:       blk2
 *.color1:       red

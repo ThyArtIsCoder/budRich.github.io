@@ -6,14 +6,16 @@ case $- in
       *) return;;
 esac
 
-for f in "${HOME}/.bash/"*; do
-    . $f
-done
+# for f in "$HOME/.bash/"*; do
+#     source "$f"
+# done
 
-unset f
+# unset f
 
-PATH="$PATH:$HOME/.rvm/bin"
-export PATH
+. "$HOME/.bash/alias"
+. "$HOME/.bash/prompt"
+. "$HOME/.bash/export"
+. "$HOME/.bash/path"
 
 if [[ -z $DISPLAY ]]; then
 
@@ -34,7 +36,19 @@ if [[ -z $DISPLAY ]]; then
   
 fi
 
-PATH="$HOME/scripts:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] \
+  && source "$HOME/.rvm/scripts/rvm"
+
+
+GEM_HOME=$(ruby -e 'print Gem.user_dir')
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
+PATH="$HOME/.rvm/bin:$PATH"
+
+export GEM_HOME
 export PATH
+
+. "$HOME/.bash/func"
+
 
 

@@ -4,6 +4,5 @@ dmenu.selbackground:      fg
 dmenu.foreground:         fg
 dmenu.font:               fnt3
 
-rofi.font:                FixedFixedsys 12
-rofi.theme:               oneliner
+
 

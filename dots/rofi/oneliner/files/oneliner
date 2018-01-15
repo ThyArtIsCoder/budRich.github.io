@@ -1,7 +1,9 @@
 * {
-    background-color:      #002b36;
+    background-color:         #073642;
     border-color:          #839496;
     text-color:            #839496;
+
+    // @foreground;
 
     // #define bg                 #002b36
     // #define fg                 #839496
@@ -26,6 +28,7 @@
 }
 
 #window {
+    background-color: @background;
     anchor:     north;
     location:   north;
     width:      100%;

@@ -1,27 +1,43 @@
-! xrdb -merge $HOME/.Xresources
-! printf '\e]710;%s\007' "xft:Fixedsys Excelsior 3.01\-L2 Mono:style=Regular"
-! https://www.reddit.com/r/unixporn/wiki/organizing_xresources
 
 #define fnt1 Terminus
 #define fnt2 Inconsolata
 #define fnt3 FixedFixedsys
-! #define brws vivaldi
 #define fsz1 12
 #define fsz2 18
 #define padd 5
 
-! #include </home/bud/.xres/colors/gruvbox>
-! #include </home/bud/.xres/colors/HatOfGod>
-#include </home/bud/.xres/colors/solarized-dark>
+! #include ".xres/colors/gruvbox"
+! #include ".xres/colors/HatOfGod"
+#include ".xres/colors/solarized-dark"
 
-#include </home/bud/.xres/color>
-#include </home/bud/.xres/xft>
-#include </home/bud/.xres/urxvt>
-#include </home/bud/.xres/i3wm>
-#include </home/bud/.xres/dmenu>
+#include ".xres/color"
+#include ".xres/xft"
+#include ".xres/urxvt"
+#include ".xres/dmenu"
 
 Xcursor.theme: Win8
 
-! #include </home/bud/.xres/rofi>
+budstyle.accent:   blu
+budstyle.bg1:      blk
+budstyle.bg2:      bg
+budstyle.fg1:      fg
+budstyle.fg2:      wht2
+budstyle.redish :  red
+budstyle.font1 :   fnt3
+budstyle.fontsz1 : fsz1
+
+rofi.font:                fnt3  fsz1
+rofi.theme:               oneliner
+! rofi.color-enabled:       true
+
+
+! ! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+! rofi.color-normal: blk,  #002b36,  #eee8d5,  #586e75,  #eee8d5
+! rofi.color-urgent: blk,  #dc322f,  #eee8d5,  #dc322f,  blk
+! rofi.color-active: blk,  #268bd2,  #eee8d5,  #268bd2,  #fdf6e3
+
+! !                  'background', 'border', 'separator'
+! rofi.color-window: blk,      #002b36,  #002b36
+
 
 ! syntax:ssExcla

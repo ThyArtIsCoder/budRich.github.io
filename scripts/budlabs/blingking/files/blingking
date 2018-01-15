@@ -10,12 +10,16 @@ UPDATED="2017-12-17"
 crawl(){
   for f in $1/*; do
     [[ -d $f ]] && crawl $f && continue
+    [[ ${1##*.} = md ]] && f=${1}
     trgfil=${f##*/}
     [[ ${trgfil} = '_index.md' ]] && continue
     fndfld=${f%/*}
     trgfld=${fndfld/content/static}/${trgfil%.md}
     mkdir -p ${trgfld}
-    postbanner -t '-f 3d.flf' -l '-p 10' -o "${trgfld}/banner.html" "${trgfil%.md}"
+    banvar=$(awk -F':' '$1=="banner"{$2=$2;print $2;exit}' "$f")
+    banvar=${banvar:1}
+    banvar=${banvar:-${trgfil%.md}}
+    postbanner -t '-f 3d.flf' -l '-p 10' -o "${trgfld}/banner.html" "${banvar}"
     postquote -f $HOME/etc/fortunes/budcol "${trgfld}/quote.html"
   done
 }
@@ -32,6 +36,7 @@ main(){
   done
 
   fld=${1:-"$HOME/www/content"}
+  [[ -n $1 ]] && fld="$HOME/www/content/$1"
   [[ -z "$fld" ]] && printf "${about}\n" && exit
   crawl "$fld"
 }

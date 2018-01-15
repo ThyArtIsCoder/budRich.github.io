@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://budrich.github.io/i3ass/i3pocus/</loc>
+    <lastmod>2018-01-13T15:16:26+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/scripts/menus/budrun/</loc>
     <lastmod>2018-01-05T00:30:05+01:00</lastmod>
   </url>
@@ -13,7 +18,92 @@
   </url>
   
   <url>
+    <loc>https://budrich.github.io/videos/ll_001_perfect_folders/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_002_extreme_i3/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_003_i3fyra/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_004_config_rice/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_005_more_config_rice/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_006_minimize_windows/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_007_rename_instances/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_008_extreme_size_mode/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_009_automatic_scripts/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_010_polybar_setup/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_011_polybar_hook_modules/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_012_polybar_dynamic_title/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_013_colors_are_poison/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_014_rice_of_poison/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/ll_015_polypoison/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/blog/i3_flipping_tabs/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/i3ass_update_18-01-07/</loc>
+    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/i3pocus/</loc>
     <lastmod>2018-01-03T10:22:44+01:00</lastmod>
   </url>
   
@@ -244,6 +334,11 @@
   
   <url>
     <loc>https://budrich.github.io/scripts/</loc>
+    <lastmod>2017-12-18T02:13:12+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/videos/</loc>
     <lastmod>2017-12-18T02:13:12+01:00</lastmod>
   </url>
   
@@ -679,7 +774,7 @@
   
   <url>
     <loc>https://budrich.github.io/</loc>
-    <lastmod>2018-01-05T00:30:05+01:00</lastmod>
+    <lastmod>2018-01-13T15:16:26+01:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -35,6 +35,8 @@
   $win+Control+Return   $exe urxvtc -name tiledterm
   $win+$alt+Return      $exe urxvtc -name tempterm
 
+  $win+Shift+x          $exe newterm
+
 # >>> sublime stuff <<<
 
   $win+s                $exe sublime
@@ -118,10 +120,20 @@
   # reset split sizes
   $win+p $exe i3fyra -l 'AB=-370 BD=250 AC=125'
 
-  $win+Shift+$left      $exe i3fyra -f l 
-  $win+Shift+$right     $exe i3fyra -f r 
-  $win+Shift+$down      $exe i3fyra -f d 
-  $win+Shift+$up        $exe i3fyra -f u 
+  # $win+Shift+$left      $exe i3fyra -f l 
+  # $win+Shift+$right     $exe i3fyra -f r 
+  # $win+Shift+$down      $exe i3fyra -f d 
+  # $win+Shift+$up        $exe i3fyra -f u 
+
+  $win+Shift+$left      $exe i3pocus l 
+  $win+Shift+$right     $exe i3pocus r 
+  $win+Shift+$down      $exe i3pocus d 
+  $win+Shift+$up        $exe i3pocus u 
+
+  $win+Left      focus left
+  $win+Right     focus right
+  $win+Down      focus down
+  $win+Up        focus up
 
   $win+$left            $exe i3fyra -m l 
   $win+$right           $exe i3fyra -m r 
@@ -164,14 +176,14 @@
 
 # >>> settings <<<
   
-  set_from_resource $act  i3wm.act  #111313
-  set_from_resource $ina  i3wm.ina  #111313
-  set_from_resource $ina2 i3wm.ina2 #111313
-  set_from_resource $whtl i3wm.whtl #111313
-  set_from_resource $whtd i3wm.whtd #111313
-  set_from_resource $red  i3wm.red  #FF0000
-  set_from_resource $fnt  i3wm.fnt  Terminus
-  set_from_resource $fsz  i3wm.fsz  12 
+  set_from_resource $act  budstyle.accent  #111313
+  set_from_resource $ina  budstyle.bg1  #111313
+  set_from_resource $whtl budstyle.fg2 #111313
+  set_from_resource $whtd budstyle.fg1 #111313
+  set_from_resource $red  budstyle.redish  #FF0000
+  set_from_resource $fnt  budstyle.font1  Terminus
+  set_from_resource $fsz  budstyle.fontsz1  12 
+
 
   show_marks no
   floating_modifier $alt
@@ -188,7 +200,7 @@
   client.focused           $act    $act   $whtl    $act
   client.focused_inactive  $ina    $ina   $whtd    $ina
   client.unfocused         $ina    $ina   $whtd    $ina
-  client.urgent            $red    $red   $red     $red
+  client.urgent            $red    $red   $whtd    $red
 
 # >>> window rules <<<
   
@@ -241,6 +253,7 @@
   exec_always --no-startup-id i3env
   $exe i3fyra -l 'AB=-370 BD=250 AC=125'
   # $exe dockstart  2>&1 & 
+  # exec_always polybar -c ~/.config/polybar/budbar -r example 2>&1 &
   exec_always --no-startup-id pbr > /dev/null 2>&1 &
   exec_always --no-startup-id i3listn.py > /dev/null 2>&1 &
   # $exe conky > /dev/null 2>&1 &

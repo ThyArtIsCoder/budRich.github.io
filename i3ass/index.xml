@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>i3pocus</title>
+      <link>https://budrich.github.io/i3ass/i3pocus/</link>
+      <pubDate>Sat, 13 Jan 2018 15:16:26 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3pocus/</guid>
+      <description>i3pocus - Intelligent window focusing SYNOPSIS i3pocus [-v|-h] [DIRECTION]
+DESCRIPTION i3pocus is meant as a replacement for the default focusing function (i3-msg focus) in i3wm. i3pocus moves the focus differently depending on the layout the current window is places in AND the the layout of the receiving container AND the DIRECTION the focus is moved.
+If the focus is moved horizontally (left|right) into a horizontally split (splith) container, either the first (DIRECTION = right) or the last (DIRECTION = left) window will be focused.</description>
+    </item>
+    
+    <item>
       <title>i3flip</title>
       <link>https://budrich.github.io/i3ass/i3flip/</link>
       <pubDate>Wed, 03 Jan 2018 07:09:08 +0100</pubDate>

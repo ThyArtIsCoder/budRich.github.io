@@ -41,7 +41,5 @@ if [ -x /usr/lib/command-not-found ]; then
   }
 fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-. /home/bud/.rvm/scripts/rvm
 
 # syntax:bash

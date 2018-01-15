@@ -1,5 +1,4 @@
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
+
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/others:$PATH"
@@ -13,3 +12,4 @@ PATH="$HOME/src/sublime:$PATH"
 PATH="$HOME/src/templatetator:$PATH"
 PATH="$HOME/src/launch:$PATH"
 PATH="$HOME/src/thunar:$PATH"
+PATH="$HOME/scripts:$PATH"

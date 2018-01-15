@@ -23,7 +23,6 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export GEM_HOME
+
 
 
