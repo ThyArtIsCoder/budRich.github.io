@@ -45,8 +45,9 @@ def windownotify(i3, event):
 
     if event.change == "focus":
         if event.container.window_class == 'mpv':
-            call('polybar-msg hook mediatitle 2'.split(' '))
-            # call('mpc -q pause'.split(' '))
+            call('mpc -q seek -1'.split(' '))
+            call('mpc -q pause'.split(' '))
+            # call('polybar-msg hook mediatitle 2'.split(' '))
 
     if event.change == "focus":
         call('polybar-msg hook pbtitle 1'.split(' '))
@@ -56,23 +57,19 @@ def windownotify(i3, event):
 
     if event.change == "close":
         if event.container.window_class == 'mpv':
-            call('mpc -q play'.split(' '))
-            # call('polybar-msg hook mediatitle 3'.split(' '))
-
+            call('mpc -q seek -1'.split(' '))
+            if event.container.focused == True:
+                call('pbmedia mpvclose'.split(' '))
 
     if event.change == "close":
         if event.container.window_instance == "castterm":
             call('pbrectime stop'.split(' '))
 
     if event.change == "new":
-        # print(event.container.__dict__)
         if event.container.window_instance == "castterm":
             call('pbrectime start'.split(' '))
 
         
-            # print('bullla')
-
-
 # i3.on('binding', bindnotify)
 i3.on('window', windownotify)
 i3.on('workspace', workspacenotify)

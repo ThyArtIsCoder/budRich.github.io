@@ -1,0 +1,58 @@
+#define fg #ADADB5
+#define bg #3a3c4e
+
+#define base00 #95959C
+#define base01 #e9e9f4
+#define base02 #ADADB5
+#define base03 #f7f7fb
+#define base0 #4d4f68
+#define base1 #3a3c4e
+#define base2 #626483
+#define base3 #282936
+
+#define red #ea51b2
+#define ora #b45bcf
+#define grn #ebff87
+#define ylw #00f769
+#define blu #62d6e8
+#define mag #b45bcf
+#define vio #62d6e8
+#define cyn #a1efe4
+
+mondo.colors.fg1:         fg
+mondo.colors.fg2:         base00
+mondo.colors.bg1:         bg
+mondo.colors.bg2:         base0
+
+mondo.colors.dark1:       base03
+mondo.colors.light1:      base0
+
+mondo.colors.act1:        mag
+mondo.colors.act2:        base03
+mondo.colors.act3:        base3
+
+mondo.colors.ina1:        base2
+mondo.colors.ina2:        base00
+mondo.colors.ina3:        base03
+
+mondo.colors.sel1:     base2
+mondo.colors.sel2:     base00
+
+!! GUI theme
+#define cursortheme     Windows8-cursor
+#define icontheme       DamaDamas-icon-theme
+#define gtktheme        dracula  
+
+!! Terminal fonts
+#define terminalfontface1 FixedFixedsys
+#define terminalfontsize1 12
+#define terminalfontface2 Hack
+#define terminalfontsize2 18
+
+!! GUI fonts
+#define guifontface1      FixedFixedsys
+#define guifontsize1      12
+#define guifontface2      sans
+#define guifontsize2      18
+
+! syntax:ssExcla

@@ -1,0 +1,169 @@
+#!/bin/bash
+
+NAME="img4site"
+VERSION="0.012"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-10-03"
+UPDATED="2018-03-30"
+
+FLD_THB=$HOME/www/static/img/thb
+FLD_AWD=$HOME/www/static/img/awd
+FLD_ORG=$HOME/www/static/img/org
+
+IMG_WIDTH=600   # width of image in article
+THB_DIM=200x100 # thumbnail dimensions
+
+# add option to take screenshots, and create image instantly.
+
+screenshot(){
+  type=$(echo -e "select\nfull" | rofi -dmenu -p "Printscreen: ")
+  [[ -z $type ]] && exit
+  name=$(rofi -dmenu -p "Name: ")
+  [[ -z $name ]] && exit
+
+  [[ $type = select ]] \
+    && scrot -s "/tmp/$name.png" \
+    || sleep 1 && scrot "/tmp/$name.png"
+
+  target="/tmp/$name.png"
+}
+
+main(){
+  while getopts :vhs option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      s) screenshot;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  target="${*}"
+  [[ ! -f $target ]] && printf '%s\n' "${about}" && exit
+
+  # if width is larger then 600, resize awd, otherwise
+  # have the same image for awd as org.
+  # three sizes, thumb, articlewidth and original
+
+  mkdir -p "${FLD_THB}"
+  mkdir -p "${FLD_AWD}"
+  mkdir -p "${FLD_ORG}"
+
+  for f in ${target}; do
+    cp -f "$f" "${FLD_ORG}/${f##*/}"
+    if [[ ${f##*.} = gif ]];then
+      cp -f "$f" "${FLD_AWD}/${f##*/}"
+    else
+      width=$(identify -format '%w' "${f}")
+      ((width<IMG_WIDTH)) \
+        && cp -f "$f" "${FLD_AWD}/${f##*/}" \
+        || convert "$f" -resize ${IMG_WIDTH} "${FLD_AWD}/${f##*/}"
+      convert "$f" -resize ${THB_DIM}! "${FLD_THB}/${f##*/}"
+    fi
+  done
+   
+  echo '{{< imagus "'${f##*/}'" >}}' | xclip -selection 'clipboard' \
+    && notify-send "img4site: ${f##*/} created"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+imagemagick(1), rofi(1), scrot(1)
+"
+
+about='
+`img4site` - Adds image(s) to the budlabs site
+
+SYNOPSIS
+--------
+
+`img4site` [`-v`|`-h`] `-s`|*FILE* ...
+
+DESCRIPTION
+-----------
+
+`img4site` copies *IMAGE* to budlabs and if needed
+also creates a resized copie of the image. If `-s` 
+is passed a screenshot will be taken and used as 
+*FILE*. A hugo shortcode for the image will be put
+in the clipboard and selection after succesful 
+operation.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+`-s`
+  Take a screenshot instead of using *FILE*
+
+
+DEPENDENCIES
+------------
+
+imagemagick
+rofi
+scrot
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+

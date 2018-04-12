@@ -1,11 +1,11 @@
 #!/bin/sh
 
 NAME="i3gw"
-VERSION="0.12"
+VERSION="0.125"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-01-11"
-UPDATED="2017-12-17"
+UPDATED="2018-04-02"
 
 main(){
   while getopts :vh option
@@ -22,7 +22,7 @@ main(){
   name=${1:?"usage: i3gw MARK, you didn't request a mark."}
 
   w=$(i3-msg open | awk -F':' '{gsub("[}]]","",$3);print $3}')
-  i3-msg "[con_id=${w}]" floating disable, mark "$name"
+  i3-msg -q "[con_id=${w}]" floating disable, mark "$name"
 }
 
 printinfo(){
@@ -113,12 +113,12 @@ EXAMPLES
 this will create a ghost marked casper, you can perform any action
 you can perform on a regular container.
 
-\`\`\` text
+``` text
 i3-msg [con_mark=casper] move to workspace 2
 i3-msg [con_mark=casper] split v
 i3-msg [con_mark=casper] layout tabbed
 i3-msg [con_mark=casper] kill
-\`\`\`
+```
 
 the last example (`kill`), destroys the container.
 

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export I3FYRA_WS=1
 # Workspace to use for i3fyra.
 
@@ -29,7 +31,7 @@ export BUDLOCK_DIM=1
 # Amount in percent to dim the backlight before locking.
 
 I3WSWP_COMMAND_1="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
-         -tint $(xrdb -query | awk '/\*\.background/ {print $2}')"
+         -tint $(xrdb -query | awk '/mondo.colors.act1:/ {print $2}')"
 
 I3WSWP_COMMAND_2="hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png
          -tint $(xrdb -query | awk '/\*\.color6:/ {print $2}')"

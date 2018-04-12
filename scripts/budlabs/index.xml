@@ -5,42 +5,26 @@
     <link>https://budrich.github.io/scripts/budlabs/</link>
     <description>Recent content in budlabs on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Dec 2017 02:13:12 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 18:22:53 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/scripts/budlabs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>undraft</title>
-      <link>https://budrich.github.io/scripts/budlabs/undraft/</link>
-      <pubDate>Mon, 18 Dec 2017 03:20:53 +0100</pubDate>
+      <title>img4site</title>
+      <link>https://budrich.github.io/scripts/budlabs/img4site/</link>
+      <pubDate>Fri, 30 Mar 2018 19:21:32 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/budlabs/undraft/</guid>
-      <description>undraft - Undraft files on site
-SYNOPSIS undraft [-v|-h]
-DESCRIPTION Moves draft articles in the drafts folder to the location specified with the yaml key target. And un-draft the article(s).
-OPTIONS -v Show version and exit.
--h Show help and exit.</description>
-    </item>
-    
-    <item>
-      <title>postquote</title>
-      <link>https://budrich.github.io/scripts/budlabs/postquote/</link>
-      <pubDate>Mon, 18 Dec 2017 03:15:57 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/budlabs/postquote/</guid>
-      <description>postquote - Outputs a quote to html SYNOPSIS postquote [-v|-h] [[-f fortune-options] [-l MAX_LINES] [-w WRAP]] OUTPUT-FILE
-DESCRIPTION creates a html file with a quote from fortune inside a &amp;lt;div&amp;gt; block.
-OPTIONS -v Show version and exit.
--h Show help and exit.
--l MAX_LINES Max number of lines in the output. If the quote exceeds MAX_LINES a new random quote will be used. Defaults to 9.
--w WRAP Maximum length of each line in output.</description>
+      <guid>https://budrich.github.io/scripts/budlabs/img4site/</guid>
+      <description>This is a helper script that copies and resizes an image and move it to the correct directory for use on my website, budlabs.
+img4site - Adds image(s) to the budlabs site SYNOPSIS img4site [-v|-h] -s|FILE &amp;hellip;
+DESCRIPTION img4site copies IMAGE to budlabs and if needed also creates a resized copie of the image. If -s is passed a screenshot will be taken and used as FILE. A hugo shortcode for the image will be put in the clipboard and selection after succesful operation.</description>
     </item>
     
     <item>
       <title>postbanner</title>
       <link>https://budrich.github.io/scripts/budlabs/postbanner/</link>
-      <pubDate>Mon, 18 Dec 2017 02:46:07 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:14:00 +0200</pubDate>
       
       <guid>https://budrich.github.io/scripts/budlabs/postbanner/</guid>
       <description>postbanner - Creates a colorful ASCII banner in html SYNOPSIS postbanner [-v|-h] [-o output-file] [-l lolcat-options] [-t toilet-options] TEXT
@@ -52,31 +36,17 @@ OPTIONS -v Show version and exit.
     </item>
     
     <item>
-      <title>img4site</title>
-      <link>https://budrich.github.io/scripts/budlabs/img4site/</link>
-      <pubDate>Mon, 18 Dec 2017 02:30:07 +0100</pubDate>
+      <title>postquote</title>
+      <link>https://budrich.github.io/scripts/budlabs/postquote/</link>
+      <pubDate>Fri, 30 Mar 2018 19:13:44 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/budlabs/img4site/</guid>
-      <description>img4site img4site - Adds image(s) to the budlabs site
-SYNOPSIS img4site [-v|-h] -s|FILE &amp;hellip;
-DESCRIPTION img4site copies IMAGE to budlabs and if needed also creates a resized copie of the image. If -s is passed a screenshot will be taken and used as FILE. A hugo shortcode for the image will be put in the clipboard and selection after succesful operation.
-OPTIONS -v Show version and exit.
--h Show help and exit.</description>
-    </item>
-    
-    <item>
-      <title>blingking</title>
-      <link>https://budrich.github.io/scripts/budlabs/blingking/</link>
-      <pubDate>Mon, 18 Dec 2017 02:13:12 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/budlabs/blingking/</guid>
-      <description>blingking blingking - Creates bling for posts on budlabs
-SYNOPSIS SCRIPTNAME [-v|-h] [CONTENT_FOLDER]
-DESCRIPTION This script creates a ASCII banner and a quote for each post on the budlabs website.
+      <guid>https://budrich.github.io/scripts/budlabs/postquote/</guid>
+      <description>postquote - Outputs a quote to html SYNOPSIS postquote [-v|-h] [[-f fortune-options] [-l MAX_LINES] [-w WRAP]] OUTPUT-FILE
+DESCRIPTION creates a html file with a quote from fortune inside a &amp;lt;div&amp;gt; block.
 OPTIONS -v Show version and exit.
 -h Show help and exit.
-FILES CONTENT_FOLDER The path to a content folder in a hugo website. Defaults to: ~/www/content
-DEPENDENCIES postbanner postquote</description>
+-l MAX_LINES Max number of lines in the output. If the quote exceeds MAX_LINES a new random quote will be used. Defaults to 9.
+-w WRAP Maximum length of each line in output.</description>
     </item>
     
   </channel>

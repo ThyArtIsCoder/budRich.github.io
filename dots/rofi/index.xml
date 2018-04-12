@@ -5,7 +5,7 @@
     <link>https://budrich.github.io/dots/rofi/</link>
     <description>Recent content in rofi on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Dec 2017 23:13:17 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 13:20:31 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/dots/rofi/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>oneliner</title>
       <link>https://budrich.github.io/dots/rofi/oneliner/</link>
-      <pubDate>Sat, 16 Dec 2017 23:13:17 +0100</pubDate>
+      <pubDate>Sun, 01 Apr 2018 12:27:03 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/rofi/oneliner/</guid>
       <description>This rofi theme looks like dmenu with everything on one line. When it&amp;rsquo;s displayed it overlays my polybar.

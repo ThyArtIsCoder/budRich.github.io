@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="pbtitle"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-25"
-UPDATED="2017-12-25"
+UPDATED="2018-04-02"
 
 prestr="%{A1:polybar-msg hook pbtitle TRGHOOK:}"
 prestr+="%{A2:i3run -c Conky -e conky && i3fyra -z ABD:}"
@@ -42,7 +42,7 @@ main(){
     OFS=${IFS}
     IFS=$'\n'
     tit=($(i3get -r cit))
-    IFS="${OFS}" ;
+    IFS="${OFS}" 
   }
 
   case "$event" in
@@ -123,8 +123,9 @@ main(){
       # if i34ws && titlemod!=rice && AWC=A : A.title white
       elif [[ $AWC = ${I3FYRA_MAIN_CONTAINER} ]]; then
         tit="$(i3get -r t)"
+        i3var set oldtitle "${tit//[\"]/}"
         newtitle "${tit}" "1"
-        i3var set oldtitle "${tit//\"/]}"
+        # i3var set oldtitle
 
       # if i34we && titlemod!=rice && AWC!=A : oldtitle grey
       else
@@ -142,12 +143,16 @@ main(){
 
 newtitle(){
   local ttl="$1"
-  local col="$2"
+  local col
 
-  acol=($(xrdb -query | awk '/\*color[07]:/ {print $2}'))
+  case $2 in
+    1   ) col=$(xrdb -query | awk '/mondo.colors.act2:/ {print $2}') ;;
+    0|* ) col=$(xrdb -query | awk '/mondo.colors.act3:/ {print $2}') ;;
+  esac
+  
 
   echo -n "${prestr}"
-  echo -n "%{F${acol[$col]}}${ttl//[\"\\]}%{F-}"
+  echo -n "%{F${col}}${ttl//[\"\\]}%{F-}"
   echo -n "${sufstr}"
 }
 

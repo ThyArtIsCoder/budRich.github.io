@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gtk3 on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/mondo/generator/gtk3/</link>
+    <description>Recent content in gtk3 on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Apr 2018 15:46:26 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/mondo/generator/gtk3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-generate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:01 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-apply/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

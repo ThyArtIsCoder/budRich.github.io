@@ -5,47 +5,45 @@
     <link>https://budrich.github.io/scripts/thunar/</link>
     <description>Recent content in thunar on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Jan 2018 15:52:49 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 19:47:00 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/scripts/thunar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>foldermen</title>
-      <link>https://budrich.github.io/scripts/thunar/foldermen/</link>
-      <pubDate>Tue, 02 Jan 2018 19:34:15 +0100</pubDate>
+      <title>fmb</title>
+      <link>https://budrich.github.io/scripts/thunar/fmb/</link>
+      <pubDate>Fri, 30 Mar 2018 19:35:54 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/thunar/foldermen/</guid>
-      <description>foldermen - Browse folders SYNOPSIS foldermen [-v|-h]
-DESCRIPTION foldermen Launches a rofi instance with a list of folders. Selected forlder will be lauched with gotofolder (and opened in thunar)
+      <guid>https://budrich.github.io/scripts/thunar/fmb/</guid>
+      <description>fmbdsplits.png   fmb - Run or raise a plain notes sublime instance. SYNOPSIS fmb [-v|-h|] [-i FMB_INSTANCE]
+DESCRIPTION This command is just a shortcut to a complex command used to run or raise a thunar instance with a special instance name and settings applied.
 OPTIONS -v Show version and exit.
 -h Show help and exit.
-DEPENDENCIES fontawesome
-rofi
-gotofolder
-thunar</description>
+-i FMB_INSTANCE
+Instance name to give the filemanager window. Defautlt: filemanager_b
+ENVIRONMENT FMB_INSTANCE If non-null rename instance name of filemanager window.</description>
     </item>
     
     <item>
-      <title>linktonext</title>
-      <link>https://budrich.github.io/scripts/thunar/linktonext/</link>
-      <pubDate>Tue, 02 Jan 2018 15:54:35 +0100</pubDate>
+      <title>fmd</title>
+      <link>https://budrich.github.io/scripts/thunar/fmd/</link>
+      <pubDate>Fri, 30 Mar 2018 19:35:19 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/thunar/linktonext/</guid>
-      <description>linktonext - Move/copy/link files between two open thunar instances.
-SYNOPSIS linktonext [-v|-h] FILE(s)
-DESCRIPTION If two thunar instances are open in the i3fyra layout this command will move/copy/link selected file(s) between them.
+      <guid>https://budrich.github.io/scripts/thunar/fmd/</guid>
+      <description>fmbdsplits.png   fmd - Run or raise a plain notes sublime instance. SYNOPSIS fmd [-v|-h|] [-i FMD_INSTANCE]
+DESCRIPTION This command is just a shortcut to a complex command used to run or raise a thunar instance with a special instance name and settings applied.
 OPTIONS -v Show version and exit.
 -h Show help and exit.
-DEPENDENCIES thunar
-i3fyra
-i3list</description>
+-i FMD_INSTANCE
+Instance name to give the filemanager window. Defautlt: filemanager_d
+ENVIRONMENT FMD_INSTANCE If non-null rename instance name of filemanager window.</description>
     </item>
     
     <item>
       <title>gotofolder</title>
       <link>https://budrich.github.io/scripts/thunar/gotofolder/</link>
-      <pubDate>Tue, 02 Jan 2018 15:52:49 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:31:51 +0200</pubDate>
       
       <guid>https://budrich.github.io/scripts/thunar/gotofolder/</guid>
       <description>gotofolder - Open folder and adjust layout in thunar SYNOPSIS gotofolder [-v|-h] FOLDER

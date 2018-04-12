@@ -1,0 +1,143 @@
+#!/bin/bash
+
+NAME="sublime"
+VERSION="0.003"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-19"
+UPDATED="2018-04-02"
+
+SUBLIME_INSTANCE=${SUBLIME_INSTANCE:-'sublime_main'}
+SUBLIME_PROJECT=${SUBLIME_PROJECT:-"$HOME/tmp/kortisar/sublime/projects/bash.sublime-project"}
+proname="${SUBLIME_PROJECT##*/}"
+proname="${proname%.*}"
+SUBLIME_TARGET="i3get -t '[(]${proname}[)]' -r d -y"
+
+command=$(cat << EOF
+subpro -i "sublime_text" "$proname" \
+&& xdotool set_window --classname "$SUBLIME_INSTANCE" \`${SUBLIME_TARGET}\`
+EOF
+)
+
+main(){
+  while getopts :vhli: option; do
+    case "${option}" in
+      i) SUBLIME_INSTANCE="${OPTARG}" ;;
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+i3run -i "$SUBLIME_INSTANCE" -g -e "${command}"
+
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3run(1), xdotool(1), subtit(1)
+"
+
+about='
+`sublime` - Run or raise a sublime instance.
+
+SYNOPSIS
+--------
+
+`sublime` [`-v`|`-h`|] [`-i` *SUBLIME_INSTANCE*]
+
+DESCRIPTION
+-----------
+
+This command is just a shortcut to a complex command
+used to run or raise  sublime with a certain project and
+instance name.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+`-i` *SUBLIME_INSTANCE*  
+  Instance name to give the notes window.
+  Defautlt: *sublime_notes*
+
+ENVIRONMENT
+-----------
+
+`SUBLIME_INSTANCE`
+  If non-null the will rename instance name of main
+  window. Overridden by the `-i` option.
+  Defautlt: *sublime_main*
+
+`SUBLIME_PROJECT`
+  Path to a project file to start sublime with.
+
+DEPENDENCIES
+------------
+
+i3run
+xdotool
+sublime
+subtit
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

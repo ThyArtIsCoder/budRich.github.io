@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # add last command to logbook . find link linux bbq
 function lb() { fc -lnr -1 >> $HOME/.bash/logbook ;}
 
@@ -56,6 +58,13 @@ pipi(){
     fi
   done
 }
+
+
+# fzf stuff, triggered with bindings in inputrc
+fzf_history() { $(history | fzf +s | awk '{$1=$2=$3="";print $0}') ; }
+fzf_killps() { ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }
+fzf_cd() { DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }
+
 
 # colorize less.. find link, random dotfile...
 # fix cyan bottom bar and colors in general.

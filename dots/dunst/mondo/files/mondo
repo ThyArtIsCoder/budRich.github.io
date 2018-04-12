@@ -1,0 +1,25 @@
+[urgency_low]
+background = "#bdae93"
+foreground = "#3c3836"
+timeout = 4
+
+[urgency_normal]
+background = "#bdae93"
+foreground = "#3c3836"
+timeout = 5
+
+[urgency_critical]
+background = "#fb4934"
+foreground = "#fbf1c7"
+timeout = 10
+
+[shortcuts]
+close       = ctrl+space
+context     = ctrl+shift+space
+# close_all  = ctrl+shift+space
+# history    = ctrl+grave
+# context    = ctrl+shift+period
+
+[global]
+font = FixedFixedsys 12
+frame_color = "#3c3836"

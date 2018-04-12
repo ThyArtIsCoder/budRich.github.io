@@ -1,0 +1,335 @@
+# i3config - curated by budRich since 2016
+# ========================================
+
+# >>> initializatione <<<
+
+  set $left   h
+  set $down   j
+  set $up     k
+  set $right  l
+
+  set $exe exec --no-startup-id exec
+  set $win bindsym Mod4
+  set $alt Mod1
+  
+  set $browser   i3run -c Vivaldi-stable -e 'vivaldi-stable'
+
+  set $bigsize   10 px or 10 ppt
+  set $smallsize 3 px or 3 ppt
+  set $bigmove   30 px
+  set $smallmove 1 px
+  
+# >>> panic <<<
+
+  $win+Control+r        $exe i3-msg reload  ; $exe polybar-msg cmd restart
+  $win+$alt+r           $exe i3-msg restart ; $exe polybar-msg cmd restart
+  $win+Escape           $exe i3off -x
+  $win+x                $exe budlock -l misfitta.png
+
+# >>> terminal spawning <<<
+
+  $win+Return           $exe i3run -i cornerterm -s -e 'urxvtc -name cornerterm'
+  $win+Shift+Return     $exe i3run -i termsmall -e 'urxvtc -name termsmall'
+  $win+Control+Return   $exe urxvtc -name tiledterm
+  $win+$alt+Return      $exe i3run -i floatterm -s -e 'urxvtc -name floatterm'
+
+  $win+Shift+x          $exe newterm
+
+# >>> sublime related <<<
+
+  $win+s                $exe sublime
+  $win+Control+s        $exe subpromen
+  $win+Shift+s          $exe notes
+  $win+Shift+Control+s  $exe subswap
+  $win+$alt+s           $exe subrun
+
+# >>> i3run - sane applaunching for the modern tiler <<<
+
+  $win+e          $exe fmd
+  $win+Shift+e    $exe fmb
+  bindsym $alt+e  $exe foldermen
+  
+  $win+f          $exe $browser
+  $win+a          $exe i3term irssi
+  $win+d          $exe i3term ncmpcpp
+  $win+q          $exe i3run -i qbittorrent -e 'qbittorrent'
+  $win+v          $exe i3run -i klavaro -e 'klavaro'
+  
+  $win+grave      $exe i3run -i gcolor2 -e 'gcolor2'
+
+  $win+m          $exe i3run -c mpv
+  $win+n          $exe i3run -c Sxiv
+
+# >>> barmenu <<<
+
+  $win+b                         $exe polybar-msg cmd toggle
+  
+  bindsym --release F8           $exe templatetator
+  bindsym --release Shift+F8     $exe ganon
+  bindsym --release Mod4+F1      $exe gethelp
+
+  bindsym --release F6           $exe rofi-bm
+  bindsym --release Shift+F6     $exe rofi-bm get
+  bindsym --release Control+F6   $exe rofi-bm add
+
+  $win+i                         $exe fontawesome-menu -f "/home/bud/rep/rofi-fontawesome/fontawesome-menu/fa5-list.txt"
+  $win+Shift+r                   $exe budrun
+  $win+space                     $exe rofi -show run
+  $win+Shift+t                   $exe themon
+  $win+t                         $exe themon toggle
+
+# >>> media <<<
+
+  $win+bracketleft               $exe mediacontrol prev 
+  $win+bracketright              $exe mediacontrol next
+
+  $win+Shift+braceleft           $exe mediacontrol seek -10
+  $win+Control+braceleft         $exe mediacontrol seek -300
+  $win+Shift+Control+braceleft   $exe mediacontrol seek -60
+
+  $win+Shift+braceright          $exe mediacontrol seek +10
+  $win+Control+braceright        $exe mediacontrol seek +300
+  $win+Shift+Control+braceright  $exe mediacontrol seek +60
+
+  $win+slash                     $exe mediacontrol toggle
+
+  $win+minus                     $exe cwm-brightness down
+  $win+equal                     $exe cwm-brightness up
+
+  $win+apostrophe        $exe pactl set-sink-volume @DEFAULT_SINK@ "-2%"
+  $win+backslash         $exe pactl set-sink-volume @DEFAULT_SINK@ "+2%"
+  $win+Shift+quotedbl    $exe pactl set-source-volume @DEFAULT_SOURCE@ "-2%"
+  $win+Shift+bar         $exe pactl set-source-volume @DEFAULT_SOURCE@ "+2%"
+
+  $win+period            $exe pactl set-sink-mute @DEFAULT_SINK@ toggle
+  $win+Shift+greater     $exe pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  $win+Shift+question    $exe i3run -i pavucontrol -e pavucontrol
+
+  $win+comma             $exe opswitch
+
+
+# >>> brightness <<<
+  
+  $win+Shift+underscore          $exe cwm-brightness down
+  $win+Shift+plus                $exe cwm-brightness up
+
+# >>> upload content <<<
+
+  bindsym --release Mod4+Print $exe i3cast
+  bindsym --release Print      $exe shoot
+
+  $win+c $exe \
+    xclip -o | curl -F c=@- https://ptpb.pw/?u=1 | \
+    xclip -selection 'clipboard' && \
+    notify-send "Paste uploaded"
+
+# >>> mousekeys <<<
+
+  bindsym --release button2 kill # mbutton on titlebar kills
+
+# >>> moving the size of the focus <<<
+
+  $win+Control+$left    $exe i3Kornhe left
+  $win+Control+$down    $exe i3Kornhe down
+  $win+Control+$up      $exe i3Kornhe up
+  $win+Control+$right   $exe i3Kornhe right
+
+  $win+Shift+$left      $exe i3viswiz l 
+  $win+Shift+$right     $exe i3viswiz r 
+  $win+Shift+$down      $exe i3viswiz d 
+  $win+Shift+$up        $exe i3viswiz u 
+
+  $win+$left            $exe i3fyra -m l 
+  $win+$right           $exe i3fyra -m r 
+  $win+$down            $exe i3fyra -m d 
+  $win+$up              $exe i3fyra -m u 
+
+  $win+Tab              $exe i3flip n
+  $win+Shift+Tab        $exe i3flip p
+
+# >>> window managing, general <<<
+  
+  $win+F2      $exe i3minimize
+  $win+F3      $exe i3monocle
+  bindsym F4   kill
+
+  $win+z           $exe i3fyra -a
+  $win+Shift+z     focus mode_toggle
+
+  $win+Control+z   $exe i3zen
+
+# >>> wallpaper control <<<
+  
+  $win+w        $exe budlock -wr 
+  $win+Shift+w  $exe budlock -wc blur 
+
+# >>> workspace stuff <<<
+  
+  bindsym $alt+Tab $exe polybar-msg hook pbws 2
+
+  $win+1 workspace 1
+  $win+2 workspace 2
+  $win+3 workspace 3
+
+  $win+Shift+1 move container to workspace 1
+  $win+Shift+2 move container to workspace 2
+  $win+Shift+3 move container to workspace 3
+
+# >>> settings <<<
+
+  show_marks no
+  floating_modifier $alt
+  hide_edge_borders both
+  focus_follows_mouse no
+  workspace_auto_back_and_forth no
+
+  set_from_resource $act  mondo.colors.act1    #111313
+  set_from_resource $ina  mondo.colors.ina1    #111313
+  set_from_resource $bgc  mondo.colors.bg1     #111313
+  set_from_resource $whtl mondo.colors.act2    #111313
+  set_from_resource $whtd mondo.colors.ina2    #111313
+  set_from_resource $red  mondo.colors.redish  #FF0000
+  set_from_resource $fnt  mondo.gui.fontface1  Terminus
+  set_from_resource $fsz  mondo.gui.fontsize1  12 
+
+# >>> appearance <<<
+
+  for_window [class="^.*"] border normal 1
+
+  # widow Colors           border  bg     text    indic
+  client.focused           $act    $act   $whtl    $act
+  client.focused_inactive  $ina    $ina   $whtd    $ina
+  client.unfocused         $ina    $ina   $whtd    $ina
+  client.urgent            $red    $red   $whtl    $red
+
+  client.background        $bgc
+
+  font pango:$fnt $fsz
+
+# >>> window layout <<<
+  
+  # default layout:
+  set $layout 'AB=-370 BD=250 AC=125'
+
+  # AAAB
+  # CCCD
+  # CCCD
+
+  # autoload layout:
+  $exe i3fyra -l $layout
+
+  # layout manipulation bindings:
+  $win+p        $exe i3fyra -l $layout
+  $win+Shift+p  $exe i3fyra -l 'AB=800 BD=450'
+  $win+g        layout toggle tabbed splith splitv
+
+# >>> window rules <<<
+  
+  # default rule: float everything
+  for_window [class="^.*"] floating enable, title_format " "  
+
+  # instance|class|title rule
+  set $ir for_window [instance =
+  set $cr for_window [class =
+  set $tr for_window [title =
+
+  # tf: titleformat
+  set $tf ] title_format
+
+  # tc: target container
+  set $tc , focus; exec --no-startup-id exec i3fyra -m
+
+  $ir "qbittorrent"        $tf "qbittorrent" $tc A
+  $ir "termsmall"          $tf "URxvt"       $tc A
+  $ir "htop"               $tf "htop"        $tc A
+
+  $cr "Vivaldi-stable"     $tf "vivaldi"     $tc C
+  $ir "sublime_main"       $tf "sublime"     $tc C
+  $ir "milkytracker"       $tf "tracker"     $tc C
+  $ir "termbig"            $tf "URxvt"       $tc C
+  $ir "calibre-gui"        $tf "calibre"     $tc C
+  $ir "code"               $tf "VScode"      $tc C
+
+  $tr "^conky \(6570b\)$"     $tf "desktop"  $tc C
+  $tr "^Klavaro - Fluidness$" $tf "klavaro"  $tc C
+  $tr "^Klavaro - Velocity$"  $tf "klavaro"  $tc C
+
+  $cr "mpv"                $tf "mpv"         $tc B
+  $cr "feh"                $tf "feh"         $tc B
+  $cr "Sxiv"               $tf "sxiv"        $tc B
+  $ir "^filemanager_b$"    $tf "%title"      $tc B
+  $ir "ncmpcpp"            $tf "ncmpcpp"     $tc B
+  $ir "cornerterm"         $tf "URxvt"       $tc B
+
+  $ir "pavucontrol"        $tf "pavucontrol" $tc B; \
+    $exe i3fyra -l 'AB=-565 BD=400'; \
+    $exe i3-msg [instance="pavucontrol"] focus
+  
+  $ir "sublime_notes"      $tf "notes"       $tc D
+  $ir "^.*gotofolder.*$"   $tf "%title"      $tc D
+  $ir "^surf$"             $tf "surf"        $tc D
+  $ir "irssi"              $tf "irssi"       $tc D
+
+
+  $ir "floatterm" $tf "URxvt", resize set 400 px 300 px
+  $ir "tiledterm" $tf "URxvt", floating disabled
+
+  $tr "^cairo-dock-dialog$"] border pixel 0
+
+  $tr "^Klavaro - Main Menu$"] move absolute position center
+
+  for_window [window_TYPE="dialog"]    floating enable
+  for_window [window_TYPE="splash"]    floating enable
+  for_window [window_TYPE="utility"]   floating enable
+
+# >>> automatic execution <<<
+
+  $exe pbr &
+  
+# >>> modes <<<
+
+mode "topleft" {
+  bindsym $left resize grow left 10 px or 10 ppt
+  bindsym $right resize shrink left 10 px or 10 ppt
+
+  bindsym $down resize shrink up 10 px or 10 ppt
+  bindsym $up resize grow up 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+mode "topright" {
+  bindsym $left resize shrink right 10 px or 10 ppt
+  bindsym $right resize grow right 10 px or 10 ppt
+
+  bindsym $down resize shrink up 10 px or 10 ppt
+  bindsym $up resize grow up 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+mode "bottomleft" {
+  bindsym $left resize grow left 10 px or 10 ppt
+  bindsym $right resize shrink left 10 px or 10 ppt
+
+  bindsym $down resize grow down 10 px or 10 ppt
+  bindsym $up resize shrink down 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+mode "bottomright" {
+  bindsym $left resize shrink right 10 px or 10 ppt
+  bindsym $right resize grow right 10 px or 10 ppt
+
+  bindsym $down resize grow down 10 px or 10 ppt
+  bindsym $up resize shrink down 10 px or 10 ppt
+
+  bindsym Return mode "default", title_format " "
+  bindsym Escape mode "default", title_format " "
+}
+
+# syntax:ssHash

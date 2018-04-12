@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="gotofolder"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-31"
-UPDATED="2017-12-31"
+UPDATED="2018-04-11"
 
 main(){
   while getopts :vh option; do
@@ -21,14 +21,19 @@ main(){
   newinstancename=""
   trgfld="${1:-$HOME}"
   # notify-send "$trgfld"
-  cntid=($(i3get -t "${trgfld/'~'/$HOME} - File Manager" -r ndi ))
+  srchDir="${trgfld/'~'/$HOME}"
+  srchDir="${srchDir//(/\\[(]}"
+  srchDir="${srchDir//)/\\[)]}"
+
+  cntid=($(i3get -t "${srchDir} - File Manager" -r ndi ))
 
   trgfld="${trgfld/$HOME/'~'}"
 
   if [[ -z $cntid ]]; then
     applyprofile new
+
     command='thunar "TRGFOLDER" & xdotool set_window --classname "INSTANCENAME" `i3get -i thunar -r d -y`'
-    trgfld=${trgfld/'~'/$HOME}
+    trgfld="${trgfld/'~'/$HOME}"
     command="${command/TRGFOLDER/$trgfld}"
     command="${command/INSTANCENAME/$newinstancename}"
     echo "$command"
@@ -36,6 +41,7 @@ main(){
     i3-msg -q "[con_id=$cntid]" title_format "${trgfld/$HOME/'~'}"
   else
     [[ ${cntid[2]} = filemanager_b ]] && exit
+
     i3run -t "${trgfld/'~'/$HOME} - File Manager" -g 
     applyprofile old
   fi  
@@ -46,21 +52,26 @@ applyprofile(){
   local type="$1"
   local width options size
 
-  # i|l   - icon or list
   # t|n   - sort by time or name
   # a|d   - ascending (A before B) or decending (New before old) sort
+  # i|l   - icon or list
   # u|s   - text under or beside icons
   # size  - iconsize
   # width - windowwidth
 
   case "$trgfld" in
     '~/pix/wp'     ) options="tdiu" size="LARGEST" width=450 ;;
+    '~/pix/nwp'    ) options="tdiu" size="LARGEST" width=450 ;;
     '~/pix/ss'     ) options="tdiu" size="LARGEST" width=450 ;;
     '~/pix/d'      ) options="tdiu" size="LARGEST" width=450 ;;
     '~/pix/r'      ) options="tdiu" size="LARGER"  width=450 ;;
     '~/pix/folk'*  ) options="naiu" size="LARGER"  width=450 ;;
     '~/pix/pwp'    ) options="tdiu" size="LARGER"  width=450 ;;
     '~/vid/y'      ) options="tdis" size="LARGEST" width=380 ;;
+    '~/snd/y'      ) options="tdlu" size="LARGEST" width=380 ;;
+    '~/snd/pod'    ) options="tdlu" size="LARGEST" width=380 ;;
+    '~/vid/bud'    ) options="tdis" size="LARGEST" width=380 ;;
+    '~/vid/'*      ) options="nais" size="LARGEST" width=380 ;;
     '~/vid/s'*     ) options="naiu" size="LARGEST" width=450 ;;
     '~/vid/bud'    ) options="tdiu" size="LARGEST" width=450 ;;
     '~/dwn'*       ) options="tdlu" size="NORMAL"  width=380 ;;
@@ -89,12 +100,12 @@ applyprofile(){
 
   keys+="ctrl+1 "
   case "$size" in
-    LARGEST ) keys+="ctrl+0 ctrl+plus ctrl+plus ctrl+plus " size=7 ;;
-    LARGER ) keys+="ctrl+0 ctrl+plus ctrl+plus " size=6 ;;
-    LARGE ) keys+="ctrl+0 ctrl+plus " size=5 ;;
-    NORMAL  ) keys+="ctrl+0 " size=4 ;;
-    SMALL ) keys+="ctrl+0 ctrl+minus " size=3 ;;
-    SMALLER ) keys+="ctrl+0 ctrl+minus ctrl+minus " size=2 ;;
+    LARGEST  ) keys+="ctrl+0 ctrl+plus ctrl+plus ctrl+plus " size=7 ;;
+    LARGER   ) keys+="ctrl+0 ctrl+plus ctrl+plus " size=6 ;;
+    LARGE    ) keys+="ctrl+0 ctrl+plus " size=5 ;;
+    NORMAL   ) keys+="ctrl+0 " size=4 ;;
+    SMALL    ) keys+="ctrl+0 ctrl+minus " size=3 ;;
+    SMALLER  ) keys+="ctrl+0 ctrl+minus ctrl+minus " size=2 ;;
     SMALLEST ) keys+="ctrl+0 ctrl+minus ctrl+minus ctrl+minus " size=1 ;;
   esac
 

@@ -5,18 +5,39 @@
     <link>https://budrich.github.io/dots/dunst/</link>
     <description>Recent content in dunst on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Dec 2017 23:05:04 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 14:11:18 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/dots/dunst/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>barover</title>
-      <link>https://budrich.github.io/dots/dunst/barover/</link>
-      <pubDate>Sat, 16 Dec 2017 23:05:05 +0100</pubDate>
+      <title>mondo</title>
+      <link>https://budrich.github.io/dots/dunst/mondo/</link>
+      <pubDate>Sun, 01 Apr 2018 12:44:13 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/dunst/barover/</guid>
-      <description>This dunst theme displays a notification that only contains the summary (%s) in one line. It has the same height as my polybar and it overlies the center of the bar when visible.</description>
+      <guid>https://budrich.github.io/dots/dunst/mondo/</guid>
+      <description>I have a quite odd dunst setup. The file dunst/mondo is generated with mondo and contains the color definitions for dunst. By default i merge the mondo file with dunst/lo-bar . But I have a script that can merge the mondo file with a different file and by doing so creating a temporary alternative notification layout.
+lo-bar This layout displays a notification that only contains the summary (%s) in one line.</description>
+    </item>
+    
+    <item>
+      <title>lo-rofi</title>
+      <link>https://budrich.github.io/dots/dunst/lo-rofi/</link>
+      <pubDate>Sun, 01 Apr 2018 12:43:57 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/dunst/lo-rofi/</guid>
+      <description>I have a quite odd dunst setup. The file dunst/mondo is generated with mondo and contains the color definitions for dunst. By default i merge the mondo file with dunst/lo-bar . But I have a script that can merge the mondo file with a different file and by doing so creating a temporary alternative notification layout.
+lo-bar This layout displays a notification that only contains the summary (%s) in one line.</description>
+    </item>
+    
+    <item>
+      <title>lo-bar</title>
+      <link>https://budrich.github.io/dots/dunst/lo-bar/</link>
+      <pubDate>Sun, 01 Apr 2018 12:43:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/dunst/lo-bar/</guid>
+      <description>I have a quite odd dunst setup. The file dunst/mondo is generated with mondo and contains the color definitions for dunst. By default i merge the mondo file with dunst/lo-bar . But I have a script that can merge the mondo file with a different file and by doing so creating a temporary alternative notification layout.
+lo-bar This layout displays a notification that only contains the summary (%s) in one line.</description>
     </item>
     
   </channel>

@@ -1,0 +1,18 @@
+TRGFLD="$HOME/src/new"
+
+mkdir -p "$TRGFLD"
+
+echo -e '#!/bin/bash'"\n" >> $TRGFLD/$CURFIL
+
+awk -v name="$CURFIL" -v today=$(date +%Y-%m-%d) -F'=' \
+  '{
+    gsub("SCRIPTNAME",name,$0)
+    gsub("THISDATE",today,$0)
+    print $0
+   }' \
+  $CURFLD/template >> $TRGFLD/$CURFIL
+chmod +x $TRGFLD/$CURFIL
+subpro bash
+subl $TRGFLD/$CURFIL
+
+# syntax:bash

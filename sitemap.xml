@@ -3,13 +3,938 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://budrich.github.io/i3ass/i3pocus/</loc>
-    <lastmod>2018-01-13T15:16:26+01:00</lastmod>
+    <loc>https://budrich.github.io/scripts/</loc>
+    <lastmod>2018-04-11T19:47:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://budrich.github.io/scripts/menus/budrun/</loc>
-    <lastmod>2018-01-05T00:30:05+01:00</lastmod>
+    <loc>https://budrich.github.io/scripts/thunar/</loc>
+    <lastmod>2018-04-11T19:47:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/rofi/</loc>
+    <lastmod>2018-04-11T19:42:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/misc/</loc>
+    <lastmod>2018-04-11T19:13:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/budlabs/</loc>
+    <lastmod>2018-04-11T18:22:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/</loc>
+    <lastmod>2018-04-11T18:15:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/post/</loc>
+    <lastmod>2018-04-11T18:15:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/</loc>
+    <lastmod>2018-04-11T18:15:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/letslinux/</loc>
+    <lastmod>2018-04-11T18:13:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/bash/</loc>
+    <lastmod>2018-04-11T18:12:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/</loc>
+    <lastmod>2018-04-11T15:57:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/</loc>
+    <lastmod>2018-04-11T15:57:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/sublime/</loc>
+    <lastmod>2018-04-11T15:57:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/</loc>
+    <lastmod>2018-04-11T15:55:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/klavaro/</loc>
+    <lastmod>2018-04-11T15:53:39+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-theme/</loc>
+    <lastmod>2018-04-11T15:50:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/rofi/</loc>
+    <lastmod>2018-04-11T15:47:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk3/</loc>
+    <lastmod>2018-04-11T15:46:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk2/</loc>
+    <lastmod>2018-04-11T15:46:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-cursor/</loc>
+    <lastmod>2018-04-11T15:45:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sxhkd/</loc>
+    <lastmod>2018-04-11T15:26:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/env/</loc>
+    <lastmod>2018-04-11T15:19:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/xfiles/</loc>
+    <lastmod>2018-04-11T14:25:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/dunst/</loc>
+    <lastmod>2018-04-11T14:11:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/misc/dunst-layout/</loc>
+    <lastmod>2018-04-11T14:05:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/thunar/</loc>
+    <lastmod>2018-04-11T13:29:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/rofi/</loc>
+    <lastmod>2018-04-11T13:20:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/</loc>
+    <lastmod>2018-04-11T13:16:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/irssi/</loc>
+    <lastmod>2018-04-11T12:54:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/polybar_and_workspaces/</loc>
+    <lastmod>2018-04-07T18:07:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/letslinux/recipie/</loc>
+    <lastmod>2018-04-07T08:44:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/workspace_wallpapers/</loc>
+    <lastmod>2018-04-04T14:48:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/polybar_magic_workspaces/</loc>
+    <lastmod>2018-04-04T14:46:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/uniform_qt_and_gtk/</loc>
+    <lastmod>2018-04-04T14:42:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/mondo_generate_gtk/</loc>
+    <lastmod>2018-04-04T14:40:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/mondo_setup/</loc>
+    <lastmod>2018-04-04T14:37:03+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/antidote/</loc>
+    <lastmod>2018-04-04T14:32:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/custom_menus_in_rofi/</loc>
+    <lastmod>2018-04-04T14:30:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/theming_rofi/</loc>
+    <lastmod>2018-04-04T14:28:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/polypoison/</loc>
+    <lastmod>2018-04-04T14:25:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/rice_of_the_poison/</loc>
+    <lastmod>2018-04-04T14:23:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/extreme_i3/</loc>
+    <lastmod>2018-04-04T10:44:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/advanced_generators/</loc>
+    <lastmod>2018-04-03T23:16:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/mondo_gtk/</loc>
+    <lastmod>2018-04-03T23:15:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/mondo_generators/</loc>
+    <lastmod>2018-04-03T23:14:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/urxvt_reload/</loc>
+    <lastmod>2018-04-03T23:13:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/fonts_are_awesome/</loc>
+    <lastmod>2018-04-03T23:12:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/rofi_setup/</loc>
+    <lastmod>2018-04-03T23:11:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/colors_are_poison/</loc>
+    <lastmod>2018-04-03T23:08:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/polybar_dynamic_title/</loc>
+    <lastmod>2018-04-03T23:06:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/polybar_hook_modules/</loc>
+    <lastmod>2018-04-03T23:03:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/polybar_setup/</loc>
+    <lastmod>2018-04-03T23:02:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/automatic_script_creation/</loc>
+    <lastmod>2018-04-03T22:59:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/i3_extreme_size_mode/</loc>
+    <lastmod>2018-04-03T22:58:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/i3_rename_instances/</loc>
+    <lastmod>2018-04-03T22:56:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/minimize_windows_in_i3wm/</loc>
+    <lastmod>2018-04-03T22:55:36+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/more_config_rice/</loc>
+    <lastmod>2018-04-03T22:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/rice_the_config/</loc>
+    <lastmod>2018-04-03T22:50:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/</loc>
+    <lastmod>2018-04-03T10:26:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/post-apply/</loc>
+    <lastmod>2018-04-02T23:18:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/</loc>
+    <lastmod>2018-04-02T22:42:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/nikes/</loc>
+    <lastmod>2018-04-02T22:41:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/sublime/</loc>
+    <lastmod>2018-04-02T19:31:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/sublime/sublime/</loc>
+    <lastmod>2018-04-02T19:30:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/mondo/</loc>
+    <lastmod>2018-04-02T19:29:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/</loc>
+    <lastmod>2018-04-02T19:06:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/i3/</loc>
+    <lastmod>2018-04-02T17:52:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/polybar/</loc>
+    <lastmod>2018-04-02T17:52:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/</loc>
+    <lastmod>2018-04-02T16:47:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/polybar/</loc>
+    <lastmod>2018-04-02T16:42:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/post/recipie/</loc>
+    <lastmod>2018-04-02T15:22:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/bash/recipie/</loc>
+    <lastmod>2018-04-02T15:18:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/templatetator/bash/template/</loc>
+    <lastmod>2018-04-02T15:05:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/dunst/mondo/</loc>
+    <lastmod>2018-04-01T12:44:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/dunst/lo-rofi/</loc>
+    <lastmod>2018-04-01T12:43:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/dunst/lo-bar/</loc>
+    <lastmod>2018-04-01T12:43:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/env/user-dirs/</loc>
+    <lastmod>2018-04-01T12:42:03+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/thunar/settings/</loc>
+    <lastmod>2018-04-01T12:39:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/thunar/uca/</loc>
+    <lastmod>2018-04-01T12:39:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/thunar/keybindings/</loc>
+    <lastmod>2018-04-01T12:38:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sxhkd/sxhkdrc/</loc>
+    <lastmod>2018-04-01T12:38:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/mansymbols/</loc>
+    <lastmod>2018-04-01T12:35:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/applysyntax/</loc>
+    <lastmod>2018-04-01T12:34:36+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/datheme/</loc>
+    <lastmod>2018-04-01T12:33:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/keymap/</loc>
+    <lastmod>2018-04-01T12:33:03+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/note/</loc>
+    <lastmod>2018-04-01T12:31:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/markdown/</loc>
+    <lastmod>2018-04-01T12:31:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/twofont/</loc>
+    <lastmod>2018-04-01T12:29:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/zentabs/</loc>
+    <lastmod>2018-04-01T12:28:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/sublime/settings/</loc>
+    <lastmod>2018-04-01T12:27:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/rofi/oneliner/</loc>
+    <lastmod>2018-04-01T12:27:03+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/polybar/budbar/</loc>
+    <lastmod>2018-04-01T12:26:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/sublime/mondo-template/</loc>
+    <lastmod>2018-04-01T12:25:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/sublime/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:25:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/sublime/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:24:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/sublime/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:24:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/rofi/mondo-template/</loc>
+    <lastmod>2018-04-01T12:24:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/rofi/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:23:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/rofi/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:23:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/rofi/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:23:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-template/</loc>
+    <lastmod>2018-04-01T12:23:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:22:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:22:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:22:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-template/</loc>
+    <lastmod>2018-04-01T12:21:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:21:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:21:36+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:21:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-template/</loc>
+    <lastmod>2018-04-01T12:08:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:08:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:07:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:07:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-template/</loc>
+    <lastmod>2018-04-01T12:06:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:06:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:06:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:06:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-template/</loc>
+    <lastmod>2018-04-01T12:05:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:05:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:05:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:05:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-template/</loc>
+    <lastmod>2018-04-01T12:04:36+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-settings/</loc>
+    <lastmod>2018-04-01T12:04:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-generate/</loc>
+    <lastmod>2018-04-01T12:04:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-apply/</loc>
+    <lastmod>2018-04-01T12:03:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/tomorrow/</loc>
+    <lastmod>2018-04-01T12:01:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/sourcerer/</loc>
+    <lastmod>2018-04-01T12:00:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/solarized-light/</loc>
+    <lastmod>2018-04-01T12:00:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/solarized-dark/</loc>
+    <lastmod>2018-04-01T12:00:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/mafia/</loc>
+    <lastmod>2018-04-01T11:59:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/gruvbox-light/</loc>
+    <lastmod>2018-04-01T11:59:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/gruvbox-dark/</loc>
+    <lastmod>2018-04-01T11:59:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/eighties/</loc>
+    <lastmod>2018-04-01T11:59:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/mondo/themes/dracula/</loc>
+    <lastmod>2018-04-01T11:58:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/alias/</loc>
+    <lastmod>2018-04-01T11:54:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/env/export/</loc>
+    <lastmod>2018-04-01T11:54:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/func/</loc>
+    <lastmod>2018-04-01T11:53:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/misc/</loc>
+    <lastmod>2018-04-01T11:41:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/path/</loc>
+    <lastmod>2018-04-01T11:33:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/prompt/</loc>
+    <lastmod>2018-04-01T11:33:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/irssi/bud/</loc>
+    <lastmod>2018-04-01T11:26:03+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/xfiles/xft/</loc>
+    <lastmod>2018-04-01T11:19:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/xfiles/urxvt/</loc>
+    <lastmod>2018-04-01T11:18:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/xfiles/dmenu/</loc>
+    <lastmod>2018-04-01T11:18:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/bashrc/</loc>
+    <lastmod>2018-04-01T11:11:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/env/i3env/</loc>
+    <lastmod>2018-04-01T11:08:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/shell/inputrc/</loc>
+    <lastmod>2018-04-01T11:01:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/xfiles/xresources/</loc>
+    <lastmod>2018-04-01T10:57:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/env/xinitrc/</loc>
+    <lastmod>2018-04-01T10:46:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/dots/i3/i3conf/</loc>
+    <lastmod>2018-03-30T21:08:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/rofi/budrun/</loc>
+    <lastmod>2018-03-30T19:38:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/thunar/fmb/</loc>
+    <lastmod>2018-03-30T19:35:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/thunar/fmd/</loc>
+    <lastmod>2018-03-30T19:35:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/rofi/foldermen/</loc>
+    <lastmod>2018-03-30T19:34:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/rofi/gethelp/</loc>
+    <lastmod>2018-03-30T19:33:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/misc/getkeys/</loc>
+    <lastmod>2018-03-30T19:32:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/rofi/getlink/</loc>
+    <lastmod>2018-03-30T19:32:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/thunar/gotofolder/</loc>
+    <lastmod>2018-03-30T19:31:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/i3cast/</loc>
+    <lastmod>2018-03-30T19:30:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3flip/</loc>
+    <lastmod>2018-03-30T19:30:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3fyra/</loc>
+    <lastmod>2018-03-30T19:30:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3get/</loc>
+    <lastmod>2018-03-30T19:29:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3gw/</loc>
+    <lastmod>2018-03-30T19:29:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/i3kornhe/</loc>
+    <lastmod>2018-03-30T19:29:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3list/</loc>
+    <lastmod>2018-03-30T19:28:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/i3minimize/</loc>
+    <lastmod>2018-03-30T19:27:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/i3monocle/</loc>
+    <lastmod>2018-03-30T19:26:45+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3run/</loc>
+    <lastmod>2018-03-30T19:25:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/i3term/</loc>
+    <lastmod>2018-03-30T19:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3var/</loc>
+    <lastmod>2018-03-30T19:23:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/i3ass/i3viswiz/</loc>
+    <lastmod>2018-03-30T19:23:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/i3wswp/</loc>
+    <lastmod>2018-03-30T19:22:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/i3add/i3zen/</loc>
+    <lastmod>2018-03-30T19:22:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/misc/igi/</loc>
+    <lastmod>2018-03-30T19:21:54+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/budlabs/img4site/</loc>
+    <lastmod>2018-03-30T19:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/sublime/notes/</loc>
+    <lastmod>2018-03-30T19:19:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/polybar/pbmail/</loc>
+    <lastmod>2018-03-30T19:19:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/polybar/pbmedia/</loc>
+    <lastmod>2018-03-30T19:18:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/polybar/pbtitle/</loc>
+    <lastmod>2018-03-30T19:16:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/polybar/pbweather/</loc>
+    <lastmod>2018-03-30T19:15:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/polybar/pbws/</loc>
+    <lastmod>2018-03-30T19:15:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/budlabs/postbanner/</loc>
+    <lastmod>2018-03-30T19:14:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/budlabs/postquote/</loc>
+    <lastmod>2018-03-30T19:13:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/rofi/shoot/</loc>
+    <lastmod>2018-03-30T19:07:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/sublime/subpro/</loc>
+    <lastmod>2018-03-30T19:03:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/rofi/subpromen/</loc>
+    <lastmod>2018-03-30T19:02:39+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/sublime/subtit/</loc>
+    <lastmod>2018-03-30T18:54:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/scripts/misc/templatetator/</loc>
+    <lastmod>2018-03-30T18:47:33+02:00</lastmod>
   </url>
   
   <url>
@@ -18,138 +943,8 @@
   </url>
   
   <url>
-    <loc>https://budrich.github.io/videos/ll_001_perfect_folders/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_002_extreme_i3/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_003_i3fyra/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_004_config_rice/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_005_more_config_rice/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_006_minimize_windows/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_007_rename_instances/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_008_extreme_size_mode/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_009_automatic_scripts/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_010_polybar_setup/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_011_polybar_hook_modules/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_012_polybar_dynamic_title/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_013_colors_are_poison/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_014_rice_of_poison/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/ll_015_polypoison/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://budrich.github.io/blog/i3_flipping_tabs/</loc>
     <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/i3ass_update_18-01-07/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/i3pocus/</loc>
-    <lastmod>2018-01-03T10:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/i3ass/i3flip/</loc>
-    <lastmod>2018-01-03T07:09:08+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/thunar/foldermen/</loc>
-    <lastmod>2018-01-02T19:34:15+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/thunar/linktonext/</loc>
-    <lastmod>2018-01-02T15:54:35+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/thunar/gotofolder/</loc>
-    <lastmod>2018-01-02T15:52:49+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/thunar/</loc>
-    <lastmod>2018-01-02T15:52:49+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/polybar/pbws/</loc>
-    <lastmod>2017-12-31T23:14:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/polybar/pbmedia/</loc>
-    <lastmod>2017-12-31T23:05:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/polybar/pbtitle/</loc>
-    <lastmod>2017-12-31T19:26:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/i3env/</loc>
-    <lastmod>2017-12-27T18:57:41+01:00</lastmod>
   </url>
   
   <url>
@@ -158,542 +953,12 @@
   </url>
   
   <url>
-    <loc>https://budrich.github.io/i3ass/i3var/</loc>
-    <lastmod>2017-12-22T22:36:39+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/conky/</loc>
-    <lastmod>2017-12-21T19:25:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/conky/desktop/</loc>
-    <lastmod>2017-12-21T19:25:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/i3monocle/</loc>
-    <lastmod>2017-12-21T13:59:50+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/i3minimize/</loc>
-    <lastmod>2017-12-21T13:59:26+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/misc/htoprc/</loc>
-    <lastmod>2017-12-20T07:20:34+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sxhkdrc/</loc>
-    <lastmod>2017-12-20T04:52:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/inputrc/</loc>
-    <lastmod>2017-12-20T03:11:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/sublime/subrun/</loc>
-    <lastmod>2017-12-20T01:23:30+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/polybar/pbmic/</loc>
-    <lastmod>2017-12-19T21:25:29+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/misc/getkeys/</loc>
-    <lastmod>2017-12-19T20:58:30+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/i3wswp/</loc>
-    <lastmod>2017-12-19T17:06:07+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/sublime/subtit/</loc>
-    <lastmod>2017-12-19T00:05:22+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/xresources/</loc>
-    <lastmod>2017-12-18T23:20:24+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/templatetator/</loc>
-    <lastmod>2017-12-18T12:41:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/templatetator/templatetator/</loc>
-    <lastmod>2017-12-18T12:41:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/polybar/</loc>
-    <lastmod>2017-12-18T12:32:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/sublime/subpro/</loc>
-    <lastmod>2017-12-18T12:10:28+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/sublime/budtutor/</loc>
-    <lastmod>2017-12-18T12:01:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/sublime/suba/</loc>
-    <lastmod>2017-12-18T11:54:30+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/sublime/</loc>
-    <lastmod>2017-12-18T11:54:30+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/misc/shoot/</loc>
-    <lastmod>2017-12-18T10:42:42+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/misc/brws/</loc>
-    <lastmod>2017-12-18T10:25:11+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/misc/</loc>
-    <lastmod>2017-12-18T10:20:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/menus/subpromen/</loc>
-    <lastmod>2017-12-18T04:03:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/menus/getlink/</loc>
-    <lastmod>2017-12-18T03:55:42+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/menus/gethelp/</loc>
-    <lastmod>2017-12-18T03:50:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/menus/addlink/</loc>
-    <lastmod>2017-12-18T03:46:54+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/menus/</loc>
-    <lastmod>2017-12-18T03:46:54+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/budlabs/undraft/</loc>
-    <lastmod>2017-12-18T03:20:53+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/budlabs/postquote/</loc>
-    <lastmod>2017-12-18T03:15:57+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/budlabs/postbanner/</loc>
-    <lastmod>2017-12-18T02:46:07+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/budlabs/img4site/</loc>
-    <lastmod>2017-12-18T02:30:07+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/budlabs/blingking/</loc>
-    <lastmod>2017-12-18T02:13:12+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/budlabs/</loc>
-    <lastmod>2017-12-18T02:13:12+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/</loc>
-    <lastmod>2017-12-18T02:13:12+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/videos/</loc>
-    <lastmod>2017-12-18T02:13:12+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/i3zen/</loc>
-    <lastmod>2017-12-18T01:40:46+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/i3term/</loc>
-    <lastmod>2017-12-18T01:34:42+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/i3kornhe/</loc>
-    <lastmod>2017-12-18T01:22:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/</loc>
-    <lastmod>2017-12-18T00:41:17+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/scripts/i3add/i3cast/</loc>
-    <lastmod>2017-12-18T00:41:17+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/i3ass/i3run/</loc>
-    <lastmod>2017-12-17T23:23:14+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/i3ass/i3list/</loc>
-    <lastmod>2017-12-17T23:08:59+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/i3ass/i3gw/</loc>
-    <lastmod>2017-12-17T22:53:54+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/i3ass/i3get/</loc>
-    <lastmod>2017-12-17T21:53:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/i3ass/</loc>
-    <lastmod>2017-12-17T20:54:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/i3ass/i3fyra/</loc>
-    <lastmod>2017-12-17T20:54:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/profile/</loc>
-    <lastmod>2017-12-16T23:23:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/syntax/man-preview/</loc>
-    <lastmod>2017-12-16T23:22:48+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/bashrc/</loc>
-    <lastmod>2017-12-16T23:22:12+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/zentabs/</loc>
-    <lastmod>2017-12-16T23:16:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/xft/</loc>
-    <lastmod>2017-12-16T23:16:46+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/misc/user-dirs/</loc>
-    <lastmod>2017-12-16T23:16:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/urxvt/</loc>
-    <lastmod>2017-12-16T23:16:26+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/thunar/uca/</loc>
-    <lastmod>2017-12-16T23:16:18+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/twofont/</loc>
-    <lastmod>2017-12-16T23:16:06+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/twoface/</loc>
-    <lastmod>2017-12-16T23:15:55+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/thunar/hidden/</loc>
-    <lastmod>2017-12-16T23:15:42+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/sublimelinter/</loc>
-    <lastmod>2017-12-16T23:15:25+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/colors/solarized-dark/</loc>
-    <lastmod>2017-12-16T23:14:46+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/prompt/</loc>
-    <lastmod>2017-12-16T23:14:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/user/</loc>
-    <lastmod>2017-12-16T23:14:22+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/klavaro/</loc>
-    <lastmod>2017-12-16T23:14:05+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/klavaro/preferences/</loc>
-    <lastmod>2017-12-16T23:14:05+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/auto/</loc>
-    <lastmod>2017-12-16T23:13:49+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/rofi/oneliner/</loc>
-    <lastmod>2017-12-16T23:13:17+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/rofi/</loc>
-    <lastmod>2017-12-16T23:13:17+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/syntax/note/</loc>
-    <lastmod>2017-12-16T23:13:07+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/notes/</loc>
-    <lastmod>2017-12-16T23:12:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/misc/</loc>
-    <lastmod>2017-12-16T23:12:17+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/misc/</loc>
-    <lastmod>2017-12-16T23:12:06+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/syntax/markdown/</loc>
-    <lastmod>2017-12-16T23:11:48+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/i3wm/</loc>
-    <lastmod>2017-12-16T23:11:16+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/colors/hatofgod/</loc>
-    <lastmod>2017-12-16T23:10:55+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/colors/</loc>
-    <lastmod>2017-12-16T23:10:55+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/func/</loc>
-    <lastmod>2017-12-16T23:10:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/export/</loc>
-    <lastmod>2017-12-16T23:10:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/dmenu/</loc>
-    <lastmod>2017-12-16T23:10:24+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/keymap/</loc>
-    <lastmod>2017-12-16T23:10:16+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/ncmpcpp/</loc>
-    <lastmod>2017-12-16T23:09:22+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/i3config/</loc>
-    <lastmod>2017-12-16T23:08:50+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/compton-conf/</loc>
-    <lastmod>2017-12-16T23:08:39+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/colorhighlighter/</loc>
-    <lastmod>2017-12-16T23:08:18+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/color/</loc>
-    <lastmod>2017-12-16T23:07:59+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/xres/</loc>
-    <lastmod>2017-12-16T23:07:59+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/clickableurls/</loc>
-    <lastmod>2017-12-16T23:07:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/irssi/bud-theme/</loc>
-    <lastmod>2017-12-16T23:07:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/irssi/</loc>
-    <lastmod>2017-12-16T23:07:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/polybar/budbar/</loc>
-    <lastmod>2017-12-16T23:07:11+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/polybar/</loc>
-    <lastmod>2017-12-16T23:07:11+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/colors/solarized-light/</loc>
-    <lastmod>2017-12-16T23:06:47+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/colors/solarized-dark/</loc>
-    <lastmod>2017-12-16T23:06:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/colors/</loc>
-    <lastmod>2017-12-16T23:06:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/syntax/bash/</loc>
-    <lastmod>2017-12-16T23:05:22+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/syntax/</loc>
-    <lastmod>2017-12-16T23:05:22+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/dunst/barover/</loc>
-    <lastmod>2017-12-16T23:05:05+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/dunst/</loc>
-    <lastmod>2017-12-16T23:05:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/applysyntax/</loc>
-    <lastmod>2017-12-16T23:04:49+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/settings/</loc>
-    <lastmod>2017-12-16T23:04:49+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/sublime/</loc>
-    <lastmod>2017-12-16T23:04:49+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/alias/</loc>
-    <lastmod>2017-12-16T23:04:29+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/bash/</loc>
-    <lastmod>2017-12-16T23:04:29+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/thunar/accels/</loc>
-    <lastmod>2017-12-16T23:02:52+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/</loc>
-    <lastmod>2017-12-16T23:02:52+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/dots/thunar/</loc>
-    <lastmod>2017-12-16T23:02:52+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://budrich.github.io/blog/i3_size_matters/</loc>
     <lastmod>2017-12-15T22:51:49+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://budrich.github.io/blog/video_fyra/</loc>
+    <loc>https://budrich.github.io/letslinux/i3fyra/</loc>
     <lastmod>2017-12-02T19:27:11+01:00</lastmod>
   </url>
   
@@ -703,8 +968,8 @@
   </url>
   
   <url>
-    <loc>https://budrich.github.io/blog/extreme_i3/</loc>
-    <lastmod>2017-11-21T23:09:22+01:00</lastmod>
+    <loc>https://budrich.github.io/abouts/nils_kvist_cv_sv/</loc>
+    <lastmod>2017-10-04T19:50:58+02:00</lastmod>
   </url>
   
   <url>
@@ -723,13 +988,13 @@
   </url>
   
   <url>
-    <loc>https://budrich.github.io/blog/fresh_start/</loc>
-    <lastmod>2017-10-01T19:13:40+02:00</lastmod>
+    <loc>https://budrich.github.io/abouts/whoami_sv/</loc>
+    <lastmod>2017-10-04T19:50:58+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://budrich.github.io/blog/perfect_folders/</loc>
-    <lastmod>2017-09-29T17:18:30+02:00</lastmod>
+    <loc>https://budrich.github.io/blog/fresh_start/</loc>
+    <lastmod>2017-10-01T19:13:40+02:00</lastmod>
   </url>
   
   <url>
@@ -774,7 +1039,12 @@
   
   <url>
     <loc>https://budrich.github.io/</loc>
-    <lastmod>2018-01-13T15:16:26+01:00</lastmod>
+    <lastmod>2017-09-14T19:50:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/</loc>
+    <lastmod>2018-04-07T18:07:52+02:00</lastmod>
     <priority>0</priority>
   </url>
   

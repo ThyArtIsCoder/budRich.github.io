@@ -1,22 +1,28 @@
-*.foreground:   fg
-*.background:   bg 
-*.cursorColor:  fg
-*cursorColor2:  bg
 
-*.color0:       blk
-*.color8:       blk2
+*.color0:       base02
+*.color8:       base03
 *.color1:       red
-*.color9:       red2
+*.color9:       ora
 *.color2:       grn
-*.color10:      grn2
+*.color10:      base01
 *.color3:       ylw
-*.color11:      ylw2
+*.color11:      base00
 *.color4:       blu
-*.color12:      blu2
+*.color12:      base0
 *.color5:       mag
-*.color13:      mag2
+*.color13:      vio
 *.color6:       cyn
-*.color14:      cyn2
-*.color7:       wht
-*.color15:      wht2
+*.color14:      base1
+! *.color7:       base2
+*.color7:       fg
+*.color15:      base3
 
+! color7 = fg, uglier but reliable
+
+*.foreground:    fg
+*.background:    bg 
+*.cursorColor:   fg
+*.cursorColor2:  bg
+*.border:        bg
+
+! syntax:ssExcla

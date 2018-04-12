@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mondo on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/mondo/</link>
+    <description>Recent content in mondo on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Apr 2018 15:57:28 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/mondo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>post-apply</title>
+      <link>https://budrich.github.io/dots/mondo/post-apply/</link>
+      <pubDate>Mon, 02 Apr 2018 23:18:50 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/post-apply/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

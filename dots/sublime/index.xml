@@ -5,10 +5,91 @@
     <link>https://budrich.github.io/dots/sublime/</link>
     <description>Recent content in sublime on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Dec 2017 23:04:49 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Apr 2018 19:06:59 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/dots/sublime/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>manSymbols</title>
+      <link>https://budrich.github.io/dots/sublime/mansymbols/</link>
+      <pubDate>Sun, 01 Apr 2018 12:35:30 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/mansymbols/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ApplySyntax</title>
+      <link>https://budrich.github.io/dots/sublime/applysyntax/</link>
+      <pubDate>Sun, 01 Apr 2018 12:34:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/applysyntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DAtheme</title>
+      <link>https://budrich.github.io/dots/sublime/datheme/</link>
+      <pubDate>Sun, 01 Apr 2018 12:33:57 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/datheme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keymap</title>
+      <link>https://budrich.github.io/dots/sublime/keymap/</link>
+      <pubDate>Sun, 01 Apr 2018 12:33:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/keymap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Note</title>
+      <link>https://budrich.github.io/dots/sublime/note/</link>
+      <pubDate>Sun, 01 Apr 2018 12:31:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://budrich.github.io/dots/sublime/markdown/</link>
+      <pubDate>Sun, 01 Apr 2018 12:31:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TwoFont</title>
+      <link>https://budrich.github.io/dots/sublime/twofont/</link>
+      <pubDate>Sun, 01 Apr 2018 12:29:10 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/twofont/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ZenTabs</title>
+      <link>https://budrich.github.io/dots/sublime/zentabs/</link>
+      <pubDate>Sun, 01 Apr 2018 12:28:31 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/zentabs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>settings</title>
+      <link>https://budrich.github.io/dots/sublime/settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:27:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/settings/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

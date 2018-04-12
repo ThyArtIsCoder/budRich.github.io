@@ -1,0 +1,84 @@
+# add last command to logbook . find link linux bbq
+function lb() { fc -lnr -1 >> $HOME/.bash/logbook ;}
+
+# prints newest file in dir
+function lat() { ls -t | head -1 ;}
+
+adda(){
+  al=$1
+  shift 1
+  echo -e "alias $al='${*//\'/\'\"\'\"\'}'" >> $HOME/.bash/alias
+  . $HOME/.bashrc
+}
+
+cd() {
+  builtin cd "$@" && pwd && ls
+}
+
+mcd(){
+  mkdir -p ${@}
+  cd ${@}
+}
+
+gmrk(){
+  local mrks=$(i3-msg -t get_marks | awk -F',' '{
+    gsub("[[]|\"|[]]","",$0)
+    for(i=1;i<NF+1;i++){print $i}
+  }' | sort)
+  echo -e "${mrks}"
+}
+
+# install apt package and add entry to packagelist
+# find link reddit, unixporn
+apti(){
+  local file
+  for file in "$@" ;do
+    if sudo apt install "$file" -y ;then
+      echo "$file $(date +%F)" >> $HOME/.packages/apt
+    fi
+  done
+}
+
+gemi(){
+  local file
+  for file in "$@" ;do
+    if sudo gem install "$file" -y ;then
+      echo "$file $(date +%F)" >> $HOME/.packages/gem
+    fi
+  done
+}
+
+pipi(){
+  local file
+  for file in "$@" ;do
+    if sudo pip install "$file" -y ;then
+      echo "$file $(date +%F)" >> $HOME/.packages/pip
+    fi
+  done
+}
+
+
+# fzf stuff, triggered with bindings in inputrc
+fzf_history() { $(history | fzf +s | awk '{$1=$2=$3="";print $0}') ; }
+fzf_killps() { ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }
+fzf_cd() { DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }
+
+
+# colorize less.. find link, random dotfile...
+# fix cyan bottom bar and colors in general.
+# https://wiki.archlinux.org/index.php/Man_page
+man(){
+    local width=$(tput cols)
+    ((width>MANWIDTH)) && width=$MANWIDTH
+
+    MANWIDTH=$width \
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
+
+# syntax:bash

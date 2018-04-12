@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xfiles on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/xfiles/</link>
+    <description>Recent content in xfiles on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Apr 2018 14:25:33 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/xfiles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>xft</title>
+      <link>https://budrich.github.io/dots/xfiles/xft/</link>
+      <pubDate>Sun, 01 Apr 2018 11:19:13 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/xft/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+    <item>
+      <title>urxvt</title>
+      <link>https://budrich.github.io/dots/xfiles/urxvt/</link>
+      <pubDate>Sun, 01 Apr 2018 11:18:49 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/urxvt/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+    <item>
+      <title>dmenu</title>
+      <link>https://budrich.github.io/dots/xfiles/dmenu/</link>
+      <pubDate>Sun, 01 Apr 2018 11:18:08 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/dmenu/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+    <item>
+      <title>xresources</title>
+      <link>https://budrich.github.io/dots/xfiles/xresources/</link>
+      <pubDate>Sun, 01 Apr 2018 10:57:13 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/xresources/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+BUDLABS_DIR="${BUDLABS_DIR:-$HOME/src/hugo/budlabs}"
+trgdir="drafts/blog"
+
+filnamn=${CURFIL//' '/_}
+
+stafolder="${BUDLABS_DIR}/static/$trgdir/$filnamn"
+trgfile="${BUDLABS_DIR}/content/$trgdir/${filnamn}.md"
+
+today="$(date '+%Y-%m-%d')"
+longd="${today}T$(date '+%H:%M:%S')+02:00"
+
+echo "---
+title: ${filnamn}
+banner: ${CURFIL}
+date: $longd
+author: budRich
+draft: true
+type: post
+tags: []
+changelog:
+  - $today - created
+notes:
+---" > "$trgfile"
+
+mkdir -p $stafolder
+
+postbanner -t '-f 3d.flf' -l '-p 10' -o "${stafolder}/banner.html" "$CURFIL"
+postquote -f $HOME/etc/fortunes/budcol "${stafolder}/quote.html"
+
+sublime
+subpro budlabs
+
+subl "$trgfile"
+
+# syntax:bash
+

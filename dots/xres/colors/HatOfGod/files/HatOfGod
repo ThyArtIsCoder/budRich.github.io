@@ -3,8 +3,8 @@
 
 #define bg    #111313
 #define fg    #E6DB74
+
 #define blk   #151515
-#define bblk  #3B3A32
 #define red   #F92672
 #define grn   #A6E22E
 #define ylw   #FD971F
@@ -12,3 +12,13 @@
 #define mag   #F09EC0
 #define cyn   #C8AC00
 #define wht   #FFE792
+
+#define blk2   #3B3A32
+#define red2   #F92672
+#define grn2   #A6E22E
+#define ylw2   #FD971F
+#define blu2   #66D9EF
+#define mag2   #F09EC0
+#define cyn2   #C8AC00
+#define wht2   #FFE792
+

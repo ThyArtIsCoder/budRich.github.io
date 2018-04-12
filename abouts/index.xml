@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Nils_Kvist_CV_sv</title>
+      <link>https://budrich.github.io/abouts/nils_kvist_cv_sv/</link>
+      <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/abouts/nils_kvist_cv_sv/</guid>
+      <description>Detta CV finns även som pdf
+Född: 1982-10-06 Adress: Per Lagerhjelmsgatan 11, 691 33 Karlskoga, Sverige Telefon: +46 722 990 358 Mail: robstenklippa@gmail.com ANSTÄLLNINGAR    CNC-operatör - fräs/svarv G-Drill     Programmering, planering, körning Aten, Grekland 2017/04–2017/07       Support Agent Lenovo/TelePerformance     Technical support agent, SAP, CRM, Office, Oracle Aten, Grekland 2016/07–2016/10       CNC-operatör - fräs Valmet/Uniflex     Heidenhain, tunga detaljer Karlstad, Sverige 2015/12–2016/07       CNC-operatör - svarv B.</description>
+    </item>
+    
+    <item>
       <title>cv_en</title>
       <link>https://budrich.github.io/abouts/cv_en/</link>
       <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
@@ -35,10 +45,24 @@ I wanted a static site because cutting edge web development techniques and bloat
       <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
       
       <guid>https://budrich.github.io/abouts/whoami/</guid>
-      <description>My name is Nils. I live in Sweden and I play the blues. I have worked the majority of my adult life as a CNC-operator/programmer in the steel industry. As all jobs it has it&amp;rsquo;s pros and cons.
+      <description>Den här sidan finns också på Svenska
+My CV (in Swedish) is available as PDF.
+My name is Nils. I live in Sweden and I play the blues. I have worked the majority of my adult life as a CNC-operator/programmer in the steel industry. As all jobs it has it&amp;rsquo;s pros and cons.
 I also made an attempt in the telecom industry, as a technical support agent for Lenovo.
-But now I am looking for some other way to earn a living.
-I have been very interested in computers ever since I got a C64 back in the 80&amp;rsquo;s.</description>
+But now I am looking for some other way to earn a living.</description>
+    </item>
+    
+    <item>
+      <title>whoami</title>
+      <link>https://budrich.github.io/abouts/whoami_sv/</link>
+      <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/abouts/whoami_sv/</guid>
+      <description>This page is also available in English
+Mitt CV finns tillgängligt som PDF.
+Mitt namn är Nils. Jag är född och uppvuxen i Värmland. Jag har arbetat större delen av mitt vuxna liv som CNC-operatör i stålindustrin. Som alla andra jobb har det sina för och nackdelar.
+Jag har också provat att jobba som teknisk telefonsupport agent för Lenovo, i Aten, Grekland.
+Jag har alltid varit väldigt intresserad av datorer. Jag fick en C64 i julklapp i slutet av 80-talet och har varit fast sedan dess.</description>
     </item>
     
   </channel>

@@ -51,17 +51,6 @@ sizematters.gif   The config file and script shown in the video can be found on 
     </item>
     
     <item>
-      <title>video_fyra</title>
-      <link>https://budrich.github.io/blog/video_fyra/</link>
-      <pubDate>Sat, 02 Dec 2017 19:27:11 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/blog/video_fyra/</guid>
-      <description>I have uploaded a long (~1 hour) video to youtube, where I show how to configure and use my layout script i3fyra.
-www.youtube.com/watch?v=t4Tve-xpwus    Below are the things I added to the default i3 config file (~/.config/i3/config).
-# focus replacements bindsym $mod+Left exec --no-startup-id exec i3fyra -f l bindsym $mod+Down exec --no-startup-id exec i3fyra -f d bindsym $mod+Up exec --no-startup-id exec i3fyra -f u bindsym $mod+Right exec --no-startup-id exec i3fyra -f r # tabswitching bindsym $mod+Tab exec --no-startup-id exec i3fyra -t r bindsym $mod+Shift+Tab exec --no-startup-id exec i3fyra -t l # move replacements bindsym $mod+Shift+Left exec --no-startup-id exec i3fyra -m l bindsym $mod+Shift+Down exec --no-startup-id exec i3fyra -m d bindsym $mod+Shift+Up exec --no-startup-id exec i3fyra -m u bindsym $mod+Shift+Right exec --no-startup-id exec i3fyra -m r # floating toggle replacement bindsym $mod+Shift+space exec --no-startup-id i3fyra -a # window rules for_window [class=&amp;quot;^.</description>
-    </item>
-    
-    <item>
       <title>fixed_fixedsys</title>
       <link>https://budrich.github.io/blog/fixed_fixedsys/</link>
       <pubDate>Thu, 23 Nov 2017 22:35:11 +0100</pubDate>
@@ -72,16 +61,6 @@ The problem from the start is that the available version of Fixedsys is a .ttf f
     </item>
     
     <item>
-      <title>extreme_i3</title>
-      <link>https://budrich.github.io/blog/extreme_i3/</link>
-      <pubDate>Tue, 21 Nov 2017 23:09:22 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/blog/extreme_i3/</guid>
-      <description>I finally did it! I Uploaded my i3 layout script, i3fyra. I have been working on it for almost a year. I think it works good enough to publish now. I recorded a video on how it looks like and have made a repo on github for my i3 related scripts.
-www.youtube.com/watch?v=kU8gb6WLFk8    If you try it and find any bugs or have any other issues or questions, please report them on the github repo.</description>
-    </item>
-    
-    <item>
       <title>fresh_start</title>
       <link>https://budrich.github.io/blog/fresh_start/</link>
       <pubDate>Sun, 01 Oct 2017 19:13:40 +0200</pubDate>
@@ -89,16 +68,6 @@ www.youtube.com/watch?v=kU8gb6WLFk8    If you try it and find any bugs or have a
       <guid>https://budrich.github.io/blog/fresh_start/</guid>
       <description>These are the steps I take to setup my work environment on a fresh install of Peppermint OS 8. Most of the steps are valid on other GNU/Linux distributions, but I don&amp;rsquo;t recommend anyone to blindly follow and install everything.
 Before doing anything else i start syncing Dropbox. I start with this step because it can take up to 45 minutes, so while Dropbox is syncing there is time to install and setup other programs.</description>
-    </item>
-    
-    <item>
-      <title>perfect_folders</title>
-      <link>https://budrich.github.io/blog/perfect_folders/</link>
-      <pubDate>Fri, 29 Sep 2017 17:18:30 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/blog/perfect_folders/</guid>
-      <description>I have tried many different ways to organize my files. I think the current setup I have is by far the best. It uses Dropbox to ensure cloud based backup and Hugo to create this site you are looking at where many of my actual dotfiles and scripts are viewable and auto-updated.
-  folder structure This might look overcomplicated and hard to setup, but it actually makes a lot of sense and takes no time to setup.</description>
     </item>
     
     <item>

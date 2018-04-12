@@ -1,0 +1,151 @@
+#!/bin/bash
+
+NAME="foldermen"
+VERSION="0.002"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2018-01-02"
+UPDATED="2018-03-25"
+
+folders="
+ ~/vid/y
+ ~/dwn/w
+ ~/dot
+ ~/bin
+ ~/src
+ ~/www
+ ~/rep
+ ~/pix/wp
+ ~/pix/r
+ ~
+"
+
+colors="
+#859900
+#DC322F
+#D33682
+#2AA198
+#B58900
+#CB4B16
+#6C71C4
+"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  OFS="${IFS}"
+  IFS=$'\n'
+
+  for f in ${folders}; do
+    [[ -z $f ]] && continue
+    clr=""
+    while [[ -z $clr ]]; do 
+      clr=$(echo "$colors" | sort -R | head -1) ; done
+    newlist+="<span lang='${f#*' '}' foreground='${clr}' face='Font Awesome 5 Free'>"
+    newlist+="${f%' '*}</span> ${f#*' '}\n"
+  done
+
+  choice="$(echo -e "${newlist:0:-2}" | rofi -dmenu -i -markup-rows -p 'goto' | cut -d\' -f2)"
+  [[ -d ${choice/'~'/$HOME} ]] && gotofolder "$choice"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+rofi(1), thunar(1), gotofolder(1)
+"
+
+about='
+`foldermen` - Browse folders
+
+SYNOPSIS
+--------
+
+`foldermen` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+`foldermen` Launches a rofi instance with a list 
+of folders. Selected forlder will be lauched with 
+`gotofolder` (*and opened in thunar*)
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+DEPENDENCIES
+------------
+
+fontawesome  
+rofi  
+gotofolder  
+thunar
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

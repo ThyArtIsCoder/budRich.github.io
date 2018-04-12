@@ -1,0 +1,32 @@
+# Huge history. Doesn't appear to slow things down, so why not?
+HISTSIZE=500000
+HISTFILESIZE=100000
+
+# Avoid duplicate entries
+HISTCONTROL="erasedups:ignoreboth"
+
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+# Use standard ISO 8601 timestamp
+# %F equivalent to %Y-%m-%d
+# %T equivalent to %H:%M:%S (24-hours format)
+HISTTIMEFORMAT='%F %T '
+
+MPD_HOST="127.0.0.1"
+MPD_PORT="6601"
+
+export MPD_HOST
+export MPD_PORT
+
+export BROWSER=vivaldi-stable
+export VISUAL=vim
+export EDITOR=vim
+export PAGER='less -RS'
+export SYSTEMD_LESS=RSMK
+export XDG_CONFIG_HOME="${HOME}/.config"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# syntax:bash
+
+

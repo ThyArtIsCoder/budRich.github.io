@@ -1,0 +1,136 @@
+#!/bin/bash
+
+NAME="fmd"
+VERSION="0.004"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-19"
+UPDATED="2018-04-11"
+
+main(){
+  while getopts :vhli: option; do
+    case "${option}" in
+      i) FMD_INSTANCE="${OPTARG}" ;;
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+
+for id in $(i3viswiz -p | tail +3 | awk '{print $2}'); do
+  if [[ $(i3get -n $id -r i) =~ gotofolder ]]; then
+    i3-msg -q "[con_id=$id]" focus
+    exit
+  fi
+done
+
+i3run -i "^.*gotofolder.*$" -e "gotofolder ~"
+
+}
+
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3run(1), xdotool(1), thunar(1)
+"
+
+about='
+`fmd` - Run or raise a `plain notes` sublime instance.
+
+SYNOPSIS
+--------
+
+`fmd` [`-v`|`-h`|] [`-i` *FMD_INSTANCE*]
+
+DESCRIPTION
+-----------
+
+This command is just a shortcut to a complex command
+used to run or raise a `thunar` instance with a special
+instance name and settings applied.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+`-i` *FMD_INSTANCE*  
+  Instance name to give the filemanager window.
+  Defautlt: *filemanager_d*
+
+ENVIRONMENT
+-----------
+
+`FMD_INSTANCE`
+  If non-null rename instance name of filemanager
+  window. Overridden by the `-i` option.
+  Defautlt: *filemanager_d*
+
+DEPENDENCIES
+------------
+
+i3run
+xdotool
+thunar
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

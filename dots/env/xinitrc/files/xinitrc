@@ -1,0 +1,44 @@
+# .xinitrc - curated by budRich
+
+xset -b b off
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+xrandr --output LVDS1 --auto --left-of HDMI-1 --primary &
+
+hsetroot -tile /home/bud/etc/bitmap-walls/patterns-png/line_diag3_2.png \
+  -tint "$(xrdb -query | awk '/colors.act1/ {print $2}')"
+setxkbmap -layout seba -option lv3:ralt_switch -option 'caps:ctrl_modifier'
+
+# xmodmap ~/.Xmodmap
+
+xcape -e 'Caps_Lock=Escape'
+numlockx off > /dev/null 2>&1
+dunst > /dev/null 2>&1 &
+# xinput set-prop 17 139 0
+
+urxvtd -q -o -f
+# dropbox start &
+thunar --daemon &
+# igi &
+
+# pidof polybar && killall polybar    
+# killall cairo-dock 
+
+pidof qbittorrent && killall qbittorrent
+killall mpd && mpd || mpd
+
+compton -b > /dev/null 2>&1
+sxhkd > /dev/null 2>&1 &
+
+xbanish &
+
+# export QT_QPA_PLATFORMTHEME=gtk
+# export QT_QPA_PLATFORMTHEME=qgnomeplatform
+export QT_QPA_PLATFORMTHEME=qt5ct
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+flashfocus -s -t 175 -o 0.9 &
+. $HOME/.i3env
+exec i3
+
+# syntax:ssHash

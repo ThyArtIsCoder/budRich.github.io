@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="i3term"
-VERSION="0.021"
+VERSION="0.027"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-11-15"
-UPDATED="2017-12-17"
+UPDATED="2018-04-03"
 
 main(){
   while getopts :vhc: option; do

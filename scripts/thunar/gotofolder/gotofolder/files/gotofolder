@@ -1,0 +1,250 @@
+#!/bin/bash
+
+NAME="gotofolder"
+VERSION="0.002"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-31"
+UPDATED="2018-03-25"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  newinstancename=""
+  trgfld="${1:-$HOME}"
+  # notify-send "$trgfld"
+  srchDir="${trgfld/'~'/$HOME}"
+  srchDir="${srchDir//(/\\[(]}"
+  srchDir="${srchDir//)/\\[)]}"
+
+  cntid=($(i3get -t "${srchDir} - File Manager" -r ndi ))
+
+  trgfld="${trgfld/$HOME/'~'}"
+
+  if [[ -z $cntid ]]; then
+    applyprofile new
+
+    command='thunar "TRGFOLDER" & xdotool set_window --classname "INSTANCENAME" `i3get -i thunar -r d -y`'
+    trgfld="${trgfld/'~'/$HOME}"
+    command="${command/TRGFOLDER/$trgfld}"
+    command="${command/INSTANCENAME/$newinstancename}"
+    echo "$command"
+    cntid=$(i3run -i "$newinstancename" -e "${command}")
+    i3-msg -q "[con_id=$cntid]" title_format "${trgfld/$HOME/'~'}"
+  else
+    [[ ${cntid[2]} = filemanager_b ]] && exit
+
+    i3run -t "${trgfld/'~'/$HOME} - File Manager" -g 
+    applyprofile old
+  fi  
+}
+
+applyprofile(){
+
+  local type="$1"
+  local width options size
+
+  # i|l   - icon or list
+  # t|n   - sort by time or name
+  # a|d   - ascending (A before B) or decending (New before old) sort
+  # u|s   - text under or beside icons
+  # size  - iconsize
+  # width - windowwidth
+
+  case "$trgfld" in
+    '~/pix/wp'     ) options="tdiu" size="LARGEST" width=450 ;;
+    '~/pix/ss'     ) options="tdiu" size="LARGEST" width=450 ;;
+    '~/pix/d'      ) options="tdiu" size="LARGEST" width=450 ;;
+    '~/pix/r'      ) options="tdiu" size="LARGER"  width=450 ;;
+    '~/pix/folk'*  ) options="naiu" size="LARGER"  width=450 ;;
+    '~/pix/pwp'    ) options="tdiu" size="LARGER"  width=450 ;;
+    '~/vid/y'      ) options="tdis" size="LARGEST" width=380 ;;
+    '~/vid/bud'    ) options="tdis" size="LARGEST" width=380 ;;
+    '~/vid/'*      ) options="nais" size="LARGEST" width=380 ;;
+    '~/vid/s'*     ) options="naiu" size="LARGEST" width=450 ;;
+    '~/vid/bud'    ) options="tdiu" size="LARGEST" width=450 ;;
+    '~/dwn'*       ) options="tdlu" size="NORMAL"  width=380 ;;
+    '~'            ) options="naiu" size="LARGER"  width=450 ;;
+    *              ) options="nalu" size="NORMAL"  width=380 ;;
+  esac
+  width=$(i3list | awk -v ww=$width '{print $43-ww}')
+
+  eval "i3fyra -l 'AB=$width'"
+  
+  if [[ $type = new ]]; then
+    eval "xfconf-query --channel thunar --property /last-icon-view-zoom-level --set THUNAR_ZOOM_LEVEL_$size"
+    xfconf-query --channel thunar --property /last-details-view-fixed-columns --set true
+    xfconf-query --channel thunar --property /last-details-view-zoom-level --set THUNAR_ZOOM_LEVEL_SMALLEST
+    xfconf-query --channel thunar --property /last-details-view-column-order --set THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE,THUNAR_COLUMN_DATE_MODIFIED
+    xfconf-query --channel thunar --property /last-details-view-visible-columns --set THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME
+    xfconf-query --channel thunar --property /last-details-view-column-widths --set 50,172,50,50,274,50,50,92,468
+    xfconf-query --channel thunar --property /last-show-hidden --set false
+  fi
+  # LARGER   6
+  # LARGE    5
+  # NORMAL   4
+  # SMALL    3
+  # SMALLER  2
+  # SMALLEST 1
+
+  keys+="ctrl+1 "
+  case "$size" in
+    LARGEST  ) keys+="ctrl+0 ctrl+plus ctrl+plus ctrl+plus " size=7 ;;
+    LARGER   ) keys+="ctrl+0 ctrl+plus ctrl+plus " size=6 ;;
+    LARGE    ) keys+="ctrl+0 ctrl+plus " size=5 ;;
+    NORMAL   ) keys+="ctrl+0 " size=4 ;;
+    SMALL    ) keys+="ctrl+0 ctrl+minus " size=3 ;;
+    SMALLER  ) keys+="ctrl+0 ctrl+minus ctrl+minus " size=2 ;;
+    SMALLEST ) keys+="ctrl+0 ctrl+minus ctrl+minus ctrl+minus " size=1 ;;
+  esac
+
+  for (( i = 0; i < ${#options}; i++ )); do
+    case "${options:$i:1}" in
+
+      i ) #icon view
+        [[ $type = new ]] \
+          && xfconf-query --channel thunar --property /last-view --set ThunarIconView \
+          || keys+="ctrl+1 "
+      ;;
+
+      l ) # list view
+        [[ $type = new ]] \
+          && xfconf-query --channel thunar --property /last-view --set ThunarDetailsView \
+          || keys+="ctrl+2 "
+      ;;
+
+      t ) # sort by time
+        [[ $type = new ]] \
+          && xfconf-query --channel thunar --property /last-sort-column --set THUNAR_COLUMN_DATE_MODIFIED \
+          || keys+="ctrl+t "
+      ;;
+
+      n ) # sort by name
+        [[ $type = new ]] \
+          && xfconf-query --channel thunar --property /last-sort-column --set THUNAR_COLUMN_NAME \
+          || keys+="ctrl+n "
+      ;;
+
+      a ) # ascending sort
+        [[ $type = new ]] \
+          && xfconf-query --channel thunar --property /last-sort-order --set GTK_SORT_ASCENDING \
+          || keys+="ctrl+shift+s "
+      ;;
+
+      d ) # descending sort
+        [[ $type = new ]] \
+          && xfconf-query --channel thunar --property /last-sort-order --set GTK_SORT_DESCENDING \
+          || keys+="ctrl+s "
+      ;;
+
+      u ) # text under iconss
+        xfconf-query --channel thunar --property /misc-text-beside-icons --set false ;;
+
+      s ) # test to the right of icons
+        xfconf-query --channel thunar --property /misc-text-beside-icons --set true ;;
+
+    esac
+  done
+
+  newinstancename="gotofolder-${options}${size}"
+  [[ $type = old ]] && [[ $newinstancename != "${cntid[2]}" ]] \
+    && xdotool set_window --classname "$newinstancename" "${cntid[1]}" key ${keys}
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+thunar(1), i3get(1)
+"
+
+about='
+`gotofolder` - Open folder and adjust layout in thunar
+
+SYNOPSIS
+--------
+
+`gotofolder` [`-v`|`-h`] *FOLDER*
+
+DESCRIPTION
+-----------
+
+`gotofolder` opens *FOLDER* in `thunar` and adjust
+the layout depending on the path of the folder.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+DEPENDENCIES
+------------
+
+thunar  
+i3get
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

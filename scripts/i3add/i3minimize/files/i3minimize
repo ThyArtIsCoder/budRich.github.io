@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="i3minimize"
-VERSION="0.001"
+VERSION="0.006"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-21"
-UPDATED="2017-12-21"
+UPDATED="2018-04-03"
 
 main(){
   while getopts :vh option; do

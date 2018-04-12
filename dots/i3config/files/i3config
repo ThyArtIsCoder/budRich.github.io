@@ -12,32 +12,30 @@
   set $win bindsym Mod4
   set $alt Mod1
   
-  # set $browser i3run -c Surf -e 'surf'
-  # set $browser i3run -c Vivaldi-stable -e 'vivaldi'
-  set $browser i3run -c Vivaldi-stable -e 'vivaldi-snapshot'
-  set $editor i3run -i sublime_text -e 'subl'
+  set $browser   i3run -c Vivaldi-stable -e 'vivaldi-stable'
+
   set $bigsize   10 px or 10 ppt
   set $smallsize 3 px or 3 ppt
   set $bigmove   30 px
   set $smallmove 1 px
   
-# >>> panicbuttons <<<
+# >>> panic <<<
 
   $win+Control+r        $exe i3-msg reload  ; $exe polybar-msg cmd restart
   $win+$alt+r           $exe i3-msg restart ; $exe polybar-msg cmd restart
   $win+Escape           $exe i3off -x
-  $win+x                $exe budlock -lr
+  $win+x                $exe budlock -l misfitta.png
 
-# >>> terminals <<<
+# >>> terminal spawning <<<
 
-  $win+Return           $exe i3run -i floatterm -s -e 'urxvtc -name floatterm'
+  $win+Return           $exe i3run -i cornerterm -s -e 'urxvtc -name cornerterm'
   $win+Shift+Return     $exe i3run -i termsmall -e 'urxvtc -name termsmall'
   $win+Control+Return   $exe urxvtc -name tiledterm
-  $win+$alt+Return      $exe urxvtc -name tempterm
+  $win+$alt+Return      $exe i3run -i floatterm -s -e 'urxvtc -name floatterm'
 
   $win+Shift+x          $exe newterm
 
-# >>> sublime stuff <<<
+# >>> sublime related <<<
 
   $win+s                $exe sublime
   $win+Control+s        $exe subpromen
@@ -47,7 +45,7 @@
 
 # >>> i3run - sane applaunching for the modern tiler <<<
 
-  $win+e          $exe i3run -i "^.*gotofolder.*$" -e "gotofolder ~"
+  $win+e          $exe fmd
   $win+Shift+e    $exe fmb
   bindsym $alt+e  $exe foldermen
   
@@ -56,25 +54,28 @@
   $win+d          $exe i3term ncmpcpp
   $win+q          $exe i3run -i qbittorrent -e 'qbittorrent'
   $win+v          $exe i3run -i klavaro -e 'klavaro'
-  $win+6          $exe i3term newsboat
-  $win+9          $exe i3term htop
   
   $win+grave      $exe i3run -i gcolor2 -e 'gcolor2'
 
-  # $win+i        $exe i3run -c Sxiv
   $win+m          $exe i3run -c mpv
 
 # >>> barmenu <<<
 
+  $win+b                         $exe polybar-msg cmd toggle
+  
   bindsym --release F8           $exe templatetator
   bindsym --release Shift+F8     $exe suba
-  bindsym --release F6           $exe getlink
-  bindsym --release F5           $exe gethelp
-  $win F6                        $exe addlink -f '3d.flf'
-  $win+r                         $exe budrun
-  $win+Shift+r                   $exe rofi -show run
-  $win+space                     $exe polybar-msg cmd toggle
-  $win+i                         $exe getawesome
+  bindsym --release Mod4+F1      $exe gethelp
+
+  bindsym --release F6           $exe rofi-bm
+  bindsym --release Shift+F6     $exe rofi-bm get
+  bindsym --release Control+F6   $exe rofi-bm add
+
+  $win+i                         $exe fontawesome-menu -f "/home/bud/rep/rofi-fontawesome/fontawesome-menu/fa5-list.txt"
+  $win+Shift+r                   $exe budrun
+  $win+space                     $exe rofi -show run
+  $win+Shift+t                   $exe themon
+  $win+t                         $exe themon toggle
 
 # >>> media <<<
 
@@ -117,23 +118,10 @@
   $win+Control+$up      $exe i3Kornhe up
   $win+Control+$right   $exe i3Kornhe right
 
-  # reset split sizes
-  $win+p $exe i3fyra -l 'AB=-370 BD=250 AC=125'
-
-  # $win+Shift+$left      $exe i3fyra -f l 
-  # $win+Shift+$right     $exe i3fyra -f r 
-  # $win+Shift+$down      $exe i3fyra -f d 
-  # $win+Shift+$up        $exe i3fyra -f u 
-
-  $win+Shift+$left      $exe i3pocus l 
-  $win+Shift+$right     $exe i3pocus r 
-  $win+Shift+$down      $exe i3pocus d 
-  $win+Shift+$up        $exe i3pocus u 
-
-  $win+Left      focus left
-  $win+Right     focus right
-  $win+Down      focus down
-  $win+Up        focus up
+  $win+Shift+$left      $exe i3viswiz l 
+  $win+Shift+$right     $exe i3viswiz r 
+  $win+Shift+$down      $exe i3viswiz d 
+  $win+Shift+$up        $exe i3viswiz u 
 
   $win+$left            $exe i3fyra -m l 
   $win+$right           $exe i3fyra -m r 
@@ -142,8 +130,6 @@
 
   $win+Tab              $exe i3flip n
   $win+Shift+Tab        $exe i3flip p
-  # $win+Tab              $exe i3fyra -t r
-  # $win+Shift+Tab        $exe i3fyra -t l 
 
 # >>> window managing, general <<<
   
@@ -154,7 +140,6 @@
   $win+z           $exe i3fyra -a
   $win+Shift+z     focus mode_toggle
 
-  $win+g           layout toggle tabbed splith splitv
   $win+Control+z   $exe i3zen
 
 # >>> wallpaper control <<<
@@ -175,22 +160,21 @@
   $win+Shift+3 move container to workspace 3
 
 # >>> settings <<<
-  
-  set_from_resource $act  budstyle.accent  #111313
-  set_from_resource $ina  budstyle.bg1  #111313
-  set_from_resource $whtl budstyle.fg2 #111313
-  set_from_resource $whtd budstyle.fg1 #111313
-  set_from_resource $red  budstyle.redish  #FF0000
-  set_from_resource $fnt  budstyle.font1  Terminus
-  set_from_resource $fsz  budstyle.fontsz1  12 
-
 
   show_marks no
   floating_modifier $alt
   hide_edge_borders both
   focus_follows_mouse no
-  font pango:$fnt $fsz
   workspace_auto_back_and_forth no
+
+  set_from_resource $act  mondo.colors.act1    #111313
+  set_from_resource $ina  mondo.colors.ina1    #111313
+  set_from_resource $bgc  mondo.colors.bg1     #111313
+  set_from_resource $whtl mondo.colors.act2    #111313
+  set_from_resource $whtd mondo.colors.ina2    #111313
+  set_from_resource $red  mondo.colors.redish  #FF0000
+  set_from_resource $fnt  mondo.gui.fontface1  Terminus
+  set_from_resource $fsz  mondo.gui.fontsize1  12 
 
 # >>> appearance <<<
 
@@ -200,49 +184,82 @@
   client.focused           $act    $act   $whtl    $act
   client.focused_inactive  $ina    $ina   $whtd    $ina
   client.unfocused         $ina    $ina   $whtd    $ina
-  client.urgent            $red    $red   $whtd    $red
+  client.urgent            $red    $red   $whtl    $red
+
+  client.background        $bgc
+
+  font pango:$fnt $fsz
+
+# >>> window layout <<<
+  
+  # default layout:
+  set $layout 'AB=-370 BD=250 AC=125'
+
+  # AAAB
+  # CCCD
+  # CCCD
+
+  # autoload layout:
+  $exe i3fyra -l $layout
+
+  # layout manipulation bindings:
+  $win+p        $exe i3fyra -l $layout
+  $win+Shift+p  $exe i3fyra -l 'AB=800'
+  $win+g        layout toggle tabbed splith splitv
 
 # >>> window rules <<<
   
-  set $tocont focus; exec --no-startup-id exec i3fyra -m
+  # default rule: float everything
   for_window [class="^.*"] floating enable, title_format " "  
 
-  for_window [instance="qbittorrent"]        title_format "qbittorrent", $tocont A
-  for_window [instance="termsmall"]          title_format "URxvt",       $tocont A
-  for_window [instance="htop"]               title_format "htop",        $tocont A
+  # instance|class|title rule
+  set $ir for_window [instance =
+  set $cr for_window [class =
+  set $tr for_window [title =
 
-  for_window [class="mpv"]                   title_format "mpv",         $tocont B
-  for_window [class="feh"]                   title_format "feh",         $tocont B
-  for_window [class="Sxiv"]                  title_format "sxiv",        $tocont B
-  for_window [instance="^filemanager_b$"]    title_format "%title",      $tocont B
-  for_window [instance="ncmpcpp"]            title_format "ncmpcpp",     $tocont B
+  # tf: titleformat
+  set $tf ] title_format
 
-  for_window [class="Vivaldi-stable"]        title_format "vivaldi",     $tocont C
-  for_window [instance="sublime_main"]       title_format "sublime",     $tocont C
-  for_window [instance="termbig"]            title_format "URxvt",       $tocont C
+  # tc: target container
+  set $tc , focus; exec --no-startup-id exec i3fyra -m
+
+  $ir "qbittorrent"        $tf "qbittorrent" $tc A
+  $ir "termsmall"          $tf "URxvt"       $tc A
+  $ir "htop"               $tf "htop"        $tc A
+
+  $cr "Vivaldi-stable"     $tf "vivaldi"     $tc C
+  $ir "sublime_main"       $tf "sublime"     $tc C
+  $ir "milkytracker"       $tf "tracker"     $tc C
+  $ir "termbig"            $tf "URxvt"       $tc C
+  $ir "calibre-gui"        $tf "calibre"     $tc C
+
+  $tr "^conky \(6570b\)$"     $tf "desktop"  $tc C
+  $tr "^Klavaro - Fluidness$" $tf "klavaro"  $tc C
+  $tr "^Klavaro - Velocity$"  $tf "klavaro"  $tc C
+
+  $cr "mpv"                $tf "mpv"         $tc B
+  $cr "feh"                $tf "feh"         $tc B
+  $cr "Sxiv"               $tf "sxiv"        $tc B
+  $ir "^filemanager_b$"    $tf "%title"      $tc B
+  $ir "ncmpcpp"            $tf "ncmpcpp"     $tc B
+  $ir "cornerterm"         $tf "URxvt"       $tc B
+
+  $ir "pavucontrol"        $tf "pavucontrol" $tc B; \
+    $exe i3fyra -l 'AB=-565 BD=400'; \
+    $exe i3-msg [instance="pavucontrol"] focus
   
-  for_window [instance="sublime_notes"]      title_format "todo",        $tocont D
-  for_window [instance="^filemanager_d$"]    title_format "%title",      $tocont D
-  for_window [class="Thunar"]                title_format "%title",      $tocont D
-  for_window [instance="^surf$"]             title_format "surf",        $tocont D
-  for_window [instance="irssi"]              title_format "irssi",       $tocont D
+  $ir "sublime_notes"      $tf "notes"       $tc D
+  $ir "^.*gotofolder.*$"   $tf "%title"      $tc D
+  $ir "^surf$"             $tf "surf"        $tc D
+  $ir "irssi"              $tf "irssi"       $tc D
 
-  for_window [class="Conky"]                 title_format "desktop",     $tocont C
 
-  
-  for_window [instance="floatterm"] resize set 350 px 250 px
-  for_window [instance="tiledterm"] title_format "URxvt", floating disabled
+  $ir "floatterm" $tf "URxvt", resize set 400 px 300 px
+  $ir "tiledterm" $tf "URxvt", floating disabled
 
-  for_window [title="^Klavaro - Fluidness$"] title_format "klavaro", focus; \
-    $exe i3zen
-  for_window [title="^Klavaro - Velocity$"]  title_format "klavaro", focus; \
-    $exe i3zen
+  $tr "^cairo-dock-dialog$"] border pixel 0
 
-  for_window [instance="pavucontrol"] resize set 360 px 400 px, border pixel 1
-  for_window [title="^cairo-dock-dialog$"] border pixel 0
-
-  for_window [title="^Klavaro - Main Menu$"] move absolute position center
-  for_window [title="DevDocs API Documentation$"] title_format "DevDocs"
+  $tr "^Klavaro - Main Menu$"] move absolute position center
 
   for_window [window_TYPE="dialog"]    floating enable
   for_window [window_TYPE="splash"]    floating enable
@@ -250,14 +267,7 @@
 
 # >>> automatic execution <<<
 
-  exec_always --no-startup-id i3env
-  $exe i3fyra -l 'AB=-370 BD=250 AC=125'
-  # $exe dockstart  2>&1 & 
-  # exec_always polybar -c ~/.config/polybar/budbar -r example 2>&1 &
-  exec_always --no-startup-id pbr > /dev/null 2>&1 &
-  exec_always --no-startup-id i3listn.py > /dev/null 2>&1 &
-  # $exe conky > /dev/null 2>&1 &
-
+  $exe pbr &
   
 # >>> modes <<<
 
@@ -306,5 +316,3 @@ mode "bottomright" {
 }
 
 # syntax:ssHash
-
-

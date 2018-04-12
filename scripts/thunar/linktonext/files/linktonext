@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="linktonext"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2018-01-02"
-UPDATED="2018-01-02"
+UPDATED="2018-03-25"
 
 main(){
   while getopts :vh option; do

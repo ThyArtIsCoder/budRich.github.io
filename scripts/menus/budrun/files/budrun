@@ -15,18 +15,12 @@ launchers="
  vivaldi i3run -c Vivaldi-stable -e vivaldi-snapshot
  lxappearance i3run -i lxappearance -e lxappearance -g
  ncmpcpp i3term ncmpcpp
- qbittorrent i3run -i qbittorrent -e 'qbittorrent'
+ qbittorrent i3run -i qbittorrent -e qbittorrent
  newsboat i3term newsboat
 "
 
 colors="
-#859900
-#DC322F
-#D33682
-#2AA198
-#B58900
-#CB4B16
-#6C71C4
+#073642
 "
 
 main(){

@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="pbmail"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="unknown"
 CONTACT=''
 CREATED="2017-12-19"
-UPDATED="2017-12-19"
+UPDATED="2018-04-02"
 
 # Requires https://www.google.com/settings/security/lesssecureapps for gmail.
 

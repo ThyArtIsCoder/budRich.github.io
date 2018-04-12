@@ -1,0 +1,141 @@
+#!/bin/bash
+
+NAME="subswap"
+VERSION="0.013"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-29"
+UPDATED="2018-04-02"
+
+SUBLIME_INSTANCE=${SUBLIME_INSTANCE:-'sublime_main'}
+NOTES_INSTANCE=${NOTES_INSTANCE:-'sublime_notes'}
+
+main(){
+  while getopts :vhi:n: option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  ainst=$(i3get -r i)
+
+  [[ ! $ainst =~ "$SUBLIME_INSTANCE"|"$NOTES_INSTANCE" ]] && exit
+
+  found=$(subtit -i "$ainst")
+
+  subl --command "close"
+  [[ $ainst != "$SUBLIME_INSTANCE" ]] \
+    && sublime \
+    || notes
+
+  sleep .2
+  subl "$found"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+subtit(1), notes(1), i3get(1)
+"
+
+about='
+`subswa[` - Short description
+
+SYNOPSIS
+--------
+
+`subswa[` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+Move the currently open file in sublime to
+another sublime window. Sublime must be active
+for this to work.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+ENVIRONMENT
+-----------
+
+`SUBLIME_INSTANCE`  
+  If non-null the instance name for an alternate system wide *sublime_text*.
+
+`NOTES_INSTANCE`  
+  If non-null the instance name for an alternate system wide *sublime_notes*.
+
+DEPENDENCIES
+------------
+
+sublime
+subtit
+i3get
+notes
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+
+

@@ -1,0 +1,141 @@
+#!/bin/bash
+
+NAME="dunst-layout"
+VERSION="0.004"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2018-02-04"
+UPDATED="2018-04-11"
+
+DUNST_DIR="${DUNST_DIR:-$HOME/.config/dunst}"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  trg="$DUNST_DIR/lo-$1"
+  
+  [[ -f "$trg" ]] || exit
+  
+  killall dunst
+  # Wait until the processes have been shut down
+  while pgrep -u $UID -x dunst >/dev/null; do sleep 0.2; done
+
+  mv "$DUNST_DIR/dunstrc" "$DUNST_DIR/dunstrcBAK"
+
+  cat "$DUNST_DIR/mondo" "$trg" > "$DUNST_DIR/dunstrc"
+
+  dunst > /dev/null 2>&1 &
+
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+dunst(1)
+"
+
+about='
+`dunst-layout` - Dunst layout switcher
+
+SYNOPSIS
+--------
+
+`dunst-layout` [`-v`|`-h`] LAYOUT-NAME
+
+DESCRIPTION
+-----------
+
+`dunst-layout` restarts dunst with the selected 
+layout, merged with a mondo generated theme. 
+
+OPTIONS
+-------
+
+`-v`  
+  Show version and exit.
+
+`-h`  
+  Show help and exit.
+
+
+FILES
+-----
+
+*DUNST_DIR/lo-LAYOUT-NAME*
+  A file inside DUNST_DIR containing dunst options.
+
+*DUNST_DIR/mondo*
+  A file inside DUNST_DIR containing dunst options.
+
+ENVIRONMENT
+-----------
+
+`DUNST_DIR`
+  dunst settings folder, defaults to *~/.config/dunst*
+
+DEPENDENCIES
+------------
+
+dunst
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

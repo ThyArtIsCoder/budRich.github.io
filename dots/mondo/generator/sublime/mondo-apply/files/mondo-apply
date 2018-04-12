@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# This script is executed every time a theme is applied.
+# Each generator can have it's own mondo-apply script.
+
+# The default syntax is bash, but by changing the shebang,
+# one could use another language (f.i. perl or python).
+
+# $1 is equal to: $MONOD_DIR/generator/TYPE/THEME[.extensions]
+
+# If this script is not needed, this file can safely be removed.
+# (removing the file, will improve execution speed)
+
+# this_dir="${1%/*}"
+this_file="${1##*/}"
+this_theme="${this_file%.*}"
+
+# To source the settings file one could use this:
+# source "${this_dir}/mondo-settings"
+
+da_settings="$HOME/.config/sublime-text-3/Packages/User/DA Theme.sublime-settings"
+
+eval "$(xrdb -query | awk '
+  $1~/colors.act1/{print "clract1=" $2}
+  $1~/colors.act2/{print "clract2=" $2}
+  ')"
+
+sed -i --follow-symlinks \
+  "/accent_color\":/c\"accent_color\": \"$clract1\"," \
+  "${da_settings}"
+
+sed -i --follow-symlinks \
+  "/status_label_foreground_color\":/c\"status_label_foreground_color\": \"$clract2\"," \
+  "${da_settings}"
+
+
+subl --command "two_face {\"face\":\"$this_theme\"}"

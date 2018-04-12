@@ -2,7 +2,7 @@ dmenu.selforeground:      bg
 dmenu.background:         bg
 dmenu.selbackground:      fg
 dmenu.foreground:         fg
-dmenu.font:               fnt3
+dmenu.font:               terminalfontface1
 
 
 

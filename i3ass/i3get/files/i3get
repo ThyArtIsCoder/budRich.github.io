@@ -1,19 +1,24 @@
 #!/bin/sh
 
 NAME="i3get"
-VERSION="0.295"
+VERSION="0.297"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-03-08"
-UPDATED="2017-12-17"
+UPDATED="2018-04-02"
 
 getwindow(){
   i3-msg -t get_tree \
   | awk -v RS=',' -F':' -v crit="${crit}" -v srch="${srch}" -v sret="${sret}" \
     'BEGIN{hit="0"}
-      $1~"{\"id\"" {if(sret ~ n)r["n"]=$2;if(sret ~ v)cid=$2}
-      $2~"\"id\"" {if(sret ~ n)r["n"]=$3;if(sret ~ v)cid=$3}
-      $1==crit && $2 ~ srch  {hit=1;fid=cid}
+      $1~"{\"id\"" || $2~"\"id\"" {
+        cid=$NF
+        for(k in r){if(k!="w"){r[k]=""}}
+        if(sret ~ n)
+          r["n"]=cid
+        if(hit==1){exit}
+      }
+      $1 ~ crit && $2 ~ srch  {hit=1;fid=cid}
       $2 ~ crit && $3 ~ srch {hit=1;fid=cid}
       sret ~ t && $1=="\"title\"" {r["t"]=$2}
       sret ~ c && $2 ~ "\"class\"" {r["c"]=$3}
@@ -121,69 +126,72 @@ i3(1)
 "
 
 about='
-`SCRIPTNAME` - Return information about i3wm.
+`i3get` - Return information about i3wm.
 
 SYNOPSIS
 --------
 
-`SCRIPTNAME` [`OPTION`] [`CRITERIA`] [`-r`] [`OUTPUT`]
+`i3get` [`-h`|`-v`] [`OPTION` [*CRITERIA*]] [`-r` [tcidnmwafov]] [`-y`]
 
 DESCRIPTION
 -----------
 
-Search for windows in i3 tree, return desired information
-if no arguments are passed. `con_id` of acitve window is returned.
+Search for `CRITERIA` in the output of `i3-msg -t get_tree`, 
+return desired information. If no arguments are passed. 
+`con_id` of acitve window is returned.
 
 OPTIONS
 -------
 
-`-v`
+`-v`  
   Show version and exit
 
-`-h`
+`-h`  
   Show this help
 
-`-a`
+`-a`  
   Currently active window (default)
 
-`-c` *CLASS*
+`-c` *CLASS*  
   Search for windows with the given class
 
-`-i` *INSTANCE*
+`-i` *INSTANCE*  
   Search for windows with the given instance
 
-`-t` *TITLE*
+`-t` *TITLE*  
   Search for windows with title.
 
-`-n` *CON_ID*
+`-n` *CON_ID*  
   Search for windows with the given con_id
 
-`-d` *CON_ID*
+`-d` *CON_ID*  
   Search for windows with the given window id
 
-`-m` *CON_MARK*
+`-m` *CON_MARK*  
   Search for windows with the given mark
 
-`-o` *TTL_FRMT*
+`-o` *TTL_FRMT*  
   Search for windows with the given titleformat
 
-`-y`
+`-y`  
   Synch on. If this option is included, 
   script will wait till target window exist.
 
-`-r` [*tcidnmw*]
-  Desired output
-  `t`: title
-  `c`: class
-  `i`: instance
-  `d`: Window ID
-  `n`: Con_Id (default)
-  `m`: mark
-  `w`: workspace
-  `a`: is active
-  `f`: floating state
-  `o`: title format
-  `v`: visible state
+`-r` [*OUTPUT*]  
+  *OUTPUT* can be one or more of the following 
+  characters:   
+
+  `t`: title  
+  `c`: class  
+  `i`: instance  
+  `d`: Window ID  
+  `n`: Con_Id (default)  
+  `m`: mark  
+  `w`: workspace  
+  `a`: is active  
+  `f`: floating state  
+  `o`: title format  
+  `v`: visible state  
 
 EXAMPLES
 --------

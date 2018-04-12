@@ -1,0 +1,11 @@
+#include ".config/mondo/mondo-theme"
+
+#include ".xres/xft"
+#include ".xres/urxvt"
+#include ".xres/dmenu"
+
+Xcursor.theme:  cursortheme
+
+rofi.theme:     oneliner
+
+! syntax:ssExcla

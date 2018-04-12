@@ -1,0 +1,132 @@
+#!/bin/bash
+NAME="templatetator"
+VERSION="0.004"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-09-30"
+UPDATED="2018-04-11"
+
+TMPFLD=${1:-"$HOME/.config/templatetator"}
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  [[ ! -d $TMPFLD ]] && printinfo && exit
+
+  declare -A lst
+
+  for d in $TMPFLD/*; do
+    [[ -d $d ]] && lst[${d##*/}]="${d}"
+  done
+
+  CURTMP=$(printf '%s\n' ${!lst[@]} | rofi -dmenu -p 'New file:')
+  [[ -z $CURTMP ]] && exit
+  CURFLD=${lst[$CURTMP]}
+  [[ ! -f $CURFLD/recipie ]] && exit
+  CURFIL=$(printf "" | rofi -dmenu -p 'Name:')
+  [[ -z $CURFIL ]] && exit
+
+  . "$CURFLD/recipie"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+rofi(1)
+"
+
+about='
+`templatetator` - Create files based on templates
+
+SYNOPSIS
+--------
+
+`templatetator` [`-v`|`-h`] [*TEMPLATE_FOLDER*]
+
+DESCRIPTION
+-----------
+
+script that invokes a rofi with a list of folders 
+inside *TEMPLATE_FOLDER*. folder. It then runs the 
+recipie file in the selected folder. It then prompts
+for a filename of the new file.
+
+The variables, *CURFLD* (the selected template folder) 
+and *CURFIL* (the entered filename) can be used in 
+the recepie file.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+DEPENDENCIES
+------------
+
+rofi
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

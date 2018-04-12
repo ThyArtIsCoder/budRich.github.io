@@ -1,0 +1,179 @@
+#!/bin/bash
+
+NAME="shoot"
+VERSION="0.003"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-24"
+UPDATED="2018-04-01"
+
+TMP_FILE="/tmp/shoot.png"
+FLD_SAVE="$HOME/pix/ss"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  rm -f "$TMP_FILE"
+
+  type=$(printf '%s\n' "full" "select" | rofi -dmenu -p "shoot:")
+  [[ -z $type ]] && notify-send "shoot: screenshot aborted" && exit
+
+  if [[ $type = select ]];then 
+    maim -su ${TMP_FILE}
+  else
+    sleep 1 && maim ${TMP_FILE}
+  fi
+
+  sxiv "${TMP_FILE}"
+
+  filename=$(printf '%s\n' " " | rofi -dmenu -p "name:")
+  [[ -z $filename ]] && notify-send "shoot: screenshot aborted" && exit
+
+  action=$(printf '%s\n' "upload" "budlabs" "save" "new" | rofi -dmenu -p "action:")
+  [[ -z $action ]] && notify-send "shoot: screenshot aborted" && exit
+
+  NEW_FILE="${FLD_SAVE}/${filename}.png"
+  mv "${TMP_FILE}" "$NEW_FILE"
+
+  case $action in
+    upload  ) 
+      host=$(printf '%s\n' "imgur" "ptpb.pw" | rofi -dmenu -p "shoot:") 
+      [[ -z $host ]] && notify-send "shoot: screenshot aborted" && exit
+      if [[ $host = imgur ]];then
+        imgur-screenshot.sh --open false "$NEW_FILE"
+      else
+        pst=$(curl --form "c=@${NEW_FILE}" https://ptpb.pw/)
+        pst=$(printf '%s' "${pst}" | awk -F':' '$1=="url"{$1="";print $2 ":" $3}')
+        echo -n "${pst}" | xclip -selection 'clipboard'
+        notify-send "shoot: $NEW_FILE uploaded. $pst"
+      fi
+    ;;
+    save    ) 
+      echo -n "${NEW_FILE}" | xclip -selection 'clipboard'
+      notify-send "shoot: $NEW_FILE saved." 
+    ;;
+    budlabs ) img4site "$NEW_FILE"             ;;
+    new     ) rm "$NEW_FILE" && shoot && exit  ;;
+  esac
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+rofi(1), curl(1), maim(1), sxiv(1)
+"
+
+about='
+`shoot` - Screenshots made easy
+
+SYNOPSIS
+--------
+
+`shoot` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+When `shoot` is launched it displays a rofi asking 
+what kind of screenshot to take: Fullscreen or 
+Select area. Then screenshot is taken and the image 
+is opened with sxiv. When sxiv is closed a new menu 
+asks for action: Save Upload budlabs. If Upload is 
+chosen the user is prompted for a host (imgur, ptpb), 
+finally a name is requested. Then the action is 
+performed. If the user aborts (presses escape in a menu), 
+script exits. On exit a message is displayed.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+FILES
+-----
+
+*FLD_SAVE*
+  Folder to save images too. Defaults to: *~/pix/ss*
+
+*TMP_FILE*
+  Temporary location for the screenshot before it 
+  is moved. Defaults to: */tmp/shoot.png*
+
+DEPENDENCIES
+------------
+
+rofi  
+curl  
+maim  
+sxiv  
+imgur-screenshot  
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+
+
+

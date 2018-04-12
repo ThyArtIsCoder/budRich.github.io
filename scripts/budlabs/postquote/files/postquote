@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="postquote"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-09-30"
-UPDATED="2017-09-30"
+UPDATED="2018-04-11"
 
 main(){
   while getopts :vhf:l:w: option; do

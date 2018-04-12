@@ -1,0 +1,15 @@
+[colors]
+char_untouched_fg=%%colors.fg1%%
+char_untouched_bg=%%colors.bg1%%
+char_wrong_bg=%%colors.redish%%
+char_wrong_fg=%%colors.bg1%%
+char_correct_fg=%%colors.fg2%%
+char_correct_bg=%%colors.bg2%%
+char_retouched_fg=%%colors.green%%
+char_retouched_bg=%%colors.bg2%%
+cursor_blink_fg=%%colors.bg1%%
+cursor_blink_bg=%%colors.fg1%%
+cursor_unblink_fg=%%colors.bg1%%
+cursor_unblink_bg=%%colors.fg1%%
+text_intro_fg=%%colors.fg1%%
+text_intro_bg=%%colors.bg1%%

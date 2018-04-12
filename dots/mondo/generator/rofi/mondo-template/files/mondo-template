@@ -1,0 +1,6 @@
+* {
+act1: %%colors.act1%%;
+act2: %%colors.act2%%;
+act3: %%colors.act3%%;
+font1: "%%gui.fontface1%% %%gui.fontsize1%%";
+}

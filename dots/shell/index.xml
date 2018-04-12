@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/shell/</link>
+    <description>Recent content in shell on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Apr 2018 13:16:48 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>alias</title>
+      <link>https://budrich.github.io/dots/shell/alias/</link>
+      <pubDate>Sun, 01 Apr 2018 11:54:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/alias/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>func</title>
+      <link>https://budrich.github.io/dots/shell/func/</link>
+      <pubDate>Sun, 01 Apr 2018 11:53:20 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/func/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>misc</title>
+      <link>https://budrich.github.io/dots/shell/misc/</link>
+      <pubDate>Sun, 01 Apr 2018 11:41:47 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/misc/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>path</title>
+      <link>https://budrich.github.io/dots/shell/path/</link>
+      <pubDate>Sun, 01 Apr 2018 11:33:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/path/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>prompt</title>
+      <link>https://budrich.github.io/dots/shell/prompt/</link>
+      <pubDate>Sun, 01 Apr 2018 11:33:05 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/prompt/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>bashrc</title>
+      <link>https://budrich.github.io/dots/shell/bashrc/</link>
+      <pubDate>Sun, 01 Apr 2018 11:11:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/bashrc/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>inputrc</title>
+      <link>https://budrich.github.io/dots/shell/inputrc/</link>
+      <pubDate>Sun, 01 Apr 2018 11:01:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/inputrc/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+  </channel>
+</rss>

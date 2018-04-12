@@ -1,0 +1,25 @@
+[urgency_low]
+background = "%%colors.fg1%%"
+foreground = "%%colors.bg1%%"
+timeout = 4
+
+[urgency_normal]
+background = "%%colors.fg1%%"
+foreground = "%%colors.bg1%%"
+timeout = 5
+
+[urgency_critical]
+background = "%%colors.redish%%"
+foreground = "%%colors.act2%%"
+timeout = 10
+
+[shortcuts]
+close       = ctrl+space
+context     = ctrl+shift+space
+# close_all  = ctrl+shift+space
+# history    = ctrl+grave
+# context    = ctrl+shift+period
+
+[global]
+font = %%gui.fontface1%% %%gui.fontsize1%%
+frame_color = "%%colors.bg1%%"

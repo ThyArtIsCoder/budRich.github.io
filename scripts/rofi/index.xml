@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rofi on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/scripts/rofi/</link>
+    <description>Recent content in rofi on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Apr 2018 19:42:59 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/scripts/rofi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>budrun</title>
+      <link>https://budrich.github.io/scripts/rofi/budrun/</link>
+      <pubDate>Fri, 30 Mar 2018 19:38:15 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/rofi/budrun/</guid>
+      <description>rofibudrunpoly.gif   In the gif above I use the oneliner rofi theme.
+budrun - Simple launcher menu SYNOPSIS budrun [-v|-h]
+DESCRIPTION When executed a rofi menu is displayed. The launchers to be displayed are defined and in the launcher variable. The first field of the line is supposed to be an icon, the second field is the name to display, the rest of the line is the command to be launched.</description>
+    </item>
+    
+    <item>
+      <title>foldermen</title>
+      <link>https://budrich.github.io/scripts/rofi/foldermen/</link>
+      <pubDate>Fri, 30 Mar 2018 19:34:31 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/rofi/foldermen/</guid>
+      <description>foldermen - Favorite Directory Menu SYNOPSIS foldermen [-v|-h]
+DESCRIPTION foldermen Launches a rofi instance with a list of directories. Selected directory will get passed to gotofolder (and opened in thunar)
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES fontawesome
+rofi
+gotofolder
+thunar</description>
+    </item>
+    
+    <item>
+      <title>gethelp</title>
+      <link>https://budrich.github.io/scripts/rofi/gethelp/</link>
+      <pubDate>Fri, 30 Mar 2018 19:33:15 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/rofi/gethelp/</guid>
+      <description>gethelp - Short description SYNOPSIS gethelp [-v|-h]
+DESCRIPTION When launched without CATEGORY a list of categories is displayed in a rofi menu. When CATEGORY is known, a menu with pages from that CATEGORY is shown. Depending on the CATEGORY, the chosen page is opened in sublime or surf.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES rofi
+i3run
+sublime
+surf</description>
+    </item>
+    
+    <item>
+      <title>getlink</title>
+      <link>https://budrich.github.io/scripts/rofi/getlink/</link>
+      <pubDate>Fri, 30 Mar 2018 19:32:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/rofi/getlink/</guid>
+      <description>getlink - Puts a link in the clipboard SYNOPSIS getlink [-v|-h] [CATEGORY]
+DESCRIPTION When script is invoked without a CATEGORY a menu (rofi) is shown asking for category. A list of files from that category is shown in a menu. Selected file translates to a url that is put both in primary selection and clipboard.
+Available categories:
+ budlabs (budrich.github.io links) github (github.budrich.com links) i3docs (i3 userguide links) links (www bookmarks) pix (uploads a image in ~/pix/r and return url)  OPTIONS -v Show version and exit.</description>
+    </item>
+    
+    <item>
+      <title>shoot</title>
+      <link>https://budrich.github.io/scripts/rofi/shoot/</link>
+      <pubDate>Fri, 30 Mar 2018 19:07:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/rofi/shoot/</guid>
+      <description>shoot - Screenshots made easy SYNOPSIS shoot [-v|-h]
+DESCRIPTION When shoot is launched it displays a rofi asking what kind of screenshot to take: Fullscreen or Select area. Then screenshot is taken and the image is opened with sxiv. When sxiv is closed a new menu asks for action: Save Upload budlabs. If Upload is chosen the user is prompted for a host (imgur, ptpb), finally a name is requested.</description>
+    </item>
+    
+    <item>
+      <title>subpromen</title>
+      <link>https://budrich.github.io/scripts/rofi/subpromen/</link>
+      <pubDate>Fri, 30 Mar 2018 19:02:39 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/rofi/subpromen/</guid>
+      <description>subpromen - Switch Sublime projects with rofi SYNOPSIS subpromen [-v|-h]
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+ENVIRONMENT SUBLIME_PROJECTS_DIR Folder containing *.sublime-project files.
+DEPENDENCIES rofi
+sublime
+subpro</description>
+    </item>
+    
+  </channel>
+</rss>

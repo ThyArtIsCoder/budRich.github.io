@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="foldermen"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2018-01-02"
-UPDATED="2018-01-02"
+UPDATED="2018-03-25"
 
 folders="
  ~/vid/y
@@ -107,7 +107,7 @@ rofi(1), thunar(1), gotofolder(1)
 "
 
 about='
-`foldermen` - Browse folders
+`foldermen` - Favourite Directory Menu 
 
 SYNOPSIS
 --------
@@ -118,8 +118,8 @@ DESCRIPTION
 -----------
 
 `foldermen` Launches a rofi instance with a list 
-of folders. Selected forlder will be lauched with 
-`gotofolder` (*and opened in thunar*)
+of directories. Selected directory will get passed 
+to `gotofolder` (*and opened in thunar*)
 
 OPTIONS
 -------

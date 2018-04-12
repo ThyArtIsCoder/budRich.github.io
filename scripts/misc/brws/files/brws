@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="brws"
-VERSION="0.001"
+VERSION="0.007"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-11-30"
-UPDATED="2017-12-17"
+UPDATED="2018-02-20"
 
 main(){
   while getopts :vh option; do
@@ -38,6 +38,9 @@ main(){
 }
 
 printinfo(){
+
+  local thisscript
+
   case "$1" in
     m ) printf '%s' "${about}" ;;
     
@@ -48,19 +51,28 @@ printinfo(){
     ;;
 
     ''|* ) 
-      printf '%s' "${about}" | awk '
-         BEGIN{ind=0}
-         $0~/^```/{
-           if(ind!="1"){ind="1"}
-           else{ind="0"}
-           print ""
-         }
-         $0!~/^```/{
-           gsub("[`*]","",$0)
-           if(ind=="1"){$0="   " $0}
-           print $0
-         }
-       '
+      
+      thisscript=$(readlink -f "$0")
+
+      if [[ -f "$thisscript.1" ]]; then
+        man -l "$thisscript.1"
+
+      else
+        printf '%s' "${about}" | awk '
+           BEGIN{ind=0}
+           $0~/^```/{
+             if(ind!="1"){ind="1"}
+             else{ind="0"}
+             print ""
+           }
+           $0!~/^```/{
+             gsub("[`*]","",$0)
+             if(ind=="1"){$0="   " $0}
+             print $0
+           }
+         '
+      fi
+      
     ;;
   esac
 }

@@ -1,0 +1,140 @@
+#!/bin/bash
+
+NAME="linktonext"
+VERSION="0.002"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2018-01-02"
+UPDATED="2018-03-30"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  declare -A gla
+
+  alst=($(i3list))
+  gla[AWC]=${alst[7]}   #  Active window container (A|B|C|D|X)
+  gla[ACA]=${alst[21]}  #  Container A focused child (con_id)
+  gla[ACB]=${alst[25]}  #  Container B focused child (con_id)
+  gla[ACC]=${alst[29]}  #  Container C focused child (con_id)
+  gla[ACD]=${alst[33]}  #  Container D focused child (con_id)
+
+  case ${gla[AWC]} in
+    A ) sib=C ;;
+    B ) sib=D ;;
+    C ) sib=A ;;
+    D ) sib=B ;;
+  esac
+
+  asib=($(i3get -n "${gla[AC${sib}]}" -r ct))
+  [[ ${asib[0]} != Thunar ]] \
+    && notify-send "No thunar sibling" && exit
+
+  fld="${asib[1]%' - File Manager'*}"
+  fld="${fld//'"'/}"
+
+  for f in "${@}"; do
+    ln -s "$f" "$fld"
+  done
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+thunar(1), i3list(1), i3fyra(1)
+"
+
+about='
+`linktonext` - Move/copy/link files between two 
+open `thunar` instances.
+
+SYNOPSIS
+--------
+
+`linktonext` [`-v`|`-h`] *FILE(s)*
+
+DESCRIPTION
+-----------
+
+If two `thunar` instances are open in the **i3fyra** 
+layout this command will `move/copy/link` selected 
+*file(s)* between them.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+
+DEPENDENCIES
+------------
+
+thunar  
+i3fyra  
+i3list
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

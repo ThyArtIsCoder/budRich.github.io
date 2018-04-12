@@ -1,0 +1,139 @@
+#!/bin/bash
+
+NAME="notes"
+VERSION="0.003"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-19"
+UPDATED="2018-04-01"
+
+NOTES_INSTANCE=${NOTES_INSTANCE:-'sublime_notes'}
+NOTES_PROJECT=${NOTES_PROJECT:-"$HOME/tmp/kortisar/sublime/projects/notes.sublime-project"}
+NOTES_FILE=${NOTES_FILE:-"$HOME/dox/not/todo.note"}
+NOTES_TARGET="i3get -t '[(]notes[)]' -r d -y"
+
+command=$(cat << EOF
+subl --project "$NOTES_PROJECT" \
+&& subl "$NOTES_FILE" \
+&& xdotool set_window --classname "$NOTES_INSTANCE" \`${NOTES_TARGET}\`
+EOF
+)
+
+main(){
+  while getopts :vhli: option; do
+    case "${option}" in
+      i) NOTES_INSTANCE="${OPTARG}" ;;
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+i3run -i "$NOTES_INSTANCE" -e "${command}"
+
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+i3run(1), xdotool(1), subtit(1)
+"
+
+about='
+`notes` - Run or raise a `plain notes` sublime instance.
+
+SYNOPSIS
+--------
+
+`notes` [`-v`|`-h`|] [`-i` *NOTES_INSTANCE*]
+
+DESCRIPTION
+-----------
+
+This command is just a shortcut to a complex command
+used to run or raise  a `plain notes` sublime instance.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+`-i` *NOTES_INSTANCE*  
+  Instance name to give the notes window.
+  Defautlt: *sublime_notes*
+
+ENVIRONMENT
+-----------
+
+`SUBLIME_INSTANCE`
+  If non-null the will rename instance name of notes
+  window. Overridden by the `-i` option.
+  Defautlt: *sublime_notes*
+
+DEPENDENCIES
+------------
+
+i3run
+xdotool
+sublime
+subtit
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

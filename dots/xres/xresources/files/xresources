@@ -1,43 +1,15 @@
 
-#define fnt1 Terminus
-#define fnt2 Inconsolata
-#define fnt3 FixedFixedsys
-#define fsz1 12
-#define fsz2 18
-#define padd 5
-
-! #include ".xres/colors/gruvbox"
-! #include ".xres/colors/HatOfGod"
-#include ".xres/colors/solarized-dark"
+#include ".xres/themes/solarized-dark"
 
 #include ".xres/color"
 #include ".xres/xft"
 #include ".xres/urxvt"
 #include ".xres/dmenu"
+#include ".xres/budstyle"
 
-Xcursor.theme: Win8
+Xcursor.theme:  cursortheme
 
-budstyle.accent:   blu
-budstyle.bg1:      blk
-budstyle.bg2:      bg
-budstyle.fg1:      fg
-budstyle.fg2:      wht2
-budstyle.redish :  red
-budstyle.font1 :   fnt3
-budstyle.fontsz1 : fsz1
-
-rofi.font:                fnt3  fsz1
-rofi.theme:               oneliner
-! rofi.color-enabled:       true
-
-
-! ! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-! rofi.color-normal: blk,  #002b36,  #eee8d5,  #586e75,  #eee8d5
-! rofi.color-urgent: blk,  #dc322f,  #eee8d5,  #dc322f,  blk
-! rofi.color-active: blk,  #268bd2,  #eee8d5,  #268bd2,  #fdf6e3
-
-! !                  'background', 'border', 'separator'
-! rofi.color-window: blk,      #002b36,  #002b36
-
+rofi.font:      fnt3  fsz1
+rofi.theme:     oneliner
 
 ! syntax:ssExcla

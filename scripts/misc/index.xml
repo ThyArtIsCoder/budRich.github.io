@@ -5,15 +5,33 @@
     <link>https://budrich.github.io/scripts/misc/</link>
     <description>Recent content in misc on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Dec 2017 10:20:03 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 19:13:10 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/scripts/misc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>dunst-layout</title>
+      <link>https://budrich.github.io/scripts/misc/dunst-layout/</link>
+      <pubDate>Wed, 11 Apr 2018 14:05:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/misc/dunst-layout/</guid>
+      <description>dunst-layout - Dunst layout switcher SYNOPSIS dunst-layout [-v|-h] LAYOUT-NAME
+DESCRIPTION dunst-layout restarts dunst with the selected layout, merged with a mondo generated theme.
+OPTIONS -v
+Show version and exit.
+-h
+Show help and exit.
+FILES DUNST_DIR/lo-LAYOUT-NAME A file inside DUNST_DIR containing dunst options.
+DUNST_DIR/mondo A file inside DUNST_DIR containing dunst options.
+ENVIRONMENT DUNST_DIR dunst settings folder, defaults to ~/.config/dunst
+DEPENDENCIES dunst</description>
+    </item>
+    
+    <item>
       <title>getkeys</title>
       <link>https://budrich.github.io/scripts/misc/getkeys/</link>
-      <pubDate>Tue, 19 Dec 2017 20:58:30 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:32:54 +0200</pubDate>
       
       <guid>https://budrich.github.io/scripts/misc/getkeys/</guid>
       <description>getkeys - Clean xev output SYNOPSIS getkeys [-v|-h]
@@ -24,30 +42,26 @@ DEPENDENCIES i3get xev</description>
     </item>
     
     <item>
-      <title>shoot</title>
-      <link>https://budrich.github.io/scripts/misc/shoot/</link>
-      <pubDate>Mon, 18 Dec 2017 10:42:42 +0100</pubDate>
+      <title>igi</title>
+      <link>https://budrich.github.io/scripts/misc/igi/</link>
+      <pubDate>Fri, 30 Mar 2018 19:21:54 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/misc/shoot/</guid>
-      <description>shoot - Screenshots made easy SYNOPSIS shoot [-v|-h]
-DESCRIPTION When shoot is launched it displays a rofi asking what kind of screenshot to take: Fullscreen or Select area. Then screenshot is taken and the image is opened with sxiv. When sxiv is closed a new menu asks for action: Save Upload budlabs. If Upload is chosen the user is prompted for a host (imgur, ptpb), finally a name is requested.</description>
+      <guid>https://budrich.github.io/scripts/misc/igi/</guid>
+      <description>This script generates an issue file that is shown when you log in to your computer without a DM. It applies the current color scheme that you have set in .Xresources
+ss_igi1.png   igi - I Got Issues SYNOPSIS igi [-v|-h]
+DESCRIPTION This script creates a issuefile and move it to /etc/issue. The file will use the colors defined in .Xresources and use toilet, fortune and lolcat to create a centered fullscreen issue file.</description>
     </item>
     
     <item>
-      <title>brws</title>
-      <link>https://budrich.github.io/scripts/misc/brws/</link>
-      <pubDate>Mon, 18 Dec 2017 10:25:11 +0100</pubDate>
+      <title>templatetator</title>
+      <link>https://budrich.github.io/scripts/misc/templatetator/</link>
+      <pubDate>Fri, 30 Mar 2018 18:47:33 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/misc/brws/</guid>
-      <description>brws - URL-launcher for terminals SYNOPSIS brws [-v|-h]
-DESCRIPTION url-launcher, does different thing depending on the url. Opens images with sxiv, and videos in mpv.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES i3get
-sxiv
-mpv
-youtube-dl
-vivaldi</description>
+      <guid>https://budrich.github.io/scripts/misc/templatetator/</guid>
+      <description>templatetator - Create files based on templates SYNOPSIS templatetator [-v|-h] [TEMPLATE_FOLDER]
+DESCRIPTION script that invokes a rofi with a list of folders inside TEMPLATE_FOLDER. folder. It then runs the recipie file in the selected folder. It then prompts for a filename of the new file.
+The variables, CURFLD (the selected template folder) and CURFIL (the entered filename) can be used in the recepie file.
+OPTIONS -v Show version and exit.</description>
     </item>
     
   </channel>

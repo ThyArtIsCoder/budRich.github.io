@@ -5,41 +5,44 @@
     <link>https://budrich.github.io/scripts/polybar/</link>
     <description>Recent content in polybar on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Dec 2017 12:32:23 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Apr 2018 16:42:37 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/scripts/polybar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>pbws</title>
-      <link>https://budrich.github.io/scripts/polybar/pbws/</link>
-      <pubDate>Sun, 31 Dec 2017 23:14:01 +0100</pubDate>
+      <title>pbmail</title>
+      <link>https://budrich.github.io/scripts/polybar/pbmail/</link>
+      <pubDate>Fri, 30 Mar 2018 19:19:05 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/polybar/pbws/</guid>
-      <description>pbws - Minimal workspace indication SYNOPSIS pbws [-v|-h]
-DESCRIPTION pbws outputs a symbol representing the current worskpace and the total number of workspaces. Inteded to be used with polybar.
+      <guid>https://budrich.github.io/scripts/polybar/pbmail/</guid>
+      <description>pbmail - Outputs unread mail count SYNOPSIS pbmail [-v|-h]
+DESCRIPTION pbmail is meant to be used with polybar to display unread mail count.
 OPTIONS -v Show version and exit.
--h Show help and exit.
-ENVIRONMENT PBWS_SYMBOL_WORKSPACE_NUMBER This symbol will be used to indicate the current workspace, if empty the workspace number will be used.
-DEPENDENCIES polybar</description>
+-h Show help and exit.</description>
     </item>
     
     <item>
       <title>pbmedia</title>
       <link>https://budrich.github.io/scripts/polybar/pbmedia/</link>
-      <pubDate>Sun, 31 Dec 2017 23:05:38 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:18:48 +0200</pubDate>
       
       <guid>https://budrich.github.io/scripts/polybar/pbmedia/</guid>
-      <description>pbmedia pbmedia - Short description
-SYNOPSIS pbmedia [-v|-h] [-c config-file] file &amp;hellip;
-DESCRIPTION pbmedia frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse order by time for the xyzzy(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All files are processed in the order specified.
-OPTIONS -v Show version and exit.</description>
+      <description>pbmedia - Displays the filename of the currently active media file. SYNOPSIS pbmedia [-v|-h]
+DESCRIPTION pbmedia Prints the filename of the currently playing media file in mpd or mpv. And applies some string and color formatting depending on the state and path of the file.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES i3viswiz
+i3get
+mpd
+mpc
+mpv</description>
     </item>
     
     <item>
       <title>pbtitle</title>
       <link>https://budrich.github.io/scripts/polybar/pbtitle/</link>
-      <pubDate>Sun, 31 Dec 2017 19:26:58 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:16:43 +0200</pubDate>
       
       <guid>https://budrich.github.io/scripts/polybar/pbtitle/</guid>
       <description>pbtitle - Short description SYNOPSIS pbtitle [-v|-h] EVENT
@@ -48,16 +51,28 @@ DESCRIPTION pbtitle is intended to be used as output in a statusbar. Different o
     </item>
     
     <item>
-      <title>pbmic</title>
-      <link>https://budrich.github.io/scripts/polybar/pbmic/</link>
-      <pubDate>Tue, 19 Dec 2017 21:25:29 +0100</pubDate>
+      <title>pbweather</title>
+      <link>https://budrich.github.io/scripts/polybar/pbweather/</link>
+      <pubDate>Fri, 30 Mar 2018 19:15:43 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/polybar/pbmic/</guid>
-      <description>pbmic - Prints the microphone volume SYNOPSIS pbmic [-v|-h] [-c config-file] file &amp;hellip;
-DESCRIPTION pbmic Prints the microphone volume, meant to be used with a statusbar.
+      <guid>https://budrich.github.io/scripts/polybar/pbweather/</guid>
+      <description>pbweather - Prints weather information SYNOPSIS pbweather [-v|-h]
+OPTIONS -v Show version and exit.
+-h Show help and exit.</description>
+    </item>
+    
+    <item>
+      <title>pbws</title>
+      <link>https://budrich.github.io/scripts/polybar/pbws/</link>
+      <pubDate>Fri, 30 Mar 2018 19:15:07 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/polybar/pbws/</guid>
+      <description>pbws - Minimal workspace indication SYNOPSIS pbws [-v|-h]
+DESCRIPTION pbws outputs a symbol representing the current worskpace and the total number of workspaces. Inteded to be used with polybar.
 OPTIONS -v Show version and exit.
 -h Show help and exit.
-DEPENDENCIES FontAwesome ponymix</description>
+ENVIRONMENT PBWS_SYMBOL_WORKSPACE_NUMBER This symbol will be used to indicate the current workspace, if empty the workspace number will be used.
+DEPENDENCIES polybar</description>
     </item>
     
   </channel>

@@ -1,14 +1,14 @@
 #!/bin/bash
 
 NAME="subpro"
-VERSION="0.011"
+VERSION="0.013"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-11-19"
-UPDATED="2017-12-17"
+UPDATED="2018-04-02"
 
 # folder containing .sublime-project files
-FLD_PRO="$HOME/tmp/kortisar/sublime/projects"
+SUBLIME_PROJECTS_DIR="${SUBLIME_PROJECTS_DIR:-$HOME}"
 trginstance=${SUBLIME_INSTANCE:-'sublime_main'}
 
 main(){
@@ -27,7 +27,7 @@ main(){
     && shift $((OPTIND-1))
 
   EXT='.sublime-project'
-  pfp="$FLD_PRO/$1$EXT"
+  pfp="$SUBLIME_PROJECTS_DIR/$1/$1$EXT"
 
   [[ ! -f "$pfp" ]] && exit
 
@@ -126,7 +126,7 @@ OPTIONS
 FILES
 -----
 
-*FLD_PRO*
+*SUBLIME_PROJECTS_DIR*
   Folder containing .sublime-project files
   defaults to: *~/tmp/kortisar/sublime/projects*
 

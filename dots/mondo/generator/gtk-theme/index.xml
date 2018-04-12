@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gtk-theme on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/</link>
+    <description>Recent content in gtk-theme on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Apr 2018 15:50:18 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/mondo/generator/gtk-theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:08:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-template/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:08:01 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-settings/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:07:26 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-generate/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:07:18 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-apply/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+  </channel>
+</rss>

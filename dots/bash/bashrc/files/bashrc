@@ -39,7 +39,6 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] \
   && source "$HOME/.rvm/scripts/rvm"
 
-
 GEM_HOME=$(ruby -e 'print Gem.user_dir')
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
@@ -49,6 +48,10 @@ export GEM_HOME
 export PATH
 
 . "$HOME/.bash/func"
+
+
+
+  
 
 
 

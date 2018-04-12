@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="pbws"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-31"
-UPDATED="2017-12-31"
+UPDATED="2018-04-02"
 
 main(){
   while getopts :vh option; do

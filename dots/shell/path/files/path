@@ -1,0 +1,6 @@
+#! /bin/bash
+
+PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/src/bash:$PATH"
+PATH="$HOME/src/new:$PATH"
+PATH="$HOME/src/others:$PATH"

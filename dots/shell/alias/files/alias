@@ -1,0 +1,67 @@
+alias o='xdg-open'
+alias x='startx'
+alias q='exit'
+
+alias cdd='cd -'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias gc='git clone'
+alias tgz='tar xzf'
+
+# alias upp='sudo apt update && sudo apt upgrade'
+alias upp='sudo pacman -Syu'
+alias rbo='i3off -r'
+alias down='i3off -d'
+
+alias lolban="postbanner -t '-f 3d.flf' -l '-p 10'"
+
+alias shr='. $HOME/.bashrc'
+
+alias chx='chmod +x'
+
+alias ll='ls -lhoGg'
+alias la='ls -alh'
+alias ls='ls --color=auto'
+alias lb='ls --color=none'
+
+alias tf='tail -F -n200'
+
+alias vi='vim'
+alias vim='vim -p'
+
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+# alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias hideme='history -d $((HISTCMD-1))'
+alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
+
+alias comps='i3-msg title_format "budlabs - compass" && clear && cd $HOME/www/static && compass watch'
+alias hugs='i3-msg title_format "budlabs - server" && clear && hugo server -s $HOME/www'
+alias ss='subl'
+
+alias pms='pacman -Ss'
+alias pas='pacaur -Ss'
+alias pmi='pacaur -S'
+alias pmr='sudo pacman -R'
+
+# alias apts='apt search'
+# alias smi='sudo checkinstall'
+# alias aptr='sudo apt remove'
+# alias debi='sudo gdebi'
+
+alias umrk='i3-msg unmark'
+alias gtre='i3-msg -t get_tree | awk -v RS="," "{print \$0}" > /tmp/i3tree && subl /tmp/i3tree'
+alias yta='youtube-dl --geo-bypass --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/snd/y/%(title)s.%(ext)s" -i -x '
+alias ytd='youtube-dl --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/vid/y/%(title)s.%(ext)s" -i '
+# alias ytd='youtube-dl --geo-bypass -f '"'"'bestvideo[height<=480]+bestaudio/best[height<=480]'"'"' --download-archive /home/bud/tmp/.ytdlarch -o "/home/bud/vid/y/%(title)s.%(ext)s" -i '
+alias xrdbm='xrdb -merge /home/bud/.Xresources'
+alias nwl='sudo netctl restart lexu'
+alias nwd='sudo netctl start donk'
+
+# syntax:bash
+alias seba='setxkbmap -layout seba -option lv3:ralt_switch -option caps:ctrl_modifier'

@@ -1,249 +1,1253 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>budRich.github.io - Boiling rice in coffe</title>
+    <title>budRich - home on budRich.github.io - Boiling rice in coffe</title>
     <link>https://budrich.github.io/</link>
-    <description>Recent content on budRich.github.io - Boiling rice in coffe</description>
+    <description>Recent content in budRich - home on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 13 Jan 2018 15:16:26 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 14 Sep 2017 19:50:58 +0100</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>i3pocus</title>
-      <link>https://budrich.github.io/i3ass/i3pocus/</link>
-      <pubDate>Sat, 13 Jan 2018 15:16:26 +0100</pubDate>
+      <title>dunst-layout</title>
+      <link>https://budrich.github.io/scripts/misc/dunst-layout/</link>
+      <pubDate>Wed, 11 Apr 2018 14:05:29 +0200</pubDate>
       
-      <guid>https://budrich.github.io/i3ass/i3pocus/</guid>
-      <description>i3pocus - Intelligent window focusing SYNOPSIS i3pocus [-v|-h] [DIRECTION]
-DESCRIPTION i3pocus is meant as a replacement for the default focusing function (i3-msg focus) in i3wm. i3pocus moves the focus differently depending on the layout the current window is places in AND the the layout of the receiving container AND the DIRECTION the focus is moved.
-If the focus is moved horizontally (left|right) into a horizontally split (splith) container, either the first (DIRECTION = right) or the last (DIRECTION = left) window will be focused.</description>
+      <guid>https://budrich.github.io/scripts/misc/dunst-layout/</guid>
+      <description>dunst-layout - Dunst layout switcher SYNOPSIS dunst-layout [-v|-h] LAYOUT-NAME
+DESCRIPTION dunst-layout restarts dunst with the selected layout, merged with a mondo generated theme.
+OPTIONS -v
+Show version and exit.
+-h
+Show help and exit.
+FILES DUNST_DIR/lo-LAYOUT-NAME A file inside DUNST_DIR containing dunst options.
+DUNST_DIR/mondo A file inside DUNST_DIR containing dunst options.
+ENVIRONMENT DUNST_DIR dunst settings folder, defaults to ~/.config/dunst
+DEPENDENCIES dunst</description>
+    </item>
+    
+    <item>
+      <title>polybar_and_workspaces</title>
+      <link>https://budrich.github.io/letslinux/polybar_and_workspaces/</link>
+      <pubDate>Sat, 07 Apr 2018 18:07:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_and_workspaces/</guid>
+      <description>This is the first of three videos where I create a dynamic workspace indicator that displays the name (icon) of the current workspace and the total number of existing workspaces.
+In this first video, we create a new hook module and create the first version of the script that will output the workspace information.
+!!! The getpid script on github is a fixed version. The reason i got multiple pids was because it returned the pid of the getpid script it self.</description>
+    </item>
+    
+    <item>
+      <title>recipie</title>
+      <link>https://budrich.github.io/dots/templatetator/letslinux/recipie/</link>
+      <pubDate>Sat, 07 Apr 2018 08:44:04 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/templatetator/letslinux/recipie/</guid>
+      <description>This is the templatetator template i use to create show-notes for let&amp;rsquo;s linux.</description>
+    </item>
+    
+    <item>
+      <title>workspace_wallpapers</title>
+      <link>https://budrich.github.io/letslinux/workspace_wallpapers/</link>
+      <pubDate>Wed, 04 Apr 2018 14:48:59 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/workspace_wallpapers/</guid>
+      <description>This is the last of three videos where I create a dynamic workspace indicator that displays the name (icon) of the current workspace and the total number of existing workspaces.
+In this video i show a way to set different wallpapers for different workspaces.
+video info:    color scheme: eighties     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.flf, by xero   wallpaper: pauls-boutique    videos    https://youtu.</description>
+    </item>
+    
+    <item>
+      <title>polybar_magic_workspaces</title>
+      <link>https://budrich.github.io/letslinux/polybar_magic_workspaces/</link>
+      <pubDate>Wed, 04 Apr 2018 14:46:56 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_magic_workspaces/</guid>
+      <description>This is the second of three videos in which I create a dynamic workspace indicator for polybar. The indicator will display the name (icon) of the current workspace and the total number of existing workspaces.
+In this second video I add fontawesome icons to indicate which workspace we are currently viewing. I also make a small script that switch to the last active workspace or create a new workspace if only one workspace exist.</description>
+    </item>
+    
+    <item>
+      <title>uniform_qt_and_gtk</title>
+      <link>https://budrich.github.io/letslinux/uniform_qt_and_gtk/</link>
+      <pubDate>Wed, 04 Apr 2018 14:42:28 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/uniform_qt_and_gtk/</guid>
+      <description>This is the fifth video in a series on how to setup and use my theme manager, mondo.
+I use qt5ct to manage some of the appearances of Qt.
+https://sourceforge.net/projects/qt5ct/
+And export the following environment variables (i export them from .xinitrc, but you can export them in other files as well..):
+export QT_QPA_PLATFORMTHEME=qt5ct export GTK2_RC_FILES=&amp;quot;$HOME/.gtkrc-2.0&amp;quot;  You should also make sure that these lines exist in ~/.config/Trolltech.conf :
+[Qt] style=GTK+  Some Qt applications gets updated on the fly, qbittorrent for instance.</description>
+    </item>
+    
+    <item>
+      <title>mondo_generate_gtk</title>
+      <link>https://budrich.github.io/letslinux/mondo_generate_gtk/</link>
+      <pubDate>Wed, 04 Apr 2018 14:40:44 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_generate_gtk/</guid>
+      <description>This is the fifth video in a series on how to setup and use my theme manager, mondo.
+In this video i show how i generate GTK themes from the colors set with mondo. It also describes how to add extra actions to the generators in mondo. (the only default action is to generate a file based on the template, in this video I send that generated file to an external GTK generator)</description>
+    </item>
+    
+    <item>
+      <title>mondo_setup</title>
+      <link>https://budrich.github.io/letslinux/mondo_setup/</link>
+      <pubDate>Wed, 04 Apr 2018 14:37:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_setup/</guid>
+      <description>This is the second video in a series on how to setup and use my theme manager, mondo.
+mondos settings are stored in a directory called MONDO_DIR in the documentation (mondo -h). By default this directory is: ~/.config/mondo but it can be changed with the environment variable.
+MONDO_DIR will get created if it doesn&amp;rsquo;t exist when you execute mondo -n THEME (create a new theme) the first time.
+Videos about mondo:</description>
+    </item>
+    
+    <item>
+      <title>antidote</title>
+      <link>https://budrich.github.io/letslinux/antidote/</link>
+      <pubDate>Wed, 04 Apr 2018 14:32:59 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/antidote/</guid>
+      <description>This is the first video in a series on how to setup and use my theme manager, mondo.
+In this video I try to present my new project: mondo. It&amp;rsquo;s a theme manager, generator that can be used to change themes everywhere .
+mondos settings are stored in a directory called MONDO_DIR in the documentation (mondo -h). By default this directory is: ~/.config/mondo but it can be changed with the environment variable.</description>
+    </item>
+    
+    <item>
+      <title>custom_menus_in_rofi</title>
+      <link>https://budrich.github.io/letslinux/custom_menus_in_rofi/</link>
+      <pubDate>Wed, 04 Apr 2018 14:30:16 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/custom_menus_in_rofi/</guid>
+      <description>This is the last in a series of 3 about how to setup rofi.
+In this video I create a custom menu that switches the theme in .Xresources that i created in the poison series
+mondo These videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>theming_rofi</title>
+      <link>https://budrich.github.io/letslinux/theming_rofi/</link>
+      <pubDate>Wed, 04 Apr 2018 14:28:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/theming_rofi/</guid>
+      <description>This is the second in a series of 3 about how to setup rofi.
+In this video we go more in depth on how to configure rofi themes. I use awk and sed to insert values from .Xresources into the theme file.
+mondo These videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>polypoison</title>
+      <link>https://budrich.github.io/letslinux/polypoison/</link>
+      <pubDate>Wed, 04 Apr 2018 14:25:12 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polypoison/</guid>
+      <description>This is part 3 of 3 about how to set up colors and fonts using .Xresourcess and syncing the settings in multiple applications.
+In this video I apply the settings to polybar.
+I have more videos about polybar, a good one to start with is:
+#010: polybar setup https://youtu.be/7RNgpvBMua0
+I filed an issue regarding fontsetting in polybar here:
+https://github.com/jaagr/polybar/issues/954
+mondo These poison videos, inspired me to create my own theme manager called: mondo .</description>
+    </item>
+    
+    <item>
+      <title>rice_of_the_poison</title>
+      <link>https://budrich.github.io/letslinux/rice_of_the_poison/</link>
+      <pubDate>Wed, 04 Apr 2018 14:23:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/rice_of_the_poison/</guid>
+      <description>This is part 2 of 3 about how to set up colors and fonts using .Xresources and syncing the settings in multiple applications.
+In this video I apply the settings to i3wm.
+mondo These poison videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>extreme_i3</title>
+      <link>https://budrich.github.io/letslinux/extreme_i3/</link>
+      <pubDate>Wed, 04 Apr 2018 10:44:33 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/extreme_i3/</guid>
+      <description>In this video I demonstrate my layout script i3fyra .
+If you want to try this layout/script i recommend you watch the next video in this series, where i go more in depth on how it works and how to set it up:
+Let&amp;rsquo;s Linux #003: i3fyra
+https://youtu.be/t4Tve-xpwus
+video info: color scheme: solarized dark, by Ethan Schoonover
+terminal font: Fixedsys figlet font: 3d.flf, by xero icon font: fontawesome wallpaper: na</description>
+    </item>
+    
+    <item>
+      <title>advanced_generators</title>
+      <link>https://budrich.github.io/letslinux/advanced_generators/</link>
+      <pubDate>Tue, 03 Apr 2018 23:16:00 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/advanced_generators/</guid>
+      <description>This is the last video in a series on how to setup and use my theme manager, mondo.
+In this video I create a more advanced generator, that merges to files into one settings file when a theme is applied.
+The program i use to demonstrate this with, is the touch typing teacher: Klavaro
+Klavaros settings are located at:
+~/.config/klavaro/preferences.ini
+If Klavaro is running when a theme is applied, klavaro will overwrite the new settings when it terminates.</description>
+    </item>
+    
+    <item>
+      <title>mondo_gtk</title>
+      <link>https://budrich.github.io/letslinux/mondo_gtk/</link>
+      <pubDate>Tue, 03 Apr 2018 23:15:25 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_gtk/</guid>
+      <description>This is the forth video in a series on how to setup and use my theme manager, mondo.
+In this video we investigate how GTK update and change theme. In the next video we will generate our own GTK themes with the help of mondo.
+I use a small program called: gtkrc-reload. You can also use gtk_reload.py from pywal .
+These are the files I create generators for:
+ ~/.</description>
+    </item>
+    
+    <item>
+      <title>mondo_generators</title>
+      <link>https://budrich.github.io/letslinux/mondo_generators/</link>
+      <pubDate>Tue, 03 Apr 2018 23:14:43 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_generators/</guid>
+      <description>This is the third video in a series on how to setup and use my theme manager, mondo.
+In this video I walk you through how to create generators and templates.
+The command to create a generator is:
+mondo -t FILE|NAME [FILE]
+If you att a single file as the argument, a directory with the same name as the file will get created inside MONDO_DIR/generators/ . If you don&amp;rsquo;t specify a file, and only a name, it will have the same result except the mondo-template file will be empty.</description>
+    </item>
+    
+    <item>
+      <title>urxvt_reload</title>
+      <link>https://budrich.github.io/letslinux/urxvt_reload/</link>
+      <pubDate>Tue, 03 Apr 2018 23:13:54 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/urxvt_reload/</guid>
+      <description>In this video I show how to set up a script that reloads URxvt when the settings (.Xresources) are updated.
+video info:    color scheme: gruvbox, by morhertz     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.flf, by xero   filemanager: thunar   icon theme: DamaDamas   gtk theme: numix (solarized dark)   wallpaper: polygon-sky    to start a urxvt daemon process use this command:</description>
+    </item>
+    
+    <item>
+      <title>fonts_are_awesome</title>
+      <link>https://budrich.github.io/letslinux/fonts_are_awesome/</link>
+      <pubDate>Tue, 03 Apr 2018 23:12:28 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/fonts_are_awesome/</guid>
+      <description>In this video we add icons to polybar. And take an in depth look on how to customize the appearance of the modules in polybar. I use a script that let us chose icons with rofi. The icons are from the excellent icon font, fontawesome.
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.</description>
+    </item>
+    
+    <item>
+      <title>rofi_setup</title>
+      <link>https://budrich.github.io/letslinux/rofi_setup/</link>
+      <pubDate>Tue, 03 Apr 2018 23:11:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/rofi_setup/</guid>
+      <description>This is the first in a series of 3 about how to setup rofi.
+In this first video i show what rofi is, how to install it and how to configure it.
+I also take a look at rofis new theme engine.
+video info:    color scheme: gruvbox, by morhertz     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.flf, by xero   filemanager: thunar   icon theme: ePapirus   gtk theme: numix (solarized dark)   wallpaper: polygon-mountain    videos https://youtu.</description>
+    </item>
+    
+    <item>
+      <title>colors_are_poison</title>
+      <link>https://budrich.github.io/letslinux/colors_are_poison/</link>
+      <pubDate>Tue, 03 Apr 2018 23:08:07 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/colors_are_poison/</guid>
+      <description>This is part 1 of 3 about how to set up colors and fonts using .Xresources and syncing the settings in multiple applications.
+In this first video I will show the basics of setting up .Xresources and how it works.
+mondo These poison videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>polybar_dynamic_title</title>
+      <link>https://budrich.github.io/letslinux/polybar_dynamic_title/</link>
+      <pubDate>Tue, 03 Apr 2018 23:06:49 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_dynamic_title/</guid>
+      <description>This is the last in a series of three videos on how to setup polybar.
+The goal of the tutorial is to create a module in polybar that displays the title of the active window, but if one clicks (or send a message via a keybinding or terminal) the title it will instead display the class and instance of the title. I will also show how we by right clicking, title/class/instance will get the clicked information in our clipboard.</description>
+    </item>
+    
+    <item>
+      <title>polybar_hook_modules</title>
+      <link>https://budrich.github.io/letslinux/polybar_hook_modules/</link>
+      <pubDate>Tue, 03 Apr 2018 23:03:55 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_hook_modules/</guid>
+      <description>This is the second in a series of three videos on how to setup polybar.
+The goal of the tutorial is to create a module in polybar that displays the title of the active window, but if one clicks (or send a message via a keybinding or terminal) the title it will instead display the class and instance of the title. I will also show how we by right clicking, title/class/instance will get the clicked information in our clipboard.</description>
+    </item>
+    
+    <item>
+      <title>polybar_setup</title>
+      <link>https://budrich.github.io/letslinux/polybar_setup/</link>
+      <pubDate>Tue, 03 Apr 2018 23:02:23 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_setup/</guid>
+      <description>This is the first in a series of three on how to setup polybar.
+Get more screen real estate by setting up polybar, the budRich way (having it overlay the topmost tiltebar).
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   terminal emulator: URxvt   figlet font: 3d.flf, by xero   filemanager: thunar   icon theme: ePapirus   gtk theme: numix (solarized dark)    videos https://youtu.</description>
+    </item>
+    
+    <item>
+      <title>automatic_script_creation</title>
+      <link>https://budrich.github.io/letslinux/automatic_script_creation/</link>
+      <pubDate>Tue, 03 Apr 2018 22:59:56 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/automatic_script_creation/</guid>
+      <description>In this video I show you how to make a script that makes scripts! We also take a look at the $PATH environment variable, what it is and how it works. And how to make a file(script executable by using the chmod command). Finally i demo this by showing how the famous lolban command works.
+I use these tools to display colorized ASCII art fonts:
+http://caca.zoy.org/wiki/toilet
+https://github.com/busyloop/lolcat
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   terminal emulator: URxvt   figlet font: 3d.</description>
+    </item>
+    
+    <item>
+      <title>i3_extreme_size_mode</title>
+      <link>https://budrich.github.io/letslinux/i3_extreme_size_mode/</link>
+      <pubDate>Tue, 03 Apr 2018 22:58:09 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/i3_extreme_size_mode/</guid>
+      <description>This is a method to gain full control over windowresizing by combining i3wm&amp;rsquo;s mode function and a simple script.
+i3get is used to determine the floating state of the window. i3get is part of the i3ass suite that can be found on github:
+https://github.com/budRich/i3ass
+The polished version of this script is called i3Kohrne, and is somewhere in my scripts repo on github.
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   terminal emulator: URxvt   figlet font: 3d.</description>
+    </item>
+    
+    <item>
+      <title>i3_rename_instances</title>
+      <link>https://budrich.github.io/letslinux/i3_rename_instances/</link>
+      <pubDate>Tue, 03 Apr 2018 22:56:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/i3_rename_instances/</guid>
+      <description>In this video i show how to rename the instance of a window by using xdotool and some advanced features of my script i3run. The program we experiment with is the filemanager thunar.
+i3run is a shell script that lets you run, raise or hide a window or command with a single hotkey in i3wm. It is part of the i3ass suite that can be found on github:
+https://github.com/budRich/i3ass</description>
+    </item>
+    
+    <item>
+      <title>minimize_windows_in_i3wm</title>
+      <link>https://budrich.github.io/letslinux/minimize_windows_in_i3wm/</link>
+      <pubDate>Tue, 03 Apr 2018 22:55:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/minimize_windows_in_i3wm/</guid>
+      <description>In this video i demo my script i3run.
+i3run is a shell script that lets you run, raise or hide a window or command with a single hotkey in i3wm. It is part of the i3ass suite that can be found on github:
+https://github.com/budRich/i3ass
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   figlet font: 3d.flf, by xero   icon font: fontawesome    In this video I use the program wmctrl to get information about the windows:</description>
+    </item>
+    
+    <item>
+      <title>more_config_rice</title>
+      <link>https://budrich.github.io/letslinux/more_config_rice/</link>
+      <pubDate>Tue, 03 Apr 2018 22:53:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/more_config_rice/</guid>
+      <description>This is the second of two videos on how to configure i3 and beautify the config file.
+In this episode I continue to rice the i3 config file and ramble a bit about the horrible nordic keyboard layout.
+Below is a link to the article on my blog about the the layout, and a solution to it&amp;rsquo;s problems:
+https://budrich.github.io/blog/swedish_keyboards/
+The other video is called:
+Let&amp;rsquo;s Linux #004: rice the config</description>
+    </item>
+    
+    <item>
+      <title>rice_the_config</title>
+      <link>https://budrich.github.io/letslinux/rice_the_config/</link>
+      <pubDate>Tue, 03 Apr 2018 22:50:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/rice_the_config/</guid>
+      <description>This is the first of two videos on how to configure i3 and beautify the config file.
+In this episode i show some tricks how to make the i3 config file easier to work with by using variables.
+The other video is called:
+Let&amp;rsquo;s Linux #005: more config rice
+https://youtu.be/OKPvIsurYRI
+I have also written an aritcle on my blog about this:
+https://budrich.github.io/blog/i3_setup/
+Everything I show is also described in detail in the official i3 userguide:</description>
+    </item>
+    
+    <item>
+      <title>post-apply</title>
+      <link>https://budrich.github.io/dots/mondo/post-apply/</link>
+      <pubDate>Mon, 02 Apr 2018 23:18:50 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/post-apply/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nikes</title>
+      <link>https://budrich.github.io/dots/mondo/themes/nikes/</link>
+      <pubDate>Mon, 02 Apr 2018 22:41:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/nikes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sublime</title>
+      <link>https://budrich.github.io/scripts/sublime/sublime/</link>
+      <pubDate>Mon, 02 Apr 2018 19:30:28 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/sublime/sublime/</guid>
+      <description>sublime - Run or raise a sublime instance. SYNOPSIS sublime [-v|-h|] [-i SUBLIME_INSTANCE]
+DESCRIPTION This command is just a shortcut to a complex command used to run or raise sublime with a certain project and instance name.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+-i SUBLIME_INSTANCE
+Instance name to give the notes window. Defautlt: sublime_notes
+ENVIRONMENT SUBLIME_INSTANCE If non-null the will rename instance name of main window.</description>
+    </item>
+    
+    <item>
+      <title>mondo</title>
+      <link>https://budrich.github.io/mondo/</link>
+      <pubDate>Mon, 02 Apr 2018 19:29:30 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/mondo/</guid>
+      <description>mondo - Theme manager and generator SYNOPSIS mondo -v|-h
+mondo -a THEME
+mondo [-f] -g THEME
+mondo -n FILE|NAME [FILE]
+mondo -t FILE|NAME [FILE]
+DESCRIPTION mondo uses xrdb to apply colors and other settings from a theme to templates created by the user. The themes are .Xresources files.
+Themes are stored in MONDO_DIR/themes. Templates (mondo-template) is one file that makes up a generator. Each generator directory is located in MONDO_DIR/generator.</description>
+    </item>
+    
+    <item>
+      <title>recipie</title>
+      <link>https://budrich.github.io/dots/templatetator/post/recipie/</link>
+      <pubDate>Mon, 02 Apr 2018 15:22:00 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/templatetator/post/recipie/</guid>
+      <description>This is the templatetator template i use to create new blog posts for budlabs.</description>
+    </item>
+    
+    <item>
+      <title>recipie</title>
+      <link>https://budrich.github.io/dots/templatetator/bash/recipie/</link>
+      <pubDate>Mon, 02 Apr 2018 15:18:30 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/templatetator/bash/recipie/</guid>
+      <description>This is the templatetator template i use to create new bash scripts. In an episode of lets linux i create something similar but less complex.</description>
+    </item>
+    
+    <item>
+      <title>template</title>
+      <link>https://budrich.github.io/dots/templatetator/bash/template/</link>
+      <pubDate>Mon, 02 Apr 2018 15:05:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/templatetator/bash/template/</guid>
+      <description>This is the templatetator template i use to create new bash scripts. In an episode of lets linux i create something similar but less complex.</description>
+    </item>
+    
+    <item>
+      <title>mondo</title>
+      <link>https://budrich.github.io/dots/dunst/mondo/</link>
+      <pubDate>Sun, 01 Apr 2018 12:44:13 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/dunst/mondo/</guid>
+      <description>I have a quite odd dunst setup. The file dunst/mondo is generated with mondo and contains the color definitions for dunst. By default i merge the mondo file with dunst/lo-bar . But I have a script that can merge the mondo file with a different file and by doing so creating a temporary alternative notification layout.
+lo-bar This layout displays a notification that only contains the summary (%s) in one line.</description>
+    </item>
+    
+    <item>
+      <title>lo-rofi</title>
+      <link>https://budrich.github.io/dots/dunst/lo-rofi/</link>
+      <pubDate>Sun, 01 Apr 2018 12:43:57 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/dunst/lo-rofi/</guid>
+      <description>I have a quite odd dunst setup. The file dunst/mondo is generated with mondo and contains the color definitions for dunst. By default i merge the mondo file with dunst/lo-bar . But I have a script that can merge the mondo file with a different file and by doing so creating a temporary alternative notification layout.
+lo-bar This layout displays a notification that only contains the summary (%s) in one line.</description>
+    </item>
+    
+    <item>
+      <title>lo-bar</title>
+      <link>https://budrich.github.io/dots/dunst/lo-bar/</link>
+      <pubDate>Sun, 01 Apr 2018 12:43:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/dunst/lo-bar/</guid>
+      <description>I have a quite odd dunst setup. The file dunst/mondo is generated with mondo and contains the color definitions for dunst. By default i merge the mondo file with dunst/lo-bar . But I have a script that can merge the mondo file with a different file and by doing so creating a temporary alternative notification layout.
+lo-bar This layout displays a notification that only contains the summary (%s) in one line.</description>
+    </item>
+    
+    <item>
+      <title>user-dirs</title>
+      <link>https://budrich.github.io/dots/env/user-dirs/</link>
+      <pubDate>Sun, 01 Apr 2018 12:42:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/user-dirs/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+    <item>
+      <title>settings</title>
+      <link>https://budrich.github.io/dots/thunar/settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:39:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/thunar/settings/</guid>
+      <description>There are three dotfiles that configures thunar. ~/.config/Thunar/accels.scm is where the keybindings (or accelerators, as keybindings is called in GTK) are defined.
+The file is autogenerated, so any formatting to the file is pointless. To modify an existing keybinding, one just remove the ; and change the last string of the line to the desired keycombination.
+I have filed a bugreport/feature-request regarding the keybindings: https://bugzilla.xfce.org/show_bug.cgi?id=14069
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml contains hidden settings for thunar.</description>
+    </item>
+    
+    <item>
+      <title>uca</title>
+      <link>https://budrich.github.io/dots/thunar/uca/</link>
+      <pubDate>Sun, 01 Apr 2018 12:39:01 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/thunar/uca/</guid>
+      <description>There are three dotfiles that configures thunar. ~/.config/Thunar/accels.scm is where the keybindings (or accelerators, as keybindings is called in GTK) are defined.
+The file is autogenerated, so any formatting to the file is pointless. To modify an existing keybinding, one just remove the ; and change the last string of the line to the desired keycombination.
+I have filed a bugreport/feature-request regarding the keybindings: https://bugzilla.xfce.org/show_bug.cgi?id=14069
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml contains hidden settings for thunar.</description>
+    </item>
+    
+    <item>
+      <title>keybindings</title>
+      <link>https://budrich.github.io/dots/thunar/keybindings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:38:35 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/thunar/keybindings/</guid>
+      <description>There are three dotfiles that configures thunar. ~/.config/Thunar/accels.scm is where the keybindings (or accelerators, as keybindings is called in GTK) are defined.
+The file is autogenerated, so any formatting to the file is pointless. To modify an existing keybinding, one just remove the ; and change the last string of the line to the desired keycombination.
+I have filed a bugreport/feature-request regarding the keybindings: https://bugzilla.xfce.org/show_bug.cgi?id=14069
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml contains hidden settings for thunar.</description>
+    </item>
+    
+    <item>
+      <title>sxhkdrc</title>
+      <link>https://budrich.github.io/dots/sxhkd/sxhkdrc/</link>
+      <pubDate>Sun, 01 Apr 2018 12:38:00 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sxhkd/sxhkdrc/</guid>
+      <description>The reason for this setting is described in the article: mouseback</description>
+    </item>
+    
+    <item>
+      <title>manSymbols</title>
+      <link>https://budrich.github.io/dots/sublime/mansymbols/</link>
+      <pubDate>Sun, 01 Apr 2018 12:35:30 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/mansymbols/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ApplySyntax</title>
+      <link>https://budrich.github.io/dots/sublime/applysyntax/</link>
+      <pubDate>Sun, 01 Apr 2018 12:34:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/applysyntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DAtheme</title>
+      <link>https://budrich.github.io/dots/sublime/datheme/</link>
+      <pubDate>Sun, 01 Apr 2018 12:33:57 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/datheme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keymap</title>
+      <link>https://budrich.github.io/dots/sublime/keymap/</link>
+      <pubDate>Sun, 01 Apr 2018 12:33:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/keymap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Note</title>
+      <link>https://budrich.github.io/dots/sublime/note/</link>
+      <pubDate>Sun, 01 Apr 2018 12:31:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://budrich.github.io/dots/sublime/markdown/</link>
+      <pubDate>Sun, 01 Apr 2018 12:31:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TwoFont</title>
+      <link>https://budrich.github.io/dots/sublime/twofont/</link>
+      <pubDate>Sun, 01 Apr 2018 12:29:10 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/twofont/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ZenTabs</title>
+      <link>https://budrich.github.io/dots/sublime/zentabs/</link>
+      <pubDate>Sun, 01 Apr 2018 12:28:31 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/zentabs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>settings</title>
+      <link>https://budrich.github.io/dots/sublime/settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:27:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/sublime/settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oneliner</title>
+      <link>https://budrich.github.io/dots/rofi/oneliner/</link>
+      <pubDate>Sun, 01 Apr 2018 12:27:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/rofi/oneliner/</guid>
+      <description>This rofi theme looks like dmenu with everything on one line. When it&amp;rsquo;s displayed it overlays my polybar.
+rofibudrunpoly.gif   In the image above i displays a launch menu invoked from the script known as budrun.</description>
+    </item>
+    
+    <item>
+      <title>budbar</title>
+      <link>https://budrich.github.io/dots/polybar/budbar/</link>
+      <pubDate>Sun, 01 Apr 2018 12:26:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/polybar/budbar/</guid>
+      <description>Polybar is a great statusbar that works well with i3 and other window managers, this is my config file. It uses some custom scripts to display some information.
+ss-17-11-22-pbarro.png   In the screenshot above you can see polybar at the top of the screen. I use i3fyra to achieve the layout. Container A(vivaldi/wg) and B(irssi) are tabbed and container C is horizontally split with three urxvt instances.</description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/sublime/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:25:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/sublime/mondo-template/</guid>
+      <description>This template modifies and updates Sublimes color scheme. I use a custom, (currently unreleased), package to update the colors, so don&amp;rsquo;t try this at home. Yet ;)</description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/sublime/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:25:10 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/sublime/mondo-settings/</guid>
+      <description>This template modifies and updates Sublimes color scheme. I use a custom, (currently unreleased), package to update the colors, so don&amp;rsquo;t try this at home. Yet ;)</description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/sublime/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:24:54 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/sublime/mondo-generate/</guid>
+      <description>This template modifies and updates Sublimes color scheme. I use a custom, (currently unreleased), package to update the colors, so don&amp;rsquo;t try this at home. Yet ;)</description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/sublime/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:24:44 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/sublime/mondo-apply/</guid>
+      <description>This template modifies and updates Sublimes color scheme. I use a custom, (currently unreleased), package to update the colors, so don&amp;rsquo;t try this at home. Yet ;)</description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/rofi/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:24:00 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/rofi/mondo-template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/rofi/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:23:50 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/rofi/mondo-settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/rofi/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:23:41 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/rofi/mondo-generate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/rofi/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:23:33 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/rofi/mondo-apply/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:23:00 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-template/</guid>
+      <description>This generator makes a colorscheme file for qt5ct so i get a uniform look in both GTK and Qt applications.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:22:49 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-settings/</guid>
+      <description>This generator makes a colorscheme file for qt5ct so i get a uniform look in both GTK and Qt applications.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:22:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-generate/</guid>
+      <description>This generator makes a colorscheme file for qt5ct so i get a uniform look in both GTK and Qt applications.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:22:32 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/qt5ct-colors/mondo-apply/</guid>
+      <description>This generator makes a colorscheme file for qt5ct so i get a uniform look in both GTK and Qt applications.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:21:55 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-template/</guid>
+      <description>This generator merges klavaros settings with the generated template.
+I describe this process in detail in an episode of lets linux.</description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:21:46 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-settings/</guid>
+      <description>This generator merges klavaros settings with the generated template.
+I describe this process in detail in an episode of lets linux.</description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:21:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-generate/</guid>
+      <description>This generator merges klavaros settings with the generated template.
+I describe this process in detail in an episode of lets linux.</description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:21:27 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/klavaro/mondo-apply/</guid>
+      <description>This generator merges klavaros settings with the generated template.
+I describe this process in detail in an episode of lets linux.</description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:08:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-template/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:08:01 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-settings/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:07:26 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-generate/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:07:18 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-theme/mondo-apply/</guid>
+      <description>This generator first creates a template file, that it then passes to:
+https://github.com/Ferdi265/numix-solarized-gtk-theme
+Which generates a real GTK theme.
+I describe this process in detail in an episode of lets linux</description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:06:43 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:06:32 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:06:23 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-generate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:06:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk-cursor/mondo-apply/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-generate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:05:01 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk3/mondo-apply/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-template</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-template/</link>
+      <pubDate>Sun, 01 Apr 2018 12:04:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-settings</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-settings/</link>
+      <pubDate>Sun, 01 Apr 2018 12:04:18 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-generate</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-generate/</link>
+      <pubDate>Sun, 01 Apr 2018 12:04:05 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-generate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mondo-apply</title>
+      <link>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-apply/</link>
+      <pubDate>Sun, 01 Apr 2018 12:03:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/generator/gtk2/mondo-apply/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tomorrow</title>
+      <link>https://budrich.github.io/dots/mondo/themes/tomorrow/</link>
+      <pubDate>Sun, 01 Apr 2018 12:01:34 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/tomorrow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sourcerer</title>
+      <link>https://budrich.github.io/dots/mondo/themes/sourcerer/</link>
+      <pubDate>Sun, 01 Apr 2018 12:00:41 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/sourcerer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>solarized-light</title>
+      <link>https://budrich.github.io/dots/mondo/themes/solarized-light/</link>
+      <pubDate>Sun, 01 Apr 2018 12:00:29 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/solarized-light/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>solarized-dark</title>
+      <link>https://budrich.github.io/dots/mondo/themes/solarized-dark/</link>
+      <pubDate>Sun, 01 Apr 2018 12:00:11 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/solarized-dark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mafia</title>
+      <link>https://budrich.github.io/dots/mondo/themes/mafia/</link>
+      <pubDate>Sun, 01 Apr 2018 11:59:58 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/mafia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gruvbox-light</title>
+      <link>https://budrich.github.io/dots/mondo/themes/gruvbox-light/</link>
+      <pubDate>Sun, 01 Apr 2018 11:59:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/gruvbox-light/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gruvbox-dark</title>
+      <link>https://budrich.github.io/dots/mondo/themes/gruvbox-dark/</link>
+      <pubDate>Sun, 01 Apr 2018 11:59:22 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/gruvbox-dark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eighties</title>
+      <link>https://budrich.github.io/dots/mondo/themes/eighties/</link>
+      <pubDate>Sun, 01 Apr 2018 11:59:09 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/eighties/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dracula</title>
+      <link>https://budrich.github.io/dots/mondo/themes/dracula/</link>
+      <pubDate>Sun, 01 Apr 2018 11:58:33 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/mondo/themes/dracula/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alias</title>
+      <link>https://budrich.github.io/dots/shell/alias/</link>
+      <pubDate>Sun, 01 Apr 2018 11:54:40 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/alias/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>export</title>
+      <link>https://budrich.github.io/dots/env/export/</link>
+      <pubDate>Sun, 01 Apr 2018 11:54:12 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/export/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+    <item>
+      <title>func</title>
+      <link>https://budrich.github.io/dots/shell/func/</link>
+      <pubDate>Sun, 01 Apr 2018 11:53:20 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/func/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>misc</title>
+      <link>https://budrich.github.io/dots/shell/misc/</link>
+      <pubDate>Sun, 01 Apr 2018 11:41:47 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/misc/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>path</title>
+      <link>https://budrich.github.io/dots/shell/path/</link>
+      <pubDate>Sun, 01 Apr 2018 11:33:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/path/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>prompt</title>
+      <link>https://budrich.github.io/dots/shell/prompt/</link>
+      <pubDate>Sun, 01 Apr 2018 11:33:05 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/prompt/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>bud</title>
+      <link>https://budrich.github.io/dots/irssi/bud/</link>
+      <pubDate>Sun, 01 Apr 2018 11:26:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/irssi/bud/</guid>
+      <description>I have used irssi for a long time and I don&amp;rsquo;t think I&amp;rsquo;ll ever switch or finish this theme.
+irssibudtheme2.png   I have tried to make it as narrow as possible, kind of how the twitch chats look. With the user name on it&amp;rsquo;s own line above the message.</description>
+    </item>
+    
+    <item>
+      <title>xft</title>
+      <link>https://budrich.github.io/dots/xfiles/xft/</link>
+      <pubDate>Sun, 01 Apr 2018 11:19:13 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/xft/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+    <item>
+      <title>urxvt</title>
+      <link>https://budrich.github.io/dots/xfiles/urxvt/</link>
+      <pubDate>Sun, 01 Apr 2018 11:18:49 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/urxvt/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+    <item>
+      <title>dmenu</title>
+      <link>https://budrich.github.io/dots/xfiles/dmenu/</link>
+      <pubDate>Sun, 01 Apr 2018 11:18:08 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/dmenu/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+    <item>
+      <title>bashrc</title>
+      <link>https://budrich.github.io/dots/shell/bashrc/</link>
+      <pubDate>Sun, 01 Apr 2018 11:11:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/bashrc/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>i3env</title>
+      <link>https://budrich.github.io/dots/env/i3env/</link>
+      <pubDate>Sun, 01 Apr 2018 11:08:08 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/i3env/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+    <item>
+      <title>inputrc</title>
+      <link>https://budrich.github.io/dots/shell/inputrc/</link>
+      <pubDate>Sun, 01 Apr 2018 11:01:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/shell/inputrc/</guid>
+      <description>These are the dotfiles that configure my shell, currently I&amp;rsquo;m using bash.
+These files are sourced into ~/.bashrc:
+   shell/prompt prompt style and command     shell/func small homebrew and borrowed functions   shell/alias alias file   shell/path directories in $PATH   shell/misc other options and settings   env/export Environment variables    I also keep some settings in shell/inputrc, mostly keybindings and VI-mode options.</description>
+    </item>
+    
+    <item>
+      <title>xresources</title>
+      <link>https://budrich.github.io/dots/xfiles/xresources/</link>
+      <pubDate>Sun, 01 Apr 2018 10:57:13 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/xfiles/xresources/</guid>
+      <description>The X-files, variables are set defined by mondo in mondo/mondo-theme.
+By setting Xcursor.theme in ~/.Xresources I ensure to have the right mouse cursor theme in terminal applications.
+rofi will drop Xresources support soon and I have removed all rofi theming from the xfiles in favor of rofi&amp;rsquo;s own theme engine. But i keep rofi.theme since it sets a default theme for my menus.
+I guess the most interesting xfile is urxvt .</description>
+    </item>
+    
+    <item>
+      <title>xinitrc</title>
+      <link>https://budrich.github.io/dots/env/xinitrc/</link>
+      <pubDate>Sun, 01 Apr 2018 10:46:35 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/xinitrc/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+    <item>
+      <title>i3conf</title>
+      <link>https://budrich.github.io/dots/i3/i3conf/</link>
+      <pubDate>Fri, 30 Mar 2018 21:08:01 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/i3/i3conf/</guid>
+      <description>I have written articles, recorded videos and written a lot of custom scripts for i3. This is my actual config file.</description>
     </item>
     
     <item>
       <title>budrun</title>
-      <link>https://budrich.github.io/scripts/menus/budrun/</link>
-      <pubDate>Fri, 05 Jan 2018 00:30:05 +0100</pubDate>
+      <link>https://budrich.github.io/scripts/rofi/budrun/</link>
+      <pubDate>Fri, 30 Mar 2018 19:38:15 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/menus/budrun/</guid>
+      <guid>https://budrich.github.io/scripts/rofi/budrun/</guid>
       <description>rofibudrunpoly.gif   In the gif above I use the oneliner rofi theme.
 budrun - Simple launcher menu SYNOPSIS budrun [-v|-h]
 DESCRIPTION When executed a rofi menu is displayed. The launchers to be displayed are defined and in the launcher variable. The first field of the line is supposed to be an icon, the second field is the name to display, the rest of the line is the command to be launched.</description>
     </item>
     
     <item>
-      <title>new_ass_features</title>
-      <link>https://budrich.github.io/blog/new_ass_features/</link>
-      <pubDate>Wed, 03 Jan 2018 13:37:07 +0100</pubDate>
+      <title>fmb</title>
+      <link>https://budrich.github.io/scripts/thunar/fmb/</link>
+      <pubDate>Fri, 30 Mar 2018 19:35:54 +0200</pubDate>
       
-      <guid>https://budrich.github.io/blog/new_ass_features/</guid>
-      <description>I have made lots of small updates and additions to i3ass the last couple of weeks. The changes might seem small and subtle, but they have improved the experience a lot.
-I can now hide an active a container by running i3run on the active window, this is a much better way then using the move commands all the time. And floating windows now appear centered to the mouse position, but adjusted to the screenedges.</description>
-    </item>
-    
-    <item>
-      <title>LL_001_perfect_folders</title>
-      <link>https://budrich.github.io/videos/ll_001_perfect_folders/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_001_perfect_folders/</guid>
-      <description> www.youtube.com/watch?v=o8-6d8BW-V8    </description>
-    </item>
-    
-    <item>
-      <title>LL_002_extreme_i3</title>
-      <link>https://budrich.github.io/videos/ll_002_extreme_i3/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_002_extreme_i3/</guid>
-      <description> www.youtube.com/watch?v=kU8gb6WLFk8    </description>
-    </item>
-    
-    <item>
-      <title>LL_003_i3fyra</title>
-      <link>https://budrich.github.io/videos/ll_003_i3fyra/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_003_i3fyra/</guid>
-      <description> Let&amp;rsquo;s Linux #003: i3fyra www.youtube.com/watch?v=t4Tve-xpwus    </description>
-    </item>
-    
-    <item>
-      <title>LL_004_config_rice</title>
-      <link>https://budrich.github.io/videos/ll_004_config_rice/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_004_config_rice/</guid>
-      <description> Let&amp;rsquo;s Linux #004: rice the config www.youtube.com/watch?v=W1P6bmOCxl0    </description>
-    </item>
-    
-    <item>
-      <title>LL_005_more_config_rice</title>
-      <link>https://budrich.github.io/videos/ll_005_more_config_rice/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_005_more_config_rice/</guid>
-      <description> Let&amp;rsquo;s Linux #005: more config rice www.youtube.com/watch?v=OKPvIsurYRI    </description>
-    </item>
-    
-    <item>
-      <title>LL_006_minimize_windows</title>
-      <link>https://budrich.github.io/videos/ll_006_minimize_windows/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_006_minimize_windows/</guid>
-      <description> www.youtube.com/watch?v=QqDMpuIikXA    </description>
-    </item>
-    
-    <item>
-      <title>LL_007_rename_instances</title>
-      <link>https://budrich.github.io/videos/ll_007_rename_instances/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_007_rename_instances/</guid>
-      <description> www.youtube.com/watch?v=9ZJLMid348M    </description>
-    </item>
-    
-    <item>
-      <title>LL_008_extreme_size_mode</title>
-      <link>https://budrich.github.io/videos/ll_008_extreme_size_mode/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_008_extreme_size_mode/</guid>
-      <description> Let&amp;rsquo;s Linux #008: extreme size mode www.youtube.com/watch?v=FF_xz1QF7t4    </description>
-    </item>
-    
-    <item>
-      <title>LL_009_automatic_scripts</title>
-      <link>https://budrich.github.io/videos/ll_009_automatic_scripts/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_009_automatic_scripts/</guid>
-      <description>www.youtube.com/watch?v=QGUmMtEnIkI    Tutorial on how to make a small script that makes scripts.</description>
-    </item>
-    
-    <item>
-      <title>LL_010_polybar_setup</title>
-      <link>https://budrich.github.io/videos/ll_010_polybar_setup/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_010_polybar_setup/</guid>
-      <description>www.youtube.com/watch?v=7RNgpvBMua0    Get more screen estate by setting up polybar, the budRich way (having it overlaying the topmost titlebar).</description>
-    </item>
-    
-    <item>
-      <title>LL_011_polybar_hook_modules</title>
-      <link>https://budrich.github.io/videos/ll_011_polybar_hook_modules/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_011_polybar_hook_modules/</guid>
-      <description>www.youtube.com/watch?v=NZeqsLWcm6o    This is part 1 of 2 in a tutorial on how polyabars &amp;ldquo;ipc/hook&amp;rdquo;- modules work. The goal of the tutorial is to create a module in polybar that displays the title of the active window, but if one clicks (or send a message via a keybinding or terminal) the title it will instead display the class and instance of the title. I will also show how we by right clicking, title/class/instance will get the clicked information in our clipboard.</description>
-    </item>
-    
-    <item>
-      <title>LL_012_polybar_dynamic_title</title>
-      <link>https://budrich.github.io/videos/ll_012_polybar_dynamic_title/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_012_polybar_dynamic_title/</guid>
-      <description>www.youtube.com/watch?v=3vQtovcQElY    This is part 2 of 2 in a tutorial on how polyabars &amp;ldquo;ipc/hook&amp;rdquo;- modules work. The goal of the tutorial is to create a module in polybar that displays the title of the active window, but if one clicks (or send a message via a keybinding or terminal) the title it will instead display the class and instance of the title. I will also show how we by right clicking, title/class/instance will get the clicked information in our clipboard.</description>
-    </item>
-    
-    <item>
-      <title>LL_013_colors_are_poison</title>
-      <link>https://budrich.github.io/videos/ll_013_colors_are_poison/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_013_colors_are_poison/</guid>
-      <description>This is part 1 of 3 (or more videos) about how to set up colors and fonts using .Xresources and synching the settings in multiple applications.
-In this first video I will show the basics of setting up .Xresources and how it works.
-The files used in this video can be found on github.
-Gruvbox color theme by morhertz (Pavel Pertsev)
-https://github.com/morhetz/gruvbox
-Solarized color theme by Ethan Schoonover
-http://ethanschoonover.com/solarized</description>
-    </item>
-    
-    <item>
-      <title>LL_014_rice_of_poison</title>
-      <link>https://budrich.github.io/videos/ll_014_rice_of_poison/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_014_rice_of_poison/</guid>
-      <description>www.youtube.com/watch?v=m2XUxyTmOkQ    This is part 2 of 3 (or more videos) about how to set up colors and fonts using .Xresources and synching the settings in multiple applications.
-In this video I apply the settings to i3wm.
-The files used in this video can be found on github.
-Gruvbox color theme by morhertz (Pavel Pertsev)
-https://github.com/morhetz/gruvbox
-Solarized color theme by Ethan Schoonover
-http://ethanschoonover.com/solarized</description>
-    </item>
-    
-    <item>
-      <title>LL_015_polypoison</title>
-      <link>https://budrich.github.io/videos/ll_015_polypoison/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/ll_015_polypoison/</guid>
-      <description>www.youtube.com/watch?v=OIjwl0MjfBA    This is part 3 of 3 (or more) videos about how to set up colors and fonts using .Xresources and synching the settings in multiple applications.
-In this video I apply the settings to polybar.
-The files used in this video can be found on github.
-Gruvbox color theme by morhertz (Pavel Pertsev)
-https://github.com/morhetz/gruvbox
-Solarized color theme by Ethan Schoonover
-http://ethanschoonover.com/solarized</description>
-    </item>
-    
-    <item>
-      <title>i3_flipping_tabs</title>
-      <link>https://budrich.github.io/blog/i3_flipping_tabs/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/blog/i3_flipping_tabs/</guid>
-      <description>I have gotten some requests on an isolated version of i3fyra&amp;rsquo;s tabswitching function. And this morning I sat down to try a new way to do it, and it worked .. pretty, pretty, pretty good :)
-Vanilla i3 doesn&amp;rsquo;t have a separate function for switching tabs, instead we use the normal focus [left|right]. This is not so well suited for tabs since if one focus right when the last tab is active, the focus will pop out to the container to the right if there is one.</description>
-    </item>
-    
-    <item>
-      <title>i3ass_update_18-01-07</title>
-      <link>https://budrich.github.io/videos/i3ass_update_18-01-07/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/i3ass_update_18-01-07/</guid>
-      <description>www.youtube.com/watch?v=nz7ugomqkuI    I have made several fixes and added some new functions and scripts to my i3ass project. In this video i show the new stuff and talk about the future of the let&amp;rsquo;s linux series.</description>
-    </item>
-    
-    <item>
-      <title>i3pocus</title>
-      <link>https://budrich.github.io/videos/i3pocus/</link>
-      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/videos/i3pocus/</guid>
-      <description> www.youtube.com/watch?v=PL45u2kdH5g    </description>
-    </item>
-    
-    <item>
-      <title>i3flip</title>
-      <link>https://budrich.github.io/i3ass/i3flip/</link>
-      <pubDate>Wed, 03 Jan 2018 07:09:08 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/i3ass/i3flip/</guid>
-      <description>I extracted and improved the tabswitching function from i3fyra and it now works independently,
-i3flip - Tabswitching done right SYNOPSIS i3flip [-v|-h] [n|next|p|prev]
-DESCRIPTION i3flip switch containers without leaving the parent. Perfect for tabbed or stacked layout, but works on all layouts. If direction is next (or n) and the active container is the last, the first container will be activated.
+      <guid>https://budrich.github.io/scripts/thunar/fmb/</guid>
+      <description>fmbdsplits.png   fmb - Run or raise a plain notes sublime instance. SYNOPSIS fmb [-v|-h|] [-i FMB_INSTANCE]
+DESCRIPTION This command is just a shortcut to a complex command used to run or raise a thunar instance with a special instance name and settings applied.
 OPTIONS -v Show version and exit.
--h Show help and exit.</description>
+-h Show help and exit.
+-i FMB_INSTANCE
+Instance name to give the filemanager window. Defautlt: filemanager_b
+ENVIRONMENT FMB_INSTANCE If non-null rename instance name of filemanager window.</description>
+    </item>
+    
+    <item>
+      <title>fmd</title>
+      <link>https://budrich.github.io/scripts/thunar/fmd/</link>
+      <pubDate>Fri, 30 Mar 2018 19:35:19 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/scripts/thunar/fmd/</guid>
+      <description>fmbdsplits.png   fmd - Run or raise a plain notes sublime instance. SYNOPSIS fmd [-v|-h|] [-i FMD_INSTANCE]
+DESCRIPTION This command is just a shortcut to a complex command used to run or raise a thunar instance with a special instance name and settings applied.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+-i FMD_INSTANCE
+Instance name to give the filemanager window. Defautlt: filemanager_d
+ENVIRONMENT FMD_INSTANCE If non-null rename instance name of filemanager window.</description>
     </item>
     
     <item>
       <title>foldermen</title>
-      <link>https://budrich.github.io/scripts/thunar/foldermen/</link>
-      <pubDate>Tue, 02 Jan 2018 19:34:15 +0100</pubDate>
+      <link>https://budrich.github.io/scripts/rofi/foldermen/</link>
+      <pubDate>Fri, 30 Mar 2018 19:34:31 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/thunar/foldermen/</guid>
-      <description>foldermen - Browse folders SYNOPSIS foldermen [-v|-h]
-DESCRIPTION foldermen Launches a rofi instance with a list of folders. Selected forlder will be lauched with gotofolder (and opened in thunar)
+      <guid>https://budrich.github.io/scripts/rofi/foldermen/</guid>
+      <description>foldermen - Favorite Directory Menu SYNOPSIS foldermen [-v|-h]
+DESCRIPTION foldermen Launches a rofi instance with a list of directories. Selected directory will get passed to gotofolder (and opened in thunar)
 OPTIONS -v Show version and exit.
 -h Show help and exit.
 DEPENDENCIES fontawesome
@@ -253,359 +1257,11 @@ thunar</description>
     </item>
     
     <item>
-      <title>linktonext</title>
-      <link>https://budrich.github.io/scripts/thunar/linktonext/</link>
-      <pubDate>Tue, 02 Jan 2018 15:54:35 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/thunar/linktonext/</guid>
-      <description>linktonext - Move/copy/link files between two open thunar instances.
-SYNOPSIS linktonext [-v|-h] FILE(s)
-DESCRIPTION If two thunar instances are open in the i3fyra layout this command will move/copy/link selected file(s) between them.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES thunar
-i3fyra
-i3list</description>
-    </item>
-    
-    <item>
-      <title>gotofolder</title>
-      <link>https://budrich.github.io/scripts/thunar/gotofolder/</link>
-      <pubDate>Tue, 02 Jan 2018 15:52:49 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/thunar/gotofolder/</guid>
-      <description>gotofolder - Open folder and adjust layout in thunar SYNOPSIS gotofolder [-v|-h] FOLDER
-DESCRIPTION gotofolder opens FOLDER in thunar and adjust the layout depending on the path of the folder.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES thunar
-i3get</description>
-    </item>
-    
-    <item>
-      <title>pbws</title>
-      <link>https://budrich.github.io/scripts/polybar/pbws/</link>
-      <pubDate>Sun, 31 Dec 2017 23:14:01 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/polybar/pbws/</guid>
-      <description>pbws - Minimal workspace indication SYNOPSIS pbws [-v|-h]
-DESCRIPTION pbws outputs a symbol representing the current worskpace and the total number of workspaces. Inteded to be used with polybar.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-ENVIRONMENT PBWS_SYMBOL_WORKSPACE_NUMBER This symbol will be used to indicate the current workspace, if empty the workspace number will be used.
-DEPENDENCIES polybar</description>
-    </item>
-    
-    <item>
-      <title>pbmedia</title>
-      <link>https://budrich.github.io/scripts/polybar/pbmedia/</link>
-      <pubDate>Sun, 31 Dec 2017 23:05:38 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/polybar/pbmedia/</guid>
-      <description>pbmedia pbmedia - Short description
-SYNOPSIS pbmedia [-v|-h] [-c config-file] file &amp;hellip;
-DESCRIPTION pbmedia frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse order by time for the xyzzy(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All files are processed in the order specified.
-OPTIONS -v Show version and exit.</description>
-    </item>
-    
-    <item>
-      <title>pbtitle</title>
-      <link>https://budrich.github.io/scripts/polybar/pbtitle/</link>
-      <pubDate>Sun, 31 Dec 2017 19:26:58 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/polybar/pbtitle/</guid>
-      <description>pbtitle - Short description SYNOPSIS pbtitle [-v|-h] EVENT
-DESCRIPTION pbtitle is intended to be used as output in a statusbar. Different output is displayed depending on the EVENT.
-   EVENT OUTPUT     advanced Class and instance of active window   normal Title of active window   color 16 colors defined in .xresources   focus –   title –    When rightc licked objects will be put into the ClipBoard</description>
-    </item>
-    
-    <item>
-      <title>i3env</title>
-      <link>https://budrich.github.io/dots/i3env/</link>
-      <pubDate>Wed, 27 Dec 2017 18:57:41 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/i3env/</guid>
-      <description>These are the environment variables that are specific to my i3 session. I have found that sourcing it in .xinitrc is the best, since some of the settings are dependent on xorg running, so it’s not perfect to export the variables in .bashrc.</description>
-    </item>
-    
-    <item>
-      <title>ass_divided</title>
-      <link>https://budrich.github.io/blog/ass_divided/</link>
-      <pubDate>Sat, 23 Dec 2017 12:51:15 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/blog/ass_divided/</guid>
-      <description>I have divided i3ass in two repositories, i3ass and i3add (i3 additions). My thought is that i3ass will be a more serious set of tools. While i3add will be more experimental and can be seen as a showcase of uses for i3ass. I do use all i3add scripts in my personal, daily workflow.
-   i3ass function     i3var Set or get a i3 variable   i3fyra An advanced simple gridbased tiling layout   i3run Run, Raise or hide windows   i3list List attributes of i3wm   i3get Return information about i3wm   i3flip Tabswitching done right   i3add function   i3cast Create and upload screen recordings   i3Kornhe Resize windows by moving the corners   i3minimize Minimize active window   i3monocle Maximize active window   i3zen Send windows to the zenter   i3term Launch a command in a new urxvt window   i3wswp Switch workspace and wallpaper    Installation i3add will have a installation script similar to the old install.</description>
-    </item>
-    
-    <item>
-      <title>i3var</title>
-      <link>https://budrich.github.io/i3ass/i3var/</link>
-      <pubDate>Fri, 22 Dec 2017 22:36:39 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/i3ass/i3var/</guid>
-      <description>I found that marking windows is both clunky and it can have a negative impact on the workflow for users who use marks for other things. So i made i3var, it creates a ghostwindow on the scratchpad and use it to hold a variable. This can also be used for things that are not window related. I can for example keep track of my current wallpaper, but i have made some other crazy experiments with this and it works really well, much better then marks.</description>
-    </item>
-    
-    <item>
-      <title>desktop</title>
-      <link>https://budrich.github.io/dots/conky/desktop/</link>
-      <pubDate>Thu, 21 Dec 2017 19:25:31 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/conky/desktop/</guid>
-      <description> desktop </description>
-    </item>
-    
-    <item>
-      <title>i3monocle</title>
-      <link>https://budrich.github.io/scripts/i3add/i3monocle/</link>
-      <pubDate>Thu, 21 Dec 2017 13:59:50 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/i3add/i3monocle/</guid>
-      <description>i3monocle - Maximize active window SYNOPSIS i3monocle [-v|-h] [-g]
-DESCRIPTION i3monocle Will first check the floating state of the active window. If it is floating, i3fyra -a (autolayot/toggle tiling) will get invoked to ensure the window is tiled and in a i3fyra container. Then all other visible i3fyra containers will get hidden. Leaving the active window in monocle (maximized) mode.
-If the window is already monocled, it will be put in ZenMode with i3zen if not the -g flag is passed.</description>
-    </item>
-    
-    <item>
-      <title>i3minimize</title>
-      <link>https://budrich.github.io/scripts/i3add/i3minimize/</link>
-      <pubDate>Thu, 21 Dec 2017 13:59:26 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/i3add/i3minimize/</guid>
-      <description>i3minimize - Minimize active window SYNOPSIS i3minimize [-v|-h]
-DESCRIPTION Depending on the state of active window, i3minimize does different things.
-   window state action     floating send to scratchpad   tiled, not handled by i3fyra send to scratchpad   tiled, handled by i3fyra hide parent container    OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES i3list</description>
-    </item>
-    
-    <item>
-      <title>htoprc</title>
-      <link>https://budrich.github.io/dots/misc/htoprc/</link>
-      <pubDate>Wed, 20 Dec 2017 07:20:34 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/misc/htoprc/</guid>
-      <description> htoprc </description>
-    </item>
-    
-    <item>
-      <title>sxhkdrc</title>
-      <link>https://budrich.github.io/dots/sxhkdrc/</link>
-      <pubDate>Wed, 20 Dec 2017 04:52:02 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/sxhkdrc/</guid>
-      <description>The reason for this setting is described in the article: mouseback</description>
-    </item>
-    
-    <item>
-      <title>inputrc</title>
-      <link>https://budrich.github.io/dots/inputrc/</link>
-      <pubDate>Wed, 20 Dec 2017 03:11:23 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/inputrc/</guid>
-      <description>These settings modify the behavior of manual input to the terminal. I use VI-mode and by setting:
-set show-mode-in-prompt on set vi-ins-mode-string set vi-cmd-mode-string :  : is displayed at the beginning of the prompt when i am in command mode.
-vimodesinprompt.gif   </description>
-    </item>
-    
-    <item>
-      <title>subrun</title>
-      <link>https://budrich.github.io/scripts/sublime/subrun/</link>
-      <pubDate>Wed, 20 Dec 2017 01:23:30 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/sublime/subrun/</guid>
-      <description>subrun - Run the currently open file in Sublime. SYNOPSIS subrun [-v|-h]
-DESCRIPTION subrun makes the currently open file in sublime executable and runs it with eval.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES subtit
-sublime</description>
-    </item>
-    
-    <item>
-      <title>pbmic</title>
-      <link>https://budrich.github.io/scripts/polybar/pbmic/</link>
-      <pubDate>Tue, 19 Dec 2017 21:25:29 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/polybar/pbmic/</guid>
-      <description>pbmic - Prints the microphone volume SYNOPSIS pbmic [-v|-h] [-c config-file] file &amp;hellip;
-DESCRIPTION pbmic Prints the microphone volume, meant to be used with a statusbar.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES FontAwesome ponymix</description>
-    </item>
-    
-    <item>
-      <title>getkeys</title>
-      <link>https://budrich.github.io/scripts/misc/getkeys/</link>
-      <pubDate>Tue, 19 Dec 2017 20:58:30 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/misc/getkeys/</guid>
-      <description>getkeys - Clean xev output SYNOPSIS getkeys [-v|-h]
-DESCRIPTION getkeys executes xev and uses i3get to get the window id of the current window, to make that the target window for xev to listen for keypresses. It then cleans the output of xev with awk.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES i3get xev</description>
-    </item>
-    
-    <item>
-      <title>i3wswp</title>
-      <link>https://budrich.github.io/scripts/i3add/i3wswp/</link>
-      <pubDate>Tue, 19 Dec 2017 17:06:07 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/i3add/i3wswp/</guid>
-      <description>i3wswp - Switch workspace and wallpaper SYNOPSIS i3wswp [-v|-h] WORKSPACE
-DESCRIPTION i3wswp takes a WORKSPACE number as an argument. If there exist a non empty ENVIRONMENT varialbe with the name I3WSWP_COMMAND_WORKSPACE . The content of that variable will be executed. i3wswp is intended to be used with some kind of subscriber script and be executed on workspace change.
-OPTIONS -v
-Show version and exit.
--h
-Show help and exit.</description>
-    </item>
-    
-    <item>
-      <title>subtit</title>
-      <link>https://budrich.github.io/scripts/sublime/subtit/</link>
-      <pubDate>Tue, 19 Dec 2017 00:05:22 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/sublime/subtit/</guid>
-      <description>subtit subtit - Output the currently open file in sublime.
-SYNOPSIS subtit [-v|-h|-l]
-DESCRIPTION subtit uses i3get to get the window title of Sublime Text. It extracts the filename from the title and prints it to stdout. If -l flag is passed subtit will follow symbolic links if any and print the source file.
-OPTIONS -v
-Show version and exit.
--h
-Show help and exit.
--l
-Follow symbolic links.</description>
-    </item>
-    
-    <item>
-      <title>xresources</title>
-      <link>https://budrich.github.io/dots/xres/xresources/</link>
-      <pubDate>Mon, 18 Dec 2017 23:20:24 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/xres/xresources/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>templatetator</title>
-      <link>https://budrich.github.io/scripts/templatetator/templatetator/</link>
-      <pubDate>Mon, 18 Dec 2017 12:41:38 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/templatetator/templatetator/</guid>
-      <description>templatetator - Create files based on templates SYNOPSIS templatetator [-v|-h] [TEMPLATE_FOLDER]
-DESCRIPTION script that invokes a rofi with a list of folders inside TEMPLATE_FOLDER. folder. It then runs the recipie file in the selected folder. It then prompts for a filename of the new file.
-The variables, CURFLD (the selected template folder) and CURFIL (the entered filename) can be used in the recepie file.
-OPTIONS -v Show version and exit.</description>
-    </item>
-    
-    <item>
-      <title>subpro</title>
-      <link>https://budrich.github.io/scripts/sublime/subpro/</link>
-      <pubDate>Mon, 18 Dec 2017 12:10:28 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/sublime/subpro/</guid>
-      <description>subpro subpro - Switch sublime projects
-SYNOPSIS subpro [-v|-h] project-nane
-DESCRIPTION subpro closes the currently open project in Sublime Text and opens project-name in it&amp;rsquo;s place.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-FILES FLD_PRO Folder containing .sublime-project files defaults to: ~/tmp/kortisar/sublime/projects
-DEPENDENCIES SublimeText</description>
-    </item>
-    
-    <item>
-      <title>budtutor</title>
-      <link>https://budrich.github.io/scripts/sublime/budtutor/</link>
-      <pubDate>Mon, 18 Dec 2017 12:01:56 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/sublime/budtutor/</guid>
-      <description>budtutor budtutor - Interactive tutorial for Sublime Text
-SYNOPSIS budtutor [OPTION]
-DESCRIPTION Interactive tutorial for sublime text. It is a mashup of vimtutor and sublime tutor.
-If executed without options, the whole budtutor will be opened in sublime text.
-OPTIONS -h Displays this info and exits
--v Displays version and exits
--s Shows &amp;lsquo;sublime&amp;rsquo; exercises
--m Shows &amp;lsquo;vim&amp;rsquo; exercises
--p Shows &amp;lsquo;packages&amp;rsquo; exercises
--c Compact view, only exercise and command</description>
-    </item>
-    
-    <item>
-      <title>suba</title>
-      <link>https://budrich.github.io/scripts/sublime/suba/</link>
-      <pubDate>Mon, 18 Dec 2017 11:54:30 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/sublime/suba/</guid>
-      <description>This is a script I wrote to automate the process of uploading scripts and dotfiles to this web site.
-It analyzes the title of Sublime Text to get the filename of the currently open file.
-If the file is in ~/bin (my local scripfolder), it is a scriptfile, else it is a dotfile. Depending on the type it is sent to different directories within my hugo project folder. Which is on my Dropbox.</description>
-    </item>
-    
-    <item>
-      <title>shoot</title>
-      <link>https://budrich.github.io/scripts/misc/shoot/</link>
-      <pubDate>Mon, 18 Dec 2017 10:42:42 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/misc/shoot/</guid>
-      <description>shoot - Screenshots made easy SYNOPSIS shoot [-v|-h]
-DESCRIPTION When shoot is launched it displays a rofi asking what kind of screenshot to take: Fullscreen or Select area. Then screenshot is taken and the image is opened with sxiv. When sxiv is closed a new menu asks for action: Save Upload budlabs. If Upload is chosen the user is prompted for a host (imgur, ptpb), finally a name is requested.</description>
-    </item>
-    
-    <item>
-      <title>brws</title>
-      <link>https://budrich.github.io/scripts/misc/brws/</link>
-      <pubDate>Mon, 18 Dec 2017 10:25:11 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/misc/brws/</guid>
-      <description>brws - URL-launcher for terminals SYNOPSIS brws [-v|-h]
-DESCRIPTION url-launcher, does different thing depending on the url. Opens images with sxiv, and videos in mpv.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-DEPENDENCIES i3get
-sxiv
-mpv
-youtube-dl
-vivaldi</description>
-    </item>
-    
-    <item>
-      <title>subpromen</title>
-      <link>https://budrich.github.io/scripts/menus/subpromen/</link>
-      <pubDate>Mon, 18 Dec 2017 04:03:45 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/menus/subpromen/</guid>
-      <description>subpromen - Switch Sublime projects with rofi SYNOPSIS subpromen [-v|-h]
-OPTIONS -v Show version and exit.
--h Show help and exit.
-ENVIRONMENT SUBLIME_PROJECTS_FOLDER Folder containing *.sublime-project files.
-DEPENDENCIES rofi
-sublime
-subpro</description>
-    </item>
-    
-    <item>
-      <title>getlink</title>
-      <link>https://budrich.github.io/scripts/menus/getlink/</link>
-      <pubDate>Mon, 18 Dec 2017 03:55:42 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/menus/getlink/</guid>
-      <description>getlink getlink - Puts a link in the clipboard
-SYNOPSIS getlink [-v|-h] [CATEGORY]
-DESCRIPTION When script is invoked without a CATEGORY a menu (rofi) is shown asking for category. A list of files from that category is shown in a menu. Selected file translates to a url that is put both in primary selection and clipboard.
-Available categories:
- budlabs (budrich.github.io links) github (github.budrich.com links) i3docs (i3 userguide links) links (www bookmarks) pix (uploads a image in ~/pix/r and return url)  OPTIONS -v Show version and exit.</description>
-    </item>
-    
-    <item>
       <title>gethelp</title>
-      <link>https://budrich.github.io/scripts/menus/gethelp/</link>
-      <pubDate>Mon, 18 Dec 2017 03:50:51 +0100</pubDate>
+      <link>https://budrich.github.io/scripts/rofi/gethelp/</link>
+      <pubDate>Fri, 30 Mar 2018 19:33:15 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/menus/gethelp/</guid>
+      <guid>https://budrich.github.io/scripts/rofi/gethelp/</guid>
       <description>gethelp - Short description SYNOPSIS gethelp [-v|-h]
 DESCRIPTION When launched without CATEGORY a list of categories is displayed in a rofi menu. When CATEGORY is known, a menu with pages from that CATEGORY is shown. Depending on the CATEGORY, the chosen page is opened in sublime or surf.
 OPTIONS -v Show version and exit.
@@ -617,126 +1273,48 @@ surf</description>
     </item>
     
     <item>
-      <title>addlink</title>
-      <link>https://budrich.github.io/scripts/menus/addlink/</link>
-      <pubDate>Mon, 18 Dec 2017 03:46:54 +0100</pubDate>
+      <title>getkeys</title>
+      <link>https://budrich.github.io/scripts/misc/getkeys/</link>
+      <pubDate>Fri, 30 Mar 2018 19:32:54 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/menus/addlink/</guid>
-      <description>addlink addlink - Adds a URL to a file
-SYNOPSIS SCRIPTNAME [-v|-h] [-f figlet-font] [URL]
-DESCRIPTION addlink adds a URL to FLD_LNKS. If URL is not given selection and clipboard will be searched for URL. User can also modify the URL before adding it. An alias and category is required.
+      <guid>https://budrich.github.io/scripts/misc/getkeys/</guid>
+      <description>getkeys - Clean xev output SYNOPSIS getkeys [-v|-h]
+DESCRIPTION getkeys executes xev and uses i3get to get the window id of the current window, to make that the target window for xev to listen for keypresses. It then cleans the output of xev with awk.
 OPTIONS -v Show version and exit.
 -h Show help and exit.
--f figlet-font Figlet font to use
-FILES FIL_LNK File to store URL&amp;rsquo;s in, defualts to: ~/dox/not/links.</description>
+DEPENDENCIES i3get xev</description>
     </item>
     
     <item>
-      <title>undraft</title>
-      <link>https://budrich.github.io/scripts/budlabs/undraft/</link>
-      <pubDate>Mon, 18 Dec 2017 03:20:53 +0100</pubDate>
+      <title>getlink</title>
+      <link>https://budrich.github.io/scripts/rofi/getlink/</link>
+      <pubDate>Fri, 30 Mar 2018 19:32:38 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/budlabs/undraft/</guid>
-      <description>undraft - Undraft files on site
-SYNOPSIS undraft [-v|-h]
-DESCRIPTION Moves draft articles in the drafts folder to the location specified with the yaml key target. And un-draft the article(s).
-OPTIONS -v Show version and exit.
--h Show help and exit.</description>
+      <guid>https://budrich.github.io/scripts/rofi/getlink/</guid>
+      <description>getlink - Puts a link in the clipboard SYNOPSIS getlink [-v|-h] [CATEGORY]
+DESCRIPTION When script is invoked without a CATEGORY a menu (rofi) is shown asking for category. A list of files from that category is shown in a menu. Selected file translates to a url that is put both in primary selection and clipboard.
+Available categories:
+ budlabs (budrich.github.io links) github (github.budrich.com links) i3docs (i3 userguide links) links (www bookmarks) pix (uploads a image in ~/pix/r and return url)  OPTIONS -v Show version and exit.</description>
     </item>
     
     <item>
-      <title>postquote</title>
-      <link>https://budrich.github.io/scripts/budlabs/postquote/</link>
-      <pubDate>Mon, 18 Dec 2017 03:15:57 +0100</pubDate>
+      <title>gotofolder</title>
+      <link>https://budrich.github.io/scripts/thunar/gotofolder/</link>
+      <pubDate>Fri, 30 Mar 2018 19:31:51 +0200</pubDate>
       
-      <guid>https://budrich.github.io/scripts/budlabs/postquote/</guid>
-      <description>postquote - Outputs a quote to html SYNOPSIS postquote [-v|-h] [[-f fortune-options] [-l MAX_LINES] [-w WRAP]] OUTPUT-FILE
-DESCRIPTION creates a html file with a quote from fortune inside a &amp;lt;div&amp;gt; block.
+      <guid>https://budrich.github.io/scripts/thunar/gotofolder/</guid>
+      <description>gotofolder - Open folder and adjust layout in thunar SYNOPSIS gotofolder [-v|-h] FOLDER
+DESCRIPTION gotofolder opens FOLDER in thunar and adjust the layout depending on the path of the folder.
 OPTIONS -v Show version and exit.
 -h Show help and exit.
--l MAX_LINES Max number of lines in the output. If the quote exceeds MAX_LINES a new random quote will be used. Defaults to 9.
--w WRAP Maximum length of each line in output.</description>
-    </item>
-    
-    <item>
-      <title>postbanner</title>
-      <link>https://budrich.github.io/scripts/budlabs/postbanner/</link>
-      <pubDate>Mon, 18 Dec 2017 02:46:07 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/budlabs/postbanner/</guid>
-      <description>postbanner - Creates a colorful ASCII banner in html SYNOPSIS postbanner [-v|-h] [-o output-file] [-l lolcat-options] [-t toilet-options] TEXT
-DESCRIPTION postbanner creates output-file containing a multicolored ASCII text banner inside a &amp;lt;div&amp;gt; block generated from the TEXT string. &amp;lsquo;_&amp;rsquo; in string creates a linebreak in the banner.
-OPTIONS -v Show version and exit.
--h Show help and exit.
--o HTML_OUTPUT_FILE If not set output is send to stdout
--l LOLCAT_OPTIONS lolcat options</description>
-    </item>
-    
-    <item>
-      <title>img4site</title>
-      <link>https://budrich.github.io/scripts/budlabs/img4site/</link>
-      <pubDate>Mon, 18 Dec 2017 02:30:07 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/budlabs/img4site/</guid>
-      <description>img4site img4site - Adds image(s) to the budlabs site
-SYNOPSIS img4site [-v|-h] -s|FILE &amp;hellip;
-DESCRIPTION img4site copies IMAGE to budlabs and if needed also creates a resized copie of the image. If -s is passed a screenshot will be taken and used as FILE. A hugo shortcode for the image will be put in the clipboard and selection after succesful operation.
-OPTIONS -v Show version and exit.
--h Show help and exit.</description>
-    </item>
-    
-    <item>
-      <title>blingking</title>
-      <link>https://budrich.github.io/scripts/budlabs/blingking/</link>
-      <pubDate>Mon, 18 Dec 2017 02:13:12 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/budlabs/blingking/</guid>
-      <description>blingking blingking - Creates bling for posts on budlabs
-SYNOPSIS SCRIPTNAME [-v|-h] [CONTENT_FOLDER]
-DESCRIPTION This script creates a ASCII banner and a quote for each post on the budlabs website.
-OPTIONS -v Show version and exit.
--h Show help and exit.
-FILES CONTENT_FOLDER The path to a content folder in a hugo website. Defaults to: ~/www/content
-DEPENDENCIES postbanner postquote</description>
-    </item>
-    
-    <item>
-      <title>i3zen</title>
-      <link>https://budrich.github.io/scripts/i3add/i3zen/</link>
-      <pubDate>Mon, 18 Dec 2017 01:40:46 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/i3add/i3zen/</guid>
-      <description>I made a post on /r/unixporn where you can view an animated gif of i3zen in action.
-i3zen - Send windows to the zenter SYNOPSIS i3zen [-v|-h]
-DESCRIPTION Put the active window in a tabbed container between two ghostswindows (centered) on a clean workspace. If the window already is in ZenMode, move it back to it&amp;rsquo;s original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.</description>
-    </item>
-    
-    <item>
-      <title>i3term</title>
-      <link>https://budrich.github.io/scripts/i3add/i3term/</link>
-      <pubDate>Mon, 18 Dec 2017 01:34:42 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/i3add/i3term/</guid>
-      <description>I just made this script to keep my i3config cleaner. It probably needs tweaking if someone other then budRich uses it ;)
-i3term - Launch a command in a new urxvt window SYNOPSIS i3term [-v|-h] COMMAND
-DESCRIPTION Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.</description>
-    </item>
-    
-    <item>
-      <title>i3Kornhe</title>
-      <link>https://budrich.github.io/scripts/i3add/i3kornhe/</link>
-      <pubDate>Mon, 18 Dec 2017 01:22:37 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/scripts/i3add/i3kornhe/</guid>
-      <description>This is the polished version of the i3resizemode script i made in one of the Lets Linux episodes. I named it after the moderator on up who banned me for a month after I told a guy to RTFM&amp;hellip;
-i3Kornhe - Resize windows by moving the corners. SYNOPSIS i3Kornhe [-v|-h] DIRECTION
-DESCRIPTION The script checks if the currently active window is floating. If it is floating the script will acrivate one of four modes depending on the direction.</description>
+DEPENDENCIES thunar
+i3get</description>
     </item>
     
     <item>
       <title>i3cast</title>
       <link>https://budrich.github.io/scripts/i3add/i3cast/</link>
-      <pubDate>Mon, 18 Dec 2017 00:41:17 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:30:52 +0200</pubDate>
       
       <guid>https://budrich.github.io/scripts/i3add/i3cast/</guid>
       <description>I use this script to create the gifs and videos you see me posting here and on youtube. It has a bunch of dependencies, but they are all good programs and the recording process is very lightweight compared to the other alternatives I&amp;rsquo;ve tried.
@@ -744,42 +1322,33 @@ Just run the script to start the recording, run it again to preview the video an
     </item>
     
     <item>
-      <title>i3run</title>
-      <link>https://budrich.github.io/i3ass/i3run/</link>
-      <pubDate>Sun, 17 Dec 2017 23:23:14 +0100</pubDate>
+      <title>i3flip</title>
+      <link>https://budrich.github.io/i3ass/i3flip/</link>
+      <pubDate>Fri, 30 Mar 2018 19:30:34 +0200</pubDate>
       
-      <guid>https://budrich.github.io/i3ass/i3run/</guid>
-      <description>18/01/03 - new position to mouse Floating windows now appears centered to the mouse position, but never outside the screen. Screen borders (gaps) can be fine tuned with environment variables. xdotool is a dependency now, it&amp;rsquo;s needed to get the position of the mousecursor. All windows are now hidden if targeted while they are active, if not the new -g option is set. Using i3var instead of marks.
-i3run - Run, Raise or hide windows in i3wm SYNOPSIS i3run -h|-v|-i|-c|-t [CRITERIA] [-g] [-e COMMAND]</description>
+      <guid>https://budrich.github.io/i3ass/i3flip/</guid>
+      <description>I extracted and improved the tabswitching function from i3fyra and it now works independently, with or without i3fyra.
+i3flip - Tabswitching done right SYNOPSIS i3flip [-v|-h] [n|next|p|prev]
+DESCRIPTION i3flip switch containers without leaving the parent. Perfect for tabbed or stacked layout, but works on all layouts. If direction is next (or n) and the active container is the last, the first container will be activated.
+OPTIONS -v Show version and exit.</description>
     </item>
     
     <item>
-      <title>i3list</title>
-      <link>https://budrich.github.io/i3ass/i3list/</link>
-      <pubDate>Sun, 17 Dec 2017 23:08:59 +0100</pubDate>
+      <title>i3fyra</title>
+      <link>https://budrich.github.io/i3ass/i3fyra/</link>
+      <pubDate>Fri, 30 Mar 2018 19:30:20 +0200</pubDate>
       
-      <guid>https://budrich.github.io/i3ass/i3list/</guid>
-      <description>18/01/03 - window geometry Added some new output values (45-55) to return the window geometry. Also AWM/TWM (mark) is deprecated, since spaces in marks caused trouble.
-i3list - List attributes of i3wm SYNOPSIS i3list [OPTION [CRITERIA]]
-DESCRIPTION This script is vital for i3fyra to work. But it can be used on it&amp;rsquo;s own or with other scripts. i3list is also used by i3run. i3list parses the output of the command:</description>
-    </item>
-    
-    <item>
-      <title>i3gw</title>
-      <link>https://budrich.github.io/i3ass/i3gw/</link>
-      <pubDate>Sun, 17 Dec 2017 22:53:54 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/i3ass/i3gw/</guid>
-      <description>In the screenshot below, the windows to the right are tiled, and a ghostwindow is tiled on the left half of the screen. The other windows are floating.
-ss-i3gw1.png   This might seems like a novel and unusable feature, but it is actually crucial for many of my script (i3fyra, i3var) to work.
-i3gw - A Ghost window wrapper for i3wm. SYNOPSIS i3gw [-v|-h] MARK
-DESCRIPTION i3-msg has an undocumented function: open, it creates empty containers, or as I call them: ghosts.</description>
+      <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
+      <description>Fyra is the Swedish name for &amp;ldquo;four&amp;rdquo; (4).  www.youtube.com/watch?v=kU8gb6WLFk8    .
+www.youtube.com/watch?v=t4Tve-xpwus    In the first video above I show the functionality of i3fyra. The second video is a longer and more thorough walkthrough on how to use i3fyra
+18/01/03 i3flip Tabswitching function (-t) is removed, use i3flip instead, it&amp;rsquo;s both faster and works without i3fyra
+17/12/20 update: I added the ability to pass more then one containers to -z (hide).</description>
     </item>
     
     <item>
       <title>i3get</title>
       <link>https://budrich.github.io/i3ass/i3get/</link>
-      <pubDate>Sun, 17 Dec 2017 21:53:37 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:29:58 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3get/</guid>
       <description>i3get - Return information about i3wm. SYNOPSIS i3get [-h|-v] [OPTION [CRITERIA]] [-r [tcidnmwafov]] [-y]
@@ -797,423 +1366,354 @@ Search for windows with the given instance</description>
     </item>
     
     <item>
-      <title>i3fyra</title>
-      <link>https://budrich.github.io/i3ass/i3fyra/</link>
-      <pubDate>Sun, 17 Dec 2017 20:54:45 +0100</pubDate>
+      <title>i3gw</title>
+      <link>https://budrich.github.io/i3ass/i3gw/</link>
+      <pubDate>Fri, 30 Mar 2018 19:29:32 +0200</pubDate>
       
-      <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
-      <description>Fyra is the Swedish name for &amp;ldquo;four&amp;rdquo; (4).  www.youtube.com/watch?v=kU8gb6WLFk8    .
-www.youtube.com/watch?v=t4Tve-xpwus    In the first video above I show the functionality of i3fyra. The second video is a longer and more thorough walkthrough on how to use i3fyra
-18/01/03 i3flip Tabswitching function (-t) is removed, use i3flip instead, it&amp;rsquo;s both faster and works without i3fyra
-17/12/20 update: I added the ability to pass more then one containers to -z (hide).</description>
+      <guid>https://budrich.github.io/i3ass/i3gw/</guid>
+      <description>In the screenshot below, the windows to the right are tiled, and a ghostwindow is tiled on the left half of the screen. The other windows are floating.
+ss-i3gw1.png   This might seems like a novel and unusable feature, but it is actually crucial for many of my script (i3fyra, i3var) to work.
+i3gw - A Ghost window wrapper for i3wm. SYNOPSIS i3gw [-v|-h] MARK
+DESCRIPTION i3-msg has an undocumented function: open, it creates empty containers, or as I call them: ghosts.</description>
     </item>
     
     <item>
-      <title>profile</title>
-      <link>https://budrich.github.io/dots/bash/profile/</link>
-      <pubDate>Sat, 16 Dec 2017 23:23:02 +0100</pubDate>
+      <title>i3Kornhe</title>
+      <link>https://budrich.github.io/scripts/i3add/i3kornhe/</link>
+      <pubDate>Fri, 30 Mar 2018 19:29:16 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/bash/profile/</guid>
-      <description>Nothing going on here, just sourcing my bashrc.</description>
+      <guid>https://budrich.github.io/scripts/i3add/i3kornhe/</guid>
+      <description>This is the polished version of the i3resizemode script i made in one of the Lets Linux episodes. I named it after the moderator on up who banned me for a month after I told a guy to RTFM&amp;hellip;
+i3Kornhe - Resize windows by moving the corners. SYNOPSIS i3Kornhe [-v|-h] DIRECTION
+DESCRIPTION The script checks if the currently active window is floating. If it is floating the script will acrivate one of four modes depending on the direction.</description>
     </item>
     
     <item>
-      <title>man-preview</title>
-      <link>https://budrich.github.io/dots/sublime/syntax/man-preview/</link>
-      <pubDate>Sat, 16 Dec 2017 23:22:48 +0100</pubDate>
+      <title>i3list</title>
+      <link>https://budrich.github.io/i3ass/i3list/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:44 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/syntax/man-preview/</guid>
-      <description> man-preview </description>
+      <guid>https://budrich.github.io/i3ass/i3list/</guid>
+      <description>18/01/03 - window geometry Added some new output values (45-55) to return the window geometry. Also AWM/TWM (mark) is deprecated, since spaces in marks caused trouble.
+i3list - List attributes of i3wm SYNOPSIS i3list [OPTION [CRITERIA]]
+DESCRIPTION This script is vital for i3fyra to work. But it can be used on it&amp;rsquo;s own or with other scripts. i3list is also used by i3run. i3list parses the output of the command:</description>
     </item>
     
     <item>
-      <title>bashrc</title>
-      <link>https://budrich.github.io/dots/bash/bashrc/</link>
-      <pubDate>Sat, 16 Dec 2017 23:22:12 +0100</pubDate>
+      <title>i3minimize</title>
+      <link>https://budrich.github.io/scripts/i3add/i3minimize/</link>
+      <pubDate>Fri, 30 Mar 2018 19:27:26 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/bash/bashrc/</guid>
-      <description>The read -rsn1 -t2 input waits two seconds for a key-press before it starts X and i3. If I press 1 I stay in the wonderful tty environment. If I press 2 or wait 2 seconds, i3 starts.
-I have found this method much more convenient then a normal DM, where you have to change DE from some, very easily forgotten, menu. Often resulting in me logging in to the wrong DE&amp;hellip;</description>
+      <guid>https://budrich.github.io/scripts/i3add/i3minimize/</guid>
+      <description>i3minimize - Minimize active window SYNOPSIS i3minimize [-v|-h]
+DESCRIPTION Depending on the state of active window, i3minimize does different things.
+   window state action     floating send to scratchpad   tiled, not handled by i3fyra send to scratchpad   tiled, handled by i3fyra hide parent container    OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES i3list</description>
     </item>
     
     <item>
-      <title>ZenTabs</title>
-      <link>https://budrich.github.io/dots/sublime/settings/zentabs/</link>
-      <pubDate>Sat, 16 Dec 2017 23:16:58 +0100</pubDate>
+      <title>i3monocle</title>
+      <link>https://budrich.github.io/scripts/i3add/i3monocle/</link>
+      <pubDate>Fri, 30 Mar 2018 19:26:45 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/zentabs/</guid>
-      <description> ZenTabs </description>
+      <guid>https://budrich.github.io/scripts/i3add/i3monocle/</guid>
+      <description>i3monocle - Maximize active window SYNOPSIS i3monocle [-v|-h] [-g]
+DESCRIPTION i3monocle Will first check the floating state of the active window. If it is floating, i3fyra -a (autolayot/toggle tiling) will get invoked to ensure the window is tiled and in a i3fyra container. Then all other visible i3fyra containers will get hidden. Leaving the active window in monocle (maximized) mode.
+If the window is already monocled, it will be put in ZenMode with i3zen if not the -g flag is passed.</description>
     </item>
     
     <item>
-      <title>xft</title>
-      <link>https://budrich.github.io/dots/xres/xft/</link>
-      <pubDate>Sat, 16 Dec 2017 23:16:46 +0100</pubDate>
+      <title>i3run</title>
+      <link>https://budrich.github.io/i3ass/i3run/</link>
+      <pubDate>Fri, 30 Mar 2018 19:25:19 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/xft/</guid>
-      <description> xft </description>
+      <guid>https://budrich.github.io/i3ass/i3run/</guid>
+      <description>18/01/03 - new position to mouse Floating windows now appears centered to the mouse position, but never outside the screen. Screen borders (gaps) can be fine tuned with environment variables. xdotool is a dependency now, it&amp;rsquo;s needed to get the position of the mousecursor. All windows are now hidden if targeted while they are active, if not the new -g option is set. Using i3var instead of marks.
+i3run - Run, Raise or hide windows in i3wm SYNOPSIS i3run -h|-v|-i|-c|-t [CRITERIA] [-g] [-e COMMAND]</description>
     </item>
     
     <item>
-      <title>user-dirs</title>
-      <link>https://budrich.github.io/dots/misc/user-dirs/</link>
-      <pubDate>Sat, 16 Dec 2017 23:16:38 +0100</pubDate>
+      <title>i3term</title>
+      <link>https://budrich.github.io/scripts/i3add/i3term/</link>
+      <pubDate>Fri, 30 Mar 2018 19:24:57 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/misc/user-dirs/</guid>
-      <description>I like to have the short lowercase names on my folders for easier navigation through from the terminal and it also looks cool.
-homefolderspacefm.png   I have also written a guide, and recorded a video on how to achieve the Perfect Folder structure.</description>
+      <guid>https://budrich.github.io/scripts/i3add/i3term/</guid>
+      <description>I just made this script to keep my i3config cleaner. It probably needs tweaking if someone other then budRich uses it ;)
+i3term - Launch a command in a new urxvt window SYNOPSIS i3term [-v|-h] COMMAND
+DESCRIPTION Uses i3run to run or raise a window with the instancename: COMMAND. If no window is found, COMMAND is ran in a urxvt window with the same instance name as COMMAND. When the command exits window is cleared and returned to bash.</description>
     </item>
     
     <item>
-      <title>urxvt</title>
-      <link>https://budrich.github.io/dots/xres/urxvt/</link>
-      <pubDate>Sat, 16 Dec 2017 23:16:26 +0100</pubDate>
+      <title>i3var</title>
+      <link>https://budrich.github.io/i3ass/i3var/</link>
+      <pubDate>Fri, 30 Mar 2018 19:23:38 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/urxvt/</guid>
-      <description>Nothing special. I really like to be able to change font (and font-size) on the fly, there are times when you want to read the output and theres times you just want to monitor the output.
-I am planning to add something similar to be able to switch between a dark and light color-scheme.</description>
+      <guid>https://budrich.github.io/i3ass/i3var/</guid>
+      <description>I found that marking windows is both clunky and it can have a negative impact on the workflow for users who use marks for other things. So i made i3var, it creates a ghostwindow on the scratchpad and use it to hold a variable. This can also be used for things that are not window related. I can for example keep track of my current wallpaper, but i have made some other crazy experiments with this and it works really well, much better then marks.</description>
     </item>
     
     <item>
-      <title>uca</title>
-      <link>https://budrich.github.io/dots/thunar/uca/</link>
-      <pubDate>Sat, 16 Dec 2017 23:16:18 +0100</pubDate>
+      <title>i3viswiz</title>
+      <link>https://budrich.github.io/i3ass/i3viswiz/</link>
+      <pubDate>Fri, 30 Mar 2018 19:23:15 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/thunar/uca/</guid>
-      <description>This file contains user defined actions that can be used within thunar. One can use the unique-id to bind actions to hotkeys in ~/.config/Thunar/accels.scm.</description>
+      <guid>https://budrich.github.io/i3ass/i3viswiz/</guid>
+      <description>i3viswiz - Professional window focus for i3wm SYNOPSIS i3viswiz [-v|-h] [-p] [-g GAPSIZE] [DIRECTION]
+DESCRIPTION i3viswiz lists all visible windows with their positions (X,Y) and dimensions (width,height). If -p flag is passed, the list will be printed to stdout. If a DIRECTION (left|right|up|down) is passed i3wizvis will shift the focus to the window closest in the given DIRECTION, or warp focus if there are no windows in the given direction.</description>
     </item>
     
     <item>
-      <title>TwoFont</title>
-      <link>https://budrich.github.io/dots/sublime/settings/twofont/</link>
-      <pubDate>Sat, 16 Dec 2017 23:16:06 +0100</pubDate>
+      <title>i3wswp</title>
+      <link>https://budrich.github.io/scripts/i3add/i3wswp/</link>
+      <pubDate>Fri, 30 Mar 2018 19:22:56 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/twofont/</guid>
-      <description> TwoFont </description>
+      <guid>https://budrich.github.io/scripts/i3add/i3wswp/</guid>
+      <description>i3wswp - Switch workspace and wallpaper SYNOPSIS i3wswp [-v|-h] WORKSPACE
+DESCRIPTION i3wswp takes a WORKSPACE number as an argument. If there exist a non empty ENVIRONMENT varialbe with the name I3WSWP_COMMAND_WORKSPACE . The content of that variable will be executed. i3wswp is intended to be used with some kind of subscriber script and be executed on workspace change.
+OPTIONS -v
+Show version and exit.
+-h
+Show help and exit.</description>
     </item>
     
     <item>
-      <title>TwoFace</title>
-      <link>https://budrich.github.io/dots/sublime/settings/twoface/</link>
-      <pubDate>Sat, 16 Dec 2017 23:15:55 +0100</pubDate>
+      <title>i3zen</title>
+      <link>https://budrich.github.io/scripts/i3add/i3zen/</link>
+      <pubDate>Fri, 30 Mar 2018 19:22:12 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/twoface/</guid>
-      <description> TwoFace </description>
+      <guid>https://budrich.github.io/scripts/i3add/i3zen/</guid>
+      <description>I made a post on /r/unixporn where you can view an animated gif of i3zen in action.
+i3zen - Send windows to the zenter SYNOPSIS i3zen [-v|-h]
+DESCRIPTION Put the active window in a tabbed container between two ghostswindows (centered) on a clean workspace. If the window already is in ZenMode, move it back to it&amp;rsquo;s original workspace. If the window is not in zen but another window is, both of them will be zen in a tabbed container.</description>
     </item>
     
     <item>
-      <title>hidden</title>
-      <link>https://budrich.github.io/dots/thunar/hidden/</link>
-      <pubDate>Sat, 16 Dec 2017 23:15:42 +0100</pubDate>
+      <title>igi</title>
+      <link>https://budrich.github.io/scripts/misc/igi/</link>
+      <pubDate>Fri, 30 Mar 2018 19:21:54 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/thunar/hidden/</guid>
-      <description>This file (~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml) contains hidden settings for thunar. By altering this file before launching an instance of thunar, one can manipulate the appearance (sort, icon-size e.t.c) of the thunar window.
-www.youtube.com/watch?v=9ZJLMid348M    </description>
+      <guid>https://budrich.github.io/scripts/misc/igi/</guid>
+      <description>This script generates an issue file that is shown when you log in to your computer without a DM. It applies the current color scheme that you have set in .Xresources
+ss_igi1.png   igi - I Got Issues SYNOPSIS igi [-v|-h]
+DESCRIPTION This script creates a issuefile and move it to /etc/issue. The file will use the colors defined in .Xresources and use toilet, fortune and lolcat to create a centered fullscreen issue file.</description>
     </item>
     
     <item>
-      <title>SublimeLinter</title>
-      <link>https://budrich.github.io/dots/sublime/settings/sublimelinter/</link>
-      <pubDate>Sat, 16 Dec 2017 23:15:25 +0100</pubDate>
+      <title>img4site</title>
+      <link>https://budrich.github.io/scripts/budlabs/img4site/</link>
+      <pubDate>Fri, 30 Mar 2018 19:21:32 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/sublimelinter/</guid>
-      <description> SublimeLinter </description>
+      <guid>https://budrich.github.io/scripts/budlabs/img4site/</guid>
+      <description>This is a helper script that copies and resizes an image and move it to the correct directory for use on my website, budlabs.
+img4site - Adds image(s) to the budlabs site SYNOPSIS img4site [-v|-h] -s|FILE &amp;hellip;
+DESCRIPTION img4site copies IMAGE to budlabs and if needed also creates a resized copie of the image. If -s is passed a screenshot will be taken and used as FILE. A hugo shortcode for the image will be put in the clipboard and selection after succesful operation.</description>
     </item>
     
     <item>
-      <title>solarized-dark</title>
-      <link>https://budrich.github.io/dots/xres/colors/solarized-dark/</link>
-      <pubDate>Sat, 16 Dec 2017 23:14:46 +0100</pubDate>
+      <title>notes</title>
+      <link>https://budrich.github.io/scripts/sublime/notes/</link>
+      <pubDate>Fri, 30 Mar 2018 19:19:56 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/colors/solarized-dark/</guid>
-      <description>Solarized is perfect.</description>
+      <guid>https://budrich.github.io/scripts/sublime/notes/</guid>
+      <description>notesshot.png   notes - Run or raise a plain notes sublime instance. SYNOPSIS notes [-v|-h|] [-i NOTES_INSTANCE]
+DESCRIPTION This command is just a shortcut to a complex command used to run or raise a plain notes sublime instance.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+-i NOTES_INSTANCE
+Instance name to give the notes window. Defautlt: sublime_notes
+ENVIRONMENT SUBLIME_INSTANCE If non-null the will rename instance name of notes window.</description>
     </item>
     
     <item>
-      <title>prompt</title>
-      <link>https://budrich.github.io/dots/bash/prompt/</link>
-      <pubDate>Sat, 16 Dec 2017 23:14:31 +0100</pubDate>
+      <title>pbmail</title>
+      <link>https://budrich.github.io/scripts/polybar/pbmail/</link>
+      <pubDate>Fri, 30 Mar 2018 19:19:05 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/bash/prompt/</guid>
-      <description>My prompt shows the runtime of the last command and a compact CWD (current work directory).
-ss_time4prompt.png   </description>
+      <guid>https://budrich.github.io/scripts/polybar/pbmail/</guid>
+      <description>pbmail - Outputs unread mail count SYNOPSIS pbmail [-v|-h]
+DESCRIPTION pbmail is meant to be used with polybar to display unread mail count.
+OPTIONS -v Show version and exit.
+-h Show help and exit.</description>
     </item>
     
     <item>
-      <title>user</title>
-      <link>https://budrich.github.io/dots/sublime/settings/user/</link>
-      <pubDate>Sat, 16 Dec 2017 23:14:22 +0100</pubDate>
+      <title>pbmedia</title>
+      <link>https://budrich.github.io/scripts/polybar/pbmedia/</link>
+      <pubDate>Fri, 30 Mar 2018 19:18:48 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/user/</guid>
-      <description> user </description>
+      <guid>https://budrich.github.io/scripts/polybar/pbmedia/</guid>
+      <description>pbmedia - Displays the filename of the currently active media file. SYNOPSIS pbmedia [-v|-h]
+DESCRIPTION pbmedia Prints the filename of the currently playing media file in mpd or mpv. And applies some string and color formatting depending on the state and path of the file.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+DEPENDENCIES i3viswiz
+i3get
+mpd
+mpc
+mpv</description>
     </item>
     
     <item>
-      <title>preferences</title>
-      <link>https://budrich.github.io/dots/klavaro/preferences/</link>
-      <pubDate>Sat, 16 Dec 2017 23:14:05 +0100</pubDate>
+      <title>pbtitle</title>
+      <link>https://budrich.github.io/scripts/polybar/pbtitle/</link>
+      <pubDate>Fri, 30 Mar 2018 19:16:43 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/klavaro/preferences/</guid>
-      <description>Klavaro is a GTK touch typing trainer. It is really nice to just sit and listen to a pod while the fingers flow. My average WPM is around 60 at the moment. But I slowly improve.
-klavarosolarized.png   I believe touch typing is very important to master if you want to become a good programmer.
-If you never have given touch typing a thought, i really recommend you read Programming&amp;rsquo;s Dirtiest Little Secret by Steve Yegge.</description>
+      <guid>https://budrich.github.io/scripts/polybar/pbtitle/</guid>
+      <description>pbtitle - Short description SYNOPSIS pbtitle [-v|-h] EVENT
+DESCRIPTION pbtitle is intended to be used as output in a statusbar. Different output is displayed depending on the EVENT.
+   EVENT OUTPUT     advanced Class and instance of active window   normal Title of active window   color 16 colors defined in .xresources   focus –   title –    When rightc licked objects will be put into the ClipBoard</description>
     </item>
     
     <item>
-      <title>auto</title>
-      <link>https://budrich.github.io/dots/sublime/settings/auto/</link>
-      <pubDate>Sat, 16 Dec 2017 23:13:49 +0100</pubDate>
+      <title>pbweather</title>
+      <link>https://budrich.github.io/scripts/polybar/pbweather/</link>
+      <pubDate>Fri, 30 Mar 2018 19:15:43 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/auto/</guid>
-      <description> auto </description>
+      <guid>https://budrich.github.io/scripts/polybar/pbweather/</guid>
+      <description>pbweather - Prints weather information SYNOPSIS pbweather [-v|-h]
+OPTIONS -v Show version and exit.
+-h Show help and exit.</description>
     </item>
     
     <item>
-      <title>oneliner</title>
-      <link>https://budrich.github.io/dots/rofi/oneliner/</link>
-      <pubDate>Sat, 16 Dec 2017 23:13:17 +0100</pubDate>
+      <title>pbws</title>
+      <link>https://budrich.github.io/scripts/polybar/pbws/</link>
+      <pubDate>Fri, 30 Mar 2018 19:15:07 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/rofi/oneliner/</guid>
-      <description>This rofi theme looks like dmenu with everything on one line. When it&amp;rsquo;s displayed it overlays my polybar.
-rofibudrunpoly.gif   In the image above i displays a launch menu invoked from the script known as budrun.</description>
+      <guid>https://budrich.github.io/scripts/polybar/pbws/</guid>
+      <description>pbws - Minimal workspace indication SYNOPSIS pbws [-v|-h]
+DESCRIPTION pbws outputs a symbol representing the current worskpace and the total number of workspaces. Inteded to be used with polybar.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+ENVIRONMENT PBWS_SYMBOL_WORKSPACE_NUMBER This symbol will be used to indicate the current workspace, if empty the workspace number will be used.
+DEPENDENCIES polybar</description>
     </item>
     
     <item>
-      <title>Note</title>
-      <link>https://budrich.github.io/dots/sublime/syntax/note/</link>
-      <pubDate>Sat, 16 Dec 2017 23:13:07 +0100</pubDate>
+      <title>postbanner</title>
+      <link>https://budrich.github.io/scripts/budlabs/postbanner/</link>
+      <pubDate>Fri, 30 Mar 2018 19:14:00 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/syntax/note/</guid>
-      <description> Note </description>
+      <guid>https://budrich.github.io/scripts/budlabs/postbanner/</guid>
+      <description>postbanner - Creates a colorful ASCII banner in html SYNOPSIS postbanner [-v|-h] [-o output-file] [-l lolcat-options] [-t toilet-options] TEXT
+DESCRIPTION postbanner creates output-file containing a multicolored ASCII text banner inside a &amp;lt;div&amp;gt; block generated from the TEXT string. &amp;lsquo;_&amp;rsquo; in string creates a linebreak in the banner.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+-o HTML_OUTPUT_FILE If not set output is send to stdout
+-l LOLCAT_OPTIONS lolcat options</description>
     </item>
     
     <item>
-      <title>Notes</title>
-      <link>https://budrich.github.io/dots/sublime/settings/notes/</link>
-      <pubDate>Sat, 16 Dec 2017 23:12:51 +0100</pubDate>
+      <title>postquote</title>
+      <link>https://budrich.github.io/scripts/budlabs/postquote/</link>
+      <pubDate>Fri, 30 Mar 2018 19:13:44 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/notes/</guid>
-      <description> Notes </description>
+      <guid>https://budrich.github.io/scripts/budlabs/postquote/</guid>
+      <description>postquote - Outputs a quote to html SYNOPSIS postquote [-v|-h] [[-f fortune-options] [-l MAX_LINES] [-w WRAP]] OUTPUT-FILE
+DESCRIPTION creates a html file with a quote from fortune inside a &amp;lt;div&amp;gt; block.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+-l MAX_LINES Max number of lines in the output. If the quote exceeds MAX_LINES a new random quote will be used. Defaults to 9.
+-w WRAP Maximum length of each line in output.</description>
     </item>
     
     <item>
-      <title>misc</title>
-      <link>https://budrich.github.io/dots/bash/misc/</link>
-      <pubDate>Sat, 16 Dec 2017 23:12:17 +0100</pubDate>
+      <title>shoot</title>
+      <link>https://budrich.github.io/scripts/rofi/shoot/</link>
+      <pubDate>Fri, 30 Mar 2018 19:07:24 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/bash/misc/</guid>
-      <description> misc </description>
+      <guid>https://budrich.github.io/scripts/rofi/shoot/</guid>
+      <description>shoot - Screenshots made easy SYNOPSIS shoot [-v|-h]
+DESCRIPTION When shoot is launched it displays a rofi asking what kind of screenshot to take: Fullscreen or Select area. Then screenshot is taken and the image is opened with sxiv. When sxiv is closed a new menu asks for action: Save Upload budlabs. If Upload is chosen the user is prompted for a host (imgur, ptpb), finally a name is requested.</description>
     </item>
     
     <item>
-      <title>Markdown</title>
-      <link>https://budrich.github.io/dots/sublime/syntax/markdown/</link>
-      <pubDate>Sat, 16 Dec 2017 23:11:48 +0100</pubDate>
+      <title>subpro</title>
+      <link>https://budrich.github.io/scripts/sublime/subpro/</link>
+      <pubDate>Fri, 30 Mar 2018 19:03:12 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/syntax/markdown/</guid>
-      <description> Markdown </description>
+      <guid>https://budrich.github.io/scripts/sublime/subpro/</guid>
+      <description>subpro - Switch sublime projects SYNOPSIS subpro [-v|-h] project-nane
+DESCRIPTION subpro closes the currently open project in Sublime Text and opens project-name in it&amp;rsquo;s place.
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+FILES SUBLIME_PROJECTS_DIR Folder containing .sublime-project files defaults to: ~/tmp/kortisar/sublime/projects
+DEPENDENCIES SublimeText</description>
     </item>
     
     <item>
-      <title>i3wm</title>
-      <link>https://budrich.github.io/dots/xres/i3wm/</link>
-      <pubDate>Sat, 16 Dec 2017 23:11:16 +0100</pubDate>
+      <title>subpromen</title>
+      <link>https://budrich.github.io/scripts/rofi/subpromen/</link>
+      <pubDate>Fri, 30 Mar 2018 19:02:39 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/i3wm/</guid>
-      <description> i3wm </description>
+      <guid>https://budrich.github.io/scripts/rofi/subpromen/</guid>
+      <description>subpromen - Switch Sublime projects with rofi SYNOPSIS subpromen [-v|-h]
+OPTIONS -v Show version and exit.
+-h Show help and exit.
+ENVIRONMENT SUBLIME_PROJECTS_DIR Folder containing *.sublime-project files.
+DEPENDENCIES rofi
+sublime
+subpro</description>
     </item>
     
     <item>
-      <title>HatOfGod</title>
-      <link>https://budrich.github.io/dots/xres/colors/hatofgod/</link>
-      <pubDate>Sat, 16 Dec 2017 23:10:55 +0100</pubDate>
+      <title>subtit</title>
+      <link>https://budrich.github.io/scripts/sublime/subtit/</link>
+      <pubDate>Fri, 30 Mar 2018 18:54:48 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/colors/hatofgod/</guid>
-      <description>This is a color-scheme &amp;ldquo;I&amp;rdquo; made many years ago. It was originally for the AHK editor SciTE. But I also ported it to Sublime and now .Xresources</description>
+      <guid>https://budrich.github.io/scripts/sublime/subtit/</guid>
+      <description>subtit - Output the currently open file in sublime. SYNOPSIS subtit [-v|-h|-l]
+DESCRIPTION subtit uses i3get to get the window title of Sublime Text. It extracts the filename from the title and prints it to stdout. If -l flag is passed subtit will follow symbolic links if any and print the source file.
+OPTIONS -v
+Show version and exit.
+-h
+Show help and exit.
+-l
+Follow symbolic links.
+-i SUBLIME_INSTANCE</description>
     </item>
     
     <item>
-      <title>func</title>
-      <link>https://budrich.github.io/dots/bash/func/</link>
-      <pubDate>Sat, 16 Dec 2017 23:10:43 +0100</pubDate>
+      <title>templatetator</title>
+      <link>https://budrich.github.io/scripts/misc/templatetator/</link>
+      <pubDate>Fri, 30 Mar 2018 18:47:33 +0200</pubDate>
       
-      <guid>https://budrich.github.io/dots/bash/func/</guid>
-      <description>This is the power of the bash shell, you can write small functions to make using the shell easier.
-lb
-I found this one on the LinuxBBQ forums it adds the last command to a logfile. Very handy.
-adda
-Adds a new permanent alias. Example:
-adda dwn cd ~/Downloads
-this will add, alias dwn=&#39;~/Downloads&#39; to ~/.bash/alias and reloads ~/.bashrc so you can use the alias immediately.
-apti/gemi/pipi
-install packages and log package name.</description>
+      <guid>https://budrich.github.io/scripts/misc/templatetator/</guid>
+      <description>templatetator - Create files based on templates SYNOPSIS templatetator [-v|-h] [TEMPLATE_FOLDER]
+DESCRIPTION script that invokes a rofi with a list of folders inside TEMPLATE_FOLDER. folder. It then runs the recipie file in the selected folder. It then prompts for a filename of the new file.
+The variables, CURFLD (the selected template folder) and CURFIL (the entered filename) can be used in the recepie file.
+OPTIONS -v Show version and exit.</description>
     </item>
     
     <item>
-      <title>export</title>
-      <link>https://budrich.github.io/dots/bash/export/</link>
-      <pubDate>Sat, 16 Dec 2017 23:10:31 +0100</pubDate>
+      <title>new_ass_features</title>
+      <link>https://budrich.github.io/blog/new_ass_features/</link>
+      <pubDate>Wed, 03 Jan 2018 13:37:07 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/bash/export/</guid>
-      <description>These environment variables are quite generic. I have more personal ones in i3env</description>
+      <guid>https://budrich.github.io/blog/new_ass_features/</guid>
+      <description>I have made lots of small updates and additions to i3ass the last couple of weeks. The changes might seem small and subtle, but they have improved the experience a lot.
+I can now hide an active a container by running i3run on the active window, this is a much better way then using the move commands all the time. And floating windows now appear centered to the mouse position, but adjusted to the screenedges.</description>
     </item>
     
     <item>
-      <title>dmenu</title>
-      <link>https://budrich.github.io/dots/xres/dmenu/</link>
-      <pubDate>Sat, 16 Dec 2017 23:10:24 +0100</pubDate>
+      <title>i3_flipping_tabs</title>
+      <link>https://budrich.github.io/blog/i3_flipping_tabs/</link>
+      <pubDate>Wed, 03 Jan 2018 10:22:44 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/xres/dmenu/</guid>
-      <description> dmenu </description>
+      <guid>https://budrich.github.io/blog/i3_flipping_tabs/</guid>
+      <description>I have gotten some requests on an isolated version of i3fyra&amp;rsquo;s tabswitching function. And this morning I sat down to try a new way to do it, and it worked .. pretty, pretty, pretty good :)
+Vanilla i3 doesn&amp;rsquo;t have a separate function for switching tabs, instead we use the normal focus [left|right]. This is not so well suited for tabs since if one focus right when the last tab is active, the focus will pop out to the container to the right if there is one.</description>
     </item>
     
     <item>
-      <title>keymap</title>
-      <link>https://budrich.github.io/dots/sublime/settings/keymap/</link>
-      <pubDate>Sat, 16 Dec 2017 23:10:16 +0100</pubDate>
+      <title>ass_divided</title>
+      <link>https://budrich.github.io/blog/ass_divided/</link>
+      <pubDate>Sat, 23 Dec 2017 12:51:15 +0100</pubDate>
       
-      <guid>https://budrich.github.io/dots/sublime/settings/keymap/</guid>
-      <description> keymap </description>
-    </item>
-    
-    <item>
-      <title>ncmpcpp</title>
-      <link>https://budrich.github.io/dots/ncmpcpp/</link>
-      <pubDate>Sat, 16 Dec 2017 23:09:22 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/ncmpcpp/</guid>
-      <description>Keeping it simple and optimizing the layout for narrow windows (I like to have this program in my sidebar ~350px).
-ncmpcppplaylist.png   . ncmpcppbrows.png   </description>
-    </item>
-    
-    <item>
-      <title>i3config</title>
-      <link>https://budrich.github.io/dots/i3config/</link>
-      <pubDate>Sat, 16 Dec 2017 23:08:50 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/i3config/</guid>
-      <description>I have written articles, recorded videos and written a lot of custom scripts for i3. This is my actual config file.</description>
-    </item>
-    
-    <item>
-      <title>compton-conf</title>
-      <link>https://budrich.github.io/dots/compton-conf/</link>
-      <pubDate>Sat, 16 Dec 2017 23:08:39 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/compton-conf/</guid>
-      <description>compton is a lightweight compositor for X that works really well with i3. A compositor adds some eye-candy like transparency and drop-shadows to the windows. But it also do some anti screen tearing magic and such. The compton setup can however be a bit tricky and it all depends on your own preferences and hardware.
-The blocks below are more i3 then hardware related that you might find useful:
-opacity-rule = [ # these transparency rules makes windows in tabs/stacks look good.</description>
-    </item>
-    
-    <item>
-      <title>ColorHighlighter</title>
-      <link>https://budrich.github.io/dots/sublime/settings/colorhighlighter/</link>
-      <pubDate>Sat, 16 Dec 2017 23:08:18 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/sublime/settings/colorhighlighter/</guid>
-      <description> ColorHighlighter </description>
-    </item>
-    
-    <item>
-      <title>color</title>
-      <link>https://budrich.github.io/dots/xres/color/</link>
-      <pubDate>Sat, 16 Dec 2017 23:07:59 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/xres/color/</guid>
-      <description> color </description>
-    </item>
-    
-    <item>
-      <title>ClickableUrls</title>
-      <link>https://budrich.github.io/dots/sublime/settings/clickableurls/</link>
-      <pubDate>Sat, 16 Dec 2017 23:07:45 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/sublime/settings/clickableurls/</guid>
-      <description> ClickableUrls </description>
-    </item>
-    
-    <item>
-      <title>bud-theme</title>
-      <link>https://budrich.github.io/dots/irssi/bud-theme/</link>
-      <pubDate>Sat, 16 Dec 2017 23:07:31 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/irssi/bud-theme/</guid>
-      <description>I have used irssi for a long time and I don&amp;rsquo;t think I&amp;rsquo;ll ever switch or finish this theme.
-irssibudtheme2.png   I have tried to make it as narrow as possible, kind of how the twitch chats look. With the user name on it&amp;rsquo;s own line above the message.</description>
-    </item>
-    
-    <item>
-      <title>budbar</title>
-      <link>https://budrich.github.io/dots/polybar/budbar/</link>
-      <pubDate>Sat, 16 Dec 2017 23:07:11 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/polybar/budbar/</guid>
-      <description>Polybar is a great statusbar that works well with i3 and other window managers, this is my config file. It uses some custom scripts to display some information.
-ss-17-11-22-pbarro.png   In the screenshot above you can see polybar at the top of the screen. I use i3fyra to achieve the layout. Container A(vivaldi/wg) and B(irssi) are tabbed and container C is horizontally split with three urxvt instances.</description>
-    </item>
-    
-    <item>
-      <title>Solarized-Light</title>
-      <link>https://budrich.github.io/dots/sublime/colors/solarized-light/</link>
-      <pubDate>Sat, 16 Dec 2017 23:06:47 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/sublime/colors/solarized-light/</guid>
-      <description> Solarized-Light </description>
-    </item>
-    
-    <item>
-      <title>Solarized-Dark</title>
-      <link>https://budrich.github.io/dots/sublime/colors/solarized-dark/</link>
-      <pubDate>Sat, 16 Dec 2017 23:06:32 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/sublime/colors/solarized-dark/</guid>
-      <description> Solarized-Dark </description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://budrich.github.io/dots/sublime/syntax/bash/</link>
-      <pubDate>Sat, 16 Dec 2017 23:05:22 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/sublime/syntax/bash/</guid>
-      <description> Bash </description>
-    </item>
-    
-    <item>
-      <title>barover</title>
-      <link>https://budrich.github.io/dots/dunst/barover/</link>
-      <pubDate>Sat, 16 Dec 2017 23:05:05 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/dunst/barover/</guid>
-      <description>This dunst theme displays a notification that only contains the summary (%s) in one line. It has the same height as my polybar and it overlies the center of the bar when visible.</description>
-    </item>
-    
-    <item>
-      <title>ApplySyntax</title>
-      <link>https://budrich.github.io/dots/sublime/settings/applysyntax/</link>
-      <pubDate>Sat, 16 Dec 2017 23:04:49 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/sublime/settings/applysyntax/</guid>
-      <description> ApplySyntax </description>
-    </item>
-    
-    <item>
-      <title>alias</title>
-      <link>https://budrich.github.io/dots/bash/alias/</link>
-      <pubDate>Sat, 16 Dec 2017 23:04:29 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/bash/alias/</guid>
-      <description>My aliases. I add aliases with the function adda that is defined in bash/func. Here you can find the famous lolban alias ;)</description>
-    </item>
-    
-    <item>
-      <title>accels</title>
-      <link>https://budrich.github.io/dots/thunar/accels/</link>
-      <pubDate>Sat, 16 Dec 2017 23:02:52 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/dots/thunar/accels/</guid>
-      <description>This file contains thunars keybindings (or accelerators, as keybindings is called in GTK). The file is autogenerated, so any formatting to the file is pointless. To modify an existing keybinding, one just remove the ; and change the last string of the line to the desired keycombination.</description>
+      <guid>https://budrich.github.io/blog/ass_divided/</guid>
+      <description>I have divided i3ass in two repositories, i3ass and i3add (i3 additions). My thought is that i3ass will be a more serious set of tools. While i3add will be more experimental and can be seen as a showcase of uses for i3ass. I do use all i3add scripts in my personal, daily workflow.
+   i3ass function     i3var Set or get a i3 variable   i3fyra An advanced simple gridbased tiling layout   i3run Run, Raise or hide windows   i3list List attributes of i3wm   i3get Return information about i3wm   i3flip Tabswitching done right   i3add function   i3cast Create and upload screen recordings   i3Kornhe Resize windows by moving the corners   i3minimize Minimize active window   i3monocle Maximize active window   i3zen Send windows to the zenter   i3term Launch a command in a new urxvt window   i3wswp Switch workspace and wallpaper    Installation i3add will have a installation script similar to the old install.</description>
     </item>
     
     <item>
@@ -1227,14 +1727,15 @@ sizematters.gif   The config file and script shown in the video can be found on 
     </item>
     
     <item>
-      <title>video_fyra</title>
-      <link>https://budrich.github.io/blog/video_fyra/</link>
+      <title>i3fyra</title>
+      <link>https://budrich.github.io/letslinux/i3fyra/</link>
       <pubDate>Sat, 02 Dec 2017 19:27:11 +0100</pubDate>
       
-      <guid>https://budrich.github.io/blog/video_fyra/</guid>
-      <description>I have uploaded a long (~1 hour) video to youtube, where I show how to configure and use my layout script i3fyra.
-www.youtube.com/watch?v=t4Tve-xpwus    Below are the things I added to the default i3 config file (~/.config/i3/config).
-# focus replacements bindsym $mod+Left exec --no-startup-id exec i3fyra -f l bindsym $mod+Down exec --no-startup-id exec i3fyra -f d bindsym $mod+Up exec --no-startup-id exec i3fyra -f u bindsym $mod+Right exec --no-startup-id exec i3fyra -f r # tabswitching bindsym $mod+Tab exec --no-startup-id exec i3fyra -t r bindsym $mod+Shift+Tab exec --no-startup-id exec i3fyra -t l # move replacements bindsym $mod+Shift+Left exec --no-startup-id exec i3fyra -m l bindsym $mod+Shift+Down exec --no-startup-id exec i3fyra -m d bindsym $mod+Shift+Up exec --no-startup-id exec i3fyra -m u bindsym $mod+Shift+Right exec --no-startup-id exec i3fyra -m r # floating toggle replacement bindsym $mod+Shift+space exec --no-startup-id i3fyra -a # window rules for_window [class=&amp;quot;^.</description>
+      <guid>https://budrich.github.io/letslinux/i3fyra/</guid>
+      <description> In this video I show how to setup and use my layoutscript i3fyra
+i3fyra and some other i3 related tools can be found in my i3ass github repo:
+https://github.com/budRich/i3ass
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   figlet font: 3d.flf, by xero   icon font: fontawesome    </description>
     </item>
     
     <item>
@@ -1248,13 +1749,13 @@ The problem from the start is that the available version of Fixedsys is a .ttf f
     </item>
     
     <item>
-      <title>extreme_i3</title>
-      <link>https://budrich.github.io/blog/extreme_i3/</link>
-      <pubDate>Tue, 21 Nov 2017 23:09:22 +0100</pubDate>
+      <title>Nils_Kvist_CV_sv</title>
+      <link>https://budrich.github.io/abouts/nils_kvist_cv_sv/</link>
+      <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
       
-      <guid>https://budrich.github.io/blog/extreme_i3/</guid>
-      <description>I finally did it! I Uploaded my i3 layout script, i3fyra. I have been working on it for almost a year. I think it works good enough to publish now. I recorded a video on how it looks like and have made a repo on github for my i3 related scripts.
-www.youtube.com/watch?v=kU8gb6WLFk8    If you try it and find any bugs or have any other issues or questions, please report them on the github repo.</description>
+      <guid>https://budrich.github.io/abouts/nils_kvist_cv_sv/</guid>
+      <description>Detta CV finns även som pdf
+Född: 1982-10-06 Adress: Per Lagerhjelmsgatan 11, 691 33 Karlskoga, Sverige Telefon: +46 722 990 358 Mail: robstenklippa@gmail.com ANSTÄLLNINGAR    CNC-operatör - fräs/svarv G-Drill     Programmering, planering, körning Aten, Grekland 2017/04–2017/07       Support Agent Lenovo/TelePerformance     Technical support agent, SAP, CRM, Office, Oracle Aten, Grekland 2016/07–2016/10       CNC-operatör - fräs Valmet/Uniflex     Heidenhain, tunga detaljer Karlstad, Sverige 2015/12–2016/07       CNC-operatör - svarv B.</description>
     </item>
     
     <item>
@@ -1282,10 +1783,24 @@ I wanted a static site because cutting edge web development techniques and bloat
       <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
       
       <guid>https://budrich.github.io/abouts/whoami/</guid>
-      <description>My name is Nils. I live in Sweden and I play the blues. I have worked the majority of my adult life as a CNC-operator/programmer in the steel industry. As all jobs it has it&amp;rsquo;s pros and cons.
+      <description>Den här sidan finns också på Svenska
+My CV (in Swedish) is available as PDF.
+My name is Nils. I live in Sweden and I play the blues. I have worked the majority of my adult life as a CNC-operator/programmer in the steel industry. As all jobs it has it&amp;rsquo;s pros and cons.
 I also made an attempt in the telecom industry, as a technical support agent for Lenovo.
-But now I am looking for some other way to earn a living.
-I have been very interested in computers ever since I got a C64 back in the 80&amp;rsquo;s.</description>
+But now I am looking for some other way to earn a living.</description>
+    </item>
+    
+    <item>
+      <title>whoami</title>
+      <link>https://budrich.github.io/abouts/whoami_sv/</link>
+      <pubDate>Wed, 04 Oct 2017 19:50:58 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/abouts/whoami_sv/</guid>
+      <description>This page is also available in English
+Mitt CV finns tillgängligt som PDF.
+Mitt namn är Nils. Jag är född och uppvuxen i Värmland. Jag har arbetat större delen av mitt vuxna liv som CNC-operatör i stålindustrin. Som alla andra jobb har det sina för och nackdelar.
+Jag har också provat att jobba som teknisk telefonsupport agent för Lenovo, i Aten, Grekland.
+Jag har alltid varit väldigt intresserad av datorer. Jag fick en C64 i julklapp i slutet av 80-talet och har varit fast sedan dess.</description>
     </item>
     
     <item>
@@ -1296,16 +1811,6 @@ I have been very interested in computers ever since I got a C64 back in the 80&a
       <guid>https://budrich.github.io/blog/fresh_start/</guid>
       <description>These are the steps I take to setup my work environment on a fresh install of Peppermint OS 8. Most of the steps are valid on other GNU/Linux distributions, but I don&amp;rsquo;t recommend anyone to blindly follow and install everything.
 Before doing anything else i start syncing Dropbox. I start with this step because it can take up to 45 minutes, so while Dropbox is syncing there is time to install and setup other programs.</description>
-    </item>
-    
-    <item>
-      <title>perfect_folders</title>
-      <link>https://budrich.github.io/blog/perfect_folders/</link>
-      <pubDate>Fri, 29 Sep 2017 17:18:30 +0200</pubDate>
-      
-      <guid>https://budrich.github.io/blog/perfect_folders/</guid>
-      <description>I have tried many different ways to organize my files. I think the current setup I have is by far the best. It uses Dropbox to ensure cloud based backup and Hugo to create this site you are looking at where many of my actual dotfiles and scripts are viewable and auto-updated.
-  folder structure This might look overcomplicated and hard to setup, but it actually makes a lot of sense and takes no time to setup.</description>
     </item>
     
     <item>

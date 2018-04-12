@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Letslinux on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/letslinux/</link>
+    <description>Recent content in Letslinux on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 07 Apr 2018 18:07:52 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/letslinux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>polybar_and_workspaces</title>
+      <link>https://budrich.github.io/letslinux/polybar_and_workspaces/</link>
+      <pubDate>Sat, 07 Apr 2018 18:07:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_and_workspaces/</guid>
+      <description>This is the first of three videos where I create a dynamic workspace indicator that displays the name (icon) of the current workspace and the total number of existing workspaces.
+In this first video, we create a new hook module and create the first version of the script that will output the workspace information.
+!!! The getpid script on github is a fixed version. The reason i got multiple pids was because it returned the pid of the getpid script it self.</description>
+    </item>
+    
+    <item>
+      <title>workspace_wallpapers</title>
+      <link>https://budrich.github.io/letslinux/workspace_wallpapers/</link>
+      <pubDate>Wed, 04 Apr 2018 14:48:59 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/workspace_wallpapers/</guid>
+      <description>This is the last of three videos where I create a dynamic workspace indicator that displays the name (icon) of the current workspace and the total number of existing workspaces.
+In this video i show a way to set different wallpapers for different workspaces.
+video info:    color scheme: eighties     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.flf, by xero   wallpaper: pauls-boutique    videos    https://youtu.</description>
+    </item>
+    
+    <item>
+      <title>polybar_magic_workspaces</title>
+      <link>https://budrich.github.io/letslinux/polybar_magic_workspaces/</link>
+      <pubDate>Wed, 04 Apr 2018 14:46:56 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_magic_workspaces/</guid>
+      <description>This is the second of three videos in which I create a dynamic workspace indicator for polybar. The indicator will display the name (icon) of the current workspace and the total number of existing workspaces.
+In this second video I add fontawesome icons to indicate which workspace we are currently viewing. I also make a small script that switch to the last active workspace or create a new workspace if only one workspace exist.</description>
+    </item>
+    
+    <item>
+      <title>uniform_qt_and_gtk</title>
+      <link>https://budrich.github.io/letslinux/uniform_qt_and_gtk/</link>
+      <pubDate>Wed, 04 Apr 2018 14:42:28 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/uniform_qt_and_gtk/</guid>
+      <description>This is the fifth video in a series on how to setup and use my theme manager, mondo.
+I use qt5ct to manage some of the appearances of Qt.
+https://sourceforge.net/projects/qt5ct/
+And export the following environment variables (i export them from .xinitrc, but you can export them in other files as well..):
+export QT_QPA_PLATFORMTHEME=qt5ct export GTK2_RC_FILES=&amp;quot;$HOME/.gtkrc-2.0&amp;quot;  You should also make sure that these lines exist in ~/.config/Trolltech.conf :
+[Qt] style=GTK+  Some Qt applications gets updated on the fly, qbittorrent for instance.</description>
+    </item>
+    
+    <item>
+      <title>mondo_generate_gtk</title>
+      <link>https://budrich.github.io/letslinux/mondo_generate_gtk/</link>
+      <pubDate>Wed, 04 Apr 2018 14:40:44 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_generate_gtk/</guid>
+      <description>This is the fifth video in a series on how to setup and use my theme manager, mondo.
+In this video i show how i generate GTK themes from the colors set with mondo. It also describes how to add extra actions to the generators in mondo. (the only default action is to generate a file based on the template, in this video I send that generated file to an external GTK generator)</description>
+    </item>
+    
+    <item>
+      <title>mondo_setup</title>
+      <link>https://budrich.github.io/letslinux/mondo_setup/</link>
+      <pubDate>Wed, 04 Apr 2018 14:37:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_setup/</guid>
+      <description>This is the second video in a series on how to setup and use my theme manager, mondo.
+mondos settings are stored in a directory called MONDO_DIR in the documentation (mondo -h). By default this directory is: ~/.config/mondo but it can be changed with the environment variable.
+MONDO_DIR will get created if it doesn&amp;rsquo;t exist when you execute mondo -n THEME (create a new theme) the first time.
+Videos about mondo:</description>
+    </item>
+    
+    <item>
+      <title>antidote</title>
+      <link>https://budrich.github.io/letslinux/antidote/</link>
+      <pubDate>Wed, 04 Apr 2018 14:32:59 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/antidote/</guid>
+      <description>This is the first video in a series on how to setup and use my theme manager, mondo.
+In this video I try to present my new project: mondo. It&amp;rsquo;s a theme manager, generator that can be used to change themes everywhere .
+mondos settings are stored in a directory called MONDO_DIR in the documentation (mondo -h). By default this directory is: ~/.config/mondo but it can be changed with the environment variable.</description>
+    </item>
+    
+    <item>
+      <title>custom_menus_in_rofi</title>
+      <link>https://budrich.github.io/letslinux/custom_menus_in_rofi/</link>
+      <pubDate>Wed, 04 Apr 2018 14:30:16 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/custom_menus_in_rofi/</guid>
+      <description>This is the last in a series of 3 about how to setup rofi.
+In this video I create a custom menu that switches the theme in .Xresources that i created in the poison series
+mondo These videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>theming_rofi</title>
+      <link>https://budrich.github.io/letslinux/theming_rofi/</link>
+      <pubDate>Wed, 04 Apr 2018 14:28:24 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/theming_rofi/</guid>
+      <description>This is the second in a series of 3 about how to setup rofi.
+In this video we go more in depth on how to configure rofi themes. I use awk and sed to insert values from .Xresources into the theme file.
+mondo These videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>polypoison</title>
+      <link>https://budrich.github.io/letslinux/polypoison/</link>
+      <pubDate>Wed, 04 Apr 2018 14:25:12 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polypoison/</guid>
+      <description>This is part 3 of 3 about how to set up colors and fonts using .Xresourcess and syncing the settings in multiple applications.
+In this video I apply the settings to polybar.
+I have more videos about polybar, a good one to start with is:
+#010: polybar setup https://youtu.be/7RNgpvBMua0
+I filed an issue regarding fontsetting in polybar here:
+https://github.com/jaagr/polybar/issues/954
+mondo These poison videos, inspired me to create my own theme manager called: mondo .</description>
+    </item>
+    
+    <item>
+      <title>rice_of_the_poison</title>
+      <link>https://budrich.github.io/letslinux/rice_of_the_poison/</link>
+      <pubDate>Wed, 04 Apr 2018 14:23:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/rice_of_the_poison/</guid>
+      <description>This is part 2 of 3 about how to set up colors and fonts using .Xresources and syncing the settings in multiple applications.
+In this video I apply the settings to i3wm.
+mondo These poison videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>extreme_i3</title>
+      <link>https://budrich.github.io/letslinux/extreme_i3/</link>
+      <pubDate>Wed, 04 Apr 2018 10:44:33 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/extreme_i3/</guid>
+      <description>In this video I demonstrate my layout script i3fyra .
+If you want to try this layout/script i recommend you watch the next video in this series, where i go more in depth on how it works and how to set it up:
+Let&amp;rsquo;s Linux #003: i3fyra
+https://youtu.be/t4Tve-xpwus
+video info: color scheme: solarized dark, by Ethan Schoonover
+terminal font: Fixedsys figlet font: 3d.flf, by xero icon font: fontawesome wallpaper: na</description>
+    </item>
+    
+    <item>
+      <title>advanced_generators</title>
+      <link>https://budrich.github.io/letslinux/advanced_generators/</link>
+      <pubDate>Tue, 03 Apr 2018 23:16:00 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/advanced_generators/</guid>
+      <description>This is the last video in a series on how to setup and use my theme manager, mondo.
+In this video I create a more advanced generator, that merges to files into one settings file when a theme is applied.
+The program i use to demonstrate this with, is the touch typing teacher: Klavaro
+Klavaros settings are located at:
+~/.config/klavaro/preferences.ini
+If Klavaro is running when a theme is applied, klavaro will overwrite the new settings when it terminates.</description>
+    </item>
+    
+    <item>
+      <title>mondo_gtk</title>
+      <link>https://budrich.github.io/letslinux/mondo_gtk/</link>
+      <pubDate>Tue, 03 Apr 2018 23:15:25 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_gtk/</guid>
+      <description>This is the forth video in a series on how to setup and use my theme manager, mondo.
+In this video we investigate how GTK update and change theme. In the next video we will generate our own GTK themes with the help of mondo.
+I use a small program called: gtkrc-reload. You can also use gtk_reload.py from pywal .
+These are the files I create generators for:
+ ~/.</description>
+    </item>
+    
+    <item>
+      <title>mondo_generators</title>
+      <link>https://budrich.github.io/letslinux/mondo_generators/</link>
+      <pubDate>Tue, 03 Apr 2018 23:14:43 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/mondo_generators/</guid>
+      <description>This is the third video in a series on how to setup and use my theme manager, mondo.
+In this video I walk you through how to create generators and templates.
+The command to create a generator is:
+mondo -t FILE|NAME [FILE]
+If you att a single file as the argument, a directory with the same name as the file will get created inside MONDO_DIR/generators/ . If you don&amp;rsquo;t specify a file, and only a name, it will have the same result except the mondo-template file will be empty.</description>
+    </item>
+    
+    <item>
+      <title>urxvt_reload</title>
+      <link>https://budrich.github.io/letslinux/urxvt_reload/</link>
+      <pubDate>Tue, 03 Apr 2018 23:13:54 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/urxvt_reload/</guid>
+      <description>In this video I show how to set up a script that reloads URxvt when the settings (.Xresources) are updated.
+video info:    color scheme: gruvbox, by morhertz     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.flf, by xero   filemanager: thunar   icon theme: DamaDamas   gtk theme: numix (solarized dark)   wallpaper: polygon-sky    to start a urxvt daemon process use this command:</description>
+    </item>
+    
+    <item>
+      <title>fonts_are_awesome</title>
+      <link>https://budrich.github.io/letslinux/fonts_are_awesome/</link>
+      <pubDate>Tue, 03 Apr 2018 23:12:28 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/fonts_are_awesome/</guid>
+      <description>In this video we add icons to polybar. And take an in depth look on how to customize the appearance of the modules in polybar. I use a script that let us chose icons with rofi. The icons are from the excellent icon font, fontawesome.
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.</description>
+    </item>
+    
+    <item>
+      <title>rofi_setup</title>
+      <link>https://budrich.github.io/letslinux/rofi_setup/</link>
+      <pubDate>Tue, 03 Apr 2018 23:11:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/rofi_setup/</guid>
+      <description>This is the first in a series of 3 about how to setup rofi.
+In this first video i show what rofi is, how to install it and how to configure it.
+I also take a look at rofis new theme engine.
+video info:    color scheme: gruvbox, by morhertz     terminal font: Inconsolata   terminal emulator: URxvt   figlet font: 3d.flf, by xero   filemanager: thunar   icon theme: ePapirus   gtk theme: numix (solarized dark)   wallpaper: polygon-mountain    videos https://youtu.</description>
+    </item>
+    
+    <item>
+      <title>colors_are_poison</title>
+      <link>https://budrich.github.io/letslinux/colors_are_poison/</link>
+      <pubDate>Tue, 03 Apr 2018 23:08:07 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/colors_are_poison/</guid>
+      <description>This is part 1 of 3 about how to set up colors and fonts using .Xresources and syncing the settings in multiple applications.
+In this first video I will show the basics of setting up .Xresources and how it works.
+mondo These poison videos, inspired me to create my own theme manager called: mondo . By using mondo the processes shown in these videos can be done in a much more sober way, with more control and more flexibility!</description>
+    </item>
+    
+    <item>
+      <title>polybar_dynamic_title</title>
+      <link>https://budrich.github.io/letslinux/polybar_dynamic_title/</link>
+      <pubDate>Tue, 03 Apr 2018 23:06:49 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_dynamic_title/</guid>
+      <description>This is the last in a series of three videos on how to setup polybar.
+The goal of the tutorial is to create a module in polybar that displays the title of the active window, but if one clicks (or send a message via a keybinding or terminal) the title it will instead display the class and instance of the title. I will also show how we by right clicking, title/class/instance will get the clicked information in our clipboard.</description>
+    </item>
+    
+    <item>
+      <title>polybar_hook_modules</title>
+      <link>https://budrich.github.io/letslinux/polybar_hook_modules/</link>
+      <pubDate>Tue, 03 Apr 2018 23:03:55 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_hook_modules/</guid>
+      <description>This is the second in a series of three videos on how to setup polybar.
+The goal of the tutorial is to create a module in polybar that displays the title of the active window, but if one clicks (or send a message via a keybinding or terminal) the title it will instead display the class and instance of the title. I will also show how we by right clicking, title/class/instance will get the clicked information in our clipboard.</description>
+    </item>
+    
+    <item>
+      <title>polybar_setup</title>
+      <link>https://budrich.github.io/letslinux/polybar_setup/</link>
+      <pubDate>Tue, 03 Apr 2018 23:02:23 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/polybar_setup/</guid>
+      <description>This is the first in a series of three on how to setup polybar.
+Get more screen real estate by setting up polybar, the budRich way (having it overlay the topmost tiltebar).
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   terminal emulator: URxvt   figlet font: 3d.flf, by xero   filemanager: thunar   icon theme: ePapirus   gtk theme: numix (solarized dark)    videos https://youtu.</description>
+    </item>
+    
+    <item>
+      <title>automatic_script_creation</title>
+      <link>https://budrich.github.io/letslinux/automatic_script_creation/</link>
+      <pubDate>Tue, 03 Apr 2018 22:59:56 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/automatic_script_creation/</guid>
+      <description>In this video I show you how to make a script that makes scripts! We also take a look at the $PATH environment variable, what it is and how it works. And how to make a file(script executable by using the chmod command). Finally i demo this by showing how the famous lolban command works.
+I use these tools to display colorized ASCII art fonts:
+http://caca.zoy.org/wiki/toilet
+https://github.com/busyloop/lolcat
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   terminal emulator: URxvt   figlet font: 3d.</description>
+    </item>
+    
+    <item>
+      <title>i3_extreme_size_mode</title>
+      <link>https://budrich.github.io/letslinux/i3_extreme_size_mode/</link>
+      <pubDate>Tue, 03 Apr 2018 22:58:09 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/i3_extreme_size_mode/</guid>
+      <description>This is a method to gain full control over windowresizing by combining i3wm&amp;rsquo;s mode function and a simple script.
+i3get is used to determine the floating state of the window. i3get is part of the i3ass suite that can be found on github:
+https://github.com/budRich/i3ass
+The polished version of this script is called i3Kohrne, and is somewhere in my scripts repo on github.
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   terminal emulator: URxvt   figlet font: 3d.</description>
+    </item>
+    
+    <item>
+      <title>i3_rename_instances</title>
+      <link>https://budrich.github.io/letslinux/i3_rename_instances/</link>
+      <pubDate>Tue, 03 Apr 2018 22:56:52 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/i3_rename_instances/</guid>
+      <description>In this video i show how to rename the instance of a window by using xdotool and some advanced features of my script i3run. The program we experiment with is the filemanager thunar.
+i3run is a shell script that lets you run, raise or hide a window or command with a single hotkey in i3wm. It is part of the i3ass suite that can be found on github:
+https://github.com/budRich/i3ass</description>
+    </item>
+    
+    <item>
+      <title>minimize_windows_in_i3wm</title>
+      <link>https://budrich.github.io/letslinux/minimize_windows_in_i3wm/</link>
+      <pubDate>Tue, 03 Apr 2018 22:55:36 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/minimize_windows_in_i3wm/</guid>
+      <description>In this video i demo my script i3run.
+i3run is a shell script that lets you run, raise or hide a window or command with a single hotkey in i3wm. It is part of the i3ass suite that can be found on github:
+https://github.com/budRich/i3ass
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   figlet font: 3d.flf, by xero   icon font: fontawesome    In this video I use the program wmctrl to get information about the windows:</description>
+    </item>
+    
+    <item>
+      <title>more_config_rice</title>
+      <link>https://budrich.github.io/letslinux/more_config_rice/</link>
+      <pubDate>Tue, 03 Apr 2018 22:53:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/more_config_rice/</guid>
+      <description>This is the second of two videos on how to configure i3 and beautify the config file.
+In this episode I continue to rice the i3 config file and ramble a bit about the horrible nordic keyboard layout.
+Below is a link to the article on my blog about the the layout, and a solution to it&amp;rsquo;s problems:
+https://budrich.github.io/blog/swedish_keyboards/
+The other video is called:
+Let&amp;rsquo;s Linux #004: rice the config</description>
+    </item>
+    
+    <item>
+      <title>rice_the_config</title>
+      <link>https://budrich.github.io/letslinux/rice_the_config/</link>
+      <pubDate>Tue, 03 Apr 2018 22:50:14 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/rice_the_config/</guid>
+      <description>This is the first of two videos on how to configure i3 and beautify the config file.
+In this episode i show some tricks how to make the i3 config file easier to work with by using variables.
+The other video is called:
+Let&amp;rsquo;s Linux #005: more config rice
+https://youtu.be/OKPvIsurYRI
+I have also written an aritcle on my blog about this:
+https://budrich.github.io/blog/i3_setup/
+Everything I show is also described in detail in the official i3 userguide:</description>
+    </item>
+    
+    <item>
+      <title>i3fyra</title>
+      <link>https://budrich.github.io/letslinux/i3fyra/</link>
+      <pubDate>Sat, 02 Dec 2017 19:27:11 +0100</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/i3fyra/</guid>
+      <description> In this video I show how to setup and use my layoutscript i3fyra
+i3fyra and some other i3 related tools can be found in my i3ass github repo:
+https://github.com/budRich/i3ass
+video info:    color scheme: solarized dark, by Ethan Schoonover     terminal font: Fixedsys   figlet font: 3d.flf, by xero   icon font: fontawesome    </description>
+    </item>
+    
+  </channel>
+</rss>

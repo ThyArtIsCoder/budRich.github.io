@@ -2,22 +2,52 @@
 !! http://ethanschoonover.com/solarized
 !! https://github.com/solarized/xresources/blob/master/Xresources.dark
 
-#define bg                 #002b36
-#define fg                 #839496
+!! colors:
 
-#define blk                #073642
-#define blk2               #002d38
-#define red                #dc322f
-#define red2               #cb4b16
-#define grn                #859900
-#define grn2               #586e75
-#define ylw                #b58900
-#define ylw2               #657b83
-#define blu                #268bd2
-#define blu2               #839496
-#define mag                #d33682
-#define mag2               #6c71c4
-#define cyn                #2aa198
-#define cyn2               #93a1a1
-#define wht                #eee8d5
-#define wht2               #fdf6e3
+#define bg #073642
+#define fg #839496
+
+#define base03            #002b36
+#define base02            #073642
+#define base01            #586e75
+#define base00            #657b83
+#define base0             #839496
+#define base1             #93a1a1
+#define base2             #eee8d5
+#define base3             #fdf6e3
+#define ylw               #b58900
+#define ora               #cb4b16
+#define red               #dc322f
+#define mag               #d33682
+#define vio               #6c71c4
+#define blu               #268bd2
+#define cyn               #2aa198
+#define grn               #859900
+
+budstyle.colors.fg2:      base1
+budstyle.colors.bg2:      base03
+budstyle.colors.accent1:  blu
+budstyle.colors.accent2:  base01
+budstyle.colors.dark1:    base03
+budstyle.colors.dark2:    base02
+budstyle.colors.light1:   base2
+budstyle.colors.light2:   base3
+
+!! GUI theme
+#define cursortheme       Windows8-cursor
+#define icontheme         DamaDamas-icon-theme
+#define gtktheme          NumixSolarizedDark
+
+!! Terminal fonts
+#define terminalfontface1 FixedFixedsys
+#define terminalfontsize1 12
+#define terminalfontface2 Inconsolata
+#define terminalfontsize2 18
+
+!! GUI fonts
+#define guifontface1      FixedFixedsys
+#define guifontsize1      12
+#define guifontface2      Noto Sans
+#define guifontsize2      18
+
+! syntax:ssExcla

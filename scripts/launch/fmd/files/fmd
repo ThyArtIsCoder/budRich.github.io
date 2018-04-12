@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="fmd"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-19"
-UPDATED="2017-12-19"
+UPDATED="2018-03-25"
 
 main(){
   while getopts :vhli: option; do
@@ -19,9 +19,18 @@ main(){
     esac
   done
 
+
+for id in $(i3viswiz -p | tail +3 | awk '{print $2}'); do
+  if [[ $(i3get -n $id -r i) =~ gotofolder ]]; then
+    i3-msg -q "[con_id=$id]" focus
+    exit
+  fi
+done
+
 i3run -i "^.*gotofolder.*$" -e "gotofolder ~"
 
 }
+
 
 printinfo(){
   case "$1" in

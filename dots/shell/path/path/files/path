@@ -1,0 +1,18 @@
+#! /bin/bash
+
+PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin/box:$PATH"
+PATH="$HOME/bin/others:$PATH"
+PATH="$HOME/bin/cs:$PATH"
+PATH="$HOME/src/budlabs:$PATH"
+PATH="$HOME/src/i3add:$PATH"
+PATH="$HOME/src/i3ass:$PATH"
+PATH="$HOME/src/menus:$PATH"
+PATH="$HOME/src/misc:$PATH"
+PATH="$HOME/src/polybar:$PATH"
+PATH="$HOME/src/sublime:$PATH"
+PATH="$HOME/src/templatetator:$PATH"
+PATH="$HOME/src/launch:$PATH"
+PATH="$HOME/src/thunar:$PATH"
+PATH="$HOME/scripts:$PATH"

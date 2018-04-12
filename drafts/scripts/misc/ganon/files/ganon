@@ -1,0 +1,984 @@
+#!/bin/bash
+
+NAME="ganon"
+VERSION="0.001"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2018-03-19"
+UPDATED="2018-03-19"
+
+FORTUNE_OPTIONS="$HOME/etc/fortunes/budcol"
+TOILET_OPTIONS='-f 3d.flf'
+LOLCAT_OPTIONS='-p 10'
+
+LICENSEmit="$HOME/etc/LICENSE-mit"
+LICENSEdwtfyw="$HOME/etc/LICENSE-dwtfyw"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+        "$NAME - version: $VERSION" \
+        "updated: $UPDATED by $AUTHOR"
+        exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  declare -A aDirs
+  declare -A aFile
+  declare -A aYaml
+  declare -A aMarkDown
+  declare -a aActions
+  declare -A aToMove
+  declare -A aToCopy
+
+  aDirs[WWW]="$HOME/box/Dropbox/src/hugo/budlabs"
+  aDirs[REP]="$HOME/git/bud"
+  aDirs[SRC]="$HOME/src/bash"
+  aDirs[DOT]="$HOME/dot"
+
+  # file currently open in Sublime Text
+  aFile[SRC]="$(subtit)"
+
+  # Follow link
+  aFile[LNG]="$(readlink -f "${aFile[SRC]}")"
+
+  # init date
+  today="$(date '+%Y-%m-%d')"
+  longd="${today}T$(date '+%H:%M:%S')+02:00"
+
+  # commit message
+  msg=""
+
+  # commit report
+  commit=""
+
+  # Filename
+  aFile[NMN]=${aFile[SRC]##*/}
+
+  # remove leading dot
+  [[ ${aFile[NMN]} =~ ^[.] ]] && aFile[NMN]=${aFile[NMN]:1}
+
+  # remove extension
+  [[ ${aFile[NMN]} =~ [.] ]] && aFile[NMN]=${aFile[NMN]%.*}
+
+  if   [[ ${aFile[LNG]} =~ ^${aDirs[WWW]}/content(/drafts)*/blog.* ]]; then
+    aFile[TYP]=post
+  elif [[ ${aFile[LNG]} =~ ^${aDirs[WWW]} ]]; then
+    aFile[FRM]=www
+    aFile[WM]=${aFile[LNG]}
+  elif [[ ${aFile[LNG]} =~ ^${aDirs[REP]} ]]; then
+    aFile[FRM]=rep
+  else
+    aFile[FRM]=new
+  fi
+
+  if [[ ${aFile[TYP]} = post ]]; then
+    UpdatePost
+  elif [[ ${aFile[FRM]} = new ]]; then
+    NewGanon
+  else 
+    UpdateFile
+  fi
+}
+
+UpdatePost(){
+  echo "UpdatePost"
+
+  aFile[WF]=${aFile[LNG]%.md}
+  aFile[WF]=${aFile[WF]/content/static}
+
+  aFile[DRF]=${aFile[LNG]#"${aDirs[WWW]}/content/"}
+  [[ ${aFile[DRF]%%/*} = drafts ]] \
+    && aFile[DRF]=true || aFile[DRF]=false
+
+  newDir=${aFile[WF]}
+  newFil=${aFile[LNG]}
+
+  eval "$(awk '
+    $1=="title:" {print "aYaml[NMN]=\"" $2 "\""}
+    $1=="draft:" {print "aYaml[DRF]=\"" $2 "\""}
+    $1=="banner:" {sub("banner: ","",$0);print "aFile[BA]=\"" $0 "\""}
+  ' "${aFile[LNG]}")"
+
+  if [[ ${aYaml[NMN]} != "${aFile[NMN]}" ]]; then
+    newDir="${newDir/%${aFile[NMN]}/${aYaml[NMN]}}"
+    newFil="${newFil/%${aFile[NMN]}.md/${aYaml[NMN]}.md}"
+  fi
+
+  if [[ ${aYaml[DRF]} != "${aFile[DRF]}" ]]; then
+    if [[ ${aYaml[DRF]} = "true" ]]; then
+      newDir="${newDir/static/static\/drafts}"
+      newFil="${newFil/content/content\/drafts}"
+    else
+      newDir="${newDir/\/drafts}"
+      newFil="${newFil/\/drafts}"
+    fi   
+  fi
+
+
+
+  if [[ ${aFile[LNG]} != "${newFil}" ]]; then
+
+    sublime
+    subl --command "close"
+
+    mkdir -p "${newFil%/*}"
+    mkdir -p "${newDir}"
+
+    rm -rf "${aFile[WF]}"
+    mv -f "${aFile[LNG]}" "${newFil}"
+    
+    sleep .5
+    subl "${newFil}"
+  fi
+
+  aFile[WF]="${newDir}/files"
+
+  GenQuote
+  GenBanner
+}
+
+UpdateFile(){
+
+  if [[ ${aFile[FRM]} = www ]]; then
+
+    aFile[TYP]="$(grep -m1 'type:' "${aFile[SRC]}" | cut -d' ' -f2)"
+
+  elif [[ $(head -1 "${aFile[LNG]}") =~ '#!/bin/bash' ]]; then
+
+    [[ -n $(${aFile[LNG]} -v) ]] \
+      && aFile[TYP]=script \
+      || aFile[TYP]=dot
+
+  else
+    aFile[TYP]=dot
+  fi
+  
+
+  SetFile  
+  ReadMarkDown
+  GetActions
+  ConfirmActions
+
+  [[ ${aFile[TYP]} = dot    ]] && UpdateDot
+  [[ ${aFile[TYP]} = script ]] && UpdateScript
+
+  aFile[BA]=${aYaml[banner]}
+  FinalizeUpdate
+
+}
+
+SetFile()
+{
+  if [[ ${aFile[TYP]} = dot ]]; then
+
+    if [[ ${aFile[FRM]} != www ]]; then
+      aFile[LM]="${aFile[LNG]#${aDirs[REP]}\/}"
+      aFile[LM]="${aFile[LM]#dots\/}"
+      aFile[LM]="${aDirs[DOT]}/doc/${aFile[LM]}.md"
+    else
+      aFile[LM]="${aDirs[DOT]}/doc/"
+      aFile[LM]+="$(grep -m1 'dir:' "${aFile[SRC]}" | cut -d' ' -f2)"
+      aFile[LM]+="/${aFile[NMN]}.md"
+    fi
+    
+  fi
+
+  [[ ${aFile[TYP]} = script ]] \
+    && aFile[LM]="${aDirs[SRC]}/doc/${aFile[NMN]}.md"
+
+
+  [[ -z ${aFile[WM]} ]] \
+    && aFile[WM]="$(readlink -f ${aFile[LM]})"
+
+
+  aFile[WD]="${aFile[WM]/${aDirs[WWW]}\/content\/}"
+  aFile[WD]="${aFile[WD]%.*}"
+
+  [[ ${aFile[WD]%%/*} = drafts ]] \
+    && aFile[DRF]=true \
+    || aFile[DRF]=false
+
+  aFile[WF]="${aDirs[WWW]}/static/${aFile[WD]}/files/${aFile[NMN]}"
+
+  [[ ${aFile[TYP]} = dot ]] && aFile[RD]="${aFile[WD]%/*}"
+  [[ ${aFile[TYP]} = script ]] && aFile[RD]="${aFile[WD]}"
+
+  aFile[RD]=${aFile[RD]#drafts/}
+  aFile[RM]="${aDirs[REP]}/${aFile[RD]}/README.md"
+  aFile[RF]="${aDirs[REP]}/${aFile[RD]}/${aFile[NMN]}"
+
+  aFile[LF]="$(SetLink ${aFile[TYP]})"
+}
+
+ReadMarkDown()
+{
+  ExtractYaml
+  aMarkDown[head]="$(ExtractWeb)"
+  aMarkDown[ReadMe]="$(ExtractReadme)"
+}
+
+GetActions()
+{
+  if [[ ${aYaml[dir]} != ${aFile[RD]} ]] \
+    || [[ ${aYaml[title]} != ${aFile[NMN]} ]]; then
+      aActions[${#aActions[@]}]=ActionMove
+    fi
+
+    [[ ${aYaml[draft]} != ${aFile[DRF]} ]] \
+    && aActions[${#aActions[@]}]=ActionDraft
+  }
+
+ConfirmActions()
+{
+  notstring="Confirm changes with commit message:\n\n"
+
+  notstring+="Original file: \n"
+  for k in "${!aFile[@]}"; do
+    notstring+="$k\t${aFile[$k]}\n"
+  done
+  notstring+="\n----"
+  # init actions
+  for a in "${aActions[@]}"; do $a; done
+
+  # display info about changes
+  dunst-layout rofi
+  notify-send -t 20000 "$(echo -e $notstring)"
+
+  # confrim with commit msg
+  msg=$(rofi -dmenu -filter 'commit' -p 'Message: ')
+  dunst-layout bar
+  if [[ -z $msg ]]; then
+    msg=$(echo -e "continue\ncancel" | rofi -dmenu \
+      -no-custom \
+      -p 'Continue without commit or cancel? ')
+  fi
+  
+  [[ -z $msg ]] && dunst-layout bar && exit
+  [[ $msg = cancel ]] && dunst-layout bar && exit
+
+  # execute actions
+  for a in "${aActions[@]}"; do $a confirmed; done
+}
+
+FinalizeUpdate()
+{
+  LinkALot
+
+  if [[ ${#aActions} -gt 0 ]]; then
+    GenIndex
+    GenQuote
+
+    LetsLicense
+
+    sublime
+    [[ $(subtit) = ${aFile[SRC]} ]] && subl --command "close"
+    sleep .5
+    subl "${aFile[LF]}"
+    subl "${aFile[LM]}"
+  fi
+
+  [[ $msg != continue ]] \
+    && GitCommit \
+    && notify-send -t 20000 "$(echo -e $commit)"
+  
+
+  GenBanner
+
+  # # confrim with commit msg
+  # while [[ -n $(xdotool search --onlyvisible --class Dunst) ]]; do
+  #   sleep 0.6
+  # done
+
+  # dunst-layout bar
+}
+
+LetsLicense()
+{
+  local gitlic wwwlic
+
+  wwwlic="${aFile[WF]%/*}/LICENSE"
+
+  if [[ ! -f "$wwwlic" ]]; then
+
+    gitlic="${aDirs[REP]}/${aFile[RD]%%/*}/LICENSE"
+
+    if [[ ! -f "$gitlic" ]]; then
+
+      [[ ${aFile[TYP]} = dot ]] \
+        && cp "$LICENSEdwtfyw" "$gitlic" \
+        || cp "$LICENSEmit" "$gitlic"
+
+    fi
+    cp -f "$gitlic" "$wwwlic"
+    
+  fi
+}
+
+GitCommit()
+{
+  local gitDir od
+
+  gitDir="${aDirs[REP]}/${aFile[RD]%%/*}"
+
+  od="$PWD"
+
+  cd "$gitDir" || exit
+
+  git add "${aFile[RF]#$gitDir\/}"
+  [[ -f "${aFile[RM]}" ]]   && git add "${aFile[RM]#$gitDir\/}"
+  [[ -f "${aFile[RF]}.1" ]] && git add "${aFile[RF]#$gitDir\/}.1"
+  commit="$(git commit -m "$msg")"
+
+  cd "$od"
+
+}
+
+UpdateDot(){
+  echo "UpdateDot"
+
+  # translate links in markdown?
+  # update readme part for all sibling dots?
+
+  # compose markdowns
+  UpdateYaml > "${aFile[WM]}"
+  echo -e "${aMarkDown[head]}" >> "${aFile[WM]}"
+
+  MarkdownSynchDot
+  
+  if [[ -n "${aMarkDown[head]}" ]]; then
+    cat <(TranslateHead) > "${aFile[RM]}"
+  else
+    rm -f "${aFile[RM]}"
+  fi
+
+  # update YAML
+}
+
+MarkdownSynchDot()
+{
+  local tmpYaml
+
+  for f in "${aFile[WM]%/*}/"*.md; do
+    [[ ${f##*/} = "_index.md" ]] && continue
+    [[ ${f} = "${aFile[WM]}" ]]  && continue
+
+    tmpYaml=$(awk '{print $0};$1=="---"&&++fnd==2{exit}' "$f")
+    echo -e "${tmpYaml}" > "$f" 
+    echo -e "${aMarkDown[head]}" >> "$f" 
+
+  done
+}
+
+UpdateScript(){
+  local sRepHead
+
+  echo "UpdateScript"
+
+  # generate markdown from fil
+  aMarkDown[body]="$(${aFile[RF]} md | tail --lines=+2)"
+
+  # generate man
+  ${aFile[RF]} man | go-md2man > "${aFile[RF]}.1"
+
+  # translate head to RepHead
+  sRepHead="$(TranslateHead)"
+
+  # compose markdowns
+  UpdateYaml > "${aFile[WM]}"
+  echo -e "${aMarkDown[head]}" >> "${aFile[WM]}"
+  echo -en "\n* * *\n\n# " >> "${aFile[WM]}"
+  echo -e "${aMarkDown[body]}" >> "${aFile[WM]}"
+
+  if [[ -n $sRepHead ]]; then
+    echo -e "${sRepHead}" > "${aFile[RM]}"
+    echo -e "\n* * *\n" >> "${aFile[RM]}"
+    echo -e "${aMarkDown[body]}" >> "${aFile[RM]}"
+  else
+    echo -e "${aMarkDown[body]}" > "${aFile[RM]}"
+  fi
+
+  # update script version and date
+  newver=$(grep 'VERSION=' "${aFile[RF]}" | awk -F\" '
+  nv=$2+0.001{
+    sub($2,nv,$0)
+    print $0
+  }
+  ')
+
+  sed -i --follow-symlinks \
+  -e "/^UPDATED=/c\UPDATED=\"$today\"" \
+  -e "/^VERSION=/c\\$newver" "${aFile[RF]}"
+
+}
+
+TranslateHead()
+{
+  echo -e "${aMarkDown[head]}" | awk '{
+
+    gsub("[(]/","(https://budrich.github.io/",$0)
+
+    if($1=="{{<" && $2=="jewtube")
+      $0="https://www.youtube.com/watch?v=" $3 "  "
+
+    if($1=="{{<" && $2=="imagus")
+    {
+      gsub("[\"]","",$3)
+      $0="[![](https://budrich.github.io/img/awd/"$3")]" \
+      "(https://budrich.github.io/img/org/"$3")"
+    }
+
+    print $0
+  }'
+}
+
+UpdateYaml()
+{
+  echo "---"
+  for k in \
+  title banner draft date author type syntax fspath dir tags
+  do
+    [[ -z ${aYaml[$k]} ]] && continue
+    echo "${k}: ${aYaml[$k]}"
+  done
+
+  echo "changelog:"
+  echo "  - ${today} - ${msg}"
+
+  OFS="${FS}"
+  FS=$'\n'
+
+  for k in "$(echo -e "${aYaml[changelog]//'|'/"\n"}")"; do
+    echo "${k}"
+  done
+
+  if [[ -n ${aYaml[notes]} ]]; then
+    echo "notes:"
+
+    for k in "$(echo -e "${aYaml[notes]//'|'/"\n"}")"; do
+      echo "${k}"
+    done
+  fi
+
+  FS="${OFS}"
+  
+  echo "---"
+}
+
+ActionMove()
+{
+  local s
+
+  if [[ $1 = confirmed ]]; then
+    echo "executing move"
+
+    # create new folders
+    mkdir -p "${aToMove[RF]%/*}"
+    mkdir -p "${aToMove[WM]%/*}"
+
+    # delete man and markdown from scriptfolder
+    # change value of NAME in script file
+    if [[ ${aFile[TYP]} = script ]]; then
+      rm -f "${aFile[RF]}.1"
+      rm -f "${aFile[RF]%/*}/README.md"
+
+      sed -i --follow-symlinks \
+      -e "/^NAME=/c\NAME=\"${aToMove[RF]##*/}\"" "${aFile[RF]}"
+    fi
+
+    # move and copy files
+    mv "${aFile[RF]}" "${aToMove[RF]}"
+    mv "${aFile[WM]}" "${aToMove[WM]}"
+
+    # delete all old static files in www
+    rm -rf "${aDirs[WWW]}/static/${aFile[WD]}"
+
+    # delete all links
+    rm -rf "${aFile[LM]}"
+    rm -rf "${aFile[LF]}"
+
+    # clean dirs
+    RemoveDirIfEmpty "${aFile[LM]%/*}"
+    RemoveDirIfEmpty "${aFile[LF]%/*}"
+    RemoveDirIfEmpty "${aFile[RF]%/*}"
+    RemoveDirIfEmpty "${aFile[WM]%/*}"
+    RemoveDirIfEmpty "${aFile[RM]%/*}"
+    RemoveDirIfEmpty "${aDirs[WWW]}/static/${aFile[WD]%/*}"
+    
+    # below is changed
+    aFile[NMN]=${aYaml[title]}
+    aFile[WM]="${aToMove[WM]}"
+
+    SetFile
+
+  elif [[ $1 != confirmed ]]; then
+
+    notstring+="New path requested\n\n"
+    notstring+="Move:\t${aFile[RF]}\n"
+
+    if [[ ${aFile[TYP]} = script ]]; then
+      dirlast="${aYaml[dir]##*/}"
+      [[ $dirlast != ${aYaml[title]} ]] \
+      && aYaml[dir]="${aYaml[dir]/%${dirlast}/${aYaml[title]}}"
+    fi
+
+    s=${aFile[RF]/${aFile[RD]}/${aYaml[dir]}}
+    s=${s/%${aFile[NMN]}/${aYaml[title]}}
+    aToMove[RF]="$s"
+    notstring+="To:\t${aToMove[RF]}\n\n"
+
+    notstring+="Move:\t${aFile[WM]}\n"
+    s=${aFile[WM]/${aFile[RD]}/${aYaml[dir]}}
+    s=${s/%${aFile[NMN]}.md/${aYaml[title]}.md}
+    aToMove[WM]="$s"
+    notstring+="To:\t${aToMove[WM]}\n\n"
+
+    if [[ ${aFile[TYP]} = dot ]]; then
+      # if new RM doesn't exist, copy current RM
+      # else add its content to aMarkDown[ReadMe]
+      s=${aFile[RM]/${aFile[RD]}/${aYaml[dir]}}
+      [[ -f "$s" ]] && aMarkDown[ReadMe]=$(cat "$s")
+    fi
+
+  fi
+}
+
+SetLink()
+{
+  local type=$1
+  local ret
+
+  [[ -z $type ]] && exit
+
+  if [[ $type = dot ]]; then
+
+    ret="${aFile[RD]/dots}/${aFile[NMN]}"
+    [[ ${ret:0:1} = '/' ]] \
+    && ret="${aDirs[DOT]}${ret}" \
+    || ret="${aDirs[DOT]}/${ret}"
+
+  elif [[ $type = script ]]; then
+
+    # ret=${aFile[RD]%${aFile[NMN]}}
+    # ret="${ret#scripts}/${aFile[NMN]}"
+    # [[ ${ret:0:1} = '/' ]] \
+    # && ret="${aDirs[SRC]}${ret}" \
+    # || ret="${aDirs[SRC]}/${ret}"
+
+    ret="${aDirs[SRC]}/${aFile[NMN]}"
+  fi
+
+  echo "$ret"
+}
+
+
+RemoveDirIfEmpty()
+{
+  local trg="$1"
+  local tmp="$trg" 
+  local found
+
+  while :; do
+    found=$(ls "$tmp" --hide=README.md --hide=_index.md | wc -l)
+    ((found>0)) && break
+    rm -rf "$tmp"
+    tmp=${tmp%/*}
+  done
+}
+
+ActionDraft()
+{
+  if [[ $1 = confirmed ]]; then
+    echo "executing draft"
+
+    if [[ ${aYaml[draft]} = true ]]; then
+      trgM=${aFile[WM]/content/content\/drafts}
+      trgD="drafts/${aFile[WD]}"
+      trgF=${aFile[WF]/static/static\/drafts}
+    else
+      trgM=${aFile[WM]/drafts\//}
+      trgD=${aFile[WD]/drafts\//}
+      trgF=${aFile[WF]/drafts\//}
+    fi
+
+    mkdir -p "${trgM%/*}"
+    mkdir -p "${trgD%/*}"
+    mkdir -p "${trgF%/*}"
+
+    [[ $(subtit) = ${aFile[WM]} ]] && subl --command "close"
+    mv "${aFile[WM]}" "$trgM"
+
+    [[ -d "${aDirs[WWW]}/static/${aFile[WD]}" ]] && echo "it exist!" \
+    && mv -f "${aDirs[WWW]}/static/${aFile[WD]}" "${aDirs[WWW]}/static/$trgD"
+
+    RemoveDirIfEmpty "${aDirs[WWW]}/static/${aFile[WD]}"
+    RemoveDirIfEmpty "${aFile[WM]%/*}"
+    
+    aFile[WM]="$trgM"
+    aFile[WD]="$trgD"
+    aFile[WF]="$trgF"
+    aFile[DRF]=${aYaml[draft]}
+  elif [[ $1 != confirmed ]]; then
+    notstring+="Toggling draftstate to: ${aYaml[draft]}\n"
+  fi
+}
+
+ExtractReadme()
+{
+  awk '
+  fnd==2 && $0!="" && start!=1 {start=1}
+  $0=="* * *"{fnd=2}
+  start==1 {print $0}
+  ' "${aFile[WM]}"
+}
+
+ExtractWeb()
+{
+  awk '
+  $0=="* * *"{exit}
+  fnd==2 && $0!="" && start!=1 {start=1}
+  start==1 {print $0}
+  $0=="---"{fnd++}
+
+  ' "${aFile[WM]}"
+}
+
+NewYaml()
+{
+  local v
+
+  ayt=("---")
+  ayt+=("title: ${aFile[NMN]}")
+  ayt+=("banner: ${aFile[BA]}")
+  ayt+=("date: ${longd}")
+  ayt+=("author: budRich")
+  ayt+=("draft: ${aFile[DRF]}")
+  ayt+=("type: ${aFile[TYP]}")
+
+  if [[ ${aFile[TYP]} = script ]]; then
+    ayt+=("syntax: shell")
+    ayt+=("fspath: ${aFile[SRC]/$HOME/'~'}")
+  elif [[ ${aFile[TYP]} = dot ]]; then
+    ayt+=("syntax: text")
+    ayt+=("fspath: ${aFile[LNG]/$HOME/'~'}")
+  fi
+
+  ayt+=("dir: ${aFile[RD]}")
+
+  ayt+=("tags: []")
+  ayt+=("changelog:")
+  ayt+=("  - ${today} - ${msg}")
+  ayt+=("notes:")
+  ayt+=("---")
+
+  for v in "${ayt[@]}"; do
+    echo "${v}"
+  done
+}
+
+ExtractYaml(){
+  eval "$(awk '
+
+    $0=="---"{fnd++}
+    fnd==2{exit}
+
+    $1=="title:"  {print "aYaml[title]=\""  $2 "\""}
+    $1=="banner:" {print "aYaml[banner]=\"" $2 "\""}
+    $1=="draft:"  {print "aYaml[draft]=\""  $2 "\""}
+    $1=="date:"   {print "aYaml[date]=\""   $2 "\""}
+    $1=="author:" {print "aYaml[author]=\"" $2 "\""}
+    $1=="type:"   {print "aYaml[type]=\""   $2 "\""}
+    $1=="syntax:" {print "aYaml[syntax]=\"" $2 "\""}
+    $1=="fspath:" {print "aYaml[fspath]=\"" $2 "\""}
+    $1=="dir:"    {print "aYaml[dir]=\""    $2 "\""}
+    $1=="tags:"   {sub("tags: ","",$0);print "aYaml[tags]=\"" $0 "\""}
+    getnotes==1   {print "aYaml[notes]+=\"" $0 "|\""}
+    $1=="notes:"  {getnotes=1;getchange=0}
+    getchange==1  {print "aYaml[changelog]+=\"" $0 "|\""}
+    $1=="changelog:" {getchange=1}
+    
+  ' "${aFile[WM]}")"
+}
+
+NewGanon(){
+  local prompt
+
+  if [[ $(head -1 "${aFile[LNG]}") =~ '#!/bin/bash' ]]; then
+    [[ -n $(${aFile[LNG]} -v) ]] \
+      && aFile[TYP]=script \
+      || aFile[TYP]=dot
+  else
+    aFile[TYP]=dot
+  fi
+
+  prompt=$(rofi -dmenu \
+    -filter "${aFile[TYP]}s/${aFile[NMN]}" \
+    -p 'add file: ')
+
+  [[ -z $prompt ]] && exit
+
+
+  aFile[NMN]=${prompt##*/}
+  aFile[DRF]=true
+
+  aFile[WD]="drafts/$prompt"
+
+  aFile[WF]="${aDirs[WWW]}/static/${aFile[WD]}/files/${aFile[NMN]}"
+  aFile[WM]="${aDirs[WWW]}/content/${aFile[WD]}.md"
+  
+  [[ ${aFile[TYP]} = script ]] && aFile[RD]=$prompt
+  [[ ${aFile[TYP]} = dot    ]] && aFile[RD]=${prompt%/*}
+
+  aFile[RF]="${aDirs[REP]}/${aFile[RD]}/${aFile[NMN]}"
+  aFile[RM]="${aDirs[REP]}/${aFile[RD]}/README.md"
+
+  [[ ${aFile[TYP]} = script ]] \
+  && aFile[LM]="${aDirs[SRC]}/doc/${aFile[NMN]}.md"
+  [[ ${aFile[TYP]} = dot ]] \
+  && aFile[LM]="${aDirs[DOT]}/doc/${aFile[NMN]}.md"
+
+  aFile[LF]="$(SetLink ${aFile[TYP]})"
+  aFile[BA]="${aFile[NMN]}"
+
+  # confrim with commit msg
+  notstring="Confirm changes with commit message:\n\n"
+  for k in "${!aFile[@]}"; do
+    notstring+="$k\t${aFile[$k]}\n"
+  done
+  notstring+="\n----"
+
+  dunst-layout rofi
+
+  notify-send -t 20000 "$(echo -e $notstring)"
+  msg=$(rofi -dmenu -filter 'Initial commit' -p 'Message: ')
+  dunst-layout bar
+  [[ -z $msg ]] && exit
+
+  aFile[FS]=${aFile[LNG]}
+  # special
+  [[ ${aFile[SRC]} =~ ^"${HOME}/tmp/ganon/box" ]] \
+    && aFile[SRC]=${aFile[SRC]/${HOME}\/tmp\/ganon\/box/$HOME/bin}
+
+  # move to rep (create folders)
+  mkdir -p "${aFile[RF]%/*}"
+  mkdir -p "${aFile[WM]%/*}"
+  mkdir -p "${aFile[WF]%/*}"
+
+  [[ $(subtit) = ${aFile[LNG]} ]] && subl --command "close"
+  # cp -f "${aFile[LNG]}" "${aFile[RF]}"
+  mv -f "${aFile[LNG]}" "${aFile[RF]}"
+
+  # if dot, use rep README.md to genereta MW
+  if [[ ${aFile[TYP]} = script ]]; then
+
+    # update version and date in script
+    newver=$(grep 'VERSION=' "${aFile[RF]}" | awk -F\" '
+    nv=$2+0.001{
+      sub($2,nv,$0)
+      print $0}')
+
+      sed -i --follow-symlinks \
+      -e "/^UPDATED=/c\UPDATED=\"$today\"" \
+      -e "/^VERSION=/c\\$newver" "${aFile[RF]}"
+
+    # generate man and md files
+    # use yaml template
+    echo -e "$(NewYaml)" > "${aFile[WM]}"
+    echo -en "\n* * *\n\n# " >> "${aFile[WM]}"
+    ${aFile[RF]} md  | tail --lines=+2 >> "${aFile[WM]}"
+    ${aFile[RF]} md  | tail --lines=+2 >> "${aFile[RM]}"
+    
+    ${aFile[RF]} man | go-md2man > "${aFile[RF]}.1"
+
+  else
+    # dotfile
+
+    echo -e "$(NewYaml)\n" > "${aFile[WM]}"
+
+    # !!! get part after * * *
+    [[ -f ${aFile[RM]} ]] \
+    && cat "${aFile[RM]}" >> "${aFile[WM]}"
+
+  fi
+
+  # need to poluate aActions for complete finale
+  aActions[0]=new
+  msg=continue
+  FinalizeUpdate
+
+  notify-send "Ganon: Added ${aFile[NMN]}"
+}
+
+LinkALot(){
+  echo linking
+
+  [[ -f ${aFile[LF]} ]] && rm "${aFile[LF]}"
+  [[ -f ${aFile[LM]} ]] && rm "${aFile[LM]}"
+  [[ -f ${aFile[WF]} ]] && rm "${aFile[WF]}"
+
+  mkdir -p "${aFile[LF]%/*}"
+  mkdir -p "${aFile[LM]%/*}"
+  mkdir -p "${aFile[WF]%/*}"
+
+  ln -f  "${aFile[RF]}" "${aFile[WF]}"
+
+  [[ ${aFile[TYP]} = dot ]] && ln -sf "${aFile[RF]}" "${aFile[FS]}"
+  ln -sf "${aFile[RF]}" "${aFile[LF]}"
+  ln -sf "${aFile[WM]}" "${aFile[LM]}"
+
+}
+
+GenBanner(){
+  postbanner -t "${TOILET_OPTIONS}" -l "${LOLCAT_OPTIONS}" \
+  -o "${aFile[WF]%/files*}/banner.html" "${aFile[BA]}"
+}
+
+GenQuote(){
+  postquote -f "${FORTUNE_OPTIONS}" \
+  "${aFile[WF]%/files*}/quote.html"
+}
+
+GenIndex(){
+
+  local d chk tmpd trg
+
+  chk=${aFile[WD]%/*}
+  tmpd="$chk"
+
+  for d in ${chk//\//' '}; do
+
+    trg="${aDirs[WWW]}/content/${tmpd}/_index.md"
+
+    {
+      echo "---"
+      echo "title: ${tmpd##*/}"
+      echo "date: ${longd}"
+      echo "author: budRich"
+      echo "draft: ${aFile[DRF]}"
+      echo "type: filepost"
+      echo "syntax: text"
+      echo "---" 
+    } > "$trg"
+
+    tmpd=${tmpd%/*}
+
+  done
+
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+      BEGIN{ind=0}
+      $0~/^```/{
+        if(ind!="1"){ind="1"}
+      else{ind="0"}
+        print ""
+      }
+      $0!~/^```/{
+        gsub("[`*]","",$0)
+        if(ind=="1"){$0="   " $0}
+          print $0
+      }
+      '
+    ;;
+    esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+bar(1), foo(5), xyzzy(1), [Linux Man Page Howto](
+http://www.schweikhardt.net/man_page_howto.html)
+"
+
+about='
+`ganon` - Short description
+
+SYNOPSIS
+--------
+
+`ganon` [`-v`|`-h`] [`-c` *config-file*] *file* ...
+
+DESCRIPTION
+-----------
+
+`ganon` frobnicates the bar library by tweaking internal symbol tables. By
+default it parses all baz segments and rearranges them in reverse order by
+time for the xyzzy(1) linker to find them. The symdef entry is then compressed
+using the WBG (Whiz-Bang-Gizmo) algorithm. All files are processed in the
+order specified.
+
+OPTIONS
+-------
+
+`-v`
+Show version and exit.
+
+`-h`
+Show help and exit.
+
+`-c` *config-file*
+Use the alternate system wide *config-file* instead of */etc/foo.conf*. This
+overrides any `FOOCONF` environment variable.
+
+
+FILES
+-----
+
+*/etc/foo.conf*
+The system wide configuration file. See foo(5) for further details.
+
+*~/.foorc*
+Per user configuration file. See foo(5) for further details.
+
+ENVIRONMENT
+-----------
+
+`FOOCONF`
+If non-null the full pathname for an alternate system wide */etc/foo.conf*.
+Overridden by the `-c` option.
+
+DEPENDENCIES
+------------
+
+go-md2man
+i3get
+Sublime Text
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="img4site"
-VERSION="0.011"
+VERSION="0.013"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-10-03"
-UPDATED="2017-12-17"
+UPDATED="2018-04-11"
 
 FLD_THB=$HOME/www/static/img/thb
 FLD_AWD=$HOME/www/static/img/awd

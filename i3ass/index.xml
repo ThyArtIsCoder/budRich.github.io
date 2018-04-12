@@ -5,81 +5,39 @@
     <link>https://budrich.github.io/i3ass/</link>
     <description>Recent content in i3ass on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 17 Dec 2017 20:54:45 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Apr 2018 16:47:48 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/i3ass/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>i3pocus</title>
-      <link>https://budrich.github.io/i3ass/i3pocus/</link>
-      <pubDate>Sat, 13 Jan 2018 15:16:26 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/i3ass/i3pocus/</guid>
-      <description>i3pocus - Intelligent window focusing SYNOPSIS i3pocus [-v|-h] [DIRECTION]
-DESCRIPTION i3pocus is meant as a replacement for the default focusing function (i3-msg focus) in i3wm. i3pocus moves the focus differently depending on the layout the current window is places in AND the the layout of the receiving container AND the DIRECTION the focus is moved.
-If the focus is moved horizontally (left|right) into a horizontally split (splith) container, either the first (DIRECTION = right) or the last (DIRECTION = left) window will be focused.</description>
-    </item>
-    
-    <item>
       <title>i3flip</title>
       <link>https://budrich.github.io/i3ass/i3flip/</link>
-      <pubDate>Wed, 03 Jan 2018 07:09:08 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:30:34 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3flip/</guid>
-      <description>I extracted and improved the tabswitching function from i3fyra and it now works independently,
+      <description>I extracted and improved the tabswitching function from i3fyra and it now works independently, with or without i3fyra.
 i3flip - Tabswitching done right SYNOPSIS i3flip [-v|-h] [n|next|p|prev]
 DESCRIPTION i3flip switch containers without leaving the parent. Perfect for tabbed or stacked layout, but works on all layouts. If direction is next (or n) and the active container is the last, the first container will be activated.
-OPTIONS -v Show version and exit.
--h Show help and exit.</description>
+OPTIONS -v Show version and exit.</description>
     </item>
     
     <item>
-      <title>i3var</title>
-      <link>https://budrich.github.io/i3ass/i3var/</link>
-      <pubDate>Fri, 22 Dec 2017 22:36:39 +0100</pubDate>
+      <title>i3fyra</title>
+      <link>https://budrich.github.io/i3ass/i3fyra/</link>
+      <pubDate>Fri, 30 Mar 2018 19:30:20 +0200</pubDate>
       
-      <guid>https://budrich.github.io/i3ass/i3var/</guid>
-      <description>I found that marking windows is both clunky and it can have a negative impact on the workflow for users who use marks for other things. So i made i3var, it creates a ghostwindow on the scratchpad and use it to hold a variable. This can also be used for things that are not window related. I can for example keep track of my current wallpaper, but i have made some other crazy experiments with this and it works really well, much better then marks.</description>
-    </item>
-    
-    <item>
-      <title>i3run</title>
-      <link>https://budrich.github.io/i3ass/i3run/</link>
-      <pubDate>Sun, 17 Dec 2017 23:23:14 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/i3ass/i3run/</guid>
-      <description>18/01/03 - new position to mouse Floating windows now appears centered to the mouse position, but never outside the screen. Screen borders (gaps) can be fine tuned with environment variables. xdotool is a dependency now, it&amp;rsquo;s needed to get the position of the mousecursor. All windows are now hidden if targeted while they are active, if not the new -g option is set. Using i3var instead of marks.
-i3run - Run, Raise or hide windows in i3wm SYNOPSIS i3run -h|-v|-i|-c|-t [CRITERIA] [-g] [-e COMMAND]</description>
-    </item>
-    
-    <item>
-      <title>i3list</title>
-      <link>https://budrich.github.io/i3ass/i3list/</link>
-      <pubDate>Sun, 17 Dec 2017 23:08:59 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/i3ass/i3list/</guid>
-      <description>18/01/03 - window geometry Added some new output values (45-55) to return the window geometry. Also AWM/TWM (mark) is deprecated, since spaces in marks caused trouble.
-i3list - List attributes of i3wm SYNOPSIS i3list [OPTION [CRITERIA]]
-DESCRIPTION This script is vital for i3fyra to work. But it can be used on it&amp;rsquo;s own or with other scripts. i3list is also used by i3run. i3list parses the output of the command:</description>
-    </item>
-    
-    <item>
-      <title>i3gw</title>
-      <link>https://budrich.github.io/i3ass/i3gw/</link>
-      <pubDate>Sun, 17 Dec 2017 22:53:54 +0100</pubDate>
-      
-      <guid>https://budrich.github.io/i3ass/i3gw/</guid>
-      <description>In the screenshot below, the windows to the right are tiled, and a ghostwindow is tiled on the left half of the screen. The other windows are floating.
-ss-i3gw1.png   This might seems like a novel and unusable feature, but it is actually crucial for many of my script (i3fyra, i3var) to work.
-i3gw - A Ghost window wrapper for i3wm. SYNOPSIS i3gw [-v|-h] MARK
-DESCRIPTION i3-msg has an undocumented function: open, it creates empty containers, or as I call them: ghosts.</description>
+      <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
+      <description>Fyra is the Swedish name for &amp;ldquo;four&amp;rdquo; (4).  www.youtube.com/watch?v=kU8gb6WLFk8    .
+www.youtube.com/watch?v=t4Tve-xpwus    In the first video above I show the functionality of i3fyra. The second video is a longer and more thorough walkthrough on how to use i3fyra
+18/01/03 i3flip Tabswitching function (-t) is removed, use i3flip instead, it&amp;rsquo;s both faster and works without i3fyra
+17/12/20 update: I added the ability to pass more then one containers to -z (hide).</description>
     </item>
     
     <item>
       <title>i3get</title>
       <link>https://budrich.github.io/i3ass/i3get/</link>
-      <pubDate>Sun, 17 Dec 2017 21:53:37 +0100</pubDate>
+      <pubDate>Fri, 30 Mar 2018 19:29:58 +0200</pubDate>
       
       <guid>https://budrich.github.io/i3ass/i3get/</guid>
       <description>i3get - Return information about i3wm. SYNOPSIS i3get [-h|-v] [OPTION [CRITERIA]] [-r [tcidnmwafov]] [-y]
@@ -97,15 +55,55 @@ Search for windows with the given instance</description>
     </item>
     
     <item>
-      <title>i3fyra</title>
-      <link>https://budrich.github.io/i3ass/i3fyra/</link>
-      <pubDate>Sun, 17 Dec 2017 20:54:45 +0100</pubDate>
+      <title>i3gw</title>
+      <link>https://budrich.github.io/i3ass/i3gw/</link>
+      <pubDate>Fri, 30 Mar 2018 19:29:32 +0200</pubDate>
       
-      <guid>https://budrich.github.io/i3ass/i3fyra/</guid>
-      <description>Fyra is the Swedish name for &amp;ldquo;four&amp;rdquo; (4).  www.youtube.com/watch?v=kU8gb6WLFk8    .
-www.youtube.com/watch?v=t4Tve-xpwus    In the first video above I show the functionality of i3fyra. The second video is a longer and more thorough walkthrough on how to use i3fyra
-18/01/03 i3flip Tabswitching function (-t) is removed, use i3flip instead, it&amp;rsquo;s both faster and works without i3fyra
-17/12/20 update: I added the ability to pass more then one containers to -z (hide).</description>
+      <guid>https://budrich.github.io/i3ass/i3gw/</guid>
+      <description>In the screenshot below, the windows to the right are tiled, and a ghostwindow is tiled on the left half of the screen. The other windows are floating.
+ss-i3gw1.png   This might seems like a novel and unusable feature, but it is actually crucial for many of my script (i3fyra, i3var) to work.
+i3gw - A Ghost window wrapper for i3wm. SYNOPSIS i3gw [-v|-h] MARK
+DESCRIPTION i3-msg has an undocumented function: open, it creates empty containers, or as I call them: ghosts.</description>
+    </item>
+    
+    <item>
+      <title>i3list</title>
+      <link>https://budrich.github.io/i3ass/i3list/</link>
+      <pubDate>Fri, 30 Mar 2018 19:28:44 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3list/</guid>
+      <description>18/01/03 - window geometry Added some new output values (45-55) to return the window geometry. Also AWM/TWM (mark) is deprecated, since spaces in marks caused trouble.
+i3list - List attributes of i3wm SYNOPSIS i3list [OPTION [CRITERIA]]
+DESCRIPTION This script is vital for i3fyra to work. But it can be used on it&amp;rsquo;s own or with other scripts. i3list is also used by i3run. i3list parses the output of the command:</description>
+    </item>
+    
+    <item>
+      <title>i3run</title>
+      <link>https://budrich.github.io/i3ass/i3run/</link>
+      <pubDate>Fri, 30 Mar 2018 19:25:19 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3run/</guid>
+      <description>18/01/03 - new position to mouse Floating windows now appears centered to the mouse position, but never outside the screen. Screen borders (gaps) can be fine tuned with environment variables. xdotool is a dependency now, it&amp;rsquo;s needed to get the position of the mousecursor. All windows are now hidden if targeted while they are active, if not the new -g option is set. Using i3var instead of marks.
+i3run - Run, Raise or hide windows in i3wm SYNOPSIS i3run -h|-v|-i|-c|-t [CRITERIA] [-g] [-e COMMAND]</description>
+    </item>
+    
+    <item>
+      <title>i3var</title>
+      <link>https://budrich.github.io/i3ass/i3var/</link>
+      <pubDate>Fri, 30 Mar 2018 19:23:38 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3var/</guid>
+      <description>I found that marking windows is both clunky and it can have a negative impact on the workflow for users who use marks for other things. So i made i3var, it creates a ghostwindow on the scratchpad and use it to hold a variable. This can also be used for things that are not window related. I can for example keep track of my current wallpaper, but i have made some other crazy experiments with this and it works really well, much better then marks.</description>
+    </item>
+    
+    <item>
+      <title>i3viswiz</title>
+      <link>https://budrich.github.io/i3ass/i3viswiz/</link>
+      <pubDate>Fri, 30 Mar 2018 19:23:15 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/i3ass/i3viswiz/</guid>
+      <description>i3viswiz - Professional window focus for i3wm SYNOPSIS i3viswiz [-v|-h] [-p] [-g GAPSIZE] [DIRECTION]
+DESCRIPTION i3viswiz lists all visible windows with their positions (X,Y) and dimensions (width,height). If -p flag is passed, the list will be printed to stdout. If a DIRECTION (left|right|up|down) is passed i3wizvis will shift the focus to the window closest in the given DIRECTION, or warp focus if there are no windows in the given direction.</description>
     </item>
     
   </channel>

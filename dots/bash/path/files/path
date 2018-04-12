@@ -1,7 +1,9 @@
+#! /bin/bash
 
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/others:$PATH"
+PATH="$HOME/bin/cs:$PATH"
 PATH="$HOME/src/budlabs:$PATH"
 PATH="$HOME/src/i3add:$PATH"
 PATH="$HOME/src/i3ass:$PATH"

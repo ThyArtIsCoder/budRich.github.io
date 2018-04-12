@@ -1,0 +1,57 @@
+#define fg #bdae93
+#define bg #3c3836
+
+#define base00 #282828
+#define base01 #3c3836
+#define base02 #504945
+#define base03 #665c54
+#define base0 #bdae93
+#define base1 #ebdbb2
+#define base2 #d5c4a1
+#define base3 #fbf1c7
+
+#define red #fb4934
+#define ora #fe8019
+#define grn #b8bb26
+#define ylw #fabd2f
+#define blu #83a598
+#define mag #d3869b
+#define vio #d65d0e
+#define cyn #8ec07c
+
+mondo.colors.fg1:         fg
+mondo.colors.fg2:         base03
+mondo.colors.bg1:         bg
+mondo.colors.bg2:         base00
+
+mondo.colors.dark1:       base00
+mondo.colors.light1:      base3
+
+mondo.colors.act1:        mag
+mondo.colors.act2:        base3
+mondo.colors.act3:        bg
+
+mondo.colors.ina1:        base03
+mondo.colors.ina2:        fg
+mondo.colors.ina3:        base3
+
+mondo.colors.sel1:     base03
+mondo.colors.sel2:     fg
+
+!! GUI theme
+#define cursortheme     Windows8-cursor
+#define icontheme       DamaDamas-icon-theme
+#define gtktheme        gruvbox-dark  
+
+!! Terminal fonts
+#define terminalfontface1 FixedFixedsys
+#define terminalfontsize1 12
+#define terminalfontface2 Hack
+#define terminalfontsize2 18
+
+!! GUI fonts
+#define guifontface1      FixedFixedsys
+#define guifontsize1      12
+#define guifontface2      sans
+#define guifontsize2      18
+

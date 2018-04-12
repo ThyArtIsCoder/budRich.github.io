@@ -1,0 +1,124 @@
+#!/bin/bash
+
+NAME="subpromen"
+VERSION="0.012"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-11-19"
+UPDATED="2018-04-11"
+
+SUBLIME_PROJECTS_DIR="${SUBLIME_PROJECTS_DIR:-$HOME}"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  PROJECTS=$(ls "${SUBLIME_PROJECTS_DIR}")
+  PROJECTS=${PROJECTS//$SUBLIME_PROJECTS_DIR\/}
+
+  [[ -z $PROJECTS ]] && exit
+
+  choice=$( printf '%s\n' ${PROJECTS} | rofi -dmenu -p 'Project: ')
+  [[ -z $choice ]] && exit
+
+  subpro "$choice"
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+rofi(1), subpro(1)
+"
+
+about='
+`subpromen` - Switch Sublime projects with rofi
+
+SYNOPSIS
+--------
+
+`subpromen` [`-v`|`-h`]
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+ENVIRONMENT
+-----------
+
+`SUBLIME_PROJECTS_DIR`
+  Folder containing `*.sublime-project` files.
+
+DEPENDENCIES
+------------
+
+rofi  
+sublime  
+subpro  
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi
+
+

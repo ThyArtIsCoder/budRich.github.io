@@ -1,0 +1,177 @@
+#!/bin/bash
+
+NAME="pbws"
+VERSION="0.002"
+AUTHOR="budRich"
+CONTACT='robstenklippa@gmail.com'
+CREATED="2017-12-31"
+UPDATED="2018-03-30"
+
+main(){
+  while getopts :vh option; do
+    case "${option}" in
+      v) printf '%s\n' \
+           "$NAME - version: $VERSION" \
+           "updated: $UPDATED by $AUTHOR"
+         exit ;;
+      h|*) printinfo && exit ;;
+    esac
+  done
+
+  action="$1"
+
+  aws=($(i3-msg -t get_workspaces | awk -F':' -v RS=',' ' \
+     BEGIN{nws=0}
+     $1~"num"{cws=$2;nws=nws " " $2}
+     $1~"focused" && $2=="true" {fws=cws}
+     END{nws=nws;print fws" "nws}
+  '))
+
+  tws=$((${#aws[@]}-2))
+  cws=${aws[0]}
+
+  case "$action" in
+    switch ) 
+      if ((tws==1)); then
+        ((cws++))
+        ((tws++))
+        i3-msg -q workspace "$cws"
+      else
+        i3-msg -q workspace back_and_forth
+        cws=$(i3-msg -t get_workspaces | awk -F':' -v RS=',' ' \
+           $1~"num"{cws=$2}
+           $1~"focused" && $2=="true" {print cws;exit}
+        ')
+      fi
+    ;;
+    prev   ) 
+      i3-msg -q workspace prev
+      cws=$(i3-msg -t get_workspaces | awk -F':' -v RS=',' ' \
+         $1~"num"{cws=$2}
+         $1~"focused" && $2=="true" {print cws;exit}
+      ')
+    ;;
+    next   ) 
+      i3-msg -q workspace next
+      cws=$(i3-msg -t get_workspaces | awk -F':' -v RS=',' ' \
+         $1~"num"{cws=$2}
+         $1~"focused" && $2=="true" {print cws;exit}
+      ')
+    ;;
+  esac
+
+  eval "cws=\${PBWS_SYMBOL_${cws}:-$cws}"
+
+  acol=($(xrdb -query | awk '/\*color[07]:/ {print $2}'))
+
+  prestr="%{A1:polybar-msg hook pbws 2:}"
+  prestr+="%{A4:polybar-msg hook pbws 3:}"
+  prestr+="%{A5:polybar-msg hook pbws 4:}"
+
+  sufstr="%{A}%{A}%{A}"
+
+  echo -n "${prestr}"
+  echo -n "%{F${acol[1]}}${cws} %{F${acol[1]}}${tws}%{F-}"
+  echo -n "${sufstr}"
+
+  case "$action" in
+    init ) ws=$(i3get -r w) ;;
+  esac
+}
+
+printinfo(){
+  case "$1" in
+    m ) printf '%s' "${about}" ;;
+    
+    f ) 
+      printf '%s' "${bouthead}"
+      printf '%s' "${about}"
+      printf '%s' "${boutfoot}"
+    ;;
+
+    ''|* ) 
+      printf '%s' "${about}" | awk '
+         BEGIN{ind=0}
+         $0~/^```/{
+           if(ind!="1"){ind="1"}
+           else{ind="0"}
+           print ""
+         }
+         $0!~/^```/{
+           gsub("[`*]","",$0)
+           if(ind=="1"){$0="   " $0}
+           print $0
+         }
+       '
+    ;;
+  esac
+}
+
+bouthead="
+${NAME^^} 1 ${CREATED} Linux \"User Manuals\"
+=======================================
+
+NAME
+----
+"
+
+boutfoot="
+AUTHOR
+------
+
+${AUTHOR} <${CONTACT}>
+<https://budrich.github.io>
+
+SEE ALSO
+--------
+
+polybar(1), i3-msg(1)
+"
+
+about='
+`pbws` - Minimal workspace indication
+
+SYNOPSIS
+--------
+
+`pbws` [`-v`|`-h`]
+
+DESCRIPTION
+-----------
+
+`pbws` outputs a symbol representing the current
+worskpace and the total number of workspaces. 
+Inteded to be used with polybar.
+
+OPTIONS
+-------
+
+`-v`
+  Show version and exit.
+
+`-h`
+  Show help and exit.
+
+ENVIRONMENT
+-----------
+
+`PBWS_SYMBOL_`*WORKSPACE_NUMBER*
+  This symbol will be used to indicate the current
+  workspace, if empty the workspace number will be
+  used.
+
+DEPENDENCIES
+------------
+
+polybar
+'
+
+if [ "$1" = "md" ]; then
+  printinfo m
+  exit
+elif [ "$1" = "man" ]; then
+  printinfo f
+  exit
+else
+  main "${@}"
+fi

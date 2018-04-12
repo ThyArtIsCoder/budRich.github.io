@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="subtit"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-18"
-UPDATED="2017-12-18"
+UPDATED="2018-04-02"
 
 SUBLIME_INSTANCE=${SUBLIME_INSTANCE:-'sublime_main'}
 

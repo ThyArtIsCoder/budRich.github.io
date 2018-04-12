@@ -1,11 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
 NAME="i3list"
-VERSION="0.123"
+VERSION="0.126"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-10-06"
-UPDATED="2017-12-17"
+UPDATED="2018-04-02"
+
+
+
 
 containerlist(){
  
@@ -34,6 +37,11 @@ containerlist(){
         LOB="X";FCB="X";LCB="X";ACB="X"
         LOC="X";FCC="X";LCC="X";ACC="X"
         LOD="X";FCD="X";LCD="X";ACD="X"
+
+        AWX="X";AWY="X";AWB="X";AWWIDTH="X";AWHEIGHT="X";
+        TWX="X";TWY="X";TWB="X";TWWIDTH="X";TWHEIGHT="X";
+        curx="X";cury="X";curb="X";curw="X";curh="X"      
+        AID="X";TID="X";curid="X"
       }
 
       hit!=0 && $0~"{" {hit++}
@@ -42,6 +50,16 @@ containerlist(){
         gsub("[[]|[]]","",$2)
         conta[marko]["focused"]=$2
       }
+
+      $1=="\"rect\"" {curx=$3;rectw=1}
+      rectw==1 && $1=="\"y\""{cury=$2}
+      rectw==1 && $1=="\"width\""{curw=$2}
+      rectw==1 && $1=="\"height\""{sub("}","",$2);curh=$2;rectw=2}
+
+      $1=="\"deco_rect\"" {rectb=1}
+      rectb==1 && $1=="\"height\""{sub("}","",$2);curb=$2;rectb=2}
+
+      $1=="\"window\"" {curid=$2}
 
       $1=="\"type\"" && $2=="\"workspace\"" {wsdchk="1"}
       wsdchk=="1" && $1=="\"width\""  {dim["w"]=$2}
@@ -62,8 +80,8 @@ containerlist(){
         }
       }
       
-      trg=="0" && $1==crit && $2 ~ srch  {TWI=cid;trg="1";}
-      trg=="0" && $2 ~ crit && $3 ~ srch {trg="1";TWI=cid}
+      trg=="0" && $1==crit && $2 ~ srch  {TWI=cid;trg="1";TWW=curws}
+      trg=="0" && $2 ~ crit && $3 ~ srch {trg="1";TWI=cid;TWW=curws}
       act=="0" && $1=="\"focused\"" && $2=="true" {act="1";AWI=cid}
       numchk=="1" && $1=="\"width\""  {dim[curws]["w"]=$2}
       numchk=="1" && $1=="\"height\"" {gsub("}","",$2);dim[curws]["h"]=$2;numchk=0}
@@ -72,7 +90,7 @@ containerlist(){
       bdchk=="1" && $1=="\"height\"" {gsub("}","",$2);CBD=$2;bdchk=0}
 
       $1=="\"floating\"" {
-        if(trg!="2" || act!="2") {
+        if(act!="2") {
 
           if(cid == AWI){
             if($2~"on"){AWP="g"}
@@ -85,10 +103,18 @@ containerlist(){
               AWC=marko
               AWL=conta[marko]["layout"]
             }
-            if(cmrk!=""){AWM=cmrk}
+            # if(cmrk!=""){AWM=cmrk}
             act="2"
+            AWX=curx
+            AWY=(cury-curb)
+            AWB=curb
+            AWWIDTH=curw
+            AWHEIGHT=(curh+curb)
+            AID=curid
           }
+        }
 
+        if(trg!="2") {
           if(cid == TWI){
             if($2~"on"){TWP="g"}
             if($2!~"on"){TWP="i"}
@@ -101,8 +127,14 @@ containerlist(){
               TWC=marko
               TWL=conta[marko]["layout"]
             }
-            if(cmrk!=""){TWM=cmrk}
+            # if(cmrk!=""){TWM=cmrk}
             trg="2"
+            TWX=curx
+            TWY=(cury-curb)
+            TWB=curb
+            TWWIDTH=curw
+            TWHEIGHT=(curh+curb)
+            TID=curid
           }
        }
        cmrk=""
@@ -116,7 +148,8 @@ containerlist(){
             gsub("i34","",alst[m])
             marko=alst[m]
             conta[marko]["ws"]=curws
-            conta[marko]["layout"]="-"}
+            conta[marko]["layout"]="-"
+          }
         }
 
         cmrk=$2
@@ -201,6 +234,9 @@ containerlist(){
         if(TWI==""){
           TWC="X";TWW="X";TWP="X";TWI="X"}
 
+        if(AWI==""){
+          AWC="X";AWW="X";AWP="X";AWI="X"}
+
         for (c in conta) {
           if(c~/^A$|^B$|^C$|^D$/){
 
@@ -236,6 +272,8 @@ containerlist(){
         EXS=VIS HID
         if(EXS=="XX"){EXS="X"}
         else{gsub("X","",EXS)}
+        if(EXS==""){EXS="X"}
+        AWM="X"; TWM="X"
         
         print AWW " " VIS " " HID " " EXS " " \
           AWP " " AWL " " AWS " " AWC " " AWW " " AWI " " AWM " " \
@@ -248,14 +286,18 @@ containerlist(){
           CAB " " CAC " " CBD " " \
           FAC " " FBD " " \
           dim[AWW]["w"] " " dim[AWW]["h"] " " \
-          WSF
+          WSF " " \
+          AWX " " AWY " " AWWIDTH " " AWHEIGHT " " \
+          TWX " " TWY " " TWWIDTH " " TWHEIGHT " " \
+          AID " " TID " " \
+          AWB " " TWB
       }
     '
 }
 
 main(){
 
-  while getopts :c:i:t:n:d:r:m:ayvh option; do
+  while getopts :c:i:t:n:d:r:m:avh option; do
     case "${option}" in
       i) crit="\"instance\"" srch="${OPTARG}";;
       c) crit="\"class\"" srch="${OPTARG}";;
@@ -264,7 +306,6 @@ main(){
       d) crit="\"window\"" srch="${OPTARG}";;
       m) crit="\"marks\"" srch="${OPTARG}";;
       a) crit="\"focused\"" && srch="true";;
-      y) synk=1;;
       v) printf '%s\n' \
            "$NAME - version: $VERSION" \
            "updated: $UPDATED by $AUTHOR"
@@ -273,7 +314,6 @@ main(){
     esac
   done
 
-  synk=${synk:=0}
   [ -z "$crit" ] && crit="\"focused\"" && srch="true"
 
   containerlist
@@ -409,14 +449,14 @@ field: 5   - AWL -  Active window layout (t|v|h|s|u)
 field: 6   - AWS -  Active window status (f|a|n)
 field: 7   - AWC -  Active window container (A|B|C|D|X)
 field: 8   - AWW -  Active window workspace
-field: 9   - AWI -  Active window id (con_id)
+field: 9   - AWI -  Active container id (con_id)
 field: 10  - AWM -  Active window mark
 field: 11  - TWP -  Target window position (b|e|m|o|g|i)
 field: 12  - TWL -  Target window layout (t|v|h|s|u)
 field: 13  - TWS -  Target window status (f|a|n)
 field: 14  - TWC -  Target window container (A|B|C|D|X)
 field: 15  - TWW -  Target window workspace
-field: 16  - TWI -  Target window id (con_id)
+field: 16  - TWI -  Target container id (con_id)
 field: 17  - TWM -  Target window mark
 field: 18  - LOA -  Container A layout
 field: 19  - FCA -  Container A first child (con_id)
@@ -445,6 +485,18 @@ field: 41  - FBD -  Family AC memory (mark i34FBD_*)
 field: 42  - SDW -  Width of current workspace
 field: 43  - SDH -  Height of curent workspace
 field: 44  - WSF -  Workspace number whith i3fyra layout
+field: 45  - AWX -  Active window X pos
+field: 46  - AWY -  Active window Y pos
+field: 47  - AWD -  Active window Width
+field: 48  - AWH -  Active window Height
+field: 49  - TWX -  Target window X pos
+field: 50  - TWY -  Target window Y pos
+field: 51  - TWD -  Target window Width
+field: 52  - TWH -  Target window Height
+field: 53  - AID -  Active window window ID
+field: 54  - TID -  Target window window ID
+field: 55  - AWB -  Active window titlebar height
+field: 56  - TWB -  Target window titlebar height
 
 position (b|e|m|g|i)
 b - beginning  first child in container

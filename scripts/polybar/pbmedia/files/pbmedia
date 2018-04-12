@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="pbmedia"
-VERSION="0.001"
+VERSION="0.006"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-31"
-UPDATED="2017-12-31"
+UPDATED="2018-04-11"
 
 main(){
   while getopts :vh option; do
@@ -21,12 +21,11 @@ main(){
   action="$1"
 
   mpvt=$(i3get -c mpv -r t)
-
   if [[ -n $mpvt ]];then
     op="${mpvt%.*}"
     op=${op//\'/}
     op=${op//\"/}
-    mpc -q pause
+    # mpc -q pause
   else
     op=$(mpdstatus)
   fi
@@ -40,10 +39,24 @@ main(){
       echo "${op}"
     ;;
     resume )
-      mpc -q play
-      sleep .2
-      op=$(mpdstatus)
-      echo "${op}"
+      # mpc -q play
+      # sleep .2
+      # op=$(mpdstatus)
+      # echo "${op}"
+      echo ""
+      [[ -z $(pidof -x mpclisten) ]] && mpclisten > /dev/null 2>&1 &
+    ;;
+    mpvclose )
+      
+      for id in $(i3viswiz -p | tail +3 | awk '{print $2}'); do
+        if [[ $(i3get -n $id -r i) =~ gotofolder ]]; then
+          i3-msg -q "[con_id=$id]" focus
+          break
+        fi
+      done
+      # idThun=$(i3get -o '~/vid/y')
+      # [[ -n $idThun ]] \
+      #   && i3-msg -q "[con_id=$idThun]" focus
     ;;
   esac
 }
@@ -93,6 +106,13 @@ mpdstatus(){
     op=${fnm%.*}
   fi
 
+  sts=$(mpc|awk 'NR==2{gsub("[[]|[]]","",$1);print $1;exit}')
+
+  if [[ $sts = paused ]]; then
+    col=$(xrdb -query | awk '/mondo.colors.act3:/ {print $2}') 
+    op="%{F${col}}${op}%{F-}"
+  fi 
+  
   op=${op:-"turn on some music"}
 
   echo "$op"
@@ -149,21 +169,20 @@ http://www.schweikhardt.net/man_page_howto.html)
 "
 
 about='
-`pbmedia` - Short description
+`pbmedia` - Displays the filename of the currently active media file.
 
 SYNOPSIS
 --------
 
-`pbmedia` [`-v`|`-h`] [`-c` *config-file*] *file* ...
+`pbmedia` [`-v`|`-h`]
 
 DESCRIPTION
 -----------
 
-`pbmedia` frobnicates the bar library by tweaking internal symbol tables. By
-default it parses all baz segments and rearranges them in reverse order by
-time for the xyzzy(1) linker to find them. The symdef entry is then compressed
-using the WBG (Whiz-Bang-Gizmo) algorithm. All files are processed in the
-order specified.
+`pbmedia` Prints the filename of the currently 
+playing media file in `mpd` or `mpv`. And applies
+some string and color formatting depending on the
+state and path of the file.
 
 OPTIONS
 -------
@@ -174,33 +193,15 @@ OPTIONS
 `-h`
   Show help and exit.
 
-`-c` *config-file*
-  Use the alternate system wide *config-file* instead of */etc/foo.conf*. This
-  overrides any `FOOCONF` environment variable.
-
-
-FILES
------
-
-*/etc/foo.conf*
-  The system wide configuration file. See foo(5) for further details.
-
-*~/.foorc*
-  Per user configuration file. See foo(5) for further details.
-
-ENVIRONMENT
------------
-
-`FOOCONF`
-  If non-null the full pathname for an alternate system wide */etc/foo.conf*.
-  Overridden by the `-c` option.
 
 DEPENDENCIES
 ------------
 
-go-md2man
-i3get
-Sublime Text
+i3viswiz  
+i3get  
+mpd  
+mpc  
+mpv  
 '
 
 if [ "$1" = "md" ]; then

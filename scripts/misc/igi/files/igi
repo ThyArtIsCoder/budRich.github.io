@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="igi"
-VERSION="0.001"
+VERSION="0.005"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-09-30"
-UPDATED="2017-12-17"
+UPDATED="2018-04-11"
 
 MAX_LINES=6 # Maximum number of lines to display
 WRAP=17     # On which Collumn to wrap fortune

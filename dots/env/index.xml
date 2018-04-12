@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>env on budRich.github.io - Boiling rice in coffe</title>
+    <link>https://budrich.github.io/dots/env/</link>
+    <description>Recent content in env on budRich.github.io - Boiling rice in coffe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Apr 2018 15:19:21 +0200</lastBuildDate>
+    
+	<atom:link href="https://budrich.github.io/dots/env/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>user-dirs</title>
+      <link>https://budrich.github.io/dots/env/user-dirs/</link>
+      <pubDate>Sun, 01 Apr 2018 12:42:03 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/user-dirs/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+    <item>
+      <title>export</title>
+      <link>https://budrich.github.io/dots/env/export/</link>
+      <pubDate>Sun, 01 Apr 2018 11:54:12 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/export/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+    <item>
+      <title>i3env</title>
+      <link>https://budrich.github.io/dots/env/i3env/</link>
+      <pubDate>Sun, 01 Apr 2018 11:08:08 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/i3env/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+    <item>
+      <title>xinitrc</title>
+      <link>https://budrich.github.io/dots/env/xinitrc/</link>
+      <pubDate>Sun, 01 Apr 2018 10:46:35 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/dots/env/xinitrc/</guid>
+      <description>My environment dotfiles is where i setup my, well, environment. i3env are environment variables that i have invented myself and most of them are settings for various i3ass scripts. I could have put them in .bashrc, but I source them from ~/.xinitrc since all of them are specific to a graphical environment.
+Similarly export are environment variables that are sourced in ~/.bashrc.
+I try to keep most of my xsession related always start executions in ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

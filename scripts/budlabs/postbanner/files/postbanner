@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="postbanner"
-VERSION="0.025"
+VERSION="0.027"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-09-30"
-UPDATED="2017-12-17"
+UPDATED="2018-04-11"
 
 main(){
   while getopts :vhl:t:o: option

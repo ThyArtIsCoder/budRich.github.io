@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="getkeys"
-VERSION="0.001"
+VERSION="0.003"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-19"
-UPDATED="2017-12-19"
+UPDATED="2018-04-11"
 
 main(){
   while getopts :vh option; do

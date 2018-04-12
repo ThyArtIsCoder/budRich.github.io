@@ -1,11 +1,11 @@
 #!/bin/bash
 
 NAME="i3Kornhe"
-VERSION="0.011"
+VERSION="0.017"
 AUTHOR="budRich"
 CONTACT='robstenklippa@gmail.com'
 CREATED="2017-12-12"
-UPDATED="2017-12-17"
+UPDATED="2018-04-03"
 
 main(){
   while getopts :vh option
