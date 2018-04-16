@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Letslinux on budRich.github.io - Boiling rice in coffe</title>
+    <title>letslinux on budRich.github.io - Boiling rice in coffe</title>
     <link>https://budrich.github.io/letslinux/</link>
-    <description>Recent content in Letslinux on budRich.github.io - Boiling rice in coffe</description>
+    <description>Recent content in letslinux on budRich.github.io - Boiling rice in coffe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 07 Apr 2018 18:07:52 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 16 Apr 2018 09:45:57 +0200</lastBuildDate>
     
 	<atom:link href="https://budrich.github.io/letslinux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>best_i3_img_viewer</title>
+      <link>https://budrich.github.io/letslinux/best_i3_img_viewer/</link>
+      <pubDate>Fri, 13 Apr 2018 17:21:13 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/best_i3_img_viewer/</guid>
+      <description>In this video I demonstrate how to spawn, sxiv - Simple X image viewer, in a certain container and make a small script that will always add all image files in a folder to the image list.
+Be sure to check out gotbletu&amp;rsquo;s video about sxiv, he shows more things then I cover in this one.
+Below is the script I use to open all windows in the same directory as the selected one:</description>
+    </item>
     
     <item>
       <title>polybar_and_workspaces</title>
@@ -19,6 +30,21 @@
       <description>This is the first of three videos where I create a dynamic workspace indicator that displays the name (icon) of the current workspace and the total number of existing workspaces.
 In this first video, we create a new hook module and create the first version of the script that will output the workspace information.
 !!! The getpid script on github is a fixed version. The reason i got multiple pids was because it returned the pid of the getpid script it self.</description>
+    </item>
+    
+    <item>
+      <title>perfect_folders</title>
+      <link>https://budrich.github.io/letslinux/bashrc/</link>
+      <pubDate>Thu, 05 Apr 2018 09:45:48 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/bashrc/</guid>
+      <description>This is the first video in the Let&amp;rsquo;s Linux series.
+How to organize your files and folders in a sane way, with auto sync to both Dropbox and website!
+Detailed article on my site:
+https://budrich.github.io/blog/perfect_folders/
+Dots:
+https://github.com/budRich/dots
+I have tried many different ways to organize my files. I think the current setup I have is by far the best. It uses Dropbox to ensure cloud based backup and Hugo to create this site you are looking at where many of my actual dotfiles and scripts are viewable and auto-updated.</description>
     </item>
     
     <item>

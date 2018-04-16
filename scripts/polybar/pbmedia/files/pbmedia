@@ -8,20 +8,26 @@ CREATED="2017-12-31"
 UPDATED="2018-04-11"
 
 main(){
-  while getopts :vh option; do
+  while getopts :vhm: option; do
     case "${option}" in
-      v) printf '%s\n' \
+      
+      (m) mode=${OPTARG} 
+          shift $((--OPTIND)) ;;
+
+      (v) printf '%s\n' \
            "$NAME - version: $VERSION" \
            "updated: $UPDATED by $AUTHOR"
          exit ;;
-      h|*) printinfo && exit ;;
+      (h|*) printinfo && exit ;;
     esac
   done
 
   action="$1"
 
-  mpvt=$(i3get -c mpv -r t)
-  if [[ -n $mpvt ]];then
+  mode=${mode:-$(getmode)}
+  
+  if [[ $mode = mpv ]];then
+    mpvt=$(i3get -c mpv -r t)
     op="${mpvt%.*}"
     op=${op//\'/}
     op=${op//\"/}
@@ -31,34 +37,48 @@ main(){
   fi
 
   case "$action" in
-    start ) 
+    (start) 
       echo "${op}"
-      [[ -z $(pidof -x mpclisten) ]] && mpclisten > /dev/null 2>&1 &
+      [[ -z $(pidof -x mpclisten) ]] \
+        && mpclisten > /dev/null 2>&1 &
     ;;
-    update )
+    (update)
       echo "${op}"
     ;;
-    resume )
-      # mpc -q play
-      # sleep .2
-      # op=$(mpdstatus)
-      # echo "${op}"
+    (resume)
       echo ""
-      [[ -z $(pidof -x mpclisten) ]] && mpclisten > /dev/null 2>&1 &
+      [[ -z $(pidof -x mpclisten) ]] \
+        && mpclisten > /dev/null 2>&1 &
     ;;
-    mpvclose )
-      
-      for id in $(i3viswiz -p | tail +3 | awk '{print $2}'); do
-        if [[ $(i3get -n $id -r i) =~ gotofolder ]]; then
-          i3-msg -q "[con_id=$id]" focus
-          break
-        fi
-      done
-      # idThun=$(i3get -o '~/vid/y')
-      # [[ -n $idThun ]] \
-      #   && i3-msg -q "[con_id=$idThun]" focus
-    ;;
+    
   esac
+}
+
+getmode(){
+  declare -A aCork
+
+  eval "$(pactl list | awk '
+    $1=="Corked:" {cfound=1;curcork=$2}
+    cfound==1 && $1=="application.icon_name" {
+      gsub("[\"]","",$3)
+      print "aCork[" $3 "]=" curcork
+      cfound=0
+    }')"
+
+  mode=mpd
+  
+  if [[ ${aCork[mpv]} = yes ]] && [[ ${aCork[mpd]} != no ]]; then
+    for id in $(i3viswiz -p c | tail +3 | awk '{print $NF}'); do
+      if [[ $id = mpv ]]; then
+        mode=mpv
+        break
+      fi
+    done
+  elif [[ ${aCork[mpv]} = no ]]; then
+    mode=mpv
+  fi
+
+  echo $mode
 }
 
 mpdstatus(){

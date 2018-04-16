@@ -13,7 +13,8 @@ URxvt*foreground:            fg
 
 URxvt*dynamicColors: on
 
-URxvt*perl-ext-common: default,urxvt-colors,matcher,url-select,keyboard-select,selection-to-clipboard,config-reload
+URxvt*perl-ext-common: default,matcher,url-select,keyboard-select,selection-to-clipboard,config-reload
+! URxvt*perl-ext-common: default,urxvt-colors,matcher,url-select,keyboard-select,selection-to-clipboard,config-reload
 
 URxvt*intensityStyles:     true
 URxvt*cursorBlink:         1

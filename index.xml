@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>best_i3_img_viewer</title>
+      <link>https://budrich.github.io/letslinux/best_i3_img_viewer/</link>
+      <pubDate>Fri, 13 Apr 2018 17:21:13 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/best_i3_img_viewer/</guid>
+      <description>In this video I demonstrate how to spawn, sxiv - Simple X image viewer, in a certain container and make a small script that will always add all image files in a folder to the image list.
+Be sure to check out gotbletu&amp;rsquo;s video about sxiv, he shows more things then I cover in this one.
+Below is the script I use to open all windows in the same directory as the selected one:</description>
+    </item>
+    
+    <item>
       <title>dunst-layout</title>
       <link>https://budrich.github.io/scripts/misc/dunst-layout/</link>
       <pubDate>Wed, 11 Apr 2018 14:05:29 +0200</pubDate>
@@ -46,6 +57,21 @@ In this first video, we create a new hook module and create the first version of
       
       <guid>https://budrich.github.io/dots/templatetator/letslinux/recipie/</guid>
       <description>This is the templatetator template i use to create show-notes for let&amp;rsquo;s linux.</description>
+    </item>
+    
+    <item>
+      <title>perfect_folders</title>
+      <link>https://budrich.github.io/letslinux/bashrc/</link>
+      <pubDate>Thu, 05 Apr 2018 09:45:48 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/letslinux/bashrc/</guid>
+      <description>This is the first video in the Let&amp;rsquo;s Linux series.
+How to organize your files and folders in a sane way, with auto sync to both Dropbox and website!
+Detailed article on my site:
+https://budrich.github.io/blog/perfect_folders/
+Dots:
+https://github.com/budRich/dots
+I have tried many different ways to organize my files. I think the current setup I have is by far the best. It uses Dropbox to ensure cloud based backup and Hugo to create this site you are looking at where many of my actual dotfiles and scripts are viewable and auto-updated.</description>
     </item>
     
     <item>
@@ -386,7 +412,7 @@ Everything I show is also described in detail in the official i3 userguide:</des
       <pubDate>Mon, 02 Apr 2018 22:41:52 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/nikes/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -417,6 +443,18 @@ mondo -n FILE|NAME [FILE]
 mondo -t FILE|NAME [FILE]
 DESCRIPTION mondo uses xrdb to apply colors and other settings from a theme to templates created by the user. The themes are .Xresources files.
 Themes are stored in MONDO_DIR/themes. Templates (mondo-template) is one file that makes up a generator. Each generator directory is located in MONDO_DIR/generator.</description>
+    </item>
+    
+    <item>
+      <title>SimpleSyntax</title>
+      <link>https://budrich.github.io/blog/simplesyntax/</link>
+      <pubDate>Mon, 02 Apr 2018 16:09:59 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/blog/simplesyntax/</guid>
+      <description>I created this simple Sublime Text package to get a simple syntax recognition for files where the syntax isn&amp;rsquo;t obvious. By simple i mean only recognize comments. The most common use-case is dotfiles.
+simplesyntax1.gif   I also added symbols/(sections) definitions. So by adding &amp;gt;&amp;gt; SECTION NAME after a comment declaration you can easily go to different sections in the file.
+The package currently contains four syntaxes:
+# | ssHash !</description>
     </item>
     
     <item>
@@ -947,7 +985,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 12:01:34 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/tomorrow/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -956,7 +994,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 12:00:41 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/sourcerer/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -965,7 +1003,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 12:00:29 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/solarized-light/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -974,7 +1012,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 12:00:11 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/solarized-dark/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -983,7 +1021,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 11:59:58 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/mafia/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -992,7 +1030,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 11:59:40 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/gruvbox-light/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -1001,7 +1039,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 11:59:22 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/gruvbox-dark/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -1010,7 +1048,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 11:59:09 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/eighties/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>
@@ -1019,7 +1057,7 @@ I describe this process in detail in an episode of lets linux</description>
       <pubDate>Sun, 01 Apr 2018 11:58:33 +0200</pubDate>
       
       <guid>https://budrich.github.io/dots/mondo/themes/dracula/</guid>
-      <description></description>
+      <description> nikes nikes-shot.png   </description>
     </item>
     
     <item>

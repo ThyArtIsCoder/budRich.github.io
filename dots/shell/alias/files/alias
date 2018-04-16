@@ -65,3 +65,4 @@ alias nwd='sudo netctl start donk'
 
 # syntax:bash
 alias seba='setxkbmap -layout seba -option lv3:ralt_switch -option caps:ctrl_modifier'
+alias hdmi='xrandr --output LVDS1 --auto --primary --output HDMI3 --auto --left-of LVDS1'

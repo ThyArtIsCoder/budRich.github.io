@@ -1,15 +1,19 @@
+!! based on Nikes
+!! by /u/mihir94
+!! https://github.com/mihirsherlekar
+
 #define fg #4b575a
 #define bg #babaa9
 
 #define base00 #eee8d5
+#define base02 #A4A493
 #define base01 #babaa9
-#define base02 #445e67
-#define base03 #6e776e
+#define base03 #8d938d
 
 #define base0 #3f3f3f
-#define base1 #eee8d5
+#define base1 #445e67
 #define base2 #4b575a
-#define base3 #8d938d
+#define base3 #6e776e
 
 #define red #D4665D
 #define ora #cb4b16
@@ -22,9 +26,9 @@
 
 
 mondo.colors.fg1:         fg
-mondo.colors.fg2:         base03
+mondo.colors.fg2:         base3
 mondo.colors.bg1:         bg
-mondo.colors.bg2:         base00
+mondo.colors.bg2:         base02
 
 mondo.colors.dark1:       base0
 mondo.colors.light1:      base00
@@ -33,12 +37,12 @@ mondo.colors.act1:        blu
 mondo.colors.act2:        base00
 mondo.colors.act3:        base0
 
-mondo.colors.ina1:        base02
-mondo.colors.ina2:        fg
+mondo.colors.ina1:        base1
+mondo.colors.ina2:        bg
 mondo.colors.ina3:        base0
 
-mondo.colors.sel1:     base3
-mondo.colors.sel2:     base00
+mondo.colors.sel1:        base03
+mondo.colors.sel2:        base00
 
 !! GUI theme
 #define cursortheme     Windows8-cursor

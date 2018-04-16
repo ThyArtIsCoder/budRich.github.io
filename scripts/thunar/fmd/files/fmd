@@ -19,15 +19,8 @@ main(){
     esac
   done
 
-
-for id in $(i3viswiz -p | tail +3 | awk '{print $2}'); do
-  if [[ $(i3get -n $id -r i) =~ gotofolder ]]; then
-    i3-msg -q "[con_id=$id]" focus
-    exit
-  fi
-done
-
-i3run -i "^.*gotofolder.*$" -e "gotofolder ~"
+  i3vikus -i gotofolder \
+    || i3run -i "^.*gotofolder.*$" -e "gotofolder ~"
 
 }
 

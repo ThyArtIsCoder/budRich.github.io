@@ -32,9 +32,9 @@
           <key>lineHighlight</key>
           <string>%%colors.fg2%%10</string>
           <key>selection</key>
-          <string>%%colors.fg2%%16</string>
+          <string>%%colors.sel1%%99</string>
           <key>selectionBorder</key>
-          <string>%%colors.fg2%%16</string>
+          <string>%%colors.sel1%%99</string>
           <key>stackGuide</key>
           <string>%%colors.fg2%%00</string>
           <key>popupCss</key>

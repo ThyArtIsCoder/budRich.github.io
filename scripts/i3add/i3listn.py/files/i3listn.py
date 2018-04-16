@@ -58,8 +58,8 @@ def windownotify(i3, event):
     if event.change == "close":
         if event.container.window_class == 'mpv':
             call('mpc -q seek -1'.split(' '))
-            if event.container.focused == True:
-                call('pbmedia mpvclose'.split(' '))
+            # if event.container.focused == True:
+            #     call('pbmedia mpvclose'.split(' '))
 
     if event.change == "close":
         if event.container.window_instance == "castterm":

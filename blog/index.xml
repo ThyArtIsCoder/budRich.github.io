@@ -11,6 +11,18 @@
     
     
     <item>
+      <title>SimpleSyntax</title>
+      <link>https://budrich.github.io/blog/simplesyntax/</link>
+      <pubDate>Mon, 02 Apr 2018 16:09:59 +0200</pubDate>
+      
+      <guid>https://budrich.github.io/blog/simplesyntax/</guid>
+      <description>I created this simple Sublime Text package to get a simple syntax recognition for files where the syntax isn&amp;rsquo;t obvious. By simple i mean only recognize comments. The most common use-case is dotfiles.
+simplesyntax1.gif   I also added symbols/(sections) definitions. So by adding &amp;gt;&amp;gt; SECTION NAME after a comment declaration you can easily go to different sections in the file.
+The package currently contains four syntaxes:
+# | ssHash !</description>
+    </item>
+    
+    <item>
       <title>new_ass_features</title>
       <link>https://budrich.github.io/blog/new_ass_features/</link>
       <pubDate>Wed, 03 Jan 2018 13:37:07 +0100</pubDate>

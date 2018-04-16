@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://budrich.github.io/letslinux/</loc>
+    <lastmod>2018-04-16T09:45:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/best_i3_img_viewer/</loc>
+    <lastmod>2018-04-13T17:21:13+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://budrich.github.io/scripts/</loc>
     <lastmod>2018-04-11T19:47:00+02:00</lastmod>
   </url>
@@ -155,6 +165,11 @@
   <url>
     <loc>https://budrich.github.io/dots/templatetator/letslinux/recipie/</loc>
     <lastmod>2018-04-07T08:44:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/letslinux/bashrc/</loc>
+    <lastmod>2018-04-05T09:45:48+02:00</lastmod>
   </url>
   
   <url>
@@ -350,6 +365,11 @@
   <url>
     <loc>https://budrich.github.io/scripts/polybar/</loc>
     <lastmod>2018-04-02T16:42:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://budrich.github.io/blog/simplesyntax/</loc>
+    <lastmod>2018-04-02T16:09:59+02:00</lastmod>
   </url>
   
   <url>
@@ -1040,12 +1060,6 @@
   <url>
     <loc>https://budrich.github.io/</loc>
     <lastmod>2017-09-14T19:50:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://budrich.github.io/letslinux/</loc>
-    <lastmod>2018-04-07T18:07:52+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
